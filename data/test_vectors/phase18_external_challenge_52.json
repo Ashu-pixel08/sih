@@ -1,0 +1,423 @@
+{
+  "benchmark_name": "Phase 18 External Unseen Challenge Set",
+  "total_items": 52,
+  "categories_count": 25,
+  "items": [
+    {
+      "id": "REAL-01",
+      "category": "real_world_failure_a",
+      "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "REAL-02",
+      "category": "real_world_failure_b",
+      "hindi": "आज हम सब गाना गाएंगे।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-01",
+      "category": "greetings",
+      "hindi": "नमस्ते, आप सभी का हमारे गाँव में स्वागत है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-02",
+      "category": "greetings",
+      "hindi": "शुभ प्रभात, आज का दिन बहुत सुंदर है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-03",
+      "category": "daily_conversation",
+      "hindi": "तुम आज सुबह से क्या कर रहे हो?",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-04",
+      "category": "daily_conversation",
+      "hindi": "मैं अभी बाजार जा रहा हूँ, थोड़ी देर में लौटूँगा।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-05",
+      "category": "classroom_language",
+      "hindi": "कृपया सभी बच्चे अपनी किताबें खोलें।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-06",
+      "category": "classroom_language",
+      "hindi": "अध्यापक ने श्यामपट्ट पर एक नया पाठ लिखा।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-07",
+      "category": "questions",
+      "hindi": "यह रास्ता किस गाँव की ओर जाता है?",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-08",
+      "category": "questions",
+      "hindi": "कल रात नदी के पास कौन आया था?",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-09",
+      "category": "answers",
+      "hindi": "हाँ, हम कल सुबह मेला देखने जरूर जाएंगे।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-10",
+      "category": "answers",
+      "hindi": "नहीं, मुझे इस बात की कोई जानकारी नहीं है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-11",
+      "category": "present_tense",
+      "hindi": "बच्चे मैदान में गेंद से खेल रहे हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-12",
+      "category": "present_tense",
+      "hindi": "सूरज पूरब दिशा में चमकता है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-13",
+      "category": "past_tense",
+      "hindi": "हमने कल शाम को एक बड़ा पेड़ लगाया था।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-14",
+      "category": "past_tense",
+      "hindi": "वे लोग पिछले हफ्ते यहाँ आए थे।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-15",
+      "category": "future_tense",
+      "hindi": "कल हम सब मिलकर नया घर बनाएंगे।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-16",
+      "category": "future_tense",
+      "hindi": "अगले महीने तेज बारिश होगी।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-17",
+      "category": "negation",
+      "hindi": "मैंने आज किसी से कोई झगड़ा नहीं किया।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-18",
+      "category": "negation",
+      "hindi": "जंगल में रात को अकेले मत जाओ।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-19",
+      "category": "singular_plural",
+      "hindi": "एक चिड़िया पेड़ की डाल पर बैठी है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-20",
+      "category": "singular_plural",
+      "hindi": "बहुत सारी चिड़ियाँ आकाश में उड़ रही हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-21",
+      "category": "pronouns",
+      "hindi": "मैं अपने गाँव से बहुत प्यार करता हूँ।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-22",
+      "category": "pronouns",
+      "hindi": "वे दोनों हमारे साथ जंगल जा रहे हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-23",
+      "category": "possession",
+      "hindi": "यह सुंदर गाय मेरे चाचा की है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-24",
+      "category": "possession",
+      "hindi": "हमारा गाँव नदी के किनारे बसा हुआ है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-25",
+      "category": "commands",
+      "hindi": "जल्दी से पानी लेकर आओ।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-26",
+      "category": "commands",
+      "hindi": "दरवाजा बंद करो और यहाँ बैठो।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-27",
+      "category": "descriptions",
+      "hindi": "वह पहाड़ बहुत ऊँचा और हरा-भरा है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-28",
+      "category": "descriptions",
+      "hindi": "नदी का पानी बहुत ठंडा और साफ है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-29",
+      "category": "common_verbs",
+      "hindi": "किसान खेत में हल चलाता है और बीज बोता है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-30",
+      "category": "common_verbs",
+      "hindi": "मेरी बहन हर सुबह मीठा गाना गाती है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-31",
+      "category": "common_nouns",
+      "hindi": "पत्थर और मिट्टी से मजबूत दीवार बनती है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-32",
+      "category": "common_nouns",
+      "hindi": "जंगल में बहुत सारे फूल और फल मिलते हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-33",
+      "category": "numbers",
+      "hindi": "टोकरी में सात पके हुए आम रखे हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-34",
+      "category": "numbers",
+      "hindi": "कक्षा में कुल पंद्रह छात्र उपस्थित हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-35",
+      "category": "time",
+      "hindi": "दोपहर के समय सूरज बहुत तेज होता है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-36",
+      "category": "time",
+      "hindi": "शाम होते ही सभी पक्षी अपने घोंसले में लौट आते हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-37",
+      "category": "place",
+      "hindi": "पहाड़ी के पीछे एक छोटा सा झरना बहता है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-38",
+      "category": "place",
+      "hindi": "हम सब गाँव के बड़े बरगद के नीचे मिले।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-39",
+      "category": "family",
+      "hindi": "मेरी माँ रसोई में स्वादिष्ट खाना बना रही हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-40",
+      "category": "family",
+      "hindi": "मेरे दादाजी रोज़ शाम को हमें पुरानी कहानियाँ सुनाते हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-41",
+      "category": "food",
+      "hindi": "चावल और दाल के साथ हरी सब्जी बहुत अच्छी लगती है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-42",
+      "category": "food",
+      "hindi": "हमने जंगल से मीठे महुए के फल इकट्ठे किए।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-43",
+      "category": "weather",
+      "hindi": "आज आसमान में काले बादल घिरे हुए हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-44",
+      "category": "weather",
+      "hindi": "सर्दियों में सुबह के वक्त बहुत कोहरा पड़ता है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-45",
+      "category": "school",
+      "hindi": "घंटी बजते ही सारे बच्चे प्रार्थना के लिए कतार में खड़े हो गए।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-46",
+      "category": "school",
+      "hindi": "हमने आज गणित की कक्षा में जोड़ और घटाव सीखा।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-47",
+      "category": "technology",
+      "hindi": "गाँव में मोबाइल नेटवर्क आने से बातचीत आसान हो गई है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-48",
+      "category": "technology",
+      "hindi": "कंप्यूटर सीखने से नई जानकारी जल्दी मिल जाती है।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-49",
+      "category": "simple_longer_sentences",
+      "hindi": "जब गाँव में फसल कटाई का समय आता है, तब सब लोग मिलकर दिन भर मेहनत करते हैं और शाम को ढोल बजाकर नाचते हैं।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    },
+    {
+      "id": "CHAL-50",
+      "category": "simple_longer_sentences",
+      "hindi": "यदि तुम रोज़ मेहनत से पढ़ाई करोगे, तो एक दिन बड़े होकर अपने गाँव का नाम रोशन करोगे।",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE",
+      "classification": "UNVALIDATED_MODEL_OUTPUT"
+    }
+  ]
+}

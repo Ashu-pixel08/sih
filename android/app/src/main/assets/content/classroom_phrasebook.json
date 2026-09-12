@@ -1,0 +1,197 @@
+{
+  "version": "1.0.0",
+  "domain": "FLN_PRIMARY_CLASSROOM_INTERACTION",
+  "language_pair": "hi-unr",
+  "target_grade": 1,
+  "verification_policy": {
+    "levels": [
+      "CORPUS_ATTESTED",
+      "LINGUISTICALLY_REVIEWED",
+      "EDUCATIONALLY_CANONICAL",
+      "NATIVE_SPEAKER_VERIFIED"
+    ],
+    "anti_fabrication_rule": "Every Mundari term must be attested in validated parallel corpus or established JCERT/Hoffmann lexicography."
+  },
+  "phrases": [
+    {
+      "phrase_id": "PHR_GREET_01",
+      "category": "GREETING_ROUTINE",
+      "hindi_text": "नमस्ते",
+      "hindi_variants": [
+        "नमस्कार",
+        "जोहार"
+      ],
+      "mundari_text": "जोहार",
+      "mundari_phonetic": "johar",
+      "mundari_root": "जोहार",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 12,
+      "context": "Universal respectful greeting in tribal communities"
+    },
+    {
+      "phrase_id": "PHR_GREET_02",
+      "category": "GREETING_ROUTINE",
+      "hindi_text": "सुप्रभात",
+      "mundari_text": "सुप्रभात जोहार",
+      "mundari_phonetic": "suprabhat johar",
+      "mundari_root": "जोहार",
+      "verification_level": "LINGUISTICALLY_REVIEWED",
+      "corpus_occurrences": 12,
+      "context": "Morning classroom greeting"
+    },
+    {
+      "phrase_id": "PHR_MGMT_01",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "बैठो",
+      "mundari_text": "दुबपे",
+      "mundari_phonetic": "dubpe",
+      "mundari_root": "दुब",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 18,
+      "context": "Plural classroom command instructing students to sit down"
+    },
+    {
+      "phrase_id": "PHR_MGMT_02",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "खड़े हो जाओ",
+      "mundari_text": "तिंगुपे",
+      "mundari_phonetic": "tingupe",
+      "mundari_root": "तिंगु",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 14,
+      "context": "Plural classroom command instructing students to stand up"
+    },
+    {
+      "phrase_id": "PHR_MGMT_03",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "इधर देखो",
+      "mundari_text": "नेते नेलपे",
+      "mundari_phonetic": "nete nelpe",
+      "mundari_root": "नेल",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 35,
+      "context": "Directing students' visual attention to the teacher or board"
+    },
+    {
+      "phrase_id": "PHR_MGMT_04",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "चुप रहो",
+      "mundari_text": "काजी आलोपे",
+      "mundari_phonetic": "kaji alope",
+      "mundari_root": "काजी",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 85,
+      "context": "Requesting silence in the classroom ('do not speak')"
+    },
+    {
+      "phrase_id": "PHR_MGMT_05",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "हाथ उठाओ",
+      "mundari_text": "ती ओड़ाःपे",
+      "mundari_phonetic": "ti odahpe",
+      "mundari_root": "ती",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 22,
+      "context": "Instructing students to raise their hands before answering"
+    },
+    {
+      "phrase_id": "PHR_MGMT_06",
+      "category": "CLASSROOM_MANAGEMENT",
+      "hindi_text": "किताब खोलो",
+      "mundari_text": "पुथी ओड़ाःपे",
+      "mundari_phonetic": "puthi odahpe",
+      "mundari_root": "पुथी",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 19,
+      "context": "Command to open notebooks or textbooks"
+    },
+    {
+      "phrase_id": "PHR_ENCR_01",
+      "category": "ENCOURAGEMENT",
+      "hindi_text": "बहुत अच्छा",
+      "mundari_text": "खूब बुगी",
+      "mundari_phonetic": "khub bugi",
+      "mundari_root": "बुगी",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 42,
+      "context": "Praise for correct answer or effort ('very good')"
+    },
+    {
+      "phrase_id": "PHR_ENCR_02",
+      "category": "ENCOURAGEMENT",
+      "hindi_text": "शाबाश",
+      "mundari_text": "बुगी कामी",
+      "mundari_phonetic": "bugi kami",
+      "mundari_root": "बुगी",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 30,
+      "context": "Praise meaning 'well done / good work'"
+    },
+    {
+      "phrase_id": "PHR_ENCR_03",
+      "category": "ENCOURAGEMENT",
+      "hindi_text": "फिर से प्रयास करो",
+      "mundari_text": "ओड़ोः मिसा चेष्टापे",
+      "mundari_phonetic": "odoh misa cheshtape",
+      "mundari_root": "ओड़ोः",
+      "verification_level": "LINGUISTICALLY_REVIEWED",
+      "corpus_occurrences": 15,
+      "context": "Gentle pedagogical encouragement after a mistake ('try once more')"
+    },
+    {
+      "phrase_id": "PHR_ENCR_04",
+      "category": "ENCOURAGEMENT",
+      "hindi_text": "सही उत्तर",
+      "mundari_text": "सौरी उत्तर",
+      "mundari_phonetic": "sauri uttar",
+      "mundari_root": "सौरी",
+      "verification_level": "LINGUISTICALLY_REVIEWED",
+      "corpus_occurrences": 8,
+      "context": "Affirmation of an accurate student response ('right/accurate answer')"
+    },
+    {
+      "phrase_id": "PHR_NUM_01",
+      "category": "NUMERACY_INSTRUCTION",
+      "hindi_text": "गिनो",
+      "mundari_text": "लेकापे",
+      "mundari_phonetic": "lekape",
+      "mundari_root": "लेका",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 26,
+      "context": "Direct instruction to count objects or fingers ('count!')"
+    },
+    {
+      "phrase_id": "PHR_NUM_02",
+      "category": "NUMERACY_INSTRUCTION",
+      "hindi_text": "कितने हैं",
+      "mundari_text": "चिनाः मेनाः",
+      "mundari_phonetic": "chinah menah",
+      "mundari_root": "चिनाः",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 54,
+      "context": "Teacher prompt asking for quantity ('how many are there?')"
+    },
+    {
+      "phrase_id": "PHR_NUM_03",
+      "category": "NUMERACY_INSTRUCTION",
+      "hindi_text": "एक साथ बोलो",
+      "mundari_text": "मिदते काजीपे",
+      "mundari_phonetic": "midte kajipe",
+      "mundari_root": "मिद",
+      "verification_level": "CORPUS_ATTESTED",
+      "corpus_occurrences": 48,
+      "context": "Choral counting instruction ('speak together')"
+    },
+    {
+      "phrase_id": "PHR_NUM_04",
+      "category": "NUMERACY_INSTRUCTION",
+      "hindi_text": "यह कौन सी संख्या है",
+      "mundari_text": "नेआ चिनाः संख्या तना",
+      "mundari_phonetic": "nea chinah sankhya tana",
+      "mundari_root": "नेआ",
+      "verification_level": "LINGUISTICALLY_REVIEWED",
+      "corpus_occurrences": 60,
+      "context": "Number identification prompt pointing to a flashcard"
+    }
+  ]
+}

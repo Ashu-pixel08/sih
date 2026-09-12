@@ -1,0 +1,25 @@
+{
+  "phrases": [
+    {
+      "phrase_id": "PHR_MGMT_07",
+      "hindi_text": "लाइन बनाओ",
+      "hindi_variants": [
+        "पंक्ति में खड़े हो जाओ",
+        "कतार बनाओ"
+      ],
+      "mundari_text": "लाइन बाइपे",
+      "mundari_root": "बाइ",
+      "category": "CLASSROOM_MANAGEMENT",
+      "classroom_use": "Instructing students to form a line before entering class or midday meal",
+      "grade": 1,
+      "ipa": "/laːin baːi-pe/",
+      "source": "Classroom Field Elicitation Ranchi District",
+      "provenance": "FIELD_ELICITED",
+      "linguistic_validation": "CORPUS_ATTESTED",
+      "educational_validation": "FLN_FRAMEWORK_COMPLIANT",
+      "license": "CC-BY-4.0",
+      "broadcast_allowed": false,
+      "linked_audio_id": "AUD_UNR_PHR_MGMT_07"
+    }
+  ]
+}

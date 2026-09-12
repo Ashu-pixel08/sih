@@ -1,0 +1,31 @@
+{
+  "phase": "PHASE_18_FULL_CORPUS_NMT",
+  "created_at": "2026-09-09",
+  "raw_source": "data/raw/translation/translation-hi-unr.tsv",
+  "raw_lines": 17826,
+  "malformed_rows_filtered": 17,
+  "exact_duplicates_filtered": 5,
+  "conflicts_resolved": 9,
+  "verbatim_copies_filtered": 22,
+  "length_anomalies_filtered": 2,
+  "short_fragments_filtered": 3,
+  "final_usable_pairs": 17768,
+  "splits": {
+    "train": {
+      "file": "data/processed/nmt_full\\train.tsv",
+      "count": 15100,
+      "ratio": 0.84984241332733
+    },
+    "val": {
+      "file": "data/processed/nmt_full\\val.tsv",
+      "count": 1334,
+      "ratio": 0.07507879333633498
+    },
+    "test": {
+      "file": "data/processed/nmt_full\\test.tsv",
+      "count": 1334,
+      "ratio": 0.07507879333633498
+    }
+  },
+  "zero_leakage_verified": true
+}

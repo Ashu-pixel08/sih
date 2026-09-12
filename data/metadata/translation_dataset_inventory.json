@@ -1,0 +1,52 @@
+{
+  "inventory_version": "1.0.0",
+  "last_updated": "2026-09-04",
+  "project_code": "SIH260042",
+  "primary_translation_dataset": {
+    "candidate_id": "translation_corpus_karya_hi_unr",
+    "origin_name": "dataset-hindi-mundari-translation",
+    "source_url": "https://github.com/karya-inc/dataset-hindi-mundari-translation",
+    "creator_organizations": [
+      "Microsoft Research India",
+      "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+      "Karya Inc. / DAIA Tech Pvt Ltd",
+      "Indo-German Development Cooperation FAIR Forward / GIZ / BMZ"
+    ],
+    "copyright": "© 2023 DAIA Tech Pvt Ltd",
+    "license": "Karya Public License BY-NC-SA-FS 1.0 (Attribution-NonCommercial-ShareAlike-FreeSoftware 1.0)",
+    "usability_classification": "PUBLIC + USABLE",
+    "file_raw_path": "data/raw/translation/translation-hi-unr.tsv",
+    "file_processed_path": "data/processed/translation/clean_bilingual_corpus.tsv",
+    "raw_metrics": {
+      "total_lines": 17826,
+      "valid_sentence_pairs": 17809,
+      "malformed_lines_filtered": 17,
+      "file_size_bytes": 3788450
+    },
+    "processed_metrics": {
+      "unique_sentence_pairs": 17804,
+      "duplicate_pairs_removed": 5,
+      "encoding": "UTF-8 (NFC normalized)",
+      "hindi_vocabulary_size": 21712,
+      "mundari_vocabulary_size": 31686,
+      "total_hindi_tokens": 141206,
+      "total_mundari_tokens": 129299,
+      "scripts_attested": {
+        "hindi": "Devanagari",
+        "mundari": "Devanagari (ISO 639-3: unr)"
+      }
+    },
+    "role_in_system": [
+      "Tier 2 offline corpus retrieval index (character n-gram TF-IDF)",
+      "Grammatical and lexical reference for Mundari morphology",
+      "Mining classroom instruction candidates",
+      "Offline translation fallback with strict confidence gating (< 0.60 -> OUT_OF_VOCABULARY_UNVERIFIED)"
+    ],
+    "restrictions_and_licensing_compliance": {
+      "commercial_use": "PROHIBITED (NonCommercial only)",
+      "share_alike": "MANDATORY (Adaptations must carry compatible BY-NC-SA-FS license)",
+      "free_software_requirement": "MANDATORY (Software incorporating corpus must be open source / GPL-compatible)",
+      "attribution": "MANDATORY (Must cite DAIA Tech, MSR India, IIT Kharagpur, Karya, GIZ FAIR Forward in docs/source_provenance.md)"
+    }
+  }
+}

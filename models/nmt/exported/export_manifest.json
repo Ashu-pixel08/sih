@@ -1,0 +1,14 @@
+{
+  "architecture": "Transformer Encoder-Decoder",
+  "parameters": 9594688,
+  "torchscript_file": "models/nmt/exported\\hindi_mundari_nmt.torchscript.pt",
+  "torchscript_size_mb": 37.25,
+  "onnx_file": "models/nmt/exported\\hindi_mundari_nmt.onnx",
+  "onnx_size_mb": 0.0,
+  "android_compatibility": {
+    "onnxruntime_android": "com.microsoft.onnxruntime:onnxruntime-android:1.17.0+",
+    "pytorch_mobile": "org.pytorch:pytorch_android_lite:1.13.1+",
+    "zero_internet_permission": true,
+    "offline_executable": true
+  }
+}

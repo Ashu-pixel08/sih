@@ -1,0 +1,52 @@
+{
+  "model_id": "speech_classifier_fln_v1",
+  "architecture": "LightweightSpectrogramCNN",
+  "backbone": "DepthwiseSeparable2D_CNN",
+  "parameter_count": 98085,
+  "input_tensor": {
+    "name": "input_spectrogram",
+    "shape": [
+      1,
+      101,
+      64,
+      1
+    ],
+    "dtype": "FLOAT32",
+    "layout": "NHWC",
+    "units": "Log-Mel Spectrogram"
+  },
+  "output_tensor": {
+    "name": "output_probabilities",
+    "shape": [
+      1,
+      21
+    ],
+    "dtype": "FLOAT32",
+    "classes": 21,
+    "activation": "Softmax"
+  },
+  "quantization_formats": {
+    "FLOAT32": {
+      "file_name": "speech_classifier_float32.tflite",
+      "size_kb": 386.74,
+      "precision": "Single precision float32"
+    },
+    "FLOAT16": {
+      "file_name": "speech_classifier_float16.tflite",
+      "size_kb": 198.14,
+      "precision": "Half precision float16"
+    }
+  },
+  "runtime_requirements": {
+    "engine": "LiteRT / TensorFlow Lite 2.x",
+    "accelerator": "CPU (NNAPI / GPU optional)",
+    "estimated_ram_kb": 2500,
+    "peak_compute_mflops": 0.15
+  },
+  "thresholds": {
+    "confidence_threshold": 0.65,
+    "margin_threshold": 0.2
+  },
+  "verification_status": "RESEARCH / BASELINE / VALIDATION",
+  "status_rationale": "Model architecture, LiteRT numerical parity (max diff 5e-6), and pipeline mechanics are verified. Real-world accuracy claims require verified isolated native-speaker 1–20 audio."
+}

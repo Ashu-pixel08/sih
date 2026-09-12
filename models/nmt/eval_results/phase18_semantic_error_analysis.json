@@ -1,0 +1,1456 @@
+{
+  "phase": "PHASE_18_SEMANTIC_ERROR_ANALYSIS",
+  "sample_size": 100,
+  "total_error_samples": 89,
+  "clean_accurate_samples": 11,
+  "overall_semantic_error_rate_pct": 89.0,
+  "category_frequencies": {
+    "WRONG_SUBJECT": 0,
+    "WRONG_TENSE": 1,
+    "WRONG_NUMBER": 27,
+    "WRONG_PRONOUN": 0,
+    "NEGATION_ERROR": 5,
+    "UNRELATED_NOUNS": 49,
+    "HALLUCINATED_NAMED_ENTITIES": 0,
+    "WORD_REPETITION": 0,
+    "COPIED_HINDI": 14,
+    "MALFORMED_MUNDARI": 0,
+    "SEMANTIC_SUBSTITUTIONS": 37
+  },
+  "category_rates_pct": {
+    "WRONG_SUBJECT": 0.0,
+    "WRONG_TENSE": 1.0,
+    "WRONG_NUMBER": 27.0,
+    "WRONG_PRONOUN": 0.0,
+    "NEGATION_ERROR": 5.0,
+    "UNRELATED_NOUNS": 49.0,
+    "HALLUCINATED_NAMED_ENTITIES": 0.0,
+    "WORD_REPETITION": 0.0,
+    "COPIED_HINDI": 14.0,
+    "MALFORMED_MUNDARI": 0.0,
+    "SEMANTIC_SUBSTITUTIONS": 37.0
+  },
+  "audited_items": [
+    {
+      "index": 0,
+      "hindi": "कि पल में ज़िन्दगी दिखा जाती है",
+      "reference": "चि पल रे जिबोन लेलोगा।",
+      "hypothesis": "चि हेड़ा रे जिनिद लेल तना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "hindi": "सीबीआई ने भांजे को रंगेहाथ पकड़ा।",
+      "reference": "सीबीआई गेड़े नेदति लोः साबकिःआ।",
+      "hypothesis": "सीबीआई बिनगा के रंग कुल केआते ती जोगाव या।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "hindi": "इस बीच सामान्य जनगणना की प्रक्रिया चलती रहेगी।",
+      "reference": "नेन सोमोय रे सामान्य जनगणना रअ प्रक्रिया चलव तान गे ताइना।",
+      "hypothesis": "ने तला रे जान होरा को साला कान गे कमि सेसेन तन गेआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "hindi": "कहते थे वे कार्यकारी शक्ति हैं।",
+      "reference": "काजिजाद ताइकेना इनिः कामितान (कार्यकारी) होड़ो पेड़ेः तानिः।",
+      "hypothesis": "काजि तान ताइकेना इनिः कामि पेड़ेः मेनाः।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 4,
+      "hindi": "उसके साथ ही रेवाड़ी निवासी अरुण भी काम करता है।",
+      "reference": "इनिलो:गे रेवाड़ीरेन अरुणो: कामितान ताइकेना।",
+      "hypothesis": "इनिआः लोः गे वा ड़ी मेनाः एना राः कामि रिका लागातिङा।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "hindi": "फैलती जाती हैं जड़ें नियामगिरी से बैलाडीला तक",
+      "reference": "पासराओताना रेएदको नियामगिरि ते बैलाडीला हामिः",
+      "hypothesis": "फै शन कोः आ तालारे नि गर म लोः ते बै क किन लाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "hindi": "श्मशानघाट में कुत्ते रो रहे हैं।",
+      "reference": "होड़ो़ ओंडोरता: सेताको रा:ताना।",
+      "hypothesis": "श् म घाट रे सेताः राः कुपुल ताइकेना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "hindi": "मन ही से सेऊँ सहज सरुप।पूजा अरचा न जानूँ तोरी।",
+      "reference": "मोने तेगे सेवाताना सोंगड़ा रूप रआः। बोंगा बुरू काञ इतुआना आमाः।",
+      "hypothesis": "मोने तेगे गे आपान सेंड़ां पु ड़ि को जी - बा पु ड़ी दो।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "hindi": "उनका पूरा नाम वसंत कुमार शिवशंकर पादुकोण था।",
+      "reference": "इनिआः गोटा नुतुम वसन्त कुमार शिवशङकर पादुकोण ताइकेना।",
+      "hypothesis": "इनिआः गोटा नुतुम कुमार शिव शर्मा ओड़ोः सुगाड़ा बा नु ताइकेना।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 9,
+      "hindi": "भाई स्कूल जाने काबिल हुए तो उन्हें भी स्कूल छोड़ा।",
+      "reference": "बोको कोड़ा पढ़च लेका होना जन चि इनिःओं को इदि तुका किआ",
+      "hypothesis": "हागा स्कूल सेन तान ताइकेना चि इनिः रेओ इनिः जो ड़ा जाना।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['स्कूल']"
+        },
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "hindi": "बाद में मोदी ने भी अपने विचार रखे।",
+      "reference": "तायोम ते मोदोओः आपान जागार दोकेदाएः।",
+      "hypothesis": "तायोमते मोदी दो आपान उड़ुः रे उड़ुः ओआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['मोदी']"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "hindi": "ज्यादातर लोग भले मानुष जैसा ही आचरण करते हैं।",
+      "reference": "साङगि होड़ोको सुगाड़ा होड़ोको लेका गे जापागारेआको।",
+      "hypothesis": "सांगि होड़ोकोः आ मान लेका गे लेका तेगे मांड व ताना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "hindi": "तब वह उसे घसीटता हुआ मरम्मत की दुकान तक लाया।",
+      "reference": "एनाते इनि: ओर इदि केआते कमि बइ दुकान ता: इदि कि:आ।",
+      "hypothesis": "एन सोमाए इनिः गे गोएः आकान कोआः लेनेका जाकेद आउ केदाएः।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "hindi": "और वो भी विदेशी एक्ट्रेस के साथ।",
+      "reference": "ओडो एना यो विदेशी एक्ट्रेस लोः।",
+      "hypothesis": "ओड़ोः इनिः सूचना ट्रे ट एक् स लोः ते।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "hindi": "है रंग फिर उड़ा उड़ा।",
+      "reference": "रंगा ओड़ो: ओटांग ओटांगाआ कना।",
+      "hypothesis": "मेनाः रंग ओड़ोः गे होका ओः तना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "hindi": "का प्रयास हो सकता है।",
+      "reference": "राः प्रयास दाड़िओःआ।",
+      "hypothesis": "रआः प्रयास दाड़िओः आ।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 16,
+      "hindi": "स्नातक छात्र को बस ने रौंदा",
+      "reference": "स्नातक इतुन कोड़ा होन के गाड़ी पेन तइजा",
+      "hypothesis": "केन्द्र पड़ा व होनको के रसिका ते पेरेः जना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "hindi": "धर्मवीर भारती हम लोगों को सिखाते थे।",
+      "reference": "धर्मवीर भारती अले को सिखाओ ले तईकेना",
+      "hypothesis": "धोरोम वीर भारती आले होड़ोको इतु तान ताइकेना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "hindi": "जिसने भी इसे सुना हैरान रह गया।",
+      "reference": "ओकोए गे नेआ आयुम केदा इनि: उड़ु: रे टो:ओ जना।",
+      "hypothesis": "ओकोए नेआ आयुम केआते हापे गे ताइन जाना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "hindi": "साक़ी हम यह क्या सुनते हैं",
+      "reference": "साकी अबु नेया चिनअ: बु अयुम तना",
+      "hypothesis": "सा काजि आले नेआ चानाः आयुम तादा।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "hindi": "कारोबार में रुचि कम ही बन पाएगी।",
+      "reference": "कारोबार कोरे सुकु कोम का कोमो: तना।",
+      "hypothesis": "कार रे जोम केआते कोम गे बाइः गेआ।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "hindi": "जनलोकपाल आंदोलन कर उन्होंने अपनी पहचान बनाई।",
+      "reference": "जनलोकपाल आन्दोलन रिकाकेआते इनिः उरुमजानाएः।",
+      "hypothesis": "जन लोक आंदोलन केआते इनिः आ चनाः माइन बाइ तादाको।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['आंदोलन']"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "hindi": "वह करोंडो जन्म जहरीले साँप के पाता है।",
+      "reference": "इनि करोड़लेका जोनोम जहरीला बिङको:आ नामेआ।",
+      "hypothesis": "इनिः रिका केआते जोनोम कान ताइना एना ता ते।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "hindi": "इसलिए पुलिस उससे कड़ाई से पूछताछ नहीं कर पाती थी।",
+      "reference": "एना रेआ: ते पुलिस को केटे: ते कको कुलि दड़िजना।",
+      "hypothesis": "एना मेनते पुलिस लोः ते इनिः जन लेका जगर काएः नम जना।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "NEGATION_ERROR",
+          "detail": "Source neg=True, Hyp neg=False"
+        },
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "hindi": "लोकतंत्र में धमकी की भाषा कहां तक सही?",
+      "reference": "लोकतंत्र रे धमकाओ रआः जागार चिमिन जाकेद सारतिआ।",
+      "hypothesis": "लोकतंत्र रे आड़ानदि रआः जागार कोताः जाकेद माजा ओआ।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 25,
+      "hindi": "इस नाते संजीव जी से परिचय तो पहले से था।",
+      "reference": "ने लेकाते संजीव जी लोः उपुरुम सिदाते गे ताइकेना।",
+      "hypothesis": "ने लेका जगर जी ते रसिका तेगे सिदाः अ।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "hindi": "मैं बाज़ार को अपनी पीठ पे लादे भागता रहता।",
+      "reference": "आञ पीटि देआ रे लादिकेआते निराकान ताइनजानाञ।",
+      "hypothesis": "आञ पीटि दो आपान देआ रे आउ केआते निर तान ताइकेनाञ।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "hindi": "बेचारी देवकी बैठी रो रही थी।",
+      "reference": "बापुड़ि देवकी दुबाकाने इआमतान ताइकेना।",
+      "hypothesis": "बे न देव रअ दुब तान ताइकेनाञ।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "hindi": "आप स्त्री रोग विशेषज्ञा से मिलकर जांच कराएं।",
+      "reference": "आम कुड़िकोआः डाक्टर ते जांच रिकाएमे।",
+      "hypothesis": "आम कुड़ि रोग कोः आः एटेः ते जांच केआते जोगाव केदा।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "hindi": "किंतु यह आदमी नहीं बल्कि धन और अधिकार बोलते हैं।",
+      "reference": "मगर नेया होड़ो कागि लेकिन टाका ओडो पेड़े: कजिग:",
+      "hypothesis": "मेनदो नेआ होड़ो काः ए दो का नम केदा ओड़ोः अधिकार कजि तनाः।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['अधिकार']"
+        },
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "hindi": "खेतों में गेहूं और सरसों की फसलें लहलहाती हैं।",
+      "reference": "लोयोंग कोरे गोम अर मानी रअ रोआ मजा होबा काना।",
+      "hypothesis": "कु गर रे ओड़ोः मेद् ते सर को लोः ओ च ली ब ढ़ व तना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "hindi": "शाम को मंदिर में महाआरती की गई।",
+      "reference": "सिंगि हासुर मंदिल रे दिया जुंडि लेना।",
+      "hypothesis": "आयुब रे मंदिर रे महा वत होबा जाना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['मंदिर']"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "hindi": "तो क्या मोहन भागवत की भी अवमानना हुई है?",
+      "reference": "तोबे मोहन भागवत राःओ माइन बागाड़ाओजाना?",
+      "hypothesis": "दो चानाः फिलिम निर रआः गोनोङ ओ रानु तानाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "hindi": "भावनायें आदमी में मुस्कान बिखेरती हैं।",
+      "reference": "भावना होड़ो रे लंदा पासराव याय",
+      "hypothesis": "उड़ुः होड़ो को रे दुबोः लेका गे हि रि ङ तना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "hindi": "ओजी पहले क्यों नहीं बताया कि आप तमंचे बनाते हैं।",
+      "reference": "चि हाले! सिदा चिनअः मेनते कम उदुब् केदा चि अम तमंचे बइया।",
+      "hypothesis": "ओ जी सिदा चानाः मेनते का उदुब तानिः चि आम विषय को मेनाः।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "hindi": "मत्त गजराज ने उठाकर उन्हें मस्तक पर रख लिया।",
+      "reference": "मरंग होड़ो इनि दोंदों केआते अएआ: बो: रे जोगाव कि: आ।",
+      "hypothesis": "म क् शा राज केआते इनिः अ खिलाफ रे जोगाव केदा।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "hindi": "सभी पुलिस वाले जांच में लगे हैं।",
+      "reference": "सोबेन पुलिसरेनको जाँचरे लागाओकाना।",
+      "hypothesis": "सोबेन पुलिस को जांच रे रिका तना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['पुलिस', 'जांच']"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "hindi": "और जो दौड़ में है।",
+      "reference": "ओड़ोः ओकोए निर रे मेनाइः।",
+      "hypothesis": "ओड़ोः ओकोआ निर जन रे मेनाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "hindi": "बस वहाँ कोई नहीं है जो कभी",
+      "reference": "बस एनता: रे जेतय बंकोवा जे ची जा हुलंग",
+      "hypothesis": "बस एनताः जान का तानाः ओकोए काएः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "hindi": "वे दो टीमों में बंटकर दायित्व निभा रहे थे।",
+      "reference": "इनकुः बारिआ टीम रे हाटिङ कोःआते बारोम गोआकान ताइना।",
+      "hypothesis": "इनकु बर टीम रे बोरो को रिका जदा।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "hindi": "वरना आज वह दादी बनी कहानियाँ सुनाती होती।",
+      "reference": "एनादो होनंग इसिंग इनि जियंग बइकेद् कहानी उदुबाकते ते होनंग।",
+      "hypothesis": "मेनदो तिसिङ इनिः दुराङ माराङ सानाङ तानाएः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "hindi": "विदेशी कर्ज की देनदारी कम होगी।",
+      "reference": "विदेषी रिंड़ि रआः देनदारी घाटाओःआ।",
+      "hypothesis": "विदेशी कर् ज राः टुनडु हुड़िङ कोम होबाओआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['विदेशी']"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "hindi": "इसका उपयोग नहीं किया जा रहा है।",
+      "reference": "नेआरे: उपयोग का होबाओताना।",
+      "hypothesis": "नेआ रेआः जगर का रिका तना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "hindi": "कमोडिटी मार्केट में कहां होगी कमाई",
+      "reference": "कमोडिटी पिटि रे कोता: ते पैसा नमो:आ।",
+      "hypothesis": "नेका टी स बाजार रे कोताः ताइना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_TENSE",
+          "detail": "Future tense inflection missing in hyp"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "hindi": "भाभी तब तक उठ चुकी थीं।",
+      "reference": "हिलि एन लोः दो बिरिद लेनाएः।",
+      "hypothesis": "बु वार जाकेद लोः ते सेन तान ताइकेना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "hindi": "पुर्नवास का मतलब यह तो कतई नहीं।",
+      "reference": "थनियर बसा रिका रेअः माने नेया दो कहा गे।",
+      "hypothesis": "पु ड़ि न जी राः मतलब का दो का ताइकेना।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['मतलब']"
+        },
+        {
+          "type": "NEGATION_ERROR",
+          "detail": "Source neg=False, Hyp neg=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "hindi": "पैसे के साथ दिल के भी धनी हैं प्रेमजी",
+      "reference": "टाका लोः ते जी तेओ सुगाड़ा मेनाःइ प्रेमजी",
+      "hypothesis": "टाका लोः जी राः ओ काजि मेनाः जी।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "hindi": "स्टील का दाम घटाने पर जोर",
+      "reference": "बेसे दिन सिदारे जांए कोड़ाकोलो: एपराङ होबाजाना।",
+      "hypothesis": "स्टी ल राः क्षेत्र रे बोलोः जना",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "hindi": "उन्हें अलंकृत और लच्छेदार जुमले पसन्द नहीं थे।",
+      "reference": "आए अलंकृत ओड़ो: लच्छेदार जुमलाको काए: सुकुता ताइकेना।",
+      "hypothesis": "इनिः अ टु ङ रे ओड़ोः गेल सोमाए काएः सुकु तान ताइकेना।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "NEGATION_ERROR",
+          "detail": "Source neg=True, Hyp neg=False"
+        },
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "hindi": "यह तो बात हुई हानिकारक या ऋणात्मक प्रभाव की।",
+      "reference": "नेआ दो जागार होबाजाना घाटि रआः चा घाटिओः लेकानाः।",
+      "hypothesis": "नेआ दो जागार होबाजाना रआः बालाए कोरआः गोनोङ ते प्रभाव रआः",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['प्रभाव']"
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "hindi": "यह तो मैं अभी बना देती हूं।",
+      "reference": "नेआ दो आञ ना:गे बाइ दाड़िआ।",
+      "hypothesis": "नेआ दो आञ नाः गे बाइ तादाएः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "hindi": "काम के संबंध पनपने लगे है।",
+      "reference": "कमी: रे:अ सम्बन्ध पनपाओ: तना",
+      "hypothesis": "कामि रआः जो ड़ा( दासा) को चाबा आकाना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "hindi": "एक मामूली सी घटना ने क्या गुल खिलाया।",
+      "reference": "मियद हुड़िंग लेकन कमि चिलका कमि को रिका केदा।",
+      "hypothesis": "मिआद मेद ली सी डी घटना चानाः लेल किआः।",
+      "error_count": 3,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['घटना']"
+        },
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "hindi": "तब यह सवाल नहीं पूछते आप?",
+      "reference": "एन समय ने सवाल कम कुलीया: अम?",
+      "hypothesis": "तोबे नेआ कुनुलि का कुलि दड़ि ओः अम ते आम।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "hindi": "खिलाड़ियों का काम सिर्फ खेलना होता है।",
+      "reference": "इनुतानकोआः कामि इपाएः इनुङतेआः तानाः।",
+      "hypothesis": "खिलाड़ी कोः आ कमि इनुङ लेका होबाओआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "hindi": "और चंदन उस पर लगाता बहुत वैज्ञानिक प्रक्रिया है।",
+      "reference": "ओडो चंदन एन्डे लगावआ एना बेसे मरंग वैज्ञानिक प्रक्रिया मेना।",
+      "hypothesis": "ओड़ोः चिम न एन समय रे ताइन तन तइकेना एना वैज्ञानिक कमि मेनाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "hindi": "उनकी धमनियों में केवल रक्त नहीं बह रहा था।",
+      "reference": "इनकुआ सीर रे मायोम बाइरी दो का दंग लिंगि तन ताइकेना।",
+      "hypothesis": "इनिआः मेद रे इपाएः का होबाजाना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "hindi": "नवरात्र का का काल सर्वदा उत्तम होता है।",
+      "reference": "नवरात्ररा: काल सोबेन समय उत्तमगे ताइना।",
+      "hypothesis": "नवा राः मेद् ते सोबेन समय होबाः ओ तनाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "hindi": "हमने खाली ही छोड़ी थी वह खाली जगह",
+      "reference": "इपाएरेगे बागेला:।",
+      "hypothesis": "आले हुड़िङ खोन जाकेद इनिः चेतान रे",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "hindi": "हर दल तैयारियों में मशगूल है।",
+      "reference": "सोबेन दलको तेयारि रे मेनाःकोआ।",
+      "hypothesis": "सोबेन दल तेको होनोर बड़ा व रे।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "hindi": "कौन सुरभि की दिव्य बेलि प्राणॉ मॅ गमक उठी है?",
+      "reference": "ओकोएः सुरभि राः दिव्य बेलि प्राणॉ मॉ सोआन एटेःआकान?",
+      "hypothesis": "ओकोए सु शा य राः सनंग जि ली जाः अ फ व ड़ वा",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "hindi": "तो क्या चमक रहा आकाश था",
+      "reference": "तोबे चना सिरमा रे चमकाव तान ताइकेना",
+      "hypothesis": "दो चानाः जा दांग ड़ा तान सिरमा ताइकेना।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 62,
+      "hindi": "वह बात अलग है कि उस नन्हे अतिथि के लिये",
+      "reference": "नेआ जागार बिनगा गे चि एन कुपुल होन नागेन",
+      "hypothesis": "इनिः जागार मेनाः चि एन सोमाए हुड़िङ दुकु रआः उड़ुः नागेन",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 63,
+      "hindi": "लगा प्रयोग मे कहीँ गड़बड़ हो गयी।",
+      "reference": "टोरजाना चि प्रयोग रेगे जांरे बागड़ाव जाना।",
+      "hypothesis": "होबा दड़ि ओः ते कजि रे कजि कमि तन लेका।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "hindi": "पुलिस ने दोनों को न्यायालय में पेश किया है।",
+      "reference": "पुलिस बरनकिन के न्यायालय रे अगु कि:आ।",
+      "hypothesis": "पुलिस बरनकिन किन के रे कांग्रेस रे जोगाव केदा।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 65,
+      "hindi": "शरीर रचना विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन",
+      "reference": "होड़ोमो बनइ विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन।",
+      "hypothesis": "होड़ोमो रेअः गोनोंग स ड़ न गुसिया कोअः होरा ते हं नम जना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "hindi": "जो चारों तरफ हमारे गुजर रही हैं।",
+      "reference": "जे सोबेन पड़ अलेअ रे परोम तना।",
+      "hypothesis": "ओकोआ सोबेन साः आले लोः सेसेन ताना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "hindi": "इसके लिए जिला स्तर पर विशेष उड़न दस्ते बनाए जाएंगे।",
+      "reference": "नेआ रा: नगेन ते जिला कोरेओ अपिरेअ: तेआ उपय को बइओ:व।",
+      "hypothesis": "नेआ मेनते जिला रेआः माइन होरा रे कमि बाइः ओ तना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "hindi": "युवावस्था के शुरूआती चरण में मोटापा खतरनाक",
+      "reference": "हरा सेपेड़ेदोःतन एनेटेः बेड़ा रे मोटेन पुरअः बोरोअन कजि।",
+      "hypothesis": "से पेड़ेः ते एटेः केआते टका जोम तन लेका गे लेलोः गा।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "hindi": "कठिनाइयों और मानसिक पीडा का विस्तार से जिक्र किया।",
+      "reference": "कठिनाई ओडो मानसिक हसु रा: विस्तार ते उदूब केदाय",
+      "hypothesis": "जो व नाः ओड़ोः दुकु रेआः उड़ुः ते अद् उतर जना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "hindi": "वे बिना लायसेंस के ड्राइवर हैं।",
+      "reference": "इनिः बेगार लायसेंस राः ड्राइवर मेनाःइ",
+      "hypothesis": "इनिः बेगार दाः राः पै स राः चालाओ मेनाः।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 71,
+      "hindi": "नोटवर्किंग के बेशुमार द्वार ओपन करती है।",
+      "reference": "नोटवर्किंग राः साङगि दुआरको निःएआएः।",
+      "hypothesis": "टका ते पेरेः तन कोआः इसु पुराः उड़ुः जना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "hindi": "गंगा में जैसा कि कानपुर करता है?",
+      "reference": "गंगा रे चिलका कानपुर कापीयाए?",
+      "hypothesis": "गंगा रे लेका ची गी एकदम गी तइना",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "hindi": "उसके बिना किसी की भी रचना नहीं हुई।",
+      "reference": "एना बेगर जाना का बइआकना।",
+      "hypothesis": "इनिआः बेगार जान रआः जान सोमाए का होबाजाना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "hindi": "पहले कालावस्त्र विराध एवं ष्षोक प्रदर्षनार्थ ही मान्य था।",
+      "reference": "सिदा हेंदे लीजा: विरोध ओडो दुकू नेल रिका गी मनातिंगो तइकेना",
+      "hypothesis": "सिदा रेआः कजि कमि ओड़ोः फ रि वे नि को तइकेना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "hindi": "सत्ता समय का आज्जान नहीं सुनती।",
+      "reference": "सत्ता सोम़य रेआ: कजि आयुम काए: आयुम या।",
+      "hypothesis": "सत्ता सोमाए गे लेल केआते का आयुम दाड़िआ।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 76,
+      "hindi": "लोकतंत्र का प्रसार ही सबसे बड़ी प्राथमिकता थी।",
+      "reference": "लोकतंत्र नितिरगे सोबेनाते माराङ कामि ताइकेना।",
+      "hypothesis": "लोकतंत्र रआः जागार गे सोबेनाते माराङ होड़ोको ताइकेना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "hindi": "बी मानचित्र पर अपने पिछवाड़े कीटनाशक मुक्त रखो",
+      "reference": "बी मनचित्र रे अपनअः तयोम ते जन्तु गोएः रानु अतोम चबाकम।",
+      "hypothesis": "बी मान क फोटो रे आपान ते उड़ुङ रआः सुकु दो सानाङ ताइकेना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "hindi": "चारदीवारी से घिरे स्थान को भी ख़ाना कहा जाता है।",
+      "reference": "उपुन साः ते कोटोङोकान ठांवओ ख़ाना काजिओःआ।",
+      "hypothesis": "उपुन री रेन बुरू ते क टयद् को रेओ गे को कजि तना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "hindi": "पाइलिन चक्रवात का असर बिहार में दिखने लगा है।",
+      "reference": "पाइलिन चक्रवातरा: असर बिहारे लेलो:ताना।",
+      "hypothesis": "मार् लि न चक्र वा नाः बिहार रे विरोध रे होबा दाड़िओआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['बिहार']"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "hindi": "वह दुनिया में सबसे खूबसूरत औरत",
+      "reference": "इनिःगोटा दिसुम रे सोबेनकोअएते सुगड़उतर दंगड़ी।",
+      "hypothesis": "इनिः दुनिया रे सोबेन कोआते बेसे कुड़ि होन को।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['दुनिया']"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "hindi": "कोयला घोटाले पर अदालत जा सकते हैं सुब्रह्मण्यम स्वामी",
+      "reference": "कोयला धोटाला रे अदालत सेनोः दाड़िआ सुब्रह्मण्यम स्वामी",
+      "hypothesis": "को किं रे ले बी अदालत ते मा सु ल् ती।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "hindi": "वित्तीय साक्षरता पर रिजर्व बैंक का जोर",
+      "reference": "खुरजि इनितु रे रिजर्व बैंक रआः जोर",
+      "hypothesis": "स दर सा ग रे रि जर् व बैंक राः बैंक रअ ला काना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "hindi": "हरियाणा देश का पहला ऐसा राज्य है।",
+      "reference": "हरियाणा दिसुम रआः सिदा उतार नेकान राइज तानाः।",
+      "hypothesis": "हरियाणा दिसुम रेन सिदा ने राज्य राइज मेनाः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['राज्य']"
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "hindi": "राठौड की जीत पर आतिशबाजी कर मनाई खुशियां",
+      "reference": "राठौड़ाः जीताव रे फाटका साड़िकेआतेको रासिका जाना।",
+      "hypothesis": "राः ठा ड रेआः मेद् दा रे जोगाव केआते इसु पुराः सुकु जना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "hindi": "एक दिन वे बाल कटवाने गये।",
+      "reference": "मुसिङ आए: उब लाटाबेने सेनो:जाना।",
+      "hypothesis": "मुसिंग हुलंग इनिः गे सु डा ए इदि जना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "hindi": "एक प्रकार का पागलपन के उपचार में दूसरी पीढ़ी के",
+      "reference": "मिद लेकान बालु रआः चिकिसा रे बारिआ पीढ़ी रेन",
+      "hypothesis": "मिआद लेकान ओड़ाः राः मानाराङ रे एटाः दिसुम रेन होड़ो कोआः",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "hindi": "ना ही ठूँठ अपनी पुरानी रौनक को लौटते हैं।",
+      "reference": "ठूँठ आपान पुरना रौनकते काको रोआड़ दाड़िआ।",
+      "hypothesis": "नाः गे च मी साः ते अयाः पुरना कोड़ा को हिजुः जना।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "NEGATION_ERROR",
+          "detail": "Source neg=True, Hyp neg=False"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "hindi": "वार्षिक तौर पर वेतन वृद्धि दी जाती है",
+      "reference": "सालः हिशब ते कामी पएशायो संगियेवा।",
+      "hypothesis": "बुद्ध साल रे खा ते पेरेः ओआ।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "hindi": "पुलिस बाबा को थाने लाकर पूछताछ कर रही है।",
+      "reference": "पुलिस बाबा के थाना आगु कियाते कुली बेडा जाइआको।",
+      "hypothesis": "पुलिस बाबा के थाना रे कुलि केआते कुलि बड़ा तना।",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 90,
+      "hindi": "सूचना पर अस्पताल में कई पुलिस पदाधिकारी पहुंचे।",
+      "reference": "सुचना रे अस्पताल रे चिमीन पुलिस रेन सायोब को सेटेर जाना",
+      "hypothesis": "खोबोर रे अस्पताल रे चिमिन कुड़ि किन हमला केदा।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "hindi": "सोनिया ने कहा कि भाजपा को दो बार मौका मिला।",
+      "reference": "सोनिया मेनकेदाए चि भाजपा बारसा मौका नामकेदाए।",
+      "hypothesis": "सोनिया काजिकेदा चि भाजपा किन बारिआ होनकिन निर जानाए।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=False vs hyp=True"
+        },
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "hindi": "जो बेहोश रहने वाले नहीं कह सकते।",
+      "reference": "ओको लूर सेंड़ां बनोःको कअको कजि दड़िया।",
+      "hypothesis": "ओकोआ बे हु बे तान ताइकेना चि का काजि दाड़िआ।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "WRONG_NUMBER",
+          "detail": "Plural marker (-को/-किन) ref=True vs hyp=False"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "hindi": "शरीर में स्थित वायु प्राण है।",
+      "reference": "होड़ोमो रे तइन तन होयो जीऊ ए तनअः।",
+      "hypothesis": "होड़ोमो रे होयो मेनाः जी",
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "index": 94,
+      "hindi": "और दूजी तरफ भज भज मंडली है",
+      "reference": "एटा सा: रे भज भज मंडली मेना:",
+      "hypothesis": "ओड़ोः मिसा साः गे भ ज टा म चा ली मेनअः।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "hindi": "शांति एवं सौंदर्य प्रदान करने वाला होता है।",
+      "reference": "शांति ओड़ो: सुगाड़ा ओमे नि:।",
+      "hypothesis": "रासिका ओड़ोः सुगाड़ा पेड़ेः ताइना।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "hindi": "जिम्मेदार ने इस कार्य में हजारों रुपये बचा लिया।",
+      "reference": "बारोमान होड़ो ने कामि रे हजाराते पुराः टाकाएः बानचाव केदा।",
+      "hypothesis": "ने दो ने कामि रे हजार टाका बाइ लेन ते टाका ओम केदाको।",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "hindi": "यह कमाल किसका है? चुनाव प्रणाली का।",
+      "reference": "ने कमाल ओकोया: तन:अ?चुनाव प्रणाली र:अ",
+      "hypothesis": "नेआ सारते जागार राः चुनाव मेनाः।",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "COPIED_HINDI",
+          "detail": "Copied Hindi tokens: ['चुनाव']"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "hindi": "योग्यता से या योग्यता के रूप मे",
+      "reference": "दाडियाए नि ते दाडियाए रूप रे",
+      "hypothesis": "कामि रे दो का दाड़िओः आ चि लेकाते",
+      "error_count": 2,
+      "errors": [
+        {
+          "type": "NEGATION_ERROR",
+          "detail": "Source neg=False, Hyp neg=True"
+        },
+        {
+          "type": "UNRELATED_NOUNS",
+          "detail": "Zero lexical overlap with reference"
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "hindi": "अप्रवासी भारतीय कुंद्रा लंदन के निवासी हैं।",
+      "reference": "एटअः दिसुम रे तइनतन भारतीय कुंद्रा लंदन रेन तइनोः निः तनिः",
+      "hypothesis": "अः दो एटाः भारतीय कुंद रः अ अर्थ राः गी मेनाः",
+      "error_count": 1,
+      "errors": [
+        {
+          "type": "SEMANTIC_SUBSTITUTIONS",
+          "detail": "Significant lexical drift (<35% content overlap)"
+        }
+      ]
+    }
+  ]
+}

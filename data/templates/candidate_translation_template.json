@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "record_id": "TR_FLN_00001",
+      "hindi_text": "बच्चों, ध्यान से सुनो।",
+      "mundari_text": "होपोनको, सुकुते आयूमपे।",
+      "mundari_script": "Devanagari",
+      "ipa": "/hopon-ko sukute ajum-pe/",
+      "domain": "CLASSROOM_INSTRUCTION",
+      "grade": 1,
+      "lesson_topic": "Classroom Attention Routines",
+      "source": "JCERT Primary School Supplementary Reader",
+      "source_reference": "Reader 1, Chapter 2, Page 8",
+      "license": "Government Open Educational Resource (Jharkhand)",
+      "provenance_status": "TEXTBOOK_EXTRACTED",
+      "linguistic_validation_status": "PENDING_REVIEW",
+      "educational_validation_status": "PENDING_REVIEW",
+      "acceptance_status": "SOURCE_FOUND",
+      "notes": "Instruction directed at entire classroom using plural imperative -pe."
+    }
+  ]
+}

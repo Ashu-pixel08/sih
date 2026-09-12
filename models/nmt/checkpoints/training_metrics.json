@@ -1,0 +1,103 @@
+{
+  "model_architecture": "Transformer Encoder-Decoder (Seq2Seq)",
+  "total_parameters": 9594688,
+  "checkpoint_file": "models/nmt/checkpoints\\best_transformer.pt",
+  "total_training_time_seconds": 952.19,
+  "best_val_loss": 5.5359,
+  "best_val_ppl": 253.64,
+  "epochs": 10,
+  "batch_size": 64,
+  "device": "cpu",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 7.5122,
+      "train_ppl": 1830.3,
+      "val_loss": 6.7343,
+      "val_ppl": 840.73,
+      "epoch_seconds": 83.16,
+      "is_best": true
+    },
+    {
+      "epoch": 2,
+      "train_loss": 6.5848,
+      "train_ppl": 724.04,
+      "val_loss": 6.4419,
+      "val_ppl": 627.59,
+      "epoch_seconds": 88.6,
+      "is_best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 6.1926,
+      "train_ppl": 489.11,
+      "val_loss": 6.0934,
+      "val_ppl": 442.94,
+      "epoch_seconds": 89.91,
+      "is_best": true
+    },
+    {
+      "epoch": 4,
+      "train_loss": 5.7748,
+      "train_ppl": 322.08,
+      "val_loss": 5.8717,
+      "val_ppl": 354.86,
+      "epoch_seconds": 91.16,
+      "is_best": true
+    },
+    {
+      "epoch": 5,
+      "train_loss": 5.4191,
+      "train_ppl": 225.69,
+      "val_loss": 5.7104,
+      "val_ppl": 301.99,
+      "epoch_seconds": 93.67,
+      "is_best": true
+    },
+    {
+      "epoch": 6,
+      "train_loss": 5.1165,
+      "train_ppl": 166.75,
+      "val_loss": 5.6426,
+      "val_ppl": 282.19,
+      "epoch_seconds": 104.14,
+      "is_best": true
+    },
+    {
+      "epoch": 7,
+      "train_loss": 4.8747,
+      "train_ppl": 130.94,
+      "val_loss": 5.5834,
+      "val_ppl": 265.98,
+      "epoch_seconds": 102.4,
+      "is_best": true
+    },
+    {
+      "epoch": 8,
+      "train_loss": 4.706,
+      "train_ppl": 110.61,
+      "val_loss": 5.5493,
+      "val_ppl": 257.06,
+      "epoch_seconds": 101.05,
+      "is_best": true
+    },
+    {
+      "epoch": 9,
+      "train_loss": 4.6032,
+      "train_ppl": 99.8,
+      "val_loss": 5.5447,
+      "val_ppl": 255.88,
+      "epoch_seconds": 99.3,
+      "is_best": true
+    },
+    {
+      "epoch": 10,
+      "train_loss": 4.5604,
+      "train_ppl": 95.62,
+      "val_loss": 5.5359,
+      "val_ppl": 253.64,
+      "epoch_seconds": 97.68,
+      "is_best": true
+    }
+  ]
+}

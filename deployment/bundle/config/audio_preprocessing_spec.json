@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "domain": "DSP_FEATURE_EXTRACTION",
+  "audio_input": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "channel_layout": "MONO",
+    "bit_depth": 16,
+    "format": "PCM_16_BIT_LE",
+    "duration_seconds": 1.0,
+    "sample_count": 16000
+  },
+  "resampling": {
+    "algorithm": "polyphase_kaiser_or_linear_interpolation",
+    "target_rate_hz": 16000
+  },
+  "stft_parameters": {
+    "frame_length_samples": 400,
+    "frame_length_ms": 25.0,
+    "hop_length_samples": 160,
+    "hop_length_ms": 10.0,
+    "fft_length": 512,
+    "window_function": "periodic_hann",
+    "symmetric": false
+  },
+  "mel_filterbank": {
+    "num_mel_bins": 64,
+    "f_min_hz": 20.0,
+    "f_max_hz": 8000.0,
+    "scale": "HTK",
+    "normalization": "slaney_area_normalized"
+  },
+  "log_compression": {
+    "formula": "log(max(power_spec, 1e-6))",
+    "base": "natural_e",
+    "epsilon": 1e-06
+  },
+  "output_tensor": {
+    "time_frames": 101,
+    "mel_bins": 64,
+    "channels": 1,
+    "shape": [
+      1,
+      101,
+      64,
+      1
+    ],
+    "dtype": "FLOAT32"
+  }
+}

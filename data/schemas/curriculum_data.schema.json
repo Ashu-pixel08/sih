@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CurriculumCompetencyRecord",
+  "description": "Schema for foundational curriculum mappings, competencies, and learning outcomes.",
+  "type": "object",
+  "required": [
+    "curriculum_id",
+    "grade",
+    "subject",
+    "lesson",
+    "competency",
+    "hindi_source_text",
+    "source_document",
+    "page_section_reference",
+    "license_provenance",
+    "validation_status"
+  ],
+  "properties": {
+    "curriculum_id": {
+      "type": "string",
+      "pattern": "^CURR_[A-Z0-9_]+$"
+    },
+    "grade": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "Foundational_Numeracy",
+        "Foundational_Literacy",
+        "Classroom_Language",
+        "Environmental_Studies"
+      ]
+    },
+    "lesson": {
+      "type": "string",
+      "minLength": 2
+    },
+    "competency": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Competency title and description aligned with NIPUN Bharat"
+    },
+    "nipun_code": {
+      "type": "string",
+      "description": "NIPUN Bharat competency code (e.g. M1.1, L1.3)"
+    },
+    "hindi_source_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mundari_source_text": {
+      "type": "string",
+      "description": "Attested Mundari curriculum translation if available in state reader"
+    },
+    "source_document": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Official document title (e.g. JCERT Chandni Grade 1, NIPUN Lakshya Guidelines)"
+    },
+    "page_section_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_provenance": {
+      "type": "string",
+      "minLength": 2
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "PROVISIONAL_MAPPING",
+        "CURRICULUM_VERIFIED",
+        "REJECTED"
+      ],
+      "default": "PROVISIONAL_MAPPING"
+    }
+  }
+}

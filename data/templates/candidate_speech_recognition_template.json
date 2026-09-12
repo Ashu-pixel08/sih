@@ -1,0 +1,24 @@
+{
+  "utterances": [
+    {
+      "audio_id": "SPK_UTT_0001",
+      "transcript": "मिअद",
+      "language": "unr",
+      "class_label": "num_01",
+      "class_index": 1,
+      "speaker_id": "SPK_UNR_CHILD_04",
+      "speaker_age": 7,
+      "speaker_gender": "CHILD_FEMALE",
+      "dialect": "Hasada",
+      "recording_condition": "CLASSROOM_MURMUR",
+      "microphone_device": "Budget Android smartphone built-in mic",
+      "snr_db": 18.5,
+      "split_assignment": "TRAIN",
+      "sample_rate": 16000,
+      "duration_sec": 0.85,
+      "license": "CC-BY-4.0",
+      "consent_provenance": "Parental consent agreement form ref SIH-PCR-004",
+      "speech_status": "QUALITY_CHECKED"
+    }
+  ]
+}

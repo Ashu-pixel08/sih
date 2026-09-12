@@ -1,0 +1,86 @@
+{
+  "worksheet_id": "WS_05_MISSING_NUMBERS",
+  "title_hi": "कार्यपत्रक ५: छूटी हुई संख्याएँ भरें",
+  "title_unr": "कामि साकाम ५: अदआकान लेका पेरेःपे",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "target_competency": "M1.4 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+  "generation_seed": 46,
+  "provenance_status": "GENERATED_PROTOTYPE (PENDING HUMAN VALIDATION)",
+  "problems": [
+    {
+      "problem_id": "missing_01",
+      "problem_type": "missing_numbers",
+      "instruction_hi": "रेलगाड़ी के छूटे हुए डिब्बों में सही संख्या लिखें:",
+      "instruction_unr": "गाड़ी राः अदआकान डिब्बा रे सोझोः लेका ओलपे:",
+      "prompt_data": {
+        "sequence_with_gaps": [
+          1,
+          null,
+          3,
+          4,
+          null,
+          6,
+          7,
+          null,
+          9,
+          10
+        ],
+        "missing_numbers": [
+          2,
+          5,
+          8
+        ],
+        "missing_mundari_words": [
+          "बारिया",
+          "मोड़ेया",
+          "इरालिया"
+        ]
+      },
+      "options": null,
+      "solution": [
+        2,
+        5,
+        8
+      ]
+    },
+    {
+      "problem_id": "missing_02",
+      "problem_type": "missing_numbers",
+      "instruction_hi": "रेलगाड़ी के छूटे हुए डिब्बों में सही संख्या लिखें:",
+      "instruction_unr": "गाड़ी राः अदआकान डिब्बा रे सोझोः लेका ओलपे:",
+      "prompt_data": {
+        "sequence_with_gaps": [
+          11,
+          12,
+          null,
+          14,
+          15,
+          null,
+          17,
+          18,
+          null,
+          20
+        ],
+        "missing_numbers": [
+          13,
+          16,
+          19
+        ],
+        "missing_mundari_words": [
+          "गेल अपिया",
+          "गेल तुरिया",
+          "गेल अरेया"
+        ]
+      },
+      "options": null,
+      "solution": [
+        13,
+        16,
+        19
+      ]
+    }
+  ]
+}

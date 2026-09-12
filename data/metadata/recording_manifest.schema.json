@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sih260042.gov.in/schemas/recording_manifest.schema.json",
+  "title": "SIH260042 Recording Manifest Schema",
+  "description": "Formal schema for field-collected Mundari speech recordings and native-speaker annotation records.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "project_code",
+    "language_code",
+    "generated_date",
+    "total_recordings",
+    "recordings"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "project_code": {
+      "type": "string",
+      "const": "SIH260042"
+    },
+    "language_code": {
+      "type": "string",
+      "const": "unr"
+    },
+    "generated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_recordings": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "accepted_count": { "type": "integer", "minimum": 0 },
+        "unreviewed_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "total_duration_minutes": { "type": "number", "minimum": 0 }
+      }
+    },
+    "recordings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "recording_id",
+          "file_path",
+          "speaker_id",
+          "speaker_group",
+          "class_index",
+          "label_id",
+          "prompt_type",
+          "prompt_text",
+          "transcribed_text",
+          "audio_metrics",
+          "review"
+        ],
+        "properties": {
+          "recording_id": {
+            "type": "string",
+            "pattern": "^REC_[A-Z0-9_]+$"
+          },
+          "file_path": {
+            "type": "string"
+          },
+          "speaker_id": {
+            "type": "string",
+            "pattern": "^SPK_[FMC][0-9]{2,}$"
+          },
+          "speaker_group": {
+            "type": "string",
+            "enum": ["CHILD_GIRL", "CHILD_BOY", "ADULT_FEMALE", "ADULT_MALE", "ENVIRONMENTAL_BG"]
+          },
+          "class_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label_id": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "prompt_type": {
+            "type": "string",
+            "enum": ["ISOLATED_WORD", "CARRIER_PHRASE", "BACKGROUND_NOISE"]
+          },
+          "prompt_text": {
+            "type": "string"
+          },
+          "transcribed_text": {
+            "type": "string"
+          },
+          "phonetic_transcription": {
+            "type": "string"
+          },
+          "dialect_region": {
+            "type": "string"
+          },
+          "audio_metrics": {
+            "type": "object",
+            "required": [
+              "sample_rate_hz",
+              "channels",
+              "bit_depth",
+              "duration_ms",
+              "rms_dbfs",
+              "peak_dbfs",
+              "snr_db",
+              "clipping_detected"
+            ],
+            "properties": {
+              "sample_rate_hz": { "type": "integer", "minimum": 1 },
+              "channels": { "type": "integer", "minimum": 1 },
+              "bit_depth": { "type": "integer", "minimum": 1 },
+              "duration_ms": { "type": "number", "minimum": 0 },
+              "rms_dbfs": { "type": "number", "maximum": 0.0 },
+              "peak_dbfs": { "type": "number", "maximum": 0.0 },
+              "snr_db": { "type": "number" },
+              "clipping_detected": { "type": "boolean" },
+              "dc_offset": { "type": "number" }
+            }
+          },
+          "review": {
+            "type": "object",
+            "required": [
+              "status",
+              "reviewer_id",
+              "timestamp_iso"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "UNREVIEWED",
+                  "ACCEPTED",
+                  "REQUIRES_CORRECTION",
+                  "REJECTED_TECHNICAL",
+                  "REJECTED_LINGUISTIC"
+                ]
+              },
+              "reviewer_id": { "type": "string" },
+              "pronunciation_quality": {
+                "type": "string",
+                "enum": ["EXCELLENT_NATIVE", "ACCEPTABLE_NATIVE", "ACCENTED", "INCORRECT"]
+              },
+              "timestamp_iso": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

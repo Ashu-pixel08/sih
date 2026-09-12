@@ -1,0 +1,27 @@
+{
+  "recordings": [
+    {
+      "audio_id": "AUD_UNR_NUM_01",
+      "linked_text_record_id": "num_01",
+      "hindi_text": "एक",
+      "mundari_text": "मिअद",
+      "speaker_id": "SPK_UNR_F_01",
+      "speaker_age": 26,
+      "speaker_gender": "FEMALE",
+      "native_language": "Mundari",
+      "dialect": "Hasada",
+      "district_region": "Khunti",
+      "recording_environment": "STUDIO_ACOUSTIC_TREATED",
+      "sample_rate": 16000,
+      "bit_depth": 16,
+      "channels": 1,
+      "duration_ms": 640,
+      "file_format": "WAV",
+      "synthetic_or_authentic": "AUTHENTIC_NATIVE",
+      "validation_status": "AUTHENTIC_VALIDATED",
+      "license": "CC-BY-4.0",
+      "consent_license_info": "Signed Participant Informed Consent Protocol SIH260042-AUD-2026",
+      "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

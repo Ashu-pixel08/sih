@@ -1,0 +1,58 @@
+{
+  "total_samples": 182,
+  "class_distribution": {
+    "class_00 (_background_)": 182,
+    "class_01 (num_01)": 0,
+    "class_02 (num_02)": 0,
+    "class_03 (num_03)": 0,
+    "class_04 (num_04)": 0,
+    "class_05 (num_05)": 0,
+    "class_06 (num_06)": 0,
+    "class_07 (num_07)": 0,
+    "class_08 (num_08)": 0,
+    "class_09 (num_09)": 0,
+    "class_10 (num_10)": 0,
+    "class_11 (num_11)": 0,
+    "class_12 (num_12)": 0,
+    "class_13 (num_13)": 0,
+    "class_14 (num_14)": 0,
+    "class_15 (num_15)": 0,
+    "class_16 (num_16)": 0,
+    "class_17 (num_17)": 0,
+    "class_18 (num_18)": 0,
+    "class_19 (num_19)": 0,
+    "class_20 (num_20)": 0
+  },
+  "missing_class_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "missing_class_count": 20,
+  "speaker_distribution": {
+    "female": 91,
+    "male": 91
+  },
+  "category_distribution": {
+    "REAL_BACKGROUND": 182
+  },
+  "sufficiency_status": "MISSING \u2014 SUFFICIENT LABELED 1\u201320 SPEECH DATA",
+  "policy_note": "ZERO isolated 1-20 speech recordings exist in the public sample. Production accuracy claims on 1-20 are strictly prohibited until real audio is supplied."
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NativeAudioRecord",
+  "description": "Schema for authentic native speaker audio assets.",
+  "type": "object",
+  "required": [
+    "audio_id",
+    "linked_text_record_id",
+    "hindi_text",
+    "mundari_text",
+    "speaker_id",
+    "speaker_age",
+    "speaker_gender",
+    "native_language",
+    "dialect",
+    "recording_environment",
+    "sample_rate",
+    "bit_depth",
+    "channels",
+    "duration_ms",
+    "file_format",
+    "synthetic_or_authentic",
+    "validation_status",
+    "consent_license_info"
+  ],
+  "properties": {
+    "audio_id": {
+      "type": "string",
+      "pattern": "^AUD_[A-Z0-9_]+$",
+      "description": "Audio asset identifier (e.g. AUD_UNR_NUM_01)"
+    },
+    "linked_text_record_id": {
+      "type": "string",
+      "description": "Foreign key to parallel text record_id or phrase_id"
+    },
+    "hindi_text": {
+      "type": "string",
+      "description": "Hindi reference prompt"
+    },
+    "mundari_text": {
+      "type": "string",
+      "description": "Mundari utterance transcribed in Devanagari"
+    },
+    "speaker_id": {
+      "type": "string",
+      "pattern": "^SPK_[A-Z0-9_]+$",
+      "description": "Anonymized speaker identifier"
+    },
+    "speaker_age": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 95
+    },
+    "speaker_gender": {
+      "type": "string",
+      "enum": [
+        "FEMALE",
+        "MALE",
+        "NON_BINARY",
+        "NOT_SPECIFIED"
+      ]
+    },
+    "native_language": {
+      "type": "string",
+      "default": "Mundari",
+      "description": "Mother tongue of the speaker"
+    },
+    "dialect": {
+      "type": "string",
+      "enum": [
+        "Hasada",
+        "Naguri",
+        "Tamaria",
+        "Kera",
+        "Standard_Jharkhand",
+        "General_Mundari"
+      ]
+    },
+    "district_region": {
+      "type": "string",
+      "description": "District in Jharkhand/Odisha if voluntarily disclosed (e.g. Khunti, Ranchi, West Singhbhum)"
+    },
+    "recording_environment": {
+      "type": "string",
+      "enum": [
+        "STUDIO_ACOUSTIC_TREATED",
+        "QUIET_INDOOR",
+        "CLASSROOM_AMBIENT",
+        "FIELD_OUTDOOR"
+      ]
+    },
+    "sample_rate": {
+      "type": "integer",
+      "enum": [
+        16000,
+        22050,
+        44100,
+        48000
+      ],
+      "description": "Sample rate in Hz (16000 required for on-device deployment)"
+    },
+    "bit_depth": {
+      "type": "integer",
+      "enum": [
+        16,
+        24,
+        32
+      ],
+      "description": "Bit depth per sample (16 bit required for runtime)"
+    },
+    "channels": {
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ],
+      "default": 1,
+      "description": "Channel count (must be mono / 1)"
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 60000,
+      "description": "Duration in milliseconds"
+    },
+    "file_format": {
+      "type": "string",
+      "enum": [
+        "WAV",
+        "OGG",
+        "FLAC"
+      ],
+      "default": "WAV"
+    },
+    "synthetic_or_authentic": {
+      "type": "string",
+      "enum": [
+        "AUTHENTIC_NATIVE",
+        "SYNTHETIC_PROTOTYPE"
+      ],
+      "description": "Hard barrier: never label synthetic audio as authentic"
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "SYNTHETIC_PROTOTYPE",
+        "AUTHENTIC_UNVALIDATED",
+        "AUTHENTIC_VALIDATED",
+        "REJECTED"
+      ]
+    },
+    "consent_license_info": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Informed consent reference and distribution license agreement"
+    },
+    "file_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA256 checksum of physical audio file"
+    }
+  }
+}

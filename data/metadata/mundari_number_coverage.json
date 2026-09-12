@@ -1,0 +1,737 @@
+{
+  "audit_version": "1.0.0",
+  "audit_date": "2026-09-04",
+  "audited_corpus": "dataset-mundari-tts (data-sample 200 takes) + dataset-hindi-mundari-translation (17,682 pairs)",
+  "total_numbers_audited": 20,
+  "isolated_recordings_total": 0,
+  "contextual_recordings_total": 25,
+  "numbers_with_isolated_audio_count": 0,
+  "numbers_with_any_speech_count": 7,
+  "numbers_missing_any_speech_count": 13,
+  "numbers": {
+    "1": {
+      "number": 1,
+      "hindi_numeral": "एक",
+      "canonical_candidate_form": "मिअद",
+      "mundari_root": "मिद",
+      "phonetic_transcription": "miad",
+      "alternate_forms": [
+        "मियद",
+        "मिद",
+        "मोयोद",
+        "मोसा"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 1,
+      "speech_speakers_count": 1,
+      "speech_speakers": [
+        "female"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 1,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 459,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_15012.wav",
+          "text": "मुखौटा अर बांड संरेखण प्रणाली मोयोद एटा लेकान बोरोडो",
+          "matched_forms": [
+            "मोयोद"
+          ],
+          "duration_sec": 4.59,
+          "is_isolated": false
+        }
+      ]
+    },
+    "2": {
+      "number": 2,
+      "hindi_numeral": "दो",
+      "canonical_candidate_form": "बारिया",
+      "mundari_root": "बार",
+      "phonetic_transcription": "baria",
+      "alternate_forms": [
+        "बरिया",
+        "बार",
+        "बर"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 16,
+      "speech_speakers_count": 2,
+      "speech_speakers": [
+        "female",
+        "male"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 16,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 838,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_11358.wav",
+          "text": "बारिआ ट्रककिनाः टेपेला रे मिआद हारतानिः गोएःजाना।",
+          "matched_forms": [
+            "बार"
+          ],
+          "duration_sec": 5.39,
+          "is_isolated": false
+        },
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_13350.wav",
+          "text": "आञ बारानकिन माइनकिनाञ।",
+          "matched_forms": [
+            "बार"
+          ],
+          "duration_sec": 2.49,
+          "is_isolated": false
+        },
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_15340.wav",
+          "text": "बरखा बेसे उदास ताइनतानताइकेन नेआ जागारते।",
+          "matched_forms": [
+            "बर"
+          ],
+          "duration_sec": 3.83,
+          "is_isolated": false
+        }
+      ]
+    },
+    "3": {
+      "number": 3,
+      "hindi_numeral": "तीन",
+      "canonical_candidate_form": "अपिया",
+      "mundari_root": "अपि",
+      "phonetic_transcription": "apia",
+      "alternate_forms": [
+        "अपि"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 2,
+      "speech_speakers_count": 2,
+      "speech_speakers": [
+        "female",
+        "male"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 2,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 65,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_6869.wav",
+          "text": "नेआ रा: नगेन ते जिला कोरेओ अपिरेअ: तेआ उपय को बइओ:व।",
+          "matched_forms": [
+            "अपि"
+          ],
+          "duration_sec": 4.81,
+          "is_isolated": false
+        },
+        {
+          "speaker": "male",
+          "wav": "data\\raw\\speech\\data-sample\\male\\male_3855.wav",
+          "text": "पतंग अपिर नि नेआ आसे मेनते हिजु: गाए।",
+          "matched_forms": [
+            "अपि"
+          ],
+          "duration_sec": 3.013,
+          "is_isolated": false
+        }
+      ]
+    },
+    "4": {
+      "number": 4,
+      "hindi_numeral": "चार",
+      "canonical_candidate_form": "उपुनिया",
+      "mundari_root": "उपुन",
+      "phonetic_transcription": "upunia",
+      "alternate_forms": [
+        "उपुन"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 2,
+      "speech_speakers_count": 2,
+      "speech_speakers": [
+        "female",
+        "male"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 2,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 52,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_15781.wav",
+          "text": "बार उपुन सिरमा जाकेद ओड़ोः हाकाकान ताइकोआ।",
+          "matched_forms": [
+            "उपुन"
+          ],
+          "duration_sec": 4.0,
+          "is_isolated": false
+        },
+        {
+          "speaker": "male",
+          "wav": "data\\raw\\speech\\data-sample\\male\\male_12207.wav",
+          "text": "गोटा फिलिम उपुन हानाटिङ रे हाटिङाकाना।",
+          "matched_forms": [
+            "उपुन"
+          ],
+          "duration_sec": 4.15,
+          "is_isolated": false
+        }
+      ]
+    },
+    "5": {
+      "number": 5,
+      "hindi_numeral": "पाँच",
+      "canonical_candidate_form": "मोड़ेया",
+      "mundari_root": "मोड़े",
+      "phonetic_transcription": "môṛẽa",
+      "alternate_forms": [
+        "मोड़े",
+        "मोनेया",
+        "मोणे"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 45,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "6": {
+      "number": 6,
+      "hindi_numeral": "छह",
+      "canonical_candidate_form": "तुरिया",
+      "mundari_root": "तुरुइ",
+      "phonetic_transcription": "turia",
+      "alternate_forms": [
+        "तुरिआ",
+        "तुरुइ",
+        "तुरि"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 1,
+      "speech_speakers_count": 1,
+      "speech_speakers": [
+        "male"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 1,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 20,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "male",
+          "wav": "data\\raw\\speech\\data-sample\\male\\male_13286.wav",
+          "text": "आपि चांडुः आते तुरि चांडुः जाकेद।",
+          "matched_forms": [
+            "तुरि"
+          ],
+          "duration_sec": 2.95,
+          "is_isolated": false
+        }
+      ]
+    },
+    "7": {
+      "number": 7,
+      "hindi_numeral": "सात",
+      "canonical_candidate_form": "एयाएया",
+      "mundari_root": "एयाए",
+      "phonetic_transcription": "ēyāēa",
+      "alternate_forms": [
+        "एयाए",
+        "एया"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 22,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "8": {
+      "number": 8,
+      "hindi_numeral": "आठ",
+      "canonical_candidate_form": "इरालिया",
+      "mundari_root": "इरल",
+      "phonetic_transcription": "iralia",
+      "alternate_forms": [
+        "इरालिआ",
+        "इरल"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 6,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "9": {
+      "number": 9,
+      "hindi_numeral": "नौ",
+      "canonical_candidate_form": "अरेया",
+      "mundari_root": "अरे",
+      "phonetic_transcription": "area",
+      "alternate_forms": [
+        "अरेआ",
+        "अरे"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 12,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "10": {
+      "number": 10,
+      "hindi_numeral": "दस",
+      "canonical_candidate_form": "गेलेया",
+      "mundari_root": "गेल",
+      "phonetic_transcription": "geleya",
+      "alternate_forms": [
+        "गेलेआ",
+        "गेल"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 2,
+      "speech_speakers_count": 2,
+      "speech_speakers": [
+        "female",
+        "male"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 2,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 96,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_17593.wav",
+          "text": "ओकोआरे जीदन रआः पूरा बार गेल सिरमाञ पारोमकेदा।",
+          "matched_forms": [
+            "गेल"
+          ],
+          "duration_sec": 3.97,
+          "is_isolated": false
+        },
+        {
+          "speaker": "male",
+          "wav": "data\\raw\\speech\\data-sample\\male\\male_1523.wav",
+          "text": "ओकोआ बारगेलमिआद सानाए रे चाबाओआ।",
+          "matched_forms": [
+            "गेल"
+          ],
+          "duration_sec": 3.45,
+          "is_isolated": false
+        }
+      ]
+    },
+    "11": {
+      "number": 11,
+      "hindi_numeral": "ग्यारह",
+      "canonical_candidate_form": "गेल मिअद",
+      "mundari_root": "गेल मिद",
+      "phonetic_transcription": "gel miad",
+      "alternate_forms": [
+        "गेल मिद",
+        "गेल मियद"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 0,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "12": {
+      "number": 12,
+      "hindi_numeral": "बारह",
+      "canonical_candidate_form": "गेल बारिया",
+      "mundari_root": "गेल बार",
+      "phonetic_transcription": "gel baria",
+      "alternate_forms": [
+        "गेल बार",
+        "गेल बरिया"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 3,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "13": {
+      "number": 13,
+      "hindi_numeral": "तेरह",
+      "canonical_candidate_form": "गेल अपिया",
+      "mundari_root": "गेल अपि",
+      "phonetic_transcription": "gel apia",
+      "alternate_forms": [
+        "गेल अपि"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 0,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "14": {
+      "number": 14,
+      "hindi_numeral": "चौदह",
+      "canonical_candidate_form": "गेल उपुनिया",
+      "mundari_root": "गेल उपुन",
+      "phonetic_transcription": "gel upunia",
+      "alternate_forms": [
+        "गेल उपुन",
+        "गेलउपुनिया"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 2,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "15": {
+      "number": 15,
+      "hindi_numeral": "पंद्रह",
+      "canonical_candidate_form": "गेल मोड़ेया",
+      "mundari_root": "गेल मोड़े",
+      "phonetic_transcription": "gel môṛẽa",
+      "alternate_forms": [
+        "गेल मोड़े"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 2,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "16": {
+      "number": 16,
+      "hindi_numeral": "सोलह",
+      "canonical_candidate_form": "गेल तुरिया",
+      "mundari_root": "गेल तुरुइ",
+      "phonetic_transcription": "gel turia",
+      "alternate_forms": [
+        "गेल तुरुइ",
+        "गेल तुरि"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 0,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "17": {
+      "number": 17,
+      "hindi_numeral": "सत्रह",
+      "canonical_candidate_form": "गेल एयाएया",
+      "mundari_root": "गेल एयाए",
+      "phonetic_transcription": "gel ēyāēa",
+      "alternate_forms": [
+        "गेल एयाए"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 0,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "18": {
+      "number": 18,
+      "hindi_numeral": "अठारह",
+      "canonical_candidate_form": "गेल इरालिया",
+      "mundari_root": "गेल इरल",
+      "phonetic_transcription": "gel iralia",
+      "alternate_forms": [
+        "गेल इरल",
+        "गेल इरालिआ"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 1,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "19": {
+      "number": 19,
+      "hindi_numeral": "उन्नीस",
+      "canonical_candidate_form": "गेल अरेया",
+      "mundari_root": "गेल अरे",
+      "phonetic_transcription": "gel area",
+      "alternate_forms": [
+        "गेल अरे"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 0,
+      "speech_speakers_count": 0,
+      "speech_speakers": [],
+      "isolated_recordings": 0,
+      "contextual_recordings": 0,
+      "transcript_availability": "TEXT_ONLY_IN_PARALLEL_CORPUS",
+      "linguistic_status": "LINGUISTICALLY_REVIEWED_REGULAR_COMPOUND",
+      "parallel_corpus_occurrences": 0,
+      "audio_quality": "NO_RECORDINGS_AVAILABLE",
+      "training_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA (Missing genuine speech samples)",
+      "evaluation_suitability": "UNSUITABLE_NO_ACOUSTIC_DATA",
+      "contextual_sample_takes": []
+    },
+    "20": {
+      "number": 20,
+      "hindi_numeral": "बीस",
+      "canonical_candidate_form": "हिसि",
+      "mundari_root": "हिसि",
+      "phonetic_transcription": "hisi",
+      "alternate_forms": [
+        "बार गेल",
+        "कुरी"
+      ],
+      "sources": [
+        "dataset-hindi-mundari-translation",
+        "dataset-mundari-tts (data-sample)",
+        "Hoffman Encyclopaedia Mundarica",
+        "Swaminathan CIIL Mundari Grammar"
+      ],
+      "speech_recordings_count": 1,
+      "speech_speakers_count": 1,
+      "speech_speakers": [
+        "female"
+      ],
+      "isolated_recordings": 0,
+      "contextual_recordings": 1,
+      "transcript_availability": "AVAILABLE_DEVNAGARI",
+      "linguistic_status": "CORPUS_ATTESTED",
+      "parallel_corpus_occurrences": 38,
+      "audio_quality": "STUDIO_44.1KHZ_CLEAN",
+      "training_suitability": "UNSUITABLE_FOR_EDGE_ISOLATED_CLASSIFIER (Embedded in multi-word sentence; needs segmentation/isolation)",
+      "evaluation_suitability": "BENCHMARK_REFERENCE_ONLY",
+      "contextual_sample_takes": [
+        {
+          "speaker": "female",
+          "wav": "data\\raw\\speech\\data-sample\\female\\female_17593.wav",
+          "text": "ओकोआरे जीदन रआः पूरा बार गेल सिरमाञ पारोमकेदा।",
+          "matched_forms": [
+            "बार गेल"
+          ],
+          "duration_sec": 3.97,
+          "is_isolated": false
+        }
+      ]
+    }
+  }
+}

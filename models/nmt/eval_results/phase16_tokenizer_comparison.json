@@ -1,0 +1,233 @@
+{
+  "mt5_vocab_size": 250100,
+  "model_b_hi_vocab_size": 6000,
+  "model_b_mun_vocab_size": 8000,
+  "results": [
+    {
+      "word": "साइबर",
+      "mt5": {
+        "tokens": [
+          "▁साइ",
+          "बर"
+        ],
+        "token_count": 2,
+        "ids": [
+          99769,
+          18019
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "साइ",
+          "बर"
+        ],
+        "token_count": 2,
+        "ids": [
+          800,
+          451
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "साइ",
+          "बर"
+        ],
+        "token_count": 2,
+        "ids": [
+          636,
+          373
+        ]
+      }
+    },
+    {
+      "word": "सिक्योरिटी",
+      "mt5": {
+        "tokens": [
+          "▁",
+          "सिक",
+          "्यो",
+          "र",
+          "िटी"
+        ],
+        "token_count": 5,
+        "ids": [
+          259,
+          39706,
+          27708,
+          996,
+          52921
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "सि",
+          "क्यो",
+          "रिटी"
+        ],
+        "token_count": 3,
+        "ids": [
+          235,
+          4413,
+          4071
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "सिक्",
+          "यो",
+          "रिटी"
+        ],
+        "token_count": 3,
+        "ids": [
+          7460,
+          186,
+          6048
+        ]
+      }
+    },
+    {
+      "word": "सब्जेक्ट",
+      "mt5": {
+        "tokens": [
+          "▁सब",
+          "्ज",
+          "ेक्ट"
+        ],
+        "token_count": 3,
+        "ids": [
+          8559,
+          114198,
+          71796
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "सब्",
+          "जेक्ट"
+        ],
+        "token_count": 2,
+        "ids": [
+          2627,
+          4582
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "सब्",
+          "जेक्ट"
+        ],
+        "token_count": 2,
+        "ids": [
+          2302,
+          4616
+        ]
+      }
+    },
+    {
+      "word": "गाना",
+      "mt5": {
+        "tokens": [
+          "▁ग",
+          "ाना"
+        ],
+        "token_count": 2,
+        "ids": [
+          1462,
+          43188
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "गाना"
+        ],
+        "token_count": 1,
+        "ids": [
+          3352
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "गा",
+          "ना"
+        ],
+        "token_count": 2,
+        "ids": [
+          155,
+          132
+        ]
+      }
+    },
+    {
+      "word": "गाएंगे",
+      "mt5": {
+        "tokens": [
+          "▁ग",
+          "ाएं",
+          "गे"
+        ],
+        "token_count": 3,
+        "ids": [
+          1462,
+          53004,
+          18919
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "गा",
+          "एंगे"
+        ],
+        "token_count": 2,
+        "ids": [
+          188,
+          2443
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "गाए",
+          "ंगे"
+        ],
+        "token_count": 2,
+        "ids": [
+          4489,
+          450
+        ]
+      }
+    },
+    {
+      "word": "खतरनाक",
+      "mt5": {
+        "tokens": [
+          "▁ख",
+          "तर",
+          "नाक"
+        ],
+        "token_count": 3,
+        "ids": [
+          4648,
+          31867,
+          119404
+        ]
+      },
+      "model_b_hindi_bPE": {
+        "tokens": [
+          "खतरनाक"
+        ],
+        "token_count": 1,
+        "ids": [
+          2551
+        ]
+      },
+      "model_b_mundari_bPE": {
+        "tokens": [
+          "खतरनाक"
+        ],
+        "token_count": 1,
+        "ids": [
+          4318
+        ]
+      }
+    }
+  ]
+}

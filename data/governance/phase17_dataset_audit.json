@@ -1,0 +1,453 @@
+{
+  "audit_version": "1.0.0",
+  "phase": "PHASE_17_DATASET_AUDIT",
+  "date": "2026-09-09",
+  "governance_mandate": "Strict audit against DATA_INTAKE_CONTRACT. Zero production model modification.",
+  "summary": {
+    "total_resources_audited": 7,
+    "primary_resources": 4,
+    "secondary_resources": 3,
+    "decisions": {
+      "APPROVED_FOR_TRAINING_CANDIDATE": 0,
+      "REFERENCE_ONLY": 2,
+      "EVALUATION_ONLY": 0,
+      "LICENSE_REVIEW_REQUIRED": 1,
+      "ACCESS_UNCLEAR": 1,
+      "DO_NOT_USE": 3
+    }
+  },
+  "resources": [
+    {
+      "source_id": "RES-01-SEALANG",
+      "resource_name": "SEAlang Munda Languages Database — Mundari",
+      "source_url": "https://sealang.net/munda/database/retrieve.pl?dialect=&format=html&language=Mundari&sort=gloss",
+      "priority_category": "PRIMARY_MUNDARI",
+      "accessibility": {
+        "access_status": "PUBLIC_WEB_TABLE",
+        "downloadable": true,
+        "staged_path": "data/incoming/sealang_mundari/sealang_mundari_lexicon.json",
+        "notes": "Publicly queryable HTML web table. Requires unverified TLS/SSL due to expired/self-signed certificate on sealang.net."
+      },
+      "language": {
+        "mundari_present": true,
+        "hindi_present": false,
+        "english_present": true,
+        "direction": "Mundari (IPA) -> English (Gloss)",
+        "script": "IPA (International Phonetic Alphabet) only. Zero Devanagari script.",
+        "dialects_present": [
+          "Mundari [Begunbari]",
+          "Mundari [Karimpur]",
+          "Mundari [Nijpara]",
+          "Mundari [Jharmunda]",
+          "Mundari [Ambajhariya]",
+          "Mundari [Bandugara]",
+          "Mundari [Chalagi]",
+          "Mundari [Darigutu]",
+          "Mundari [Shundil]",
+          "Mundari [General]"
+        ]
+      },
+      "data_type": [
+        "lexical dictionary",
+        "comparative phonetic database"
+      ],
+      "exact_quantities": {
+        "total_records": 3470,
+        "sentence_pairs": 0,
+        "words_entries": 3470,
+        "audio_hours": 0.0,
+        "images": 0
+      },
+      "license": {
+        "exact_license": "Creative Commons Open License (Portal terms) / Academic Fair Use",
+        "commercial_permitted": false,
+        "model_training_permitted": false,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": false,
+        "legal_flag": "Underlying academic monographs (Kim 2010, Pinnow 1959, Suresh 2002) have independent publisher copyrights. Aggregated SEAlang portal grants Creative Commons re-use."
+      },
+      "provenance": {
+        "original_sources": [
+          "Kim et al. (2010) Santali and Mundari Survey",
+          "Kobayashi et al. (2003)",
+          "Heinz-Jürgen Pinnow (1959) Versuch einer historischen Lautlehre der Kharia-Sprache",
+          "Suresh (2002) Bhumij & Mundari Grammar"
+        ],
+        "contributors": "Linguistic researchers, academic fieldworkers",
+        "collection_methodology": "Phonetic fieldwork elicitation across Eastern Indian villages",
+        "translation_methodology": "Linguistic glossing into English grammatical tags and base words",
+        "human_community_validation": "Peer-reviewed academic field documentation, not community-certified FLN curriculum"
+      },
+      "quality_risks": {
+        "dialect_mixing": "HIGH — Combines 10 distinct regional dialects with phonetic variations (e.g. abu vs alɛ vs ɐle)",
+        "inconsistent_spelling": "HIGH — Phonetic transcriptions reflect variable speaker realization rather than standard orthography",
+        "machine_translation": "NONE — Academic human field elicitation",
+        "english_bridge": "HIGH — English glosses only; zero Hindi alignment",
+        "domain_mismatch": "HIGH — Anthropological and comparative linguistics vocabulary rather than FLN school curriculum",
+        "synthetic_generated": "NONE"
+      },
+      "governance_decision": "REFERENCE_ONLY",
+      "nmt_usefulness": "LOW",
+      "nmt_usefulness_rationale": "Lexical wordlist only. Contains 0 sentence pairs, 0 Hindi alignment, and is transcribed in phonetic IPA rather than Devanagari. Converting dictionary entries into fake sentence pairs is explicitly forbidden. Serves solely as an authoritative phonetic and dialectological reference.",
+      "recommended_next_action": "Retain in data/incoming/sealang_mundari/ as static linguistic reference. Cross-reference for IPA pronunciation verification. Do NOT promote to training."
+    },
+    {
+      "source_id": "RES-02-KARYA-ELR1000",
+      "resource_name": "Karya ELR-1000",
+      "source_url": "https://huggingface.co/datasets/karya/ELR-1000",
+      "priority_category": "PRIMARY_MUNDARI",
+      "accessibility": {
+        "access_status": "GATED_HUGGINGFACE_AUTH_REQUIRED",
+        "downloadable": false,
+        "staged_path": "data/quarantine/karya_elr_1000/",
+        "notes": "Gated on Hugging Face (gated: auto). Anonymous requests return HTTP 401 Unauthorized. Requires authenticated user account and agreement to terms."
+      },
+      "language": {
+        "mundari_present": true,
+        "hindi_present": false,
+        "english_present": true,
+        "direction": "Mundari (Text/Audio/Images) with English metadata",
+        "script": "Devanagari / Roman orthography depending on contributor entry",
+        "dialects_present": "Eastern India indigenous rural communities"
+      },
+      "data_type": [
+        "speech/audio",
+        "monolingual Mundari",
+        "image-text",
+        "cultural/domain corpus"
+      ],
+      "exact_quantities": {
+        "total_records": 1073,
+        "mundari_subset_records": "~107 recipes (estimated 10% of 1,073 across 10 languages)",
+        "sentence_pairs": 0,
+        "audio_hours": "42.0 hours total across 10 languages (~4.2 hours Mundari)",
+        "images": "11,213 images total (~1,120 Mundari images)"
+      },
+      "license": {
+        "exact_license": "KPL BY-NC-SA-FS 1.0 (Karya Public License Non-Commercial Share-Alike Free Software 1.0)",
+        "commercial_permitted": false,
+        "model_training_permitted": true,
+        "share_alike_required": true,
+        "attribution_required": true,
+        "gating_required": true,
+        "legal_flag": "Strictly non-commercial (NC). Imposes ShareAlike (SA) and Free Software (FS / GPL-compatible) terms on incorporating software. Commercial use requires separate negotiated agreement with Karya."
+      },
+      "provenance": {
+        "original_sources": "Karya Inc., IIT Kharagpur, Microsoft Research India (Joshi et al., IJCNLP-AACL 2025, arXiv:2512.01077)",
+        "contributors": "Rural indigenous community members from Eastern India",
+        "collection_methodology": "Smartphone-based crowdsourcing with ethical fair-wage compensation ($>living wage$) and informed consent",
+        "translation_methodology": "Recipe descriptions and audio in native language",
+        "human_community_validation": "Direct community contributor validation documented"
+      },
+      "quality_risks": {
+        "dialect_mixing": "MEDIUM — Authentic regional community speech",
+        "inconsistent_spelling": "MEDIUM — Unstandardized community smartphone text inputs",
+        "machine_translation": "NONE — Authentic human speech and text",
+        "english_bridge": "NONE for source text; English metadata only",
+        "domain_mismatch": "HIGH — Purely culinary (traditional indigenous recipes, cooking steps, tools, foraging)",
+        "synthetic_generated": "NONE"
+      },
+      "governance_decision": "LICENSE_REVIEW_REQUIRED",
+      "nmt_usefulness": "LOW",
+      "nmt_usefulness_rationale": "Contains valuable native Mundari audio (~4.2 hours) and descriptive text, but contains 0 Hindi parallel sentences. It is culinary rather than primary school FLN educational domain. License imposes KPL copyleft/non-commercial restrictions that preclude unencumbered production deployment.",
+      "recommended_next_action": "Quarantine in data/quarantine/karya_elr_1000/. Log for potential future Mundari ASR acoustic evaluation once user provides HF credentials. Do NOT use for NMT training."
+    },
+    {
+      "source_id": "RES-03-KARYA-RECIPES500",
+      "resource_name": "Karya Endangered Recipes Translated 500",
+      "source_url": "https://huggingface.co/datasets/karya/endangered-recipes-translated-500",
+      "priority_category": "PRIMARY_MUNDARI",
+      "accessibility": {
+        "access_status": "GATED_HUGGINGFACE_AUTH_REQUIRED",
+        "downloadable": false,
+        "staged_path": "data/quarantine/karya_endangered_recipes_500/",
+        "notes": "Gated on Hugging Face (gated: auto). Anonymous requests return HTTP 401 Unauthorized. Access requires user HF credentials."
+      },
+      "language": {
+        "mundari_present": true,
+        "hindi_present": false,
+        "english_present": true,
+        "direction": "Mundari (unr) <-> English (en)",
+        "script": "Devanagari / Roman Mundari + Latin English",
+        "dialects_present": "Eastern India Mundari speakers"
+      },
+      "data_type": [
+        "parallel translation",
+        "image-text",
+        "cultural/domain corpus"
+      ],
+      "exact_quantities": {
+        "total_records": 500,
+        "mundari_subset_recipes": 50,
+        "mundari_images": 315,
+        "mundari_avg_images_per_recipe": 6.3,
+        "sentence_pairs": 783,
+        "audio_hours": 0.0,
+        "total_unique_ingredients": 420
+      },
+      "license": {
+        "exact_license": "CC-BY-4.0 (Creative Commons Attribution 4.0 International)",
+        "commercial_permitted": true,
+        "model_training_permitted": true,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": true,
+        "legal_flag": "Excellent open license (CC-BY-4.0). Requires only attribution to Karya and ELR-1000 paper. However, download is technically gated on Hugging Face platform."
+      },
+      "provenance": {
+        "original_sources": "Karya Inc. (2026), building upon Joshi et al. (2025)",
+        "contributors": "Native Mundari speakers and professional translators",
+        "collection_methodology": "50 indigenous recipes translated into English for recipe names, ingredients, tools, steps, and cultural notes",
+        "translation_methodology": "Human translation from Mundari into English",
+        "human_community_validation": "Verified community-led provenance with informed consent and fair compensation"
+      },
+      "quality_risks": {
+        "dialect_mixing": "LOW — Consistent community collection",
+        "inconsistent_spelling": "LOW to MEDIUM — Human translated",
+        "machine_translation": "NONE — Verified human translation",
+        "english_bridge": "CRITICAL RISK — Parallel pair is Mundari-English, NOT Hindi-Mundari. Converting to Hindi would require English->Hindi machine translation bridging, which introduces severe semantic drift.",
+        "domain_mismatch": "HIGH — Specialized culinary recipes (wild edible tubers, indigenous leafy vegetables, traditional fermentation, cooking implements) with near-zero overlap with Class 1-3 FLN literacy and numeracy.",
+        "synthetic_generated": "NONE"
+      },
+      "governance_decision": "ACCESS_UNCLEAR",
+      "nmt_usefulness": "LOW",
+      "nmt_usefulness_rationale": "Direct verification confirms exactly 50 recipes and 783 sentence pairs under CC-BY-4.0. However: (1) it is Mundari-English with 0 Hindi text; (2) using it for Hindi->Mundari would require synthetic English->Hindi back-translation, violating data-integrity rules; (3) the domain is indigenous culinary recipes with near-zero relevance to primary FLN classroom instructions; (4) files are currently gated on Hugging Face.",
+      "recommended_next_action": "Retain metadata manifest in data/quarantine/karya_endangered_recipes_500/. Do NOT ingest into training. If authenticated access is granted in future phases, could be evaluated as an English-Mundari cultural reference corpus."
+    },
+    {
+      "source_id": "RES-04-ASJP",
+      "resource_name": "ASJP Database — Mundari",
+      "source_url": "https://asjp.clld.org/languages/MUNDARI",
+      "priority_category": "PRIMARY_MUNDARI",
+      "accessibility": {
+        "access_status": "PUBLIC_DIRECT_DOWNLOAD",
+        "downloadable": true,
+        "staged_path": "data/incoming/asjp_mundari/asjp_mundari_wordlist.json",
+        "notes": "Directly accessible via HTTP GET at https://asjp.clld.org/languages/MUNDARI.txt"
+      },
+      "language": {
+        "mundari_present": true,
+        "hindi_present": false,
+        "english_present": true,
+        "direction": "English (Concept) -> Mundari (ASJP Phonological Code)",
+        "script": "ASJP Simplified Phonological Code (e.g. ain, am, ale, ni i7, okoy, soben)",
+        "dialects_present": "Standard/Northern Mundari (WALS code: mun, ISO 639-3: unr)"
+      },
+      "data_type": [
+        "lexical dictionary",
+        "benchmark/evaluation",
+        "Swadesh basic vocabulary list"
+      ],
+      "exact_quantities": {
+        "total_records": 100,
+        "sentence_pairs": 0,
+        "words_entries": 100,
+        "audio_hours": 0.0,
+        "images": 0
+      },
+      "license": {
+        "exact_license": "CC-BY-4.0 (Creative Commons Attribution 4.0 International)",
+        "commercial_permitted": true,
+        "model_training_permitted": true,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": false,
+        "legal_flag": "Fully permissive open academic license (Max Planck Institute / CLLD)."
+      },
+      "provenance": {
+        "original_sources": "Peiros, Ilia (1998). Comparative Linguistics in Southeast Asia. Pacific Linguistics C-142. Canberra: Australian National University.",
+        "contributors": "Prof. Ilia Peiros, Søren Wichmann, ASJP Consortium",
+        "collection_methodology": "Rigorous lexicostatistical field transcription of 100 universal basic Swadesh concepts",
+        "translation_methodology": "Direct comparative lexical alignment",
+        "human_community_validation": "Extensively validated international benchmark for Austroasiatic linguistics"
+      },
+      "quality_risks": {
+        "dialect_mixing": "LOW — Single coherent informant/source (Peiros 1998)",
+        "inconsistent_spelling": "LOW — Standardized ASJP ASCII phonological notation",
+        "machine_translation": "NONE — Academic linguistic fieldwork",
+        "english_bridge": "MEDIUM — English concept labels only (e.g. 'I', 'you', 'we', 'water', 'sun')",
+        "domain_mismatch": "LOW for basic FLN concepts ('one', 'two', 'eat', 'drink', 'tree', 'stone'); but it contains 0 sentence context",
+        "synthetic_generated": "NONE"
+      },
+      "governance_decision": "REFERENCE_ONLY",
+      "nmt_usefulness": "LOW",
+      "nmt_usefulness_rationale": "Contains exactly 100 isolated Swadesh vocabulary words without sentences or Hindi alignment. Highly valuable as an authoritative phonological and lexical reference for grounding core pronouns (ain=आञ, am=अम, ale=आले) and numbers (miyod=मियुद, bar=बर), but completely unsuitable as parallel training data for an NMT model.",
+      "recommended_next_action": "Stage in data/incoming/asjp_mundari/ as gold-standard Swadesh lexical benchmark for pronunciation and root verification. Do NOT convert into artificial sentence pairs."
+    },
+    {
+      "source_id": "RES-05-HINDI-VISUAL-GENOME",
+      "resource_name": "Hindi Visual Genome Train",
+      "source_url": "https://huggingface.co/datasets/sahoosk/Hindi-visual-genome_Train",
+      "priority_category": "SECONDARY_NON_NMT",
+      "accessibility": {
+        "access_status": "PUBLIC_ACCESS",
+        "downloadable": true,
+        "notes": "Freely downloadable on Hugging Face (sahoosk/Hindi-visual-genome_Train)."
+      },
+      "language": {
+        "mundari_present": false,
+        "hindi_present": true,
+        "english_present": false,
+        "direction": "Image -> Hindi Caption",
+        "script": "Devanagari (Hindi)",
+        "dialects_present": "Standard Modern Hindi"
+      },
+      "data_type": [
+        "image-text",
+        "cultural/domain corpus"
+      ],
+      "exact_quantities": {
+        "total_records": 28038,
+        "sentence_pairs": 0,
+        "images": 28038,
+        "download_size_gb": 3.98,
+        "dataset_size_gb": 9.44
+      },
+      "license": {
+        "exact_license": "Creative Commons Attribution 4.0 International (CC-BY 4.0)",
+        "commercial_permitted": true,
+        "model_training_permitted": true,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": false,
+        "legal_flag": "Derived from Visual Genome dataset under CC-BY 4.0."
+      },
+      "provenance": {
+        "original_sources": "Visual Genome (Stanford) translated into Hindi (Sahoo et al.)",
+        "contributors": "Academic machine translation / post-editing contributors",
+        "collection_methodology": "Image captioning annotations aligned to COCO/Visual Genome bounding boxes",
+        "translation_methodology": "Hindi image descriptions",
+        "human_community_validation": "Computer vision academic benchmark"
+      },
+      "quality_risks": {
+        "dialect_mixing": "NONE",
+        "inconsistent_spelling": "LOW",
+        "machine_translation": "MEDIUM — Translation of English Visual Genome captions",
+        "english_bridge": "N/A",
+        "domain_mismatch": "TOTAL — General image captioning (street scenes, objects, furniture). Zero Mundari content.",
+        "synthetic_generated": "LOW"
+      },
+      "governance_decision": "DO_NOT_USE",
+      "nmt_usefulness": "NONE",
+      "nmt_usefulness_rationale": "Contains 0 Mundari text, 0 Mundari audio, and 0 Hindi-Mundari parallel data. It is a 9.44 GB image-captioning dataset for Hindi VLM/vision tasks. Completely irrelevant for Hindi->Mundari machine translation.",
+      "recommended_next_action": "Record in governance inventory as DO_NOT_USE for NMT. Do not download or stage."
+    },
+    {
+      "source_id": "RES-06-HINDI-LLAVA",
+      "resource_name": "Hindi-LLaVA-CC3M-Pretrain-595K",
+      "source_url": "https://huggingface.co/datasets/damerajee/Hindi-LLaVA-CC3M-Pretrain-595K",
+      "priority_category": "SECONDARY_NON_NMT",
+      "accessibility": {
+        "access_status": "PUBLIC_ACCESS",
+        "downloadable": true,
+        "notes": "Freely downloadable on Hugging Face (damerajee/Hindi-LLaVA-CC3M-Pretrain-595K)."
+      },
+      "language": {
+        "mundari_present": false,
+        "hindi_present": true,
+        "english_present": true,
+        "direction": "Hindi/English Multimodal VQA Conversations",
+        "script": "Devanagari (Hindi) and Latin (English)",
+        "dialects_present": "Standard Hindi"
+      },
+      "data_type": [
+        "VQA",
+        "image-text"
+      ],
+      "exact_quantities": {
+        "total_records": 595375,
+        "sentence_pairs": 0,
+        "conversations": 595375,
+        "images": "External URLs/pointers (CC3M)",
+        "dataset_size_mb": 139.1
+      },
+      "license": {
+        "exact_license": "Other / Google Conceptual Captions 3M Research Terms",
+        "commercial_permitted": false,
+        "model_training_permitted": true,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": false,
+        "legal_flag": "License tagged 'other'. Derived from Google CC3M which is restricted to non-commercial research."
+      },
+      "provenance": {
+        "original_sources": "LLaVA-Pretrain CC3M machine-translated into Hindi for VLM pretraining",
+        "contributors": "damerajee (Community HF repository)",
+        "collection_methodology": "Automated machine translation of English VQA conversations",
+        "translation_methodology": "Automated machine translation",
+        "human_community_validation": "Unverified automated translation"
+      },
+      "quality_risks": {
+        "dialect_mixing": "LOW",
+        "inconsistent_spelling": "MEDIUM — MT translation artifacts",
+        "machine_translation": "HIGH — 100% synthetic/machine-translated conversations",
+        "english_bridge": "HIGH",
+        "domain_mismatch": "TOTAL — General vision-language pretraining. Zero Mundari content.",
+        "synthetic_generated": "HIGH"
+      },
+      "governance_decision": "DO_NOT_USE",
+      "nmt_usefulness": "NONE",
+      "nmt_usefulness_rationale": "Contains 0 Mundari records. It is a machine-translated multimodal pretraining dataset for vision-language models. Unclear licensing ('other') and 100% synthetic MT provenance make it completely unviable and irrelevant for Hindi->Mundari NMT.",
+      "recommended_next_action": "Record in governance inventory as DO_NOT_USE. Do not download or stage."
+    },
+    {
+      "source_id": "RES-07-TORQUE",
+      "resource_name": "BharatGenAI TORQUE",
+      "source_url": "https://huggingface.co/datasets/bharatgenai/TORQUE",
+      "priority_category": "SECONDARY_NON_NMT",
+      "accessibility": {
+        "access_status": "PUBLIC_ACCESS",
+        "downloadable": true,
+        "notes": "Freely downloadable on Hugging Face (bharatgenai/TORQUE)."
+      },
+      "language": {
+        "mundari_present": false,
+        "hindi_present": true,
+        "english_present": true,
+        "direction": "Devanagari Document Tables -> Questions & Answers",
+        "script": "Devanagari (Hindi tables)",
+        "dialects_present": "Standard Hindi"
+      },
+      "data_type": [
+        "VQA",
+        "benchmark/evaluation",
+        "table question answering"
+      ],
+      "exact_quantities": {
+        "total_records": 1000,
+        "sentence_pairs": 0,
+        "images": 1000,
+        "table_questions": "3 questions per table"
+      },
+      "license": {
+        "exact_license": "CC-BY-4.0 (Creative Commons Attribution 4.0 International)",
+        "commercial_permitted": true,
+        "model_training_permitted": true,
+        "share_alike_required": false,
+        "attribution_required": true,
+        "gating_required": false,
+        "legal_flag": "Open permissive license (CC-BY 4.0)."
+      },
+      "provenance": {
+        "original_sources": "BharatGenAI Consortium (IndiaAI / MeitY ecosystem initiative)",
+        "contributors": "BharatGenAI researchers",
+        "collection_methodology": "Scanned Devanagari administrative tables with OCR HTML correction and QA generation",
+        "translation_methodology": "Native Hindi table QA",
+        "human_community_validation": "Academic document AI benchmark"
+      },
+      "quality_risks": {
+        "dialect_mixing": "NONE",
+        "inconsistent_spelling": "LOW",
+        "machine_translation": "NONE",
+        "english_bridge": "N/A",
+        "domain_mismatch": "TOTAL — Document table information extraction. Zero Mundari content.",
+        "synthetic_generated": "LOW"
+      },
+      "governance_decision": "DO_NOT_USE",
+      "nmt_usefulness": "NONE",
+      "nmt_usefulness_rationale": "Contains 0 Mundari records. It is a specialized benchmark for Devanagari table OCR and document question-answering. Zero utility for Hindi->Mundari machine translation.",
+      "recommended_next_action": "Record in governance inventory as DO_NOT_USE for NMT. Do not download or stage."
+    }
+  ]
+}

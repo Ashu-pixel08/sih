@@ -1,0 +1,731 @@
+[
+  {
+    "id": "QUAL_01",
+    "axis": "Future Tense",
+    "hindi": "हम सब कल नए पाठ पढ़ेंगे।",
+    "expected_concept": "1st pl. future study",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "आले सोबेन नावा इनितु( दुराङ)",
+        "score": 0.123,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "आले सोबेन को नावा काआनि को नाम लागातिङा।",
+        "score": 0.115,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "अ ले सोबेन क ल न ए पा ठा प ढ ़ा व के या ते ग् रे गो आ।",
+        "score": 0.277,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "आले सोबेन दिसुम को नागेन कामि मेनाः।",
+        "score": 0.066,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_02",
+    "axis": "Future Tense",
+    "hindi": "शिक्षक कल हमें नया पाठ सिखाएंगे।",
+    "expected_concept": "honorific future teach",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "मास्टर हागा आले नावा जागार को लेल रिका लागातिङा।",
+        "score": 0.142,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "मास्टर को आले नावा काआनि को लेल रिका लागातिङा।",
+        "score": 0.08,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "शि क् ष क ल ह न रे ना पा ठा सिंगे ल एंगा।",
+        "score": 0.358,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "श्री राज जी के अमाः सु स् मा नी ताः ते लेल केदा।",
+        "score": 0.028,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_03",
+    "axis": "Future Tense",
+    "hindi": "कल गाँव में मेला लगेगा।",
+    "expected_concept": "future village fair",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "होला हातु रे मास्टर को ताइना।",
+        "score": 0.194,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "फोटो हातु रे मे ट्रो ल एटेः जाना।",
+        "score": 0.116,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "क ल हा तु रे आञाः ला गा ति ङा।",
+        "score": 0.362,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "हातु रेन को रे बा ला रे दुब जाना।",
+        "score": 0.04,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_04",
+    "axis": "Questions",
+    "hindi": "तुम्हारा नाम क्या है?",
+    "expected_concept": "basic name inquiry",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "आमाः नुतुम चानाः मेनाः चि?",
+        "score": 0.412,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "आमाः नुतुम मेनाः चि चानाः तानाः?",
+        "score": 0.385,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "आ म हा रा ना चा नाः मेनाः चि चा नाः मेनाः।",
+        "score": 0.334,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "आम मिआद नुतुम मेनाः चि?",
+        "score": 0.097,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_05",
+    "axis": "Questions",
+    "hindi": "तुम कहाँ जा रहे हो?",
+    "expected_concept": "direction inquiry",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "अम कोताः ते होबा तना।",
+        "score": 0.257,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "आम चिलका ते ताइन ताना।",
+        "score": 0.129,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "आ म का जि ओः ताना।",
+        "score": 0.388,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "आम अम लेका होबाः आ।",
+        "score": 0.128,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_06",
+    "axis": "Questions",
+    "hindi": "इस सवाल का उत्तर कौन देगा?",
+    "expected_concept": "who will answer",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "नेआ कुनुलि रेआः विरोध ओकोए उदुब केदा।",
+        "score": 0.198,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "ने कुनुलि रेअः उड़ुः रेअः चिनअः तनअः?",
+        "score": 0.089,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "ने स वा ल राः उ त् त र कौ न दे गा हा गा ड़ा गा।",
+        "score": 0.395,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "ने दिसुम रेअः कजि चि चिनअः",
+        "score": 0.072,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_07",
+    "axis": "Negation",
+    "hindi": "मैं कभी झूठ नहीं बोलता।",
+    "expected_concept": "habitual negation",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "आञ जाआं इमतुङ काएः बुजाओ दाड़िआ।",
+        "score": 0.157,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "आञ जाआं इमतुङ काएः जागार बानोः।",
+        "score": 0.231,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "अ इंग ओ को झ ठो र का ब द लि या।",
+        "score": 0.221,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "आञ जान सोमाए का टोओर लागातिङा।",
+        "score": 0.077,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_08",
+    "axis": "Negation",
+    "hindi": "डरने की कोई बात नहीं है।",
+    "expected_concept": "existential negation",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "बोरो का जान जागार बानोः।",
+        "score": 0.367,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "सी राः जेतान जागार बानोः।",
+        "score": 0.197,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "ड र ने राः जा गार का ज गर बा नोः।",
+        "score": 0.306,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "नाः ओ रेआः जगर का बनोः।",
+        "score": 0.108,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_09",
+    "axis": "Negation",
+    "hindi": "आज कोई भी छात्र अनुपस्थित नहीं है।",
+    "expected_concept": "universal negation",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "तिसिङ जांए होनको चेतान कामि रे का होबाओआ।",
+        "score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "तिसिङ जान रेओ बिनगा कामि का ताइना।",
+        "score": 0.172,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "ति सि ङ जा न छा त्र अ नु प स् थि त का मेनाः।",
+        "score": 0.488,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "तिसिङ दो नेका का राः नुतुम का ताइना।",
+        "score": 0.085,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_10",
+    "axis": "Plural Subjects",
+    "hindi": "सब लड़के मिलकर काम कर रहे हैं।",
+    "expected_concept": "collective work",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "सोबेन कुड़ि लोः कामि एटेः केदा।",
+        "score": 0.249,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "सोबेन होन कोआः कमि को रिका जदा।",
+        "score": 0.2,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "सोबेन हो ड़ो को आः मि ल का मि रिका ता ना एः।",
+        "score": 0.365,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "सोबेन कोआः कमि को उड़ुः केदा।",
+        "score": 0.109,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_11",
+    "axis": "Plural Subjects",
+    "hindi": "गाँव के लोग नदी पर गए हैं।",
+    "expected_concept": "community movement",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "हातु रेन होड़ोको गाड़ा रे होबाजाना।",
+        "score": 0.276,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "हातु रेन होड़ोको चेतान रे दुब आकाना।",
+        "score": 0.239,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "हा तु रेन हो ड़ो को रे ग वा दी ओ आ का ना।",
+        "score": 0.306,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "हातु रेन को सोबेन कोआः रे दुब जना।",
+        "score": 0.096,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_12",
+    "axis": "Plural Subjects",
+    "hindi": "महिलाएँ गीत गा रही हैं।",
+    "expected_concept": "women singing",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "कुड़ि होड़ो को दुराङ ताना।",
+        "score": 0.246,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "कुड़ि होन कोआः उड़ुः तना।",
+        "score": 0.186,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "म हि ला एंगा गी त गा इ तु आ ना।",
+        "score": 0.282,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "कुड़ि होन कोआः जगर को उड़ुः तना।",
+        "score": 0.104,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_13",
+    "axis": "Educational Vocab",
+    "hindi": "गणित का अभ्यास करना बहुत जरूरी है।",
+    "expected_concept": "math practice",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "बादिलि रआः कामि पुराः जारूड़ु मेनाः।",
+        "score": 0.19,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "भारत राः कामि रिका बेसे माजा मेनाः।",
+        "score": 0.145,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "ग णि त का अ भ् या स केआते बे से जा रु ड़ु मेनाः।",
+        "score": 0.547,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "सोबेन कोआः जगर रेआः इसु पुराः मेनाः।",
+        "score": 0.091,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_14",
+    "axis": "Educational Vocab",
+    "hindi": "कक्षा में ध्यान से सुनना चाहिए।",
+    "expected_concept": "classroom listening",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "फोटो रे ध्यान ते आयुम लागातिङा।",
+        "score": 0.297,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "क च य रे नावा ते आयुम लागातिङा।",
+        "score": 0.164,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate B (Character-Level)": {
+        "output": "क क् षा रे ध् या न ते सु नु तु म ला गा ति ङा।",
+        "score": 0.683,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "आः रे फ ट ते बेसे पुराः गे मेनाः।",
+        "score": 0.053,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_15",
+    "axis": "Educational Vocab",
+    "hindi": "वार्षिक परीक्षा अगले महीने होगी।",
+    "expected_concept": "annual exam",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "सिरमा ताला रेआः अयर ते पेरेः तना।",
+        "score": 0.092,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "वर् ष राः सं युक्त राष्ट्र पति होबा दाड़िओआ।",
+        "score": 0.112,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "वा र् षि क प री क् षा अ गी म गे होबा ओ आ।",
+        "score": 0.537,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "अ श् ण राः वि ष् तिक प्र भ द्ध मेनाः।",
+        "score": 0.03,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_16",
+    "axis": "English Loanwords",
+    "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+    "expected_concept": "Real Failure A",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "साइ बर रेअः जरूड़ी मियद् बोरो तइना।",
+        "score": 0.093,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "सिदा सिरमा राः मि शन मिआद ख व क टि ज मेनाः।",
+        "score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "सा इ ब र सि क् य रि टी ख त र ना सोबेन को संग् रे क् ट मेनाः।",
+        "score": 0.445,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "सी ट ते मिआद माराङ माजा मेनाः।",
+        "score": 0.042,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_17",
+    "axis": "English Loanwords",
+    "hindi": "कंप्यूटर चालू करो और फाइल सेव करो।",
+    "expected_concept": "tech commands",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "कंप्यूटर टोः पे ओड़ोः स फा रः अः फ जर",
+        "score": 0.057,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "श्री कंप्यूटर ओड़ोः गोनोङ ते फॉ ट ओड़ोः",
+        "score": 0.059,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "कं प् यू ट र चा ल केआते फा इ ल ते वो ल रिका केदा ए।",
+        "score": 0.467,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "एम एस टी राः ते पे क् ट ओड़ोः",
+        "score": 0.017,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_18",
+    "axis": "English Loanwords",
+    "hindi": "डिजिटल क्लासरूम में इंटरनेट जरूरी है।",
+    "expected_concept": "digital internet",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "डि त्र ने बाबत रे स टी योजना जरूड़ी मेनअः कना।",
+        "score": 0.065,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "डि जि गॉ क् ल रे फू टी नाः जरूड़ु मेनाः।",
+        "score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "डि जि ट ल क् ला स रू म रे इं ट र ने ज रू ड़ु मेनाः।",
+        "score": 0.605,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "डि टॉ ड रे प र् स् वि क् क रे मेनाः।",
+        "score": 0.034,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_19",
+    "axis": "Longer Complex",
+    "hindi": "जब शिक्षक कक्षा में आए तो सभी बच्चे आदर से खड़े हो गए।",
+    "expected_concept": "temporal clause",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "चिमताङ मास्टर को बा रे सोबेनको ते सोबेन कोआः कुड़ि होड़ो जाना।",
+        "score": 0.164,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "चिमताङ पा क रे पा रि रे सोबेन को आपान होनको ते हिजुः जानाएः।",
+        "score": 0.127,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "चि म तु ङ शि क् षा रे आ ए स ब चे तान को आते मा रा ङ जाना।",
+        "score": 0.387,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "एन सोमाए रे डि ट को दो सोबेन लेका ते आपान गे पुराः कामि तान ताइकेना।",
+        "score": 0.053,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "QUAL_20",
+    "axis": "Longer Complex",
+    "hindi": "अगर तुम रोज मन लगाकर पढ़ाई करोगे तो परीक्षा में अच्छे अंक लाओगे।",
+    "expected_concept": "conditional study",
+    "translations": {
+      "Model B (Baseline)": {
+        "output": "जुदि आम आञाः जी रे पाड़ाओ राः सानाङ दो रासिका - बुगिन गे मेनाः।",
+        "score": 0.1,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate A (Calibrated BPE)": {
+        "output": "जुदि आम जी लेल केआते आ च रिः दो माजा ते इतु केदाएः।",
+        "score": 0.073,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      },
+      "Candidate B (Character-Level)": {
+        "output": "अ ग र अ म रो ज न ल गा ड़ा केआते प ढा व रे दो हो न को मे।",
+        "score": 0.318,
+        "qg_passed": true,
+        "qg_reasons": []
+      },
+      "Candidate C (Deep-Narrow Tied)": {
+        "output": "अम अः आ लोः ते ह र् ज म मे श रे लेल केदा।",
+        "score": 0.032,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ]
+      }
+    }
+  }
+]

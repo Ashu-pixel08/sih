@@ -1,0 +1,58 @@
+[
+  {
+    "id": "LOAN-01",
+    "target_loanword": "साइबर",
+    "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+    "expected_behavior": "Preserve loanword or reject safely",
+    "notes": "Real-world Failure A"
+  },
+  {
+    "id": "LOAN-02",
+    "target_loanword": "सिक्योरिटी",
+    "hindi": "स्कूल में सिक्योरिटी बहुत जरूरी है।",
+    "expected_behavior": "Handle English loanword 'सिक्योरिटी'",
+    "notes": "Domain: school security"
+  },
+  {
+    "id": "LOAN-03",
+    "target_loanword": "कंप्यूटर",
+    "hindi": "स्कूल में कंप्यूटर सीखना बहुत अच्छा है।",
+    "expected_behavior": "Handle English loanword 'कंप्यूटर'",
+    "notes": "Domain: FLN digital learning"
+  },
+  {
+    "id": "LOAN-04",
+    "target_loanword": "डिजिटल",
+    "hindi": "यह पाठ डिजिटल स्क्रीन पर दिखेगा।",
+    "expected_behavior": "Handle English loanword 'डिजिटल'",
+    "notes": "Domain: digital classroom"
+  },
+  {
+    "id": "LOAN-05",
+    "target_loanword": "इंटरनेट",
+    "hindi": "आज इंटरनेट से सभी बच्चे पढ़ रहे हैं।",
+    "expected_behavior": "Handle loanword 'इंटरनेट'",
+    "notes": "Domain: connectivity"
+  },
+  {
+    "id": "LOAN-06",
+    "target_loanword": "स्कूल",
+    "hindi": "कल स्कूल कौन नहीं आया था?",
+    "expected_behavior": "Handle familiar loanword 'स्कूल'",
+    "notes": "Failure C / Classroom probe"
+  },
+  {
+    "id": "LOAN-07",
+    "target_loanword": "फाइल",
+    "hindi": "इस फाइल को ध्यान से देखो।",
+    "expected_behavior": "Handle English loanword 'फाइल'",
+    "notes": "Domain: administrative"
+  },
+  {
+    "id": "LOAN-08",
+    "target_loanword": "मोबाइल",
+    "hindi": "मोबाइल पर संदेश आ गया है।",
+    "expected_behavior": "Handle loanword 'मोबाइल'",
+    "notes": "Domain: telecommunications"
+  }
+]

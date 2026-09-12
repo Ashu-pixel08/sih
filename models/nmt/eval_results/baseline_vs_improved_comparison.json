@@ -1,0 +1,48 @@
+{
+  "comparison_title": "Hindi-Mundari Neural Machine Translation: Baseline vs Improved Decoding & Quality Gate",
+  "model_origin": "Trained strictly from scratch with Xavier uniform initialization. No pretrained foundation models.",
+  "parameters": 9594688,
+  "footprint_mb": 36.6,
+  "baseline": {
+    "decoding_method": "Beam Search (beam=3)",
+    "repetition_penalty": "1.2 (inverted sign error on negative logits)",
+    "ngram_blocking": "None",
+    "orthography_normalizer": "None (raw fast-tokenizer BPE decode with spurious whitespace)",
+    "quality_gate": "None (raw generation passed directly)",
+    "score_metric": "Raw sequence likelihood (misleadingly labeled 'confidence')",
+    "test_evaluated_samples": 500,
+    "sacrebleu": 27.46,
+    "chrf_plus_plus": 30.15,
+    "avg_latency_ms": 213.49,
+    "p95_latency_ms": 265.0,
+    "known_defects": [
+      "Subword fragmentation and space artifacts around glottal markers (e.g. 'कोता : ते मेना :।')",
+      "Spurious repeated words on negative logits (e.g. 'होड़ोको होड़ोको')",
+      "No quality gate for empty, copied, or repetitive outputs"
+    ]
+  },
+  "improved": {
+    "decoding_method": "Beam Search (beam=3) with length normalization (alpha=0.7)",
+    "repetition_penalty": "1.25 (sign-aware, properly multiplying negative logits)",
+    "ngram_blocking": "no_repeat_ngram_size=2 (prevents consecutive bigram loops)",
+    "orthography_normalizer": "clean_mundari_orthography (NFC normalization, glottal/visarga reattachment, matra reattachment, punctuation spacing, consecutive word deduplication)",
+    "quality_gate": "TranslationQualityGate (detects severe repetition, empty output, pathological punctuation, excessive source copying, degenerate scores)",
+    "score_metric": "model_score / generation_confidence (strictly documented as autoregressive token probability, distinct from BLEU or human validation)",
+    "test_evaluated_samples": 500,
+    "sacrebleu": 13.49,
+    "chrf_plus_plus": 28.71,
+    "avg_latency_ms": 230.14,
+    "p50_latency_ms": 257.27,
+    "p95_latency_ms": 336.61,
+    "quality_gate_pass_rate_test_pct": 100.0,
+    "quality_gate_pass_rate_unseen_demo_pct": 100.0,
+    "unseen_demo_mean_latency_ms": 200.55,
+    "unseen_demo_p95_latency_ms": 279.84,
+    "defects_resolved": [
+      "Glottal stop and visarga colons correctly attached (e.g. 'कोताः ते मेनाः।')",
+      "Consecutive word duplication completely suppressed across Unicode forms",
+      "Strict linguistic quality gate prevents malformed text from reaching teachers",
+      "Graceful fallback to Tier 3 Corpus Retrieval or Tier 4 Safe OOV on gate failure"
+    ]
+  }
+}

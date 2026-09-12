@@ -1,0 +1,166 @@
+{
+  "worksheet_id": "WS_02_COUNTING",
+  "title_hi": "कार्यपत्रक २: वस्तु गणना और मातृभाषा लेखन",
+  "title_unr": "कामि साकाम २: लेका आर ओल",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "target_competency": "M1.2 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+  "generation_seed": 43,
+  "provenance_status": "GENERATED_PROTOTYPE (PENDING HUMAN VALIDATION)",
+  "problems": [
+    {
+      "problem_id": "count_01",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 2,
+        "tens": 0,
+        "ones": 2,
+        "expected_mundari_word": "बारिया",
+        "expected_hindi_word": "दो"
+      },
+      "options": null,
+      "solution": {
+        "number": 2,
+        "mundari": "बारिया",
+        "hindi": "दो"
+      }
+    },
+    {
+      "problem_id": "count_02",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 4,
+        "tens": 0,
+        "ones": 4,
+        "expected_mundari_word": "उपुनिया",
+        "expected_hindi_word": "चार"
+      },
+      "options": null,
+      "solution": {
+        "number": 4,
+        "mundari": "उपुनिया",
+        "hindi": "चार"
+      }
+    },
+    {
+      "problem_id": "count_03",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 6,
+        "tens": 0,
+        "ones": 6,
+        "expected_mundari_word": "तुरिया",
+        "expected_hindi_word": "छह"
+      },
+      "options": null,
+      "solution": {
+        "number": 6,
+        "mundari": "तुरिया",
+        "hindi": "छह"
+      }
+    },
+    {
+      "problem_id": "count_04",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 7,
+        "tens": 0,
+        "ones": 7,
+        "expected_mundari_word": "एयाएया",
+        "expected_hindi_word": "सात"
+      },
+      "options": null,
+      "solution": {
+        "number": 7,
+        "mundari": "एयाएया",
+        "hindi": "सात"
+      }
+    },
+    {
+      "problem_id": "count_05",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 9,
+        "tens": 0,
+        "ones": 9,
+        "expected_mundari_word": "अरेया",
+        "expected_hindi_word": "नौ"
+      },
+      "options": null,
+      "solution": {
+        "number": 9,
+        "mundari": "अरेया",
+        "hindi": "नौ"
+      }
+    },
+    {
+      "problem_id": "count_06",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 11,
+        "tens": 1,
+        "ones": 1,
+        "expected_mundari_word": "गेल मिअद",
+        "expected_hindi_word": "ग्यारह"
+      },
+      "options": null,
+      "solution": {
+        "number": 11,
+        "mundari": "गेल मिअद",
+        "hindi": "ग्यारह"
+      }
+    },
+    {
+      "problem_id": "count_07",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 13,
+        "tens": 1,
+        "ones": 3,
+        "expected_mundari_word": "गेल अपिया",
+        "expected_hindi_word": "तेरह"
+      },
+      "options": null,
+      "solution": {
+        "number": 13,
+        "mundari": "गेल अपिया",
+        "hindi": "तेरह"
+      }
+    },
+    {
+      "problem_id": "count_08",
+      "problem_type": "counting",
+      "instruction_hi": "गोलों को गिनें और खाली डिब्बे में संख्या लिखें:",
+      "instruction_unr": "चिनहाः को लेकापे आर खाली बक्सा रे लेका ओलपे:",
+      "prompt_data": {
+        "count": 15,
+        "tens": 1,
+        "ones": 5,
+        "expected_mundari_word": "गेल मोड़ेया",
+        "expected_hindi_word": "पंद्रह"
+      },
+      "options": null,
+      "solution": {
+        "number": 15,
+        "mundari": "गेल मोड़ेया",
+        "hindi": "पंद्रह"
+      }
+    }
+  ]
+}

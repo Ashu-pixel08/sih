@@ -1,0 +1,158 @@
+{
+  "benchmark_name": "SIH260042_FLN_UNSEEN_DEMO_20",
+  "version": "1.0",
+  "description": "Strict 20-sentence primary school classroom Hindi benchmark across 8 educational categories. Guaranteed 100% absent from training splits, phrasebook dictionary, and retrieval corpus.",
+  "total_items": 20,
+  "categories": [
+    "GREETINGS",
+    "CLASSROOM_INSTRUCTIONS",
+    "QUESTIONS",
+    "STUDENT_TEACHER_CONVERSATION",
+    "BASIC_LITERACY",
+    "BASIC_NUMERACY",
+    "SCHOOL_ACTIVITIES",
+    "SIMPLE_EVERYDAY_SENTENCES"
+  ],
+  "items": [
+    {
+      "id": "DEMO-01",
+      "category": "GREETINGS",
+      "hindi_sentence": "सभी शिक्षक और बच्चों को सुप्रभात।",
+      "english_reference": "Good morning to all teachers and children.",
+      "linguistic_target_gloss": "सोबेन मास्टर को ओड़ो होनको के जोहार / सुप्रभात।"
+    },
+    {
+      "id": "DEMO-02",
+      "category": "GREETINGS",
+      "hindi_sentence": "आज की कक्षा में आप सभी का स्वागत है।",
+      "english_reference": "Welcome everyone to today's class.",
+      "linguistic_target_gloss": "तिसिंग रः क्लास रे अम सोबेन कोआः स्वागत मेनाः।"
+    },
+    {
+      "id": "DEMO-03",
+      "category": "CLASSROOM_INSTRUCTIONS",
+      "hindi_sentence": "कृपया सभी बच्चे अपनी कॉपी निकालें।",
+      "english_reference": "Please all children take out your notebooks.",
+      "linguistic_target_gloss": "सोबेन होनको आपन कॉपी उडुं पे।"
+    },
+    {
+      "id": "DEMO-04",
+      "category": "CLASSROOM_INSTRUCTIONS",
+      "hindi_sentence": "बोर्ड पर जो लिखा है उसे ध्यान से देखें।",
+      "english_reference": "Look carefully at what is written on the board.",
+      "linguistic_target_gloss": "बोर्ड रे चिनाः ओलअकाना एना ध्यान ते नेल पे।"
+    },
+    {
+      "id": "DEMO-05",
+      "category": "CLASSROOM_INSTRUCTIONS",
+      "hindi_sentence": "अपनी जगह पर शांति से बैठिए।",
+      "english_reference": "Sit quietly in your place.",
+      "linguistic_target_gloss": "आपन ठांव रे थिर गे दुब पे।"
+    },
+    {
+      "id": "DEMO-06",
+      "category": "QUESTIONS",
+      "hindi_sentence": "क्या किसी को कोई परेशानी है?",
+      "english_reference": "Does anyone have any problem?",
+      "linguistic_target_gloss": "जाहाँए के चिकनाः मुश्किल / दुख मेनाः चि?"
+    },
+    {
+      "id": "DEMO-07",
+      "category": "QUESTIONS",
+      "hindi_sentence": "कल स्कूल कौन नहीं आया था?",
+      "english_reference": "Who did not come to school yesterday?",
+      "linguistic_target_gloss": "होला इसकुल ओकोए का हिजुःलेना?"
+    },
+    {
+      "id": "DEMO-08",
+      "category": "QUESTIONS",
+      "hindi_sentence": "इस पाठ का मतलब कौन समझाएगा?",
+      "english_reference": "Who will explain the meaning of this lesson?",
+      "linguistic_target_gloss": "ने पाठ रः मतलब ओकोए काजि रुवाड़ एआ?"
+    },
+    {
+      "id": "DEMO-09",
+      "category": "STUDENT_TEACHER_CONVERSATION",
+      "hindi_sentence": "गुरुजी, क्या मैं पानी पीने बाहर जा सकता हूँ?",
+      "english_reference": "Teacher, may I go outside to drink water?",
+      "linguistic_target_gloss": "गुरुजी, दाः णु मेनते बाहर सेंनोः दाइञ चि?"
+    },
+    {
+      "id": "DEMO-10",
+      "category": "STUDENT_TEACHER_CONVERSATION",
+      "hindi_sentence": "शाबाश, तुमने बहुत अच्छा उत्तर दिया।",
+      "english_reference": "Well done, you gave a very good answer.",
+      "linguistic_target_gloss": "खूब बुगीन, अम पुराः बुगिन काजि रुवाड़ केदा।"
+    },
+    {
+      "id": "DEMO-11",
+      "category": "BASIC_LITERACY",
+      "hindi_sentence": "आज हम क से कबूतर लिखना सीखेंगे।",
+      "english_reference": "Today we will learn to write K for Pigeon.",
+      "linguistic_target_gloss": "तिसिंग आबु 'क' ओल बु इतुआ।"
+    },
+    {
+      "id": "DEMO-12",
+      "category": "BASIC_LITERACY",
+      "hindi_sentence": "इस कहानी की पहली पंक्ति को मिलकर पढ़ें।",
+      "english_reference": "Let us read the first line of this story together.",
+      "linguistic_target_gloss": "ने काहनी रः पहिल लाइन जुड़ाव ते पाड़ाव बु।"
+    },
+    {
+      "id": "DEMO-13",
+      "category": "BASIC_NUMERACY",
+      "hindi_sentence": "तीन में चार जोड़ने पर कितना होता है?",
+      "english_reference": "How much is adding four to three?",
+      "linguistic_target_gloss": "अपि रे उपुन जोड़ाय रे चिनअः होबाओआ?"
+    },
+    {
+      "id": "DEMO-14",
+      "category": "BASIC_NUMERACY",
+      "hindi_sentence": "इन पाँच गेंदों को एक साथ गिनकर बताओ।",
+      "english_reference": "Count these five balls together and tell.",
+      "linguistic_target_gloss": "ने मोणे गेंद को मिद ते लेका केते काजि पे।"
+    },
+    {
+      "id": "DEMO-15",
+      "category": "SCHOOL_ACTIVITIES",
+      "hindi_sentence": "घंटी बजने के बाद सभी बच्चे मैदान में जाएँगे।",
+      "english_reference": "After the bell rings, all children will go to the playground.",
+      "linguistic_target_gloss": "घंटी सारी जान तयोम सोबेन होनको मैदान ते सेनोःआको।"
+    },
+    {
+      "id": "DEMO-16",
+      "category": "SCHOOL_ACTIVITIES",
+      "hindi_sentence": "भोजन करने से पहले सभी अपनी थाली साफ़ करें।",
+      "english_reference": "Before eating food, everyone clean your plate.",
+      "linguistic_target_gloss": "मांडी जोम सिद्ध रे सोबेन आपन थाली साफा पे।"
+    },
+    {
+      "id": "DEMO-17",
+      "category": "SIMPLE_EVERYDAY_SENTENCES",
+      "hindi_sentence": "आज का मौसम बहुत अच्छा और सुहावना है।",
+      "english_reference": "Today's weather is very good and pleasant.",
+      "linguistic_target_gloss": "तिसिंग रः मौसम पुराः बुगीन ओड़ो रस्का मेनाः।"
+    },
+    {
+      "id": "DEMO-18",
+      "category": "SIMPLE_EVERYDAY_SENTENCES",
+      "hindi_sentence": "हमें प्रतिदिन समय पर स्कूल पहुँचना चाहिए।",
+      "english_reference": "We should reach school on time every day.",
+      "linguistic_target_gloss": "आबु के दिनुकुर समय रे इसकुल सेटेर दरकार।"
+    },
+    {
+      "id": "DEMO-19",
+      "category": "SIMPLE_EVERYDAY_SENTENCES",
+      "hindi_sentence": "अपने हाथ साबुन से अच्छी तरह धो लो।",
+      "english_reference": "Wash your hands thoroughly with soap.",
+      "linguistic_target_gloss": "आपन ती साबुन ते बुगिलेका अबुंग पे।"
+    },
+    {
+      "id": "DEMO-20",
+      "category": "SIMPLE_EVERYDAY_SENTENCES",
+      "hindi_sentence": "किताब को गंदा मत करो, संभाल कर रखो।",
+      "english_reference": "Do not dirty the book, keep it carefully.",
+      "linguistic_target_gloss": "किताब आलो पे गंदाएआ, जतन ते दोहो पे।"
+    }
+  ]
+}

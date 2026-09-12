@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HindiMundariParallelTranslationRecord",
+  "description": "Schema for candidate Hindi-Mundari parallel text records.",
+  "type": "object",
+  "required": [
+    "record_id",
+    "hindi_text",
+    "mundari_text",
+    "mundari_script",
+    "domain",
+    "source",
+    "source_reference",
+    "license",
+    "provenance_status",
+    "linguistic_validation_status",
+    "educational_validation_status"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "pattern": "^TR_[A-Z0-9_]+$",
+      "description": "Unique record identifier (e.g. TR_FLN_00123)"
+    },
+    "hindi_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Clean, normalized Hindi source text (Devanagari)"
+    },
+    "mundari_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Clean, attested Mundari translation text"
+    },
+    "mundari_script": {
+      "type": "string",
+      "enum": [
+        "Devanagari",
+        "Ol_Chiki",
+        "Latin_Phonetic"
+      ],
+      "default": "Devanagari",
+      "description": "Script representation of the Mundari text"
+    },
+    "ipa": {
+      "type": "string",
+      "description": "International Phonetic Alphabet representation of Mundari pronunciation"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "FLN_NUMERACY",
+        "FLN_LITERACY",
+        "CLASSROOM_INSTRUCTION",
+        "STORYTELLING",
+        "CONVERSATIONAL",
+        "GENERAL_TEXTBOOK"
+      ],
+      "description": "Curricular or usage domain"
+    },
+    "grade": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Target primary school grade level"
+    },
+    "lesson_topic": {
+      "type": "string",
+      "description": "Lesson, unit, or thematic topic reference"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Originating publication, textbook, or dataset name"
+    },
+    "source_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Page number, chapter, line number, or DOI/URL in source"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Exact license name governing this record (e.g. CC-BY-4.0, KPL-BY-NC-SA-FS-1.0)"
+    },
+    "provenance_status": {
+      "type": "string",
+      "enum": [
+        "CORPUS_ATTESTED",
+        "TEXTBOOK_EXTRACTED",
+        "FIELD_ELICITED",
+        "HISTORICAL_LEXICOGRAPHY",
+        "UNVERIFIED_PROVISIONAL"
+      ]
+    },
+    "linguistic_validation_status": {
+      "type": "string",
+      "enum": [
+        "PENDING_REVIEW",
+        "LINGUISTICALLY_REVIEWED",
+        "NATIVE_SPEAKER_CONFIRMED",
+        "REJECTED_UNNATURAL"
+      ]
+    },
+    "educational_validation_status": {
+      "type": "string",
+      "enum": [
+        "PENDING_REVIEW",
+        "JCERT_ALIGNED",
+        "NCERT_ALIGNED",
+        "TEACHER_REVIEWED",
+        "REJECTED_INAPPROPRIATE"
+      ]
+    },
+    "acceptance_status": {
+      "type": "string",
+      "enum": [
+        "SOURCE_FOUND",
+        "SOURCE_VERIFIED",
+        "SOURCE_ATTESTED",
+        "MACHINE_VALIDATED",
+        "REFERENCE_SUPPORTED",
+        "RESEARCH_VALIDATED",
+        "HUMAN_VALIDATED",
+        "LINGUISTIC_VALIDATED",
+        "EDUCATION_VALIDATED",
+        "CANONICAL_APPROVED",
+        "REJECTED",
+        "NEEDS_REVIEW"
+      ],
+      "default": "SOURCE_FOUND"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Linguistic notes, dialectal variant notes, or review comments"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "worksheet_id": "WS_04_SEQUENCING",
+  "title_hi": "कार्यपत्रक ४: संख्या क्रमबद्धता (छोटा से बड़ा)",
+  "title_unr": "कामि साकाम ४: लेका सिरिस",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "target_competency": "M1.4 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+  "generation_seed": 45,
+  "provenance_status": "GENERATED_PROTOTYPE (PENDING HUMAN VALIDATION)",
+  "problems": [
+    {
+      "problem_id": "seq_01",
+      "problem_type": "simple_sequencing",
+      "instruction_hi": "संख्याओं को छोटे से बड़े क्रम में लिखें:",
+      "instruction_unr": "लेका को हुडिंग ते मारांग सिरिस रे ओलपे:",
+      "prompt_data": {
+        "scrambled_numbers": [
+          1,
+          5,
+          2,
+          4,
+          3
+        ],
+        "correct_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "mundari_names": [
+          "मिअद",
+          "बारिया",
+          "अपिया",
+          "उपुनिया",
+          "मोड़ेया"
+        ]
+      },
+      "options": null,
+      "solution": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "problem_id": "seq_02",
+      "problem_type": "simple_sequencing",
+      "instruction_hi": "संख्याओं को छोटे से बड़े क्रम में लिखें:",
+      "instruction_unr": "लेका को हुडिंग ते मारांग सिरिस रे ओलपे:",
+      "prompt_data": {
+        "scrambled_numbers": [
+          9,
+          10,
+          7,
+          8,
+          6
+        ],
+        "correct_sequence": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "mundari_names": [
+          "तुरिया",
+          "एयाएया",
+          "इरालिया",
+          "अरेया",
+          "गेलेया"
+        ]
+      },
+      "options": null,
+      "solution": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "problem_id": "seq_03",
+      "problem_type": "simple_sequencing",
+      "instruction_hi": "संख्याओं को छोटे से बड़े क्रम में लिखें:",
+      "instruction_unr": "लेका को हुडिंग ते मारांग सिरिस रे ओलपे:",
+      "prompt_data": {
+        "scrambled_numbers": [
+          12,
+          13,
+          15,
+          14,
+          11
+        ],
+        "correct_sequence": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "mundari_names": [
+          "गेल मिअद",
+          "गेल बारिया",
+          "गेल अपिया",
+          "गेल उपुनिया",
+          "गेल मोड़ेया"
+        ]
+      },
+      "options": null,
+      "solution": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "problem_id": "seq_04",
+      "problem_type": "simple_sequencing",
+      "instruction_hi": "संख्याओं को छोटे से बड़े क्रम में लिखें:",
+      "instruction_unr": "लेका को हुडिंग ते मारांग सिरिस रे ओलपे:",
+      "prompt_data": {
+        "scrambled_numbers": [
+          20,
+          19,
+          17,
+          16,
+          18
+        ],
+        "correct_sequence": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "mundari_names": [
+          "गेल तुरिया",
+          "गेल एयाएया",
+          "गेल इरालिया",
+          "गेल अरेया",
+          "हिसि"
+        ]
+      },
+      "options": null,
+      "solution": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ]
+}

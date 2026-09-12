@@ -1,0 +1,16 @@
+{
+  "count": 1333,
+  "clean_bleu": 0.91,
+  "clean_chrf": 14.4,
+  "exact_match_count": 0,
+  "exact_match_pct": 0.0,
+  "mean_confidence": 0.1652,
+  "qg_pass_count": 1332,
+  "qg_pass_rate_pct": 99.92,
+  "suspicious_count": 1,
+  "suspicious_rate_pct": 0.08,
+  "latency_mean_ms": 415.99,
+  "latency_p50_ms": 403.01,
+  "latency_p95_ms": 591.47,
+  "evaluation_time_s": 554.5
+}

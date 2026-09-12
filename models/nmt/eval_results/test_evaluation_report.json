@@ -1,0 +1,115 @@
+{
+  "test_split_size": 1334,
+  "evaluated_sample_count": 500,
+  "beam_size": 3,
+  "sacrebleu_score": 13.49,
+  "chrf_score": 28.71,
+  "exact_match_pct": 0.0,
+  "quality_gate_passed_count": 500,
+  "quality_gate_pass_rate_pct": 100.0,
+  "avg_latency_ms": 230.14,
+  "p50_latency_ms": 257.27,
+  "p95_latency_ms": 336.61,
+  "benchmark_unseen_results": [
+    {
+      "hindi_input": "कैसे हैं आप लोग?",
+      "generated_mundari": "चिलका मेनाः चि आम होड़ोको",
+      "expected_reference": "How are you all? (Mundari: चिलेकान मेनाःपेआ? / ओको लेका मेनाःपेआ?)",
+      "confidence": 0.142,
+      "latency_ms": 250.76,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 6,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "आपका नाम क्या है?",
+      "generated_mundari": "आमाः नुतुम चानाः मेनाः चि?",
+      "expected_reference": "What is your name? (Mundari: आमः नुतुम चिकनाः? / आपेआः नुतुम चिकनाः?)",
+      "confidence": 0.396,
+      "latency_ms": 53.45,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 6,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "आज आप स्कूल आए हैं?",
+      "generated_mundari": "तिसिंग अम स्कूल रे दोहो तना।",
+      "expected_reference": "Have you come to school today? (Mundari: तिशिं आम इसकुल हिजुःआकदा?)",
+      "confidence": 0.114,
+      "latency_ms": 276.46,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 7,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "बच्चे कहाँ हैं?",
+      "generated_mundari": "होन को कोताः ते मेनाः।",
+      "expected_reference": "Where are the children? (Mundari: होनको ओकोरे मेनाःकोआ?)",
+      "confidence": 0.204,
+      "latency_ms": 275.89,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 7,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "हम आज पढ़ाई करेंगे।",
+      "generated_mundari": "आले तिसिङ पाड़ाओ मेनते इनिः रासिका आञ।",
+      "expected_reference": "We will study today. (Mundari: आबु तिशिं पढ़ाव बु एतोआ / पढ़ाव बु।) ",
+      "confidence": 0.083,
+      "latency_ms": 214.17,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 8,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "क्या आप तैयार हैं?",
+      "generated_mundari": "चिनअः अम मेनअः।",
+      "expected_reference": "Are you ready? (Mundari: चेत् आम तय्यार मेनामा?)",
+      "confidence": 0.134,
+      "latency_ms": 222.69,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 4,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "यह कौन है?",
+      "generated_mundari": "नेआ ओकोआ ओकोए मेनाः।",
+      "expected_reference": "Who is this? (Mundari: नेइ ओकोए ताना?)",
+      "confidence": 0.282,
+      "latency_ms": 237.12,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 5,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "आप क्या कर रहे हैं?",
+      "generated_mundari": "आम चानाः रिका तानाएः।",
+      "expected_reference": "What are you doing? (Mundari: आम चिनाः चिकेयेतादा?)",
+      "confidence": 0.305,
+      "latency_ms": 226.73,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 5,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "मैं स्कूल जा रहा हूँ।",
+      "generated_mundari": "आञ स्कूल ओ तानाञ।",
+      "expected_reference": "I am going to school. (Mundari: आइंग इसकुल ते सेनोःताना।) ",
+      "confidence": 0.105,
+      "latency_ms": 236.69,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 5,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    },
+    {
+      "hindi_input": "बच्चे ध्यान से सुनो।",
+      "generated_mundari": "होनको होरा ते सु टी का रिका तना।",
+      "expected_reference": "Children, listen carefully. (Mundari: होनको ध्यान ते आयुम पे।)",
+      "confidence": 0.119,
+      "latency_ms": 280.5,
+      "translation_source": "NEURAL_MODEL",
+      "tokens_generated": 9,
+      "provenance_label": "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DatasetLicenseManifestRecord",
+  "description": "Mandatory licensing and legal gatekeeper manifest for any external resource.",
+  "type": "object",
+  "required": [
+    "source_url",
+    "resource_name",
+    "owner_organization",
+    "license",
+    "permitted_use",
+    "attribution_requirement",
+    "modification_requirement",
+    "redistribution_requirement",
+    "commercial_use_restriction",
+    "model_training_permitted",
+    "derivatives_permitted",
+    "legal_review_status"
+  ],
+  "properties": {
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "resource_name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "owner_organization": {
+      "type": "string",
+      "minLength": 2
+    },
+    "license": {
+      "type": "string",
+      "minLength": 2
+    },
+    "permitted_use": {
+      "type": "string",
+      "description": "Detailed explanation of permitted operational scope"
+    },
+    "attribution_requirement": {
+      "type": "string",
+      "description": "Mandatory citation string or provenance notice"
+    },
+    "modification_requirement": {
+      "type": "string",
+      "description": "Terms governing derivative modification, filtering, or preprocessing"
+    },
+    "redistribution_requirement": {
+      "type": "string",
+      "description": "Terms governing bundling or shipping inside application assets"
+    },
+    "commercial_use_restriction": {
+      "type": "boolean",
+      "description": "True if commercial exploitation is prohibited"
+    },
+    "model_training_permitted": {
+      "type": "boolean",
+      "description": "Explicit permission to use data to train machine learning / ASR models"
+    },
+    "derivatives_permitted": {
+      "type": "boolean",
+      "description": "Explicit permission to create and distribute derivatives"
+    },
+    "legal_review_status": {
+      "type": "string",
+      "enum": [
+        "VERIFIED_PERMITTED",
+        "LICENSE_REVIEW_REQUIRED",
+        "REJECTED_UNPERMITTED"
+      ],
+      "default": "LICENSE_REVIEW_REQUIRED"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "review_date": {
+      "type": "string"
+    }
+  }
+}

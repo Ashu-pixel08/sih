@@ -1,0 +1,100 @@
+{
+  "candidate_id": "Candidate_C_DeepNarrow_Tied",
+  "total_params": 7859884,
+  "model_size_mb": 29.98,
+  "best_val_loss": 5.408,
+  "best_val_ppl": 223.19,
+  "total_training_time_s": 1704.3,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 6.8997,
+      "train_ppl": 991.98,
+      "val_loss": 6.3948,
+      "val_ppl": 598.7,
+      "epoch_time_s": 169.75,
+      "is_best": true
+    },
+    {
+      "epoch": 2,
+      "train_loss": 6.271,
+      "train_ppl": 529.02,
+      "val_loss": 6.1156,
+      "val_ppl": 452.85,
+      "epoch_time_s": 171.6,
+      "is_best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 6.0297,
+      "train_ppl": 415.6,
+      "val_loss": 5.9686,
+      "val_ppl": 390.95,
+      "epoch_time_s": 172.72,
+      "is_best": true
+    },
+    {
+      "epoch": 4,
+      "train_loss": 5.8589,
+      "train_ppl": 350.34,
+      "val_loss": 5.8589,
+      "val_ppl": 350.34,
+      "epoch_time_s": 170.79,
+      "is_best": true
+    },
+    {
+      "epoch": 5,
+      "train_loss": 5.6868,
+      "train_ppl": 294.95,
+      "val_loss": 5.7077,
+      "val_ppl": 301.18,
+      "epoch_time_s": 170.25,
+      "is_best": true
+    },
+    {
+      "epoch": 6,
+      "train_loss": 5.526,
+      "train_ppl": 251.13,
+      "val_loss": 5.5924,
+      "val_ppl": 268.37,
+      "epoch_time_s": 169.35,
+      "is_best": true
+    },
+    {
+      "epoch": 7,
+      "train_loss": 5.384,
+      "train_ppl": 217.89,
+      "val_loss": 5.4996,
+      "val_ppl": 244.59,
+      "epoch_time_s": 169.25,
+      "is_best": true
+    },
+    {
+      "epoch": 8,
+      "train_loss": 5.2789,
+      "train_ppl": 196.15,
+      "val_loss": 5.4489,
+      "val_ppl": 232.51,
+      "epoch_time_s": 170.22,
+      "is_best": true
+    },
+    {
+      "epoch": 9,
+      "train_loss": 5.2162,
+      "train_ppl": 184.23,
+      "val_loss": 5.4225,
+      "val_ppl": 226.44,
+      "epoch_time_s": 170.05,
+      "is_best": true
+    },
+    {
+      "epoch": 10,
+      "train_loss": 5.1904,
+      "train_ppl": 179.54,
+      "val_loss": 5.408,
+      "val_ppl": 223.19,
+      "epoch_time_s": 169.96,
+      "is_best": true
+    }
+  ]
+}

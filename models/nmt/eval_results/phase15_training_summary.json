@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "Candidate_A_Calibrated_BPE",
+      "best_checkpoint": "models/nmt/checkpoints_cand_a\\best_transformer.pt",
+      "best_val_loss": 5.016926719467026,
+      "best_val_ppl": 150.9466886935949,
+      "total_params": 6390188,
+      "model_size_mb": 24.376632690429688,
+      "training_time_s": 1164.9726378917694
+    },
+    {
+      "candidate_id": "Candidate_B_Character_Level",
+      "best_checkpoint": "models/nmt/checkpoints_cand_b\\best_transformer.pt",
+      "best_val_loss": 3.1761518413702117,
+      "best_val_ppl": 23.95439564777007,
+      "total_params": 4185388,
+      "model_size_mb": 15.965988159179688,
+      "training_time_s": 1636.3412024974823
+    },
+    {
+      "candidate_id": "Candidate_C_DeepNarrow_Tied",
+      "best_checkpoint": "models/nmt/checkpoints_cand_c\\best_transformer.pt",
+      "best_val_loss": 5.408044364282271,
+      "best_val_ppl": 223.19467312217225,
+      "total_params": 7859884,
+      "model_size_mb": 29.983078002929688,
+      "training_time_s": 1704.3340487480164
+    }
+  ]
+}

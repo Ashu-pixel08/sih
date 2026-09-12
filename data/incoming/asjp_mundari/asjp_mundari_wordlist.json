@@ -1,0 +1,509 @@
+{
+  "source_url": "https://asjp.clld.org/languages/MUNDARI",
+  "resource_name": "ASJP Mundari 100-Wordlist",
+  "license": "CC-BY-4.0",
+  "citation": "Peiros 1998, Comparative Linguistics in Southeast Asia; ASJP Database (Max Planck Institute / CLLD)",
+  "total_items": 100,
+  "items": [
+    {
+      "swadesh_number": 1,
+      "english_concept": "I",
+      "asjp_code": "ain"
+    },
+    {
+      "swadesh_number": 2,
+      "english_concept": "you",
+      "asjp_code": "am"
+    },
+    {
+      "swadesh_number": 3,
+      "english_concept": "we",
+      "asjp_code": "ale"
+    },
+    {
+      "swadesh_number": 4,
+      "english_concept": "this",
+      "asjp_code": "ni i7"
+    },
+    {
+      "swadesh_number": 5,
+      "english_concept": "that",
+      "asjp_code": "han i7"
+    },
+    {
+      "swadesh_number": 6,
+      "english_concept": "who",
+      "asjp_code": "okoy"
+    },
+    {
+      "swadesh_number": 7,
+      "english_concept": "what",
+      "asjp_code": "Ca na"
+    },
+    {
+      "swadesh_number": 8,
+      "english_concept": "not",
+      "asjp_code": "ka"
+    },
+    {
+      "swadesh_number": 9,
+      "english_concept": "all",
+      "asjp_code": "soben"
+    },
+    {
+      "swadesh_number": 10,
+      "english_concept": "many",
+      "asjp_code": "bese"
+    },
+    {
+      "swadesh_number": 11,
+      "english_concept": "one",
+      "asjp_code": "miyod"
+    },
+    {
+      "swadesh_number": 12,
+      "english_concept": "two",
+      "asjp_code": "bar"
+    },
+    {
+      "swadesh_number": 13,
+      "english_concept": "big",
+      "asjp_code": "maraN"
+    },
+    {
+      "swadesh_number": 14,
+      "english_concept": "long",
+      "asjp_code": "ZiliN"
+    },
+    {
+      "swadesh_number": 15,
+      "english_concept": "small",
+      "asjp_code": "kuniN"
+    },
+    {
+      "swadesh_number": 16,
+      "english_concept": "woman",
+      "asjp_code": "kuri"
+    },
+    {
+      "swadesh_number": 17,
+      "english_concept": "man",
+      "asjp_code": "kora"
+    },
+    {
+      "swadesh_number": 18,
+      "english_concept": "person",
+      "asjp_code": "horo"
+    },
+    {
+      "swadesh_number": 19,
+      "english_concept": "fish",
+      "asjp_code": "hai"
+    },
+    {
+      "swadesh_number": 20,
+      "english_concept": "bird",
+      "asjp_code": "Cene"
+    },
+    {
+      "swadesh_number": 21,
+      "english_concept": "dog",
+      "asjp_code": "seta"
+    },
+    {
+      "swadesh_number": 22,
+      "english_concept": "louse",
+      "asjp_code": "si ku"
+    },
+    {
+      "swadesh_number": 23,
+      "english_concept": "tree",
+      "asjp_code": "daru"
+    },
+    {
+      "swadesh_number": 24,
+      "english_concept": "seed",
+      "asjp_code": "hita"
+    },
+    {
+      "swadesh_number": 25,
+      "english_concept": "leaf",
+      "asjp_code": "sakam"
+    },
+    {
+      "swadesh_number": 26,
+      "english_concept": "root",
+      "asjp_code": "red"
+    },
+    {
+      "swadesh_number": 27,
+      "english_concept": "bark",
+      "asjp_code": "harta"
+    },
+    {
+      "swadesh_number": 28,
+      "english_concept": "skin",
+      "asjp_code": "ur"
+    },
+    {
+      "swadesh_number": 29,
+      "english_concept": "flesh",
+      "asjp_code": "Zilu"
+    },
+    {
+      "swadesh_number": 30,
+      "english_concept": "blood",
+      "asjp_code": "mayam"
+    },
+    {
+      "swadesh_number": 31,
+      "english_concept": "bone",
+      "asjp_code": "ZaN"
+    },
+    {
+      "swadesh_number": 32,
+      "english_concept": "grease",
+      "asjp_code": "itil"
+    },
+    {
+      "swadesh_number": 33,
+      "english_concept": "egg",
+      "asjp_code": "Zarom"
+    },
+    {
+      "swadesh_number": 34,
+      "english_concept": "horn",
+      "asjp_code": "diriN"
+    },
+    {
+      "swadesh_number": 35,
+      "english_concept": "tail",
+      "asjp_code": "Cadlom"
+    },
+    {
+      "swadesh_number": 36,
+      "english_concept": "feather",
+      "asjp_code": "il"
+    },
+    {
+      "swadesh_number": 37,
+      "english_concept": "hair",
+      "asjp_code": "up"
+    },
+    {
+      "swadesh_number": 38,
+      "english_concept": "head",
+      "asjp_code": "bo7"
+    },
+    {
+      "swadesh_number": 39,
+      "english_concept": "ear",
+      "asjp_code": "lutur"
+    },
+    {
+      "swadesh_number": 40,
+      "english_concept": "eye",
+      "asjp_code": "med"
+    },
+    {
+      "swadesh_number": 41,
+      "english_concept": "nose",
+      "asjp_code": "mu*"
+    },
+    {
+      "swadesh_number": 42,
+      "english_concept": "mouth",
+      "asjp_code": "moCa"
+    },
+    {
+      "swadesh_number": 43,
+      "english_concept": "tooth",
+      "asjp_code": "data"
+    },
+    {
+      "swadesh_number": 44,
+      "english_concept": "tongue",
+      "asjp_code": "le7"
+    },
+    {
+      "swadesh_number": 45,
+      "english_concept": "claw",
+      "asjp_code": "rama"
+    },
+    {
+      "swadesh_number": 46,
+      "english_concept": "foot",
+      "asjp_code": "kata"
+    },
+    {
+      "swadesh_number": 47,
+      "english_concept": "knee",
+      "asjp_code": "mukuri"
+    },
+    {
+      "swadesh_number": 48,
+      "english_concept": "hand",
+      "asjp_code": "ti"
+    },
+    {
+      "swadesh_number": 49,
+      "english_concept": "belly",
+      "asjp_code": "laZ"
+    },
+    {
+      "swadesh_number": 50,
+      "english_concept": "neck",
+      "asjp_code": "hoto7"
+    },
+    {
+      "swadesh_number": 51,
+      "english_concept": "breast",
+      "asjp_code": "nunu"
+    },
+    {
+      "swadesh_number": 52,
+      "english_concept": "heart",
+      "asjp_code": "Zi kuram"
+    },
+    {
+      "swadesh_number": 53,
+      "english_concept": "liver",
+      "asjp_code": "im"
+    },
+    {
+      "swadesh_number": 54,
+      "english_concept": "drink",
+      "asjp_code": "nu"
+    },
+    {
+      "swadesh_number": 55,
+      "english_concept": "eat",
+      "asjp_code": "Zom"
+    },
+    {
+      "swadesh_number": 56,
+      "english_concept": "bite",
+      "asjp_code": "hua"
+    },
+    {
+      "swadesh_number": 57,
+      "english_concept": "see",
+      "asjp_code": "lel"
+    },
+    {
+      "swadesh_number": 58,
+      "english_concept": "hear",
+      "asjp_code": "ayum"
+    },
+    {
+      "swadesh_number": 59,
+      "english_concept": "know",
+      "asjp_code": "itu"
+    },
+    {
+      "swadesh_number": 60,
+      "english_concept": "sleep",
+      "asjp_code": "durum"
+    },
+    {
+      "swadesh_number": 61,
+      "english_concept": "die",
+      "asjp_code": "goZu7"
+    },
+    {
+      "swadesh_number": 62,
+      "english_concept": "kill",
+      "asjp_code": "gie7"
+    },
+    {
+      "swadesh_number": 63,
+      "english_concept": "swim",
+      "asjp_code": "oyar"
+    },
+    {
+      "swadesh_number": 64,
+      "english_concept": "fly",
+      "asjp_code": "apir"
+    },
+    {
+      "swadesh_number": 65,
+      "english_concept": "walk",
+      "asjp_code": "sen"
+    },
+    {
+      "swadesh_number": 66,
+      "english_concept": "come",
+      "asjp_code": "hiZu7"
+    },
+    {
+      "swadesh_number": 67,
+      "english_concept": "lie",
+      "asjp_code": "giti7"
+    },
+    {
+      "swadesh_number": 68,
+      "english_concept": "sit",
+      "asjp_code": "dub"
+    },
+    {
+      "swadesh_number": 69,
+      "english_concept": "stand",
+      "asjp_code": "tiNgu"
+    },
+    {
+      "swadesh_number": 70,
+      "english_concept": "give",
+      "asjp_code": "om"
+    },
+    {
+      "swadesh_number": 71,
+      "english_concept": "say",
+      "asjp_code": "men"
+    },
+    {
+      "swadesh_number": 72,
+      "english_concept": "sun",
+      "asjp_code": "siNgi"
+    },
+    {
+      "swadesh_number": 73,
+      "english_concept": "moon",
+      "asjp_code": "Cand~u7"
+    },
+    {
+      "swadesh_number": 74,
+      "english_concept": "star",
+      "asjp_code": "ipil"
+    },
+    {
+      "swadesh_number": 75,
+      "english_concept": "water",
+      "asjp_code": "da7"
+    },
+    {
+      "swadesh_number": 76,
+      "english_concept": "rain",
+      "asjp_code": "gama"
+    },
+    {
+      "swadesh_number": 77,
+      "english_concept": "stone",
+      "asjp_code": "diri"
+    },
+    {
+      "swadesh_number": 78,
+      "english_concept": "sand",
+      "asjp_code": "gitil"
+    },
+    {
+      "swadesh_number": 79,
+      "english_concept": "earth",
+      "asjp_code": "ote"
+    },
+    {
+      "swadesh_number": 80,
+      "english_concept": "cloud",
+      "asjp_code": "rimil"
+    },
+    {
+      "swadesh_number": 81,
+      "english_concept": "smoke",
+      "asjp_code": "sukul"
+    },
+    {
+      "swadesh_number": 82,
+      "english_concept": "fire",
+      "asjp_code": "seNgel"
+    },
+    {
+      "swadesh_number": 83,
+      "english_concept": "ash",
+      "asjp_code": "toroe7"
+    },
+    {
+      "swadesh_number": 84,
+      "english_concept": "burn",
+      "asjp_code": "ro"
+    },
+    {
+      "swadesh_number": 85,
+      "english_concept": "path",
+      "asjp_code": "hora"
+    },
+    {
+      "swadesh_number": 86,
+      "english_concept": "mountain",
+      "asjp_code": "buru"
+    },
+    {
+      "swadesh_number": 87,
+      "english_concept": "red",
+      "asjp_code": "ara7"
+    },
+    {
+      "swadesh_number": 88,
+      "english_concept": "green",
+      "asjp_code": "gaded"
+    },
+    {
+      "swadesh_number": 89,
+      "english_concept": "yellow",
+      "asjp_code": "sa saN"
+    },
+    {
+      "swadesh_number": 90,
+      "english_concept": "white",
+      "asjp_code": "pund~i"
+    },
+    {
+      "swadesh_number": 91,
+      "english_concept": "black",
+      "asjp_code": "hend~e"
+    },
+    {
+      "swadesh_number": 92,
+      "english_concept": "night",
+      "asjp_code": "nida"
+    },
+    {
+      "swadesh_number": 93,
+      "english_concept": "hot",
+      "asjp_code": "lolo"
+    },
+    {
+      "swadesh_number": 94,
+      "english_concept": "cold",
+      "asjp_code": "tutukan"
+    },
+    {
+      "swadesh_number": 95,
+      "english_concept": "full",
+      "asjp_code": "pura"
+    },
+    {
+      "swadesh_number": 96,
+      "english_concept": "new",
+      "asjp_code": "nawa"
+    },
+    {
+      "swadesh_number": 97,
+      "english_concept": "good",
+      "asjp_code": "bugi"
+    },
+    {
+      "swadesh_number": 98,
+      "english_concept": "round",
+      "asjp_code": "gol"
+    },
+    {
+      "swadesh_number": 99,
+      "english_concept": "dry",
+      "asjp_code": "roro"
+    },
+    {
+      "swadesh_number": 100,
+      "english_concept": "name",
+      "asjp_code": "nutum, num"
+    }
+  ]
+}

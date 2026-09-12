@@ -1,0 +1,16 @@
+{
+  "source_url": "https://sealang.net/munda/database/retrieve.pl?dialect=&format=html&language=Mundari&sort=gloss",
+  "resource_name": "SEAlang Munda Languages Database \u2014 Mundari",
+  "owner_organization": "SEAlang Projects / Center for Research in Computational Linguistics",
+  "license": "Creative Commons Open License (Generic) / Academic Citation",
+  "permitted_use": "Academic reference and linguistic research. Lexical lookup only.",
+  "attribution_requirement": "Cite SEAlang Munda Projects and underlying field monographs (Kim 2010, Kobayashi 2003, Pinnow 1959, Suresh 2002).",
+  "modification_requirement": "Derived phonetic dictionaries must preserve provenance citations.",
+  "redistribution_requirement": "Not cleared for direct commercial binary distribution.",
+  "commercial_use_restriction": false,
+  "model_training_permitted": false,
+  "derivatives_permitted": true,
+  "legal_review_status": "LICENSE_REVIEW_REQUIRED",
+  "reviewer": "Antigravity Data Governance Agent",
+  "review_date": "2026-09-09"
+}

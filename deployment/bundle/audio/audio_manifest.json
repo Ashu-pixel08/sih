@@ -1,0 +1,26 @@
+{
+  "spec_version": "1.0.0",
+  "audio_assets": {
+    "numbers_1_to_20": {
+      "total_classes": 20,
+      "audio_status": "MISSING",
+      "fabricated_count": 0,
+      "policy_enforcement": "Zero audio fabrication. Authentic native-speaker recordings must be collected in field."
+    },
+    "authentic_reference_samples": [
+      {
+        "file_name": "test_sample_16k.wav",
+        "sample_rate_hz": 16000,
+        "channels": 1,
+        "duration_seconds": 1.0,
+        "source": "Karya Mundari Speech Corpus (Audited Subsample)",
+        "verification_status": "AUTHENTIC_RECORDING"
+      }
+    ],
+    "corpus_audio_summary": {
+      "total_raw_recordings": 200,
+      "valid_recordings": 182,
+      "quarantined_low_energy": 18
+    }
+  }
+}

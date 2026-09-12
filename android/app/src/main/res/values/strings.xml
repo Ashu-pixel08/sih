@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">APP_NAME_PENDING</string>
+    <string name="project_id">SIH260042</string>
+    <string name="offline_demo_badge">OFFLINE CONTROLLED-VOCABULARY DEMONSTRATION</string>
+    <string name="nipun_fln_scope">Grade 1 FLN Numeracy (1–20) — Mundari (unr)</string>
+    <string name="status_ready">Ready. Tap microphone to speak a Hindi number (1–20).</string>
+    <string name="status_listening">Listening for 1.0 second...</string>
+    <string name="status_processing">Extracting Mel spectrogram and running edge inference...</string>
+    <string name="status_silence">Silence or ambient noise detected. Please speak clearly.</string>
+    <string name="status_low_confidence">Confidence below threshold. Please repeat.</string>
+    <string name="prompt_please_repeat">Please repeat clearly (1 to 20)</string>
+    <string name="broadcast_allowed">BROADCAST ALLOWED</string>
+    <string name="broadcast_blocked">BROADCAST BLOCKED</string>
+    <string name="audio_status_badge">SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)</string>
+    <string name="pathway_c_title">Guaranteed Fallback: Direct Number Card Selection (Pathway C)</string>
+</resources>

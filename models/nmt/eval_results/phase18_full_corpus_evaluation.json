@@ -1,0 +1,5335 @@
+{
+  "Model_B_Baseline": {
+    "model_name": "Model_B_Baseline",
+    "checkpoint": "models/nmt/checkpoints/model_b.pt",
+    "parameters": 9594688,
+    "held_out_test": {
+      "total_sentences": 1334,
+      "raw_bleu": 11.48,
+      "raw_chrf": 19.01,
+      "clean_bleu": 11.48,
+      "clean_chrf": 14.64,
+      "exact_matches": 0,
+      "exact_match_pct": 0.0,
+      "qg_pass_rate_pct": 44.38,
+      "suspicious_output_rate_pct": 1.05,
+      "latency_mean_ms": 25.56,
+      "latency_p50_ms": 24.44,
+      "latency_p95_ms": 39.42
+    },
+    "external_challenge": {
+      "total_sentences": 52,
+      "qg_pass_rate_pct": 46.15,
+      "suspicious_output_rate_pct": 0.0,
+      "failure_a": {
+        "id": "REAL-01",
+        "category": "real_world_failure_a",
+        "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+        "hypothesis": "बर रअ जागर मोयोद मजा ते काएः ठोर जदा।",
+        "model_score": 0.068,
+        "quality_gate_passed": false,
+        "quality_gate_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "classification": "UNVALIDATED_MODEL_OUTPUT",
+        "suspicious": false,
+        "latency_ms": 36.91
+      },
+      "failure_b": {
+        "id": "REAL-02",
+        "category": "real_world_failure_b",
+        "hindi": "आज हम सब गाना गाएंगे।",
+        "hypothesis": "तिसिङ आले सोबेन कोआः गोनोङ बाइ एआ।",
+        "model_score": 0.16,
+        "quality_gate_passed": false,
+        "quality_gate_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "classification": "UNVALIDATED_MODEL_OUTPUT",
+        "suspicious": false,
+        "latency_ms": 15.97
+      },
+      "results": [
+        {
+          "id": "REAL-01",
+          "category": "real_world_failure_a",
+          "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+          "hypothesis": "बर रअ जागर मोयोद मजा ते काएः ठोर जदा।",
+          "model_score": 0.068,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 36.91
+        },
+        {
+          "id": "REAL-02",
+          "category": "real_world_failure_b",
+          "hindi": "आज हम सब गाना गाएंगे।",
+          "hypothesis": "तिसिङ आले सोबेन कोआः गोनोङ बाइ एआ।",
+          "model_score": 0.16,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 15.97
+        },
+        {
+          "id": "CHAL-01",
+          "category": "greetings",
+          "hindi": "नमस्ते, आप सभी का हमारे गाँव में स्वागत है।",
+          "hypothesis": "नम नगेन अम सोबेन कोआः हातु रे देंगा तनिः।",
+          "model_score": 0.255,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.52
+        },
+        {
+          "id": "CHAL-02",
+          "category": "greetings",
+          "hindi": "शुभ प्रभात, आज का दिन बहुत सुंदर है।",
+          "hypothesis": "मोने दो एटाः कोआः दिन बेसे माजा मेनाः।",
+          "model_score": 0.219,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.76
+        },
+        {
+          "id": "CHAL-03",
+          "category": "daily_conversation",
+          "hindi": "तुम आज सुबह से क्या कर रहे हो?",
+          "hypothesis": "आम तिसिङ सेताः ते चानाः रिका तानाएः।",
+          "model_score": 0.548,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.97
+        },
+        {
+          "id": "CHAL-04",
+          "category": "daily_conversation",
+          "hindi": "मैं अभी बाजार जा रहा हूँ, थोड़ी देर में लौटूँगा।",
+          "hypothesis": "आञ नाः ओड़ाः ते साङगि सोमाए रे हुड़िङ खोन जाकेद ताइकेना।",
+          "model_score": 0.104,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 26.03
+        },
+        {
+          "id": "CHAL-05",
+          "category": "classroom_language",
+          "hindi": "कृपया सभी बच्चे अपनी किताबें खोलें।",
+          "hypothesis": "सोबेन कोआः होन मेद ते अयाः नम केदा।",
+          "model_score": 0.125,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 22.91
+        },
+        {
+          "id": "CHAL-06",
+          "category": "classroom_language",
+          "hindi": "अध्यापक ने श्यामपट्ट पर एक नया पाठ लिखा।",
+          "hypothesis": "डाक्टर को सब केआते नावा जागार ओल रिका गे मिआद",
+          "model_score": 0.068,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.94
+        },
+        {
+          "id": "CHAL-07",
+          "category": "questions",
+          "hindi": "यह रास्ता किस गाँव की ओर जाता है?",
+          "hypothesis": "नेआ होरा ओकोए हातु रेआः साः ते होबा तना।",
+          "model_score": 0.354,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.45
+        },
+        {
+          "id": "CHAL-08",
+          "category": "questions",
+          "hindi": "कल रात नदी के पास कौन आया था?",
+          "hypothesis": "होला निदा गाड़ा रे ओकोए हिजु लेना।",
+          "model_score": 0.224,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 17.34
+        },
+        {
+          "id": "CHAL-09",
+          "category": "answers",
+          "hindi": "हाँ, हम कल सुबह मेला देखने जरूर जाएंगे।",
+          "hypothesis": "हे ले आले सेताः राः दुनुब रे लेल रिका लागातिङा।",
+          "model_score": 0.144,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.43
+        },
+        {
+          "id": "CHAL-10",
+          "category": "answers",
+          "hindi": "नहीं, मुझे इस बात की कोई जानकारी नहीं है।",
+          "hypothesis": "का आञ ने जागार रआः जान जानकारी बानोः।",
+          "model_score": 0.383,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 19.26
+        },
+        {
+          "id": "CHAL-11",
+          "category": "present_tense",
+          "hindi": "बच्चे मैदान में गेंद से खेल रहे हैं।",
+          "hypothesis": "होनको मंदिल रे मास्टर ते इनुङ को मेनाः कोआ।",
+          "model_score": 0.186,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.71
+        },
+        {
+          "id": "CHAL-12",
+          "category": "present_tense",
+          "hindi": "सूरज पूरब दिशा में चमकता है।",
+          "hypothesis": "सिंगि लेका सिरमा रे गोः आ।",
+          "model_score": 0.105,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 15.65
+        },
+        {
+          "id": "CHAL-13",
+          "category": "past_tense",
+          "hindi": "हमने कल शाम को एक बड़ा पेड़ लगाया था।",
+          "hypothesis": "आले सु बजे के मिआद माराङ इनुङ ताइकेनाएः।",
+          "model_score": 0.192,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 19.51
+        },
+        {
+          "id": "CHAL-14",
+          "category": "past_tense",
+          "hindi": "वे लोग पिछले हफ्ते यहाँ आए थे।",
+          "hypothesis": "इनकु होड़ोको सिदा रेआः नेताः रे हिजुः लेना।",
+          "model_score": 0.229,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.53
+        },
+        {
+          "id": "CHAL-15",
+          "category": "future_tense",
+          "hindi": "कल हम सब मिलकर नया घर बनाएंगे।",
+          "hypothesis": "होला आले सोबेन कोआते नावा ओड़ाः ओम राः पेड़ेः ताइना।",
+          "model_score": 0.16,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.79
+        },
+        {
+          "id": "CHAL-16",
+          "category": "future_tense",
+          "hindi": "अगले महीने तेज बारिश होगी।",
+          "hypothesis": "अयर दिन ते पेरेः आ।",
+          "model_score": 0.168,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 16.25
+        },
+        {
+          "id": "CHAL-17",
+          "category": "negation",
+          "hindi": "मैंने आज किसी से कोई झगड़ा नहीं किया।",
+          "hypothesis": "आञ तिसिङ जान ते जेतान सोमाए काएः बुजाओ जाना।",
+          "model_score": 0.266,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.58
+        },
+        {
+          "id": "CHAL-18",
+          "category": "negation",
+          "hindi": "जंगल में रात को अकेले मत जाओ।",
+          "hypothesis": "बिर रे निदा गे लेल मोने मे।",
+          "model_score": 0.228,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.77
+        },
+        {
+          "id": "CHAL-19",
+          "category": "singular_plural",
+          "hindi": "एक चिड़िया पेड़ की डाल पर बैठी है।",
+          "hypothesis": "मिआद जुदि इनुङ रआः गोनोङ रे दुब आकाना।",
+          "model_score": 0.146,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.83
+        },
+        {
+          "id": "CHAL-20",
+          "category": "singular_plural",
+          "hindi": "बहुत सारी चिड़ियाँ आकाश में उड़ रही हैं।",
+          "hypothesis": "बेसे सोबेन समय रे दुब राः ओ होबा कना।",
+          "model_score": 0.147,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.46
+        },
+        {
+          "id": "CHAL-21",
+          "category": "pronouns",
+          "hindi": "मैं अपने गाँव से बहुत प्यार करता हूँ।",
+          "hypothesis": "आञ आपान हातु ते बेसे माजा ञ रिकाएआ।",
+          "model_score": 0.322,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.84
+        },
+        {
+          "id": "CHAL-22",
+          "category": "pronouns",
+          "hindi": "वे दोनों हमारे साथ जंगल जा रहे हैं।",
+          "hypothesis": "इनिः बारान लोः आले बिर तानाएः।",
+          "model_score": 0.207,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 17.31
+        },
+        {
+          "id": "CHAL-23",
+          "category": "possession",
+          "hindi": "यह सुंदर गाय मेरे चाचा की है।",
+          "hypothesis": "नेआ सुगाड़ा जग रेआः उड़ुः लेका मेनाः।",
+          "model_score": 0.223,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.87
+        },
+        {
+          "id": "CHAL-24",
+          "category": "possession",
+          "hindi": "हमारा गाँव नदी के किनारे बसा हुआ है।",
+          "hypothesis": "आलेआः हातु गाड़ा राः गोनोङ रे ताइन जाना।",
+          "model_score": 0.151,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.04
+        },
+        {
+          "id": "CHAL-25",
+          "category": "commands",
+          "hindi": "जल्दी से पानी लेकर आओ।",
+          "hypothesis": "मेद ते दाः राः पेड़ेः जोगाओ लागातिङा।",
+          "model_score": 0.153,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 17.52
+        },
+        {
+          "id": "CHAL-26",
+          "category": "commands",
+          "hindi": "दरवाजा बंद करो और यहाँ बैठो।",
+          "hypothesis": "मार् कर रेन आर नेताः दुब जानाएः।",
+          "model_score": 0.121,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.67
+        },
+        {
+          "id": "CHAL-27",
+          "category": "descriptions",
+          "hindi": "वह पहाड़ बहुत ऊँचा और हरा-भरा है।",
+          "hypothesis": "इनिः स जी बेसे दुकु ओड़ोः एटाः को ताइना।",
+          "model_score": 0.099,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 26.95
+        },
+        {
+          "id": "CHAL-28",
+          "category": "descriptions",
+          "hindi": "नदी का पानी बहुत ठंडा और साफ है।",
+          "hypothesis": "गाड़ा राः दाः बेसे ओड़ोः मेनाः आर ताइना।",
+          "model_score": 0.187,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 17.03
+        },
+        {
+          "id": "CHAL-29",
+          "category": "common_verbs",
+          "hindi": "किसान खेत में हल चलाता है और बीज बोता है।",
+          "hypothesis": "आड़ानदि ते पारोम केआते हिजु ताना आर जो गि ता ओम लागातिङा।",
+          "model_score": 0.07,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 32.73
+        },
+        {
+          "id": "CHAL-30",
+          "category": "common_verbs",
+          "hindi": "मेरी बहन हर सुबह मीठा गाना गाती है।",
+          "hypothesis": "आञाः जी सोबेन सेताः राः माराङ सानाङ मेनाः।",
+          "model_score": 0.152,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 22.84
+        },
+        {
+          "id": "CHAL-31",
+          "category": "common_nouns",
+          "hindi": "पत्थर और मिट्टी से मजबूत दीवार बनती है।",
+          "hypothesis": "दिरि ओड़ोः हासा रे काः ए उ स्ट लेका मेनाः।",
+          "model_score": 0.135,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 26.38
+        },
+        {
+          "id": "CHAL-32",
+          "category": "common_nouns",
+          "hindi": "जंगल में बहुत सारे फूल और फल मिलते हैं।",
+          "hypothesis": "बिर रे बेसे माजा ओड़ोः दुकु को लेल रिकाएआ।",
+          "model_score": 0.204,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.49
+        },
+        {
+          "id": "CHAL-33",
+          "category": "numbers",
+          "hindi": "टोकरी में सात पके हुए आम रखे हैं।",
+          "hypothesis": "दिरि जिनिद रे नियम को लेल केआते जोगाव ओआ।",
+          "model_score": 0.093,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.76
+        },
+        {
+          "id": "CHAL-34",
+          "category": "numbers",
+          "hindi": "कक्षा में कुल पंद्रह छात्र उपस्थित हैं।",
+          "hypothesis": "स क रे प ड ह यर एनताः रे किन मेनाः।",
+          "model_score": 0.08,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 30.67
+        },
+        {
+          "id": "CHAL-35",
+          "category": "time",
+          "hindi": "दोपहर के समय सूरज बहुत तेज होता है।",
+          "hypothesis": "तिकिन सोमाए रेन सिंगि इसु पुराः गे ताइना।",
+          "model_score": 0.218,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.1
+        },
+        {
+          "id": "CHAL-36",
+          "category": "time",
+          "hindi": "शाम होते ही सभी पक्षी अपने घोंसले में लौट आते हैं।",
+          "hypothesis": "सिंगि हासुर गे सोबेन साः आपान सोमाए रे ताइना।",
+          "model_score": 0.212,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 37.3
+        },
+        {
+          "id": "CHAL-37",
+          "category": "place",
+          "hindi": "पहाड़ी के पीछे एक छोटा सा झरना बहता है।",
+          "hypothesis": "रआः सा ड़ा तायोम ते मिआद दुकु गे ताइना।",
+          "model_score": 0.126,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.68
+        },
+        {
+          "id": "CHAL-38",
+          "category": "place",
+          "hindi": "हम सब गाँव के बड़े बरगद के नीचे मिले।",
+          "hypothesis": "आले सोबेन हातु रेन माराङ को लातार रे आउ जाना।",
+          "model_score": 0.278,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.8
+        },
+        {
+          "id": "CHAL-39",
+          "category": "family",
+          "hindi": "मेरी माँ रसोई में स्वादिष्ट खाना बना रही हैं।",
+          "hypothesis": "आञाः एंगा दो आपु को रे गोएः जादा।",
+          "model_score": 0.083,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.55
+        },
+        {
+          "id": "CHAL-40",
+          "category": "family",
+          "hindi": "मेरे दादाजी रोज़ शाम को हमें पुरानी कहानियाँ सुनाते हैं।",
+          "hypothesis": "आञाः जी दो सु नाः आयुम केआते आले आपान सानाङ तानाएः।",
+          "model_score": 0.122,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 32.05
+        },
+        {
+          "id": "CHAL-41",
+          "category": "food",
+          "hindi": "चावल और दाल के साथ हरी सब्जी बहुत अच्छी लगती है।",
+          "hypothesis": "जर त ला ग लोः ते पंद र्य जी बेसे माजा मेनाः।",
+          "model_score": 0.1,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 35.33
+        },
+        {
+          "id": "CHAL-42",
+          "category": "food",
+          "hindi": "हमने जंगल से मीठे महुए के फल इकट्ठे किए।",
+          "hypothesis": "आले बिर ते मी साः तान लेका गे जो निः ओः आ।",
+          "model_score": 0.159,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 36.04
+        },
+        {
+          "id": "CHAL-43",
+          "category": "weather",
+          "hindi": "आज आसमान में काले बादल घिरे हुए हैं।",
+          "hypothesis": "तिसिङ सिरमा रे गेल सिरमा साः ते सेसेन ताना।",
+          "model_score": 0.192,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.15
+        },
+        {
+          "id": "CHAL-44",
+          "category": "weather",
+          "hindi": "सर्दियों में सुबह के वक्त बहुत कोहरा पड़ता है।",
+          "hypothesis": "ओते एंगा ते सेताः रेआ सोमोय इसु पुराः रसिका नम जदा।",
+          "model_score": 0.227,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 31.41
+        },
+        {
+          "id": "CHAL-45",
+          "category": "school",
+          "hindi": "घंटी बजते ही सारे बच्चे प्रार्थना के लिए कतार में खड़े हो गए।",
+          "hypothesis": "इसु बा ङ केआते सोबेन कोआः होन को नगेन होनोर जना।",
+          "model_score": 0.155,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 30.55
+        },
+        {
+          "id": "CHAL-46",
+          "category": "school",
+          "hindi": "हमने आज गणित की कक्षा में जोड़ और घटाव सीखा।",
+          "hypothesis": "आले तिसिङ जाकेद मिआद काआनि रे ओड़ोः साङगि इतु केदाएः।",
+          "model_score": 0.111,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.48
+        },
+        {
+          "id": "CHAL-47",
+          "category": "technology",
+          "hindi": "गाँव में मोबाइल नेटवर्क आने से बातचीत आसान हो गई है।",
+          "hypothesis": "हातु रे मोबाइल देंगा ते सेसेन तान लेका होबा लेना।",
+          "model_score": 0.245,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.13
+        },
+        {
+          "id": "CHAL-48",
+          "category": "technology",
+          "hindi": "कंप्यूटर सीखने से नई जानकारी जल्दी मिल जाती है।",
+          "hypothesis": "कंप्यूटर मेनते नावा जागार केआते जानकारी जोगाओ लागातिङा।",
+          "model_score": 0.11,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 17.89
+        },
+        {
+          "id": "CHAL-49",
+          "category": "simple_longer_sentences",
+          "hindi": "जब गाँव में फसल कटाई का समय आता है, तब सब लोग मिलकर दिन भर मेहनत करते हैं और शाम को ढोल बजाकर नाचते हैं।",
+          "hypothesis": "चिमतुङ हातु कोरे गो ड़ि को लोः ते होड़ोको हिजु जाना।",
+          "model_score": 0.152,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 33.39
+        },
+        {
+          "id": "CHAL-50",
+          "category": "simple_longer_sentences",
+          "hindi": "यदि तुम रोज़ मेहनत से पढ़ाई करोगे, तो एक दिन बड़े होकर अपने गाँव का नाम रोशन करोगे।",
+          "hypothesis": "जदि अम जि तन पुराः ते होन कुड़ी दो इसु पुराः।",
+          "model_score": 0.098,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 31.46
+        }
+      ]
+    },
+    "sample_predictions": [
+      {
+        "index": 0,
+        "hindi": "कि पल में ज़िन्दगी दिखा जाती है",
+        "reference": "चि पल रे जिबोन लेलोगा।",
+        "hypothesis": "चि तारा रे जीदन ओमोः ताना।",
+        "model_score": 0.167,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.1
+      },
+      {
+        "index": 1,
+        "hindi": "सीबीआई ने भांजे को रंगेहाथ पकड़ा।",
+        "reference": "सीबीआई गेड़े नेदति लोः साबकिःआ।",
+        "hypothesis": "सीबीआई दो भां जे के गी तीः ते ती",
+        "model_score": 0.096,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.65
+      },
+      {
+        "index": 2,
+        "hindi": "इस बीच सामान्य जनगणना की प्रक्रिया चलती रहेगी।",
+        "reference": "नेन सोमोय रे सामान्य जनगणना रअ प्रक्रिया चलव तान गे ताइना।",
+        "hypothesis": "ने तला रे जेतन जन होड़ो को रअः कमि रेअः मरंग गे तइना।",
+        "model_score": 0.117,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.69
+      },
+      {
+        "index": 3,
+        "hindi": "कहते थे वे कार्यकारी शक्ति हैं।",
+        "reference": "काजिजाद ताइकेना इनिः कामितान (कार्यकारी) होड़ो पेड़ेः तानिः।",
+        "hypothesis": "कजि को तइन तन तइकेना इनिः कमि बइ तना।",
+        "model_score": 0.265,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.46
+      },
+      {
+        "index": 4,
+        "hindi": "उसके साथ ही रेवाड़ी निवासी अरुण भी काम करता है।",
+        "reference": "इनिलो:गे रेवाड़ीरेन अरुणो: कामितान ताइकेना।",
+        "hypothesis": "एना लोः ते गे वा टर रे कर् णा राः कामि रिका तना।",
+        "model_score": 0.175,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.36
+      },
+      {
+        "index": 5,
+        "hindi": "फैलती जाती हैं जड़ें नियामगिरी से बैलाडीला तक",
+        "reference": "पासराओताना रेएदको नियामगिरि ते बैलाडीला हामिः",
+        "hypothesis": "फै शन मेनाः चि सी को ने लेका ते मि डी द डी जी रेन होड़ो",
+        "model_score": 0.051,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 44.8
+      },
+      {
+        "index": 6,
+        "hindi": "श्मशानघाट में कुत्ते रो रहे हैं।",
+        "reference": "होड़ो़ ओंडोरता: सेताको रा:ताना।",
+        "hypothesis": "श् म ट बजे रे सेताः रेआः तइकेना।",
+        "model_score": 0.162,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.93
+      },
+      {
+        "index": 7,
+        "hindi": "मन ही से सेऊँ सहज सरुप।पूजा अरचा न जानूँ तोरी।",
+        "reference": "मोने तेगे सेवाताना सोंगड़ा रूप रआः। बोंगा बुरू काञ इतुआना आमाः।",
+        "hypothesis": "जी गे लोः दुकु रआः पु टी आर बे द - बांग रे लेल रिका दो",
+        "model_score": 0.056,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 44.9
+      },
+      {
+        "index": 8,
+        "hindi": "उनका पूरा नाम वसंत कुमार शिवशंकर पादुकोण था।",
+        "reference": "इनिआः गोटा नुतुम वसन्त कुमार शिवशङकर पादुकोण ताइकेना।",
+        "hypothesis": "इनिआः गोटा नुतुम पीटि मिआद शिव जी पा ष श् जर ताइकेना।",
+        "model_score": 0.101,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.52
+      },
+      {
+        "index": 9,
+        "hindi": "भाई स्कूल जाने काबिल हुए तो उन्हें भी स्कूल छोड़ा।",
+        "reference": "बोको कोड़ा पढ़च लेका होना जन चि इनिःओं को इदि तुका किआ",
+        "hypothesis": "हागा किन लेल तान ताइकेना दो इनिः मोचा ओ वेः ने सोमाए",
+        "model_score": 0.084,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 46.97
+      },
+      {
+        "index": 10,
+        "hindi": "बाद में मोदी ने भी अपने विचार रखे।",
+        "reference": "तायोम ते मोदोओः आपान जागार दोकेदाएः।",
+        "hypothesis": "तायोमते मोदी दो आपान उड़ुः केआते उड़ुः को जोगाओ लागातिङा।",
+        "model_score": 0.204,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.38
+      },
+      {
+        "index": 11,
+        "hindi": "ज्यादातर लोग भले मानुष जैसा ही आचरण करते हैं।",
+        "reference": "साङगि होड़ोको सुगाड़ा होड़ोको लेका गे जापागारेआको।",
+        "hypothesis": "पुराः होड़ोको को इसु पुराः गे आ।",
+        "model_score": 0.121,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.1
+      },
+      {
+        "index": 12,
+        "hindi": "तब वह उसे घसीटता हुआ मरम्मत की दुकान तक लाया।",
+        "reference": "एनाते इनि: ओर इदि केआते कमि बइ दुकान ता: इदि कि:आ।",
+        "hypothesis": "एन तायोम इनिः ते माराङ बाइ राः मानाराङ जाकेद बानोः।",
+        "model_score": 0.133,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.73
+      },
+      {
+        "index": 13,
+        "hindi": "और वो भी विदेशी एक्ट्रेस के साथ।",
+        "reference": "ओडो एना यो विदेशी एक्ट्रेस लोः।",
+        "hypothesis": "ओड़ोः इनिः दुराङ एक् स लोः",
+        "model_score": 0.158,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.51
+      },
+      {
+        "index": 14,
+        "hindi": "है रंग फिर उड़ा उड़ा।",
+        "reference": "रंगा ओड़ो: ओटांग ओटांगाआ कना।",
+        "hypothesis": "मेनाः आर पाः लोः नापाम राः पेड़ेः बाइ तानाः।",
+        "model_score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.12
+      },
+      {
+        "index": 15,
+        "hindi": "का प्रयास हो सकता है।",
+        "reference": "राः प्रयास दाड़िओःआ।",
+        "hypothesis": "राः प्रयास होबा दाड़िओः आ।",
+        "model_score": 0.307,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.27
+      },
+      {
+        "index": 16,
+        "hindi": "स्नातक छात्र को बस ने रौंदा",
+        "reference": "स्नातक इतुन कोड़ा होन के गाड़ी पेन तइजा",
+        "hypothesis": "मल् ली होनको एनताः ते बस टी श र माः किः आ।",
+        "model_score": 0.03,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.73
+      },
+      {
+        "index": 17,
+        "hindi": "धर्मवीर भारती हम लोगों को सिखाते थे।",
+        "reference": "धर्मवीर भारती अले को सिखाओ ले तईकेना",
+        "hypothesis": "धोरोम राज सिंह आले होड़ोको लेल केआते काएः इतु जाद ताइकेना।",
+        "model_score": 0.145,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.68
+      },
+      {
+        "index": 18,
+        "hindi": "जिसने भी इसे सुना हैरान रह गया।",
+        "reference": "ओकोए गे नेआ आयुम केदा इनि: उड़ु: रे टो:ओ जना।",
+        "hypothesis": "ओकोए ओ नेआ आयुम केआते इनिः आ।",
+        "model_score": 0.272,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.7
+      },
+      {
+        "index": 19,
+        "hindi": "साक़ी हम यह क्या सुनते हैं",
+        "reference": "साकी अबु नेया चिनअ: बु अयुम तना",
+        "hypothesis": "सा राः नेआ चानाः उदुब जादा।",
+        "model_score": 0.271,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.07
+      },
+      {
+        "index": 20,
+        "hindi": "कारोबार में रुचि कम ही बन पाएगी।",
+        "reference": "कारोबार कोरे सुकु कोम का कोमो: तना।",
+        "hypothesis": "कामि रे ताइन जान कोम बाइ रआः जारूड़ु मेनाः।",
+        "model_score": 0.158,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.42
+      },
+      {
+        "index": 21,
+        "hindi": "जनलोकपाल आंदोलन कर उन्होंने अपनी पहचान बनाई।",
+        "reference": "जनलोकपाल आन्दोलन रिकाकेआते इनिः उरुमजानाएः।",
+        "hypothesis": "जन लोक फार्म इनीः के इनिः अयाः माइन केदाय",
+        "model_score": 0.109,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.62
+      },
+      {
+        "index": 22,
+        "hindi": "वह करोंडो जन्म जहरीले साँप के पाता है।",
+        "reference": "इनि करोड़लेका जोनोम जहरीला बिङको:आ नामेआ।",
+        "hypothesis": "इनिः के वार हुलंग जोनोम ज म राः चों जा ङ रिका लागातिङा।",
+        "model_score": 0.104,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 31.92
+      },
+      {
+        "index": 23,
+        "hindi": "इसलिए पुलिस उससे कड़ाई से पूछताछ नहीं कर पाती थी।",
+        "reference": "एना रेआ: ते पुलिस को केटे: ते कको कुलि दड़िजना।",
+        "hypothesis": "एना मेनते पुलिस को लोः ते का नम केआते काएः ठोर केदा।",
+        "model_score": 0.22,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.56
+      },
+      {
+        "index": 24,
+        "hindi": "लोकतंत्र में धमकी की भाषा कहां तक सही?",
+        "reference": "लोकतंत्र रे धमकाओ रआः जागार चिमिन जाकेद सारतिआ।",
+        "hypothesis": "लोकतंत्र रे दाः रेआ जगर को उड़ुः जाकेद कजि कमि का।",
+        "model_score": 0.163,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 38.13
+      },
+      {
+        "index": 25,
+        "hindi": "इस नाते संजीव जी से परिचय तो पहले से था।",
+        "reference": "ने लेकाते संजीव जी लोः उपुरुम सिदाते गे ताइकेना।",
+        "hypothesis": "ने लेका ते फोटो जी लोः होन कुड़ी तेगे सिदा कन तइकेना",
+        "model_score": 0.243,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.14
+      },
+      {
+        "index": 26,
+        "hindi": "मैं बाज़ार को अपनी पीठ पे लादे भागता रहता।",
+        "reference": "आञ पीटि देआ रे लादिकेआते निराकान ताइनजानाञ।",
+        "hypothesis": "आञ पीटि आपान मेद रे आउ केआते रासिका तान ताइकेना।",
+        "model_score": 0.156,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.34
+      },
+      {
+        "index": 27,
+        "hindi": "बेचारी देवकी बैठी रो रही थी।",
+        "reference": "बापुड़ि देवकी दुबाकाने इआमतान ताइकेना।",
+        "hypothesis": "किरिङ देव आः काटा दुब तान ताइकेना।",
+        "model_score": 0.118,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.26
+      },
+      {
+        "index": 28,
+        "hindi": "आप स्त्री रोग विशेषज्ञा से मिलकर जांच कराएं।",
+        "reference": "आम कुड़िकोआः डाक्टर ते जांच रिकाएमे।",
+        "hypothesis": "आम कुड़ि कामि तानको नेआ मेनते जांच रिका जादा।",
+        "model_score": 0.129,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.07
+      },
+      {
+        "index": 29,
+        "hindi": "किंतु यह आदमी नहीं बल्कि धन और अधिकार बोलते हैं।",
+        "reference": "मगर नेया होड़ो कागि लेकिन टाका ओडो पेड़े: कजिग:",
+        "hypothesis": "मेनदो नेआ होड़ोको का ओड़ोः होड़ोमो ओड़ोः।",
+        "model_score": 0.279,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.14
+      },
+      {
+        "index": 30,
+        "hindi": "खेतों में गेहूं और सरसों की फसलें लहलहाती हैं।",
+        "reference": "लोयोंग कोरे गोम अर मानी रअ रोआ मजा होबा काना।",
+        "hypothesis": "बिर कोरे जामा ओड़ोः सर ति साः ते को लेल रिका तना।",
+        "model_score": 0.13,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 31.4
+      },
+      {
+        "index": 31,
+        "hindi": "शाम को मंदिर में महाआरती की गई।",
+        "reference": "सिंगि हासुर मंदिल रे दिया जुंडि लेना।",
+        "hypothesis": "सिंगि हुलाङ मंदिर रे महा आर सी राः होबाजाना।",
+        "model_score": 0.3,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.37
+      },
+      {
+        "index": 32,
+        "hindi": "तो क्या मोहन भागवत की भी अवमानना हुई है?",
+        "reference": "तोबे मोहन भागवत राःओ माइन बागाड़ाओजाना?",
+        "hypothesis": "तोबे चानाः ओड़ोः कुड़ि होड़ो को रेआः जरूड़ु मेनाः।",
+        "model_score": 0.093,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.1
+      },
+      {
+        "index": 33,
+        "hindi": "भावनायें आदमी में मुस्कान बिखेरती हैं।",
+        "reference": "भावना होड़ो रे लंदा पासराव याय",
+        "hypothesis": "जी होड़ोको होड़ो रे दुब केआते बोलो को मेनाः कोआ।",
+        "model_score": 0.127,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.88
+      },
+      {
+        "index": 34,
+        "hindi": "ओजी पहले क्यों नहीं बताया कि आप तमंचे बनाते हैं।",
+        "reference": "चि हाले! सिदा चिनअः मेनते कम उदुब् केदा चि अम तमंचे बइया।",
+        "hypothesis": "ओ जी मेनते चानाः मेनते काजि आम कोताः को मेनाः।",
+        "model_score": 0.22,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.8
+      },
+      {
+        "index": 35,
+        "hindi": "मत्त गजराज ने उठाकर उन्हें मस्तक पर रख लिया।",
+        "reference": "मरंग होड़ो इनि दोंदों केआते अएआ: बो: रे जोगाव कि: आ।",
+        "hypothesis": "म ती दो ओते केआते इनिः चेतान राकाब केदाएः।",
+        "model_score": 0.117,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.65
+      },
+      {
+        "index": 36,
+        "hindi": "सभी पुलिस वाले जांच में लगे हैं।",
+        "reference": "सोबेन पुलिसरेनको जाँचरे लागाओकाना।",
+        "hypothesis": "सोबेन पुलिस को जांच रे एटेः कना।",
+        "model_score": 0.33,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.39
+      },
+      {
+        "index": 37,
+        "hindi": "और जो दौड़ में है।",
+        "reference": "ओड़ोः ओकोए निर रे मेनाइः।",
+        "hypothesis": "ओड़ोः ओकोए हिजुः रे मेनाः।",
+        "model_score": 0.276,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.5
+      },
+      {
+        "index": 38,
+        "hindi": "बस वहाँ कोई नहीं है जो कभी",
+        "reference": "बस एनता: रे जेतय बंकोवा जे ची जा हुलंग",
+        "hypothesis": "बस एनताः रे जेतन बनोः।",
+        "model_score": 0.295,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.02
+      },
+      {
+        "index": 39,
+        "hindi": "वे दो टीमों में बंटकर दायित्व निभा रहे थे।",
+        "reference": "इनकुः बारिआ टीम रे हाटिङ कोःआते बारोम गोआकान ताइना।",
+        "hypothesis": "इनिः बारिआ टीम रे दाः को जामा आकान ताइना।",
+        "model_score": 0.216,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.95
+      },
+      {
+        "index": 40,
+        "hindi": "वरना आज वह दादी बनी कहानियाँ सुनाती होती।",
+        "reference": "एनादो होनंग इसिंग इनि जियंग बइकेद् कहानी उदुबाकते ते होनंग।",
+        "hypothesis": "मेनदो तिसिङ इनिः माराङ सानाङ दो काआनि आयुम लागातिङा।",
+        "model_score": 0.162,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.3
+      },
+      {
+        "index": 41,
+        "hindi": "विदेशी कर्ज की देनदारी कम होगी।",
+        "reference": "विदेषी रिंड़ि रआः देनदारी घाटाओःआ।",
+        "hypothesis": "दुराङ राः जो ना राः का आउ लागातिङा।",
+        "model_score": 0.074,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.69
+      },
+      {
+        "index": 42,
+        "hindi": "इसका उपयोग नहीं किया जा रहा है।",
+        "reference": "नेआरे: उपयोग का होबाओताना।",
+        "hypothesis": "नेआ रेआः कमि का होबा तना।",
+        "model_score": 0.37,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 15.83
+      },
+      {
+        "index": 43,
+        "hindi": "कमोडिटी मार्केट में कहां होगी कमाई",
+        "reference": "कमोडिटी पिटि रे कोता: ते पैसा नमो:आ।",
+        "hypothesis": "नेका टी पिटि रे कोताः ते हिजुः तनाः।",
+        "model_score": 0.167,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.82
+      },
+      {
+        "index": 44,
+        "hindi": "भाभी तब तक उठ चुकी थीं।",
+        "reference": "हिलि एन लोः दो बिरिद लेनाएः।",
+        "hypothesis": "सचिन दो एन जकेद् बिरिद लेना।",
+        "model_score": 0.178,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 14.34
+      },
+      {
+        "index": 45,
+        "hindi": "पुर्नवास का मतलब यह तो कतई नहीं।",
+        "reference": "थनियर बसा रिका रेअः माने नेया दो कहा गे।",
+        "hypothesis": "पु टी काः आ मतलब रेआः माने दो कागे।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.49
+      },
+      {
+        "index": 46,
+        "hindi": "पैसे के साथ दिल के भी धनी हैं प्रेमजी",
+        "reference": "टाका लोः ते जी तेओ सुगाड़ा मेनाःइ प्रेमजी",
+        "hypothesis": "टाका लोः जी राः जी ओ जी बेसे दुलाड़ा मेनाः।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": true,
+        "suspicious_reasons": [
+          "WORD_REPETITION_3X"
+        ],
+        "latency_ms": 22.99
+      },
+      {
+        "index": 47,
+        "hindi": "स्टील का दाम घटाने पर जोर",
+        "reference": "बेसे दिन सिदारे जांए कोड़ाकोलो: एपराङ होबाजाना।",
+        "hypothesis": "इनुङ रआः होरा को मोचा रे बोलो आकाना।",
+        "model_score": 0.124,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.56
+      },
+      {
+        "index": 48,
+        "hindi": "उन्हें अलंकृत और लच्छेदार जुमले पसन्द नहीं थे।",
+        "reference": "आए अलंकृत ओड़ो: लच्छेदार जुमलाको काए: सुकुता ताइकेना।",
+        "hypothesis": "इनिः का टुः ओड़ोः ए स्ट - पु टी के कुलि केद् काएः रिका केना।",
+        "model_score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.04
+      },
+      {
+        "index": 49,
+        "hindi": "यह तो बात हुई हानिकारक या ऋणात्मक प्रभाव की।",
+        "reference": "नेआ दो जागार होबाजाना घाटि रआः चा घाटिओः लेकानाः।",
+        "hypothesis": "नेआ दो जागार होबाजाना रआः गोनोङ न - कु त्र कोआः होरा मेनाः।",
+        "model_score": 0.139,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.25
+      },
+      {
+        "index": 50,
+        "hindi": "यह तो मैं अभी बना देती हूं।",
+        "reference": "नेआ दो आञ ना:गे बाइ दाड़िआ।",
+        "hypothesis": "नेआ दो आञ नाः बाइ जादा।",
+        "model_score": 0.316,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.42
+      },
+      {
+        "index": 51,
+        "hindi": "काम के संबंध पनपने लगे है।",
+        "reference": "कमी: रे:अ सम्बन्ध पनपाओ: तना",
+        "hypothesis": "कामि रआः जारूड़ु को ताइकेना।",
+        "model_score": 0.249,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 10.59
+      },
+      {
+        "index": 52,
+        "hindi": "एक मामूली सी घटना ने क्या गुल खिलाया।",
+        "reference": "मियद हुड़िंग लेकन कमि चिलका कमि को रिका केदा।",
+        "hypothesis": "मिआद बा ली घटना का चानाः मेनते चानाः बाइ लागातिङा।",
+        "model_score": 0.091,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.93
+      },
+      {
+        "index": 53,
+        "hindi": "तब यह सवाल नहीं पूछते आप?",
+        "reference": "एन समय ने सवाल कम कुलीया: अम?",
+        "hypothesis": "एन सोमोय नेका काः ए ते अम लोः आम?",
+        "model_score": 0.168,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.44
+      },
+      {
+        "index": 54,
+        "hindi": "खिलाड़ियों का काम सिर्फ खेलना होता है।",
+        "reference": "इनुतानकोआः कामि इपाएः इनुङतेआः तानाः।",
+        "hypothesis": "पंचायत रेअः कमि ओड़अः रे दोहो तइना।",
+        "model_score": 0.096,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.7
+      },
+      {
+        "index": 55,
+        "hindi": "और चंदन उस पर लगाता बहुत वैज्ञानिक प्रक्रिया है।",
+        "reference": "ओडो चंदन एन्डे लगावआ एना बेसे मरंग वैज्ञानिक प्रक्रिया मेना।",
+        "hypothesis": "ओड़ोः हागा एन न रे इनिः पुराः वैज्ञानिक माराङ कामि मेनाः।",
+        "model_score": 0.146,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.7
+      },
+      {
+        "index": 56,
+        "hindi": "उनकी धमनियों में केवल रक्त नहीं बह रहा था।",
+        "reference": "इनकुआ सीर रे मायोम बाइरी दो का दंग लिंगि तन ताइकेना।",
+        "hypothesis": "इनिआः आपुते हुलाङ रे काएः उड़ुः तान ताइकेना।",
+        "model_score": 0.129,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.65
+      },
+      {
+        "index": 57,
+        "hindi": "नवरात्र का का काल सर्वदा उत्तम होता है।",
+        "reference": "नवरात्ररा: काल सोबेन समय उत्तमगे ताइना।",
+        "hypothesis": "नावा राः योग रा गाः सोबेन समय होबाः ओ तना",
+        "model_score": 0.159,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.56
+      },
+      {
+        "index": 58,
+        "hindi": "हमने खाली ही छोड़ी थी वह खाली जगह",
+        "reference": "इपाएरेगे बागेला:।",
+        "hypothesis": "आले मेद गे लेल केना इनिः चेतान रे इनिः दुनिया रे।",
+        "model_score": 0.118,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.31
+      },
+      {
+        "index": 59,
+        "hindi": "हर दल तैयारियों में मशगूल है।",
+        "reference": "सोबेन दलको तेयारि रे मेनाःकोआ।",
+        "hypothesis": "सोबेन साः ते दाः रे मेनाः।",
+        "model_score": 0.12,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 12.2
+      },
+      {
+        "index": 60,
+        "hindi": "कौन सुरभि की दिव्य बेलि प्राणॉ मॅ गमक उठी है?",
+        "reference": "ओकोएः सुरभि राः दिव्य बेलि प्राणॉ मॉ सोआन एटेःआकान?",
+        "hypothesis": "ओकोए वी न रेअः कमि ए उदुब् केद् चि सु द् लेका बइ तना।",
+        "model_score": 0.081,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.25
+      },
+      {
+        "index": 61,
+        "hindi": "तो क्या चमक रहा आकाश था",
+        "reference": "तोबे चना सिरमा रे चमकाव तान ताइकेना",
+        "hypothesis": "दो चानाः मेनते गेल सिरमा ताइकेना।",
+        "model_score": 0.271,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.41
+      },
+      {
+        "index": 62,
+        "hindi": "वह बात अलग है कि उस नन्हे अतिथि के लिये",
+        "reference": "नेआ जागार बिनगा गे चि एन कुपुल होन नागेन",
+        "hypothesis": "इनिः जागार बिनगा मेनाः चि एन सोमाए नागेन आपान इनुङ नातिन।",
+        "model_score": 0.324,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 36.16
+      },
+      {
+        "index": 63,
+        "hindi": "लगा प्रयोग मे कहीँ गड़बड़ हो गयी।",
+        "reference": "टोरजाना चि प्रयोग रेगे जांरे बागड़ाव जाना।",
+        "hypothesis": "टोओर जाना चि कामि रे कुलि तान ताइकेना।",
+        "model_score": 0.235,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.1
+      },
+      {
+        "index": 64,
+        "hindi": "पुलिस ने दोनों को न्यायालय में पेश किया है।",
+        "reference": "पुलिस बरनकिन के न्यायालय रे अगु कि:आ।",
+        "hypothesis": "पुलिस बरनकिन के ने सरकारी जोगाव केदा।",
+        "model_score": 0.199,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.63
+      },
+      {
+        "index": 65,
+        "hindi": "शरीर रचना विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन",
+        "reference": "होड़ोमो बनइ विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन।",
+        "hypothesis": "होड़ोमो रआः विज्ञान बनाई गोमके( ष) जाति रेन मूध गोमके अः तइन केना।",
+        "model_score": 0.064,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 41.2
+      },
+      {
+        "index": 66,
+        "hindi": "जो चारों तरफ हमारे गुजर रही हैं।",
+        "reference": "जे सोबेन पड़ अलेअ रे परोम तना।",
+        "hypothesis": "ओकोआ सोबेन साः आले हापे रिका जादा।",
+        "model_score": 0.226,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.66
+      },
+      {
+        "index": 67,
+        "hindi": "इसके लिए जिला स्तर पर विशेष उड़न दस्ते बनाए जाएंगे।",
+        "reference": "नेआ रा: नगेन ते जिला कोरेओ अपिरेअ: तेआ उपय को बइओ:व।",
+        "hypothesis": "नेआ मेनते जिला प्रदेश रे बेसे बालाए बाइ ओम लागातिङा।",
+        "model_score": 0.19,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.69
+      },
+      {
+        "index": 68,
+        "hindi": "युवावस्था के शुरूआती चरण में मोटापा खतरनाक",
+        "reference": "हरा सेपेड़ेदोःतन एनेटेः बेड़ा रे मोटेन पुरअः बोरोअन कजि।",
+        "hypothesis": "राजा सोमोय गे एटेः केआते नौ कर पा ट ताः लेल मोने जाः",
+        "model_score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.99
+      },
+      {
+        "index": 69,
+        "hindi": "कठिनाइयों और मानसिक पीडा का विस्तार से जिक्र किया।",
+        "reference": "कठिनाई ओडो मानसिक हसु रा: विस्तार ते उदूब केदाय",
+        "hypothesis": "चिलका ते ओड़ोः टाका राः दुकु राः काजि ते का रिका केदाएः।",
+        "model_score": 0.082,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 37.58
+      },
+      {
+        "index": 70,
+        "hindi": "वे बिना लायसेंस के ड्राइवर हैं।",
+        "reference": "इनिः बेगार लायसेंस राः ड्राइवर मेनाःइ",
+        "hypothesis": "इनिः बेगार बा ल् ड राः गोनोङ राः माइन मेनाः।",
+        "model_score": 0.12,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.45
+      },
+      {
+        "index": 71,
+        "hindi": "नोटवर्किंग के बेशुमार द्वार ओपन करती है।",
+        "reference": "नोटवर्किंग राः साङगि दुआरको निःएआएः।",
+        "hypothesis": "फोटो वर् ट रेआः इसु पुराः होड़ो को बइ तना।",
+        "model_score": 0.144,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 39.5
+      },
+      {
+        "index": 72,
+        "hindi": "गंगा में जैसा कि कानपुर करता है?",
+        "reference": "गंगा रे चिलका कानपुर कापीयाए?",
+        "hypothesis": "गंगा रे चिलका ते बु रिका तना।",
+        "model_score": 0.161,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 15.94
+      },
+      {
+        "index": 73,
+        "hindi": "उसके बिना किसी की भी रचना नहीं हुई।",
+        "reference": "एना बेगर जाना का बइआकना।",
+        "hypothesis": "इनिः आ बेगर जान राः जेतन जगर का होबा जना",
+        "model_score": 0.225,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.32
+      },
+      {
+        "index": 74,
+        "hindi": "पहले कालावस्त्र विराध एवं ष्षोक प्रदर्षनार्थ ही मान्य था।",
+        "reference": "सिदा हेंदे लीजा: विरोध ओडो दुकू नेल रिका गी मनातिंगो तइकेना",
+        "hypothesis": "सिदा रेगे वि षा य जी ओड़ोः सं ष सु शी इसु पुरा गे ताइकेना।",
+        "model_score": 0.102,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 42.8
+      },
+      {
+        "index": 75,
+        "hindi": "सत्ता समय का आज्जान नहीं सुनती।",
+        "reference": "सत्ता सोम़य रेआ: कजि आयुम काए: आयुम या।",
+        "hypothesis": "सत्ता सोमाए रआः देव ताको लेल काएः आयुम जादा।",
+        "model_score": 0.14,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.06
+      },
+      {
+        "index": 76,
+        "hindi": "लोकतंत्र का प्रसार ही सबसे बड़ी प्राथमिकता थी।",
+        "reference": "लोकतंत्र नितिरगे सोबेनाते माराङ कामि ताइकेना।",
+        "hypothesis": "लोकतंत्र रआः सोबेन को सोबेनाते माराङ कामि ताइकेना।",
+        "model_score": 0.277,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.11
+      },
+      {
+        "index": 77,
+        "hindi": "बी मानचित्र पर अपने पिछवाड़े कीटनाशक मुक्त रखो",
+        "reference": "बी मनचित्र रे अपनअः तयोम ते जन्तु गोएः रानु अतोम चबाकम।",
+        "hypothesis": "बी क मान फोटो रे आपान वा टर राः गोनोङ बाइ जोगाओ लागातिङा।",
+        "model_score": 0.101,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.3
+      },
+      {
+        "index": 78,
+        "hindi": "चारदीवारी से घिरे स्थान को भी ख़ाना कहा जाता है।",
+        "reference": "उपुन साः ते कोटोङोकान ठांवओ ख़ाना काजिओःआ।",
+        "hypothesis": "उपुन साः ते माराङ टायाद रेओ काजि लागातिङा।",
+        "model_score": 0.156,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.83
+      },
+      {
+        "index": 79,
+        "hindi": "पाइलिन चक्रवात का असर बिहार में दिखने लगा है।",
+        "reference": "पाइलिन चक्रवातरा: असर बिहारे लेलो:ताना।",
+        "hypothesis": "नौकरी का होयो रे होबाओआ चेतान रे ताइन ताना।",
+        "model_score": 0.08,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.71
+      },
+      {
+        "index": 80,
+        "hindi": "वह दुनिया में सबसे खूबसूरत औरत",
+        "reference": "इनिःगोटा दिसुम रे सोबेनकोअएते सुगड़उतर दंगड़ी।",
+        "hypothesis": "इनिः दुनिया रे सोबेन कोआते पुराः माजा सोमाए",
+        "model_score": 0.185,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.3
+      },
+      {
+        "index": 81,
+        "hindi": "कोयला घोटाले पर अदालत जा सकते हैं सुब्रह्मण्यम स्वामी",
+        "reference": "कोयला धोटाला रे अदालत सेनोः दाड़िआ सुब्रह्मण्यम स्वामी",
+        "hypothesis": "बिं ड ले रे मास्टर को उ ङ केआते सु द हर ष ज म स्वामी",
+        "model_score": 0.039,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.2
+      },
+      {
+        "index": 82,
+        "hindi": "वित्तीय साक्षरता पर रिजर्व बैंक का जोर",
+        "reference": "खुरजि इनितु रे रिजर्व बैंक रआः जोर",
+        "hypothesis": "टका रेआः गोनोङ रे बैंक ओड़ोः बैंक कमि बइ जना।",
+        "model_score": 0.153,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.62
+      },
+      {
+        "index": 83,
+        "hindi": "हरियाणा देश का पहला ऐसा राज्य है।",
+        "reference": "हरियाणा दिसुम रआः सिदा उतार नेकान राइज तानाः।",
+        "hypothesis": "राइज दिसुम रेअः सिदा समाज रे नेया राज्य तनअः।",
+        "model_score": 0.261,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.85
+      },
+      {
+        "index": 84,
+        "hindi": "राठौड की जीत पर आतिशबाजी कर मनाई खुशियां",
+        "reference": "राठौड़ाः जीताव रे फाटका साड़िकेआतेको रासिका जाना।",
+        "hypothesis": "राः साः ते दाः रे श भ श कर ताः लेल केआते रसिका जना।",
+        "model_score": 0.074,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 45.49
+      },
+      {
+        "index": 85,
+        "hindi": "एक दिन वे बाल कटवाने गये।",
+        "reference": "मुसिङ आए: उब लाटाबेने सेनो:जाना।",
+        "hypothesis": "मुसिङ इनिः के हा ड वे मे।",
+        "model_score": 0.069,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.79
+      },
+      {
+        "index": 86,
+        "hindi": "एक प्रकार का पागलपन के उपचार में दूसरी पीढ़ी के",
+        "reference": "मिद लेकान बालु रआः चिकिसा रे बारिआ पीढ़ी रेन",
+        "hypothesis": "मिआद लेका राः मेद् रेआः होड़ो को रे एटाः होड़ोको ओड़ोः ओड़ाः।",
+        "model_score": 0.142,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 64.67
+      },
+      {
+        "index": 87,
+        "hindi": "ना ही ठूँठ अपनी पुरानी रौनक को लौटते हैं।",
+        "reference": "ठूँठ आपान पुरना रौनकते काको रोआड़ दाड़िआ।",
+        "hypothesis": "ना गे जी आपान ओड़ाः राः लेनेल टाका लोः नापाम जाना।",
+        "model_score": 0.103,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.71
+      },
+      {
+        "index": 88,
+        "hindi": "वार्षिक तौर पर वेतन वृद्धि दी जाती है",
+        "reference": "सालः हिशब ते कामी पएशायो संगियेवा।",
+        "hypothesis": "सिरमा ते बिजली राः गोनोङ बाइ आकाना।",
+        "model_score": 0.103,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.15
+      },
+      {
+        "index": 89,
+        "hindi": "पुलिस बाबा को थाने लाकर पूछताछ कर रही है।",
+        "reference": "पुलिस बाबा के थाना आगु कियाते कुली बेडा जाइआको।",
+        "hypothesis": "पुलिस बाबा के थाना रे गोएः केआते जोगाव जदा को।",
+        "model_score": 0.29,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.83
+      },
+      {
+        "index": 90,
+        "hindi": "सूचना पर अस्पताल में कई पुलिस पदाधिकारी पहुंचे।",
+        "reference": "सुचना रे अस्पताल रे चिमीन पुलिस रेन सायोब को सेटेर जाना",
+        "hypothesis": "खोबोर रे अस्पताल रे बेसे हातु रेन को तेबाः केदा।",
+        "model_score": 0.245,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.39
+      },
+      {
+        "index": 91,
+        "hindi": "सोनिया ने कहा कि भाजपा को दो बार मौका मिला।",
+        "reference": "सोनिया मेनकेदाए चि भाजपा बारसा मौका नामकेदाए।",
+        "hypothesis": "सोनिया दो काजि केदा चि भाजपा के चुनाव सोबेन साः ओम लाः।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.95
+      },
+      {
+        "index": 92,
+        "hindi": "जो बेहोश रहने वाले नहीं कह सकते।",
+        "reference": "ओको लूर सेंड़ां बनोःको कअको कजि दड़िया।",
+        "hypothesis": "ओकोआ बे हा ड का ताइन जान जागार काएः रिका दाड़िआ।",
+        "model_score": 0.171,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.55
+      },
+      {
+        "index": 93,
+        "hindi": "शरीर में स्थित वायु प्राण है।",
+        "reference": "होड़ोमो रे तइन तन होयो जीऊ ए तनअः।",
+        "hypothesis": "होड़ोमो रे मेनाः चि होयो दाः मेनाः।",
+        "model_score": 0.21,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.82
+      },
+      {
+        "index": 94,
+        "hindi": "और दूजी तरफ भज भज मंडली है",
+        "reference": "एटा सा: रे भज भज मंडली मेना:",
+        "hypothesis": "ओड़ोः जी साः ते कुड़ि ज लाः।",
+        "model_score": 0.128,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.52
+      },
+      {
+        "index": 95,
+        "hindi": "शांति एवं सौंदर्य प्रदान करने वाला होता है।",
+        "reference": "शांति ओड़ो: सुगाड़ा ओमे नि:।",
+        "hypothesis": "एटाः गे ओड़ोः बुगिन बाइ रिका लागातिङा।",
+        "model_score": 0.146,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.21
+      },
+      {
+        "index": 96,
+        "hindi": "जिम्मेदार ने इस कार्य में हजारों रुपये बचा लिया।",
+        "reference": "बारोमान होड़ो ने कामि रे हजाराते पुराः टाकाएः बानचाव केदा।",
+        "hypothesis": "मुद को ने कामि रे पुराः माराङ गोनोङ काएः मानातिङ केदा।",
+        "model_score": 0.163,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.0
+      },
+      {
+        "index": 97,
+        "hindi": "यह कमाल किसका है? चुनाव प्रणाली का।",
+        "reference": "ने कमाल ओकोया: तन:अ?चुनाव प्रणाली र:अ",
+        "hypothesis": "नेआ एटाः ओकोए आः चुनाव मेनाः चि खोबोर साकाम रआः तानाः।",
+        "model_score": 0.194,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.75
+      },
+      {
+        "index": 98,
+        "hindi": "योग्यता से या योग्यता के रूप मे",
+        "reference": "दाडियाए नि ते दाडियाए रूप रे",
+        "hypothesis": "होबा ओआ चि होयो ते गे राः होरा रे",
+        "model_score": 0.111,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.67
+      },
+      {
+        "index": 99,
+        "hindi": "अप्रवासी भारतीय कुंद्रा लंदन के निवासी हैं।",
+        "reference": "एटअः दिसुम रे तइनतन भारतीय कुंद्रा लंदन रेन तइनोः निः तनिः",
+        "hypothesis": "अ दिशुम भारत रेन नवा त श य ल रअः मेनाः।",
+        "model_score": 0.102,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.13
+      },
+      {
+        "index": 100,
+        "hindi": "ननिहाल और ददिहाल दोनों ओर धर्म की बड़ी चर्चा थी।",
+        "reference": "ननिहाल नदीहाल बराना रे धर्म रेआ: जगर को जगर तन तइकेना।",
+        "hypothesis": "न वी ओडो श रः अ बरिया धोरोम राः जगर तइकेना",
+        "model_score": 0.124,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.04
+      },
+      {
+        "index": 101,
+        "hindi": "वहां जीवानंद बैठे सारंगी बजा रहे थे।",
+        "reference": "एनता जीवानंद दुबकेआते सारंगी साड़ितानकेना।",
+        "hypothesis": "एनताः जी को साः ते दुब लाः को तइकेना",
+        "model_score": 0.138,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.4
+      },
+      {
+        "index": 102,
+        "hindi": "ज्यादातर लोगों को ठीक से हिन्दी लिखना तक नहीं आता।",
+        "reference": "इसु पुरा: होड़ोको हिन्दी ओल पाड़ाव कको इतुआना।",
+        "hypothesis": "पुराः होड़ोको को माजा ते हिन्दी आते ओल काएः इतु लागातिङा।",
+        "model_score": 0.212,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.12
+      },
+      {
+        "index": 103,
+        "hindi": "अच् छा लगा तीन घंटे का योगदान।",
+        "reference": "3धंटा रेआ समय ओम केआते माजाइंग ठोर केदा।",
+        "hypothesis": "बेस ताइना आपि सिरमा रआः देंगा नागेन",
+        "model_score": 0.137,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 15.77
+      },
+      {
+        "index": 104,
+        "hindi": "नये कलाकार उत्साह के साथ लगातार भाग ले रहे हैं।",
+        "reference": "नावा कलाकारको जुलुङ लोः हिजुःतानाको।",
+        "hypothesis": "नावा ओड़ोः माजा लोः जापागार को आउ लागातिङा।",
+        "model_score": 0.133,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.37
+      },
+      {
+        "index": 105,
+        "hindi": "इसके लिए अक्षय ने प्लानिंग कर ली है।",
+        "reference": "नेया लाई अक्षय दो प्लानिंग बइ उतारा कदाए।",
+        "hypothesis": "नेआ मेनते अन्ना तकिन निः केदा।",
+        "model_score": 0.171,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.75
+      },
+      {
+        "index": 106,
+        "hindi": "अब सर्दी बस सर्दियों की छुट्टियों जितनी होती है।",
+        "reference": "नाआ रबंग रबंग छुट्टी हमि: ताइना।",
+        "hypothesis": "नाः ते बाबा कोः आः ओड़ाः रेआ उड़ुः ताइना।",
+        "model_score": 0.11,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.7
+      },
+      {
+        "index": 107,
+        "hindi": "कानपुर में अगवा कर छात्रा से किया रेप",
+        "reference": "कानपुर रे पढ़ाव कुड़ि होन अरकिद केआते रेप किआः।",
+        "hypothesis": "कानपुर रे डुंबु केआते कुड़ि होन कुड़ि ल केदा।",
+        "model_score": 0.11,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.49
+      },
+      {
+        "index": 108,
+        "hindi": "इस शहर का हर इक पत्थर तो पहचाना हुआ है।",
+        "reference": "ने सहर रआः मिमिआद दिरि दो चिना उरूमाकाना।",
+        "hypothesis": "ने शहर रेअः मियद् दिरि दो दिरि रेदो कमि को होबा जना।",
+        "model_score": 0.215,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.46
+      },
+      {
+        "index": 109,
+        "hindi": "इससे किसी का भला नहीं होगा।",
+        "reference": "नेया ते जेतय:अ का भला:अवा",
+        "hypothesis": "नेआते जान का होबाओआ।",
+        "model_score": 0.149,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 11.21
+      },
+      {
+        "index": 110,
+        "hindi": "रूद्राक्षों में साधारणतः एक से सताइस धारियां होती हैं।",
+        "reference": "रुद्राक्षरे मेनदो मिआदते हिसि एआ धारी ताइना।",
+        "hypothesis": "दाः भं य रे हिन्दी ते मिआद सा गर लेकाते गे ताइना।",
+        "model_score": 0.07,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.18
+      },
+      {
+        "index": 111,
+        "hindi": "सिंदूर और बिंदी लगाने पर फिकरे कसे जाते हैं।",
+        "reference": "सिंदूर ओड़ो बिंदी लगावेन रे फिकरा को कसावया",
+        "hypothesis": "सिंद ओड़ोः बा ड़ा( ष) आर चेतान रे दा क को जामा काना।",
+        "model_score": 0.073,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.47
+      },
+      {
+        "index": 112,
+        "hindi": "दुनिया के सिर्फ सात देशों में बोली जाती है अंग्रेजी।",
+        "reference": "दुनिया रआः इपाएः एआ (सात) दिसुम रे जागारोःताना अंगे्रजी।",
+        "hypothesis": "दुनिया रेन मुद काआनि रे उड़ुःोः ताना चि अंग्रेजी मेनाः।",
+        "model_score": 0.14,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.42
+      },
+      {
+        "index": 113,
+        "hindi": "चुनावी मुद्दा बनाने की बात की जाएगी।",
+        "reference": "सानाला रआः मुद्दा बाइ रआः जागारोआ।",
+        "hypothesis": "चुनाव रेआः कजि नगेन जगर रेआ कजि कमि रेआः।",
+        "model_score": 0.142,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.87
+      },
+      {
+        "index": 114,
+        "hindi": "सभी बच्चों को क्रम से लाइनों में बिठाया गया था।",
+        "reference": "सोबेन होनको पानति ते दुबरिकालेनाको।",
+        "hypothesis": "सोबेन होनको के ओते ते को रे दुब जानाएः।",
+        "model_score": 0.187,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.64
+      },
+      {
+        "index": 115,
+        "hindi": "मेरे अकेलेपन ने पूरी कर ली है अपनी पढ़ाई",
+        "reference": "आञाः एनेसकार गोटा छाबाकेदाएः आएआः पाड़ाओ",
+        "hypothesis": "आञाः उड़ुः रे गोटा आपान पाड़ाओ तादाएः आपान",
+        "model_score": 0.072,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.75
+      },
+      {
+        "index": 116,
+        "hindi": "कई प्रांतों में गया है प्याज का बीज",
+        "reference": "चिमनगं टयद् कोरे प्याजु रेआ जंग को कुला कदा।",
+        "hypothesis": "चिमिन पेड़ेः कोरे जाना।",
+        "model_score": 0.086,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 11.3
+      },
+      {
+        "index": 117,
+        "hindi": "हम संतोष के लिए ब् लॉगिंग करते हैं।",
+        "reference": "अइंग जि बुलव मेनते ब्लाग ओलेआइङ।",
+        "hypothesis": "आले मोने नागेन माजा बाइ जादा।",
+        "model_score": 0.119,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.52
+      },
+      {
+        "index": 118,
+        "hindi": "अभी बद्रीनाथ तक हेलिकॉप्टर नहीं उड़ सके हैं।",
+        "reference": "ना: बद्रीनाथ ता:बी हेलिकॉप्टर का आपीर दाढिया।",
+        "hypothesis": "नाः दो सत्ता जकेद् पी टी डी ट रः अ फ ली का होबाः वा",
+        "model_score": 0.094,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 51.08
+      },
+      {
+        "index": 119,
+        "hindi": "मेरी कविता शामिल करने का आभार।",
+        "reference": "आञाः दुराङ आदेर रिका राः जोआर।",
+        "hypothesis": "आञाः दुराङ एटेः राः जोआर।",
+        "model_score": 0.292,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.14
+      },
+      {
+        "index": 120,
+        "hindi": "इसी से परेशान होकर युवक ने जहरीला पदार्थ खा लिया।",
+        "reference": "नेया ते परेशान केते दंगड़ा जहरीला पदार्थ जोम केदाय",
+        "hypothesis": "नेआ ते इतु केआते कुड़ि होड़ो को उः आ।",
+        "model_score": 0.142,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 47.67
+      },
+      {
+        "index": 121,
+        "hindi": "सक्रिय रस शरीर से लाभप्रद एक मिश्रण है कि",
+        "reference": "सक्रिय रासे होड़ोमोते लाभप्रद मिआद मिश्रण मेना: चि।",
+        "hypothesis": "स वा जी ओड़ाः ते का राः मिआद प्र ष ण मेनाः चि मिआद काआनि मेनाः।",
+        "model_score": 0.117,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 37.78
+      },
+      {
+        "index": 122,
+        "hindi": "आपकी मित्रता शब्दों की ही देन है।",
+        "reference": "अमा: मित्रता शब्द र:अ देन गी तना:",
+        "hypothesis": "आमाः जी दो टुङ रआः सानाङ मेनाः।",
+        "model_score": 0.163,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.59
+      },
+      {
+        "index": 123,
+        "hindi": "क् योंकि कामना तुम् हारी उर्जा से लड़ रही थी।",
+        "reference": "चिआःचि कामना आम आञाः पेड़ेः लोःते लाड़ाइ तान ताइकेना।",
+        "hypothesis": "चि को आम आमाः जी ते माराङ बालाए तान ताइकेना।",
+        "model_score": 0.147,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.33
+      },
+      {
+        "index": 124,
+        "hindi": "बड़ी मुश्किल से मिलती है कुर्सी।",
+        "reference": "चिमिन मुश्किल ते नमोवा ने चौकी",
+        "hypothesis": "बेसे बालाए ते आउ लागातिङा।",
+        "model_score": 0.15,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 14.33
+      },
+      {
+        "index": 125,
+        "hindi": "इसी तनाव के कारण मैं सीधे होटल पहुंच गई थी।",
+        "reference": "ने तनाव रा: चलते आइंग सोझगी होटल सेटेर कन तइकेनाइंग",
+        "hypothesis": "ने बारे रे आञ कारण को चेतान राकाब केआते जोगाओ लाः ए।",
+        "model_score": 0.146,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.49
+      },
+      {
+        "index": 126,
+        "hindi": "उसके बाद से ही स्थानीय लोगों में आतंक है।",
+        "reference": "ने तायोम ते गे जापाः रेन होड़ोको बोरोताना।",
+        "hypothesis": "एना तायोम ते गे राः होड़ोको चेतान रे का मेनाः।",
+        "model_score": 0.198,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.78
+      },
+      {
+        "index": 127,
+        "hindi": "परिवारवाद का आरोप कम ही लगेगा।",
+        "reference": "परिवारवाद रेआ आरोप हुड़िंग गे होबा:ओआ।",
+        "hypothesis": "ओड़ाः रआः होरा - जान जागार गे कुलि लागातिङा।",
+        "model_score": 0.105,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.15
+      },
+      {
+        "index": 128,
+        "hindi": "मना करने पर बोलते हैं कि क्या नाराजगी में?",
+        "reference": "माना जाइःरे काजिताना चि चानाःम हांड़ातानरे?",
+        "hypothesis": "रिका लागातिङा चि काजि मेना चि चानाः रे चानाः मेनते का।",
+        "model_score": 0.204,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.13
+      },
+      {
+        "index": 129,
+        "hindi": "महौल बारात के बजाय पिकनिक मनाने जैसा बन गया।",
+        "reference": "एनताः बारात लेकादो का पिकनिक मानातिङ लेका बाइ जाना।",
+        "hypothesis": "बिर लेका ते काः ए रेआः कजि कमि को उदुब केदा।",
+        "model_score": 0.082,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.0
+      },
+      {
+        "index": 130,
+        "hindi": "ममता ने अपने भाषण में लालू पर कई तीर छोडे।",
+        "reference": "ममता आएआः भाषण रे लालूआः चेतान रे इसु सार कोएः तुञकेदाएः।",
+        "hypothesis": "ममता आपान जागार रे लालू के गोटा दिसुम रेन बेसे सिनमा डे र डे ता।",
+        "model_score": 0.073,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 40.84
+      },
+      {
+        "index": 131,
+        "hindi": "कोई सरकारी बाबू इसे लिखता है।",
+        "reference": "जाए सरकारी बाबू नेया ओलेआञ।",
+        "hypothesis": "जान सरकारी बाबू नेआ ओल तानाएः।",
+        "model_score": 0.326,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.2
+      },
+      {
+        "index": 132,
+        "hindi": "ईसाई और पारसी के भी उत्तराधिकार कानून हैं।",
+        "reference": "ईसाई आर पारसीकोआः उत्तराधिकार कानून मेनाः।",
+        "hypothesis": "ई वी अर जागर रेअः तला रे सत्ता तनअः।",
+        "model_score": 0.046,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.97
+      },
+      {
+        "index": 133,
+        "hindi": "किसमें छुपा है खुश रहने का राज?",
+        "reference": "चानाः ते दानाङाकाना सुकु ते ताइन राः राज?",
+        "hypothesis": "ओकोए सेन ताना जी रे ताइन रआः राज ताइकेना",
+        "model_score": 0.158,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.03
+      },
+      {
+        "index": 134,
+        "hindi": "या किसी अन्य तरह की सृष्टि बनाई जाये।",
+        "reference": "चि एटा लेकान संसार बई ले एनाँग।",
+        "hypothesis": "कारेदो एटाः लेकाते गोटा दिसुम बाइ लागातिङा।",
+        "model_score": 0.173,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.83
+      },
+      {
+        "index": 135,
+        "hindi": "विश्व चैंपियनशिप में आनंद को मनोवैज्ञानिक बढ़त",
+        "reference": "विष्व चैंपियनषिप रे आनंद दो मोनेलेकाते दाड़ि",
+        "hypothesis": "दुनिया रे सर स रे रासिका के वैज्ञानिक बेस ताइना",
+        "model_score": 0.046,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.7
+      },
+      {
+        "index": 136,
+        "hindi": "हिन्दी में जिसे आलोचना कहते हैं यह आधुनिक विधा है।",
+        "reference": "हिंदी रे चीना के आलोचना को कजिया ने या आधुनिक विधा तना",
+        "hypothesis": "हिन्दी रे ओकोए कजि को इतुआना ने कानि को।",
+        "model_score": 0.215,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.37
+      },
+      {
+        "index": 137,
+        "hindi": "उन्होंने कहा इस पर विचार करने की जरूरत है।",
+        "reference": "इनको को काजी केदा नेया रे विचार रा:दरकार मेना:",
+        "hypothesis": "इनिः काजि केदा नेआ रे उड़ुः रआः जारूड़ु मेनाः।",
+        "model_score": 0.308,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.44
+      },
+      {
+        "index": 138,
+        "hindi": "चुंबकत्व को निष्क्रिय करें सहायता करें",
+        "reference": "चुंबकत्वके निष्क्रिय रिकाएमे देंगाएमे।",
+        "hypothesis": "चु ड़ा क त्व के पु टी के वि य जी ओम लेम।",
+        "model_score": 0.041,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE",
+          "DEGENERATE_MODEL_SCORE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.85
+      },
+      {
+        "index": 139,
+        "hindi": "दंगा निरोधक वाहन को बुला लिया गया है।",
+        "reference": "दंगा निरोधक गाडी के कुली आउ केदा को",
+        "hypothesis": "द स् ब कु टी के कुल किआ।",
+        "model_score": 0.093,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.58
+      },
+      {
+        "index": 140,
+        "hindi": "कहार महल में झाडू देते हुए अशर्फियाँ बटोर",
+        "reference": "कहार महल रे जोः तान इनतु अशर्फियाँ हाउर केदा",
+        "hypothesis": "कजि टयद् रे तइन केना जकेद् काएः ए उदुब् केदा।",
+        "model_score": 0.112,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.99
+      },
+      {
+        "index": 141,
+        "hindi": "अब तो कहीं से खुशियों की दास्तान लाते।",
+        "reference": "नाआः दो जाआं ताः ते रासिका कानाजिको आउ लागातिङ ताइकेना।",
+        "hypothesis": "नाः दो जां ते रसिका रेआः उड़ुः केआते लेल किः आ।",
+        "model_score": 0.217,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.07
+      },
+      {
+        "index": 142,
+        "hindi": "या मैं आपको बारंबार प्रणाम करता हूँ।",
+        "reference": "आइंग अमके घड़ी-घड़ी जोवर मेतनाइंग",
+        "hypothesis": "चि आञ आमाः मेद ञ सानाङ तानाञ।",
+        "model_score": 0.228,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.21
+      },
+      {
+        "index": 143,
+        "hindi": "यहां सारा साल मौसम लगभग एक जैसा ही रहता है।",
+        "reference": "नेताः गोटा सिरमा मौसम मिद लेका गे ताइना।",
+        "hypothesis": "नेताः सोबेन सिरमा हुड़िङ सोमाए मिआद लेका गे ताइना।",
+        "model_score": 0.416,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.99
+      },
+      {
+        "index": 144,
+        "hindi": "इधर कुछ दिनों से शन्नो देख",
+        "reference": "नेसाः हुड़िङ दिन ते शन्नो लेल",
+        "hypothesis": "राजस्थान तायोम ते हुड़िङ चा रे लेल ले लेल मे।",
+        "model_score": 0.111,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.99
+      },
+      {
+        "index": 145,
+        "hindi": "कितनी नौकाएं इसके किनारों से होकर गुजरी हैं।",
+        "reference": "चिमिनाम लाउकाको नेआ आतोमते सेसेन पारोमाकाना।",
+        "hypothesis": "प्रेम लाः आ एना रेआः कजि ते इनिः गा लोः होबा जना।",
+        "model_score": 0.107,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.88
+      },
+      {
+        "index": 146,
+        "hindi": "इसमें यूनिकोड हिन्दी में टाईप करना मुश्किल था।",
+        "reference": "नेया रे यूनिकोड टाइप मुश्किल तइकेना",
+        "hypothesis": "नेया रे बिहार हिन्दी हिंदी रअ कामी को बइ तन ताइकेना।",
+        "model_score": 0.159,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.37
+      },
+      {
+        "index": 147,
+        "hindi": "यह भी एक खबर है आप विश्वास करें तो",
+        "reference": "नेयाओ मोयोद खबर गेआ तना अम पतिएरे।",
+        "hypothesis": "नेआ ओ मिआद खोबोर मेनाः आम रे आम?",
+        "model_score": 0.254,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.12
+      },
+      {
+        "index": 148,
+        "hindi": "बस में सारे रस्ते मुझे बेचैनी सी लगी रही।",
+        "reference": "बस गाड़ि रे गोटा होरा आञ आकुल-बाकुल आटकार केदा।",
+        "hypothesis": "बस रे सोबेन को अइंग के इंग बोंगा बइ तन तइकेना।",
+        "model_score": 0.152,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.12
+      },
+      {
+        "index": 149,
+        "hindi": "सर्वोत्तम सिद्धि के लिये सदा सतत चेष्टा करनी चाहिये।",
+        "reference": "सोबेनाते माजा जो (सिद्धि) नागेन जानाव कुरूमुटुआकान ताइन लागातिङा।",
+        "hypothesis": "सोबेनाते माजा माराङ होड़ोकोआः सानाङ मेनाः।",
+        "model_score": 0.13,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 15.56
+      }
+    ]
+  },
+  "Full_Corpus_Retrained_Model": {
+    "model_name": "Full_Corpus_Retrained_Model",
+    "checkpoint": "models/nmt/checkpoints_full_corpus/best_transformer.pt",
+    "parameters": 9594688,
+    "held_out_test": {
+      "total_sentences": 1334,
+      "raw_bleu": 20.41,
+      "raw_chrf": 23.24,
+      "clean_bleu": 20.41,
+      "clean_chrf": 20.64,
+      "exact_matches": 0,
+      "exact_match_pct": 0.0,
+      "qg_pass_rate_pct": 64.62,
+      "suspicious_output_rate_pct": 0.6,
+      "latency_mean_ms": 27.64,
+      "latency_p50_ms": 26.38,
+      "latency_p95_ms": 42.01
+    },
+    "external_challenge": {
+      "total_sentences": 52,
+      "qg_pass_rate_pct": 75.0,
+      "suspicious_output_rate_pct": 1.92,
+      "failure_a": {
+        "id": "REAL-01",
+        "category": "real_world_failure_a",
+        "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+        "hypothesis": "साइ बर का रिका लेका ते बेसे बालाए मेनाः।",
+        "model_score": 0.132,
+        "quality_gate_passed": false,
+        "quality_gate_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "classification": "UNVALIDATED_MODEL_OUTPUT",
+        "suspicious": false,
+        "latency_ms": 25.33
+      },
+      "failure_b": {
+        "id": "REAL-02",
+        "category": "real_world_failure_b",
+        "hindi": "आज हम सब गाना गाएंगे।",
+        "hypothesis": "तिसिङ आले सोबेन को दुराङ तानाएः।",
+        "model_score": 0.327,
+        "quality_gate_passed": true,
+        "quality_gate_reasons": [],
+        "classification": "UNVALIDATED_MODEL_OUTPUT",
+        "suspicious": false,
+        "latency_ms": 16.22
+      },
+      "results": [
+        {
+          "id": "REAL-01",
+          "category": "real_world_failure_a",
+          "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+          "hypothesis": "साइ बर का रिका लेका ते बेसे बालाए मेनाः।",
+          "model_score": 0.132,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.33
+        },
+        {
+          "id": "REAL-02",
+          "category": "real_world_failure_b",
+          "hindi": "आज हम सब गाना गाएंगे।",
+          "hypothesis": "तिसिङ आले सोबेन को दुराङ तानाएः।",
+          "model_score": 0.327,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 16.22
+        },
+        {
+          "id": "CHAL-01",
+          "category": "greetings",
+          "hindi": "नमस्ते, आप सभी का हमारे गाँव में स्वागत है।",
+          "hypothesis": "नम नगेन अम सोबेन कोआः हातु रे बैंग मेनाः।",
+          "model_score": 0.297,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.0
+        },
+        {
+          "id": "CHAL-02",
+          "category": "greetings",
+          "hindi": "शुभ प्रभात, आज का दिन बहुत सुंदर है।",
+          "hypothesis": "रासिका दो तिसिङ रआः दिन बेसे सुगाड़ा मेनाः।",
+          "model_score": 0.419,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 19.78
+        },
+        {
+          "id": "CHAL-03",
+          "category": "daily_conversation",
+          "hindi": "तुम आज सुबह से क्या कर रहे हो?",
+          "hypothesis": "आम तिसिङ सेताः ते चानाः रिका जादा।",
+          "model_score": 0.49,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.66
+        },
+        {
+          "id": "CHAL-04",
+          "category": "daily_conversation",
+          "hindi": "मैं अभी बाजार जा रहा हूँ, थोड़ी देर में लौटूँगा।",
+          "hypothesis": "आञ नाः पीटि लोः हुड़िङ खोन रे हेड़ा ते पारोम जाना।",
+          "model_score": 0.191,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 27.67
+        },
+        {
+          "id": "CHAL-05",
+          "category": "classroom_language",
+          "hindi": "कृपया सभी बच्चे अपनी किताबें खोलें।",
+          "hypothesis": "ने सोबेन होनको आपान पुथि को नाम दाड़ि आः।",
+          "model_score": 0.136,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 23.16
+        },
+        {
+          "id": "CHAL-06",
+          "category": "classroom_language",
+          "hindi": "अध्यापक ने श्यामपट्ट पर एक नया पाठ लिखा।",
+          "hypothesis": "प्रकाश ली श्याम ओते रे मिआद नावा पेड़ेः पड़ा व आकान ताइकेना।",
+          "model_score": 0.119,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 37.4
+        },
+        {
+          "id": "CHAL-07",
+          "category": "questions",
+          "hindi": "यह रास्ता किस गाँव की ओर जाता है?",
+          "hypothesis": "नेआ होरा ओकोए हातु रेन साः ते को ओम तना।",
+          "model_score": 0.26,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.0
+        },
+        {
+          "id": "CHAL-08",
+          "category": "questions",
+          "hindi": "कल रात नदी के पास कौन आया था?",
+          "hypothesis": "होला निदा जापाः रे ओकोए हिजुः लेना।",
+          "model_score": 0.42,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 22.84
+        },
+        {
+          "id": "CHAL-09",
+          "category": "answers",
+          "hindi": "हाँ, हम कल सुबह मेला देखने जरूर जाएंगे।",
+          "hypothesis": "हे आले होला सेताः रे इसु पुराः गे उड़ुः केआते।",
+          "model_score": 0.146,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 34.22
+        },
+        {
+          "id": "CHAL-10",
+          "category": "answers",
+          "hindi": "नहीं, मुझे इस बात की कोई जानकारी नहीं है।",
+          "hypothesis": "का आञ नेआ जागार रआः जान जानकारी बानोः।",
+          "model_score": 0.508,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.52
+        },
+        {
+          "id": "CHAL-11",
+          "category": "present_tense",
+          "hindi": "बच्चे मैदान में गेंद से खेल रहे हैं।",
+          "hypothesis": "होनको मैदान रे चा बा ते इनुङ तानको ताइकेना।",
+          "model_score": 0.245,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 32.65
+        },
+        {
+          "id": "CHAL-12",
+          "category": "present_tense",
+          "hindi": "सूरज पूरब दिशा में चमकता है।",
+          "hypothesis": "सिंगि होड़ोमो रे होरा रेगे नमोः तना।",
+          "model_score": 0.186,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.61
+        },
+        {
+          "id": "CHAL-13",
+          "category": "past_tense",
+          "hindi": "हमने कल शाम को एक बड़ा पेड़ लगाया था।",
+          "hypothesis": "आले होला के मिआद माराङ गेल लाख तान ताइकेना।",
+          "model_score": 0.227,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 22.85
+        },
+        {
+          "id": "CHAL-14",
+          "category": "past_tense",
+          "hindi": "वे लोग पिछले हफ्ते यहाँ आए थे।",
+          "hypothesis": "इनकु होड़ोको सिदा फोन हिजुः तन ताइकेना।",
+          "model_score": 0.347,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.87
+        },
+        {
+          "id": "CHAL-15",
+          "category": "future_tense",
+          "hindi": "कल हम सब मिलकर नया घर बनाएंगे।",
+          "hypothesis": "होला आले सोबेन कोआते नावा ओड़ाः बाइ राः बाइ तादाएः।",
+          "model_score": 0.256,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.55
+        },
+        {
+          "id": "CHAL-16",
+          "category": "future_tense",
+          "hindi": "अगले महीने तेज बारिश होगी।",
+          "hypothesis": "अयर महीना रे दाः हिजुः तना",
+          "model_score": 0.173,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.21
+        },
+        {
+          "id": "CHAL-17",
+          "category": "negation",
+          "hindi": "मैंने आज किसी से कोई झगड़ा नहीं किया।",
+          "hypothesis": "आञ तिसिङ जान ते जेतान गोपोएः का रिका केदा।",
+          "model_score": 0.264,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 33.42
+        },
+        {
+          "id": "CHAL-18",
+          "category": "negation",
+          "hindi": "जंगल में रात को अकेले मत जाओ।",
+          "hypothesis": "बिर रे निदा गे एसेकार गे लेल मे।",
+          "model_score": 0.362,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.79
+        },
+        {
+          "id": "CHAL-19",
+          "category": "singular_plural",
+          "hindi": "एक चिड़िया पेड़ की डाल पर बैठी है।",
+          "hypothesis": "मिआद चा ट दारु राः दुब जानाएः।",
+          "model_score": 0.144,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 18.41
+        },
+        {
+          "id": "CHAL-20",
+          "category": "singular_plural",
+          "hindi": "बहुत सारी चिड़ियाँ आकाश में उड़ रही हैं।",
+          "hypothesis": "बेसे सोबेन को साः ते सिरमा रे सेसेन तना।",
+          "model_score": 0.26,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.98
+        },
+        {
+          "id": "CHAL-21",
+          "category": "pronouns",
+          "hindi": "मैं अपने गाँव से बहुत प्यार करता हूँ।",
+          "hypothesis": "आञ आपान हातु ते बेसे दुलाड़ा ञ सानाङताना।",
+          "model_score": 0.461,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.63
+        },
+        {
+          "id": "CHAL-22",
+          "category": "pronouns",
+          "hindi": "वे दोनों हमारे साथ जंगल जा रहे हैं।",
+          "hypothesis": "इनिः बारान लोः आले बिर तानाएः।",
+          "model_score": 0.339,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 15.96
+        },
+        {
+          "id": "CHAL-23",
+          "category": "possession",
+          "hindi": "यह सुंदर गाय मेरे चाचा की है।",
+          "hypothesis": "नेआ सुगाड़ा उड़ुः गे अइंग लेका गेआ।",
+          "model_score": 0.178,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.89
+        },
+        {
+          "id": "CHAL-24",
+          "category": "possession",
+          "hindi": "हमारा गाँव नदी के किनारे बसा हुआ है।",
+          "hypothesis": "आलेआः हातु गाड़ा रे दुबाकान मेनाः।",
+          "model_score": 0.207,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 16.2
+        },
+        {
+          "id": "CHAL-25",
+          "category": "commands",
+          "hindi": "जल्दी से पानी लेकर आओ।",
+          "hypothesis": "सेकेड़ा ते दाः इदि केआते एना गे होका जना।",
+          "model_score": 0.226,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 22.88
+        },
+        {
+          "id": "CHAL-26",
+          "category": "commands",
+          "hindi": "दरवाजा बंद करो और यहाँ बैठो।",
+          "hypothesis": "आयुम केआते नेताः ओड़ोः नेता किन दुब मे।",
+          "model_score": 0.223,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.08
+        },
+        {
+          "id": "CHAL-27",
+          "category": "descriptions",
+          "hindi": "वह पहाड़ बहुत ऊँचा और हरा-भरा है।",
+          "hypothesis": "इनिः बुरू बेसे होड़ोको ओड़ोः मिसा पेरे आकाना।",
+          "model_score": 0.174,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.54
+        },
+        {
+          "id": "CHAL-28",
+          "category": "descriptions",
+          "hindi": "नदी का पानी बहुत ठंडा और साफ है।",
+          "hypothesis": "गाड़ा राः दाः बेसे बालाए आर सारते मेनाः।",
+          "model_score": 0.327,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 24.87
+        },
+        {
+          "id": "CHAL-29",
+          "category": "common_verbs",
+          "hindi": "किसान खेत में हल चलाता है और बीज बोता है।",
+          "hypothesis": "किसान लोः ते होरा रे दुब केआते ओड़ोः गि ताः गे लेलोः ताना।",
+          "model_score": 0.167,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 53.46
+        },
+        {
+          "id": "CHAL-30",
+          "category": "common_verbs",
+          "hindi": "मेरी बहन हर सुबह मीठा गाना गाती है।",
+          "hypothesis": "आञाः पा ड़ सोबेन सेताः को दुराङ मा श मेनाः।",
+          "model_score": 0.099,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 38.22
+        },
+        {
+          "id": "CHAL-31",
+          "category": "common_nouns",
+          "hindi": "पत्थर और मिट्टी से मजबूत दीवार बनती है।",
+          "hypothesis": "दिरि ओड़ोः हासा राः बालाए ओ बाइ जोगाओ ताना।",
+          "model_score": 0.176,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 27.43
+        },
+        {
+          "id": "CHAL-32",
+          "category": "common_nouns",
+          "hindi": "जंगल में बहुत सारे फूल और फल मिलते हैं।",
+          "hypothesis": "बिर रे बेसे सोबेन को आर जो ड़ा व नाम तानको।",
+          "model_score": 0.272,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 30.98
+        },
+        {
+          "id": "CHAL-33",
+          "category": "numbers",
+          "hindi": "टोकरी में सात पके हुए आम रखे हैं।",
+          "hypothesis": "टों सा रे एएआ फोटो को नाम तान लेका मेनाः।",
+          "model_score": 0.118,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 30.05
+        },
+        {
+          "id": "CHAL-34",
+          "category": "numbers",
+          "hindi": "कक्षा में कुल पंद्रह छात्र उपस्थित हैं।",
+          "hypothesis": "कला रे कुल प ड़व केआते ह त्र किन साः ते।",
+          "model_score": 0.143,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 34.2
+        },
+        {
+          "id": "CHAL-35",
+          "category": "time",
+          "hindi": "दोपहर के समय सूरज बहुत तेज होता है।",
+          "hypothesis": "तिकिन रआः सोमाए सिंगि बेसे पुराः ताइना।",
+          "model_score": 0.349,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.0
+        },
+        {
+          "id": "CHAL-36",
+          "category": "time",
+          "hindi": "शाम होते ही सभी पक्षी अपने घोंसले में लौट आते हैं।",
+          "hypothesis": "आयुब ताइन गे सोबेन कोआः ओते एंगा को रे तिंगु जन रेगे हिजु ताना।",
+          "model_score": 0.215,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 34.46
+        },
+        {
+          "id": "CHAL-37",
+          "category": "place",
+          "hindi": "पहाड़ी के पीछे एक छोटा सा झरना बहता है।",
+          "hypothesis": "बुरू रआः तायोम गे मिआद हुड़िङ लेका बु बा गि ल।",
+          "model_score": 0.121,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 25.29
+        },
+        {
+          "id": "CHAL-38",
+          "category": "place",
+          "hindi": "हम सब गाँव के बड़े बरगद के नीचे मिले।",
+          "hypothesis": "आले सोबेन हातु रेन माराङ को लातार रे हिजुः जाना।",
+          "model_score": 0.398,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 27.77
+        },
+        {
+          "id": "CHAL-39",
+          "category": "family",
+          "hindi": "मेरी माँ रसोई में स्वादिष्ट खाना बना रही हैं।",
+          "hypothesis": "आञाः एंगा ओड़ाः रे मानडि जोम जाद ताइकेना।",
+          "model_score": 0.206,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 21.22
+        },
+        {
+          "id": "CHAL-40",
+          "category": "family",
+          "hindi": "मेरे दादाजी रोज़ शाम को हमें पुरानी कहानियाँ सुनाते हैं।",
+          "hypothesis": "आञाः ता जी दो जानाव हुलाङ आले काआनि आयुम रिका तादाएः।",
+          "model_score": 0.166,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 30.67
+        },
+        {
+          "id": "CHAL-41",
+          "category": "food",
+          "hindi": "चावल और दाल के साथ हरी सब्जी बहुत अच्छी लगती है।",
+          "hypothesis": "मांडि ओड़ोः दा ल लोः हरी म आर माजा ते माजा ताइना।",
+          "model_score": 0.157,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 33.98
+        },
+        {
+          "id": "CHAL-42",
+          "category": "food",
+          "hindi": "हमने जंगल से मीठे महुए के फल इकट्ठे किए।",
+          "hypothesis": "आले बिर ते मी साः रेआ जो ड़ा ओ जगर को लोः।",
+          "model_score": 0.159,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.97
+        },
+        {
+          "id": "CHAL-43",
+          "category": "weather",
+          "hindi": "आज आसमान में काले बादल घिरे हुए हैं।",
+          "hypothesis": "तिसिङ सिरमा रे दाः राः टुनडु जाना।",
+          "model_score": 0.169,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 20.15
+        },
+        {
+          "id": "CHAL-44",
+          "category": "weather",
+          "hindi": "सर्दियों में सुबह के वक्त बहुत कोहरा पड़ता है।",
+          "hypothesis": "सर् व रे सेताः रे सेताः समय बेसे दिन के मेनाः।",
+          "model_score": 0.163,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 31.02
+        },
+        {
+          "id": "CHAL-45",
+          "category": "school",
+          "hindi": "घंटी बजते ही सारे बच्चे प्रार्थना के लिए कतार में खड़े हो गए।",
+          "hypothesis": "बेसे टी रे दो सोबेन होन कुड़ी नागेन कुड़ि कोआः ओड़ाः।",
+          "model_score": 0.184,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 35.5
+        },
+        {
+          "id": "CHAL-46",
+          "category": "school",
+          "hindi": "हमने आज गणित की कक्षा में जोड़ और घटाव सीखा।",
+          "hypothesis": "आले तिसिङ गणित रआः कला रे ओड़ोः जु ड़ि - बा ते इतु केदा।",
+          "model_score": 0.107,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 37.78
+        },
+        {
+          "id": "CHAL-47",
+          "category": "technology",
+          "hindi": "गाँव में मोबाइल नेटवर्क आने से बातचीत आसान हो गई है।",
+          "hypothesis": "हातु रे मोबाइल ते हिजुः जन लेका जगर होबा जना।",
+          "model_score": 0.306,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 27.83
+        },
+        {
+          "id": "CHAL-48",
+          "category": "technology",
+          "hindi": "कंप्यूटर सीखने से नई जानकारी जल्दी मिल जाती है।",
+          "hypothesis": "कंप्यूटर रे पी ते नवा जानकारी नम जनाः",
+          "model_score": 0.169,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 28.53
+        },
+        {
+          "id": "CHAL-49",
+          "category": "simple_longer_sentences",
+          "hindi": "जब गाँव में फसल कटाई का समय आता है, तब सब लोग मिलकर दिन भर मेहनत करते हैं और शाम को ढोल बजाकर नाचते हैं।",
+          "hypothesis": "चिमतुङ हातु रे को जामा केआते सोमाए गे सोबेनको ते साङगि होड़ोको मेनाः कोआ।",
+          "model_score": 0.17,
+          "quality_gate_passed": true,
+          "quality_gate_reasons": [],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": false,
+          "latency_ms": 34.54
+        },
+        {
+          "id": "CHAL-50",
+          "category": "simple_longer_sentences",
+          "hindi": "यदि तुम रोज़ मेहनत से पढ़ाई करोगे, तो एक दिन बड़े होकर अपने गाँव का नाम रोशन करोगे।",
+          "hypothesis": "जुदि आम जानाव लेकाते पाड़ाओ रिका दो मिआद दिन ते बिनगा - बिनगा ते गे रआः बिनगा",
+          "model_score": 0.119,
+          "quality_gate_passed": false,
+          "quality_gate_reasons": [
+            "LOW_GENERATION_CONFIDENCE"
+          ],
+          "classification": "UNVALIDATED_MODEL_OUTPUT",
+          "suspicious": true,
+          "latency_ms": 42.77
+        }
+      ]
+    },
+    "sample_predictions": [
+      {
+        "index": 0,
+        "hindi": "कि पल में ज़िन्दगी दिखा जाती है",
+        "reference": "चि पल रे जिबोन लेलोगा।",
+        "hypothesis": "चि हेड़ा रे जिनिद लेल तना।",
+        "model_score": 0.278,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.12
+      },
+      {
+        "index": 1,
+        "hindi": "सीबीआई ने भांजे को रंगेहाथ पकड़ा।",
+        "reference": "सीबीआई गेड़े नेदति लोः साबकिःआ।",
+        "hypothesis": "सीबीआई बिनगा के रंग कुल केआते ती जोगाव या।",
+        "model_score": 0.118,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.3
+      },
+      {
+        "index": 2,
+        "hindi": "इस बीच सामान्य जनगणना की प्रक्रिया चलती रहेगी।",
+        "reference": "नेन सोमोय रे सामान्य जनगणना रअ प्रक्रिया चलव तान गे ताइना।",
+        "hypothesis": "ने तला रे जान होरा को साला कान गे कमि सेसेन तन गेआ।",
+        "model_score": 0.16,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 40.01
+      },
+      {
+        "index": 3,
+        "hindi": "कहते थे वे कार्यकारी शक्ति हैं।",
+        "reference": "काजिजाद ताइकेना इनिः कामितान (कार्यकारी) होड़ो पेड़ेः तानिः।",
+        "hypothesis": "काजि तान ताइकेना इनिः कामि पेड़ेः मेनाः।",
+        "model_score": 0.418,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.32
+      },
+      {
+        "index": 4,
+        "hindi": "उसके साथ ही रेवाड़ी निवासी अरुण भी काम करता है।",
+        "reference": "इनिलो:गे रेवाड़ीरेन अरुणो: कामितान ताइकेना।",
+        "hypothesis": "इनिआः लोः गे वा ड़ी मेनाः एना राः कामि रिका लागातिङा।",
+        "model_score": 0.176,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.95
+      },
+      {
+        "index": 5,
+        "hindi": "फैलती जाती हैं जड़ें नियामगिरी से बैलाडीला तक",
+        "reference": "पासराओताना रेएदको नियामगिरि ते बैलाडीला हामिः",
+        "hypothesis": "फै शन कोः आ तालारे नि गर म लोः ते बै क किन लाः।",
+        "model_score": 0.087,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 42.33
+      },
+      {
+        "index": 6,
+        "hindi": "श्मशानघाट में कुत्ते रो रहे हैं।",
+        "reference": "होड़ो़ ओंडोरता: सेताको रा:ताना।",
+        "hypothesis": "श् म घाट रे सेताः राः कुपुल ताइकेना।",
+        "model_score": 0.192,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.4
+      },
+      {
+        "index": 7,
+        "hindi": "मन ही से सेऊँ सहज सरुप।पूजा अरचा न जानूँ तोरी।",
+        "reference": "मोने तेगे सेवाताना सोंगड़ा रूप रआः। बोंगा बुरू काञ इतुआना आमाः।",
+        "hypothesis": "मोने तेगे गे आपान सेंड़ां पु ड़ि को जी - बा पु ड़ी दो।",
+        "model_score": 0.093,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 39.73
+      },
+      {
+        "index": 8,
+        "hindi": "उनका पूरा नाम वसंत कुमार शिवशंकर पादुकोण था।",
+        "reference": "इनिआः गोटा नुतुम वसन्त कुमार शिवशङकर पादुकोण ताइकेना।",
+        "hypothesis": "इनिआः गोटा नुतुम कुमार शिव शर्मा ओड़ोः सुगाड़ा बा नु ताइकेना।",
+        "model_score": 0.127,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.66
+      },
+      {
+        "index": 9,
+        "hindi": "भाई स्कूल जाने काबिल हुए तो उन्हें भी स्कूल छोड़ा।",
+        "reference": "बोको कोड़ा पढ़च लेका होना जन चि इनिःओं को इदि तुका किआ",
+        "hypothesis": "हागा स्कूल सेन तान ताइकेना चि इनिः रेओ इनिः जो ड़ा जाना।",
+        "model_score": 0.183,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.15
+      },
+      {
+        "index": 10,
+        "hindi": "बाद में मोदी ने भी अपने विचार रखे।",
+        "reference": "तायोम ते मोदोओः आपान जागार दोकेदाएः।",
+        "hypothesis": "तायोमते मोदी दो आपान उड़ुः रे उड़ुः ओआ।",
+        "model_score": 0.272,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.7
+      },
+      {
+        "index": 11,
+        "hindi": "ज्यादातर लोग भले मानुष जैसा ही आचरण करते हैं।",
+        "reference": "साङगि होड़ोको सुगाड़ा होड़ोको लेका गे जापागारेआको।",
+        "hypothesis": "सांगि होड़ोकोः आ मान लेका गे लेका तेगे मांड व ताना।",
+        "model_score": 0.129,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.15
+      },
+      {
+        "index": 12,
+        "hindi": "तब वह उसे घसीटता हुआ मरम्मत की दुकान तक लाया।",
+        "reference": "एनाते इनि: ओर इदि केआते कमि बइ दुकान ता: इदि कि:आ।",
+        "hypothesis": "एन सोमाए इनिः गे गोएः आकान कोआः लेनेका जाकेद आउ केदाएः।",
+        "model_score": 0.149,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.38
+      },
+      {
+        "index": 13,
+        "hindi": "और वो भी विदेशी एक्ट्रेस के साथ।",
+        "reference": "ओडो एना यो विदेशी एक्ट्रेस लोः।",
+        "hypothesis": "ओड़ोः इनिः सूचना ट्रे ट एक् स लोः ते।",
+        "model_score": 0.166,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.39
+      },
+      {
+        "index": 14,
+        "hindi": "है रंग फिर उड़ा उड़ा।",
+        "reference": "रंगा ओड़ो: ओटांग ओटांगाआ कना।",
+        "hypothesis": "मेनाः रंग ओड़ोः गे होका ओः तना।",
+        "model_score": 0.17,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.35
+      },
+      {
+        "index": 15,
+        "hindi": "का प्रयास हो सकता है।",
+        "reference": "राः प्रयास दाड़िओःआ।",
+        "hypothesis": "रआः प्रयास दाड़िओः आ।",
+        "model_score": 0.3,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.47
+      },
+      {
+        "index": 16,
+        "hindi": "स्नातक छात्र को बस ने रौंदा",
+        "reference": "स्नातक इतुन कोड़ा होन के गाड़ी पेन तइजा",
+        "hypothesis": "केन्द्र पड़ा व होनको के रसिका ते पेरेः जना।",
+        "model_score": 0.157,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.65
+      },
+      {
+        "index": 17,
+        "hindi": "धर्मवीर भारती हम लोगों को सिखाते थे।",
+        "reference": "धर्मवीर भारती अले को सिखाओ ले तईकेना",
+        "hypothesis": "धोरोम वीर भारती आले होड़ोको इतु तान ताइकेना।",
+        "model_score": 0.252,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.09
+      },
+      {
+        "index": 18,
+        "hindi": "जिसने भी इसे सुना हैरान रह गया।",
+        "reference": "ओकोए गे नेआ आयुम केदा इनि: उड़ु: रे टो:ओ जना।",
+        "hypothesis": "ओकोए नेआ आयुम केआते हापे गे ताइन जाना।",
+        "model_score": 0.308,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.98
+      },
+      {
+        "index": 19,
+        "hindi": "साक़ी हम यह क्या सुनते हैं",
+        "reference": "साकी अबु नेया चिनअ: बु अयुम तना",
+        "hypothesis": "सा काजि आले नेआ चानाः आयुम तादा।",
+        "model_score": 0.367,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.17
+      },
+      {
+        "index": 20,
+        "hindi": "कारोबार में रुचि कम ही बन पाएगी।",
+        "reference": "कारोबार कोरे सुकु कोम का कोमो: तना।",
+        "hypothesis": "कार रे जोम केआते कोम गे बाइः गेआ।",
+        "model_score": 0.239,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.5
+      },
+      {
+        "index": 21,
+        "hindi": "जनलोकपाल आंदोलन कर उन्होंने अपनी पहचान बनाई।",
+        "reference": "जनलोकपाल आन्दोलन रिकाकेआते इनिः उरुमजानाएः।",
+        "hypothesis": "जन लोक आंदोलन केआते इनिः आ चनाः माइन बाइ तादाको।",
+        "model_score": 0.165,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.11
+      },
+      {
+        "index": 22,
+        "hindi": "वह करोंडो जन्म जहरीले साँप के पाता है।",
+        "reference": "इनि करोड़लेका जोनोम जहरीला बिङको:आ नामेआ।",
+        "hypothesis": "इनिः रिका केआते जोनोम कान ताइना एना ता ते।",
+        "model_score": 0.104,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.54
+      },
+      {
+        "index": 23,
+        "hindi": "इसलिए पुलिस उससे कड़ाई से पूछताछ नहीं कर पाती थी।",
+        "reference": "एना रेआ: ते पुलिस को केटे: ते कको कुलि दड़िजना।",
+        "hypothesis": "एना मेनते पुलिस लोः ते इनिः जन लेका जगर काएः नम जना।",
+        "model_score": 0.249,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 41.02
+      },
+      {
+        "index": 24,
+        "hindi": "लोकतंत्र में धमकी की भाषा कहां तक सही?",
+        "reference": "लोकतंत्र रे धमकाओ रआः जागार चिमिन जाकेद सारतिआ।",
+        "hypothesis": "लोकतंत्र रे आड़ानदि रआः जागार कोताः जाकेद माजा ओआ।",
+        "model_score": 0.234,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.27
+      },
+      {
+        "index": 25,
+        "hindi": "इस नाते संजीव जी से परिचय तो पहले से था।",
+        "reference": "ने लेकाते संजीव जी लोः उपुरुम सिदाते गे ताइकेना।",
+        "hypothesis": "ने लेका जगर जी ते रसिका तेगे सिदाः अ।",
+        "model_score": 0.188,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.28
+      },
+      {
+        "index": 26,
+        "hindi": "मैं बाज़ार को अपनी पीठ पे लादे भागता रहता।",
+        "reference": "आञ पीटि देआ रे लादिकेआते निराकान ताइनजानाञ।",
+        "hypothesis": "आञ पीटि दो आपान देआ रे आउ केआते निर तान ताइकेनाञ।",
+        "model_score": 0.232,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.73
+      },
+      {
+        "index": 27,
+        "hindi": "बेचारी देवकी बैठी रो रही थी।",
+        "reference": "बापुड़ि देवकी दुबाकाने इआमतान ताइकेना।",
+        "hypothesis": "बे न देव रअ दुब तान ताइकेनाञ।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.92
+      },
+      {
+        "index": 28,
+        "hindi": "आप स्त्री रोग विशेषज्ञा से मिलकर जांच कराएं।",
+        "reference": "आम कुड़िकोआः डाक्टर ते जांच रिकाएमे।",
+        "hypothesis": "आम कुड़ि रोग कोः आः एटेः ते जांच केआते जोगाव केदा।",
+        "model_score": 0.181,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.85
+      },
+      {
+        "index": 29,
+        "hindi": "किंतु यह आदमी नहीं बल्कि धन और अधिकार बोलते हैं।",
+        "reference": "मगर नेया होड़ो कागि लेकिन टाका ओडो पेड़े: कजिग:",
+        "hypothesis": "मेनदो नेआ होड़ो काः ए दो का नम केदा ओड़ोः अधिकार कजि तनाः।",
+        "model_score": 0.203,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 41.1
+      },
+      {
+        "index": 30,
+        "hindi": "खेतों में गेहूं और सरसों की फसलें लहलहाती हैं।",
+        "reference": "लोयोंग कोरे गोम अर मानी रअ रोआ मजा होबा काना।",
+        "hypothesis": "कु गर रे ओड़ोः मेद् ते सर को लोः ओ च ली ब ढ़ व तना।",
+        "model_score": 0.103,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 45.78
+      },
+      {
+        "index": 31,
+        "hindi": "शाम को मंदिर में महाआरती की गई।",
+        "reference": "सिंगि हासुर मंदिल रे दिया जुंडि लेना।",
+        "hypothesis": "आयुब रे मंदिर रे महा वत होबा जाना।",
+        "model_score": 0.371,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.82
+      },
+      {
+        "index": 32,
+        "hindi": "तो क्या मोहन भागवत की भी अवमानना हुई है?",
+        "reference": "तोबे मोहन भागवत राःओ माइन बागाड़ाओजाना?",
+        "hypothesis": "दो चानाः फिलिम निर रआः गोनोङ ओ रानु तानाः।",
+        "model_score": 0.113,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.56
+      },
+      {
+        "index": 33,
+        "hindi": "भावनायें आदमी में मुस्कान बिखेरती हैं।",
+        "reference": "भावना होड़ो रे लंदा पासराव याय",
+        "hypothesis": "उड़ुः होड़ो को रे दुबोः लेका गे हि रि ङ तना।",
+        "model_score": 0.139,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.08
+      },
+      {
+        "index": 34,
+        "hindi": "ओजी पहले क्यों नहीं बताया कि आप तमंचे बनाते हैं।",
+        "reference": "चि हाले! सिदा चिनअः मेनते कम उदुब् केदा चि अम तमंचे बइया।",
+        "hypothesis": "ओ जी सिदा चानाः मेनते का उदुब तानिः चि आम विषय को मेनाः।",
+        "model_score": 0.326,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.05
+      },
+      {
+        "index": 35,
+        "hindi": "मत्त गजराज ने उठाकर उन्हें मस्तक पर रख लिया।",
+        "reference": "मरंग होड़ो इनि दोंदों केआते अएआ: बो: रे जोगाव कि: आ।",
+        "hypothesis": "म क् शा राज केआते इनिः अ खिलाफ रे जोगाव केदा।",
+        "model_score": 0.246,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 37.24
+      },
+      {
+        "index": 36,
+        "hindi": "सभी पुलिस वाले जांच में लगे हैं।",
+        "reference": "सोबेन पुलिसरेनको जाँचरे लागाओकाना।",
+        "hypothesis": "सोबेन पुलिस को जांच रे रिका तना।",
+        "model_score": 0.417,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.12
+      },
+      {
+        "index": 37,
+        "hindi": "और जो दौड़ में है।",
+        "reference": "ओड़ोः ओकोए निर रे मेनाइः।",
+        "hypothesis": "ओड़ोः ओकोआ निर जन रे मेनाः।",
+        "model_score": 0.327,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.43
+      },
+      {
+        "index": 38,
+        "hindi": "बस वहाँ कोई नहीं है जो कभी",
+        "reference": "बस एनता: रे जेतय बंकोवा जे ची जा हुलंग",
+        "hypothesis": "बस एनताः जान का तानाः ओकोए काएः।",
+        "model_score": 0.2,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.67
+      },
+      {
+        "index": 39,
+        "hindi": "वे दो टीमों में बंटकर दायित्व निभा रहे थे।",
+        "reference": "इनकुः बारिआ टीम रे हाटिङ कोःआते बारोम गोआकान ताइना।",
+        "hypothesis": "इनकु बर टीम रे बोरो को रिका जदा।",
+        "model_score": 0.21,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.59
+      },
+      {
+        "index": 40,
+        "hindi": "वरना आज वह दादी बनी कहानियाँ सुनाती होती।",
+        "reference": "एनादो होनंग इसिंग इनि जियंग बइकेद् कहानी उदुबाकते ते होनंग।",
+        "hypothesis": "मेनदो तिसिङ इनिः दुराङ माराङ सानाङ तानाएः।",
+        "model_score": 0.247,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.14
+      },
+      {
+        "index": 41,
+        "hindi": "विदेशी कर्ज की देनदारी कम होगी।",
+        "reference": "विदेषी रिंड़ि रआः देनदारी घाटाओःआ।",
+        "hypothesis": "विदेशी कर् ज राः टुनडु हुड़िङ कोम होबाओआ।",
+        "model_score": 0.244,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.22
+      },
+      {
+        "index": 42,
+        "hindi": "इसका उपयोग नहीं किया जा रहा है।",
+        "reference": "नेआरे: उपयोग का होबाओताना।",
+        "hypothesis": "नेआ रेआः जगर का रिका तना।",
+        "model_score": 0.389,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.17
+      },
+      {
+        "index": 43,
+        "hindi": "कमोडिटी मार्केट में कहां होगी कमाई",
+        "reference": "कमोडिटी पिटि रे कोता: ते पैसा नमो:आ।",
+        "hypothesis": "नेका टी स बाजार रे कोताः ताइना।",
+        "model_score": 0.177,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.02
+      },
+      {
+        "index": 44,
+        "hindi": "भाभी तब तक उठ चुकी थीं।",
+        "reference": "हिलि एन लोः दो बिरिद लेनाएः।",
+        "hypothesis": "बु वार जाकेद लोः ते सेन तान ताइकेना।",
+        "model_score": 0.133,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.5
+      },
+      {
+        "index": 45,
+        "hindi": "पुर्नवास का मतलब यह तो कतई नहीं।",
+        "reference": "थनियर बसा रिका रेअः माने नेया दो कहा गे।",
+        "hypothesis": "पु ड़ि न जी राः मतलब का दो का ताइकेना।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.32
+      },
+      {
+        "index": 46,
+        "hindi": "पैसे के साथ दिल के भी धनी हैं प्रेमजी",
+        "reference": "टाका लोः ते जी तेओ सुगाड़ा मेनाःइ प्रेमजी",
+        "hypothesis": "टाका लोः जी राः ओ काजि मेनाः जी।",
+        "model_score": 0.223,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.67
+      },
+      {
+        "index": 47,
+        "hindi": "स्टील का दाम घटाने पर जोर",
+        "reference": "बेसे दिन सिदारे जांए कोड़ाकोलो: एपराङ होबाजाना।",
+        "hypothesis": "स्टी ल राः क्षेत्र रे बोलोः जना",
+        "model_score": 0.238,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.45
+      },
+      {
+        "index": 48,
+        "hindi": "उन्हें अलंकृत और लच्छेदार जुमले पसन्द नहीं थे।",
+        "reference": "आए अलंकृत ओड़ो: लच्छेदार जुमलाको काए: सुकुता ताइकेना।",
+        "hypothesis": "इनिः अ टु ङ रे ओड़ोः गेल सोमाए काएः सुकु तान ताइकेना।",
+        "model_score": 0.145,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.09
+      },
+      {
+        "index": 49,
+        "hindi": "यह तो बात हुई हानिकारक या ऋणात्मक प्रभाव की।",
+        "reference": "नेआ दो जागार होबाजाना घाटि रआः चा घाटिओः लेकानाः।",
+        "hypothesis": "नेआ दो जागार होबाजाना रआः बालाए कोरआः गोनोङ ते प्रभाव रआः",
+        "model_score": 0.108,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.43
+      },
+      {
+        "index": 50,
+        "hindi": "यह तो मैं अभी बना देती हूं।",
+        "reference": "नेआ दो आञ ना:गे बाइ दाड़िआ।",
+        "hypothesis": "नेआ दो आञ नाः गे बाइ तादाएः।",
+        "model_score": 0.398,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.82
+      },
+      {
+        "index": 51,
+        "hindi": "काम के संबंध पनपने लगे है।",
+        "reference": "कमी: रे:अ सम्बन्ध पनपाओ: तना",
+        "hypothesis": "कामि रआः जो ड़ा( दासा) को चाबा आकाना।",
+        "model_score": 0.19,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.17
+      },
+      {
+        "index": 52,
+        "hindi": "एक मामूली सी घटना ने क्या गुल खिलाया।",
+        "reference": "मियद हुड़िंग लेकन कमि चिलका कमि को रिका केदा।",
+        "hypothesis": "मिआद मेद ली सी डी घटना चानाः लेल किआः।",
+        "model_score": 0.133,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.33
+      },
+      {
+        "index": 53,
+        "hindi": "तब यह सवाल नहीं पूछते आप?",
+        "reference": "एन समय ने सवाल कम कुलीया: अम?",
+        "hypothesis": "तोबे नेआ कुनुलि का कुलि दड़ि ओः अम ते आम।",
+        "model_score": 0.281,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 31.54
+      },
+      {
+        "index": 54,
+        "hindi": "खिलाड़ियों का काम सिर्फ खेलना होता है।",
+        "reference": "इनुतानकोआः कामि इपाएः इनुङतेआः तानाः।",
+        "hypothesis": "खिलाड़ी कोः आ कमि इनुङ लेका होबाओआ।",
+        "model_score": 0.218,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.35
+      },
+      {
+        "index": 55,
+        "hindi": "और चंदन उस पर लगाता बहुत वैज्ञानिक प्रक्रिया है।",
+        "reference": "ओडो चंदन एन्डे लगावआ एना बेसे मरंग वैज्ञानिक प्रक्रिया मेना।",
+        "hypothesis": "ओड़ोः चिम न एन समय रे ताइन तन तइकेना एना वैज्ञानिक कमि मेनाः।",
+        "model_score": 0.146,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.72
+      },
+      {
+        "index": 56,
+        "hindi": "उनकी धमनियों में केवल रक्त नहीं बह रहा था।",
+        "reference": "इनकुआ सीर रे मायोम बाइरी दो का दंग लिंगि तन ताइकेना।",
+        "hypothesis": "इनिआः मेद रे इपाएः का होबाजाना।",
+        "model_score": 0.201,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.2
+      },
+      {
+        "index": 57,
+        "hindi": "नवरात्र का का काल सर्वदा उत्तम होता है।",
+        "reference": "नवरात्ररा: काल सोबेन समय उत्तमगे ताइना।",
+        "hypothesis": "नवा राः मेद् ते सोबेन समय होबाः ओ तनाः।",
+        "model_score": 0.27,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.35
+      },
+      {
+        "index": 58,
+        "hindi": "हमने खाली ही छोड़ी थी वह खाली जगह",
+        "reference": "इपाएरेगे बागेला:।",
+        "hypothesis": "आले हुड़िङ खोन जाकेद इनिः चेतान रे",
+        "model_score": 0.115,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.19
+      },
+      {
+        "index": 59,
+        "hindi": "हर दल तैयारियों में मशगूल है।",
+        "reference": "सोबेन दलको तेयारि रे मेनाःकोआ।",
+        "hypothesis": "सोबेन दल तेको होनोर बड़ा व रे।",
+        "model_score": 0.128,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.11
+      },
+      {
+        "index": 60,
+        "hindi": "कौन सुरभि की दिव्य बेलि प्राणॉ मॅ गमक उठी है?",
+        "reference": "ओकोएः सुरभि राः दिव्य बेलि प्राणॉ मॉ सोआन एटेःआकान?",
+        "hypothesis": "ओकोए सु शा य राः सनंग जि ली जाः अ फ व ड़ वा",
+        "model_score": 0.082,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 38.89
+      },
+      {
+        "index": 61,
+        "hindi": "तो क्या चमक रहा आकाश था",
+        "reference": "तोबे चना सिरमा रे चमकाव तान ताइकेना",
+        "hypothesis": "दो चानाः जा दांग ड़ा तान सिरमा ताइकेना।",
+        "model_score": 0.215,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.07
+      },
+      {
+        "index": 62,
+        "hindi": "वह बात अलग है कि उस नन्हे अतिथि के लिये",
+        "reference": "नेआ जागार बिनगा गे चि एन कुपुल होन नागेन",
+        "hypothesis": "इनिः जागार मेनाः चि एन सोमाए हुड़िङ दुकु रआः उड़ुः नागेन",
+        "model_score": 0.243,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.21
+      },
+      {
+        "index": 63,
+        "hindi": "लगा प्रयोग मे कहीँ गड़बड़ हो गयी।",
+        "reference": "टोरजाना चि प्रयोग रेगे जांरे बागड़ाव जाना।",
+        "hypothesis": "होबा दड़ि ओः ते कजि रे कजि कमि तन लेका।",
+        "model_score": 0.148,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.48
+      },
+      {
+        "index": 64,
+        "hindi": "पुलिस ने दोनों को न्यायालय में पेश किया है।",
+        "reference": "पुलिस बरनकिन के न्यायालय रे अगु कि:आ।",
+        "hypothesis": "पुलिस बरनकिन किन के रे कांग्रेस रे जोगाव केदा।",
+        "model_score": 0.178,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.68
+      },
+      {
+        "index": 65,
+        "hindi": "शरीर रचना विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन",
+        "reference": "होड़ोमो बनइ विज्ञान शल्य चिकित्सा समुदायिक औषधि प्रबन्धन अध्ययन।",
+        "hypothesis": "होड़ोमो रेअः गोनोंग स ड़ न गुसिया कोअः होरा ते हं नम जना।",
+        "model_score": 0.067,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.08
+      },
+      {
+        "index": 66,
+        "hindi": "जो चारों तरफ हमारे गुजर रही हैं।",
+        "reference": "जे सोबेन पड़ अलेअ रे परोम तना।",
+        "hypothesis": "ओकोआ सोबेन साः आले लोः सेसेन ताना।",
+        "model_score": 0.323,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.94
+      },
+      {
+        "index": 67,
+        "hindi": "इसके लिए जिला स्तर पर विशेष उड़न दस्ते बनाए जाएंगे।",
+        "reference": "नेआ रा: नगेन ते जिला कोरेओ अपिरेअ: तेआ उपय को बइओ:व।",
+        "hypothesis": "नेआ मेनते जिला रेआः माइन होरा रे कमि बाइः ओ तना।",
+        "model_score": 0.212,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.3
+      },
+      {
+        "index": 68,
+        "hindi": "युवावस्था के शुरूआती चरण में मोटापा खतरनाक",
+        "reference": "हरा सेपेड़ेदोःतन एनेटेः बेड़ा रे मोटेन पुरअः बोरोअन कजि।",
+        "hypothesis": "से पेड़ेः ते एटेः केआते टका जोम तन लेका गे लेलोः गा।",
+        "model_score": 0.206,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.55
+      },
+      {
+        "index": 69,
+        "hindi": "कठिनाइयों और मानसिक पीडा का विस्तार से जिक्र किया।",
+        "reference": "कठिनाई ओडो मानसिक हसु रा: विस्तार ते उदूब केदाय",
+        "hypothesis": "जो व नाः ओड़ोः दुकु रेआः उड़ुः ते अद् उतर जना।",
+        "model_score": 0.166,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 36.82
+      },
+      {
+        "index": 70,
+        "hindi": "वे बिना लायसेंस के ड्राइवर हैं।",
+        "reference": "इनिः बेगार लायसेंस राः ड्राइवर मेनाःइ",
+        "hypothesis": "इनिः बेगार दाः राः पै स राः चालाओ मेनाः।",
+        "model_score": 0.173,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.46
+      },
+      {
+        "index": 71,
+        "hindi": "नोटवर्किंग के बेशुमार द्वार ओपन करती है।",
+        "reference": "नोटवर्किंग राः साङगि दुआरको निःएआएः।",
+        "hypothesis": "टका ते पेरेः तन कोआः इसु पुराः उड़ुः जना।",
+        "model_score": 0.142,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 38.89
+      },
+      {
+        "index": 72,
+        "hindi": "गंगा में जैसा कि कानपुर करता है?",
+        "reference": "गंगा रे चिलका कानपुर कापीयाए?",
+        "hypothesis": "गंगा रे लेका ची गी एकदम गी तइना",
+        "model_score": 0.139,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.58
+      },
+      {
+        "index": 73,
+        "hindi": "उसके बिना किसी की भी रचना नहीं हुई।",
+        "reference": "एना बेगर जाना का बइआकना।",
+        "hypothesis": "इनिआः बेगार जान रआः जान सोमाए का होबाजाना।",
+        "model_score": 0.286,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.5
+      },
+      {
+        "index": 74,
+        "hindi": "पहले कालावस्त्र विराध एवं ष्षोक प्रदर्षनार्थ ही मान्य था।",
+        "reference": "सिदा हेंदे लीजा: विरोध ओडो दुकू नेल रिका गी मनातिंगो तइकेना",
+        "hypothesis": "सिदा रेआः कजि कमि ओड़ोः फ रि वे नि को तइकेना।",
+        "model_score": 0.124,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.19
+      },
+      {
+        "index": 75,
+        "hindi": "सत्ता समय का आज्जान नहीं सुनती।",
+        "reference": "सत्ता सोम़य रेआ: कजि आयुम काए: आयुम या।",
+        "hypothesis": "सत्ता सोमाए गे लेल केआते का आयुम दाड़िआ।",
+        "model_score": 0.191,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.05
+      },
+      {
+        "index": 76,
+        "hindi": "लोकतंत्र का प्रसार ही सबसे बड़ी प्राथमिकता थी।",
+        "reference": "लोकतंत्र नितिरगे सोबेनाते माराङ कामि ताइकेना।",
+        "hypothesis": "लोकतंत्र रआः जागार गे सोबेनाते माराङ होड़ोको ताइकेना।",
+        "model_score": 0.229,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.71
+      },
+      {
+        "index": 77,
+        "hindi": "बी मानचित्र पर अपने पिछवाड़े कीटनाशक मुक्त रखो",
+        "reference": "बी मनचित्र रे अपनअः तयोम ते जन्तु गोएः रानु अतोम चबाकम।",
+        "hypothesis": "बी मान क फोटो रे आपान ते उड़ुङ रआः सुकु दो सानाङ ताइकेना।",
+        "model_score": 0.151,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 31.83
+      },
+      {
+        "index": 78,
+        "hindi": "चारदीवारी से घिरे स्थान को भी ख़ाना कहा जाता है।",
+        "reference": "उपुन साः ते कोटोङोकान ठांवओ ख़ाना काजिओःआ।",
+        "hypothesis": "उपुन री रेन बुरू ते क टयद् को रेओ गे को कजि तना।",
+        "model_score": 0.108,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.9
+      },
+      {
+        "index": 79,
+        "hindi": "पाइलिन चक्रवात का असर बिहार में दिखने लगा है।",
+        "reference": "पाइलिन चक्रवातरा: असर बिहारे लेलो:ताना।",
+        "hypothesis": "मार् लि न चक्र वा नाः बिहार रे विरोध रे होबा दाड़िओआ।",
+        "model_score": 0.195,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.01
+      },
+      {
+        "index": 80,
+        "hindi": "वह दुनिया में सबसे खूबसूरत औरत",
+        "reference": "इनिःगोटा दिसुम रे सोबेनकोअएते सुगड़उतर दंगड़ी।",
+        "hypothesis": "इनिः दुनिया रे सोबेन कोआते बेसे कुड़ि होन को।",
+        "model_score": 0.254,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 23.27
+      },
+      {
+        "index": 81,
+        "hindi": "कोयला घोटाले पर अदालत जा सकते हैं सुब्रह्मण्यम स्वामी",
+        "reference": "कोयला धोटाला रे अदालत सेनोः दाड़िआ सुब्रह्मण्यम स्वामी",
+        "hypothesis": "को किं रे ले बी अदालत ते मा सु ल् ती।",
+        "model_score": 0.055,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.01
+      },
+      {
+        "index": 82,
+        "hindi": "वित्तीय साक्षरता पर रिजर्व बैंक का जोर",
+        "reference": "खुरजि इनितु रे रिजर्व बैंक रआः जोर",
+        "hypothesis": "स दर सा ग रे रि जर् व बैंक राः बैंक रअ ला काना।",
+        "model_score": 0.183,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 40.03
+      },
+      {
+        "index": 83,
+        "hindi": "हरियाणा देश का पहला ऐसा राज्य है।",
+        "reference": "हरियाणा दिसुम रआः सिदा उतार नेकान राइज तानाः।",
+        "hypothesis": "हरियाणा दिसुम रेन सिदा ने राज्य राइज मेनाः।",
+        "model_score": 0.36,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.82
+      },
+      {
+        "index": 84,
+        "hindi": "राठौड की जीत पर आतिशबाजी कर मनाई खुशियां",
+        "reference": "राठौड़ाः जीताव रे फाटका साड़िकेआतेको रासिका जाना।",
+        "hypothesis": "राः ठा ड रेआः मेद् दा रे जोगाव केआते इसु पुराः सुकु जना।",
+        "model_score": 0.166,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 42.35
+      },
+      {
+        "index": 85,
+        "hindi": "एक दिन वे बाल कटवाने गये।",
+        "reference": "मुसिङ आए: उब लाटाबेने सेनो:जाना।",
+        "hypothesis": "मुसिंग हुलंग इनिः गे सु डा ए इदि जना।",
+        "model_score": 0.174,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.37
+      },
+      {
+        "index": 86,
+        "hindi": "एक प्रकार का पागलपन के उपचार में दूसरी पीढ़ी के",
+        "reference": "मिद लेकान बालु रआः चिकिसा रे बारिआ पीढ़ी रेन",
+        "hypothesis": "मिआद लेकान ओड़ाः राः मानाराङ रे एटाः दिसुम रेन होड़ो कोआः",
+        "model_score": 0.177,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.94
+      },
+      {
+        "index": 87,
+        "hindi": "ना ही ठूँठ अपनी पुरानी रौनक को लौटते हैं।",
+        "reference": "ठूँठ आपान पुरना रौनकते काको रोआड़ दाड़िआ।",
+        "hypothesis": "नाः गे च मी साः ते अयाः पुरना कोड़ा को हिजुः जना।",
+        "model_score": 0.173,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 45.79
+      },
+      {
+        "index": 88,
+        "hindi": "वार्षिक तौर पर वेतन वृद्धि दी जाती है",
+        "reference": "सालः हिशब ते कामी पएशायो संगियेवा।",
+        "hypothesis": "बुद्ध साल रे खा ते पेरेः ओआ।",
+        "model_score": 0.083,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.28
+      },
+      {
+        "index": 89,
+        "hindi": "पुलिस बाबा को थाने लाकर पूछताछ कर रही है।",
+        "reference": "पुलिस बाबा के थाना आगु कियाते कुली बेडा जाइआको।",
+        "hypothesis": "पुलिस बाबा के थाना रे कुलि केआते कुलि बड़ा तना।",
+        "model_score": 0.331,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.99
+      },
+      {
+        "index": 90,
+        "hindi": "सूचना पर अस्पताल में कई पुलिस पदाधिकारी पहुंचे।",
+        "reference": "सुचना रे अस्पताल रे चिमीन पुलिस रेन सायोब को सेटेर जाना",
+        "hypothesis": "खोबोर रे अस्पताल रे चिमिन कुड़ि किन हमला केदा।",
+        "model_score": 0.249,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.46
+      },
+      {
+        "index": 91,
+        "hindi": "सोनिया ने कहा कि भाजपा को दो बार मौका मिला।",
+        "reference": "सोनिया मेनकेदाए चि भाजपा बारसा मौका नामकेदाए।",
+        "hypothesis": "सोनिया काजिकेदा चि भाजपा किन बारिआ होनकिन निर जानाए।",
+        "model_score": 0.243,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.48
+      },
+      {
+        "index": 92,
+        "hindi": "जो बेहोश रहने वाले नहीं कह सकते।",
+        "reference": "ओको लूर सेंड़ां बनोःको कअको कजि दड़िया।",
+        "hypothesis": "ओकोआ बे हु बे तान ताइकेना चि का काजि दाड़िआ।",
+        "model_score": 0.205,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 30.06
+      },
+      {
+        "index": 93,
+        "hindi": "शरीर में स्थित वायु प्राण है।",
+        "reference": "होड़ोमो रे तइन तन होयो जीऊ ए तनअः।",
+        "hypothesis": "होड़ोमो रे होयो मेनाः जी",
+        "model_score": 0.316,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.0
+      },
+      {
+        "index": 94,
+        "hindi": "और दूजी तरफ भज भज मंडली है",
+        "reference": "एटा सा: रे भज भज मंडली मेना:",
+        "hypothesis": "ओड़ोः मिसा साः गे भ ज टा म चा ली मेनअः।",
+        "model_score": 0.107,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.46
+      },
+      {
+        "index": 95,
+        "hindi": "शांति एवं सौंदर्य प्रदान करने वाला होता है।",
+        "reference": "शांति ओड़ो: सुगाड़ा ओमे नि:।",
+        "hypothesis": "रासिका ओड़ोः सुगाड़ा पेड़ेः ताइना।",
+        "model_score": 0.267,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 13.23
+      },
+      {
+        "index": 96,
+        "hindi": "जिम्मेदार ने इस कार्य में हजारों रुपये बचा लिया।",
+        "reference": "बारोमान होड़ो ने कामि रे हजाराते पुराः टाकाएः बानचाव केदा।",
+        "hypothesis": "ने दो ने कामि रे हजार टाका बाइ लेन ते टाका ओम केदाको।",
+        "model_score": 0.17,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.5
+      },
+      {
+        "index": 97,
+        "hindi": "यह कमाल किसका है? चुनाव प्रणाली का।",
+        "reference": "ने कमाल ओकोया: तन:अ?चुनाव प्रणाली र:अ",
+        "hypothesis": "नेआ सारते जागार राः चुनाव मेनाः।",
+        "model_score": 0.267,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.94
+      },
+      {
+        "index": 98,
+        "hindi": "योग्यता से या योग्यता के रूप मे",
+        "reference": "दाडियाए नि ते दाडियाए रूप रे",
+        "hypothesis": "कामि रे दो का दाड़िओः आ चि लेकाते",
+        "model_score": 0.088,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 16.68
+      },
+      {
+        "index": 99,
+        "hindi": "अप्रवासी भारतीय कुंद्रा लंदन के निवासी हैं।",
+        "reference": "एटअः दिसुम रे तइनतन भारतीय कुंद्रा लंदन रेन तइनोः निः तनिः",
+        "hypothesis": "अः दो एटाः भारतीय कुंद रः अ अर्थ राः गी मेनाः",
+        "model_score": 0.141,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 42.63
+      },
+      {
+        "index": 100,
+        "hindi": "ननिहाल और ददिहाल दोनों ओर धर्म की बड़ी चर्चा थी।",
+        "reference": "ननिहाल नदीहाल बराना रे धर्म रेआ: जगर को जगर तन तइकेना।",
+        "hypothesis": "न श ओड़ोः रसिका बरन साः जगर तन तइकेना।",
+        "model_score": 0.188,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.12
+      },
+      {
+        "index": 101,
+        "hindi": "वहां जीवानंद बैठे सारंगी बजा रहे थे।",
+        "reference": "एनता जीवानंद दुबकेआते सारंगी साड़ितानकेना।",
+        "hypothesis": "एनताः जी ते दुब जानाएः।",
+        "model_score": 0.193,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 13.33
+      },
+      {
+        "index": 102,
+        "hindi": "ज्यादातर लोगों को ठीक से हिन्दी लिखना तक नहीं आता।",
+        "reference": "इसु पुरा: होड़ोको हिन्दी ओल पाड़ाव कको इतुआना।",
+        "hypothesis": "सांगि होड़ोकोः आः माजा ते हिन्दी ते ओल का ताइकेना।",
+        "model_score": 0.247,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.14
+      },
+      {
+        "index": 103,
+        "hindi": "अच् छा लगा तीन घंटे का योगदान।",
+        "reference": "3धंटा रेआ समय ओम केआते माजाइंग ठोर केदा।",
+        "hypothesis": "बेस ताइन जानाः आपिआ घंटा राः देंगा रेआः जोआर।",
+        "model_score": 0.295,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.48
+      },
+      {
+        "index": 104,
+        "hindi": "नये कलाकार उत्साह के साथ लगातार भाग ले रहे हैं।",
+        "reference": "नावा कलाकारको जुलुङ लोः हिजुःतानाको।",
+        "hypothesis": "नावा कलाकार को लेल केआते निर कोः आते निर तानाएः।",
+        "model_score": 0.155,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.16
+      },
+      {
+        "index": 105,
+        "hindi": "इसके लिए अक्षय ने प्लानिंग कर ली है।",
+        "reference": "नेया लाई अक्षय दो प्लानिंग बइ उतारा कदाए।",
+        "hypothesis": "नेआ नातिन जाकेद होसोड़ो फ ए मे ली लोः ताना।",
+        "model_score": 0.105,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.79
+      },
+      {
+        "index": 106,
+        "hindi": "अब सर्दी बस सर्दियों की छुट्टियों जितनी होती है।",
+        "reference": "नाआ रबंग रबंग छुट्टी हमि: ताइना।",
+        "hypothesis": "नाः मिसा ते ह र् ब रे मु तु ड़ न तन लेका दो एनाः तनाः",
+        "model_score": 0.093,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 42.48
+      },
+      {
+        "index": 107,
+        "hindi": "कानपुर में अगवा कर छात्रा से किया रेप",
+        "reference": "कानपुर रे पढ़ाव कुड़ि होन अरकिद केआते रेप किआः।",
+        "hypothesis": "सिंगि रे लु वा कान होड़ो को कुड़ि लोः ते निर जना।",
+        "model_score": 0.131,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 38.25
+      },
+      {
+        "index": 108,
+        "hindi": "इस शहर का हर इक पत्थर तो पहचाना हुआ है।",
+        "reference": "ने सहर रआः मिमिआद दिरि दो चिना उरूमाकाना।",
+        "hypothesis": "ने शहर रेआः सोबेन दिरि दो इसु पुराः उड़ु कना।",
+        "model_score": 0.269,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.85
+      },
+      {
+        "index": 109,
+        "hindi": "इससे किसी का भला नहीं होगा।",
+        "reference": "नेया ते जेतय:अ का भला:अवा",
+        "hypothesis": "नेआते जान रआः जाआं लेकान का होबाओआ।",
+        "model_score": 0.271,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.09
+      },
+      {
+        "index": 110,
+        "hindi": "रूद्राक्षों में साधारणतः एक से सताइस धारियां होती हैं।",
+        "reference": "रुद्राक्षरे मेनदो मिआदते हिसि एआ धारी ताइना।",
+        "hypothesis": "रू अड़ गु रे साधारण जपाः ते मियद च की स् तं बर तइना",
+        "model_score": 0.083,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 44.13
+      },
+      {
+        "index": 111,
+        "hindi": "सिंदूर और बिंदी लगाने पर फिकरे कसे जाते हैं।",
+        "reference": "सिंदूर ओड़ो बिंदी लगावेन रे फिकरा को कसावया",
+        "hypothesis": "सिंद ओड़ोः बि ड़ां सा रे फि ला ते हा ड लोः को रिका ताना।",
+        "model_score": 0.116,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 43.19
+      },
+      {
+        "index": 112,
+        "hindi": "दुनिया के सिर्फ सात देशों में बोली जाती है अंग्रेजी।",
+        "reference": "दुनिया रआः इपाएः एआ (सात) दिसुम रे जागारोःताना अंगे्रजी।",
+        "hypothesis": "दुनिया रेआः राजनीति दिसुम रे जगर को उड़ुः तनाः।",
+        "model_score": 0.243,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.56
+      },
+      {
+        "index": 113,
+        "hindi": "चुनावी मुद्दा बनाने की बात की जाएगी।",
+        "reference": "सानाला रआः मुद्दा बाइ रआः जागारोआ।",
+        "hypothesis": "फैसला जगर रेआः कजि कमि रेआ जगर लागातिंगा।",
+        "model_score": 0.159,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.93
+      },
+      {
+        "index": 114,
+        "hindi": "सभी बच्चों को क्रम से लाइनों में बिठाया गया था।",
+        "reference": "सोबेन होनको पानति ते दुबरिकालेनाको।",
+        "hypothesis": "सोबेन होनको को चेतन ते दिरि रे को साः को मेनाः।",
+        "model_score": 0.194,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": true,
+        "suspicious_reasons": [
+          "WORD_REPETITION_3X"
+        ],
+        "latency_ms": 30.33
+      },
+      {
+        "index": 115,
+        "hindi": "मेरे अकेलेपन ने पूरी कर ली है अपनी पढ़ाई",
+        "reference": "आञाः एनेसकार गोटा छाबाकेदाएः आएआः पाड़ाओ",
+        "hypothesis": "आञ एसेकार गे गोटा पाड़ाओ तादाएः आपान जोआर।",
+        "model_score": 0.194,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.94
+      },
+      {
+        "index": 116,
+        "hindi": "कई प्रांतों में गया है प्याज का बीज",
+        "reference": "चिमनगं टयद् कोरे प्याजु रेआ जंग को कुला कदा।",
+        "hypothesis": "चिमिन प्रा ड़ा कोरे जाना प्या ज ति अः रे दु ड़िं ड़ा व ड़ न।",
+        "model_score": 0.099,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 48.23
+      },
+      {
+        "index": 117,
+        "hindi": "हम संतोष के लिए ब् लॉगिंग करते हैं।",
+        "reference": "अइंग जि बुलव मेनते ब्लाग ओलेआइङ।",
+        "hypothesis": "आले कुलि दाड़ि नागेन लोलो रिका जादा।",
+        "model_score": 0.166,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 20.56
+      },
+      {
+        "index": 118,
+        "hindi": "अभी बद्रीनाथ तक हेलिकॉप्टर नहीं उड़ सके हैं।",
+        "reference": "ना: बद्रीनाथ ता:बी हेलिकॉप्टर का आपीर दाढिया।",
+        "hypothesis": "नाः राः मैच जाकेद फ कॉ र् प् ट का होबा दाड़िओआ।",
+        "model_score": 0.178,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 43.83
+      },
+      {
+        "index": 119,
+        "hindi": "मेरी कविता शामिल करने का आभार।",
+        "reference": "आञाः दुराङ आदेर रिका राः जोआर।",
+        "hypothesis": "आञाः दुराङ तानको कामि रिका राः जोआर।",
+        "model_score": 0.303,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 19.82
+      },
+      {
+        "index": 120,
+        "hindi": "इसी से परेशान होकर युवक ने जहरीला पदार्थ खा लिया।",
+        "reference": "नेया ते परेशान केते दंगड़ा जहरीला पदार्थ जोम केदाय",
+        "hypothesis": "नेआ ते बालाए ते कुड़ि होड़ो कोः आः।",
+        "model_score": 0.193,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.85
+      },
+      {
+        "index": 121,
+        "hindi": "सक्रिय रस शरीर से लाभप्रद एक मिश्रण है कि",
+        "reference": "सक्रिय रासे होड़ोमोते लाभप्रद मिआद मिश्रण मेना: चि।",
+        "hypothesis": "आर होड़ोमो ते बेगार होरा ते मिआद खुरजि सचिन ण मेनाः चि?",
+        "model_score": 0.109,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 37.05
+      },
+      {
+        "index": 122,
+        "hindi": "आपकी मित्रता शब्दों की ही देन है।",
+        "reference": "अमा: मित्रता शब्द र:अ देन गी तना:",
+        "hypothesis": "अमाः सोंगे न टुंग रेआः गे होबा तना।",
+        "model_score": 0.193,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 28.15
+      },
+      {
+        "index": 123,
+        "hindi": "क् योंकि कामना तुम् हारी उर्जा से लड़ रही थी।",
+        "reference": "चिआःचि कामना आम आञाः पेड़ेः लोःते लाड़ाइ तान ताइकेना।",
+        "hypothesis": "चिलका चि आमाः जी ते पाड़ाओ लोः ताइकेना।",
+        "model_score": 0.173,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.67
+      },
+      {
+        "index": 124,
+        "hindi": "बड़ी मुश्किल से मिलती है कुर्सी।",
+        "reference": "चिमिन मुश्किल ते नमोवा ने चौकी",
+        "hypothesis": "बेसे बालाए ते आउ जादा एना राः सी",
+        "model_score": 0.17,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 18.42
+      },
+      {
+        "index": 125,
+        "hindi": "इसी तनाव के कारण मैं सीधे होटल पहुंच गई थी।",
+        "reference": "ने तनाव रा: चलते आइंग सोझगी होटल सेटेर कन तइकेनाइंग",
+        "hypothesis": "ने लेका रे होः राः कारण ते आइंग जनय",
+        "model_score": 0.117,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 26.95
+      },
+      {
+        "index": 126,
+        "hindi": "उसके बाद से ही स्थानीय लोगों में आतंक है।",
+        "reference": "ने तायोम ते गे जापाः रेन होड़ोको बोरोताना।",
+        "hypothesis": "एना तायोम ते गे दिसुम रेन होड़ोको तला रे इपिल को मेनाः।",
+        "model_score": 0.285,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 29.9
+      },
+      {
+        "index": 127,
+        "hindi": "परिवारवाद का आरोप कम ही लगेगा।",
+        "reference": "परिवारवाद रेआ आरोप हुड़िंग गे होबा:ओआ।",
+        "hypothesis": "ओड़ाः राः होरा ते कोम गे बेस ताइना।",
+        "model_score": 0.222,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.39
+      },
+      {
+        "index": 128,
+        "hindi": "मना करने पर बोलते हैं कि क्या नाराजगी में?",
+        "reference": "माना जाइःरे काजिताना चि चानाःम हांड़ातानरे?",
+        "hypothesis": "कजि लेरे दो कजि तना चि चिनअः म चि?",
+        "model_score": 0.245,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.82
+      },
+      {
+        "index": 129,
+        "hindi": "महौल बारात के बजाय पिकनिक मनाने जैसा बन गया।",
+        "reference": "एनताः बारात लेकादो का पिकनिक मानातिङ लेका बाइ जाना।",
+        "hypothesis": "मह श ब ढ़ व ड़ राः सनंग लेका ते बुगिन बइ जना",
+        "model_score": 0.133,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 45.51
+      },
+      {
+        "index": 130,
+        "hindi": "ममता ने अपने भाषण में लालू पर कई तीर छोडे।",
+        "reference": "ममता आएआः भाषण रे लालूआः चेतान रे इसु सार कोएः तुञकेदाएः।",
+        "hypothesis": "ममता दो अयाः जगर रे लालू के बेसे व्यवस्था के श मेनाः।",
+        "model_score": 0.195,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 32.09
+      },
+      {
+        "index": 131,
+        "hindi": "कोई सरकारी बाबू इसे लिखता है।",
+        "reference": "जाए सरकारी बाबू नेया ओलेआञ।",
+        "hypothesis": "जान सरकारी बाबू नेआ ओल रिका तना।",
+        "model_score": 0.312,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.75
+      },
+      {
+        "index": 132,
+        "hindi": "ईसाई और पारसी के भी उत्तराधिकार कानून हैं।",
+        "reference": "ईसाई आर पारसीकोआः उत्तराधिकार कानून मेनाः।",
+        "hypothesis": "ई साई अर सी रेअः कुनुलि गोमके मेनअः।",
+        "model_score": 0.177,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 24.95
+      },
+      {
+        "index": 133,
+        "hindi": "किसमें छुपा है खुश रहने का राज?",
+        "reference": "चानाः ते दानाङाकाना सुकु ते ताइन राः राज?",
+        "hypothesis": "ओकोए रे बोलो मेनाः रासिका रेआ राज ताइकेना।",
+        "model_score": 0.277,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 25.13
+      },
+      {
+        "index": 134,
+        "hindi": "या किसी अन्य तरह की सृष्टि बनाई जाये।",
+        "reference": "चि एटा लेकान संसार बई ले एनाँग।",
+        "hypothesis": "कारेदो एटाः लेकान दाः राः गोनोङ बाइ लागातिङा।",
+        "model_score": 0.222,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 17.72
+      },
+      {
+        "index": 135,
+        "hindi": "विश्व चैंपियनशिप में आनंद को मनोवैज्ञानिक बढ़त",
+        "reference": "विष्व चैंपियनषिप रे आनंद दो मोनेलेकाते दाड़ि",
+        "hypothesis": "विश्व शिप कोरे आनंद के रसिका के जि ज याः वैज्ञानिक",
+        "model_score": 0.109,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.87
+      },
+      {
+        "index": 136,
+        "hindi": "हिन्दी में जिसे आलोचना कहते हैं यह आधुनिक विधा है।",
+        "reference": "हिंदी रे चीना के आलोचना को कजिया ने या आधुनिक विधा तना",
+        "hypothesis": "हिन्दी रे ओकोआ काजि दाड़ि आः नेआ सारते मेनाः ने लेका मेनाः।",
+        "model_score": 0.262,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.1
+      },
+      {
+        "index": 137,
+        "hindi": "उन्होंने कहा इस पर विचार करने की जरूरत है।",
+        "reference": "इनको को काजी केदा नेया रे विचार रा:दरकार मेना:",
+        "hypothesis": "इनिः काजिकेदा नेआ उड़ुः रिका राः जारुड़ु मेनाः।",
+        "model_score": 0.489,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.45
+      },
+      {
+        "index": 138,
+        "hindi": "चुंबकत्व को निष्क्रिय करें सहायता करें",
+        "reference": "चुंबकत्वके निष्क्रिय रिकाएमे देंगाएमे।",
+        "hypothesis": "बा क नाटक दो बेगार उड़ुङ रआः देंगा नाम लागातिङा।",
+        "model_score": 0.101,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.58
+      },
+      {
+        "index": 139,
+        "hindi": "दंगा निरोधक वाहन को बुला लिया गया है।",
+        "reference": "दंगा निरोधक गाडी के कुली आउ केदा को",
+        "hypothesis": "द ड़ी राः बेगर उड़ु केआते ओड़ोः उदुब केदा।",
+        "model_score": 0.144,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 27.92
+      },
+      {
+        "index": 140,
+        "hindi": "कहार महल में झाडू देते हुए अशर्फियाँ बटोर",
+        "reference": "कहार महल रे जोः तान इनतु अशर्फियाँ हाउर केदा",
+        "hypothesis": "कजि दो सं क्षेत्र रे डुंबु इ तन को चि जाः ए उदुब् केदा।",
+        "model_score": 0.125,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 39.11
+      },
+      {
+        "index": 141,
+        "hindi": "अब तो कहीं से खुशियों की दास्तान लाते।",
+        "reference": "नाआः दो जाआं ताः ते रासिका कानाजिको आउ लागातिङ ताइकेना।",
+        "hypothesis": "नाः दो जाआं ताः ते ताइन राः बे जा चि",
+        "model_score": 0.16,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.61
+      },
+      {
+        "index": 142,
+        "hindi": "या मैं आपको बारंबार प्रणाम करता हूँ।",
+        "reference": "आइंग अमके घड़ी-घड़ी जोवर मेतनाइंग",
+        "hypothesis": "कारेदो आञ आम सा ञ रिकाएआ।",
+        "model_score": 0.194,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 15.9
+      },
+      {
+        "index": 143,
+        "hindi": "यहां सारा साल मौसम लगभग एक जैसा ही रहता है।",
+        "reference": "नेताः गोटा सिरमा मौसम मिद लेका गे ताइना।",
+        "hypothesis": "नेताः सोबेन सिरमा लेका ते मियद लेकन ह गी तइना",
+        "model_score": 0.161,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.92
+      },
+      {
+        "index": 144,
+        "hindi": "इधर कुछ दिनों से शन्नो देख",
+        "reference": "नेसाः हुड़िङ दिन ते शन्नो लेल",
+        "hypothesis": "नेते हुड़िंग सोमोय ते श ओड़ोः सोबेन को लेल तन लोओः नेल जना।",
+        "model_score": 0.21,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 34.41
+      },
+      {
+        "index": 145,
+        "hindi": "कितनी नौकाएं इसके किनारों से होकर गुजरी हैं।",
+        "reference": "चिमिनाम लाउकाको नेआ आतोमते सेसेन पारोमाकाना।",
+        "hypothesis": "चिमनुङ करण राः नेआ राः जागार ते का ताइकेना चि इनिः का।",
+        "model_score": 0.141,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 33.58
+      },
+      {
+        "index": 146,
+        "hindi": "इसमें यूनिकोड हिन्दी में टाईप करना मुश्किल था।",
+        "reference": "नेया रे यूनिकोड टाइप मुश्किल तइकेना",
+        "hypothesis": "नेआरे यूनि कोड रे को ओम नातिन बालाए ताइकेना।",
+        "model_score": 0.199,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.45
+      },
+      {
+        "index": 147,
+        "hindi": "यह भी एक खबर है आप विश्वास करें तो",
+        "reference": "नेयाओ मोयोद खबर गेआ तना अम पतिएरे।",
+        "hypothesis": "नेआ ओ मिआद खोबोर मेनाः चि आम दो का?",
+        "model_score": 0.291,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 22.72
+      },
+      {
+        "index": 148,
+        "hindi": "बस में सारे रस्ते मुझे बेचैनी सी लगी रही।",
+        "reference": "बस गाड़ि रे गोटा होरा आञ आकुल-बाकुल आटकार केदा।",
+        "hypothesis": "बस रे सोबेन को अइंग जि स सं यम लेका अटकरोः तना",
+        "model_score": 0.136,
+        "qg_passed": false,
+        "qg_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 35.54
+      },
+      {
+        "index": 149,
+        "hindi": "सर्वोत्तम सिद्धि के लिये सदा सतत चेष्टा करनी चाहिये।",
+        "reference": "सोबेनाते माजा जो (सिद्धि) नागेन जानाव कुरूमुटुआकान ताइन लागातिङा।",
+        "hypothesis": "सोबेनाते माजा पेड़ेः नागेन जानाव लेकाते पड़ा व लागातिङा।",
+        "model_score": 0.288,
+        "qg_passed": true,
+        "qg_reasons": [],
+        "suspicious": false,
+        "suspicious_reasons": [],
+        "latency_ms": 21.51
+      }
+    ]
+  }
+}

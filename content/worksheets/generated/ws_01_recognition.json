@@ -1,0 +1,338 @@
+{
+  "worksheet_id": "WS_01_NUMBER_RECOGNITION",
+  "title_hi": "कार्यपत्रक १: संख्या पहचान (Numbers 1-20)",
+  "title_unr": "कामि साकाम १: लेका उरुम (Numbers 1-20)",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "target_competency": "M1.1 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+  "generation_seed": 42,
+  "provenance_status": "GENERATED_PROTOTYPE (PENDING HUMAN VALIDATION)",
+  "problems": [
+    {
+      "problem_id": "recog_01",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 1,
+        "mundari_word": "मिअद",
+        "mundari_phonetic": "miad",
+        "hindi_word": "एक",
+        "hindi_numeral": "१"
+      },
+      "options": [
+        {
+          "number": 1,
+          "numeral": "१",
+          "is_correct": true
+        },
+        {
+          "number": 2,
+          "numeral": "२",
+          "is_correct": false
+        },
+        {
+          "number": 5,
+          "numeral": "५",
+          "is_correct": false
+        },
+        {
+          "number": 10,
+          "numeral": "१०",
+          "is_correct": false
+        }
+      ],
+      "solution": 1
+    },
+    {
+      "problem_id": "recog_02",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 3,
+        "mundari_word": "अपिया",
+        "mundari_phonetic": "apia",
+        "hindi_word": "तीन",
+        "hindi_numeral": "३"
+      },
+      "options": [
+        {
+          "number": 3,
+          "numeral": "३",
+          "is_correct": true
+        },
+        {
+          "number": 6,
+          "numeral": "६",
+          "is_correct": false
+        },
+        {
+          "number": 9,
+          "numeral": "९",
+          "is_correct": false
+        },
+        {
+          "number": 20,
+          "numeral": "२०",
+          "is_correct": false
+        }
+      ],
+      "solution": 3
+    },
+    {
+      "problem_id": "recog_03",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 5,
+        "mundari_word": "मोड़ेया",
+        "mundari_phonetic": "môṛẽa",
+        "hindi_word": "पाँच",
+        "hindi_numeral": "५"
+      },
+      "options": [
+        {
+          "number": 3,
+          "numeral": "३",
+          "is_correct": false
+        },
+        {
+          "number": 4,
+          "numeral": "४",
+          "is_correct": false
+        },
+        {
+          "number": 5,
+          "numeral": "५",
+          "is_correct": true
+        },
+        {
+          "number": 19,
+          "numeral": "१९",
+          "is_correct": false
+        }
+      ],
+      "solution": 5
+    },
+    {
+      "problem_id": "recog_04",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 8,
+        "mundari_word": "इरालिया",
+        "mundari_phonetic": "iralia",
+        "hindi_word": "आठ",
+        "hindi_numeral": "८"
+      },
+      "options": [
+        {
+          "number": 2,
+          "numeral": "२",
+          "is_correct": false
+        },
+        {
+          "number": 8,
+          "numeral": "८",
+          "is_correct": true
+        },
+        {
+          "number": 15,
+          "numeral": "१५",
+          "is_correct": false
+        },
+        {
+          "number": 20,
+          "numeral": "२०",
+          "is_correct": false
+        }
+      ],
+      "solution": 8
+    },
+    {
+      "problem_id": "recog_05",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 10,
+        "mundari_word": "गेलेया",
+        "mundari_phonetic": "geleya",
+        "hindi_word": "दस",
+        "hindi_numeral": "१०"
+      },
+      "options": [
+        {
+          "number": 1,
+          "numeral": "१",
+          "is_correct": false
+        },
+        {
+          "number": 3,
+          "numeral": "३",
+          "is_correct": false
+        },
+        {
+          "number": 7,
+          "numeral": "७",
+          "is_correct": false
+        },
+        {
+          "number": 10,
+          "numeral": "१०",
+          "is_correct": true
+        }
+      ],
+      "solution": 10
+    },
+    {
+      "problem_id": "recog_06",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 12,
+        "mundari_word": "गेल बारिया",
+        "mundari_phonetic": "gel baria",
+        "hindi_word": "बारह",
+        "hindi_numeral": "१२"
+      },
+      "options": [
+        {
+          "number": 1,
+          "numeral": "१",
+          "is_correct": false
+        },
+        {
+          "number": 8,
+          "numeral": "८",
+          "is_correct": false
+        },
+        {
+          "number": 12,
+          "numeral": "१२",
+          "is_correct": true
+        },
+        {
+          "number": 18,
+          "numeral": "१८",
+          "is_correct": false
+        }
+      ],
+      "solution": 12
+    },
+    {
+      "problem_id": "recog_07",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 14,
+        "mundari_word": "गेल उपुनिया",
+        "mundari_phonetic": "gel upunia",
+        "hindi_word": "चौदह",
+        "hindi_numeral": "१४"
+      },
+      "options": [
+        {
+          "number": 7,
+          "numeral": "७",
+          "is_correct": false
+        },
+        {
+          "number": 14,
+          "numeral": "१४",
+          "is_correct": true
+        },
+        {
+          "number": 15,
+          "numeral": "१५",
+          "is_correct": false
+        },
+        {
+          "number": 19,
+          "numeral": "१९",
+          "is_correct": false
+        }
+      ],
+      "solution": 14
+    },
+    {
+      "problem_id": "recog_08",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 17,
+        "mundari_word": "गेल एयाएया",
+        "mundari_phonetic": "gel ēyāēa",
+        "hindi_word": "सत्रह",
+        "hindi_numeral": "१७"
+      },
+      "options": [
+        {
+          "number": 8,
+          "numeral": "८",
+          "is_correct": false
+        },
+        {
+          "number": 9,
+          "numeral": "९",
+          "is_correct": false
+        },
+        {
+          "number": 15,
+          "numeral": "१५",
+          "is_correct": false
+        },
+        {
+          "number": 17,
+          "numeral": "१७",
+          "is_correct": true
+        }
+      ],
+      "solution": 17
+    },
+    {
+      "problem_id": "recog_09",
+      "problem_type": "number_recognition",
+      "instruction_hi": "सही संख्या पर गोला लगाएँ:",
+      "instruction_unr": "सोझोः लेका रे गोल चिन्हाः बाइपे:",
+      "prompt_data": {
+        "target_number": 20,
+        "mundari_word": "हिसि",
+        "mundari_phonetic": "hisi",
+        "hindi_word": "बीस",
+        "hindi_numeral": "२०"
+      },
+      "options": [
+        {
+          "number": 1,
+          "numeral": "१",
+          "is_correct": false
+        },
+        {
+          "number": 6,
+          "numeral": "६",
+          "is_correct": false
+        },
+        {
+          "number": 14,
+          "numeral": "१४",
+          "is_correct": false
+        },
+        {
+          "number": 20,
+          "numeral": "२०",
+          "is_correct": true
+        }
+      ],
+      "solution": 20
+    }
+  ]
+}

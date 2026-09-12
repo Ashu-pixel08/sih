@@ -1,0 +1,815 @@
+{
+  "model_name": "google/mt5-small-lora",
+  "parameters": 300520832,
+  "checkpoint_dir": "models/nmt/pretrained_transfer/best_model",
+  "held_out_test": {
+    "count": 1333,
+    "clean_bleu": 0.91,
+    "clean_chrf": 14.4,
+    "exact_match_count": 0,
+    "exact_match_pct": 0.0,
+    "mean_confidence": 0.1652,
+    "qg_pass_count": 1332,
+    "qg_pass_rate_pct": 99.92,
+    "suspicious_count": 1,
+    "suspicious_rate_pct": 0.08,
+    "latency_mean_ms": 415.99,
+    "latency_p50_ms": 403.01,
+    "latency_p95_ms": 591.47,
+    "evaluation_time_s": 554.5
+  },
+  "probes_a_f": [
+    {
+      "id": "A",
+      "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+      "label": "Real-world Failure A (Technical Loanwords)",
+      "output": "नेआ साइबरसिक सिक्योरिटी को काः।",
+      "confidence": 0.251,
+      "latency_ms": 485.32,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    },
+    {
+      "id": "B",
+      "hindi": "आज हम सब गाना गाएंगे।",
+      "label": "Real-world Failure B (Morphology / FLN Future)",
+      "output": "नेआ ते रे आञ गाना जाना।",
+      "confidence": 0.1613,
+      "latency_ms": 323.01,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    },
+    {
+      "id": "C",
+      "hindi": "कल स्कूल कौन नहीं आया था?",
+      "label": "Classroom Question C",
+      "output": "नेआ ते रे स्कूल कौन आञः।",
+      "confidence": 0.1681,
+      "latency_ms": 343.42,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    },
+    {
+      "id": "D",
+      "hindi": "इस पाठ का मतलब कौन समझाएगा?",
+      "label": "Classroom Instruction D",
+      "output": "नेआ ते आञ रे काः जाना।",
+      "confidence": 0.1078,
+      "latency_ms": 353.11,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    },
+    {
+      "id": "E",
+      "hindi": "महिलाएँ गीत गा रही हैं।",
+      "label": "Continuous Present E",
+      "output": "नेआ महिलाएँ गीत गा: रे आञः पुरुष गीत गीत।",
+      "confidence": 0.132,
+      "latency_ms": 455.87,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    },
+    {
+      "id": "F",
+      "hindi": "वार्षिक परीक्षा अगले महीने होगी।",
+      "label": "School Calendar F",
+      "output": "नेआ परीक्षा रे आञः जाना।",
+      "confidence": 0.1746,
+      "latency_ms": 306.47,
+      "is_suspicious": false,
+      "suspicious_reasons": [],
+      "qg_passed": true
+    }
+  ],
+  "morphology_diagnostic": [
+    {
+      "id": "MORPH-01",
+      "hindi": "आज हम गाना गाएंगे।",
+      "feature": "1st person plural (exclusive/inclusive) future tense",
+      "output": "नेआ ते गाना जाना।",
+      "confidence": 0.2266,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-02",
+      "hindi": "आज वे गाना गाएंगे।",
+      "feature": "3rd person plural future tense",
+      "output": "नेआ गाना ते रे आञ कोना।",
+      "confidence": 0.1387,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-03",
+      "hindi": "कल हम गाना गाएंगे।",
+      "feature": "1st person plural future tense (tomorrow)",
+      "output": "नेआ ते गाना जाना।",
+      "confidence": 0.2164,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-04",
+      "hindi": "हम रोज गाना गाते हैं।",
+      "feature": "1st person plural habitual present",
+      "output": "नेआ रोज गाना गाड़ो: रे आञ।",
+      "confidence": 0.1933,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-05",
+      "hindi": "हमने कल गाना गाया।",
+      "feature": "1st person plural simple past (yesterday)",
+      "output": "नेआ ते आञ गाना जाना।",
+      "confidence": 0.1744,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-06",
+      "hindi": "बच्चे गीत गा रहे हैं।",
+      "feature": "3rd person plural continuous present (children)",
+      "output": "नेआ गीत गा: बच्चे रे आञः गीत गीत",
+      "confidence": 0.1307,
+      "qg_passed": true
+    },
+    {
+      "id": "MORPH-07",
+      "hindi": "महिलाएँ गीत गा रही हैं।",
+      "feature": "3rd person feminine plural continuous present (women)",
+      "output": "नेआ महिलाएँ गीत गा: रे आञः पुरुष गीत गीत।",
+      "confidence": 0.132,
+      "qg_passed": true
+    }
+  ],
+  "loanword_diagnostic": [
+    {
+      "id": "LOAN-01",
+      "target_loanword": "साइबर",
+      "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+      "output": "नेआ साइबरसिक सिक्योरिटी को काः।",
+      "confidence": 0.251,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-02",
+      "target_loanword": "सिक्योरिटी",
+      "hindi": "स्कूल में सिक्योरिटी बहुत जरूरी है।",
+      "output": "नेआ स्कूल सिक्योरिटी रे होड़ोः।",
+      "confidence": 0.3093,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-03",
+      "target_loanword": "कंप्यूटर",
+      "hindi": "स्कूल में कंप्यूटर सीखना बहुत अच्छा है।",
+      "output": "नेआ कंप्यूटर सीखना।",
+      "confidence": 0.431,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-04",
+      "target_loanword": "डिजिटल",
+      "hindi": "यह पाठ डिजिटल स्क्रीन पर दिखेगा।",
+      "output": "नेआ स्क्रीन रे आञः ओड़ो:",
+      "confidence": 0.1805,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-05",
+      "target_loanword": "इंटरनेट",
+      "hindi": "आज इंटरनेट से सभी बच्चे पढ़ रहे हैं।",
+      "output": "नेआ इंटरनेट रे ते बच्चे काएः।",
+      "confidence": 0.2216,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-06",
+      "target_loanword": "स्कूल",
+      "hindi": "कल स्कूल कौन नहीं आया था?",
+      "output": "नेआ ते रे स्कूल कौन आञः।",
+      "confidence": 0.1681,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-07",
+      "target_loanword": "फाइल",
+      "hindi": "इस फाइल को ध्यान से देखो।",
+      "output": "नेआ ध्यान रे आञः जाना।",
+      "confidence": 0.1913,
+      "is_suspicious": false,
+      "qg_passed": true
+    },
+    {
+      "id": "LOAN-08",
+      "target_loanword": "मोबाइल",
+      "hindi": "मोबाइल पर संदेश आ गया है।",
+      "output": "नेआ मोबाइल रे संदेश ते आञः ओड़ो:",
+      "confidence": 0.1915,
+      "is_suspicious": false,
+      "qg_passed": true
+    }
+  ],
+  "unseen_demo_20": {
+    "total": 20,
+    "qg_passed": 20,
+    "pass_rate_pct": 100.0,
+    "results": [
+      {
+        "id": "DEMO-01",
+        "category": "GREETINGS",
+        "hindi": "सभी शिक्षक और बच्चों को सुप्रभात।",
+        "output": "नेआ रः बच्चे रे सुप्रभात को आञ।",
+        "confidence": 0.1615,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-02",
+        "category": "GREETINGS",
+        "hindi": "आज की कक्षा में आप सभी का स्वागत है।",
+        "output": "नेआ कक्षा रे रः आञ कोना।",
+        "confidence": 0.1401,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-03",
+        "category": "CLASSROOM_INSTRUCTIONS",
+        "hindi": "कृपया सभी बच्चे अपनी कॉपी निकालें।",
+        "output": "नेआ रः बच्चे रे आञ केना।",
+        "confidence": 0.1444,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-04",
+        "category": "CLASSROOM_INSTRUCTIONS",
+        "hindi": "बोर्ड पर जो लिखा है उसे ध्यान से देखें।",
+        "output": "नेआ ध्यान रे लिखाना।",
+        "confidence": 0.2602,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-05",
+        "category": "CLASSROOM_INSTRUCTIONS",
+        "hindi": "अपनी जगह पर शांति से बैठिए।",
+        "output": "नेआ शांति रे जाड़ोः आञ: ओड़ाना।",
+        "confidence": 0.1763,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-06",
+        "category": "QUESTIONS",
+        "hindi": "क्या किसी को कोई परेशानी है?",
+        "output": "नेआ ते रे कोड़ोः काका।",
+        "confidence": 0.1212,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-07",
+        "category": "QUESTIONS",
+        "hindi": "कल स्कूल कौन नहीं आया था?",
+        "output": "नेआ ते रे स्कूल कौन आञः।",
+        "confidence": 0.1681,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-08",
+        "category": "QUESTIONS",
+        "hindi": "इस पाठ का मतलब कौन समझाएगा?",
+        "output": "नेआ ते आञ रे काः जाना।",
+        "confidence": 0.1078,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-09",
+        "category": "STUDENT_TEACHER_CONVERSATION",
+        "hindi": "गुरुजी, क्या मैं पानी पीने बाहर जा सकता हूँ?",
+        "output": "नेआ पानी पीड़ोः जाना।",
+        "confidence": 0.2608,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-10",
+        "category": "STUDENT_TEACHER_CONVERSATION",
+        "hindi": "शाबाश, तुमने बहुत अच्छा उत्तर दिया।",
+        "output": "नेआ ते रे आञः ओड़ो: अच्छा उत्तर केना।",
+        "confidence": 0.1343,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-11",
+        "category": "BASIC_LITERACY",
+        "hindi": "आज हम क से कबूतर लिखना सीखेंगे।",
+        "output": "नेआ ते कबूतर लिखना।",
+        "confidence": 0.3736,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-12",
+        "category": "BASIC_LITERACY",
+        "hindi": "इस कहानी की पहली पंक्ति को मिलकर पढ़ें।",
+        "output": "नेआ ते आञ रे कोः जाना।",
+        "confidence": 0.0957,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-13",
+        "category": "BASIC_NUMERACY",
+        "hindi": "तीन में चार जोड़ने पर कितना होता है?",
+        "output": "नेआ तीन जोड़ोः रे आञ।",
+        "confidence": 0.1825,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-14",
+        "category": "BASIC_NUMERACY",
+        "hindi": "इन पाँच गेंदों को एक साथ गिनकर बताओ।",
+        "output": "नेआ ते गिनकर रे आञ जाना।",
+        "confidence": 0.1686,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-15",
+        "category": "SCHOOL_ACTIVITIES",
+        "hindi": "घंटी बजने के बाद सभी बच्चे मैदान में जाएँगे।",
+        "output": "नेआ ते बच्चे मैदान रे आञः कोना।",
+        "confidence": 0.1792,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-16",
+        "category": "SCHOOL_ACTIVITIES",
+        "hindi": "भोजन करने से पहले सभी अपनी थाली साफ़ करें।",
+        "output": "नेआ ते आञ रे अनाः ओड़ो: जादा।",
+        "confidence": 0.1261,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-17",
+        "category": "SIMPLE_EVERYDAY_SENTENCES",
+        "hindi": "आज का मौसम बहुत अच्छा और सुहावना है।",
+        "output": "नेआ ते मौसम रे सुहावना।",
+        "confidence": 0.318,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-18",
+        "category": "SIMPLE_EVERYDAY_SENTENCES",
+        "hindi": "हमें प्रतिदिन समय पर स्कूल पहुँचना चाहिए।",
+        "output": "नेआ ते रे स्कूल पहुँचना आञः।",
+        "confidence": 0.1873,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-19",
+        "category": "SIMPLE_EVERYDAY_SENTENCES",
+        "hindi": "अपने हाथ साबुन से अच्छी तरह धो लो।",
+        "output": "नेआ ते आञ रे अच्छी तरह साबुन काना।",
+        "confidence": 0.1845,
+        "qg_passed": true,
+        "reasons": []
+      },
+      {
+        "id": "DEMO-20",
+        "category": "SIMPLE_EVERYDAY_SENTENCES",
+        "hindi": "किताब को गंदा मत करो, संभाल कर रखो।",
+        "output": "नेआ रजा रे आञः जाना।",
+        "confidence": 0.1003,
+        "qg_passed": true,
+        "reasons": []
+      }
+    ]
+  },
+  "challenge_50": {
+    "total": 50,
+    "qg_passed": 50,
+    "pass_rate_pct": 100.0,
+    "results": [
+      {
+        "id": "CHAL_01",
+        "category": "classroom_instructions",
+        "hindi": "अपनी किताब खोलो।",
+        "output": "नेआ किताब रः रे होड़ो: ओड़ाना।",
+        "confidence": 0.161,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_02",
+        "category": "classroom_instructions",
+        "hindi": "ब्लैकबोर्ड पर देखो।",
+        "output": "नेआ ते ब्लैकबोर्ड रे कोः।",
+        "confidence": 0.1939,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_03",
+        "category": "classroom_instructions",
+        "hindi": "सब बच्चे शांत रहो।",
+        "output": "नेआ रः रे बच्चे ओड़ो: काना।",
+        "confidence": 0.1718,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_04",
+        "category": "classroom_instructions",
+        "hindi": "अपना हाथ ऊपर उठाओ।",
+        "output": "नेआ ते आञ रे उड़ोः ओड़ाना।",
+        "confidence": 0.1381,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_05",
+        "category": "classroom_instructions",
+        "hindi": "यहाँ आकर बैठो।",
+        "output": "नेआ ते आकर बैठोः जाड़ि:।",
+        "confidence": 0.223,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_06",
+        "category": "questions",
+        "hindi": "तुम्हारा नाम क्या है?",
+        "output": "नेआ ते रे काः जाना।",
+        "confidence": 0.1165,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_07",
+        "category": "questions",
+        "hindi": "तुम कहाँ जा रहे हो?",
+        "output": "नेआ ते रे आञः ओड़ो: जाना।",
+        "confidence": 0.1597,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_08",
+        "category": "questions",
+        "hindi": "आज कौन सा दिन है?",
+        "output": "नेआ ते रे आञः ओड़ो: काना।",
+        "confidence": 0.1389,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_09",
+        "category": "questions",
+        "hindi": "इस सवाल का उत्तर कौन देगा?",
+        "output": "नेआ ते आञ रे सवाल को ओड़ोः काना।",
+        "confidence": 0.1385,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_10",
+        "category": "questions",
+        "hindi": "तुमने कल क्या खाया था?",
+        "output": "नेआ ते रे आञः कोना।",
+        "confidence": 0.1087,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_11",
+        "category": "present_tense",
+        "hindi": "बच्चे मैदान में खेलते हैं।",
+        "output": "नेआ ते रे होड़ो: ओड़ाः।",
+        "confidence": 0.1242,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_12",
+        "category": "present_tense",
+        "hindi": "सूरज पूरब से निकलता है।",
+        "output": "नेआ ते रे आञः जाड़ो: सूरज पूरब रे होना।",
+        "confidence": 0.1599,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_13",
+        "category": "present_tense",
+        "hindi": "मैं हर दिन स्कूल जाता हूँ।",
+        "output": "नेआ ते रे स्कूल जाना।",
+        "confidence": 0.1905,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_14",
+        "category": "present_tense",
+        "hindi": "हवा धीरे-धीरे बह रही है।",
+        "output": "नेआ धीरे रे आञः जाना।",
+        "confidence": 0.1669,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_15",
+        "category": "past_tense",
+        "hindi": "उसने कल मुझे एक कहानी सुनाई।",
+        "output": "नेआ ते आञ रे ओड़ोः काना।",
+        "confidence": 0.1484,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_16",
+        "category": "past_tense",
+        "hindi": "कल रात बहुत तेज बारिश हुई।",
+        "output": "नेआ तेज बारिश रे आञः जाना।",
+        "confidence": 0.2357,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_17",
+        "category": "past_tense",
+        "hindi": "हमने कल शाम को फुटबॉल खेला था।",
+        "output": "नेआ ते आञ रे फुटबॉल खेला होड़ोः।",
+        "confidence": 0.1902,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_18",
+        "category": "past_tense",
+        "hindi": "वे सब कल बाजार गए थे।",
+        "output": "नेआ ते रे आञ बाजार जाना।",
+        "confidence": 0.1538,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_19",
+        "category": "future_tense",
+        "hindi": "हम सब कल नए पाठ पढ़ेंगे।",
+        "output": "नेआ नए पाठ रे आञः जाना।",
+        "confidence": 0.1677,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_20",
+        "category": "future_tense",
+        "hindi": "शिक्षक कल हमें नया पाठ सिखाएंगे।",
+        "output": "नेआ नया पाठ सिखाएः।",
+        "confidence": 0.1963,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_21",
+        "category": "future_tense",
+        "hindi": "कल गाँव में मेला लगेगा।",
+        "output": "नेआ ते गाँव रे मेला।",
+        "confidence": 0.2023,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_22",
+        "category": "future_tense",
+        "hindi": "मैं कल सुबह जल्दी उठूंगा।",
+        "output": "नेआ ते आञः रे सुबह जल्दी लेना।",
+        "confidence": 0.1429,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_23",
+        "category": "plural_subjects",
+        "hindi": "सब लड़के मिलकर काम कर रहे हैं।",
+        "output": "नेआ लड़ो: रे आञः जाना।",
+        "confidence": 0.1834,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_24",
+        "category": "plural_subjects",
+        "hindi": "पेड़ों पर कई चिड़ियाँ बैठी हैं।",
+        "output": "नेआ ते चिड़ियाँ रे आञः ओड़ाओ:।",
+        "confidence": 0.1224,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_25",
+        "category": "plural_subjects",
+        "hindi": "गाँव के लोग नदी पर गए हैं।",
+        "output": "नेआ नदी रे लोग नदे केना।",
+        "confidence": 0.2108,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_26",
+        "category": "plural_subjects",
+        "hindi": "महिलाएँ गीत गा रही हैं।",
+        "output": "नेआ महिलाएँ गीत गा: रे आञः पुरुष गीत गीत।",
+        "confidence": 0.132,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_27",
+        "category": "pronouns",
+        "hindi": "यह मेरी पुस्तक है और वह तुम्हारी है।",
+        "output": "नेआ पुस्तक रे रः ते आञ मेनाः।",
+        "confidence": 0.1384,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_28",
+        "category": "pronouns",
+        "hindi": "आप हमारे घर कब आएंगे?",
+        "output": "नेआ हमारे घर कब आञ रे होड़ोः।",
+        "confidence": 0.182,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_29",
+        "category": "pronouns",
+        "hindi": "उनका घर बहुत दूर है।",
+        "output": "नेआ ते रे होड़ोः काना।",
+        "confidence": 0.1464,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_30",
+        "category": "pronouns",
+        "hindi": "कोई दरवाजे पर खड़ा है।",
+        "output": "नेआ ते रे आञः ओड़ो: कोए।",
+        "confidence": 0.1327,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_31",
+        "category": "negation",
+        "hindi": "मैं कभी झूठ नहीं बोलता।",
+        "output": "नेआ ते रे ओड़ोः आञ: झूठ रना।",
+        "confidence": 0.162,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_32",
+        "category": "negation",
+        "hindi": "आज कोई भी छात्र अनुपस्थित नहीं है।",
+        "output": "नेआ रः छात्र अनुपस्थित रे होड़ो: जाना।",
+        "confidence": 0.2511,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_33",
+        "category": "negation",
+        "hindi": "उसने आज सुबह से कुछ नहीं खाया।",
+        "output": "नेआ ते सुबह रे आञः कोना।",
+        "confidence": 0.1393,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_34",
+        "category": "negation",
+        "hindi": "डरने की कोई बात नहीं है।",
+        "output": "नेआ ते रे होड़ोः कोना।",
+        "confidence": 0.153,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_35",
+        "category": "educational_vocabulary",
+        "hindi": "गणित का अभ्यास करना बहुत जरूरी है।",
+        "output": "नेआ गणित रे आञः ताइना।",
+        "confidence": 0.2318,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_36",
+        "category": "educational_vocabulary",
+        "hindi": "विज्ञान के प्रयोग से नई बातें सीखने को मिलती हैं।",
+        "output": "नेआ विज्ञान रे आञः जाना।",
+        "confidence": 0.1711,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_37",
+        "category": "educational_vocabulary",
+        "hindi": "कक्षा में ध्यान से सुनना चाहिए।",
+        "output": "नेआ ध्यान रे आञः कक्षा कोए:।",
+        "confidence": 0.16,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_38",
+        "category": "educational_vocabulary",
+        "hindi": "वार्षिक परीक्षा अगले महीने होगी।",
+        "output": "नेआ परीक्षा रे आञः जाना।",
+        "confidence": 0.1746,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_39",
+        "category": "common_verbs",
+        "hindi": "वह साफ पानी पीता है।",
+        "output": "नेआ पानी रे आञः ओड़ो: साफ पानी पीना।",
+        "confidence": 0.1887,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_40",
+        "category": "common_verbs",
+        "hindi": "हमें रोज लिखना और पढ़ना चाहिए।",
+        "output": "नेआ रोज लिखना।",
+        "confidence": 0.4203,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_41",
+        "category": "common_verbs",
+        "hindi": "रोहन तेज दौड़ सकता है।",
+        "output": "नेआ तेज दौड़ो: रे आञः।",
+        "confidence": 0.2537,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_42",
+        "category": "numbers",
+        "hindi": "मेज़ पर तीन सेब रखे हैं।",
+        "output": "नेआ तीन सेब रे आञः ओड़ो: मेज़ रए।",
+        "confidence": 0.1695,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_43",
+        "category": "numbers",
+        "hindi": "कक्षा में बीस बच्चे उपस्थित हैं।",
+        "output": "नेआ ते बीस बच्चे उपस्थित रे कक्षा को आञः।",
+        "confidence": 0.1872,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_44",
+        "category": "numbers",
+        "hindi": "मेरे पास केवल पाँच रुपये हैं।",
+        "output": "नेआ पास रे आञः कोना:।",
+        "confidence": 0.1131,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_45",
+        "category": "unfamiliar_words",
+        "hindi": "उल्कापिंड रात में चमकते हैं।",
+        "output": "नेआ उल्कापिंड रे आञः ओड़ो: मेनाः।",
+        "confidence": 0.2413,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_46",
+        "category": "unfamiliar_words",
+        "hindi": "पारिस्थितिकी तंत्र का संतुलन बिगड़ रहा है।",
+        "output": "नेआ तंत्र रे आञः संतुलन बिगड़ो:",
+        "confidence": 0.1898,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_47",
+        "category": "english_loanwords",
+        "hindi": "कंप्यूटर चालू करो और फाइल सेव करो।",
+        "output": "नेआ मेनाः कंप्यूटर चालू रे आञः।",
+        "confidence": 0.2201,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_48",
+        "category": "english_loanwords",
+        "hindi": "डिजिटल क्लासरूम में इंटरनेट जरूरी है।",
+        "output": "नेआ इंटरनेट क्लासरूम ते रे आञः ओड़ो:",
+        "confidence": 0.1799,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_49",
+        "category": "longer_sentences",
+        "hindi": "जब शिक्षक कक्षा में आए तो सभी बच्चे आदर से खड़े हो गए।",
+        "output": "नेआ शिक्षाक कक्षा रे आदर को बच्चे आदर केना।",
+        "confidence": 0.2476,
+        "qg_passed": true
+      },
+      {
+        "id": "CHAL_50",
+        "category": "longer_sentences",
+        "hindi": "अगर तुम रोज मन लगाकर पढ़ाई करोगे तो परीक्षा में अच्छे अंक लाओगे।",
+        "output": "नेआ रोज अंक लाएः आञ रेअ: जाना।",
+        "confidence": 0.1367,
+        "qg_passed": true
+      }
+    ]
+  }
+}

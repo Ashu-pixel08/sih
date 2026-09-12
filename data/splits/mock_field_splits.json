@@ -1,0 +1,686 @@
+{
+  "generated_date": "2026-09-04",
+  "session_id": "SESS_20260904_KHUNTI_MOCK_DRYRUN",
+  "leakage_audited": true,
+  "leakage_results": {
+    "speaker_leakage": "PASS (0 speaker overlap)",
+    "recording_leakage": "PASS (0 duplicate recording IDs)",
+    "file_leakage": "PASS (0 duplicate file paths)",
+    "train_speakers": 4,
+    "val_speakers": 1,
+    "test_speakers": 1,
+    "augmentation_boundary_status": "PASS (0 cross-split augmentations)",
+    "total_augmented_checked": 5,
+    "violations_count": 0
+  },
+  "speaker_allocation": {
+    "train_speakers": [
+      "SPK_C02",
+      "SPK_C04",
+      "SPK_F01",
+      "SPK_M01"
+    ],
+    "validation_speakers": [
+      "SPK_C01"
+    ],
+    "test_speakers": [
+      "SPK_C03"
+    ]
+  },
+  "splits": {
+    "train": [
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C02_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C02_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C02",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C04_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C04_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C04",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_FEMALE_SPK_F01_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_FEMALE_SPK_F01_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_F01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_ADULT_MALE_SPK_M01_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_ADULT_MALE_SPK_M01_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_M01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      }
+    ],
+    "validation": [
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_GIRL_SPK_C01_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_GIRL_SPK_C01_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C01",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      }
+    ],
+    "test": [
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_BG_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_BG_REP01.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_BG_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_BG_REP02.wav",
+        "label_idx": 0,
+        "label_id": "_background_",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM01_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM01_REP01.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM01_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM01_REP02.wav",
+        "label_idx": 1,
+        "label_id": "num_01",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM02_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM02_REP01.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM02_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM02_REP02.wav",
+        "label_idx": 2,
+        "label_id": "num_02",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM03_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM03_REP01.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM03_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM03_REP02.wav",
+        "label_idx": 3,
+        "label_id": "num_03",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM04_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM04_REP01.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM04_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM04_REP02.wav",
+        "label_idx": 4,
+        "label_id": "num_04",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM05_REP01",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM05_REP01.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      },
+      {
+        "recording_id": "REC_MOCK_CHILD_BOY_SPK_C03_NUM05_REP02",
+        "file_path": "data/processed/mock_field_session/REC_MOCK_CHILD_BOY_SPK_C03_NUM05_REP02.wav",
+        "label_idx": 5,
+        "label_id": "num_05",
+        "speaker_id": "SPK_C03",
+        "duration_sec": 1.0,
+        "category": "MOCK_PIPELINE_VALIDATION_ONLY"
+      }
+    ]
+  }
+}

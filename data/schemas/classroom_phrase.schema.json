@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClassroomPhraseRecord",
+  "description": "Schema for candidate classroom phrases and teacher instructional commands.",
+  "type": "object",
+  "required": [
+    "phrase_id",
+    "hindi_text",
+    "mundari_text",
+    "category",
+    "classroom_use",
+    "grade",
+    "source",
+    "provenance",
+    "linguistic_validation",
+    "educational_validation",
+    "broadcast_allowed"
+  ],
+  "properties": {
+    "phrase_id": {
+      "type": "string",
+      "pattern": "^PHR_[A-Z0-9_]+$",
+      "description": "Classroom phrase identifier (e.g. PHR_MGMT_07)"
+    },
+    "hindi_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Standard Hindi teacher command or utterance"
+    },
+    "hindi_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Attested synonym triggers (e.g. ['नमस्कार', 'जोहार'])"
+    },
+    "mundari_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Verified Mundari classroom instruction (Devanagari)"
+    },
+    "mundari_root": {
+      "type": "string",
+      "description": "Lexical root morpheme (e.g. दुब, तिंगु, आयूम)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "GREETING_ROUTINE",
+        "CLASSROOM_MANAGEMENT",
+        "TEACHER_INSTRUCTION",
+        "STUDENT_RESPONSE",
+        "ENCOURAGEMENT",
+        "NUMERACY_INSTRUCTION",
+        "LITERACY_INSTRUCTION",
+        "QUESTION_PROMPT",
+        "LESSON_LIFECYCLE",
+        "PEER_COLLABORATION"
+      ]
+    },
+    "classroom_use": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Pedagogical intent and classroom context description"
+    },
+    "grade": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "ipa": {
+      "type": "string",
+      "description": "International Phonetic Alphabet pronunciation"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Source reference or field elicitation protocol"
+    },
+    "provenance": {
+      "type": "string",
+      "enum": [
+        "CORPUS_ATTESTED",
+        "REFERENCE_DERIVED",
+        "JCERT_CURRICULAR",
+        "FIELD_ELICITED"
+      ]
+    },
+    "linguistic_validation": {
+      "type": "string",
+      "enum": [
+        "CORPUS_ATTESTED",
+        "LINGUISTICALLY_REVIEWED",
+        "NATIVE_SPEAKER_VERIFIED",
+        "REJECTED"
+      ]
+    },
+    "educational_validation": {
+      "type": "string",
+      "enum": [
+        "JCERT_APPROVED",
+        "FLN_FRAMEWORK_COMPLIANT",
+        "PENDING_PILOT",
+        "REJECTED"
+      ]
+    },
+    "broadcast_allowed": {
+      "type": "boolean",
+      "description": "Safety gate: MUST be false until full linguistic and educational validation pass"
+    },
+    "linked_audio_id": {
+      "type": "string",
+      "description": "ID of corresponding audio asset (prototype or field-recorded)"
+    }
+  }
+}

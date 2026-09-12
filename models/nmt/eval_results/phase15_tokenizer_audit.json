@@ -1,0 +1,299 @@
+{
+  "step": "Step 2 Tokenizer Audit",
+  "current_model_b": {
+    "tokenizer_name": "Model_B_Current_BPE_6k_8k",
+    "hindi_vocab_size": 6000,
+    "mundari_vocab_size": 8000,
+    "avg_source_tokens_per_word": 1.345,
+    "avg_target_tokens_per_word": 1.492,
+    "hindi_total_tokens": 189982,
+    "mundari_total_tokens": 192922,
+    "hindi_unk_pct": 0.0037,
+    "mundari_unk_pct": 0.001,
+    "hindi_short_fragment_pct": 49.06,
+    "mundari_short_fragment_pct": 41.3,
+    "hindi_singletons_in_corpus": 159,
+    "mundari_singletons_in_corpus": 219,
+    "hindi_unused_tokens": 144,
+    "mundari_unused_tokens": 159,
+    "vocab_overlap_count": 3030,
+    "probe_word_tokenizations": {
+      "साइबर": {
+        "tokens": [
+          "साइ",
+          "बर"
+        ],
+        "ids": [
+          800,
+          451
+        ],
+        "num_tokens": 2
+      },
+      "सिक्योरिटी": {
+        "tokens": [
+          "सि",
+          "क्यो",
+          "रिटी"
+        ],
+        "ids": [
+          235,
+          4413,
+          4071
+        ],
+        "num_tokens": 3
+      },
+      "सब्जेक्ट": {
+        "tokens": [
+          "सब्",
+          "जेक्ट"
+        ],
+        "ids": [
+          2627,
+          4582
+        ],
+        "num_tokens": 2
+      },
+      "गाना": {
+        "tokens": [
+          "गाना"
+        ],
+        "ids": [
+          3352
+        ],
+        "num_tokens": 1
+      },
+      "गाएंगे": {
+        "tokens": [
+          "गा",
+          "एंगे"
+        ],
+        "ids": [
+          188,
+          2443
+        ],
+        "num_tokens": 2
+      },
+      "खतरनाक": {
+        "tokens": [
+          "खतरनाक"
+        ],
+        "ids": [
+          2551
+        ],
+        "num_tokens": 1
+      }
+    }
+  },
+  "candidate_1_compact_bpe": {
+    "tokenizer_name": "Candidate_1_Compact_BPE_2.5k_3.5k",
+    "hindi_vocab_size": 2500,
+    "mundari_vocab_size": 3500,
+    "avg_source_tokens_per_word": 1.553,
+    "avg_target_tokens_per_word": 1.685,
+    "hindi_total_tokens": 219366,
+    "mundari_total_tokens": 217915,
+    "hindi_unk_pct": 0.0,
+    "mundari_unk_pct": 0.0,
+    "hindi_short_fragment_pct": 60.21,
+    "mundari_short_fragment_pct": 51.03,
+    "hindi_singletons_in_corpus": 54,
+    "mundari_singletons_in_corpus": 51,
+    "hindi_unused_tokens": 19,
+    "mundari_unused_tokens": 17,
+    "vocab_overlap_count": 1280,
+    "probe_word_tokenizations": {
+      "साइबर": {
+        "tokens": [
+          "साइ",
+          "बर"
+        ],
+        "ids": [
+          814,
+          465
+        ],
+        "num_tokens": 2
+      },
+      "सिक्योरिटी": {
+        "tokens": [
+          "सि",
+          "क्",
+          "यो",
+          "रि",
+          "टी"
+        ],
+        "ids": [
+          239,
+          165,
+          404,
+          268,
+          292
+        ],
+        "num_tokens": 5
+      },
+      "सब्जेक्ट": {
+        "tokens": [
+          "सब",
+          "्",
+          "जे",
+          "क्ट"
+        ],
+        "ids": [
+          284,
+          123,
+          454,
+          1454
+        ],
+        "num_tokens": 4
+      },
+      "गाना": {
+        "tokens": [
+          "गा",
+          "ना"
+        ],
+        "ids": [
+          192,
+          158
+        ],
+        "num_tokens": 2
+      },
+      "गाएंगे": {
+        "tokens": [
+          "गा",
+          "एंगे"
+        ],
+        "ids": [
+          192,
+          2396
+        ],
+        "num_tokens": 2
+      },
+      "खतरनाक": {
+        "tokens": [
+          "ख",
+          "तर",
+          "नाक"
+        ],
+        "ids": [
+          74,
+          274,
+          1995
+        ],
+        "num_tokens": 3
+      }
+    }
+  },
+  "candidate_2_char_level": {
+    "tokenizer_name": "Candidate_2_Character_Level",
+    "hindi_vocab_size": 300,
+    "mundari_vocab_size": 300,
+    "avg_source_tokens_per_word": 2.473,
+    "avg_target_tokens_per_word": 2.784,
+    "hindi_total_tokens": 349346,
+    "mundari_total_tokens": 360028,
+    "hindi_unk_pct": 0.0,
+    "mundari_unk_pct": 0.0,
+    "hindi_short_fragment_pct": 92.15,
+    "mundari_short_fragment_pct": 89.5,
+    "hindi_singletons_in_corpus": 34,
+    "mundari_singletons_in_corpus": 25,
+    "hindi_unused_tokens": 4,
+    "mundari_unused_tokens": 4,
+    "vocab_overlap_count": 166,
+    "probe_word_tokenizations": {
+      "साइबर": {
+        "tokens": [
+          "सा",
+          "इ",
+          "ब",
+          "र"
+        ],
+        "ids": [
+          170,
+          61,
+          95,
+          99
+        ],
+        "num_tokens": 4
+      },
+      "सिक्योरिटी": {
+        "tokens": [
+          "सि",
+          "क्",
+          "य",
+          "ो",
+          "रि",
+          "टी"
+        ],
+        "ids": [
+          242,
+          166,
+          98,
+          121,
+          271,
+          299
+        ],
+        "num_tokens": 6
+      },
+      "सब्जेक्ट": {
+        "tokens": [
+          "सब",
+          "्",
+          "ज",
+          "े",
+          "क्",
+          "ट"
+        ],
+        "ids": [
+          290,
+          123,
+          80,
+          117,
+          166,
+          83
+        ],
+        "num_tokens": 6
+      },
+      "गाना": {
+        "tokens": [
+          "गा",
+          "ना"
+        ],
+        "ids": [
+          257,
+          159
+        ],
+        "num_tokens": 2
+      },
+      "गाएंगे": {
+        "tokens": [
+          "गा",
+          "ए",
+          "ंग",
+          "े"
+        ],
+        "ids": [
+          257,
+          68,
+          205,
+          117
+        ],
+        "num_tokens": 4
+      },
+      "खतरनाक": {
+        "tokens": [
+          "ख",
+          "तर",
+          "ना",
+          "क"
+        ],
+        "ids": [
+          74,
+          277,
+          159,
+          73
+        ],
+        "num_tokens": 4
+      }
+    }
+  }
+}

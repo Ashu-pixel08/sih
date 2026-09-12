@@ -1,0 +1,44 @@
+[
+  {
+    "tokenizer_name": "Model_B_Standard_BPE_6k_8k",
+    "hindi_vocab_size": 6000,
+    "mundari_vocab_size": 8000,
+    "test_sentence_count": 1334,
+    "hindi_subwords_per_word": 1.349,
+    "mundari_subwords_per_word": 1.503,
+    "hindi_avg_seq_length": 10.75,
+    "mundari_avg_seq_length": 10.96,
+    "hindi_unk_count": 0,
+    "hindi_unk_rate_pct": 0.0,
+    "mundari_unk_count": 0,
+    "mundari_unk_rate_pct": 0.0
+  },
+  {
+    "tokenizer_name": "Compact_BPE_2k_2.5k",
+    "hindi_vocab_size": 2500,
+    "mundari_vocab_size": 3500,
+    "test_sentence_count": 1334,
+    "hindi_subwords_per_word": 1.559,
+    "mundari_subwords_per_word": 1.698,
+    "hindi_avg_seq_length": 12.42,
+    "mundari_avg_seq_length": 12.39,
+    "hindi_unk_count": 0,
+    "hindi_unk_rate_pct": 0.0,
+    "mundari_unk_count": 0,
+    "mundari_unk_rate_pct": 0.0
+  },
+  {
+    "tokenizer_name": "Character_Level_118",
+    "hindi_vocab_size": 300,
+    "mundari_vocab_size": 300,
+    "test_sentence_count": 1334,
+    "hindi_subwords_per_word": 2.46,
+    "mundari_subwords_per_word": 2.775,
+    "hindi_avg_seq_length": 19.6,
+    "mundari_avg_seq_length": 20.25,
+    "hindi_unk_count": 0,
+    "hindi_unk_rate_pct": 0.0,
+    "mundari_unk_count": 0,
+    "mundari_unk_rate_pct": 0.0
+  }
+]

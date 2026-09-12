@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SpeechRecognitionUtteranceRecord",
+  "description": "Schema for speech training/evaluation datasets (controlled & continuous ASR).",
+  "type": "object",
+  "required": [
+    "audio_id",
+    "transcript",
+    "language",
+    "speaker_id",
+    "speaker_age",
+    "speaker_gender",
+    "dialect",
+    "recording_condition",
+    "split_assignment",
+    "license",
+    "consent_provenance"
+  ],
+  "properties": {
+    "audio_id": {
+      "type": "string",
+      "pattern": "^SPK_UTT_[A-Z0-9_]+$"
+    },
+    "transcript": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Exact verbatim Devanagari transcription of utterance"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "unr",
+        "hi"
+      ]
+    },
+    "class_label": {
+      "type": "string",
+      "description": "Class identifier if controlled vocabulary (e.g. num_01, num_02, _background_)"
+    },
+    "class_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Zero-indexed class index for edge classifier"
+    },
+    "speaker_id": {
+      "type": "string",
+      "pattern": "^SPK_[A-Z0-9_]+$",
+      "description": "Anonymized speaker ID used to enforce speaker-independent test splits"
+    },
+    "speaker_age": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 95
+    },
+    "speaker_gender": {
+      "type": "string",
+      "enum": [
+        "FEMALE",
+        "MALE",
+        "CHILD_FEMALE",
+        "CHILD_MALE",
+        "UNKNOWN"
+      ]
+    },
+    "dialect": {
+      "type": "string",
+      "enum": [
+        "Hasada",
+        "Naguri",
+        "Tamaria",
+        "Kera",
+        "Standard_Jharkhand",
+        "General_Mundari"
+      ]
+    },
+    "recording_condition": {
+      "type": "string",
+      "enum": [
+        "CLEAN_STUDIO",
+        "CONTROLLED_INDOOR",
+        "CLASSROOM_MURMUR",
+        "HIGH_NOISE_CLASSROOM",
+        "PLAYGROUND_BACKGROUND"
+      ]
+    },
+    "microphone_device": {
+      "type": "string",
+      "description": "Device/microphone type (e.g. Budget Android smartphone, Lavalier, Headset)"
+    },
+    "snr_db": {
+      "type": "number",
+      "description": "Estimated Signal-to-Noise Ratio in dB"
+    },
+    "split_assignment": {
+      "type": "string",
+      "enum": [
+        "TRAIN",
+        "VALIDATION",
+        "TEST"
+      ],
+      "description": "Dataset partition. Strictly speaker-disjoint (no speaker across train and test)."
+    },
+    "sample_rate": {
+      "type": "integer",
+      "enum": [
+        16000
+      ],
+      "default": 16000
+    },
+    "duration_sec": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 30.0
+    },
+    "license": {
+      "type": "string",
+      "minLength": 2
+    },
+    "consent_provenance": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Signed parental/participant consent document reference"
+    },
+    "speech_status": {
+      "type": "string",
+      "enum": [
+        "RAW",
+        "TRANSCRIBED",
+        "SPEAKER_VERIFIED",
+        "QUALITY_CHECKED",
+        "APPROVED_FOR_TRAINING",
+        "REJECTED"
+      ],
+      "default": "RAW"
+    }
+  }
+}

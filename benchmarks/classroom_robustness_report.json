@@ -1,0 +1,320 @@
+{
+  "report_version": "1.0.0",
+  "project_code": "SIH260042",
+  "benchmark_title": "Classroom Acoustic Optimization & Noise Robustness Report",
+  "execution_date": "2026-09-04",
+  "duration_seconds": 6.21,
+  "disclaimer": "Synthetic noise injection on authentic Mundari recordings used strictly for DSP, VAD, and fallback stress-testing. ZERO linguistic accuracy claims are made for unrepresented numeral classes.",
+  "acoustic_conditions_tested": [
+    "Clean (~inf dB SNR)",
+    "10 dB SNR (moderate classroom ambient)",
+    "5 dB SNR (noisy classroom / fan on)",
+    "0 dB SNR (severe acoustic interference)"
+  ],
+  "noise_types_simulated": [
+    "Mixed Classroom (Fan + Babble + Taps + Reverberation)",
+    "Fan Motor Hum (50Hz + Harmonics + Rumble)",
+    "Classroom Babble (Multi-talker modulated resonators)",
+    "Desk Taps (Impulsive mechanical transients)"
+  ],
+  "threshold_analysis": [
+    {
+      "speech_threshold_margin_db": 8.0,
+      "noise_adapt_rate": 0.02,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 8.0,
+      "noise_adapt_rate": 0.05,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 8.0,
+      "noise_adapt_rate": 0.1,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 10.0,
+      "noise_adapt_rate": 0.02,
+      "false_alarms_pure_noise": 3,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 10.0,
+      "noise_adapt_rate": 0.05,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 10.0,
+      "noise_adapt_rate": 0.1,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 12.0,
+      "noise_adapt_rate": 0.02,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    },
+    {
+      "speech_threshold_margin_db": 12.0,
+      "noise_adapt_rate": 0.05,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 12.0,
+      "noise_adapt_rate": 0.1,
+      "false_alarms_pure_noise": 2,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 14.0,
+      "noise_adapt_rate": 0.02,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    },
+    {
+      "speech_threshold_margin_db": 14.0,
+      "noise_adapt_rate": 0.05,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    },
+    {
+      "speech_threshold_margin_db": 14.0,
+      "noise_adapt_rate": 0.1,
+      "false_alarms_pure_noise": 1,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": false
+    },
+    {
+      "speech_threshold_margin_db": 16.0,
+      "noise_adapt_rate": 0.02,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    },
+    {
+      "speech_threshold_margin_db": 16.0,
+      "noise_adapt_rate": 0.05,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    },
+    {
+      "speech_threshold_margin_db": 16.0,
+      "noise_adapt_rate": 0.1,
+      "false_alarms_pure_noise": 0,
+      "detection_rate_10db_pct": 100.0,
+      "detection_rate_5db_pct": 100.0,
+      "detection_rate_0db_pct": 100.0,
+      "recommended": true
+    }
+  ],
+  "snr_matrix_summary": {
+    "MIXED_CLASSROOM_SNR_CLEAN": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1485,
+      "average_confidence_margin": 0.0511,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "FAN_HUM_SNR_CLEAN": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1399,
+      "average_confidence_margin": 0.0347,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "CLASSROOM_BABBLE_SNR_CLEAN": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1399,
+      "average_confidence_margin": 0.0347,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "DESK_TAPS_SNR_CLEAN": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1399,
+      "average_confidence_margin": 0.0347,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "MIXED_CLASSROOM_SNR_10_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.135,
+      "average_confidence_margin": 0.0294,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "FAN_HUM_SNR_10_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1412,
+      "average_confidence_margin": 0.0355,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "CLASSROOM_BABBLE_SNR_10_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1271,
+      "average_confidence_margin": 0.024,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "DESK_TAPS_SNR_10_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1444,
+      "average_confidence_margin": 0.0408,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "MIXED_CLASSROOM_SNR_5_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1337,
+      "average_confidence_margin": 0.0207,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "FAN_HUM_SNR_5_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1325,
+      "average_confidence_margin": 0.026,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "CLASSROOM_BABBLE_SNR_5_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.119,
+      "average_confidence_margin": 0.0276,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "DESK_TAPS_SNR_5_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1442,
+      "average_confidence_margin": 0.0405,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "MIXED_CLASSROOM_SNR_0_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1107,
+      "average_confidence_margin": 0.0177,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "FAN_HUM_SNR_0_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1236,
+      "average_confidence_margin": 0.0219,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "CLASSROOM_BABBLE_SNR_0_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1066,
+      "average_confidence_margin": 0.017,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    },
+    "DESK_TAPS_SNR_0_DB": {
+      "total_evaluations": 8,
+      "vad_detection_rate": 100.0,
+      "preprocessing_stability_rate": 100.0,
+      "average_model_confidence": 0.1373,
+      "average_confidence_margin": 0.0324,
+      "confident_recognition_rate": 0.0,
+      "presentation_fallback_rate": 100.0,
+      "classified_as_background_noise_rate": 0.0
+    }
+  },
+  "detailed_samples_evaluated": 8
+}

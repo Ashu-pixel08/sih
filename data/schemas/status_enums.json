@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DataIntakeStatusEnums",
+  "description": "Controlled status enums across translation, audio, speech, and curriculum intake records.",
+  "translation_statuses": [
+    "SOURCE_FOUND",
+    "SOURCE_VERIFIED",
+    "SOURCE_ATTESTED",
+    "MACHINE_VALIDATED",
+    "REFERENCE_SUPPORTED",
+    "RESEARCH_VALIDATED",
+    "HUMAN_VALIDATED",
+    "LINGUISTIC_VALIDATED",
+    "EDUCATION_VALIDATED",
+    "CANONICAL_APPROVED",
+    "REJECTED",
+    "NEEDS_REVIEW"
+  ],
+  "evidence_validation_statuses": [
+    "SOURCE_ATTESTED",
+    "MACHINE_VALIDATED",
+    "REFERENCE_SUPPORTED",
+    "RESEARCH_VALIDATED",
+    "HUMAN_VALIDATED",
+    "CANONICAL_APPROVED"
+  ],
+  "audio_statuses": [
+    "SYNTHETIC_PROTOTYPE",
+    "AUTHENTIC_UNVALIDATED",
+    "AUTHENTIC_VALIDATED",
+    "REJECTED"
+  ],
+  "speech_statuses": [
+    "RAW",
+    "TRANSCRIBED",
+    "SPEAKER_VERIFIED",
+    "QUALITY_CHECKED",
+    "APPROVED_FOR_TRAINING",
+    "REJECTED"
+  ],
+  "curriculum_statuses": [
+    "PROVISIONAL_MAPPING",
+    "CURRICULUM_VERIFIED",
+    "REJECTED"
+  ],
+  "license_statuses": [
+    "VERIFIED_PERMITTED",
+    "ATTRIBUTION_REQUIRED",
+    "NON_COMMERCIAL_ONLY",
+    "SHARE_ALIKE_MANDATORY",
+    "LICENSE_REVIEW_REQUIRED",
+    "REJECTED_UNPERMITTED"
+  ]
+}

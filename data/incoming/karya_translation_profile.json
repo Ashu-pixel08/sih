@@ -1,0 +1,128 @@
+{
+  "dataset_name": "Karya Hindi-Mundari Translation Corpus",
+  "source_url": "https://github.com/karya-inc/dataset-hindi-mundari-translation",
+  "authors_and_curators": "Microsoft Research India, Indian Institute of Technology Kharagpur, Karya, GIZ FAIR Forward (BMZ)",
+  "copyright_notice": "© 2023 DAIA Tech Pvt Ltd",
+  "license": "KPL BY-NC-SA-FS 1.0 (Attribution-NonCommercial-ShareAlike-FreeSoftware)",
+  "governance_tags": [
+    "RESEARCH_ONLY",
+    "KARYA_LICENSE_RESTRICTED",
+    "NON_COMMERCIAL_ONLY",
+    "NOT_BROADCAST_SAFE"
+  ],
+  "file_integrity": {
+    "raw_file": "translation-hi-unr.tsv",
+    "file_size_bytes": 3788450,
+    "sha256": "217be36a2d459bc8ff513165c6cbf809532ac6a51f8bc118b9728cf5da6ef4ca",
+    "license_sha256": "ff8d89349ed5a19c63f518b889e87cf3a7eea31425f0fe283ee9017fef8af52e",
+    "copyright_sha256": "bfbeb55f477f3e9f1b1ae07aa35b3b180e5e69af7008a6a1a662a82129c331a8"
+  },
+  "corpus_metrics": {
+    "total_rows_in_file": 17826,
+    "valid_sentence_pairs": 17809,
+    "malformed_delimiter_rows": 17,
+    "duplicate_sentence_pairs": 5,
+    "verbatim_identical_hindi_mundari_rows": 22,
+    "sample_untranslated_identical_rows": [
+      "राजेश लोहिया पडरौना कुशीनगेर यू पी",
+      "पाँयन लच्छे खागल सोहै बिछुआ खोयो जाय।।",
+      "मुजीब हुसैन श्मोएल अहमद श्मोएल अहमद",
+      "कल्याण · डोंबीवली · मोहोने · टिटवाला",
+      "नारायणा कॉलेज ऑफ़ इंजीनियरिंग एंड टेक्नोलोजी"
+    ]
+  },
+  "lexical_metrics": {
+    "hindi_total_tokens": 141238,
+    "hindi_unique_vocabulary": 20551,
+    "mundari_total_tokens": 131360,
+    "mundari_unique_vocabulary": 28590,
+    "type_token_ratio_mundari": 0.2176
+  },
+  "unicode_normalization_status": {
+    "hindi_non_nfc_count": 0,
+    "mundari_non_nfc_count": 2865,
+    "control_characters_count": 0,
+    "nfc_remediation_required": true
+  },
+  "sentence_length_distribution_tokens": {
+    "min_words_hindi": 2,
+    "max_words_hindi": 11,
+    "avg_words_hindi": 7.93,
+    "min_words_mundari": 0,
+    "max_words_mundari": 22,
+    "avg_words_mundari": 7.38,
+    "bins": {
+      "1-3_words": 3,
+      "4-7_words": 7287,
+      "8-15_words": 10519,
+      "16-30_words": 0,
+      "31+_words": 0
+    }
+  },
+  "pedagogical_subsets": {
+    "numeracy_count": 2632,
+    "numeracy_percentage": 14.78,
+    "classroom_management_count": 354,
+    "classroom_percentage": 1.99,
+    "sample_numeracy_pairs": [
+      {
+        "line": 7,
+        "hindi": "अदिति शायद अब जिंदगी भर यही दोहराती रहेगी।",
+        "mundari": "आदिति गोटा जिनिद नेआगे खाने काजिबेड़ाएआएः।"
+      },
+      {
+        "line": 8,
+        "hindi": "इसलिए वे हमारे दोस्त नहीं हो सकते।",
+        "mundari": "नेआ मेनते इनकु आलेआः सोङगे काको बाइ दाड़िओःआ।"
+      },
+      {
+        "line": 13,
+        "hindi": "दो बार की फ्लैग मीटिंग्स बेनतीजा रहीं।",
+        "mundari": "बार साः राः फ्लैग मीटिंगको बेगार नतीजा राः ताइनजाना।"
+      },
+      {
+        "line": 19,
+        "hindi": "दूसरा पहले से आगे निकलना चाहता है।",
+        "mundari": "एटाः निः सिदा रे गे आयार सेन सानाङाएः।"
+      },
+      {
+        "line": 21,
+        "hindi": "तुम्हारे कारण एक बार आईना है आपके",
+        "mundari": "आमाः नातिन मोसा आईना मेनाः आमाः"
+      }
+    ],
+    "sample_classroom_pairs": [
+      {
+        "line": 20,
+        "hindi": "यूपी इलेक्शन वॉच की सूचना के मुताबिक उत्तर प्रदेश विधान",
+        "mundari": "यूपी इलेक्शन वॉच राः उनुदुब होरा ते उत्तर प्रदेश विधान"
+      },
+      {
+        "line": 38,
+        "hindi": "इस कारण उन्हें नया कंप्यूटर शिक्षक रखना पड़ा।",
+        "mundari": "नेआ मेनते इनकु नावा कंप्यूटार पाड़ाओतेनिः जोगाओ टोःजाना"
+      },
+      {
+        "line": 64,
+        "hindi": "उन्होंने अपनी स्कूलिंग पूरी कर ली है।",
+        "mundari": "इनिः आएः इसकुल पाड़ाओ चाबाकेदाएः।"
+      },
+      {
+        "line": 117,
+        "hindi": "पेंसिल की नोंक से रची नायाब दुनिया",
+        "mundari": "पेंसिल राः चोगा ते बाइकेदाएः माजालेकान दुनिया"
+      },
+      {
+        "line": 187,
+        "hindi": "बीजेपी भी लाइन में आ गई है।",
+        "mundari": "बीजेपीओ लाइन रे हिजुःजानाएः।"
+      }
+    ]
+  },
+  "legal_and_incorporation_rules": {
+    "commercial_use": "STRICTLY_PROHIBITED",
+    "offline_model_training": "PERMITTED_NON_COMMERCIAL",
+    "canonical_broadcast_registry": "STRICTLY_PROHIBITED_WITHOUT_HUMAN_AUDIT",
+    "software_incorporation_note": "Direct software compilation requires GPL compliance under KPL-FS clause. Must remain decoupled external training corpus."
+  }
+}

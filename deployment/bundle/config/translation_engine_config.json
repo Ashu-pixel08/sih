@@ -1,0 +1,31 @@
+{
+  "spec_version": "1.0.0",
+  "architecture": "TWO_TIER_HYBRID_RETRIEVAL",
+  "tiers": {
+    "tier_1": {
+      "name": "EXACT_EDUCATIONAL_LOOKUP",
+      "precision": "100%",
+      "hallucination_rate": "0.0%",
+      "confidence": 1.0,
+      "scope": [
+        "CANONICAL_NUMBERS_1_20",
+        "PRIMARY_CLASSROOM_PHRASEBOOK_16"
+      ]
+    },
+    "tier_2": {
+      "name": "CORPUS_SENTENCE_RETRIEVAL",
+      "method": "TF-IDF Character 3-Gram Cosine Similarity",
+      "corpus_size": 17809,
+      "similarity_threshold": 0.6,
+      "exact_similarity_threshold": 0.95
+    }
+  },
+  "refusal_policy": {
+    "fallback_status": "OUT_OF_VOCABULARY_UNVERIFIED",
+    "generative_hallucination": false
+  },
+  "offline_guarantee": {
+    "network_calls": false,
+    "local_storage_only": true
+  }
+}

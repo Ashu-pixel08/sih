@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "project_code": "SIH260042",
+  "audio_preprocessing": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "PCM_16BIT_SIGNED_LE",
+    "duration_sec": 1.0,
+    "window_type": "Hann",
+    "win_length": 400,
+    "hop_length": 160,
+    "n_fft": 512,
+    "n_mels": 64,
+    "f_min": 20.0,
+    "f_max": 8000.0,
+    "center_padding": true,
+    "log_offset": 1e-06,
+    "output_shape": [
+      1,
+      101,
+      64,
+      1
+    ],
+    "output_dtype": "FLOAT32"
+  },
+  "tflite_model": {
+    "filename": "speech_model.tflite",
+    "input_tensor": {
+      "name": "input_spectrogram",
+      "shape": [
+        1,
+        101,
+        64,
+        1
+      ],
+      "dtype": "FLOAT32"
+    },
+    "output_tensor": {
+      "name": "output_probabilities",
+      "shape": [
+        1,
+        21
+      ],
+      "dtype": "FLOAT32",
+      "activation": "Softmax"
+    },
+    "classes_count": 21,
+    "background_class_index": 0,
+    "numeral_class_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "confidence_threshold": 0.65,
+    "margin_threshold": 0.04
+  },
+  "offline_guarantee": {
+    "network_required": false,
+    "cloud_api_dependencies": []
+  }
+}

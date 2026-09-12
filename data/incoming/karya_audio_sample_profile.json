@@ -1,0 +1,113 @@
+{
+  "source_name": "Karya Mundari TTS Dataset (Sample Corpus)",
+  "source_url": "https://github.com/karya-inc/dataset-mundari-tts",
+  "curators": "Microsoft Research India, IIT Kharagpur, Karya, GIZ FAIR Forward",
+  "copyright_notice": "© 2023 DAIA Tech Pvt Ltd",
+  "license": "KPL BY-NC-SA-FS 1.0",
+  "governance_tags": [
+    "RESEARCH_ONLY",
+    "KARYA_LICENSE_RESTRICTED",
+    "NON_COMMERCIAL_ONLY",
+    "NOT_EDUCATIONAL_GROUND_TRUTH"
+  ],
+  "sample_archive_integrity": {
+    "file_name": "data-sample.tgz",
+    "size_bytes": 64560322,
+    "sha256": "f6f9a6da623ea3e0c70fab3dbeadfd2fadab12881862241cde7b1cf66ac8a468",
+    "sha1": "3dbdbaa06f29dc28b9b46d3a8089ea1edc9dcaa4"
+  },
+  "acoustic_metrics": {
+    "total_wav_files": 200,
+    "speakers_count": 2,
+    "speakers": {
+      "female": {
+        "gender": "FEMALE",
+        "sample_files": 100,
+        "full_corpus_recordings": 19868
+      },
+      "male": {
+        "gender": "MALE",
+        "sample_files": 100,
+        "full_corpus_recordings": 7002
+      }
+    },
+    "sample_rate_hz": [
+      44100
+    ],
+    "channels": [
+      1
+    ],
+    "bit_depth_bits": [
+      32
+    ],
+    "recording_environment": "Sound-treated room, high-quality microphone and preamp",
+    "transcripts_availability": {
+      "total_transcripts_found": 200,
+      "transcripts_missing": 0,
+      "transcripts_format": "Plain text UTF-8 in Devanagari Mundari script"
+    },
+    "duration_statistics": {
+      "total_sample_duration_seconds": 741.72,
+      "min_duration_seconds": 1.97,
+      "max_duration_seconds": 7.7,
+      "avg_duration_seconds": 3.71
+    }
+  },
+  "derived_evaluation_samples": {
+    "format": "16 kHz, 16-bit, Mono PCM WAV",
+    "derivative_processing_permitted": true,
+    "derivatives_sharealike_mandate": "Must be licensed under KPL BY-NC-SA-FS 1.0",
+    "derived_sample_files": [
+      {
+        "original_file": "female_10173.wav",
+        "speaker_gender": "FEMALE",
+        "original_spec": "44100 Hz, 32-bit, 1 ch",
+        "derived_file": "derived_16k_female_10173.wav",
+        "derived_spec": "16000 Hz, 16-bit, 1 ch (Mono PCM)",
+        "duration_sec": 3.83,
+        "transcript": "इनकु कमिनाला लेका को आसुलेन तन तइकेना।"
+      },
+      {
+        "original_file": "female_10189.wav",
+        "speaker_gender": "FEMALE",
+        "original_spec": "44100 Hz, 32-bit, 1 ch",
+        "derived_file": "derived_16k_female_10189.wav",
+        "derived_spec": "16000 Hz, 16-bit, 1 ch (Mono PCM)",
+        "duration_sec": 2.73,
+        "transcript": "रेलवेरे काको नामो:तान डॉक्टर"
+      },
+      {
+        "original_file": "female_10248.wav",
+        "speaker_gender": "FEMALE",
+        "original_spec": "44100 Hz, 32-bit, 1 ch",
+        "derived_file": "derived_16k_female_10248.wav",
+        "derived_spec": "16000 Hz, 16-bit, 1 ch (Mono PCM)",
+        "duration_sec": 4.24,
+        "transcript": "हटि कुटि सा:ते सुरक्षा कवच रे होरा बाइ:ओ: गेआ।"
+      },
+      {
+        "original_file": "male_10204.wav",
+        "speaker_gender": "MALE",
+        "original_spec": "44100 Hz, 32-bit, 1 ch",
+        "derived_file": "derived_16k_male_10204.wav",
+        "derived_spec": "16000 Hz, 16-bit, 1 ch (Mono PCM)",
+        "duration_sec": 4.8,
+        "transcript": "चानाःमेनाते सोबेनकोआ ते साङगि काजिकामिको शमशान रे रिकाओःआ।"
+      },
+      {
+        "original_file": "male_10349.wav",
+        "speaker_gender": "MALE",
+        "original_spec": "44100 Hz, 32-bit, 1 ch",
+        "derived_file": "derived_16k_male_10349.wav",
+        "derived_spec": "16000 Hz, 16-bit, 1 ch (Mono PCM)",
+        "duration_sec": 5.35,
+        "transcript": "केषुभाई गुजरात रे माजा तेको उरूमिआ।"
+      }
+    ]
+  },
+  "governance_restrictions": {
+    "native_educational_ground_truth": false,
+    "reason": "TTS prompts designed for synthesis coverage, not primary grade FLN curriculum. Requires pedagogical review before any educational use.",
+    "broadcast_safety": "NOT_BROADCAST_SAFE"
+  }
+}

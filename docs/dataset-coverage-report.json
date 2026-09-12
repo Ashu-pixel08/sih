@@ -1,0 +1,57 @@
+{
+  "total_audited_files": 200,
+  "valid_files": 182,
+  "excluded_silent_files": 18,
+  "speaker_distribution": {
+    "female": 91,
+    "male": 91
+  },
+  "total_valid_duration_minutes": 11.26,
+  "isolated_single_word_audio_count": 0,
+  "sentence_covered_numbers": [
+    1,
+    2,
+    4,
+    10,
+    20
+  ],
+  "completely_missing_numbers": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "coverage_details": {
+    "1": 1,
+    "2": 3,
+    "3": 0,
+    "4": 2,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 1,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 1
+  }
+}

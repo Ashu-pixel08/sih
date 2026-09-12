@@ -1,0 +1,75 @@
+﻿# =============================================================================
+# Git Ignore Configuration for Vernacular FLN Assistant (Python + Web + Android)
+# =============================================================================
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Android Build Outputs & Intermediate Files
+android/.gradle/
+android/build/
+android/app/build/
+android/*/build/
+android/.cxx/
+android/captures/
+android/local.properties
+
+# Android Packages & Bytecode
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Android Studio / IntelliJ / VS Code Metadata
+android/.idea/
+android/*.iml
+android/*/*.iml
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Nn]et[Hh]ood
+[Tt]rash-*
+
+# Logs & Temporary Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+scratch/
+12.4
+
+# Large Raw Datasets & Archive Artifacts (KPL / License-restricted or Gated)
+data/raw/speech/data-sample.tgz
+data/raw/speech/data-sample/
+data/quarantine/
+
+# Large Model Checkpoints exceeding GitHub 100 MB Limit
+# (Track with Git LFS if versioning in Git, or download via releases)
+models/nmt/checkpoints/*.pt
+models/nmt/checkpoints_full_corpus/*.pt
+models/nmt/checkpoints_cand_*/*.pt

@@ -1,0 +1,21 @@
+{
+  "source_url": "https://github.com/global-asp/pb-source/blob/master/mqu/0240_haikoah-gama.md",
+  "resource_name": "Pratham Books StoryWeaver - Haikoah Gama (Story 0240)",
+  "owner_organization": "Pratham Books / StoryWeaver",
+  "license": "CC-BY-4.0",
+  "permitted_use": "Non-commercial and commercial distribution, adaptation, and educational use with appropriate attribution",
+  "attribution_requirement": "Text: Ramendra Kumar, Illustration: Delwyn Remedios, Mundari Translation: Jodheswar Barla, published by Pratham Books / StoryWeaver under CC-BY 4.0",
+  "modification_requirement": "Any modifications, sentence alignments, or phonological annotations must be documented as derived adaptations",
+  "redistribution_requirement": "License and copyright notice must be retained in all distribution manifests and documentation",
+  "commercial_use_restriction": false,
+  "model_training_permitted": true,
+  "derivatives_permitted": true,
+  "legal_review_status": "VERIFIED_PERMITTED",
+  "reviewer": "Automated Legal Intake Engine & Governance Specification",
+  "review_date": "2026-09-06",
+  "story_id": "0240",
+  "source_id": "PRATHAM_STORYWEAVER_0240",
+  "sha256_checksum": "98ae60208788bb4990eead2febc0e0cf7760f79b888e68daf9f2ea6c43fc0dfc",
+  "hindi_sha256_checksum": "4a0bf67748c4a05bb4c14211d695a9a908a0deb175eb989fe98746b542cb025a",
+  "status": "CANDIDATE_FOR_LINGUISTIC_VALIDATION"
+}

@@ -1,0 +1,78 @@
+{
+  "manifest_version": "1.0.0",
+  "project_name": "Vernacular FLN Assistant (SIH260042)",
+  "audit_timestamp_iso": "2026-09-04T16:15:00+05:30",
+  "system_identity_policy": {
+    "rule": "External resources serve strictly as research and data inputs. System architecture, packages, files, and classes must use independent, functional project names.",
+    "enforcement": "STRICT_ZERO_EXTERNAL_NAMING_POLLUTION"
+  },
+  "provenance_registry": [
+    {
+      "resource_key": "raw_translation_corpus",
+      "functional_category": "Bilingual Parallel Corpus",
+      "source_title": "Hindi to Mundari Translation Dataset",
+      "origin_organization": "Karya Inc., IIT Kharagpur, Microsoft Research India, GIZ FAIR Forward",
+      "license": "KPL BY-NC-SA-FS 1.0",
+      "usability_verdict": "PUBLIC + USABLE",
+      "local_location": "data/raw/translation/translation-hi-unr.tsv",
+      "clean_export": "data/processed/translation/clean_bilingual_corpus.tsv",
+      "permitted_uses": "Vocabulary mining, offline corpus retrieval, translation evaluation",
+      "restrictions": "Non-commercial only; ShareAlike"
+    },
+    {
+      "resource_key": "raw_speech_sample",
+      "functional_category": "Native Speech Acoustic Sample",
+      "source_title": "Mundari TTS Dataset (Sample)",
+      "origin_organization": "Karya Inc., IIT Kharagpur, Microsoft Research India, GIZ FAIR Forward",
+      "license": "KPL BY-NC-SA-FS 1.0",
+      "usability_verdict": "PUBLIC + CONDITIONALLY USABLE",
+      "local_location": "data/raw/speech/data-sample",
+      "permitted_uses": "Acoustic benchmarking, DSP validation, VAD tuning",
+      "restrictions": "Non-commercial only; 0 isolated 1-20 recordings; not sufficient for model training"
+    },
+    {
+      "resource_key": "full_speech_corpus_upstream",
+      "functional_category": "Large-Scale Native Mundari Speech Corpus",
+      "source_title": "Mundari TTS Dataset (Full 26,870 Utterances)",
+      "origin_organization": "Karya Inc., IIT Kharagpur, Microsoft Research India, GIZ FAIR Forward",
+      "license": "KPL BY-NC-SA-FS 1.0",
+      "usability_verdict": "PUBLIC + CONDITIONALLY USABLE (GATED ACCESS)",
+      "local_location": "data/raw/speech/dataset-mundari-tts-full.sha1",
+      "permitted_uses": "TTS research, acoustic phonetics",
+      "restrictions": "Requires explicit access grant; adult studio speech only; studio bias"
+    },
+    {
+      "resource_key": "indic_speech_multilingual_corpora",
+      "functional_category": "Large-Scale Indian Multilingual Speech",
+      "source_title": "AI4Bharat Kathbath / IndicSpeech / Vistaar",
+      "origin_organization": "AI4Bharat / IIT Madras",
+      "license": "CC-BY-4.0",
+      "usability_verdict": "NOT USABLE (Mundari Not Supported)",
+      "local_location": "NONE",
+      "permitted_uses": "N/A",
+      "restrictions": "Audited finding: Contains zero Mundari audio; non-scheduled language omitted"
+    },
+    {
+      "resource_key": "linguistic_grammars_and_lexicons",
+      "functional_category": "Linguistic Grammar & Lexicography References",
+      "source_title": "Encyclopaedia Mundarica (Hoffman) & Mundari Grammar (Swaminathan, CIIL)",
+      "origin_organization": "John Hoffman (1930) / Central Institute of Indian Languages Mysore",
+      "license": "Public Domain / Academic Fair Use",
+      "usability_verdict": "REFERENCE ONLY",
+      "local_location": "content/content_registry.json (attested forms)",
+      "permitted_uses": "Grammatical validation, root etymology, numeral variant cataloging",
+      "restrictions": "Reference only; cannot substitute for primary school pedagogical authority"
+    },
+    {
+      "resource_key": "nipun_bharat_framework",
+      "functional_category": "National Curriculum Framework",
+      "source_title": "NIPUN Bharat Guidelines & Learning Outcomes",
+      "origin_organization": "Ministry of Education, Government of India",
+      "license": "Public Government Guidance",
+      "usability_verdict": "REFERENCE ONLY",
+      "local_location": "content/fln/curriculum_model.json",
+      "permitted_uses": "FLN Grade 1 numeracy pedagogical alignment",
+      "restrictions": "Codes marked UNVERIFIED — PENDING SOURCE VALIDATION to prevent false claims"
+    }
+  ]
+}

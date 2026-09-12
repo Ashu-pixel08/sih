@@ -1,0 +1,16 @@
+{
+  "source_url": "https://asjp.clld.org/languages/MUNDARI",
+  "resource_name": "ASJP Mundari 100-Wordlist",
+  "owner_organization": "Max Planck Institute for Evolutionary Anthropology / CLLD",
+  "license": "CC-BY-4.0",
+  "permitted_use": "Unrestricted sharing and adaptation for research and reference with attribution.",
+  "attribution_requirement": "Cite: Wichmann et al., The ASJP Database; Peiros (1998).",
+  "modification_requirement": "Permitted with attribution under CC-BY 4.0.",
+  "redistribution_requirement": "Permitted with attribution under CC-BY 4.0.",
+  "commercial_use_restriction": false,
+  "model_training_permitted": true,
+  "derivatives_permitted": true,
+  "legal_review_status": "VERIFIED_PERMITTED",
+  "reviewer": "Antigravity Data Governance Agent",
+  "review_date": "2026-09-09"
+}

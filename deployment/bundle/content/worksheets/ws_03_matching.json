@@ -1,0 +1,122 @@
+{
+  "worksheet_id": "WS_03_MATCHING",
+  "title_hi": "कार्यपत्रक ३: मात्रा एवं संख्या मिलान",
+  "title_unr": "कामि साकाम ३: जोड़ाव लेका",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "target_competency": "M1.1 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+  "generation_seed": 44,
+  "provenance_status": "GENERATED_PROTOTYPE (PENDING HUMAN VALIDATION)",
+  "problems": [
+    {
+      "problem_id": "match_01",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 1,
+        "quantity": 3,
+        "right_target_number": 8,
+        "right_mundari_word": "इरालिया",
+        "right_hindi_numeral": "८"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 3,
+        "matches_number": 3
+      }
+    },
+    {
+      "problem_id": "match_02",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 2,
+        "quantity": 5,
+        "right_target_number": 5,
+        "right_mundari_word": "मोड़ेया",
+        "right_hindi_numeral": "५"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 5,
+        "matches_number": 5
+      }
+    },
+    {
+      "problem_id": "match_03",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 3,
+        "quantity": 8,
+        "right_target_number": 18,
+        "right_mundari_word": "गेल इरालिया",
+        "right_hindi_numeral": "१८"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 8,
+        "matches_number": 8
+      }
+    },
+    {
+      "problem_id": "match_04",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 4,
+        "quantity": 10,
+        "right_target_number": 3,
+        "right_mundari_word": "अपिया",
+        "right_hindi_numeral": "३"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 10,
+        "matches_number": 10
+      }
+    },
+    {
+      "problem_id": "match_05",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 5,
+        "quantity": 14,
+        "right_target_number": 14,
+        "right_mundari_word": "गेल उपुनिया",
+        "right_hindi_numeral": "१४"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 14,
+        "matches_number": 14
+      }
+    },
+    {
+      "problem_id": "match_06",
+      "problem_type": "matching_quantity_to_numeral",
+      "instruction_hi": "मात्रा को सही संख्या और मुंडारी नाम से मिलाएँ:",
+      "instruction_unr": "लेका के सोझोः चिन्हाः आर मुंडारी नुतुम ते जोड़ावपे:",
+      "prompt_data": {
+        "left_index": 6,
+        "quantity": 18,
+        "right_target_number": 10,
+        "right_mundari_word": "गेलेया",
+        "right_hindi_numeral": "१०"
+      },
+      "options": null,
+      "solution": {
+        "left_quantity": 18,
+        "matches_number": 18
+      }
+    }
+  ]
+}

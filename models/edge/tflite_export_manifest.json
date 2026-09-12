@@ -1,0 +1,95 @@
+{
+  "model_architecture": "LightweightSpectrogramCNN",
+  "parameters": 98085,
+  "exported_models": {
+    "onnx": "C:\\Users\\chatu\\.gemini\\antigravity\\scratch\\vernacular_fln_assistant\\models\\edge\\speech_classifier.onnx",
+    "tflite_float32": "C:\\Users\\chatu\\.gemini\\antigravity\\scratch\\vernacular_fln_assistant\\models\\edge\\speech_classifier_float32.tflite",
+    "tflite_float16": "C:\\Users\\chatu\\.gemini\\antigravity\\scratch\\vernacular_fln_assistant\\models\\edge\\speech_classifier_float16.tflite"
+  },
+  "file_sizes_kb": {
+    "tflite_float32": 386.74,
+    "tflite_float16": 198.14
+  },
+  "contract_verification": {
+    "model_path": "C:\\Users\\chatu\\.gemini\\antigravity\\scratch\\vernacular_fln_assistant\\models\\edge\\speech_classifier_float32.tflite",
+    "file_size_kb": 386.74,
+    "input_tensor": {
+      "name": "input_spectrogram",
+      "shape": [
+        1,
+        101,
+        64,
+        1
+      ],
+      "dtype": "<class 'numpy.float32'>",
+      "matches_contract": true
+    },
+    "output_tensor": {
+      "name": "output_probabilities",
+      "shape": [
+        1,
+        21
+      ],
+      "dtype": "<class 'numpy.float32'>",
+      "matches_contract": true
+    },
+    "contract_verified": true
+  },
+  "parity_verification": {
+    "all_samples_passed": true,
+    "total_samples_tested": 5,
+    "records": [
+      {
+        "sample_index": 0,
+        "pytorch_class": 19,
+        "pytorch_confidence": 0.0618,
+        "tflite_class": 19,
+        "tflite_confidence": 0.0618,
+        "classes_match": true,
+        "max_prob_abs_diff": 5e-06,
+        "parity_passed": true
+      },
+      {
+        "sample_index": 1,
+        "pytorch_class": 6,
+        "pytorch_confidence": 0.0827,
+        "tflite_class": 6,
+        "tflite_confidence": 0.0827,
+        "classes_match": true,
+        "max_prob_abs_diff": 5e-06,
+        "parity_passed": true
+      },
+      {
+        "sample_index": 2,
+        "pytorch_class": 6,
+        "pytorch_confidence": 0.0726,
+        "tflite_class": 6,
+        "tflite_confidence": 0.0726,
+        "classes_match": true,
+        "max_prob_abs_diff": 5e-06,
+        "parity_passed": true
+      },
+      {
+        "sample_index": 3,
+        "pytorch_class": 6,
+        "pytorch_confidence": 0.0656,
+        "tflite_class": 6,
+        "tflite_confidence": 0.0656,
+        "classes_match": true,
+        "max_prob_abs_diff": 5e-06,
+        "parity_passed": true
+      },
+      {
+        "sample_index": 4,
+        "pytorch_class": 6,
+        "pytorch_confidence": 0.0852,
+        "tflite_class": 6,
+        "tflite_confidence": 0.0852,
+        "classes_match": true,
+        "max_prob_abs_diff": 5e-06,
+        "parity_passed": true
+      }
+    ]
+  },
+  "disclaimer": "RESEARCH / BASELINE IMPLEMENTATION ONLY. Non-production status until verified native speech recordings are acquired."
+}

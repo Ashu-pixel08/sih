@@ -1,0 +1,57 @@
+{
+  "model_name": "google/mt5-small-lora",
+  "base_model": "google/mt5-small",
+  "method": "LoRA (r=16, alpha=32, target=[q, v])",
+  "total_steps": 600,
+  "batch_size": 8,
+  "grad_accum_steps": 4,
+  "learning_rate": 0.001,
+  "train_samples": 15102,
+  "val_samples": 1333,
+  "best_val_loss": 4.341012716293335,
+  "training_time_s": 2285.399432659149,
+  "history": [
+    {
+      "step": 100,
+      "epoch": 1,
+      "train_loss": 6.915500164031982,
+      "val_loss": 6.0771736145019535,
+      "elapsed_s": 412.75395584106445
+    },
+    {
+      "step": 200,
+      "epoch": 1,
+      "train_loss": 5.421201705932617,
+      "val_loss": 4.742551169395447,
+      "elapsed_s": 782.1058878898621
+    },
+    {
+      "step": 300,
+      "epoch": 1,
+      "train_loss": 5.2187371253967285,
+      "val_loss": 4.500145950317383,
+      "elapsed_s": 1153.3340685367584
+    },
+    {
+      "step": 400,
+      "epoch": 1,
+      "train_loss": 5.3247575759887695,
+      "val_loss": 4.39278060913086,
+      "elapsed_s": 1530.270117521286
+    },
+    {
+      "step": 500,
+      "epoch": 2,
+      "train_loss": 5.137644290924072,
+      "val_loss": 4.361351799964905,
+      "elapsed_s": 1907.9826605319977
+    },
+    {
+      "step": 600,
+      "epoch": 2,
+      "train_loss": 4.997827529907227,
+      "val_loss": 4.341012716293335,
+      "elapsed_s": 2284.721170425415
+    }
+  ]
+}

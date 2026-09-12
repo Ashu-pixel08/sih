@@ -1,0 +1,290 @@
+[
+  {
+    "id": "ERR_01_REAL_FAILURE_A",
+    "category": "code-mixed / unseen words",
+    "hindi": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "rejected/OOV",
+    "notes": "Real-world failure A: English tech loanwords outside corpus distribution"
+  },
+  {
+    "id": "ERR_02_REAL_FAILURE_B",
+    "category": "future tense / plural pronouns",
+    "hindi": "आज हम सब गाना गाएंगे।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Real-world failure B: Future tense verb inflection + 1st person plural pronoun"
+  },
+  {
+    "id": "ERR_03_GREETING_BASIC",
+    "category": "greetings",
+    "hindi": "नमस्ते",
+    "reference_mundari": "जोहार",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Controlled classroom greeting"
+  },
+  {
+    "id": "ERR_04_GREETING_VERNACULAR",
+    "category": "greetings",
+    "hindi": "जोहार",
+    "reference_mundari": "जोहार",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Direct vernacular greeting"
+  },
+  {
+    "id": "ERR_05_CLASS_CMD_SIT",
+    "category": "classroom instructions",
+    "hindi": "आप सब बैठ जाइए।",
+    "reference_mundari": "सोबेनको दुबपे।",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Polite plural classroom command"
+  },
+  {
+    "id": "ERR_06_CLASS_CMD_BOOK",
+    "category": "classroom instructions / literacy",
+    "hindi": "किताब खोलो और पाठ तीन पढ़ो।",
+    "reference_mundari": "किताब ओलोः आर पाठ तीन पड़ावेपे।",
+    "reference_status": "machine-plausible",
+    "expected_quality": "machine-plausible",
+    "notes": "Compound classroom literacy instruction"
+  },
+  {
+    "id": "ERR_07_CLASS_CMD_NAME",
+    "category": "classroom instructions / literacy",
+    "hindi": "बोर्ड पर अपना नाम लिखो।",
+    "reference_mundari": "बोर्ड रे आपनाः नुतूम ओलेमे।",
+    "reference_status": "machine-plausible",
+    "expected_quality": "machine-plausible",
+    "notes": "Board literacy instruction"
+  },
+  {
+    "id": "ERR_08_CLASS_CMD_SILENCE",
+    "category": "classroom instructions / negation",
+    "hindi": "शोर मत करो, शांत रहो।",
+    "reference_mundari": "रावां-चावां आलोपे रिकाएआ, थिरगे ताइनपे।",
+    "reference_status": "machine-plausible",
+    "expected_quality": "machine-plausible",
+    "notes": "Classroom discipline command with prohibitive marker (आलो)"
+  },
+  {
+    "id": "ERR_09_QUESTION_PAST_NEG",
+    "category": "questions / past tense / negation",
+    "hindi": "कल स्कूल कौन नहीं आया था?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Interrogative + negative + past copula"
+  },
+  {
+    "id": "ERR_10_QUESTION_FUTURE_EXPLAIN",
+    "category": "questions / future tense",
+    "hindi": "इस पाठ का मतलब कौन समझाएगा?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Interrogative + future transitive verb"
+  },
+  {
+    "id": "ERR_11_QUESTION_WHERE_KIDS",
+    "category": "questions / plural subjects",
+    "hindi": "बच्चे कहाँ हैं?",
+    "reference_mundari": "हुड़िङको ओकोते मेनाःकोआ?",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Plural subject + location question"
+  },
+  {
+    "id": "ERR_12_QUESTION_READY",
+    "category": "questions / polite",
+    "hindi": "क्या आप तैयार हैं?",
+    "reference_mundari": "अपे रेडी मेनाःपेआ चि?",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Polite classroom inquiry"
+  },
+  {
+    "id": "ERR_13_FUTURE_MATH",
+    "category": "future tense / educational vocabulary",
+    "hindi": "आज हम गणित सीखेंगे।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Subject study future statement"
+  },
+  {
+    "id": "ERR_14_FUTURE_PLAY",
+    "category": "future tense / plural subjects",
+    "hindi": "कल हम सब खेलेंगे।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Recreational classroom future statement"
+  },
+  {
+    "id": "ERR_15_PRESENT_HABITUAL",
+    "category": "present tense / pronouns",
+    "hindi": "मैं रोज स्कूल आता हूँ।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "1st person singular habitual present"
+  },
+  {
+    "id": "ERR_16_PAST_NEGATION",
+    "category": "past tense / negation / 3rd person",
+    "hindi": "वह स्कूल नहीं गया।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "3rd person singular past negative"
+  },
+  {
+    "id": "ERR_17_PRESENT_PERFECT_TEACHER",
+    "category": "present tense / honorific / classroom",
+    "hindi": "शिक्षक कक्षा में आ गए हैं।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Teacher arrival announcement"
+  },
+  {
+    "id": "ERR_18_NUMERACY_SUM",
+    "category": "numeracy",
+    "hindi": "पाँच और तीन आठ होते हैं।",
+    "reference_mundari": "मोड़े ओड़ोः आपि इरल होबाओःआ।",
+    "reference_status": "machine-plausible",
+    "expected_quality": "machine-plausible",
+    "notes": "Arithmetic equality statement"
+  },
+  {
+    "id": "ERR_19_NUMERACY_COUNT_KIDS",
+    "category": "numeracy / questions",
+    "hindi": "कक्षा में कितने बच्चे हैं?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Classroom census question"
+  },
+  {
+    "id": "ERR_20_NUMERACY_SEQUENCE",
+    "category": "numeracy",
+    "hindi": "एक दो तीन चार पाँच",
+    "reference_mundari": "मिअद बारिया आपिया उपुनिया मोड़े",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Cardinal number sequence 1-5"
+  },
+  {
+    "id": "ERR_21_NEGATION_POSSESSIVE",
+    "category": "negation / pronouns",
+    "hindi": "यह मेरी किताब नहीं है।",
+    "reference_mundari": "नेआ आइङाः पुथी का ताना।",
+    "reference_status": "machine-plausible",
+    "expected_quality": "machine-plausible",
+    "notes": "Possessive negation"
+  },
+  {
+    "id": "ERR_22_CHORAL_SPEAKING",
+    "category": "classroom instructions / future tense",
+    "hindi": "हम सब एक साथ बोलेंगे।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Choral repetition instruction"
+  },
+  {
+    "id": "ERR_23_PHYSICAL_RESPONSE",
+    "category": "classroom instructions",
+    "hindi": "अपना हाथ ऊपर उठाओ।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Physical TPR action prompt"
+  },
+  {
+    "id": "ERR_24_HOMEWORK_CHECK",
+    "category": "daily classroom conversation / questions",
+    "hindi": "गृहकार्य किसने पूरा किया है?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Teacher homework status check"
+  },
+  {
+    "id": "ERR_25_EXTREME_JARGON",
+    "category": "code-mixed / unseen words",
+    "hindi": "कंप्यूटर लैब में नया सॉफ्टवेयर डाउनलोड करो।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "rejected/OOV",
+    "notes": "Heavy English loanword technical domain out of distribution"
+  },
+  {
+    "id": "ERR_26_AI_CLASS_TIME",
+    "category": "code-mixed / unseen words",
+    "hindi": "आर्टिफिशियल इंटेलिजेंस की क्लास कब शुरू होगी?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "rejected/OOV",
+    "notes": "Modern tech topic outside tribal vernacular corpus"
+  },
+  {
+    "id": "ERR_27_PROHIBITIVE_WATER",
+    "category": "classroom instructions / negation",
+    "hindi": "पानी पीने के लिए बाहर मत जाओ।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Classroom discipline prohibitive instruction"
+  },
+  {
+    "id": "ERR_28_CIVIC_DUTY",
+    "category": "daily classroom conversation / plural subjects",
+    "hindi": "हम सब भारत देश के नागरिक हैं।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Civics education sentence"
+  },
+  {
+    "id": "ERR_29_ABSENCE_REASON",
+    "category": "daily classroom conversation / questions",
+    "hindi": "तुम कल क्यों अनुपस्थित थे?",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Teacher inquiring student absence"
+  },
+  {
+    "id": "ERR_30_COMPLEX_LONG",
+    "category": "longer sentences / classroom instructions",
+    "hindi": "घंटी बजने के बाद सब बच्चे मैदान में जाएंगे।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Compound temporal conditional classroom event"
+  },
+  {
+    "id": "ERR_31_WEATHER_OBSERVATION",
+    "category": "daily classroom conversation",
+    "hindi": "आज बहुत तेज बारिश हो रही है।",
+    "reference_mundari": "तिसिङ पुराः जोर ते दाः गामा तना।",
+    "reference_status": "exact/reference-supported",
+    "expected_quality": "exact/reference-supported",
+    "notes": "Weather conversation commonly in corpus"
+  },
+  {
+    "id": "ERR_32_LITERACY_STORY",
+    "category": "literacy / past tense",
+    "hindi": "दीदी ने कहानी सुनाई।",
+    "reference_mundari": "UNVALIDATED_REFERENCE_REQUIRED",
+    "reference_status": "UNVALIDATED_REFERENCE_REQUIRED",
+    "expected_quality": "machine-plausible",
+    "notes": "Storytelling literacy activity"
+  }
+]

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#24543D">
+<title>APP_NAME_PENDING — Learn in Your Language. Teach with Confidence.</title>
+<style>
+:root{--green:#24543D;--terr:#A86145;--cream:#F7F3EA;--white:#fff;--yellow:#E7C75B;--sage:#4F8A5B;--ink:#26332C;--muted:#6f7c74;--line:#dfe6df;--soft:#eef4ef;--danger:#a33c35;--shadow:0 8px 28px rgba(38,51,44,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}
+.app{min-height:100vh}.topbar{height:68px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0002}
+.brand{display:flex;gap:12px;align-items:center}.logo{width:40px;height:40px;border-radius:12px;background:var(--yellow);color:var(--green);display:grid;place-items:center;font-weight:900;font-size:20px}.brand b{font-size:18px}.brand small{display:block;opacity:.75;font-size:11px}
+.userchip{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:34px;height:34px;border-radius:50%;background:#ffffff1c;display:grid;place-items:center;font-weight:700}
+.layout{display:flex;min-height:calc(100vh - 68px)}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:18px 12px;flex:none}.navtitle{font-size:11px;text-transform:uppercase;color:var(--muted);padding:10px 12px 7px;letter-spacing:.08em}
+.nav{width:100%;text-align:left;background:transparent;color:var(--ink);padding:11px 12px;border-radius:10px;margin:2px 0;display:flex;gap:10px;align-items:center;font-weight:600}.nav:hover,.nav.active{background:var(--soft);color:var(--green)}.nav .ico{width:22px;text-align:center}
+main{flex:1;padding:24px;min-width:0}.page{max-width:1250px;margin:auto}.eyebrow{color:var(--terr);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.title{font-size:30px;line-height:1.1;margin:5px 0 8px}.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.card h3{margin:0 0 7px}.card p{color:var(--muted);margin:6px 0}.stat{font-size:28px;font-weight:900}.btn{padding:11px 15px;border-radius:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px}.primary{background:var(--green);color:#fff}.secondary{background:var(--soft);color:var(--green)}.outline{background:#fff;color:var(--green);border:1px solid #b9c9be}.warn{background:#fff5d6;color:#735d11}.danger{background:#fff0ee;color:var(--danger)}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.mt{margin-top:16px}.mb{margin-bottom:16px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #cfd9d1;border-radius:10px;background:#fff;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--green);box-shadow:0 0 0 3px #24543d18}label{font-size:12px;font-weight:800;display:block;margin:0 0 6px}.field{margin-bottom:13px}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}.live{background:#e4f4e8;color:#28653b}.ai{background:#eee9fb;color:#624a93}.placeholder{background:#fff7db;color:#715d17}.offline{background:#eef0f1;color:#59645e}
+.hero{background:linear-gradient(135deg,#24543D,#35694f);color:#fff;border-radius:20px;padding:25px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#e7c75b22;right:-55px;top:-60px}.hero h2{font-size:28px;margin:0 0 8px}.hero p{max-width:650px;color:#e8f0ea}.hero .btn{background:var(--yellow);color:var(--green)}
+.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.step{background:#ffffff14;border:1px solid #ffffff25;border-radius:12px;padding:10px;text-align:center;font-size:11px}.step b{display:block;font-size:18px;margin-bottom:5px}
+.notice{padding:12px 14px;border-radius:11px;background:#fff8df;border:1px solid #eadb9e;font-size:12px;color:#66591e}.success{background:#edf7ef;border:1px solid #bdd9c2;color:#2d6339}.dangerbox{background:#fff0ee;border:1px solid #e3b8b3;color:#8a332e}
+.voicebox{border:2px solid #d8e4da;background:#fbfdfb;border-radius:18px;padding:18px}.mic{width:76px;height:76px;border-radius:50%;background:var(--terr);color:#fff;font-size:29px;box-shadow:0 0 0 9px #a8614520}.mic.listening{animation:pulse 1.2s infinite;background:#b53d37}@keyframes pulse{50%{box-shadow:0 0 0 18px #a8614520}}
+.transcript{min-height:85px;background:#fff;border:1px dashed #cbd8ce;border-radius:12px;padding:13px;line-height:1.55}.output{min-height:85px;background:#f1f7f2;border:1px solid #c7dbc9;border-radius:12px;padding:13px;line-height:1.55;font-size:18px}
+.audio{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px}.bar{height:7px;background:#dfe8e1;border-radius:9px;flex:1;overflow:hidden}.bar span{display:block;width:35%;height:100%;background:var(--sage);transition:.2s}
+.room{font-size:27px;letter-spacing:.14em;font-weight:900;color:var(--green);background:var(--soft);border:1px dashed #abc0af;border-radius:12px;padding:13px;text-align:center}.student{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid var(--line)}.student:last-child{border:0}.dot{width:9px;height:9px;border-radius:50%;background:#5fa56d}.small{font-size:12px;color:var(--muted)}.feed{max-height:360px;overflow:auto}.feeditem{padding:12px;border-bottom:1px solid var(--line)}.feeditem:last-child{border:0}.feeditem .time{font-size:10px;color:var(--muted)}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px}.loginbox{width:min(520px,100%);background:#fff;border-radius:22px;border:1px solid var(--line);padding:30px;box-shadow:var(--shadow)}.rolegrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.role{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left}.role:hover,.role.selected{border-color:var(--green);background:var(--soft)}.role strong{display:block;margin:7px 0 4px}.role span{font-size:12px;color:var(--muted)}
+.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:11px;border-bottom:1px solid var(--line);text-align:left}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}
+.flash{min-height:180px;display:grid;place-items:center;text-align:center;background:var(--soft);border-radius:15px;padding:25px}.number{font-size:54px;font-weight:900;color:var(--green)}
+.mobile-menu{display:none}.footer-note{font-size:11px;color:var(--muted);margin-top:20px}
+@media(max-width:900px){.sidebar{width:205px}.g4{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.topbar{padding:0 12px}.mobile-menu{display:block;background:#ffffff18;color:#fff;border-radius:9px;padding:8px}.layout{display:block}.sidebar{position:fixed;left:-270px;top:68px;bottom:0;z-index:15;width:260px;transition:.2s;box-shadow:8px 0 25px #0002}.sidebar.open{left:0}main{padding:16px}.g2,.g3,.g4{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.title{font-size:25px}.brand small{display:none}.userchip span{display:none}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const $=s=>document.querySelector(s);
+const root=$("#root");
+const state={role:null,page:null,room:localStorage.getItem("vflnRoom")||"",joined:false,channel:null,students:[],lastTranslation:null};
+const demoHindi="बच्चों, आज हम एक सेब के बारे में सीखेंगे।";
+const placeholderMundari="[Verified Mundari Translation — connect/enter approved output]";
+const now=()=>new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function toast(msg){let x=document.createElement("div");x.textContent=msg;x.style="position:fixed;right:16px;bottom:16px;z-index:99;background:#26332C;color:#fff;padding:12px 15px;border-radius:10px;box-shadow:0 8px 25px #0003;font-size:13px";document.body.appendChild(x);setTimeout(()=>x.remove(),2600)}
+function save(){localStorage.setItem("vflnState",JSON.stringify({role:state.role,page:state.page,room:state.room,joined:state.joined}))}
+function initBus(){
+ if(!state.room)return;
+ const name="vfln-classroom-"+state.room;
+ if("BroadcastChannel" in window){state.channel=new BroadcastChannel(name);state.channel.onmessage=e=>receive(e.data)}
+ window.addEventListener("storage",e=>{if(e.key==="vflnLiveBus"&&e.newValue){try{let d=JSON.parse(e.newValue);if(d.room===state.room)receive(d)}catch{}}});
+}
+function sendBus(data){data.room=state.room;data.sentAt=Date.now();if(state.channel)state.channel.postMessage(data);localStorage.setItem("vflnLiveBus",JSON.stringify(data))}
+function receive(d){
+ if(d.type==="join"&&state.role==="teacher"){if(!state.students.includes(d.name)){state.students.push(d.name);render()}toast(d.name+" joined the live classroom")}
+ if(d.type==="translation"&&state.role==="student"&&state.joined){state.lastTranslation=d;render();playDemoPulse();toast("New live translation received")}
+ if(d.type==="end"&&state.role==="student"){state.joined=false;render();toast("Teacher ended the live class")}
+}
+function playDemoPulse(){const b=$("#audioBar");if(!b)return;let w=0;const t=setInterval(()=>{w+=8;b.style.width=w+"%";if(w>=100){clearInterval(t);b.style.width="35%" }},90)}
+function shell(){
+ const teacher=state.role==="teacher";
+ const nav=teacher?[
+ ["dashboard","🏠","Dashboard"],["live","🎙️","Speak & Translate"],["curriculum","📚","Translate Curriculum"],["modules","🔢","Learning Modules"],["classroom","📡","Classroom Mode"],["worksheet","📝","Generate Worksheets"],["progress","📊","Student Progress"],["offline","📥","Offline Content"],["settings","⚙️","Settings"]
+ ]:[
+ ["home","🏠","Home"],["liveclass","🟢","Live Classroom"],["modules","🔢","Learn Mundari"],["flashcards","🃏","Flashcards"],["practice","✍️","Practice"],["settings","⚙️","Settings"]
+ ];
+ root.innerHTML=`<div class="app">
+ <header class="topbar"><div class="row"><button class="mobile-menu" onclick="toggleMenu()">☰</button><div class="brand"><div class="logo">P</div><div><b>APP_NAME_PENDING</b><small>Learn in Your Language. Teach with Confidence.</small></div></div></div>
+ <div class="userchip"><span>${teacher?"Teacher / Admin":"Student"}</span><div class="avatar">${teacher?"T":"S"}</div><button class="btn" style="padding:7px 10px;background:#ffffff18;color:#fff" onclick="logout()">Exit</button></div></header>
+ <div class="layout"><aside class="sidebar" id="side"><div class="navtitle">${teacher?"Teacher Workspace":"Student Workspace"}</div>
+ ${nav.map(n=>`<button class="nav ${state.page===n[0]?"active":""}" onclick="go('${n[0]}')"><span class="ico">${n[1]}</span>${n[2]}</button>`).join("")}
+ </aside><main><div class="page" id="content"></div></main></div></div>`;
+ renderPage();
+}
+function toggleMenu(){$("#side").classList.toggle("open")}
+function go(p){state.page=p;save();shell()}
+function logout(){state.role=null;state.page=null;state.joined=false;state.channel?.close();state.channel=null;login()}
+function login(){
+ root.innerHTML=`<div class="login"><div class="loginbox">
+ <div class="brand"><div class="logo">P</div><div><b>APP_NAME_PENDING</b><small>Smart Education • Jharkhand</small></div></div>
+ <h1 class="title" style="margin-top:25px">Choose Your Learning Space</h1><p class="sub">A prototype for Hindi-speaking teachers and tribal-language learners.</p>
+ <div class="rolegrid"><button class="role" onclick="showTeacherLogin()"><div style="font-size:28px">👩‍🏫</div><strong>Teacher / Admin</strong><span>Live translation, classroom broadcast, curriculum and analytics</span></button>
+ <button class="role" onclick="showStudentLogin()"><div style="font-size:28px">🧒</div><strong>Student</strong><span>Join a live class and receive teacher translations</span></button></div>
+ <div class="notice mt">Prototype login: Teacher password is <b>1234</b>. Student login uses name + roll number.</div>
+ </div></div>`;
+}
+function showTeacherLogin(){root.innerHTML=`<div class="login"><div class="loginbox"><div class="eyebrow">Teacher / Admin</div><h1 class="title">Sign in</h1><div class="field"><label>Password</label><input id="tp" type="password" placeholder="Enter 1234"></div><button class="btn primary" style="width:100%" onclick="teacherLogin()">Open Teacher Workspace</button><button class="btn outline mt" style="width:100%" onclick="login()">Back</button></div></div>`}
+function teacherLogin(){if($("#tp").value!=="1234")return toast("Incorrect prototype password");state.role="teacher";state.page="dashboard";initBus();save();shell()}
+function showStudentLogin(){root.innerHTML=`<div class="login"><div class="loginbox"><div class="eyebrow">Student</div><h1 class="title">Join APP_NAME_PENDING</h1><div class="field"><label>Name</label><input id="sn" placeholder="Student name"></div><div class="field"><label>Roll Number</label><input id="sr" placeholder="e.g. 12"></div><button class="btn primary" style="width:100%" onclick="studentLogin()">Continue</button><button class="btn outline mt" style="width:100%" onclick="login()">Back</button></div></div>`}
+function studentLogin(){let n=$("#sn").value.trim(),r=$("#sr").value.trim();if(!n||!r)return toast("Enter name and roll number");state.role="student";state.studentName=n;state.roll=r;state.page="home";initBus();save();shell()}
+function render(){shell()}
+function renderPage(){
+ const c=$("#content"); if(!c)return;
+ if(state.role==="teacher") teacherPage(c); else studentPage(c);
+}
+function teacherPage(c){
+ if(state.page==="dashboard")return c.innerHTML=teacherDashboard();
+ if(state.page==="live")return c.innerHTML=teacherLive();
+ if(state.page==="classroom")return c.innerHTML=teacherLive();
+ if(state.page==="curriculum")return c.innerHTML=curriculum();
+ if(state.page==="modules")return c.innerHTML=modules();
+ if(state.page==="worksheet")return c.innerHTML=worksheet();
+ if(state.page==="progress")return c.innerHTML=progress();
+ if(state.page==="offline")return c.innerHTML=offline();
+ if(state.page==="settings")return c.innerHTML=settings();
+}
+function teacherDashboard(){return `<div class="eyebrow">Teacher Dashboard</div><h1 class="title">Teach beyond language barriers.</h1><p class="sub">Start a live classroom so students can hear approved Mundari output while you speak Hindi.</p>
+<div class="hero"><h2>🎙️ Speak Hindi → Teach in Mundari</h2><p>Open a classroom room, capture the Hindi lesson, review the translation, then broadcast it instantly to connected students.</p><button class="btn" onclick="startRoom()">Start Live Classroom</button><div class="pipeline"><div class="step"><b>🎤</b>Teacher speaks</div><div class="step"><b>📝</b>Hindi STT</div><div class="step"><b>🔁</b>Hindi → Mundari</div><div class="step"><b>🔊</b>Mundari TTS</div><div class="step"><b>📡</b>Students listen</div></div></div>
+<div class="grid g3 mt"><div class="card"><div class="stat">${state.students.length}</div><p>Connected students</p></div><div class="card"><div class="stat">${state.room||"—"}</div><p>Active room</p></div><div class="card"><div class="stat">&lt; 3 sec*</div><p>Target translation latency</p></div></div>
+<div class="notice mt">*Target architecture from the project brief. This single-file prototype demonstrates the live classroom connection across browser tabs/windows; production multi-device realtime requires a backend/WebSocket/realtime service and verified Hindi↔Mundari STT/translation/TTS.</div>`}
+function startRoom(){state.room="VFLN-"+Math.floor(1000+Math.random()*9000);state.students=[];localStorage.setItem("vflnRoom",state.room);initBus();save();go("live")}
+function teacherLive(){if(!state.room)return `<div class="eyebrow">Live Classroom</div><h1 class="title">Start your live classroom</h1><p class="sub">Students will join with the room code.</p><button class="btn primary" onclick="startRoom()">Create Classroom Room</button>`;
+return `<div class="eyebrow">LIVE CLASSROOM • TEACHER</div><div class="row between"><div><h1 class="title">Hindi → Mundari live broadcast</h1><p class="sub">Room <b>${esc(state.room)}</b> • ${state.students.length} connected</p></div><button class="btn danger" onclick="endRoom()">End Classroom</button></div>
+<div class="grid g3"><section class="card" style="grid-column:span 2"><div class="row between"><h3>🎙️ Teacher microphone</h3><span class="badge live">● LIVE ROOM</span></div>
+<div class="voicebox mt"><div class="row"><button id="mic" class="mic" onclick="toggleMic()">🎤</button><div><b id="micstatus">Ready to capture Hindi</b><div class="small">Use browser speech recognition when supported, or use the demo phrase.</div></div></div>
+<div class="grid g2 mt"><div><label>Hindi speech / transcript</label><textarea id="hindi" rows="4">${esc(demoHindi)}</textarea></div><div><label>Approved Mundari output</label><textarea id="mundari" rows="4">${esc(placeholderMundari)}</textarea></div></div>
+<div class="row mt"><button class="btn secondary" onclick="demoSpeech()">🎤 Demo Hindi Speech</button><button class="btn outline" onclick="clearTranslation()">Clear</button><button class="btn primary" onclick="broadcast()">📡 Broadcast to Students</button></div>
+<div class="notice mt">No unverified Mundari translation is presented as factual. Replace the placeholder with approved/AI-reviewed Mundari text before broadcasting. The browser demo can capture Hindi speech, but real Mundari translation/TTS needs the production APIs.</div></div></section>
+<aside class="card"><h3>👥 Connected Students</h3><p class="small">Students joined with this room code</p><div>${state.students.length?state.students.map(x=>`<div class="student"><span class="dot"></span><div><b>${esc(x)}</b><div class="small">Listening enabled</div></div></div>`).join(""):`<div class="notice">No students yet. Open this HTML in another browser tab, choose Student, and enter <b>${esc(state.room)}</b>.</div>`}</div></aside></div>
+<div class="grid g2 mt"><section class="card"><h3>🔄 Live pipeline</h3><div class="row mt"><span class="badge live">1 Teacher Hindi</span><span>→</span><span class="badge ai">2 STT</span><span>→</span><span class="badge ai">3 Translation</span><span>→</span><span class="badge ai">4 TTS</span><span>→</span><span class="badge live">5 Students</span></div></section><section class="card"><h3>📜 Broadcast history</h3><div id="teacherfeed" class="feed"><div class="small">Each broadcast appears here during this session.</div></div></section></div>`}
+function toggleMic(){let b=$("#mic"),st=$("#micstatus");if(!("webkitSpeechRecognition"in window||"SpeechRecognition"in window)){return toast("Speech recognition is not supported here. Use Demo Hindi Speech or type the transcript.")}if(b.classList.contains("listening"))return;let R=window.SpeechRecognition||window.webkitSpeechRecognition,r=new R();r.lang="hi-IN";r.interimResults=true;r.continuous=false;b.classList.add("listening");st.textContent="Listening… speak Hindi";r.onresult=e=>{$("#hindi").value=Array.from(e.results).map(x=>x[0].transcript).join("");};r.onend=()=>{b.classList.remove("listening");st.textContent="Hindi captured — review and translate";};r.onerror=()=>{b.classList.remove("listening");st.textContent="Microphone error — use text/demo"};r.start()}
+function demoSpeech(){ $("#hindi").value=demoHindi;$("#micstatus").textContent="Demo Hindi speech loaded";toast("Demo Hindi transcript ready") }
+function clearTranslation(){$("#hindi").value="";$("#mundari").value=placeholderMundari}
+function broadcast(){let h=$("#hindi").value.trim(),m=$("#mundari").value.trim();if(!h||!m)return toast("Enter Hindi and Mundari output first");if(m===placeholderMundari)return toast("Enter verified/approved Mundari output before broadcasting");let d={type:"translation",hindi:h,mundari:m,time:now(),teacher:"Teacher"};sendBus(d);addTeacherFeed(d);toast("Broadcast sent to connected students")}
+function addTeacherFeed(d){let f=$("#teacherfeed");if(!f)return;let div=document.createElement("div");div.className="feeditem";div.innerHTML=`<b>${esc(d.mundari)}</b><div class="small">Hindi: ${esc(d.hindi)}</div><div class="time">${esc(d.time)} • Broadcast</div>`;if(f.querySelector(".small")?.textContent?.startsWith("Each broadcast"))f.innerHTML="";f.prepend(div)}
+function endRoom(){sendBus({type:"end"});state.room="";state.students=[];localStorage.removeItem("vflnRoom");save();go("dashboard")}
+function curriculum(){return `<div class="eyebrow">Curriculum Translator</div><h1 class="title">Translate curriculum</h1><p class="sub">Prepare lesson material in Hindi and review the Mundari output before classroom use.</p><div class="grid g2"><div class="card"><label>Hindi lesson</label><textarea rows="12" placeholder="Paste textbook content here…"></textarea><button class="btn primary mt" onclick="toast('Production API placeholder: /api/curriculum/translate')">Translate & Review</button></div><div class="card"><label>Reviewed Mundari lesson</label><textarea rows="12" placeholder="[Verified Mundari translation output]"></textarea><div class="notice mt">Human review is required before publishing language content.</div></div></div>`}
+function modules(){return `<div class="eyebrow">Learning Modules</div><h1 class="title">Numbers 1–20</h1><p class="sub">Child-friendly practice content for primary learners.</p><div class="grid g4">${Array.from({length:20},(_,i)=>`<button class="card" onclick="numberDetail(${i+1})" style="text-align:left"><div class="number" style="font-size:32px">${i+1}</div><b>Number ${i+1}</b><p class="small">Mundari word: [verified placeholder]</p></button>`).join("")}</div>`}
+function numberDetail(n){$("#content").innerHTML=`<div class="eyebrow">Number Practice</div><h1 class="title">Number ${n}</h1><div class="grid g2"><div class="card flash"><div><div class="number">${n}</div><p>Hindi: ${n} • Mundari: [verified placeholder]</p></div></div><div class="card"><h3>Teacher verification</h3><p>Enter approved Mundari spelling/audio before publishing.</p><input placeholder="Verified Mundari word"><button class="btn primary mt" onclick="toast('Saved locally for prototype')">Save</button></div></div>`}
+function worksheet(){return `<div class="eyebrow">Worksheet Generator</div><h1 class="title">Generate a worksheet</h1><p class="sub">Create printable practice content; production AI generation will connect to the backend.</p><div class="card"><div class="grid g2"><div><label>Topic</label><input placeholder="Numbers 1–20"><label class="mt">Questions</label><select><option>10</option><option>15</option><option>20</option></select></div><div><label>Language</label><select><option>Hindi</option><option>Mundari — verified output required</option></select><label class="mt">Type</label><select><option>Fill in the blanks</option><option>Match the numbers</option><option>Multiple choice</option></select></div></div><button class="btn primary mt" onclick="toast('Worksheet preview generated locally')">Generate Preview</button></div>`}
+function progress(){return `<div class="eyebrow">Student Progress</div><h1 class="title">Class progress</h1><p class="sub">Prototype analytics with sample classroom data.</p><div class="grid g3"><div class="card"><div class="stat">24</div><p>Students</p></div><div class="card"><div class="stat">78%</div><p>Average practice</p></div><div class="card"><div class="stat">16</div><p>Active this week</p></div></div><div class="card mt"><table class="table"><tr><th>Student</th><th>Practice</th><th>Numbers</th><th>Status</th></tr>${["Asha","Birsa","Kiran","Sita","Raju"].map((x,i)=>`<tr><td>${x}</td><td>${72+i*5}%</td><td>${12+i}</td><td><span class="badge live">On track</span></td></tr>`).join("")}</table></div>`}
+function offline(){return `<div class="eyebrow">Offline Content</div><h1 class="title">Offline-first classroom</h1><p class="sub">Prototype storage is local. Production can add IndexedDB, Service Worker, Cache API and sync.</p><div class="grid g3"><div class="card"><h3>📦 Lessons</h3><div class="stat">12</div><p>Cached modules</p></div><div class="card"><h3>🗂️ Pending sync</h3><div class="stat">0</div><p>Items waiting</p></div><div class="card"><h3>📶 Status</h3><div class="stat">Local</div><p>Browser storage available</p></div></div><div class="notice mt">Future sync endpoint: POST /api/offline/sync</div>`}
+function settings(){return `<div class="eyebrow">Settings</div><h1 class="title">Settings</h1><div class="card"><h3>Prototype configuration</h3><div class="field mt"><label>Preferred language</label><select><option>Hindi</option><option>Mundari</option></select></div><label><input type="checkbox" checked style="width:auto;margin-right:8px">Enable classroom audio controls</label><div class="footer-note">Real authentication, verified language models and production TTS are intentionally not faked in this prototype.</div></div>`}
+function studentPage(c){
+ if(state.page==="home")return c.innerHTML=studentHome();
+ if(state.page==="liveclass")return c.innerHTML=studentLive();
+ if(state.page==="modules")return c.innerHTML=studentModules();
+ if(state.page==="flashcards")return c.innerHTML=flashcards();
+ if(state.page==="practice")return c.innerHTML=studentPractice();
+ if(state.page==="settings")return c.innerHTML=settings();
+}
+function studentHome(){return `<div class="eyebrow">Student Home</div><h1 class="title">Learn in your language.</h1><p class="sub">Join your teacher's live classroom and receive the approved Mundari translation in real time.</p><div class="hero"><h2>🟢 Live Classroom</h2><p>Teacher speaks Hindi → APP_NAME_PENDING processes the lesson → you receive the Mundari text/audio output.</p><button class="btn" onclick="go('liveclass')">Join Live Classroom</button></div><div class="grid g3 mt"><div class="card"><div class="stat">1–20</div><p>Numbers module</p></div><div class="card"><div class="stat">🎧</div><p>Live translation receiver</p></div><div class="card"><div class="stat">✓</div><p>Practice & flashcards</p></div></div><div class="notice mt">Your account does not expose teacher controls. Live Classroom is a student receiving screen only.</div>`}
+function studentLive(){return `<div class="eyebrow">LIVE CLASSROOM • STUDENT</div><h1 class="title">Listen in Mundari</h1><p class="sub">Enter the room code your teacher shows on their device.</p>${state.joined?studentReceiver():joinForm()}`}
+function joinForm(){return `<div class="card" style="max-width:620px"><h3>📡 Join teacher's classroom</h3><p>Room code connects this browser to the teacher's live broadcast channel.</p><label>Room code</label><input id="roominput" placeholder="e.g. VFLN-4821" value="${esc(state.room)}"><button class="btn primary mt" onclick="joinRoom()">Join Classroom</button><div class="notice mt">For this prototype, open the teacher and student views in two tabs/windows on the same browser/device. Cross-device production requires a realtime backend.</div></div>`}
+function joinRoom(){let r=$("#roominput").value.trim().toUpperCase();if(!r)return toast("Enter the room code");state.room=r;state.joined=true;localStorage.setItem("vflnRoom",r);initBus();save();sendBus({type:"join",name:state.studentName||"Student"});go("liveclass")}
+function studentReceiver(){let d=state.lastTranslation;return `<div class="grid g3"><section class="card" style="grid-column:span 2"><div class="row between"><h3>🎧 Teacher is speaking</h3><span class="badge live">● CONNECTED</span></div><div class="notice success mt">Room <b>${esc(state.room)}</b> • Live receiver active</div><div class="mt"><label>Teacher's Hindi transcript</label><div class="transcript">${d?esc(d.hindi):"Waiting for teacher to broadcast…"}</div></div><div class="mt"><label>Approved Mundari translation</label><div class="output">${d?esc(d.mundari):"Waiting for Mundari translation…"}</div></div><div class="audio mt"><button class="btn secondary" onclick="studentAudio()">🔊 ${d?"Play prototype audio":"Audio waiting"}</button><div class="bar"><span id="audioBar"></span></div><span class="small">TTS</span></div><div class="notice mt">Audio is a prototype control. A real Mundari voice requires a verified Mundari TTS engine; this file does not fake a Mundari voice.</div></section><aside class="card"><h3>🟢 Connection</h3><p><b>Teacher:</b> Live</p><p><b>Room:</b> ${esc(state.room)}</p><p><b>Student:</b> ${esc(state.studentName||"Student")}</p><hr style="border:0;border-top:1px solid var(--line)"><button class="btn danger" onclick="leaveRoom()">Leave classroom</button></aside></div>
+<div class="card mt"><h3>How the live translation works</h3><div class="pipeline" style="grid-template-columns:repeat(5,1fr);color:var(--ink)"><div class="step" style="background:var(--soft);border-color:var(--line)"><b>🎤</b>Hindi speech</div><div class="step" style="background:var(--soft);border-color:var(--line)"><b>📝</b>Speech-to-text</div><div class="step" style="background:var(--soft);border-color:var(--line)"><b>🔁</b>Hindi → Mundari</div><div class="step" style="background:var(--soft);border-color:var(--line)"><b>🔊</b>Mundari TTS</div><div class="step" style="background:var(--soft);border-color:var(--line)"><b>🧒</b>You listen</div></div></div>`}
+function studentAudio(){if(!state.lastTranslation)return toast("Waiting for teacher");playDemoPulse();if("speechSynthesis"in window){let u=new SpeechSynthesisUtterance(state.lastTranslation.mundari);u.lang="mis";speechSynthesis.cancel();speechSynthesis.speak(u);toast("Prototype TTS started — voice/language is not guaranteed to be Mundari")}else toast("Browser TTS unavailable")}
+function leaveRoom(){state.joined=false;state.lastTranslation=null;save();go("home")}
+function studentModules(){return `<div class="eyebrow">Learn Mundari</div><h1 class="title">Numbers 1–20</h1><p class="sub">Practice the number concepts with verified language content when available.</p><div class="grid g4">${Array.from({length:20},(_,i)=>`<div class="card"><div class="number" style="font-size:36px">${i+1}</div><p>Mundari: <b>[verified]</b></p><button class="btn secondary" onclick="toast('Number ${i+1} practice opened')">Practice</button></div>`).join("")}</div>`}
+function flashcards(){return `<div class="eyebrow">Flashcards</div><h1 class="title">Learn by seeing & saying</h1><div class="card flash mt"><div><div style="font-size:40px">🍎</div><h2>Apple</h2><p>Mundari: <b>[verified translation]</b></p></div></div><div class="row mt"><button class="btn secondary" onclick="toast('Previous card')">← Previous</button><button class="btn primary" onclick="toast('Next card')">Next →</button></div>`}
+function studentPractice(){return `<div class="eyebrow">Practice</div><h1 class="title">Quick practice</h1><div class="card"><h3>Which number comes after 7?</h3><div class="grid g2 mt"><button class="btn outline" onclick="toast('Try again')">6</button><button class="btn primary" onclick="toast('Correct!')">8</button><button class="btn outline" onclick="toast('Try again')">9</button><button class="btn outline" onclick="toast('Try again')">10</button></div></div>`}
+login();
+</script>
+</body>
+</html>

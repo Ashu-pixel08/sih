@@ -1,0 +1,66 @@
+{
+  "curriculum_version": "1.0.0",
+  "grade": 1,
+  "subject": "Mathematics",
+  "fln_domain": "Foundational Numeracy",
+  "topic": "Numbers 1-20",
+  "pedagogical_approach": "Mother Tongue-Based Multilingual Education (MTB-MLE) Scaffolded Numeracy",
+  "nipun_alignment": {
+    "status": "UNVERIFIED — PENDING SOURCE VALIDATION",
+    "target_stage": "Balvatika to Grade 1 Transition",
+    "notes": "Aligns with national FLN goals of counting up to 20 objects, reading numerals 1-20, and quantity sense. Specific state alphanumeric codes are pending authoritative JCERT/NIPUN gazette verification."
+  },
+  "core_competencies": [
+    {
+      "competency_id": "COMP_NUM_REC",
+      "provisional_code": "M1.1 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+      "title": "Numeral Recognition & Dual-Script Association",
+      "description": "Recognize and name numerals 1 to 20 in international digits (1..20), Devanagari digits (१..२०), Hindi spoken words, and Mundari spoken words."
+    },
+    {
+      "competency_id": "COMP_COUNT_1_TO_1",
+      "provisional_code": "M1.2 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+      "title": "One-to-One Correspondence & Counting",
+      "description": "Count up to 20 visual objects with 1-to-1 correspondence without skipping or double-counting, using Mundari counting terms."
+    },
+    {
+      "competency_id": "COMP_QUANT_TEN_FRAME",
+      "provisional_code": "M1.3 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+      "title": "Ten-Frame Quantity Structuring",
+      "description": "Understand numbers 11 to 20 as one full ten (गेल / gel) plus additional units (10 + n), forming the basis of place-value understanding."
+    },
+    {
+      "competency_id": "COMP_SEQ_ORDER",
+      "provisional_code": "M1.4 (UNVERIFIED — PENDING SOURCE VALIDATION)",
+      "title": "Number Sequencing & Order",
+      "description": "Identify predecessor, successor, and missing numbers within the sequence 1 to 20."
+    }
+  ],
+  "learning_activity_types": [
+    {
+      "activity_type": "flashcard_presentation",
+      "name": "Bilingual Visual Flashcard Exploration",
+      "pedagogical_role": "Introduce numeral, dual script, quantity visual, and authentic audio."
+    },
+    {
+      "activity_type": "listen_and_tap",
+      "name": "Audio Comprehension & Number Identification",
+      "pedagogical_role": "Student hears Mundari spoken word, taps corresponding numeral."
+    },
+    {
+      "activity_type": "count_and_verify",
+      "name": "Object Array Counting",
+      "pedagogical_role": "Student counts objects on screen/paper, connects count to Mundari word."
+    },
+    {
+      "activity_type": "teacher_bridge",
+      "name": "Teacher Hindi Instruction to Mother-Tongue Bridge",
+      "pedagogical_role": "Teacher inputs Hindi prompt; system presents verified Mundari translation and audio to support child understanding."
+    },
+    {
+      "activity_type": "worksheet_practice",
+      "name": "Printable Offline Bilingual Worksheet",
+      "pedagogical_role": "Physical pencil-and-paper reinforcement in low-resource classroom."
+    }
+  ]
+}

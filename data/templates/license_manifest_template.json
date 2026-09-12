@@ -1,0 +1,16 @@
+{
+  "source_url": "https://jcert.jharkhand.gov.in/curriculum/primary/tribal",
+  "resource_name": "JCERT Primary School Tribal Language Pedagogical Textbooks",
+  "owner_organization": "Jharkhand Council of Educational Research and Training (JCERT)",
+  "license": "State Government Open Educational Repository",
+  "permitted_use": "Educational adaptation and vernacular pedagogy implementation in Jharkhand primary schools",
+  "attribution_requirement": "Source: JCERT Jharkhand Tribal Language Curriculum (Mundari Primary Series)",
+  "modification_requirement": "Text segmentation and vocabulary extraction permitted for educational FLN software",
+  "redistribution_requirement": "Non-commercial distribution within state educational tools permitted",
+  "commercial_use_restriction": true,
+  "model_training_permitted": true,
+  "derivatives_permitted": true,
+  "legal_review_status": "VERIFIED_PERMITTED",
+  "reviewer": "Legal & Data Governance Team",
+  "review_date": "2026-09-06"
+}

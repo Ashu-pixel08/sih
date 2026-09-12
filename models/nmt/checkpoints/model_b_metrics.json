@@ -1,0 +1,35 @@
+{
+  "model_name": "Model B (Continued Transformer)",
+  "base_checkpoint": "models/nmt/checkpoints/best_transformer.pt",
+  "additional_epochs": 3,
+  "best_val_loss": 5.2078,
+  "history": [
+    {
+      "epoch": 11,
+      "train_loss": 4.3367,
+      "train_ppl": 76.45,
+      "val_loss": 5.25,
+      "val_ppl": 190.56,
+      "seconds": 85.3,
+      "is_best": true
+    },
+    {
+      "epoch": 12,
+      "train_loss": 4.1284,
+      "train_ppl": 62.08,
+      "val_loss": 5.2136,
+      "val_ppl": 183.75,
+      "seconds": 89.8,
+      "is_best": true
+    },
+    {
+      "epoch": 13,
+      "train_loss": 3.9759,
+      "train_ppl": 53.3,
+      "val_loss": 5.2078,
+      "val_ppl": 182.7,
+      "seconds": 92.5,
+      "is_best": true
+    }
+  ]
+}

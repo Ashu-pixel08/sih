@@ -1,0 +1,55 @@
+{
+  "project": "SIH260042: AI-Powered Vernacular Pedagogy & Real-Time Translation",
+  "component": "Speech Classifier Training Pipeline",
+  "status_policy": "RESEARCH / BASELINE IMPLEMENTATION / PIPELINE VALIDATION ONLY",
+  "data_limitation_warning": "Real Mundari speech corpus currently lacks sufficient isolated 1-20 recordings. Production accuracy MUST NOT be claimed on numbers 1-20 until real recordings are supplied.",
+  "model": {
+    "architecture": "LightweightSpectrogramCNN",
+    "num_classes": 21,
+    "input_time_steps": 101,
+    "input_mel_bins": 64,
+    "dropout_rate": 0.2
+  },
+  "training": {
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 20,
+    "early_stopping_patience": 5,
+    "gradient_clip_norm": 1.0,
+    "random_seed": 42
+  },
+  "audio_preprocessing": {
+    "sample_rate": 16000,
+    "duration_seconds": 1.0,
+    "samples_per_window": 16000,
+    "n_fft": 512,
+    "win_length": 400,
+    "hop_length": 160,
+    "n_mels": 64,
+    "f_min": 20.0,
+    "f_max": 8000.0,
+    "log_eps": 1e-06
+  },
+  "augmentation": {
+    "enabled_for_training_only": true,
+    "prevent_val_test_leakage": true,
+    "time_mask_max_frames": 10,
+    "freq_mask_max_bins": 8,
+    "time_shift_max_samples": 1600,
+    "additive_noise_snr_db": 20.0,
+    "apply_probability": 0.5
+  },
+  "thresholds": {
+    "confidence_threshold": 0.65,
+    "margin_threshold": 0.2,
+    "background_class_index": 0
+  },
+  "paths": {
+    "content_registry": "content/content_registry.json",
+    "raw_speech_dir": "data/raw/speech/data-sample",
+    "raw_manifest": "content/audio/manifests/raw_speech_manifest.json",
+    "checkpoint_dir": "models/checkpoints",
+    "export_dir": "models/edge"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "candidate_id": "Candidate_A_Calibrated_BPE",
+  "total_params": 6390188,
+  "model_size_mb": 24.38,
+  "best_val_loss": 5.0169,
+  "best_val_ppl": 150.95,
+  "total_training_time_s": 1165.0,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 6.9071,
+      "train_ppl": 999.32,
+      "val_loss": 6.3483,
+      "val_ppl": 571.52,
+      "epoch_time_s": 112.46,
+      "is_best": true
+    },
+    {
+      "epoch": 2,
+      "train_loss": 6.2175,
+      "train_ppl": 501.44,
+      "val_loss": 6.0649,
+      "val_ppl": 430.46,
+      "epoch_time_s": 113.99,
+      "is_best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 5.9091,
+      "train_ppl": 368.37,
+      "val_loss": 5.7997,
+      "val_ppl": 330.21,
+      "epoch_time_s": 114.71,
+      "is_best": true
+    },
+    {
+      "epoch": 4,
+      "train_loss": 5.5892,
+      "train_ppl": 267.53,
+      "val_loss": 5.5121,
+      "val_ppl": 247.68,
+      "epoch_time_s": 115.67,
+      "is_best": true
+    },
+    {
+      "epoch": 5,
+      "train_loss": 5.2927,
+      "train_ppl": 198.87,
+      "val_loss": 5.3181,
+      "val_ppl": 204.0,
+      "epoch_time_s": 117.34,
+      "is_best": true
+    },
+    {
+      "epoch": 6,
+      "train_loss": 5.0475,
+      "train_ppl": 155.63,
+      "val_loss": 5.1905,
+      "val_ppl": 179.56,
+      "epoch_time_s": 115.24,
+      "is_best": true
+    },
+    {
+      "epoch": 7,
+      "train_loss": 4.8582,
+      "train_ppl": 128.79,
+      "val_loss": 5.0974,
+      "val_ppl": 163.59,
+      "epoch_time_s": 116.71,
+      "is_best": true
+    },
+    {
+      "epoch": 8,
+      "train_loss": 4.7267,
+      "train_ppl": 112.92,
+      "val_loss": 5.0437,
+      "val_ppl": 155.04,
+      "epoch_time_s": 119.68,
+      "is_best": true
+    },
+    {
+      "epoch": 9,
+      "train_loss": 4.6482,
+      "train_ppl": 104.4,
+      "val_loss": 5.0263,
+      "val_ppl": 152.36,
+      "epoch_time_s": 122.21,
+      "is_best": true
+    },
+    {
+      "epoch": 10,
+      "train_loss": 4.6173,
+      "train_ppl": 101.22,
+      "val_loss": 5.0169,
+      "val_ppl": 150.95,
+      "epoch_time_s": 116.59,
+      "is_best": true
+    }
+  ]
+}

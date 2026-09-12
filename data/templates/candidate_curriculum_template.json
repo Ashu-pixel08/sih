@@ -1,0 +1,18 @@
+{
+  "competencies": [
+    {
+      "curriculum_id": "CURR_FLN_M1_1",
+      "grade": 1,
+      "subject": "Foundational_Numeracy",
+      "lesson": "संख्या 1 से 20 की पहचान",
+      "competency": "Recognize and read numbers from 1 to 20 in dual language and script",
+      "nipun_code": "M1.1",
+      "hindi_source_text": "एक से बीस तक की संख्याओं को पहचानो और गिनो।",
+      "mundari_source_text": "मिअद एते हिसि हाबीः संख्या नेल-उरुमपे आर लेकापे।",
+      "source_document": "NIPUN Bharat Guidelines / JCERT FLN Module Grade 1",
+      "page_section_reference": "Section 3.2, Page 14",
+      "license_provenance": "Ministry of Education Govt of India Public Framework",
+      "validation_status": "CURRICULUM_VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "count": 50,
+  "matched_references": 0,
+  "items": [
+    {
+      "id": "CHAL_01",
+      "category": "classroom_instructions",
+      "hindi": "अपनी किताब खोलो।",
+      "notes": "Classroom command: open book",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_02",
+      "category": "classroom_instructions",
+      "hindi": "ब्लैकबोर्ड पर देखो।",
+      "notes": "Classroom command: look at board",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_03",
+      "category": "classroom_instructions",
+      "hindi": "सब बच्चे शांत रहो।",
+      "notes": "Classroom command: keep quiet",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_04",
+      "category": "classroom_instructions",
+      "hindi": "अपना हाथ ऊपर उठाओ।",
+      "notes": "Classroom command: raise hand",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_05",
+      "category": "classroom_instructions",
+      "hindi": "यहाँ आकर बैठो।",
+      "notes": "Classroom command: come and sit",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_06",
+      "category": "questions",
+      "hindi": "तुम्हारा नाम क्या है?",
+      "notes": "Basic inquiry: name",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_07",
+      "category": "questions",
+      "hindi": "तुम कहाँ जा रहे हो?",
+      "notes": "Direction inquiry",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_08",
+      "category": "questions",
+      "hindi": "आज कौन सा दिन है?",
+      "notes": "Temporal inquiry: day",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_09",
+      "category": "questions",
+      "hindi": "इस सवाल का उत्तर कौन देगा?",
+      "notes": "Classroom question: who will answer",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_10",
+      "category": "questions",
+      "hindi": "तुमने कल क्या खाया था?",
+      "notes": "Past tense inquiry",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_11",
+      "category": "present_tense",
+      "hindi": "बच्चे मैदान में खेलते हैं।",
+      "notes": "Present habitual / plural",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_12",
+      "category": "present_tense",
+      "hindi": "सूरज पूरब से निकलता है।",
+      "notes": "Universal present truth",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_13",
+      "category": "present_tense",
+      "hindi": "मैं हर दिन स्कूल जाता हूँ।",
+      "notes": "1st person singular present",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_14",
+      "category": "present_tense",
+      "hindi": "हवा धीरे-धीरे बह रही है।",
+      "notes": "Present continuous",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_15",
+      "category": "past_tense",
+      "hindi": "उसने कल मुझे एक कहानी सुनाई।",
+      "notes": "Transitive past",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_16",
+      "category": "past_tense",
+      "hindi": "कल रात बहुत तेज बारिश हुई।",
+      "notes": "Past meteorological event",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_17",
+      "category": "past_tense",
+      "hindi": "हमने कल शाम को फुटबॉल खेला था।",
+      "notes": "Past completed action",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_18",
+      "category": "past_tense",
+      "hindi": "वे सब कल बाजार गए थे।",
+      "notes": "Plural past movement",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_19",
+      "category": "future_tense",
+      "hindi": "हम सब कल नए पाठ पढ़ेंगे।",
+      "notes": "1st person plural future",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_20",
+      "category": "future_tense",
+      "hindi": "शिक्षक कल हमें नया पाठ सिखाएंगे।",
+      "notes": "Honorific 3rd person future",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_21",
+      "category": "future_tense",
+      "hindi": "कल गाँव में मेला लगेगा।",
+      "notes": "3rd person future event",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_22",
+      "category": "future_tense",
+      "hindi": "मैं कल सुबह जल्दी उठूंगा।",
+      "notes": "1st person singular future",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_23",
+      "category": "plural_subjects",
+      "hindi": "सब लड़के मिलकर काम कर रहे हैं।",
+      "notes": "Plural collective subject",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_24",
+      "category": "plural_subjects",
+      "hindi": "पेड़ों पर कई चिड़ियाँ बैठी हैं।",
+      "notes": "Plural animate non-human",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_25",
+      "category": "plural_subjects",
+      "hindi": "गाँव के लोग नदी पर गए हैं।",
+      "notes": "Plural community subject",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_26",
+      "category": "plural_subjects",
+      "hindi": "महिलाएँ गीत गा रही हैं।",
+      "notes": "Plural feminine subject",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_27",
+      "category": "pronouns",
+      "hindi": "यह मेरी पुस्तक है और वह तुम्हारी है।",
+      "notes": "Possessive pronouns / distal vs proximal",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_28",
+      "category": "pronouns",
+      "hindi": "आप हमारे घर कब आएंगे?",
+      "notes": "Honorific 2nd person",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_29",
+      "category": "pronouns",
+      "hindi": "उनका घर बहुत दूर है।",
+      "notes": "3rd person plural possessive",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_30",
+      "category": "pronouns",
+      "hindi": "कोई दरवाजे पर खड़ा है।",
+      "notes": "Indefinite pronoun",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_31",
+      "category": "negation",
+      "hindi": "मैं कभी झूठ नहीं बोलता।",
+      "notes": "Habitual negation",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_32",
+      "category": "negation",
+      "hindi": "आज कोई भी छात्र अनुपस्थित नहीं है।",
+      "notes": "Universal negation",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_33",
+      "category": "negation",
+      "hindi": "उसने आज सुबह से कुछ नहीं खाया।",
+      "notes": "Past negation with quantifier",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_34",
+      "category": "negation",
+      "hindi": "डरने की कोई बात नहीं है।",
+      "notes": "Existential negation",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_35",
+      "category": "educational_vocabulary",
+      "hindi": "गणित का अभ्यास करना बहुत जरूरी है।",
+      "notes": "Education terms: math, practice",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_36",
+      "category": "educational_vocabulary",
+      "hindi": "विज्ञान के प्रयोग से नई बातें सीखने को मिलती हैं।",
+      "notes": "Education terms: science, experiment",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_37",
+      "category": "educational_vocabulary",
+      "hindi": "कक्षा में ध्यान से सुनना चाहिए।",
+      "notes": "Education context",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_38",
+      "category": "educational_vocabulary",
+      "hindi": "वार्षिक परीक्षा अगले महीने होगी।",
+      "notes": "Education terms: annual exam",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_39",
+      "category": "common_verbs",
+      "hindi": "वह साफ पानी पीता है।",
+      "notes": "Basic verb: drink",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_40",
+      "category": "common_verbs",
+      "hindi": "हमें रोज लिखना और पढ़ना चाहिए।",
+      "notes": "Paired action verbs: write and read",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_41",
+      "category": "common_verbs",
+      "hindi": "रोहन तेज दौड़ सकता है।",
+      "notes": "Modal ability + run",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_42",
+      "category": "numbers",
+      "hindi": "मेज़ पर तीन सेब रखे हैं।",
+      "notes": "Cardinal number: 3",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_43",
+      "category": "numbers",
+      "hindi": "कक्षा में बीस बच्चे उपस्थित हैं।",
+      "notes": "Cardinal number: 20",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_44",
+      "category": "numbers",
+      "hindi": "मेरे पास केवल पाँच रुपये हैं।",
+      "notes": "Cardinal number: 5",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_45",
+      "category": "unfamiliar_words",
+      "hindi": "उल्कापिंड रात में चमकते हैं।",
+      "notes": "Rare domain word: meteorite",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_46",
+      "category": "unfamiliar_words",
+      "hindi": "पारिस्थितिकी तंत्र का संतुलन बिगड़ रहा है।",
+      "notes": "Complex academic domain: ecosystem balance",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_47",
+      "category": "english_loanwords",
+      "hindi": "कंप्यूटर चालू करो और फाइल सेव करो।",
+      "notes": "Tech loanwords: computer, start, file, save",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_48",
+      "category": "english_loanwords",
+      "hindi": "डिजिटल क्लासरूम में इंटरनेट जरूरी है।",
+      "notes": "Tech loanwords: digital classroom, internet",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_49",
+      "category": "longer_sentences",
+      "hindi": "जब शिक्षक कक्षा में आए तो सभी बच्चे आदर से खड़े हो गए।",
+      "notes": "Subordinate clause temporal conjunction",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    },
+    {
+      "id": "CHAL_50",
+      "category": "longer_sentences",
+      "hindi": "अगर तुम रोज मन लगाकर पढ़ाई करोगे तो परीक्षा में अच्छे अंक लाओगे।",
+      "notes": "Conditional complex sentence",
+      "reference": null,
+      "reference_status": "NO_VERIFIED_REFERENCE_AVAILABLE"
+    }
+  ]
+}

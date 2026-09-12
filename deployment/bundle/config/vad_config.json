@@ -1,0 +1,33 @@
+{
+  "spec_version": "1.0.0",
+  "sample_rate_hz": 16000,
+  "chunk_size_samples": 320,
+  "chunk_duration_ms": 20.0,
+  "features": [
+    "Short-Time Energy (STE in dBFS)",
+    "Zero-Crossing Rate (ZCR)"
+  ],
+  "thresholds": {
+    "initial_noise_floor_db": -50.0,
+    "min_noise_floor_db": -65.0,
+    "speech_threshold_margin_db": 12.0,
+    "noise_adapt_rate": 0.05
+  },
+  "timing_constraints": {
+    "min_speech_duration_ms": 120.0,
+    "max_speech_duration_ms": 3000.0,
+    "hangover_duration_ms": 300.0
+  },
+  "output_window": {
+    "target_samples": 16000,
+    "duration_seconds": 1.0,
+    "alignment": "centered_on_max_energy"
+  },
+  "finite_state_machine": [
+    "IDLE",
+    "ONSET_CANDIDATE",
+    "IN_SPEECH",
+    "HANGOVER",
+    "ENDPOINT_DETECTED"
+  ]
+}

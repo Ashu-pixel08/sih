@@ -1,0 +1,91 @@
+{
+  "inventory_version": "1.0.0",
+  "last_updated": "2026-09-04",
+  "project_code": "SIH260042",
+  "primary_speech_candidate": {
+    "candidate_id": "speech_corpus_karya_tts",
+    "origin_name": "dataset-mundari-tts",
+    "creator_organizations": [
+      "Microsoft Research India",
+      "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+      "Karya Inc. / DAIA Tech Pvt Ltd",
+      "Indo-German Development Cooperation FAIR Forward / GIZ / BMZ"
+    ],
+    "copyright": "© 2023 DAIA Tech Pvt Ltd",
+    "license": "Karya Public License BY-NC-SA-FS 1.0 (Attribution-NonCommercial-ShareAlike-FreeSoftware 1.0)",
+    "full_corpus_reported": {
+      "is_locally_available": false,
+      "total_recordings_reported": 26870,
+      "female_recordings": 19868,
+      "male_recordings": 7002,
+      "distinct_speakers": 2,
+      "speaker_demographics": "2 adult native speakers (1 female, 1 male; studio recordings)",
+      "estimated_hours": 35.0,
+      "raw_audio_format": "44.1 kHz, 1-channel mono, 32-bit PCM",
+      "access_restrictions": "Gated access requiring formal application to data@karya.in; checksum verified via dataset-mundari-tts-full.sha1",
+      "full_archive_size_compressed": "6.87 GB",
+      "full_archive_size_uncompressed": "17.0 GB"
+    },
+    "public_sample_audited": {
+      "is_locally_available": true,
+      "local_path": "data/raw/speech/data-sample",
+      "archive_name": "data-sample.tgz",
+      "archive_size_bytes": 64560322,
+      "total_recordings": 200,
+      "female_recordings": 100,
+      "male_recordings": 100,
+      "distinct_speakers": 2,
+      "speaker_demographics": "1 adult female, 1 adult male (studio acoustic conditions)",
+      "total_duration_sec": 741.72,
+      "total_duration_minutes": 12.36,
+      "total_duration_hours": 0.206,
+      "average_utterance_sec": 3.71,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bit_depth": 32,
+      "transcripts_present": 200,
+      "transcripts_script": "Devanagari (Mundari unr)",
+      "isolated_1_20_numbers_count": 0,
+      "contextual_1_20_numbers_count": 8,
+      "acoustic_quality": "HIGH_STUDIO_SNR",
+      "usability_classification": "PUBLIC + CONDITIONALLY USABLE",
+      "permitted_uses": [
+        "Acoustic phonological benchmarking",
+        "Audio preprocessing validation (44.1 kHz 32-bit -> 16 kHz 16-bit)",
+        "Continuous speech VAD adaptation evaluation",
+        "Research baseline comparison"
+      ],
+      "unpermitted_or_incompatible_uses": [
+        "Cannot be used as standalone training data for isolated 1-20 edge classifier (0 isolated recordings exist)",
+        "Cannot represent primary school child speech diversity (only 2 adult studio voices)",
+        "Redistribution requires BY-NC-SA-FS license preservation"
+      ]
+    }
+  },
+  "large_scale_indian_speech_audit": {
+    "candidate_corpora_audited": [
+      {
+        "name": "Kathbath / IndicSpeech / Vistaar (AI4Bharat)",
+        "coverage_check": "Mundari (unr) is ABSENT. Only 8th Schedule / major Dravidian and Indo-Aryan languages included.",
+        "status": "NOT SUFFICIENT FOR MUNDARI SPEECH"
+      },
+      {
+        "name": "Mozilla Common Voice",
+        "coverage_check": "Mundari has 0 validated hours; inactive community incubator.",
+        "status": "NOT SUFFICIENT FOR MUNDARI SPEECH"
+      },
+      {
+        "name": "OpenSLR (Speech and Language Resource Repository)",
+        "coverage_check": "No SLR resources for Austroasiatic / Mundari speech.",
+        "status": "NOT SUFFICIENT FOR MUNDARI SPEECH"
+      },
+      {
+        "name": "Bhashini / ULCA Data Repository",
+        "coverage_check": "Contains text metadata; Mundari speech records link directly back to Karya GIZ project.",
+        "status": "NOT SUFFICIENT FOR MUNDARI SPEECH"
+      }
+    ],
+    "verdict": "NOT SUFFICIENT FOR MUNDARI SPEECH",
+    "rationale": "Mundari is completely absent from all major public Indian speech corpora. No external multi-speaker corpus can be substituted without linguistic distortion."
+  }
+}

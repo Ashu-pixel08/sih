@@ -1,0 +1,89 @@
+[
+  {
+    "id": "MORPH-01",
+    "hindi": "आज हम गाना गाएंगे।",
+    "feature": "1st person plural (exclusive/inclusive) future tense",
+    "source_tokens": [
+      "आज",
+      "हम",
+      "गाना",
+      "गाएंगे"
+    ],
+    "notes": "Failure B variant without 'सब'"
+  },
+  {
+    "id": "MORPH-02",
+    "hindi": "आज वे गाना गाएंगे।",
+    "feature": "3rd person plural future tense",
+    "source_tokens": [
+      "आज",
+      "वे",
+      "गाना",
+      "गाएंगे"
+    ],
+    "notes": "Subject change to 3rd person plural"
+  },
+  {
+    "id": "MORPH-03",
+    "hindi": "कल हम गाना गाएंगे।",
+    "feature": "1st person plural future tense (tomorrow)",
+    "source_tokens": [
+      "कल",
+      "हम",
+      "गाना",
+      "गाएंगे"
+    ],
+    "notes": "Time shift to future tomorrow"
+  },
+  {
+    "id": "MORPH-04",
+    "hindi": "हम रोज गाना गाते हैं।",
+    "feature": "1st person plural habitual present",
+    "source_tokens": [
+      "हम",
+      "रोज",
+      "गाना",
+      "गाते",
+      "हैं"
+    ],
+    "notes": "Habitual present aspect"
+  },
+  {
+    "id": "MORPH-05",
+    "hindi": "हमने कल गाना गाया।",
+    "feature": "1st person plural simple past (yesterday)",
+    "source_tokens": [
+      "हमने",
+      "कल",
+      "गाना",
+      "गाया"
+    ],
+    "notes": "Past tense with ergative postposition 'ने'"
+  },
+  {
+    "id": "MORPH-06",
+    "hindi": "बच्चे गीत गा रहे हैं।",
+    "feature": "3rd person plural continuous present (children)",
+    "source_tokens": [
+      "बच्चे",
+      "गीत",
+      "गा",
+      "रहे",
+      "हैं"
+    ],
+    "notes": "Present continuous with animate plural noun 'बच्चे'"
+  },
+  {
+    "id": "MORPH-07",
+    "hindi": "महिलाएँ गीत गा रही हैं।",
+    "feature": "3rd person feminine plural continuous present (women)",
+    "source_tokens": [
+      "महिलाएँ",
+      "गीत",
+      "गा",
+      "रही",
+      "हैं"
+    ],
+    "notes": "Failure E probe"
+  }
+]
