@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#24543D">
-<title>APP_NAME_PENDING — Learn in Your Language. Teach with Confidence.</title>
+<title>Bhasha Setu — Learn in Your Language. Teach with Confidence.</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 :root {
@@ -861,9 +861,9 @@ label { font-size: 12px; font-weight: 800; display: block; margin: 0 0 6px; colo
 const DB = {
   "version": "1.5.0",
   "branding": {
-    "appName": "APP_NAME_PENDING",
+    "appName": "Bhasha Setu",
     "tagline": "Learn in Your Language. Teach with Confidence.",
-    "shortCode": "VFLN",
+    "shortCode": "BS",
     "moduleScope": "Mother Tongue-Based Primary Education Platform"
   },
   "curriculum": {
@@ -2677,7 +2677,7 @@ function shell() {
       <div class="row" style="gap:14px">
         <button class="mobile-menu" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
         <div class="brand">
-          <div class="logo">V</div>
+          <div class="logo">B</div>
           <div>
             <b>${esc(DB.branding.appName)}</b>
             <small>Mother Tongue Learning • Hindi ↔ Mundari</small>
@@ -2755,7 +2755,7 @@ function enterDemoModeDirect() {
 function login() {
   root.innerHTML = `
   <div class="login"><div class="loginbox">
-  <div class="brand"><div class="logo">V</div><div><b>${esc(DB.branding.appName)}</b><small>${esc(DB.branding.moduleScope)}</small></div></div>
+  <div class="brand"><div class="logo">B</div><div><b>${esc(DB.branding.appName)}</b><small>${esc(DB.branding.moduleScope)}</small></div></div>
   <div style="margin:20px 0 16px;text-align:center">
     <button class="btn" style="width:100%;padding:14px;background:#e7c75b;color:#24543D;font-size:15px;font-weight:900;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,0.12)" onclick="enterDemoModeDirect()">
       ⭐ Open Judge / Evaluator Demo Mode (Direct Access)
@@ -2790,7 +2790,7 @@ function teacherLogin() {
 
 function showStudentLogin() {
   root.innerHTML = `
-  <div class="login"><div class="loginbox"><div class="eyebrow">Student</div><h1 class="title">Join Workspace</h1>
+  <div class="login"><div class="loginbox"><div class="eyebrow">Student</div><h1 class="title">Join Bhasha Setu</h1>
   <div class="field"><label>Your Name</label><input id="sn" placeholder="e.g. Birsa Munda" value="Birsa Munda"></div>
   <div class="field"><label>Roll Number</label><input id="sr" placeholder="e.g. 12" value="12"></div>
   <button class="btn primary" style="width:100%" onclick="studentLogin()">Continue as Student</button>
@@ -3045,7 +3045,7 @@ function teacherLive() {
     <!-- Panel Header: App Name Voice 2.0 • Teacher Mode & Direction -->
     <div class="row between mb" style="border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:14px">
       <div class="row" style="gap:10px">
-        <span class="badge" style="background:rgba(255,255,255,0.18);color:#fff;font-weight:800;letter-spacing:0.06em">APP_NAME_PENDING VOICE 2.0 • TEACHER MODE</span>
+        <span class="badge" style="background:rgba(255,255,255,0.18);color:#fff;font-weight:800;letter-spacing:0.06em">BHASHA SETU VOICE 2.0 • TEACHER MODE</span>
         <span class="room-indicator" style="background:rgba(255,255,255,0.12)"><span class="pulse-dot"></span>${isRev ? "MUNDARI ➔ HINDI" : "HINDI ➔ MUNDARI"}</span>
         <span class="badge" style="background:rgba(255,255,255,0.12);color:#d1fae5">Continuous Mode</span>
       </div>
@@ -4190,7 +4190,7 @@ function demoModePage() {
   <div class="eyebrow" style="color:var(--terr);font-weight:900;letter-spacing:0.08em">EXECUTIVE DEMONSTRATION • JUDGE & EVALUATOR INTERFACE</div>
   <div class="row between">
     <div>
-      <h1 class="title">Vernacular FLN Assistant (Hindi ↔ Mundari)</h1>
+      <h1 class="title">Bhasha Setu (Hindi ↔ Mundari)</h1>
       <p class="sub">AI-assisted mother-tongue classroom translation prototype</p>
     </div>
     <div class="row">

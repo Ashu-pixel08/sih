@@ -1,5 +1,5 @@
 # =============================================================================
-# Vernacular FLN Assistant (Hindi <-> Mundari) - Python Dependencies
+# Bhasha Setu (Hindi <-> Mundari) - Python Dependencies
 # =============================================================================
 
 # Core Machine Learning & Numerical Computing

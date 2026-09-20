@@ -1,6 +1,9 @@
-# Vernacular FLN Assistant (BHASHA SETU)
 
-> **Mother-Tongue Primary Education & Classroom Translation Prototype (Hindi ↔ Mundari)**
+# Vernacular FLN Assistant (BHASHA SETU)
+# Bhasha Setu (भाषा सेतु)
+ (Finalize app branding as Bhasha Setu)
+
+> **Mother-Tongue Primary Education & Classroom Translation Platform (Hindi ↔ Mundari)**
 > Aligned with NIPUN Bharat Foundational Literacy and Numeracy (FLN) & MTB-MLE Principles.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -15,7 +18,7 @@
 
 In primary schools across tribal regions of Eastern India (predominantly Jharkhand, Odisha, and West Bengal), a significant pedagogical barrier exists between **Hindi-speaking teachers** and **tribal mother-tongue learners** entering Grade 1. Children who speak indigenous Austroasiatic languages like **Mundari** (*Mundari jagar*, ISO 639-3: `unr`) often face severe comprehension challenges when instruction occurs exclusively in standard regional languages.
 
-The **Vernacular FLN Assistant** provides an offline-first, dual-surface platform that enables:
+**Bhasha Setu** provides an offline-first, dual-surface platform that enables:
 1. **Teachers** to conduct lessons in Hindi while delivering verified, contextually accurate mother-tongue (Mundari) translations, interactive visual aids, and synthesized pronunciation directly to student devices.
 2. **Students** to learn foundational numeracy and literacy in their mother tongue through visual ten-frames, interactive flashcards, bilingual worksheets, and real-time classroom audio.
 

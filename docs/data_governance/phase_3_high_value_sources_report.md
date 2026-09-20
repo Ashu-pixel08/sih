@@ -1,5 +1,5 @@
 # Phase 3 High-Value Mundari Sources Research Report
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 3 — Research & Source Investigation (Strictly Research Only)  
 **Date:** September 6, 2026  
 **Governance Standard:** Non-commercial Academic Research, OOV Safety & Provenance Integrity  

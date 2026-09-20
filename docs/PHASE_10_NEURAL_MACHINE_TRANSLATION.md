@@ -3,7 +3,7 @@
 **Document Version:** 1.0.0  
 **Status:** COMPLETED & VERIFIED  
 **Date:** September 6, 2026  
-**Project:** SIH260042 — Vernacular FLN Assistant  
+**Project:** SIH260042 — Bhasha Setu  
 **Architecture:** 4-Tier Hybrid Generative & Educational Mother Tongue Translation  
 
 ---
@@ -24,7 +24,7 @@ In compliance with project ethical guidelines and competition rules:
 2. **NO Fake Native Validation:** Every generated translation is marked with `translation_source: NEURAL_MODEL`, `requires_validation: true`, and badge `AI-GENERATED — REQUIRES LINGUISTIC VALIDATION`.
 3. **NO Audio Fabrication:** Synthetic or pre-recorded audio is returned ONLY for human-validated Tier 1 entries. For neural translations, the UI explicitly renders: *"Audio unavailable for generated translation."*
 4. **Android Offline Architecture Compliance:** Android remains 100% offline with **zero `INTERNET` permissions**. The model is exportable via TorchScript / ONNX for local on-device execution.
-5. **Clean Fallback & Neutral Presentation:** External dataset names and models are treated as data sources, not project identity (`APP_NAME_PENDING`).
+5. **Clean Fallback & Neutral Presentation:** External dataset names and models are treated as data sources, not project identity (`Bhasha Setu`).
 
 ---
 

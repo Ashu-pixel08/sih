@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "APP_NAME_PENDING"
+rootProject.name = "BhashaSetu"
 include(":app")

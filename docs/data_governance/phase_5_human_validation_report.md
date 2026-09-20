@@ -1,6 +1,6 @@
 # Phase 5 Human Validation Preparation & Linguistic QA Report
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 5 — Human Validation Preparation & Linguistic QA  
 **Date:** September 6, 2026  
 **Governance Standard:** Anti-Fabrication Gatekeeping, Dual-Track QA & OOV Quarantine  

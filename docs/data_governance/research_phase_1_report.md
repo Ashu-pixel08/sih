@@ -1,7 +1,7 @@
 # Research Phase 1: Controlled Mundari Educational Data Acquisition
 
 **Project ID**: SIH260042  
-**Application**: APP_NAME_PENDING (Vernacular FLN Assistant — Hindi ↔ Mundari)  
+**Application**: Bhasha Setu (Vernacular FLN Assistant — Hindi ↔ Mundari)  
 **Report Type**: External Resource Acquisition & Feasibility Audit  
 **Status**: APPROVED BASELINE  
 **Audit Date**: 2026-09-06  
@@ -14,7 +14,7 @@ This document presents the comprehensive findings of **Research Phase 1: Control
 
 In strict adherence to the project governance boundaries:
 - **No external datasets or translations were promoted into canonical data** or production code.
-- **External entities, publishers, and authors are treated exclusively as external data sources**, preserving attribution while keeping our application namespaces and identity completely independent (`APP_NAME_PENDING`).
+- **External entities, publishers, and authors are treated exclusively as external data sources**, preserving attribution while keeping our application namespaces and identity completely independent (`Bhasha Setu`).
 - Every surveyed resource was subjected to technical, linguistic, pedagogical, and legal rights evaluations to determine whether it can be safely staged into the **Data Intake Contract** pipeline (`data/incoming/` $\rightarrow$ `data/validated/`).
 
 ### Key Audit Findings

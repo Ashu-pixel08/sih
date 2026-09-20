@@ -1,6 +1,6 @@
 # Architectural Decision Record: Hybrid Translation Engine for Low-Resource Edge Pedagogy
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Document ID:** ADR-AI-TRANSLATION-ARCH-V1  
 **Date:** September 6, 2026  
 **Status:** ACCEPTED & IMPLEMENTED  

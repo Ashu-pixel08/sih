@@ -1,5 +1,5 @@
 # Human Linguistic & Pedagogical Review Form
-**Project:** SIH260042 — Mother-Tongue FLN Pedagogy Assistant (`APP_NAME_PENDING`)  
+**Project:** SIH260042 — Mother-Tongue FLN Pedagogy Assistant (`Bhasha Setu`)  
 **Language Pair:** Hindi (`hi`) $\leftrightarrow$ Mundari (`unr`)  
 **Target Group:** Grade 1–3 Tribal Primary School Learners (Jharkhand)
 

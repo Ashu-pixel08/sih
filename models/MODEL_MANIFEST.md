@@ -1,6 +1,6 @@
 # Model Inventory & Verification Manifest
 
-This manifest documents all production, exported, and edge machine learning artifacts in the **Vernacular FLN Assistant** (`sih`) repository, including parameter counts, architectural configurations, checksums, and Git LFS tracking policies.
+This manifest documents all production, exported, and edge machine learning artifacts in the **Bhasha Setu** (`sih`) repository, including parameter counts, architectural configurations, checksums, and Git LFS tracking policies.
 
 ---
 

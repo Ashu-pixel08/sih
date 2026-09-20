@@ -1,6 +1,6 @@
 # Potential Mundari Linguistic & Educational Reviewers
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Document Type:** Governance Reference & Institutional Directory Audit  
 **Status:** REFERENCE DIRECTORY ONLY — ZERO PARTICIPATION AGREEMENTS  
 **Binding Project Rule:** *Do NOT claim that any named person has agreed to participate unless there is explicit evidence of that agreement. External persons are references only and must never become project identity or UI terminology.*

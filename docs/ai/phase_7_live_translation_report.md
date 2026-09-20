@@ -1,6 +1,6 @@
 # Phase 7 — Live Translation & Speech Pipeline Implementation Report
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 7 — Apply Existing Data to Live Translation & Speech Pipeline  
 **Document Status:** Complete & Verified  
 **Date:** September 2026  

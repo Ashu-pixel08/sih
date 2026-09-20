@@ -1,7 +1,7 @@
 # UI to Backend Integration Specification
 
 **Project Code**: SIH260042  
-**Application Identity**: APP_NAME_PENDING (Configurable Platform Identity)  
+**Application Identity**: Bhasha Setu (Configurable Platform Identity)  
 **Document Version**: 1.1.0  
 **Target Operating Environment**: 100% Offline Edge Architecture (Android 8.0+ / API 26+) with Web Prototype Reference  
 **Deployment Status**: OFFLINE ARCHITECTURE READY — PHYSICAL ANDROID VALIDATION PENDING  

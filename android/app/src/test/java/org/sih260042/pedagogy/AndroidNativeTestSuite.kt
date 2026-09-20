@@ -13,7 +13,7 @@ object AndroidNativeTestSuite {
 
         println("================================================================================")
         println("  PROJECT SIH260042: ANDROID NATIVE PIPELINE TEST SUITE (PHASE J & AUDIT)")
-        println("  Application Name: APP_NAME_PENDING")
+        println("  Application Name: Bhasha Setu")
         println("  Package: org.sih260042.pedagogy")
         println("================================================================================")
 

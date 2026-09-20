@@ -1,6 +1,6 @@
 # Comprehensive NMT Model Improvement, Educational Data Integration & Evaluation Report
 
-**Project**: SIH260042 — Vernacular FLN Assistant (Hindi $\rightarrow$ Devanagari Mundari)  
+**Project**: SIH260042 — Bhasha Setu (Hindi $\rightarrow$ Devanagari Mundari)  
 **Date**: September 17–18, 2026  
 **Status**: Production Checkpoint Promoted (`models/nmt/final/best_transformer.pt`)  
 **Hardware Profile**: Intel64 (16 vCPUs), 32 GB RAM, Torch 2.14.0+cpu (CPU-only execution honestly documented)  
@@ -313,7 +313,7 @@ Inference performance was profiled across 1,000+ beam search generations on our 
 
 ## 15. Android Offline Deployment & Mobile Compatibility
 
-The Vernacular FLN Assistant is designed under a strict **Zero-Network / 100% Offline Mandate** for rural government primary schools in Jharkhand.
+Bhasha Setu is designed under a strict **Zero-Network / 100% Offline Mandate** for rural government primary schools in Jharkhand.
 
 ### Mobile Feasibility Assessment
 1. **Compute Budget**: At 219ms mean CPU latency on an x86 host, an ARM Cortex-A53/A55 low-end smartphone (e.g., MediaTek Helio G25/G35) executes inference in approximately **350–550 ms**, easily satisfying the <1000ms classroom interactive requirement.

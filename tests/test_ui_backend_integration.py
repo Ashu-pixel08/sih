@@ -30,7 +30,7 @@ class TestUIBackendIntegration(unittest.TestCase):
         self.assertNotIn("PALASH AI", html, "Must not use external program/initiative name as app identity")
 
         # Project-specific / configurable identity assertion
-        self.assertIn("APP_NAME_PENDING", html, "Must feature project-specific platform identity")
+        self.assertIn("Bhasha Setu", html, "Must feature project-specific platform identity")
         self.assertIn("Learn in Your Language. Teach with Confidence.", html)
         self.assertIn("<!DOCTYPE html>", html)
         self.assertIn("DB =", html, "Must contain embedded canonical database")
@@ -157,7 +157,7 @@ class TestUIBackendIntegration(unittest.TestCase):
         with open(ui_integration_doc, "r", encoding="utf-8") as f:
             content = f.read()
         self.assertNotIn("PALASH AI", content, "Prohibited branding must not be in integration doc")
-        self.assertIn("APP_NAME_PENDING", content)
+        self.assertIn("Bhasha Setu", content)
         self.assertIn("Demonstration / MVP Module", content)
         self.assertIn("SYNTHETIC_PROTOTYPE", content)
         self.assertIn("OFFLINE ARCHITECTURE READY — PHYSICAL ANDROID VALIDATION PENDING", content)

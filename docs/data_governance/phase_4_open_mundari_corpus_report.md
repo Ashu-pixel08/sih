@@ -1,6 +1,6 @@
 # Phase 4 Open-License Mundari Children's Corpus Expansion Report
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 4 — Data Acquisition & Candidate Corpus Expansion (Strictly Candidate Intake)  
 **Date:** September 6, 2026  
 **Primary Repository Investigated:** `https://github.com/global-asp/pb-source` (Pratham Books Source Markdown Collection)  

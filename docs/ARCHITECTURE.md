@@ -1,6 +1,6 @@
-# Vernacular FLN Assistant — System Architecture
+# Bhasha Setu — System Architecture
 
-This document outlines the complete architectural design of the **Vernacular FLN Assistant** (`sih`), detailing the dual-surface frontend, 4-tier hybrid translation pipeline, continuous voice state machine, offline synchronization protocols, and educational asset management layer.
+This document outlines the complete architectural design of **Bhasha Setu** (`sih`), detailing the dual-surface frontend, 4-tier hybrid translation pipeline, continuous voice state machine, offline synchronization protocols, and educational asset management layer.
 
 ---
 

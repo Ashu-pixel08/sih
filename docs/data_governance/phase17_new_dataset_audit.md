@@ -1,7 +1,7 @@
 # Phase 17: Comprehensive Data-Governance Audit Report
 
 **Project ID**: SIH260042  
-**Application**: Vernacular FLN Assistant (Hindi <-> Mundari)  
+**Application**: Bhasha Setu (Hindi <-> Mundari)  
 **Governance Framework**: `DATA_INTAKE_CONTRACT.md` & `EXTERNAL_DATA_RULES.md`  
 **Audit Date**: 2026-09-09  
 **Status**: AUDIT COMPLETE - STRICT ZERO-MODIFICATION ENFORCED  

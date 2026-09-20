@@ -1,6 +1,6 @@
 # Phase 7 Live Translation & Speech Pipeline Latency Report
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Date:** 2026-09-05 23:13:55 UTC  
 **Evaluation Scope:** Multi-trial empirical latency profiling across all component stages and full end-to-end forward and reverse translation pipelines.  
 **Hardware Benchmarked (DESKTOP_MEASURED):** Desktop CPU (Intel/AMD x86_64, Windows)  

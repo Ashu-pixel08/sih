@@ -1,6 +1,6 @@
 # Phase 7 — Data-to-Pipeline Allocation Map
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 7 — Live Translation & Speech Pipeline Implementation  
 **Document ID:** MAP-PHASE7-DATA-ALLOCATION  
 **Date:** September 6, 2026  

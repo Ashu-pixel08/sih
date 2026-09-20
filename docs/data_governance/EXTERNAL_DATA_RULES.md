@@ -1,7 +1,7 @@
 # External Data Acquisition & Ethics Policy
 
 **Project ID**: SIH260042  
-**Application**: APP_NAME_PENDING (Vernacular FLN Assistant — Hindi ↔ Mundari)  
+**Application**: Bhasha Setu (Vernacular FLN Assistant — Hindi ↔ Mundari)  
 **Document Version**: 1.0.0  
 **Scope**: All project contributors, data collectors, field researchers, and automated ingestion pipelines  
 

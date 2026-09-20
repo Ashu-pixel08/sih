@@ -1,7 +1,7 @@
 # UI State Contract & Lifecycle Specification
 
 **Project Code**: SIH260042  
-**Component**: State Machine and Screen Contracts for APP_NAME_PENDING  
+**Component**: State Machine and Screen Contracts for Bhasha Setu  
 **Operating Mode**: Deterministic Finite State Machine (FSM)  
 **Deployment Status**: OFFLINE ARCHITECTURE READY — PHYSICAL ANDROID VALIDATION PENDING  
 

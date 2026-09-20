@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "project_name": "Vernacular FLN Assistant (SIH260042)",
+  "project_name": "Bhasha Setu (SIH260042)",
   "audit_timestamp_iso": "2026-09-04T16:15:00+05:30",
   "system_identity_policy": {
     "rule": "External resources serve strictly as research and data inputs. System architecture, packages, files, and classes must use independent, functional project names.",

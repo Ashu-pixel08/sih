@@ -1,4 +1,4 @@
-# Vernacular FLN Assistant — Final Demo Validation Report
+# Bhasha Setu — Final Demo Validation Report
 
 **Date**: September 10, 2026  
 **Status**: COMPLETE & VALIDATED FOR PRESENTATION  
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This document certifies that the **Vernacular FLN Assistant (Hindi $\leftrightarrow$ Mundari)** project has completed all final demo build requirements. A dedicated, evaluator-focused **DEMO MODE** has been established in the browser prototype. All model training and exploratory research have been frozen. The live system demonstrates authentic multi-tier translation routing, educational vocabulary precision, neural model generalization, strict quality gating, audio/broadcast security gates, and zero-hallucination safe fallbacks.
+This document certifies that the **Bhasha Setu (Hindi $\leftrightarrow$ Mundari)** project has completed all final demo build requirements. A dedicated, evaluator-focused **DEMO MODE** has been established in the browser prototype. All model training and exploratory research have been frozen. The live system demonstrates authentic multi-tier translation routing, educational vocabulary precision, neural model generalization, strict quality gating, audio/broadcast security gates, and zero-hallucination safe fallbacks.
 
 ---
 

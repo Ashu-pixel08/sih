@@ -1,6 +1,6 @@
 # Phase 8: Real Device & End-to-End Validation Report
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 8 — Real Device + End-to-End Validation  
 **Date:** September 2026  
 **Document Status:** Complete & Verified  
@@ -21,7 +21,7 @@ OFFLINE_RUNTIME_VALIDATED=PASSED_ARCHITECTURAL_AND_JVM_LOCAL
 
 ## 2. Executive Summary
 
-Phase 8 executes rigorous real-device and end-to-end validation for SIH260042 (`APP_NAME_PENDING`), covering both the web reference application and the native Android offline runtime.
+Phase 8 executes rigorous real-device and end-to-end validation for SIH260042 (`Bhasha Setu`), covering both the web reference application and the native Android offline runtime.
 
 ### Key Validation Outcomes
 1. **Full Test Suite Execution:** **176 out of 176 automated tests passed (100%)** across 23 test suites in 21.98 seconds.
@@ -233,7 +233,7 @@ The browser reference UI (`frontend/index.html`) was validated across all requir
 - **Human Validation Scope:** No native speaker or academic reviewer sign-off has been fabricated (`NATIVE_SPEAKER_VERIFIED=false`).
 
 ### 6.5 Project Identity & External Branding (Requirements 17–19)
-- Application identity remains strictly `APP_NAME_PENDING` (UI tagline: *"Learn in Your Language. Teach with Confidence."*).
+- Application identity remains strictly `Bhasha Setu` (UI tagline: *"Learn in Your Language. Teach with Confidence."*).
 - Prohibited external organizational or initiative names (such as PALASH AI) are completely absent from code, classes, and UI labels.
 - External datasets (e.g. Karya, StoryWeaver, Bharatavani) remain strictly confined to provenance documentation.
 

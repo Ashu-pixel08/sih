@@ -1,7 +1,7 @@
 # Phase 18: Full-Corpus Neural Machine Translation Report
 
 **Project ID**: SIH260042  
-**Application**: Vernacular FLN Assistant (Hindi ↔ Mundari)  
+**Application**: Bhasha Setu (Hindi ↔ Mundari)  
 **Governance Standard**: `DATA_INTAKE_CONTRACT.md` & `EXTERNAL_DATA_RULES.md`  
 **Date**: 2026-09-10  
 **Status**: COMPLETE — FULL-CORPUS MODEL TRAINED & BENCHMARKED  

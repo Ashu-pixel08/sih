@@ -1,6 +1,6 @@
 # Phase 6 Evidence-Based Validation Report
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 6 — Evidence-Based Validation Without Human Reviewer  
 **Audit Identifier:** REPORT-PHASE6-EVIDENCE-VALIDATION  
 **Date:** September 6, 2026  

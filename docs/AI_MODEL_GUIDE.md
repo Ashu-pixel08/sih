@@ -1,6 +1,6 @@
 # AI/ML Model Guide: Neural Machine Translation & Edge Speech
 
-This document provides a comprehensive technical guide to the Neural Machine Translation (NMT) and edge speech models deployed in the **Vernacular FLN Assistant** (`sih`).
+This document provides a comprehensive technical guide to the Neural Machine Translation (NMT) and edge speech models deployed in **Bhasha Setu** (`sih`).
 
 ---
 

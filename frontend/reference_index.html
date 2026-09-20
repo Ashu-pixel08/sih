@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#24543D">
-<title>APP_NAME_PENDING — Learn in Your Language. Teach with Confidence.</title>
+<title>Bhasha Setu — Learn in Your Language. Teach with Confidence.</title>
 <style>
 :root{--green:#24543D;--terr:#A86145;--cream:#F7F3EA;--white:#fff;--yellow:#E7C75B;--sage:#4F8A5B;--ink:#26332C;--muted:#6f7c74;--line:#dfe6df;--soft:#eef4ef;--danger:#a33c35;--shadow:0 8px 28px rgba(38,51,44,.08)}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
@@ -68,7 +68,7 @@ function shell(){
  ["home","🏠","Home"],["liveclass","🟢","Live Classroom"],["modules","🔢","Learn Mundari"],["flashcards","🃏","Flashcards"],["practice","✍️","Practice"],["settings","⚙️","Settings"]
  ];
  root.innerHTML=`<div class="app">
- <header class="topbar"><div class="row"><button class="mobile-menu" onclick="toggleMenu()">☰</button><div class="brand"><div class="logo">P</div><div><b>APP_NAME_PENDING</b><small>Learn in Your Language. Teach with Confidence.</small></div></div></div>
+ <header class="topbar"><div class="row"><button class="mobile-menu" onclick="toggleMenu()">☰</button><div class="brand"><div class="logo">B</div><div><b>Bhasha Setu</b><small>Learn in Your Language. Teach with Confidence.</small></div></div></div>
  <div class="userchip"><span>${teacher?"Teacher / Admin":"Student"}</span><div class="avatar">${teacher?"T":"S"}</div><button class="btn" style="padding:7px 10px;background:#ffffff18;color:#fff" onclick="logout()">Exit</button></div></header>
  <div class="layout"><aside class="sidebar" id="side"><div class="navtitle">${teacher?"Teacher Workspace":"Student Workspace"}</div>
  ${nav.map(n=>`<button class="nav ${state.page===n[0]?"active":""}" onclick="go('${n[0]}')"><span class="ico">${n[1]}</span>${n[2]}</button>`).join("")}
@@ -80,7 +80,7 @@ function go(p){state.page=p;save();shell()}
 function logout(){state.role=null;state.page=null;state.joined=false;state.channel?.close();state.channel=null;login()}
 function login(){
  root.innerHTML=`<div class="login"><div class="loginbox">
- <div class="brand"><div class="logo">P</div><div><b>APP_NAME_PENDING</b><small>Smart Education • Jharkhand</small></div></div>
+ <div class="brand"><div class="logo">B</div><div><b>Bhasha Setu</b><small>Smart Education • Jharkhand</small></div></div>
  <h1 class="title" style="margin-top:25px">Choose Your Learning Space</h1><p class="sub">A prototype for Hindi-speaking teachers and tribal-language learners.</p>
  <div class="rolegrid"><button class="role" onclick="showTeacherLogin()"><div style="font-size:28px">👩‍🏫</div><strong>Teacher / Admin</strong><span>Live translation, classroom broadcast, curriculum and analytics</span></button>
  <button class="role" onclick="showStudentLogin()"><div style="font-size:28px">🧒</div><strong>Student</strong><span>Join a live class and receive teacher translations</span></button></div>
@@ -89,7 +89,7 @@ function login(){
 }
 function showTeacherLogin(){root.innerHTML=`<div class="login"><div class="loginbox"><div class="eyebrow">Teacher / Admin</div><h1 class="title">Sign in</h1><div class="field"><label>Password</label><input id="tp" type="password" placeholder="Enter 1234"></div><button class="btn primary" style="width:100%" onclick="teacherLogin()">Open Teacher Workspace</button><button class="btn outline mt" style="width:100%" onclick="login()">Back</button></div></div>`}
 function teacherLogin(){if($("#tp").value!=="1234")return toast("Incorrect prototype password");state.role="teacher";state.page="dashboard";initBus();save();shell()}
-function showStudentLogin(){root.innerHTML=`<div class="login"><div class="loginbox"><div class="eyebrow">Student</div><h1 class="title">Join APP_NAME_PENDING</h1><div class="field"><label>Name</label><input id="sn" placeholder="Student name"></div><div class="field"><label>Roll Number</label><input id="sr" placeholder="e.g. 12"></div><button class="btn primary" style="width:100%" onclick="studentLogin()">Continue</button><button class="btn outline mt" style="width:100%" onclick="login()">Back</button></div></div>`}
+function showStudentLogin(){root.innerHTML=`<div class="login"><div class="loginbox"><div class="eyebrow">Student</div><h1 class="title">Join Bhasha Setu</h1><div class="field"><label>Name</label><input id="sn" placeholder="Student name"></div><div class="field"><label>Roll Number</label><input id="sr" placeholder="e.g. 12"></div><button class="btn primary" style="width:100%" onclick="studentLogin()">Continue</button><button class="btn outline mt" style="width:100%" onclick="login()">Back</button></div></div>`}
 function studentLogin(){let n=$("#sn").value.trim(),r=$("#sr").value.trim();if(!n||!r)return toast("Enter name and roll number");state.role="student";state.studentName=n;state.roll=r;state.page="home";initBus();save();shell()}
 function render(){shell()}
 function renderPage(){
@@ -142,7 +142,7 @@ function studentPage(c){
  if(state.page==="practice")return c.innerHTML=studentPractice();
  if(state.page==="settings")return c.innerHTML=settings();
 }
-function studentHome(){return `<div class="eyebrow">Student Home</div><h1 class="title">Learn in your language.</h1><p class="sub">Join your teacher's live classroom and receive the approved Mundari translation in real time.</p><div class="hero"><h2>🟢 Live Classroom</h2><p>Teacher speaks Hindi → APP_NAME_PENDING processes the lesson → you receive the Mundari text/audio output.</p><button class="btn" onclick="go('liveclass')">Join Live Classroom</button></div><div class="grid g3 mt"><div class="card"><div class="stat">1–20</div><p>Numbers module</p></div><div class="card"><div class="stat">🎧</div><p>Live translation receiver</p></div><div class="card"><div class="stat">✓</div><p>Practice & flashcards</p></div></div><div class="notice mt">Your account does not expose teacher controls. Live Classroom is a student receiving screen only.</div>`}
+function studentHome(){return `<div class="eyebrow">Student Home</div><h1 class="title">Learn in your language.</h1><p class="sub">Join your teacher's live classroom and receive the approved Mundari translation in real time.</p><div class="hero"><h2>🟢 Live Classroom</h2><p>Teacher speaks Hindi → Bhasha Setu processes the lesson → you receive the Mundari text/audio output.</p><button class="btn" onclick="go('liveclass')">Join Live Classroom</button></div><div class="grid g3 mt"><div class="card"><div class="stat">1–20</div><p>Numbers module</p></div><div class="card"><div class="stat">🎧</div><p>Live translation receiver</p></div><div class="card"><div class="stat">✓</div><p>Practice & flashcards</p></div></div><div class="notice mt">Your account does not expose teacher controls. Live Classroom is a student receiving screen only.</div>`}
 function studentLive(){return `<div class="eyebrow">LIVE CLASSROOM • STUDENT</div><h1 class="title">Listen in Mundari</h1><p class="sub">Enter the room code your teacher shows on their device.</p>${state.joined?studentReceiver():joinForm()}`}
 function joinForm(){return `<div class="card" style="max-width:620px"><h3>📡 Join teacher's classroom</h3><p>Room code connects this browser to the teacher's live broadcast channel.</p><label>Room code</label><input id="roominput" placeholder="e.g. VFLN-4821" value="${esc(state.room)}"><button class="btn primary mt" onclick="joinRoom()">Join Classroom</button><div class="notice mt">For this prototype, open the teacher and student views in two tabs/windows on the same browser/device. Cross-device production requires a realtime backend.</div></div>`}
 function joinRoom(){let r=$("#roominput").value.trim().toUpperCase();if(!r)return toast("Enter the room code");state.room=r;state.joined=true;localStorage.setItem("vflnRoom",r);initBus();save();sendBus({type:"join",name:state.studentName||"Student"});go("liveclass")}

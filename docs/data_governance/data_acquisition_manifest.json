@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0.0",
   "project_id": "SIH260042",
-  "application": "APP_NAME_PENDING",
+  "application": "Bhasha Setu",
   "governance_standard": "DATA_INTAKE_CONTRACT_V1",
   "last_updated": "2026-09-09",
   "sources": [

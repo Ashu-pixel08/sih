@@ -1,6 +1,6 @@
 # Phase 6 Candidate Corpus Evidence Audit
 
-**Project Identifier:** SIH260042 (`APP_NAME_PENDING`)  
+**Project Identifier:** SIH260042 (`Bhasha Setu`)  
 **Audit Identifier:** AUDIT-PHASE6-PRATHAM-0240-EVIDENCE  
 **Dataset Staged:** `data/incoming/pratham_0240.json`  
 **License:** Creative Commons Attribution 4.0 International (CC-BY-4.0)  

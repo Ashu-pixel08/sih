@@ -3,7 +3,7 @@
 **Project Code:** SIH260042  
 **Target Languages:** Hindi (`hi`) $\to$ Mundari (`unr`, Devanagari script)  
 **Date:** September 8, 2026  
-**Pipeline Target:** Edge FLN Pedagogy Assistant (`APP_NAME_PENDING`)  
+**Pipeline Target:** Edge FLN Pedagogy Assistant (`Bhasha Setu`)  
 
 ---
 

@@ -335,7 +335,7 @@ def write_markdown_report(results: Dict[str, Any], output_path: str) -> None:
 
     md = f"""# Phase 7 Live Translation & Speech Pipeline Latency Report
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Date:** {meta['timestamp']}  
 **Evaluation Scope:** Multi-trial empirical latency profiling across all component stages and full end-to-end forward and reverse translation pipelines.  
 **Hardware Benchmarked (DESKTOP_MEASURED):** Desktop CPU (Intel/AMD x86_64, Windows)  

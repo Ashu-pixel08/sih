@@ -1,6 +1,6 @@
 # Phase 9: Live Speech Pipeline Hardening
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Phase:** Phase 9 — Live Speech Pipeline Hardening  
 **Date:** September 2026  
 **Document Status:** Complete & Verified  
@@ -22,7 +22,7 @@ OFFLINE_RUNTIME_VALIDATED=PASSED_ARCHITECTURAL_AND_JVM_LOCAL
 
 ## 2. Executive Summary
 
-Phase 9 hardens the live speech and translation pipeline of SIH260042 (`APP_NAME_PENDING`) across both the Python reference subsystem and the Android native offline runtime. 
+Phase 9 hardens the live speech and translation pipeline of SIH260042 (`Bhasha Setu`) across both the Python reference subsystem and the Android native offline runtime. 
 
 ### Key Accomplishments
 1. **Architectural Separation of Capabilities:** Explicitly delineated three distinct capabilities: (A) General Speech Recognition (stubbed/pending 50–100h training corpus), (B) Controlled-Vocabulary Speech Recognition (21-class edge model: numerals 1–20 + background/silence), and (C) Text Translation (Tier 1 exact canonical lookup + Tier 2 TF-IDF parallel corpus sentence retrieval + Tier 3 safe fallback).
@@ -297,7 +297,7 @@ tests\test_vad_and_streaming.py ........                                 [100%]
 
 ## 11. Final Governance Declarations
 
-1. **Project Identity:** The project identifier remains strictly `SIH260042` (`APP_NAME_PENDING`). External organization, dataset, person, and model names are strictly references and never used as project identity or UI branding.
+1. **Project Identity:** The project identifier remains strictly `SIH260042` (`Bhasha Setu`). External organization, dataset, person, and model names are strictly references and never used as project identity or UI branding.
 2. **Honest Speech Capability:** The system implements an edge **controlled-vocabulary classifier (21 classes)**. No claim of general Mundari ASR is made.
 3. **Honest Audio Provenance:** Pre-rendered audio assets are explicitly catalogued and labeled as `SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)`. No claim of native Mundari TTS is made.
 4. **Physical Device State:** Factually documented as `BLOCKED_NO_DEVICE` with `NOT_MEASURED_NO_PHYSICAL_DEVICE`.

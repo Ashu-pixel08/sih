@@ -1,6 +1,6 @@
 # Team Development & Collaboration Guide
 
-Welcome to the **Vernacular FLN Assistant** project repository (`https://github.com/Ashu-pixel08/sih`). This document serves as the primary onboarding manual and operational standard for all engineers, researchers, and contributors working across the Frontend, Backend, AI/ML, Android, and Educational Curriculum layers.
+Welcome to the **Bhasha Setu** project repository (`https://github.com/Ashu-pixel08/sih`). This document serves as the primary onboarding manual and operational standard for all engineers, researchers, and contributors working across the Frontend, Backend, AI/ML, Android, and Educational Curriculum layers.
 
 ---
 

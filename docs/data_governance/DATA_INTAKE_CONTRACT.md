@@ -1,7 +1,7 @@
 # Data Intake Contract & Specification
 
 **Project ID**: SIH260042  
-**Application**: APP_NAME_PENDING (Vernacular FLN Assistant — Hindi ↔ Mundari)  
+**Application**: Bhasha Setu (Vernacular FLN Assistant — Hindi ↔ Mundari)  
 **Document Version**: 1.0.0 (Production Intake Baseline)  
 **Status**: ACTIVE & BINDING  
 

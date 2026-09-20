@@ -1,6 +1,6 @@
 # Educational Dataset & Multimodal Assets Guide
 
-This guide details the structure, catalog, schema, governance policies, and contribution procedures for all datasets and multimodal assets in the **Vernacular FLN Assistant** (`sih`).
+This guide details the structure, catalog, schema, governance policies, and contribution procedures for all datasets and multimodal assets in **Bhasha Setu** (`sih`).
 
 ---
 

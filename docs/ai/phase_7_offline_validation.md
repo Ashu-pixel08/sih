@@ -1,6 +1,6 @@
 # Phase 7 Offline Architecture & Android Edge Validation Report
 
-**Project:** SIH260042 (`APP_NAME_PENDING`)  
+**Project:** SIH260042 (`Bhasha Setu`)  
 **Document Status:** Approved Architecture Verification  
 **Evaluation Scope:** Offline integrity validation, Android permissions audit, edge model execution guarantees, and browser prototype isolation.  
 
