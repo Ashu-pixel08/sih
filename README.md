@@ -1,4 +1,4 @@
-# Vernacular FLN Assistant (APP_NAME_PENDING)
+# Vernacular FLN Assistant (BHASHA SETU)
 
 > **Mother-Tongue Primary Education & Classroom Translation Prototype (Hindi ↔ Mundari)**
 > Aligned with NIPUN Bharat Foundational Literacy and Numeracy (FLN) & MTB-MLE Principles.
