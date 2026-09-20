@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # Git Ignore Configuration for Vernacular FLN Assistant (Python + Web + Android)
 # =============================================================================
 
@@ -22,14 +22,22 @@ htmlcov/
 .mypy_cache/
 .ruff_cache/
 
+# Python Build & Distribution Artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
 # Android Build Outputs & Intermediate Files
 android/.gradle/
 android/build/
 android/app/build/
 android/*/build/
+android/**/build/
 android/.cxx/
 android/captures/
 android/local.properties
+local.properties
 
 # Android Packages & Bytecode
 *.apk
@@ -42,11 +50,23 @@ android/local.properties
 android/.idea/
 android/*.iml
 android/*/*.iml
+*.iml
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
+
+# Environment & Secret Files
+.env
+.env.*
+*.env
+*.pem
+*.key
+*credentials*.json
+*service_account*.json
+id_rsa
+id_ed25519
 
 # Operating System Files
 .DS_Store
@@ -62,6 +82,8 @@ yarn-debug.log*
 yarn-error.log*
 scratch/
 12.4
+*.bak
+scratch_dom.html
 
 # Large Raw Datasets & Archive Artifacts (KPL / License-restricted or Gated)
 data/raw/speech/data-sample.tgz

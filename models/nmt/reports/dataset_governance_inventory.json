@@ -1,0 +1,92 @@
+[
+  {
+    "source": "data/raw/translation/translation-hi-unr.tsv",
+    "purpose": "Primary bilingual parallel training & evaluation corpus",
+    "size": "3.61 MB (17826 rows)",
+    "language": "Hindi (hi) / Mundari (unr) in Devanagari",
+    "license": "KPL BY-NC-SA-FS 1.0 (Karya Parallel Corpus)",
+    "access_status": "APPROVED / LOCAL VERIFIED",
+    "training_eligible": "YES",
+    "reason": "Open research/educational license compatible with offline academic and prototype use. 17,809 clean pairs after filtering."
+  },
+  {
+    "source": "data/custom/SIH_CUSTOM_DATASET_CLEANED_AND_MODEL_READY.xlsx",
+    "purpose": "Team-created educational vocabulary dataset (159 entries across 15 categories)",
+    "size": "51.91 KB (159 entries, 156 unique candidate pairs)",
+    "language": "Hindi (hi) / Mundari (unr) in Devanagari + English glosses",
+    "license": "Team Internal Educational Dataset (CC-BY-NC 4.0 compatible)",
+    "access_status": "APPROVED / TEAM VERIFIED",
+    "training_eligible": "YES (CONDITIONAL)",
+    "reason": "Team-curated educational vocabulary. Distinct pairs promoted to APPROVED_TRAINING_PAIR; identical pairs classified as SHARED_OR_LOANWORD_REVIEW."
+  },
+  {
+    "source": "data/custom/images/",
+    "purpose": "Educational flashcards, visual vocabulary, and practice UI assets",
+    "size": "16 category subdirectories, 130 image files",
+    "language": "Visual / Multimodal assets",
+    "license": "Educational Domain Public Assets / Curated Team Media",
+    "access_status": "APPROVED / LOCAL VERIFIED",
+    "training_eligible": "NO (FOR TEXT TRANSFORMER)",
+    "reason": "Images are strictly decoupled from text NMT Transformer. Reserved for visual vocabulary and flashcards."
+  },
+  {
+    "source": "content/content_registry.json",
+    "purpose": "Tier 1 Deterministic Educational Registry (Numbers 1-20, core classroom instructions)",
+    "size": "706 lines (20 numerals + 16 phrases)",
+    "language": "Hindi (hi) / Mundari (unr) / English (en)",
+    "license": "Project Core MTB-MLE Registry",
+    "access_status": "APPROVED / FROZEN TIER 1",
+    "training_eligible": "TIER 1 LOOKUP ONLY",
+    "reason": "Canonical verified dictionary. Used for deterministic zero-hallucination lookup, not general corpus training."
+  },
+  {
+    "source": "data/quarantine/karya_elr_1000",
+    "purpose": "Quarantined speech/recipe dataset (access unclear / monolingual)",
+    "size": "1,000 items (quarantined)",
+    "language": "Mundari (unr)",
+    "license": "UNCLEAR / RESTRICTED",
+    "access_status": "QUARANTINED",
+    "training_eligible": "NO",
+    "reason": "Strictly quarantined per Phase 17 governance. Lacks clear bilingual parallel alignments and distribution clearance."
+  },
+  {
+    "source": "data/quarantine/karya_endangered_recipes_500",
+    "purpose": "Quarantined Mundari recipe dataset (access unclear / Mundari-English without Hindi)",
+    "size": "500 items (quarantined)",
+    "language": "Mundari (unr) / English (en)",
+    "license": "UNCLEAR / RESTRICTED",
+    "access_status": "QUARANTINED",
+    "training_eligible": "NO",
+    "reason": "Strictly quarantined. Mundari-English without Hindi parallel alignments; synthetic bridging prohibited."
+  },
+  {
+    "source": "data/raw/speech/data-sample.tgz",
+    "purpose": "Raw acoustic speech sample archive",
+    "size": "61.57 MB",
+    "language": "Acoustic audio",
+    "license": "KPL Restricted / Speech Research",
+    "access_status": "RESTRICTED / ARCHIVED",
+    "training_eligible": "NO",
+    "reason": "Audio data only. Ineligible for text NMT training."
+  },
+  {
+    "source": "data/test_vectors/challenge_set_50.json",
+    "purpose": "Diagnostic evaluation challenge set (unseen classroom sentences)",
+    "size": "50 test sentences",
+    "language": "Hindi (hi)",
+    "license": "Internal Diagnostic Benchmark",
+    "access_status": "HELD-OUT EVALUATION ONLY",
+    "training_eligible": "NO (STRICT LEAKAGE PROHIBITION)",
+    "reason": "Held-out test benchmark. Must remain completely isolated from training sets."
+  },
+  {
+    "source": "data/test_vectors/phase18_external_challenge_52.json",
+    "purpose": "External unseen challenge benchmark across 25 categories",
+    "size": "52 test sentences",
+    "language": "Hindi (hi)",
+    "license": "Internal Diagnostic Benchmark",
+    "access_status": "HELD-OUT EVALUATION ONLY",
+    "training_eligible": "NO (STRICT LEAKAGE PROHIBITION)",
+    "reason": "Held-out test benchmark. Must remain completely isolated from training sets."
+  }
+]

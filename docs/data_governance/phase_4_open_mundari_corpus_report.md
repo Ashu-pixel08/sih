@@ -17,8 +17,8 @@ This report documents the exhaustive investigation, license verification, alignm
 1. **Repository Exhaustiveness:** Across the entire `global-asp/pb-source` repository (1,283 files, 17 languages, 419 unique stories), exactly **one story** exists in the Mundari language (`mqu`): **Story ID `0240` (*Haikoah Gama*)**.
 2. **License Gate:** Story 0240 is explicitly licensed under **Creative Commons Attribution 4.0 International (CC-BY 4.0)**, confirmed at three independent levels: in-file YAML/markdown metadata, the language directory manifest (`mqu/README.md`), and repository-wide licensing documentation.
 3. **Candidate Dataset Created:**
-   - [pratham_0240.json](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/data/incoming/pratham_0240.json) (27 candidate parallel records: 8 high-context scene blocks and 19 fine-grained atomic sentence pairs).
-   - [pratham_0240_license_manifest.json](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/data/incoming/pratham_0240_license_manifest.json) (Machine-readable legal provenance manifest).
+   - [pratham_0240.json](file:///./data/incoming/pratham_0240.json) (27 candidate parallel records: 8 high-context scene blocks and 19 fine-grained atomic sentence pairs).
+   - [pratham_0240_license_manifest.json](file:///./data/incoming/pratham_0240_license_manifest.json) (Machine-readable legal provenance manifest).
 4. **Validation Pass:** All 27 records pass 100% of automated intake contract checks (`DataIntakeValidator`) with **0 errors, 0 warnings, and 0 suspicious untranslated strings**.
 5. **Strict Quarantine Status:** Every record is tagged with `CANDIDATE_FOR_LINGUISTIC_VALIDATION` and `acceptance_status: SOURCE_FOUND`. Zero records were promoted to canonical broadcast-safe content.
 

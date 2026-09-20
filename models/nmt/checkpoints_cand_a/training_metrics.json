@@ -1,99 +1,56 @@
 {
-  "candidate_id": "Candidate_A_Calibrated_BPE",
-  "total_params": 6390188,
-  "model_size_mb": 24.38,
-  "best_val_loss": 5.0169,
-  "best_val_ppl": 150.95,
-  "total_training_time_s": 1165.0,
+  "candidate_name": "Candidate A (Refined BPE Transformer)",
+  "parameters": 9594688,
+  "model_size_fp32_mb": 36.6,
+  "config": {
+    "d_model": 256,
+    "nhead": 4,
+    "num_encoder_layers": 3,
+    "num_decoder_layers": 3,
+    "dim_feedforward": 512,
+    "dropout": 0.1
+  },
+  "epochs": 3,
+  "batch_size": 64,
+  "learning_rate": 0.0002,
+  "best_val_loss": 4.3508,
+  "best_val_ppl": 77.54,
+  "total_training_seconds": 472.24,
+  "hardware": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "cpu_count": 16,
+    "torch_version": "2.14.0+cpu",
+    "cuda_available": false,
+    "device_used": "cpu",
+    "scientific_honesty_note": "CUDA is unavailable on this system. All training runs honestly on CPU with batching, gradient accumulation, and validation checkpointing."
+  },
   "history": [
     {
       "epoch": 1,
-      "train_loss": 6.9071,
-      "train_ppl": 999.32,
-      "val_loss": 6.3483,
-      "val_ppl": 571.52,
-      "epoch_time_s": 112.46,
+      "train_loss": 4.638,
+      "train_ppl": 103.33,
+      "val_loss": 4.4121,
+      "val_ppl": 82.44,
+      "seconds": 162.18,
       "is_best": true
     },
     {
       "epoch": 2,
-      "train_loss": 6.2175,
-      "train_ppl": 501.44,
-      "val_loss": 6.0649,
-      "val_ppl": 430.46,
-      "epoch_time_s": 113.99,
+      "train_loss": 4.3841,
+      "train_ppl": 80.17,
+      "val_loss": 4.3753,
+      "val_ppl": 79.47,
+      "seconds": 158.44,
       "is_best": true
     },
     {
       "epoch": 3,
-      "train_loss": 5.9091,
-      "train_ppl": 368.37,
-      "val_loss": 5.7997,
-      "val_ppl": 330.21,
-      "epoch_time_s": 114.71,
-      "is_best": true
-    },
-    {
-      "epoch": 4,
-      "train_loss": 5.5892,
-      "train_ppl": 267.53,
-      "val_loss": 5.5121,
-      "val_ppl": 247.68,
-      "epoch_time_s": 115.67,
-      "is_best": true
-    },
-    {
-      "epoch": 5,
-      "train_loss": 5.2927,
-      "train_ppl": 198.87,
-      "val_loss": 5.3181,
-      "val_ppl": 204.0,
-      "epoch_time_s": 117.34,
-      "is_best": true
-    },
-    {
-      "epoch": 6,
-      "train_loss": 5.0475,
-      "train_ppl": 155.63,
-      "val_loss": 5.1905,
-      "val_ppl": 179.56,
-      "epoch_time_s": 115.24,
-      "is_best": true
-    },
-    {
-      "epoch": 7,
-      "train_loss": 4.8582,
-      "train_ppl": 128.79,
-      "val_loss": 5.0974,
-      "val_ppl": 163.59,
-      "epoch_time_s": 116.71,
-      "is_best": true
-    },
-    {
-      "epoch": 8,
-      "train_loss": 4.7267,
-      "train_ppl": 112.92,
-      "val_loss": 5.0437,
-      "val_ppl": 155.04,
-      "epoch_time_s": 119.68,
-      "is_best": true
-    },
-    {
-      "epoch": 9,
-      "train_loss": 4.6482,
-      "train_ppl": 104.4,
-      "val_loss": 5.0263,
-      "val_ppl": 152.36,
-      "epoch_time_s": 122.21,
-      "is_best": true
-    },
-    {
-      "epoch": 10,
-      "train_loss": 4.6173,
-      "train_ppl": 101.22,
-      "val_loss": 5.0169,
-      "val_ppl": 150.95,
-      "epoch_time_s": 116.59,
+      "train_loss": 4.2207,
+      "train_ppl": 68.08,
+      "val_loss": 4.3508,
+      "val_ppl": 77.54,
+      "seconds": 151.12,
       "is_best": true
     }
   ]

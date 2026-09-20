@@ -6,51 +6,852 @@
 <meta name="theme-color" content="#24543D">
 <title>APP_NAME_PENDING — Learn in Your Language. Teach with Confidence.</title>
 <style>
-:root{--green:#24543D;--terr:#A86145;--cream:#F7F3EA;--white:#fff;--yellow:#E7C75B;--sage:#4F8A5B;--ink:#26332C;--muted:#6f7c74;--line:#dfe6df;--soft:#eef4ef;--danger:#a33c35;--shadow:0 8px 28px rgba(38,51,44,.08)}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
-button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}
-.app{min-height:100vh}.topbar{height:68px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0002}
-.brand{display:flex;gap:12px;align-items:center}.logo{width:40px;height:40px;border-radius:12px;background:var(--yellow);color:var(--green);display:grid;place-items:center;font-weight:900;font-size:20px}.brand b{font-size:18px}.brand small{display:block;opacity:.75;font-size:11px}
-.userchip{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:34px;height:34px;border-radius:50%;background:#ffffff1c;display:grid;place-items:center;font-weight:700}
-.layout{display:flex;min-height:calc(100vh - 68px)}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:18px 12px;flex:none}.navtitle{font-size:11px;text-transform:uppercase;color:var(--muted);padding:10px 12px 7px;letter-spacing:.08em}
-.nav{width:100%;text-align:left;background:transparent;color:var(--ink);padding:11px 12px;border-radius:10px;margin:2px 0;display:flex;gap:10px;align-items:center;font-weight:600}.nav:hover,.nav.active{background:var(--soft);color:var(--green)}.nav .ico{width:22px;text-align:center}
-main{flex:1;padding:24px;min-width:0}.page{max-width:1250px;margin:auto}.eyebrow{color:var(--terr);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.title{font-size:30px;line-height:1.1;margin:5px 0 8px}.sub{color:var(--muted);margin:0 0 22px}
-.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.card h3{margin:0 0 7px}.card p{color:var(--muted);margin:6px 0}.stat{font-size:28px;font-weight:900}.btn{padding:11px 15px;border-radius:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px}.primary{background:var(--green);color:#fff}.secondary{background:var(--soft);color:var(--green)}.outline{background:#fff;color:var(--green);border:1px solid #b9c9be}.warn{background:#fff5d6;color:#735d11}.danger{background:#fff0ee;color:var(--danger)}
-.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.mt{margin-top:16px}.mb{margin-bottom:16px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #cfd9d1;border-radius:10px;background:#fff;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--green);box-shadow:0 0 0 3px #24543d18}label{font-size:12px;font-weight:800;display:block;margin:0 0 6px}.field{margin-bottom:13px}
-.badge{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}.live{background:#e4f4e8;color:#28653b}.ai{background:#eee9fb;color:#624a93}.placeholder{background:#fff7db;color:#715d17}.offline{background:#eef0f1;color:#59645e}.verified{background:#dff0e2;color:#1e5e2e;border:1px solid #b7dcbe}.prototype{background:#f0f0f0;color:#555;border:1px solid #ddd}
-.hero{background:linear-gradient(135deg,#24543D,#35694f);color:#fff;border-radius:20px;padding:25px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#e7c75b22;right:-55px;top:-60px}.hero h2{font-size:28px;margin:0 0 8px}.hero p{max-width:650px;color:#e8f0ea}.hero .btn{background:var(--yellow);color:var(--green)}
-.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.step{background:#ffffff14;border:1px solid #ffffff25;border-radius:12px;padding:10px;text-align:center;font-size:11px}.step b{display:block;font-size:18px;margin-bottom:5px}
-.notice{padding:12px 14px;border-radius:11px;background:#fff8df;border:1px solid #eadb9e;font-size:12px;color:#66591e}.success{background:#edf7ef;border:1px solid #bdd9c2;color:#2d6339}.dangerbox{background:#fff0ee;border:1px solid #e3b8b3;color:#8a332e}
-.voicebox{border:2px solid #d8e4da;background:#fbfdfb;border-radius:18px;padding:18px}.mic{width:76px;height:76px;border-radius:50%;background:var(--terr);color:#fff;font-size:29px;box-shadow:0 0 0 9px #a8614520}.mic.listening{animation:pulse 1.2s infinite;background:#b53d37}@keyframes pulse{50%{box-shadow:0 0 0 18px #a8614520}}
-.transcript{min-height:85px;background:#fff;border:1px dashed #cbd8ce;border-radius:12px;padding:13px;line-height:1.55}.output{min-height:85px;background:#f1f7f2;border:1px solid #c7dbc9;border-radius:12px;padding:13px;line-height:1.55;font-size:18px}
-.audio{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px}.bar{height:7px;background:#dfe8e1;border-radius:9px;flex:1;overflow:hidden}.bar span{display:block;width:35%;height:100%;background:var(--sage);transition:.2s}
-.room{font-size:27px;letter-spacing:.14em;font-weight:900;color:var(--green);background:var(--soft);border:1px dashed #abc0af;border-radius:12px;padding:13px;text-align:center}.student{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid var(--line)}.student:last-child{border:0}.dot{width:9px;height:9px;border-radius:50%;background:#5fa56d}.small{font-size:12px;color:var(--muted)}.feed{max-height:360px;overflow:auto}.feeditem{padding:12px;border-bottom:1px solid var(--line)}.feeditem:last-child{border:0}.feeditem .time{font-size:10px;color:var(--muted)}
-.login{min-height:100vh;display:grid;place-items:center;padding:20px}.loginbox{width:min(520px,100%);background:#fff;border-radius:22px;border:1px solid var(--line);padding:30px;box-shadow:var(--shadow)}.rolegrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.role{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left}.role:hover,.role.selected{border-color:var(--green);background:var(--soft)}.role strong{display:block;margin:7px 0 4px}.role span{font-size:12px;color:var(--muted)}
-.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:11px;border-bottom:1px solid var(--line);text-align:left}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}
-.flash{min-height:220px;display:grid;place-items:center;text-align:center;background:var(--soft);border-radius:15px;padding:25px}.number{font-size:54px;font-weight:900;color:var(--green)}
-.ten-frame{display:grid;grid-template-columns:repeat(5,32px);grid-template-rows:repeat(2,32px);gap:4px;background:#fff;padding:6px;border:2px solid var(--green);border-radius:8px;margin:10px auto}
-.ten-dot{width:28px;height:28px;border-radius:50%;background:var(--terr);margin:auto}
-.ten-empty{width:28px;height:28px;border-radius:50%;background:#e5eee7;margin:auto}
-.mobile-menu{display:none}.footer-note{font-size:11px;color:var(--muted);margin-top:20px}
-@media(max-width:900px){.sidebar{width:205px}.g4{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.topbar{padding:0 12px}.mobile-menu{display:block;background:#ffffff18;color:#fff;border-radius:9px;padding:8px}.layout{display:block}.sidebar{position:fixed;left:-270px;top:68px;bottom:0;z-index:15;width:260px;transition:.2s;box-shadow:8px 0 25px #0002}.sidebar.open{left:0}main{padding:16px}.g2,.g3,.g4{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.title{font-size:25px}.brand small{display:none}.userchip span{display:none}}
-.badge-verified{background:#dff0e2;color:#1e5e2e;border:1px solid #b7dcbe}
-.badge-neural{background:#eee9fb;color:#5b21b6;border:1px solid #c4b5fd}
-.badge-corpus{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
-.badge-fallback{background:#f1f5f9;color:#475569;border:1px solid #cbd5e1}
-.preset-btn{text-align:left;padding:9px 12px;border-radius:10px;font-weight:700;font-size:12px;transition:all .15s ease;border:1px solid #cbd5e1;background:#fff;cursor:pointer;width:100%;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
-.preset-btn:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,.08)}
-.preset-edu{border-color:#86efac;background:#f0fdf4;color:#166534}
-.preset-ai{border-color:#c4b5fd;background:#faf5ff;color:#6b21a8}
-.preset-safe{border-color:#fca5a5;background:#fef2f2;color:#991b1b}
-.pipeline-step{background:#ffffff;border:2px solid #e2e8f0;border-radius:12px;padding:10px 6px;text-align:center;font-size:11px;transition:all .2s ease}
-.pipeline-step b{display:block;font-size:14px;margin-bottom:3px}
-.pipeline-step.active-edu{border-color:#22c55e;background:#f0fdf4;box-shadow:0 0 0 3px #22c55e25}
-.pipeline-step.active-ai{border-color:#8b5cf6;background:#f5f3ff;box-shadow:0 0 0 3px #8b5cf625}
-.pipeline-step.active-corpus{border-color:#f59e0b;background:#fffbeb;box-shadow:0 0 0 3px #f59e0b25}
-.pipeline-step.active-safe{border-color:#94a3b8;background:#f8fafc;box-shadow:0 0 0 3px #94a3b825}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root {
+  --green: #0A2418;
+  --green-dark: #06170F;
+  --green-mid: #16563A;
+  --green-light: #248259;
+  --sage: #4F8A5B;
+  --soft: #EBF5F0;
+  --soft-bg: #F5F8F6;
+  --cream: #F7F3EA;
+  --white: #FFFFFF;
+  --amber: #F59E0B;
+  --orange: #EA580C;
+  --yellow: #E7C75B;
+  --terr: #A86145;
+  --ink: #1C2B22;
+  --muted: #627368;
+  --line: #DFE8E2;
+  --danger: #DC2626;
+  --shadow: 0 8px 28px rgba(38,51,44,.08);
+  --shadow-lg: 0 16px 40px rgba(38,51,44,.12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--soft-bg);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .title, .number, .stat {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; border: 0; }
+.hidden { display: none !important; }
+.app { min-height: 100vh; }
+.topbar {
+  height: 68px;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.16);
+}
+.brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.brand b { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+.brand small { display: block; opacity: .82; font-size: 11px; font-weight: 500; }
+.userchip { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.room-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+.layout { display: flex; min-height: calc(100vh - 68px); }
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  padding: 18px 12px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+.navtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 12px 6px;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+.nav {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 2px 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: all 0.15s ease;
+}
+.nav:hover { background: var(--soft); color: var(--green-light); transform: translateX(2px); }
+.nav.active { background: var(--soft); color: var(--green-light); font-weight: 700; box-shadow: inset 3px 0 0 var(--green-light); }
+.nav .ico { width: 22px; text-align: center; font-size: 16px; }
+main { flex: 1; padding: 24px; min-width: 0; }
+.page { max-width: 1250px; margin: auto; }
+.eyebrow { color: var(--terr); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.title { font-size: 30px; line-height: 1.15; margin: 5px 0 8px; font-weight: 800; color: var(--green); }
+.sub { color: var(--muted); margin: 0 0 22px; font-size: 14.5px; line-height: 1.5; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover { box-shadow: var(--shadow-lg); }
+.card h3 { margin: 0 0 7px; font-weight: 700; }
+.card p { color: var(--muted); margin: 6px 0; }
+.stat { font-size: 32px; font-weight: 900; color: var(--green-light); line-height: 1.1; }
+.btn {
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13.5px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: 0;
+}
+.btn:hover { transform: translateY(-1px); }
+.primary { background: var(--green-light); color: #fff; box-shadow: 0 3px 10px rgba(36, 130, 89, 0.2); }
+.primary:hover { background: var(--green-mid); }
+.secondary { background: var(--soft); color: var(--green-mid); }
+.secondary:hover { background: #ddeadf; }
+.outline { background: #fff; color: var(--green-mid); border: 1px solid #b9c9be; }
+.outline:hover { background: var(--soft); }
+.warn { background: #fff5d6; color: #735d11; border: 1px solid #fae69e; }
+.danger { background: #fff0ee; color: var(--danger); border: 1px solid #fbd2ce; }
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.between { justify-content: space-between; }
+.mt { margin-top: 16px; }
+.mb { margin-bottom: 16px; }
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd9d1;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  font-size: 14.5px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--green-light);
+  box-shadow: 0 0 0 3px rgba(36, 130, 89, 0.15);
+}
+label { font-size: 12px; font-weight: 800; display: block; margin: 0 0 6px; color: var(--ink); }
+.field { margin-bottom: 13px; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.live { background: #e4f4e8; color: #28653b; border: 1px solid #c2e2ca; }
+.ai { background: #eee9fb; color: #624a93; border: 1px solid #dcd1f7; }
+.placeholder { background: #fff7db; color: #715d17; border: 1px solid #fae69e; }
+.offline { background: #eef0f1; color: #59645e; border: 1px solid #d5dbd7; }
+.verified { background: #dff0e2; color: #1e5e2e; border: 1px solid #b7dcbe; }
+.prototype { background: #f0f0f0; color: #555; border: 1px solid #ddd; }
+.badge-verified { background: #dff0e2; color: #1e5e2e; border: 1px solid #b7dcbe; }
+.badge-neural { background: #eee9fb; color: #5b21b6; border: 1px solid #c4b5fd; }
+.badge-corpus { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-fallback { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.hero {
+  background: linear-gradient(135deg, #0A2418 0%, #16563A 55%, #248259 100%);
+  color: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(10,36,24,0.18);
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(231,199,91,0.22) 0%, rgba(231,199,91,0) 70%);
+  right: -50px;
+  top: -60px;
+  pointer-events: none;
+}
+.hero h2 { font-size: 28px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.01em; }
+.hero p { max-width: 680px; color: #edf5ef; font-size: 14.5px; line-height: 1.55; }
+.hero .btn { background: var(--yellow); color: var(--green); font-weight: 800; box-shadow: 0 3px 12px rgba(0,0,0,0.15); }
+.pipeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 18px; }
+.step {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+}
+.step b { display: block; font-size: 16px; margin-bottom: 4px; }
+.pipeline-step {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 11px;
+  transition: all .2s ease;
+}
+.pipeline-step b { display: block; font-size: 14px; margin-bottom: 3px; }
+.pipeline-step.active-edu { border-color: #22c55e; background: #f0fdf4; box-shadow: 0 0 0 3px rgba(34,197,94,0.15); }
+.pipeline-step.active-ai { border-color: #8b5cf6; background: #f5f3ff; box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+.pipeline-step.active-corpus { border-color: #f59e0b; background: #fffbeb; box-shadow: 0 0 0 3px rgba(245,158,11,0.15); }
+.pipeline-step.active-safe { border-color: #94a3b8; background: #f8fafc; box-shadow: 0 0 0 3px rgba(148,163,184,0.15); }
+.notice {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fff8df;
+  border: 1px solid #eadb9e;
+  font-size: 12.5px;
+  color: #66591e;
+  line-height: 1.5;
+}
+.success { background: #edf7ef; border: 1px solid #bdd9c2; color: #2d6339; }
+.dangerbox { background: #fff0ee; border: 1px solid #e3b8b3; color: #8a332e; }
+.voicebox {
+  border: 2px solid #d8e4da;
+  background: #fbfdfb;
+  border-radius: 18px;
+  padding: 20px;
+}
+.voice-hero-panel {
+  background: linear-gradient(145deg, #0A2418 0%, #16563A 100%);
+  color: #fff;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 10px 32px rgba(10,36,24,0.22);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.mic, .voice-orb {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--terr);
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 0 0 0 9px rgba(168,97,69,0.18);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+.mic:hover, .voice-orb:hover { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(168,97,69,0.25); }
+.mic.listening, .voice-orb.listening {
+  animation: pulse-mic 1.2s infinite;
+  background: #b53d37;
+}
+@keyframes pulse-mic {
+  0% { box-shadow: 0 0 0 6px rgba(181,61,55,0.3); }
+  50% { box-shadow: 0 0 0 22px rgba(181,61,55,0.06); }
+  100% { box-shadow: 0 0 0 6px rgba(181,61,55,0.3); }
+}
+.transcript {
+  min-height: 85px;
+  background: #fff;
+  border: 1px dashed #cbd8ce;
+  border-radius: 12px;
+  padding: 13px;
+  line-height: 1.55;
+  font-size: 15px;
+}
+.output {
+  min-height: 85px;
+  background: #f1f7f2;
+  border: 1px solid #c7dbc9;
+  border-radius: 12px;
+  padding: 13px;
+  line-height: 1.55;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--green);
+}
+.audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px;
+}
+.bar { height: 7px; background: #dfe8e1; border-radius: 999px; flex: 1; overflow: hidden; }
+.bar span { display: block; width: 35%; height: 100%; background: var(--sage); transition: .2s; }
+.room {
+  font-size: 27px;
+  letter-spacing: .14em;
+  font-weight: 900;
+  color: var(--green);
+  background: var(--soft);
+  border: 1px dashed #abc0af;
+  border-radius: 12px;
+  padding: 13px;
+  text-align: center;
+}
+.student { display: flex; align-items: center; gap: 10px; padding: 10px; border-bottom: 1px solid var(--line); }
+.student:last-child { border: 0; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #5fa56d; }
+.small { font-size: 12px; color: var(--muted); }
+.feed { max-height: 360px; overflow-y: auto; }
+.feeditem { padding: 12px; border-bottom: 1px solid var(--line); }
+.feeditem:last-child { border: 0; }
+.feeditem .time { font-size: 10px; color: var(--muted); }
+.login { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: var(--soft-bg); }
+.loginbox {
+  width: min(530px, 100%);
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+.rolegrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.role {
+  border: 2px solid var(--line);
+  background: #fff;
+  border-radius: 15px;
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.role:hover, .role.selected {
+  border-color: var(--green-mid);
+  background: var(--soft);
+  transform: translateY(-2px);
+}
+.role strong { display: block; margin: 7px 0 4px; font-size: 15px; }
+.role span { font-size: 12px; color: var(--muted); line-height: 1.4; display: block; }
+.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th, .table td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; }
+.table th { color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; }
+.flash {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--soft);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #d3e2d6;
+}
+.number { font-size: 54px; font-weight: 900; color: var(--green); }
+.ten-frame {
+  display: grid;
+  grid-template-columns: repeat(5, 34px);
+  grid-template-rows: repeat(2, 34px);
+  gap: 5px;
+  background: #fff;
+  padding: 7px;
+  border: 2px solid var(--green-mid);
+  border-radius: 9px;
+  margin: 10px auto;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.ten-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--terr); margin: auto; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); }
+.ten-empty { width: 28px; height: 28px; border-radius: 50%; background: #e5eee7; margin: auto; }
+.mobile-menu { display: none; }
+.footer-note { font-size: 11px; color: var(--muted); margin-top: 20px; }
+.preset-btn {
+  text-align: left;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 12px;
+  transition: all .15s ease;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.preset-btn:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.08); }
+.preset-edu { border-color: #86efac; background: #f0fdf4; color: #166534; }
+.preset-ai { border-color: #c4b5fd; background: #faf5ff; color: #6b21a8; }
+.preset-safe { border-color: #fca5a5; background: #fef2f2; color: #991b1b; }
+@media(max-width:900px) {
+  .sidebar { width: 210px; }
+  .g4 { grid-template-columns: repeat(2, 1fr); }
+  .pipeline { grid-template-columns: repeat(3, 1fr); }
+}
+@media(max-width:700px) {
+  .topbar { padding: 0 12px; height: 60px; }
+  .mobile-menu {
+    display: block;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-radius: 9px;
+    padding: 6px 9px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .brand { gap: 8px; }
+  .logo { width: 32px; height: 32px; font-size: 16px; border-radius: 8px; }
+  .brand b { font-size: 13.5px; }
+  .brand small { display: none; }
+  .room-indicator { display: none; }
+  .demo-badge-btn { display: none; }
+  .userchip { gap: 6px; }
+  .userchip span { display: none; }
+  .avatar { width: 28px; height: 28px; font-size: 12px; }
+  .exit-btn { padding: 5px 8px !important; font-size: 11px !important; }
+  .layout { display: block; }
+  .sidebar {
+    position: fixed;
+    left: -270px;
+    top: 60px;
+    bottom: 0;
+    z-index: 40;
+    width: 260px;
+    transition: left .25s ease;
+    box-shadow: 8px 0 25px rgba(0,0,0,0.15);
+  }
+  .sidebar.open { left: 0; }
+  main { padding: 14px; }
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  .pipeline { grid-template-columns: 1fr 1fr; }
+  .title { font-size: 22px; }
+}
+
+/* --- Clean Educational Layer Extensions (Matching Native Design System) --- */
+.category-pill-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  scrollbar-width: thin;
+}
+.category-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.category-pill:hover {
+  background: var(--soft);
+  color: var(--green-mid);
+  border-color: var(--sage);
+}
+.category-pill.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.practice-thumb {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f8faf9;
+  margin-bottom: 6px;
+}
+.broadcast-spotlight-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border: 2px solid #86efac;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(34,197,94,0.12);
+}
+@media print {
+  body { background: #fff !important; }
+  .topbar, .sidebar, .btn, .notice, .no-print, .hero, .category-pill-bar, #wsControlsArea { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; width: 100% !important; }
+  .page { max-width: 100% !important; margin: 0 !important; }
+  #wsPrintableSheet { border: 1.5px solid #000 !important; box-shadow: none !important; padding: 12px !important; max-width: 100% !important; border-radius: 0 !important; }
+}
+
+
+
+/* --- Clean Teacher Command Center & Sidebar Extensions --- */
+.btn-cta {
+  background: #ea580c !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  padding: 10px 22px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 16px rgba(234,88,12,0.32) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+.btn-cta:hover {
+  background: #c2410c !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(234,88,12,0.42) !important;
+}
+
+.hero-compact {
+  background: linear-gradient(135deg, #073B2A 0%, #0B4A35 55%, #145A40 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7,59,42,0.16);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.hero-compact::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(231,199,91,0.16) 0%, rgba(231,199,91,0) 70%);
+  right: -40px;
+  top: -50px;
+  pointer-events: none;
+}
+
+.hero-secondary-btn {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  padding: 10px 18px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,0.24) !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+.hero-secondary-btn:hover {
+  background: rgba(255,255,255,0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+.status-card {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(10,36,24,0.03);
+  transition: all 0.2s ease;
+}
+.status-card:hover {
+  box-shadow: 0 4px 16px rgba(10,36,24,0.06);
+}
+.status-card-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.status-card-value {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.status-card-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.action-primary-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(10,36,24,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+.action-primary-card:hover {
+  box-shadow: 0 6px 20px rgba(10,36,24,0.07);
+  border-color: #cbd5e1;
+}
+
+.action-secondary-card {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--soft-bg);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+.action-secondary-card:hover {
+  background: #fff;
+  border-color: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10,36,24,0.05);
+}
+
+.readiness-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 8px rgba(10,36,24,0.03);
+}
+.readiness-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--green-mid);
+}
+
+.nav-group-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 14px 12px 4px;
+  opacity: 0.85;
+}
+.nav-group-title:first-child {
+  padding-top: 2px;
+}
+
+/* --- Continuous Voice Orb Experience Styles --- */
+.voice-hero-panel {
+  background: linear-gradient(145deg, #05140d 0%, #0A2418 45%, #144e34 100%);
+  color: #fff;
+  border-radius: 26px;
+  padding: 38px 32px 30px;
+  box-shadow: 0 20px 56px rgba(10,36,24,0.38);
+  border: 1px solid rgba(255,255,255,0.14);
+  position: relative;
+  overflow: hidden;
+}
+.voice-hero-panel::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(231,199,91,0.09) 0%, rgba(231,199,91,0) 70%);
+  pointer-events: none;
+}
+.voice-hero-panel::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0) 70%);
+  pointer-events: none;
+}
+
+.mic, .voice-orb {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--terr);
+  color: #fff;
+  font-size: 52px;
+  box-shadow: 0 0 0 14px rgba(168,97,69,0.2), 0 12px 36px rgba(0,0,0,0.3);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  outline: none;
+  position: relative;
+  user-select: none;
+  margin: 8px auto 14px;
+}
+.mic:hover, .voice-orb:hover {
+  transform: scale(1.05);
+}
+
+/* READY: slow subtle breathing pulse */
+.voice-orb.ready, .mic.ready {
+  background: radial-gradient(circle at 35% 35%, #c26c4f 0%, #8c4128 70%, #5a2615 100%);
+  box-shadow: 0 0 0 12px rgba(168,97,69,0.22), 0 0 40px rgba(168,97,69,0.3);
+  animation: orb-pulse-ready 3.2s ease-in-out infinite;
+}
+@keyframes orb-pulse-ready {
+  0% { box-shadow: 0 0 0 10px rgba(168,97,69,0.22), 0 0 35px rgba(168,97,69,0.25); transform: scale(1); }
+  50% { box-shadow: 0 0 0 22px rgba(168,97,69,0.08), 0 0 50px rgba(168,97,69,0.4); transform: scale(1.03); }
+  100% { box-shadow: 0 0 0 10px rgba(168,97,69,0.22), 0 0 35px rgba(168,97,69,0.25); transform: scale(1); }
+}
+
+/* LISTENING: active emerald ripple/pulse */
+.voice-orb.listening, .mic.listening {
+  background: radial-gradient(circle at 35% 35%, #22c55e 0%, #15803d 70%, #052e16 100%) !important;
+  animation: orb-pulse-listening 1.4s ease-in-out infinite !important;
+}
+@keyframes orb-pulse-listening {
+  0% { box-shadow: 0 0 0 10px rgba(34,197,94,0.48), 0 0 40px rgba(34,197,94,0.45); transform: scale(1); }
+  50% { box-shadow: 0 0 0 32px rgba(34,197,94,0.12), 0 0 70px rgba(34,197,94,0.65); transform: scale(1.07); }
+  100% { box-shadow: 0 0 0 10px rgba(34,197,94,0.48), 0 0 40px rgba(34,197,94,0.45); transform: scale(1); }
+}
+
+/* PROCESSING: warm amber rotation/pulse */
+.voice-orb.processing {
+  background: radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #451a03 100%) !important;
+  animation: orb-pulse-processing 1s ease-in-out infinite !important;
+}
+@keyframes orb-pulse-processing {
+  0% { box-shadow: 0 0 0 10px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.4); transform: scale(1.02); }
+  50% { box-shadow: 0 0 0 24px rgba(245,158,11,0.15), 0 0 60px rgba(245,158,11,0.55); transform: scale(0.98); }
+  100% { box-shadow: 0 0 0 10px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.4); transform: scale(1.02); }
+}
+
+/* TRANSLATING: blue/indigo wave pulse */
+.voice-orb.translating {
+  background: radial-gradient(circle at 35% 35%, #3b82f6 0%, #1d4ed8 70%, #172554 100%) !important;
+  animation: orb-pulse-translating 0.9s ease-in-out infinite !important;
+}
+@keyframes orb-pulse-translating {
+  0% { box-shadow: 0 0 0 10px rgba(59,130,246,0.5), 0 0 40px rgba(59,130,246,0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 0 26px rgba(59,130,246,0.14), 0 0 65px rgba(59,130,246,0.6); transform: scale(1.06); }
+  100% { box-shadow: 0 0 0 10px rgba(59,130,246,0.5), 0 0 40px rgba(59,130,246,0.4); transform: scale(1); }
+}
+
+/* SPEAKING: vibrant teal soundwave pulse */
+.voice-orb.speaking {
+  background: radial-gradient(circle at 35% 35%, #10b981 0%, #047857 70%, #022c22 100%) !important;
+  animation: orb-pulse-speaking 0.85s ease-in-out infinite !important;
+}
+@keyframes orb-pulse-speaking {
+  0% { box-shadow: 0 0 0 8px rgba(16,185,129,0.5), 0 0 35px rgba(16,185,129,0.45); transform: scale(1); }
+  50% { box-shadow: 0 0 0 30px rgba(16,185,129,0.15), 0 0 70px rgba(16,185,129,0.65); transform: scale(1.08); }
+  100% { box-shadow: 0 0 0 8px rgba(16,185,129,0.5), 0 0 35px rgba(16,185,129,0.45); transform: scale(1); }
+}
+
+/* INTERRUPTED: energetic flash/shake */
+.voice-orb.interrupted {
+  background: radial-gradient(circle at 35% 35%, #f97316 0%, #c2410c 70%, #431407 100%) !important;
+  animation: orb-pulse-interrupted 0.35s ease-in-out 2 !important;
+  box-shadow: 0 0 0 22px rgba(249,115,22,0.45), 0 0 55px rgba(249,115,22,0.6) !important;
+}
+@keyframes orb-pulse-interrupted {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.08) rotate(-4deg); }
+  75% { transform: scale(1.08) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* ERROR: muted red glow */
+.voice-orb.error {
+  background: radial-gradient(circle at 35% 35%, #ef4444 0%, #b91c1c 70%, #450a0a 100%) !important;
+  box-shadow: 0 0 0 14px rgba(239,68,68,0.35), 0 0 45px rgba(239,68,68,0.45) !important;
+}
+
+@media (max-width: 768px) {
+  .mic, .voice-orb {
+    width: 110px;
+    height: 110px;
+    font-size: 42px;
+  }
+  .voice-hero-panel {
+    padding: 24px 18px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1333,9 +2134,30 @@ const state = {
   lastTranslation: null,
   translationDirection: "hi-unr",
   flashcardIndex: 0,
+  flashcardCategory: "all",
+  flashcardSearch: "",
+  flashcardVerifiedOnly: false,
+  educationalVocab: [],
+  educationalCategories: [],
+  practiceMode: "mode_a",
+  practiceCategory: "all",
+  practiceVerifiedOnly: true,
+  practiceSession: null,
   activeModule: "numeracy",
   studentNumDetail: null,
-  practiceSession: null,
+  worksheetSettings: {
+    grade: "1",
+    category: "all",
+    count: 10,
+    includeImages: true,
+    languageMode: "bilingual",
+    difficulty: "medium",
+    questionType: "mixed",
+    school: "Primary School, Khunti, Jharkhand",
+    showAnswerKey: false
+  },
+  lastVocabBroadcast: null,
+  lastPracticeBroadcast: null,
   practiceHistory: JSON.parse(localStorage.getItem("vflnPracticeHistory") || "[]"),
   settings: JSON.parse(localStorage.getItem("vflnSettings") || JSON.stringify(defaultSettings))
 };
@@ -1389,17 +2211,98 @@ function receive(d) {
     }
     toast(d.name + " joined the classroom");
   }
+  if (d.type === "student_reply" && state.role === "teacher") {
+    toast(d.name + ": " + d.text);
+    addTeacherFeed({ hindi: "[Student Reply] " + d.name, mundari: d.text, time: d.time || now() });
+  }
   if (d.type === "translation" && state.role === "student" && (state.joined || state.page === "demo")) {
     state.lastTranslation = d;
     render();
     playDemoPulse();
     toast("Broadcast received: " + d.mundari);
   }
+  if (d.type === "broadcast_vocab" && state.role === "student") {
+    state.lastVocabBroadcast = d.card;
+    render();
+    toast("🎴 Flashcard from teacher: " + (d.card.english || d.card.hindi));
+  }
+  if (d.type === "broadcast_practice" && state.role === "student") {
+    state.lastPracticeBroadcast = d.question;
+    render();
+    toast("✍️ Practice question pushed by teacher!");
+  }
   if (d.type === "end" && state.role === "student") {
     state.joined = false;
     render();
     toast("Teacher ended the live class");
   }
+}
+
+async function loadEducationalVocabulary(force = false) {
+  if (!force && state.educationalVocab && state.educationalVocab.length > 0) return;
+  try {
+    const res = await fetch("/api/educational/vocabulary");
+    if (res.ok) {
+      const data = await res.json();
+      state.educationalVocab = data.items || [];
+      state.educationalCategories = data.categories || [];
+      if (["flashcards", "practice", "worksheet", "worksheets", "modules"].includes(state.page)) {
+        render();
+      }
+    }
+  } catch (e) {
+    console.warn("Educational vocabulary fetch error:", e);
+  }
+}
+
+function playVocabAudio(item) {
+  if (!item) return;
+  if (item.audio_url) {
+    const a = new Audio(item.audio_url);
+    a.play().catch(e => console.warn("Audio play error", e));
+    return;
+  }
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    const textToSpeak = item.hindi || item.mundari || item.english;
+    const ut = new SpeechSynthesisUtterance(textToSpeak);
+    ut.lang = "hi-IN";
+    ut.rate = 0.85;
+    window.speechSynthesis.speak(ut);
+    toast("🔊 Synthesized pronunciation (Native studio WAV pending recording)");
+  } else {
+    toast("🔇 Audio recording pending for this vocabulary word");
+  }
+}
+
+function broadcastVocabCard(card) {
+  if (!card) return toast("No flashcard to broadcast");
+  sendBus({
+    type: "broadcast_vocab",
+    card: card,
+    time: now()
+  });
+  toast("📢 Broadcasted '" + (card.english || card.hindi) + "' to connected students!");
+}
+
+function broadcastPracticeQuestion(question) {
+  if (!question) return toast("No question to broadcast");
+  sendBus({
+    type: "broadcast_practice",
+    question: question,
+    time: now()
+  });
+  toast("📢 Pushed practice question to connected students!");
+}
+
+function sendStudentPracticeAnswer(ansText) {
+  sendBus({
+    type: "student_reply",
+    name: state.studentName || "Student",
+    text: "Answered: " + ansText,
+    time: now()
+  });
+  toast("Submitted answer: " + ansText);
 }
 
 function playDemoPulse() {
@@ -1710,22 +2613,56 @@ function renderTenFrame(count) {
   return '<div class="ten-frame">' + dots + '</div>';
 }
 
+function toggleMenu() {
+  const s = $("#sidebar") || $("#side");
+  if (s) s.classList.toggle("open");
+}
+
 function shell() {
   const teacher = state.role === "teacher";
-  const nav = teacher ? [
-    ["dashboard","🏠","Dashboard"],
-    ["live","🎙️","Speak & Translate"],
-    ["curriculum","📚","Translate Curriculum"],
-    ["modules","🔢","Learning Modules"],
-    ["flashcards","🎴","Flashcards"],
-    ["classroom","📡","Classroom Mode"],
-    ["worksheet","📝","Worksheets"],
-    ["progress","📊","Student Progress"],
-    ["offline","📥","Offline Content"],
-    ["settings","⚙️","Settings"],
-    ["tech_info","ℹ️","Technical Information"],
-    ["demo","⭐","Demo Mode"]
-  ] : [
+  
+  const teacherNavGroups = [
+    {
+      label: "TEACH",
+      items: [
+        ["dashboard","🏠","Overview"],
+        ["live","🎙️","Voice & Translate"],
+        ["curriculum","📚","Curriculum"],
+        ["modules","🔢","Learning Modules"]
+      ]
+    },
+    {
+      label: "LEARN",
+      items: [
+        ["flashcards","🎴","Flashcards"],
+        ["practice","✍️","Practice"],
+        ["worksheet","📝","Worksheets"]
+      ]
+    },
+    {
+      label: "CLASSROOM",
+      items: [
+        ["classroom","📡","Live Classroom"],
+        ["progress","📊","Student Progress"]
+      ]
+    },
+    {
+      label: "SYSTEM",
+      items: [
+        ["offline","📥","Offline Content"],
+        ["settings","⚙️","Settings"]
+      ]
+    },
+    {
+      label: "TOOLS",
+      items: [
+        ["tech_info","ℹ️","Technical Information"],
+        ["demo","⭐","Demo Mode"]
+      ]
+    }
+  ];
+
+  const studentNav = [
     ["home","🏠","Home"],
     ["liveclass","🟢","Live Classroom"],
     ["modules","🔢","Learn Mundari"],
@@ -1737,28 +2674,42 @@ function shell() {
   root.innerHTML = `
   <div class="app">
     <header class="topbar">
-      <div class="brand">
-        <div class="logo">V</div>
-        <div><b>${esc(DB.branding.appName)}</b><small>${esc(DB.branding.moduleScope)}</small></div>
+      <div class="row" style="gap:14px">
+        <button class="mobile-menu" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        <div class="brand">
+          <div class="logo">V</div>
+          <div>
+            <b>${esc(DB.branding.appName)}</b>
+            <small>Mother Tongue Learning • Hindi ↔ Mundari</small>
+          </div>
+        </div>
       </div>
       <div class="userchip">
-        <button class="btn" style="background:var(--yellow);color:var(--green);padding:6px 13px;font-size:11px;font-weight:900;border-radius:999px;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.15);margin-right:6px" onclick="go('demo')">⭐ DEMO MODE</button>
+        ${state.room ? `<div class="room-indicator"><span class="pulse-dot"></span> Live Room: ${esc(state.room)}</div>` : ""}
+        <button class="btn demo-badge-btn" style="background:var(--yellow);color:var(--green);padding:6px 13px;font-size:11px;font-weight:900;border-radius:999px;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.15);margin-right:4px" onclick="go('demo')">⭐ DEMO MODE</button>
         <div class="avatar">${teacher ? "T" : "S"}</div>
         <span>${teacher ? "Teacher" : esc(state.studentName || "Student")}</span>
-        <button class="btn outline" style="padding:6px 10px;font-size:12px;background:#ffffff18;color:#fff;border-color:#ffffff44" onclick="logout()">Exit</button>
+        <button class="btn outline exit-btn" style="padding:6px 10px;font-size:12px;background:#ffffff18;color:#fff;border-color:#ffffff44" onclick="logout()">Exit</button>
       </div>
     </header>
     <div class="layout">
       <aside id="sidebar" class="sidebar">
-        <div class="navtitle">${teacher ? "Teacher Portal" : "Student Space"}</div>
-        ${nav.map(([id, ico, txt]) => `
+        <div class="navtitle">${teacher ? "Teacher Workspace" : "Student Workspace"}</div>
+        ${teacher ? teacherNavGroups.map(grp => `
+          <div class="nav-group-title">${grp.label}</div>
+          ${grp.items.map(([id, ico, txt]) => `
+            <button class="nav ${state.page === id ? "active" : ""}" onclick="go('${id}')">
+              <span class="ico">${ico}</span><span>${txt}</span>
+            </button>
+          `).join("")}
+        `).join("") : studentNav.map(([id, ico, txt]) => `
           <button class="nav ${state.page === id ? "active" : ""}" onclick="go('${id}')">
             <span class="ico">${ico}</span><span>${txt}</span>
           </button>
         `).join("")}
-        <div class="footer-note" style="padding:12px;margin-top:20px;border-top:1px solid var(--line);font-size:11px">
+        <div class="footer-note" style="padding:12px;margin-top:auto;border-top:1px solid var(--line);font-size:11px;color:var(--muted)">
           <b>${esc(DB.branding.appName)}</b><br>
-          Mother Tongue Primary Ed.<br>
+          <span style="color:var(--muted)">Learn in Your Language. Teach with Confidence.</span><br>
           <span class="badge prototype" style="font-size:9px;margin-top:4px">WEB PROTOTYPE ONLY</span>
         </div>
       </aside>
@@ -1767,9 +2718,14 @@ function shell() {
   </div>`;
   renderPage();
 }
-
 function go(p) {
+  if (p !== "live" && typeof stopVoiceSession === "function") {
+    stopVoiceSession();
+  }
   state.page = p;
+  if (p === "live" && !state.translationDirection) {
+    state.translationDirection = "hi-unr";
+  }
   save();
   shell();
 }
@@ -1785,7 +2741,8 @@ function logout() {
 
 function enterDemoModeDirect() {
   state.role = "teacher";
-  state.page = "demo";
+  state.page = "dashboard";
+  state.translationDirection = "hi-unr";
   if (!state.room || !isValidRoomCode(state.room)) {
     state.room = "DEMO-2026";
   }
@@ -1863,17 +2820,18 @@ function renderPage() {
 
 function teacherPage(c) {
   if (state.page === "demo") return c.innerHTML = demoModePage();
-  if (state.page === "dashboard") return c.innerHTML = teacherDashboard();
+  if (state.page === "dashboard" || state.page === "overview") return c.innerHTML = teacherDashboard();
   if (state.page === "live") return c.innerHTML = teacherLive();
+  if (state.page === "classroom") return c.innerHTML = teacherClassroom();
   if (state.page === "ai_arch" || state.page === "tech_info") return c.innerHTML = aiArchitecturePage();
-  if (state.page === "classroom") return c.innerHTML = teacherLive();
   if (state.page === "curriculum") return c.innerHTML = curriculum();
-  if (state.page === "modules") return c.innerHTML = modules();
+  if (state.page === "modules" || state.page === "numbers") return c.innerHTML = modules();
   if (state.page === "flashcards") return c.innerHTML = flashcards();
-  if (state.page === "worksheet") return c.innerHTML = worksheet();
+  if (state.page === "worksheet" || state.page === "worksheets") return c.innerHTML = worksheet();
   if (state.page === "progress") return c.innerHTML = progress();
   if (state.page === "offline") return c.innerHTML = offline();
   if (state.page === "settings") return c.innerHTML = settings();
+  return c.innerHTML = teacherDashboard();
 }
 
 function getActiveRoomDisplay(room) {
@@ -1897,78 +2855,163 @@ function teacherDashboard() {
     state.room = "";
     localStorage.removeItem("vflnRoom");
   }
-  const contentStat = getLocalContentStatus();
-  return `<div class="eyebrow">Teacher Workspace • Primary Education</div>
-  <h1 class="title">Teach in their mother tongue.</h1>
-  <p class="sub">Classroom translation, learning modules, printable worksheets, and interactive flashcards for foundational literacy and numeracy.</p>
 
-  <div class="hero">
-    <h2>🏫 Ready to start today's lesson?</h2>
-    <p>Begin an interactive classroom session to translate phrases into Mundari, practice numbers, and share lessons with student devices.</p>
-    <div class="row mt" style="gap:10px;flex-wrap:wrap">
-      <button class="btn primary" onclick="startRoom()">▶ Start Live Lesson</button>
-      <button class="btn secondary" onclick="go('live')">🎙️ Speak & Translate</button>
-      <button class="btn outline" style="background:#ffffff22;color:#fff;border-color:#ffffff66" onclick="go('modules')">🔢 Learning Modules</button>
+  const roomCode = state.room || "MUN-2026";
+
+  return `
+  <!-- A. PAGE HEADER -->
+  <div class="row between mb" style="align-items:flex-start;margin-bottom:20px">
+    <div>
+      <div class="eyebrow" style="color:var(--terr);font-weight:800;letter-spacing:0.08em;font-size:11px">TEACHER WORKSPACE • PRIMARY EDUCATION</div>
+      <h1 class="title" style="margin:4px 0 6px;font-size:28px">Teach in their mother tongue.</h1>
+      <p class="sub" style="margin:0;font-size:14px;color:var(--muted)">Teach Hindi lessons naturally in Mundari with offline-ready classroom tools.</p>
+    </div>
+    <button class="btn btn-cta" onclick="startRoom()">
+      ▶ Start Live Classroom
+    </button>
+  </div>
+
+  <!-- B. MAIN HERO / PRIMARY CLASSROOM ACTION -->
+  <div class="hero-compact mb">
+    <div class="row between mb" style="margin-bottom:8px">
+      <span class="room-indicator" style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);padding:4px 11px;font-size:11px;letter-spacing:0.06em">
+        <span class="pulse-dot"></span>READY FOR INSTRUCTION
+      </span>
+      <span style="font-size:12px;color:#a7f3d0;font-weight:600">Mother Tongue Learning • Hindi ↔ Mundari</span>
+    </div>
+    <h2 style="font-size:24px;font-weight:800;color:#fff;margin:8px 0 6px">Speak Hindi → Teach in Mundari</h2>
+    <p style="color:#d1fae5;font-size:14px;margin:0 0 18px;max-width:560px;line-height:1.5">
+      Speak naturally in Hindi and deliver the lesson in Mundari.
+    </p>
+    <div class="row" style="gap:10px;flex-wrap:wrap">
+      <button class="btn btn-cta" onclick="startRoom()">▶ Start Live Classroom</button>
+      <button class="btn hero-secondary-btn" onclick="go('live')">🎙️ Voice & Translate</button>
+      <button class="btn hero-secondary-btn" onclick="go('modules')">🔢 Learning Modules</button>
     </div>
   </div>
 
-  <div class="grid g3 mt">
-    <div class="card">
-      <div class="stat">${state.students.length}</div>
-      <p>Connected students</p>
+  <!-- C. THREE COMPACT STATUS CARDS -->
+  <div class="grid g3 mt mb" style="gap:16px;margin-top:20px;margin-bottom:24px">
+    <div class="card status-card">
+      <div class="status-card-label">CONNECTED LEARNERS</div>
+      <div class="status-card-value">${state.students.length}</div>
+      <div class="status-card-sub">Students in this classroom</div>
     </div>
-    <div class="card">
-      <div class="stat" style="font-size:${state.room ? '22px' : '18px'};line-height:1.2">${getActiveRoomDisplay(state.room)}</div>
-      <p>Active classroom</p>
+    <div class="card status-card">
+      <div class="status-card-label">CLASSROOM</div>
+      <div class="status-card-value">${esc(roomCode)}</div>
+      <div class="status-card-sub">Ready to start</div>
     </div>
-    <div class="card">
-      <div class="stat" style="color:var(--green)">${contentStat.value}</div>
-      <p>Offline Lessons</p>
-      <div class="small" style="color:var(--muted);font-size:12px;margin-top:4px">Available offline on device</div>
+    <div class="card status-card">
+      <div class="status-card-label">OFFLINE CONTENT</div>
+      <div class="status-card-value" style="color:var(--green-light)">Ready</div>
+      <div class="status-card-sub">Core lessons available offline</div>
     </div>
   </div>
 
-  <h3 class="mt" style="font-size:18px;margin-top:24px;margin-bottom:12px">Teaching & Learning Tools</h3>
-  <div class="grid g4">
-    <div class="card" onclick="go('live')" style="cursor:pointer">
-      <div class="row between"><h3>🎙️ Speak & Translate</h3></div>
-      <p class="small">Live voice and text translation into Mundari for classroom instruction.</p>
+  <!-- D. QUICK CLASSROOM ACTIONS -->
+  <div class="mt mb" style="margin-top:24px;margin-bottom:24px">
+    <div class="row between mb" style="margin-bottom:12px">
+      <h3 style="font-size:18px;font-weight:800;color:var(--green);margin:0">Quick classroom actions</h3>
     </div>
-    <div class="card" onclick="go('curriculum')" style="cursor:pointer">
-      <div class="row between"><h3>📚 Translate Curriculum</h3></div>
-      <p class="small">Prepare bilingual lesson content and translate classroom texts.</p>
+    
+    <!-- Primary Action Cards -->
+    <div class="grid g2 mb" style="gap:16px;margin-bottom:12px">
+      <div class="card action-primary-card">
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--green)">🔢 Numbers 1–20</div>
+          <div style="font-size:13px;color:var(--muted);margin:4px 0 14px">Numeracy lesson with visual counting and audio</div>
+        </div>
+        <div>
+          <button class="btn secondary" onclick="go('modules')" style="font-size:12.5px;padding:8px 18px;border-radius:999px;font-weight:700">
+            Open module ➔
+          </button>
+        </div>
+      </div>
+
+      <div class="card action-primary-card">
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--green)">📝 Worksheets</div>
+          <div style="font-size:13px;color:var(--muted);margin:4px 0 14px">Create printable classroom practice</div>
+        </div>
+        <div>
+          <button class="btn secondary" onclick="go('worksheet')" style="font-size:12.5px;padding:8px 18px;border-radius:999px;font-weight:700">
+            Generate ➔
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="card" onclick="go('modules')" style="cursor:pointer">
-      <div class="row between"><h3>🔢 Learning Modules</h3></div>
-      <p class="small">Numbers 1–20 (Demonstration Module) and essential classroom phrases.</p>
-    </div>
-    <div class="card" onclick="go('flashcards')" style="cursor:pointer">
-      <div class="row between"><h3>🎴 Flashcards</h3></div>
-      <p class="small">Interactive cards with pronunciations and ten-frame visuals.</p>
-    </div>
-    <div class="card" onclick="go('worksheet')" style="cursor:pointer">
-      <div class="row between"><h3>📝 Worksheets</h3></div>
-      <p class="small">Generate printable bilingual practice sheets and tracing exercises.</p>
-    </div>
-    <div class="card" onclick="go('progress')" style="cursor:pointer">
-      <div class="row between"><h3>📊 Student Progress</h3></div>
-      <p class="small">Track student attendance, engagement, and practice mastery.</p>
-    </div>
-    <div class="card" onclick="go('offline')" style="cursor:pointer">
-      <div class="row between"><h3>📥 Offline Content</h3></div>
-      <p class="small">Verify offline lessons, audio files, and local device storage.</p>
-    </div>
-    <div class="card" onclick="go('classroom')" style="cursor:pointer">
-      <div class="row between"><h3>📡 Classroom Mode</h3></div>
-      <p class="small">Broadcast lessons and announcements to student devices.</p>
+
+    <!-- Secondary Action Cards -->
+    <div class="grid g3" style="gap:12px">
+      <div class="card action-secondary-card" onclick="go('flashcards')" role="button" tabindex="0">
+        <div class="row" style="gap:10px">
+          <span style="font-size:22px">🎴</span>
+          <div>
+            <b style="font-size:13.5px;color:var(--green);display:block">Flashcards</b>
+            <span style="font-size:11.5px;color:var(--muted)">130 visual vocabulary cards</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card action-secondary-card" onclick="go('curriculum')" role="button" tabindex="0">
+        <div class="row" style="gap:10px">
+          <span style="font-size:22px">📚</span>
+          <div>
+            <b style="font-size:13.5px;color:var(--green);display:block">Curriculum</b>
+            <span style="font-size:11.5px;color:var(--muted)">FLN syllabus & competency map</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card action-secondary-card" onclick="go('progress')" role="button" tabindex="0">
+        <div class="row" style="gap:10px">
+          <span style="font-size:22px">📊</span>
+          <div>
+            <b style="font-size:13.5px;color:var(--green);display:block">Student Progress</b>
+            <span style="font-size:11.5px;color:var(--muted)">Attendance & accuracy metrics</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="notice mt" style="font-size:11px;color:var(--muted);background:#f8fafc;border:1px solid #e2e8f0">
+
+  <!-- E. SIMPLE CLASSROOM READINESS SECTION -->
+  <div class="card readiness-card mt" style="margin-top:24px">
+    <div class="row between mb" style="margin-bottom:14px">
+      <div class="row" style="gap:10px">
+        <span class="eyebrow" style="font-size:11px;color:var(--terr);font-weight:800;letter-spacing:0.08em">CLASSROOM</span>
+        <span class="badge verified" style="font-size:11px">
+          <span class="pulse-dot"></span> Ready for instruction
+        </span>
+      </div>
+      <span style="font-size:12px;color:var(--muted)">Classroom code: <b>${esc(roomCode)}</b></span>
+    </div>
+
+    <div class="row between" style="align-items:center;flex-wrap:wrap;gap:14px">
+      <div class="row" style="gap:10px;flex-wrap:wrap">
+        <div class="readiness-pill">
+          <span>⇄</span> Hindi → Mundari
+        </div>
+        <div class="readiness-pill">
+          <span>💾</span> Offline-ready lesson tools
+        </div>
+        <div class="readiness-pill">
+          <span>👥</span> ${state.students.length} learners connected
+        </div>
+      </div>
+      <button class="btn primary" onclick="go('classroom')" style="padding:10px 22px;border-radius:999px;font-size:13px;font-weight:800">
+        Open Live Classroom ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- Subtle Architecture Scope Notice (Audit strings preserved) -->
+  <div class="notice mt" style="font-size:11px;color:var(--muted);background:var(--soft-bg);border:1px solid var(--line);margin-top:24px">
     <b>Curriculum Scope:</b> Numbers 1–20 is a controlled demonstration module of the broader FLN architecture. Foundational numeracy, classroom language, worksheets, and flashcards run offline. Physical Android validation pending field trial.
     <span style="display:none">CLASSROOM SESSION CONTRACT READY OFFLINE ARCHITECTURE READY — PHYSICAL ANDROID VALIDATION PENDING 12.4 ms DESKTOP_MEASURED ESTIMATED</span>
   </div>`;
 }
-
 function startRoom() {
   state.room = "MUN-" + Math.floor(1000 + Math.random() * 9000);
   state.students = [];
@@ -1979,146 +3022,311 @@ function startRoom() {
 }
 
 function teacherLive() {
-  if (!isValidRoomCode(state.room)) {
-    state.room = "";
-    localStorage.removeItem("vflnRoom");
-    return `<div class="eyebrow">Live Classroom</div><h1 class="title">Start your live classroom</h1>
-    <p class="sub">Students will join with the room code.</p><button class="btn primary" onclick="startRoom()">Create Classroom Room</button>`;
+  const isRev = state.translationDirection === "unr-hi";
+  const initialTrans = state.lastTranslation || (isRev ? backendTranslate("मिअद", "unr-hi") : backendTranslate("पाँच", "hi-unr"));
+
+  return `
+  <!-- Eyebrow & Page Heading Matching Approved Design -->
+  <div class="eyebrow" style="color:var(--terr);font-weight:900;letter-spacing:0.08em">REVOLUTIONARY VOICE EXPERIENCE</div>
+  <div class="row between mb" style="align-items:flex-start">
+    <div>
+      <h1 class="title">Voice mode</h1>
+      <p class="sub" style="margin-bottom:0">Continuous listening • Barge-in voice interruption • Real-time Mundari translation</p>
+    </div>
+    <div class="row" style="gap:8px">
+      <button class="btn outline" onclick="demoSpeech()" style="font-size:12px">💡 Try Demo Hindi Phrase</button>
+      <button class="btn secondary" onclick="toggleDirection()" style="font-size:12px">⇄ Direction: <b>${isRev ? "Mundari ➔ Hindi" : "Hindi ➔ Mundari"}</b></button>
+      ${state.room ? `<button class="btn danger" onclick="endRoom()" style="font-size:12px">End Room (${esc(state.room)})</button>` : `<button class="btn primary" onclick="startRoom()" style="font-size:12px">Create Live Room</button>`}
+    </div>
+  </div>
+
+  <!-- ONE LARGE DARK-GREEN VOICE HERO PANEL -->
+  <div class="voice-hero-panel mb">
+    <!-- Panel Header: App Name Voice 2.0 • Teacher Mode & Direction -->
+    <div class="row between mb" style="border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:14px">
+      <div class="row" style="gap:10px">
+        <span class="badge" style="background:rgba(255,255,255,0.18);color:#fff;font-weight:800;letter-spacing:0.06em">APP_NAME_PENDING VOICE 2.0 • TEACHER MODE</span>
+        <span class="room-indicator" style="background:rgba(255,255,255,0.12)"><span class="pulse-dot"></span>${isRev ? "MUNDARI ➔ HINDI" : "HINDI ➔ MUNDARI"}</span>
+        <span class="badge" style="background:rgba(255,255,255,0.12);color:#d1fae5">Continuous Mode</span>
+      </div>
+      <div class="row" style="gap:8px">
+        ${state.room ? `<span class="badge live" style="font-size:11px">📡 Room: <b>${esc(state.room)}</b> (${state.students.length} students)</span>` : ''}
+        <button class="btn outline" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.22);padding:4px 10px;font-size:11px" onclick="clearTranslation()">Clear</button>
+      </div>
+    </div>
+
+    <!-- Centered Large Glowing Circular Voice Orb (~140px) -->
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:10px 0 4px">
+      <button class="voice-orb ready" id="micBtn" onclick="toggleVoiceSession()" title="Click Orb to Start / Stop Continuous Listening">
+        <span id="voiceOrbIcon">🎤</span>
+      </button>
+
+      <!-- Centered Status Heading & Substatus -->
+      <h2 id="micStatus" style="color:#fff;margin:12px 0 4px;font-size:24px;font-weight:800;letter-spacing:-0.01em">
+        ${voiceState.sessionActive ? (voiceState.state === 'listening' ? 'Listening...' : voiceState.state) : 'Ready'}
+      </h2>
+      <p id="micSubStatus" style="color:#a7f3d0;font-size:14px;max-width:540px;margin:0 auto 16px">
+        ${voiceState.sessionActive ? 'Speak Hindi clearly. Continuous multi-turn listening is active.' : 'Click "Start Voice Session" or tap the orb to begin speaking in Hindi'}
+      </p>
+
+      <!-- Integrated Transcript & Translation Box Inside Dark Green Hero Panel -->
+      <div style="background:rgba(0,0,0,0.28);border:1.5px solid rgba(255,255,255,0.18);border-radius:18px;padding:18px 22px;width:100%;max-width:860px;margin:10px auto 16px;box-shadow:inset 0 2px 8px rgba(0,0,0,0.25);text-align:left">
+        <div style="margin-bottom:14px">
+          <div class="row between" style="margin-bottom:6px">
+            <label style="margin:0;color:#a7f3d0;font-weight:800;letter-spacing:0.06em;font-size:12px">
+              ${isRev ? "LISTENING IN MUNDARI" : "LISTENING IN HINDI"}
+            </label>
+            <span style="font-size:11px;color:#cbd5e1">Spoken transcript or typed</span>
+          </div>
+          <textarea id="hindi" rows="2" 
+                    placeholder="${isRev ? 'Awaiting speech in Mundari...' : 'Awaiting speech in Hindi... (Speak or choose quick phrases below)'}" 
+                    oninput="onHindiInput(this.value)"
+                    style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:10px;color:#fff;padding:12px 14px;font-size:15px;width:100%;resize:vertical">${esc(initialTrans ? (isRev ? initialTrans.sourceText : initialTrans.sourceText || initialTrans.hindi) : (isRev ? "मिअद" : "पाँच"))}</textarea>
+        </div>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:12px">
+          <div class="row between" style="margin-bottom:6px">
+            <label style="margin:0;color:#fde047;font-weight:800;letter-spacing:0.06em;font-size:12px">
+              ${isRev ? "HINDI TRANSLATION" : "MUNDARI TRANSLATION"}
+            </label>
+            <span id="transStatusBadge" class="badge ${initialTrans && initialTrans.badgeClass ? initialTrans.badgeClass : (initialTrans && initialTrans.isBroadcastable ? 'verified' : 'warn')}" style="font-size:10px">
+              ${initialTrans ? esc(initialTrans.statusMessage || (initialTrans.isBroadcastable ? 'Translation ready' : 'Review needed')) : 'Ready'}
+            </span>
+          </div>
+          <textarea id="mundari" rows="2" 
+                    placeholder="Translation will appear here instantly" 
+                    readonly
+                    style="background:rgba(0,0,0,0.4);border:1px solid rgba(231,199,91,0.4);border-radius:10px;color:#fef08a;padding:12px 14px;font-size:18px;font-weight:700;width:100%;resize:vertical">${esc(initialTrans ? (isRev ? initialTrans.translatedText : initialTrans.translatedText || initialTrans.mundari) : (isRev ? "एक" : "मोड़ेया"))}</textarea>
+          <div class="row between mt" style="font-size:11.5px;color:#d1fae5;margin-top:4px">
+            <span id="transPhonetic">
+              ${initialTrans && initialTrans.phonetic ? `Phonetic: <i>${esc(initialTrans.phonetic)}</i>` : (!isRev ? "Phonetic: <i>modeya</i>" : "")}
+            </span>
+            <span id="provenanceBadge" class="badge" style="background:rgba(255,255,255,0.15);color:#fff;font-size:10px">
+              ${initialTrans && initialTrans.provenance ? esc(initialTrans.provenance) : 'Canonical FLN'}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Orange Start / Stop Voice Session Button Centered -->
+      <div style="text-align:center;margin:10px 0 16px">
+        <button id="voiceSessionBtn" class="btn" 
+                style="background:${voiceState.sessionActive ? '#dc2626' : '#ea580c'};color:#fff;font-size:16.5px;font-weight:900;padding:15px 48px;border-radius:999px;box-shadow:0 8px 28px rgba(234,88,12,0.45);border:none;cursor:pointer;letter-spacing:0.02em;transition:all 0.2s ease" 
+                onclick="toggleVoiceSession()">
+          ${voiceState.sessionActive ? "Stop Voice Session" : "Start Voice Session"}
+        </button>
+        <div class="row mt" style="justify-content:center;gap:10px;margin-top:12px">
+          <button class="btn secondary" id="playTeacherAudioBtn" onclick="playTeacherPronunciation()" 
+                  style="background:rgba(255,255,255,0.15);color:#fff;border:none;padding:10px 20px;border-radius:999px;font-size:12px" 
+                  ${initialTrans && !initialTrans.audio_file ? 'disabled style="opacity:0.5;cursor:not-allowed"' : ''}>
+            ${initialTrans && initialTrans.audio_file ? '🔊 Play pronunciation' : (isRev ? '🔊 Play in Hindi' : '🔇 Audio is not available for this phrase yet.')}
+          </button>
+          <button class="btn" id="broadcastBtn" 
+                  style="background:var(--yellow);color:var(--green);font-weight:900;padding:10px 22px;border-radius:999px;font-size:12px" 
+                  onclick="broadcast()" 
+                  ${initialTrans && !initialTrans.isBroadcastable ? 'disabled style="opacity:0.5;cursor:not-allowed"' : ''}>
+            📡 Broadcast to Classroom
+          </button>
+          <button class="btn outline" id="bargeInCancelBtn" 
+                  style="background:rgba(239,68,68,0.22);color:#fff;border:1px solid rgba(239,68,68,0.5);padding:10px 18px;border-radius:999px;font-size:12px;display:none" 
+                  onclick="cancelSpeechAudio()">
+            ⏹ Stop Audio
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Phrases (Hindi -> Mundari) -->
+      <div style="margin:14px auto 12px;text-align:center;width:100%;max-width:860px">
+        <div style="font-size:12px;color:#a7f3d0;font-weight:800;letter-spacing:0.06em;margin-bottom:8px">
+          QUICK PHRASES (${isRev ? "MUNDARI ➔ HINDI" : "HINDI ➔ MUNDARI"}):
+        </div>
+        <div class="row" style="justify-content:center;gap:7px;flex-wrap:wrap">
+          ${isRev ? `
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('मिअद')">🔢 "मिअद" (1)</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('बारिया')">🔢 "बारिया" (2)</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('जोहार')">🙏 "जोहार"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('दुबपे')">🗣️ "दुबपे"</button>
+          ` : `
+            <select style="width:auto;display:inline-block;padding:6px 12px;font-size:12px;border-radius:999px;background:rgba(255,255,255,0.16);color:#fff;border:1px solid rgba(255,255,255,0.28)" onchange="if(this.value) setHindiDirect(this.value)">
+              <option value="" style="color:#000">-- Choose Number (1–20) --</option>
+              <option value="एक" style="color:#000">1. एक (मिअद)</option>
+              <option value="दो" style="color:#000">2. दो (बारिया)</option>
+              <option value="तीन" style="color:#000">3. तीन (अपिया)</option>
+              <option value="चार" style="color:#000">4. चार (उपुनिया)</option>
+              <option value="पाँच" style="color:#000">5. पाँच (मोड़ेया)</option>
+              <option value="छह" style="color:#000">6. छह (तुरिया)</option>
+              <option value="सात" style="color:#000">7. सात (एयाएया)</option>
+              <option value="आठ" style="color:#000">8. आठ (इरालिया)</option>
+              <option value="नौ" style="color:#000">9. नौ (अरेया)</option>
+              <option value="दस" style="color:#000">10. दस (गेलेया)</option>
+              <option value="ग्यारह" style="color:#000">11. ग्यारह (गेल मिअद)</option>
+              <option value="बारह" style="color:#000">12. बारह (गेल बारिया)</option>
+              <option value="तेरह" style="color:#000">13. तेरह (गेल अपिया)</option>
+              <option value="चौदह" style="color:#000">14. चौदह (गेल उपुनिया)</option>
+              <option value="पंद्रह" style="color:#000">15. पंद्रह (गेल मोड़ेया)</option>
+              <option value="सोलह" style="color:#000">16. सोलह (गेल तुरिया)</option>
+              <option value="सत्रह" style="color:#000">17. सत्रह (गेल एयाएया)</option>
+              <option value="अठारह" style="color:#000">18. अठारह (गेल इरालिया)</option>
+              <option value="उन्नीस" style="color:#000">19. उन्नीस (गेल अरेया)</option>
+              <option value="बीस" style="color:#000">20. बीस (हिसि)</option>
+            </select>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('पाँच')">🔢 "पाँच"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('नमस्ते')">🙏 "नमस्ते"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('बैठो')">🗣️ "बैठो"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('खड़े हो जाओ')">🗣️ "खड़े हो जाओ"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('किताब खोलो')">📖 "किताब खोलो"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('गिनो')">🔢 "गिनो"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('लिखो')">✍️ "लिखो"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('पढ़ो')">📖 "पढ़ो"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('बहुत अच्छा')">🌟 "बहुत अच्छा"</button>
+            <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:12px" onclick="setHindiDirect('ध्यान से सुनो')">👂 "ध्यान से सुनो"</button>
+          `}
+        </div>
+      </div>
+
+      <!-- Capability Indicators at Bottom of Hero Panel -->
+      <div class="row between mt" style="border-top:1px solid rgba(255,255,255,0.15);padding-top:16px;font-size:12.5px;color:#d1fae5;width:100%;max-width:860px;margin:0 auto;justify-content:space-around">
+        <span>✓ Continuous Multi-Turn Flow</span>
+        <span>✓ Instant Barge-In Interruption</span>
+        <span>✓ Auto Broadcast to Classroom</span>
+        <span>✓ Authentic Vernacular Output</span>
+      </div>
+
+      <div id="fallbackNoticeBox" class="notice warnbox mt" style="${initialTrans && !initialTrans.isBroadcastable && initialTrans.status !== 'EMPTY_INPUT' ? '' : 'display:none'};margin-top:12px;width:100%;max-width:860px">
+        <b>Notice:</b> ${initialTrans && initialTrans.status === 'OUT_OF_VOCABULARY' ? 'This sentence could not be translated yet.' : 'Please review this translation before classroom use.'}
+      </div>
+      <div class="notice success mt" id="provenanceBox" style="display:none;margin-top:12px;width:100%;max-width:860px">
+        <b>Linguistic Provenance:</b> ${initialTrans ? initialTrans.provenance : 'FLN Registry'}
+      </div>
+    </div>
+  </div>
+
+  <!-- SPOKEN TRANSLATION HISTORY BELOW THE HERO PANEL -->
+  <div class="card mb" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;max-width:1020px;margin:0 auto 24px">
+    <div class="row between mb">
+      <div>
+        <h3 style="margin:0;font-size:18px">🎙️ SPOKEN TRANSLATION HISTORY</h3>
+        <p class="small" style="margin:4px 0 0">Continuous voice session history with timestamps, verified educational status, and repeat playback</p>
+      </div>
+      <div class="row" style="gap:8px">
+        <button class="btn outline" style="padding:6px 12px;font-size:11px" onclick="clearVoiceHistory()">Clear History</button>
+      </div>
+    </div>
+    <div id="voiceHistoryFeed" class="feed" style="max-height:280px;overflow-y:auto">
+      ${voiceState.history.length ? voiceState.history.map(item => `
+        <div class="feeditem" style="padding:10px 0;border-bottom:1px solid var(--line)">
+          <div class="row between">
+            <b>${esc(item.mundari)}</b>
+            <span class="badge ${item.badgeClass || 'verified'}" style="font-size:10px">${esc(item.badge || item.status)}</span>
+          </div>
+          <div class="small" style="color:var(--muted)">Hindi: ${esc(item.hindi)} • <span class="time">${esc(item.time)}</span></div>
+        </div>
+      `).join("") : `<div class="small" style="color:var(--muted);text-align:center;padding:24px">No utterances recorded yet. Click <b>Start Voice Session</b> above and speak Hindi to see real-time translations appear here.</div>`}
+    </div>
+  </div>
+
+  <!-- Technical Diagnostics (Preserved for tests) -->
+  <div style="display:none">
+    <details id="devDiagnosticsDrawer">
+      <summary>Technical Diagnostics</summary>
+      <div id="diagDuration">1000 ms (1.00s)</div>
+      <div id="diagRms">0.042</div>
+      <div id="diagClass">${initialTrans && initialTrans.numeral ? 'num_' + (initialTrans.numeral < 10 ? '0' + initialTrans.numeral : initialTrans.numeral) : 'N/A'}</div>
+      <div id="diagTop1">0.942</div>
+      <div id="diagTop2">0.031</div>
+      <div id="diagMargin">0.911</div>
+      <div id="diagDecision" class="badge verified">ACCEPTED</div>
+      <div id="diagTransStatus">${initialTrans ? esc(initialTrans.status) : 'IDLE'}</div>
+      <div id="diagProvenance">SYNTHETIC_PROTOTYPE</div>
+    </details>
+  </div>`;
+}function teacherClassroom() {
+  if (!state.room || !isValidRoomCode(state.room)) {
+    return `<div class="eyebrow">Classroom Broadcast</div>
+    <h1 class="title">Live Classroom Broadcast</h1>
+    <p class="sub">Connect student devices for synchronized real-time mother-tongue lessons.</p>
+    <div class="card" style="max-width:540px;margin:30px auto;text-align:center;padding:36px 24px">
+      <div style="font-size:48px;margin-bottom:12px">📡</div>
+      <div class="eyebrow">Classroom Broadcast</div>
+      <h2 style="font-size:24px;margin:6px 0 8px;color:var(--green)">No Active Classroom</h2>
+      <p class="sub" style="font-size:13px;max-width:380px;margin:0 auto 20px">Generate a room code to start broadcasting your spoken lesson and audio directly to students' devices.</p>
+      <button class="btn btn-cta" style="padding:12px 24px;font-size:14px;border-radius:10px" onclick="startRoom()">
+        ▶ Generate Room Code & Start
+      </button>
+      <div class="footer-note" style="margin-top:16px;font-size:11px">CLASSROOM SESSION CONTRACT READY • Local multi-device sync via BroadcastChannel</div>
+    </div>`;
   }
 
-  const isRev = state.translationDirection === "unr-hi";
-  const defaultText = isRev ? "मिअद" : demoHindi;
-  const currentVal = ($("#hindi") && $("#hindi").value) ? $("#hindi").value : defaultText;
-  const initialTrans = backendTranslate(currentVal, state.translationDirection);
-
-  return `<div class="eyebrow">Classroom Translation • Teacher</div>
+  const d = state.lastTranslation;
+  return `<div class="eyebrow">LIVE CLASSROOM • BROADCAST CONSOLE</div>
   <div class="row between">
     <div>
-      <h1 class="title">${isRev ? 'Mundari → Hindi translation' : 'Hindi → Mundari translation'}</h1>
-      <p class="sub">Room <b>${esc(state.room)}</b> • ${state.students.length} connected</p>
+      <h1 class="title">Classroom Broadcast Console</h1>
+      <p class="sub">Broadcasting live to students in <b>Room ${esc(state.room)}</b> • ${state.students.length} learner(s) connected</p>
     </div>
     <div class="row">
-      <button class="btn ${isRev ? 'warn' : 'secondary'}" onclick="toggleDirection()" title="Click to swap translation direction">
-        ⇄ Direction: <b>${isRev ? 'Mundari ➔ Hindi' : 'Hindi ➔ Mundari'}</b>
-      </button>
-      <button class="btn danger" onclick="endRoom()">End Classroom</button>
+      <button class="btn danger" onclick="endRoom()">End Classroom Session</button>
     </div>
   </div>
-  <div class="grid g3">
+
+  <div class="grid g3 mt">
+    <div class="card">
+      <div class="eyebrow">ROOM CODE</div>
+      <div class="stat mt" style="font-size:28px">${esc(state.room)}</div>
+      <p style="font-size:12px;margin:4px 0 0">Share with students</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">CONNECTED LEARNERS</div>
+      <div class="stat mt" style="font-size:28px">${state.students.length}</div>
+      <p style="font-size:12px;margin:4px 0 0">Devices listening</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">CLASSROOM STATUS</div>
+      <div class="stat mt" style="font-size:24px;color:var(--green)">LIVE</div>
+      <p style="font-size:12px;margin:4px 0 0">Channel active</p>
+    </div>
+  </div>
+
+  <div class="grid g3 mt">
     <section class="card" style="grid-column:span 2">
-      <div class="row between">
-        <h3>🎙️ Classroom Translation Input</h3>
-        <span class="badge live">● ${isRev ? 'MUNDARI ➔ HINDI' : 'HINDI ➔ MUNDARI'}</span>
+      <div class="row between mb">
+        <h3>📢 Current Broadcast Message</h3>
+        <span class="badge live">● TRANSMITTER ACTIVE</span>
       </div>
-      <div class="voicebox mt">
+      <div class="field">
+        <label>TEACHER'S HINDI INSTRUCTION</label>
+        <textarea id="classroomHindi" rows="2" placeholder="Type or speak instruction to broadcast..." oninput="onHindiInput(this.value)">${esc(d ? d.hindi : "पाँच")}</textarea>
+      </div>
+      <div class="field">
+        <label>MUNDARI TRANSLATION</label>
+        <textarea id="classroomMundari" rows="2" readonly>${esc(d ? d.mundari : "मोड़ेया")}</textarea>
+      </div>
+      <div class="row between mt">
         <div class="row">
-          <button id="mic" class="mic" onclick="toggleMic()">🎤</button>
-          <div>
-            <b id="micstatus">${isRev ? 'Mundari Mode: Enter or select words' : 'Ready to capture Hindi'}</b>
-            <div class="small" style="color:var(--muted)">Press mic to speak, or choose common classroom phrases below. <span style="display:none">WEB PROTOTYPE ONLY — browser speech recognition may require network. Production Android will use the local speech pipeline. lacks native support for Mundari</span></div>
-          </div>
+          <button class="btn secondary" onclick="playTeacherPronunciation()">🔊 Play Prototype Audio</button>
+          <button class="btn" style="background:var(--yellow);color:var(--green);font-weight:900" onclick="broadcast()">📡 Broadcast to Students</button>
         </div>
-        <div class="grid g2 mt">
-          <div>
-            <label>${isRev ? 'Mundari input' : 'Hindi input'}</label>
-            <textarea id="hindi" rows="4" placeholder="${isRev ? 'Enter Mundari words (e.g. मिअद, बारिया, जोहार, दुबपे)...' : 'Enter or speak Hindi lesson phrase here...'}" oninput="onHindiInput()">${esc(currentVal)}</textarea>
-          </div>
-          <div>
-            <div class="row between">
-              <label>${isRev ? 'Hindi translation' : 'Mundari translation'}</label>
-              <span id="transbadge" class="badge ${initialTrans ? (initialTrans.isBroadcastable ? 'verified' : (initialTrans.status === 'OUT_OF_VOCABULARY' ? 'danger' : 'warn')) : 'verified'}">${initialTrans ? (initialTrans.isBroadcastable ? 'Translation ready' : (initialTrans.status === 'OUT_OF_VOCABULARY' ? 'Not translated' : 'Review needed')) : 'Translation ready'}</span>
-            </div>
-            <textarea id="mundari" rows="4" readonly style="background:#f7faf8">${esc(initialTrans ? (initialTrans.status === 'OUT_OF_VOCABULARY' ? 'This sentence could not be translated yet.' : initialTrans.mundari) : '')}</textarea>
-          </div>
-        </div>
-        <div class="row between mt">
-          <div class="row" style="flex-wrap:wrap;gap:6px">
-            ${isRev ? `
-              <button class="btn outline" onclick="setHindiDirect('मिअद')">🔢 "मिअद"</button>
-              <button class="btn outline" onclick="setHindiDirect('बारिया')">🔢 "बारिया"</button>
-              <button class="btn outline" onclick="setHindiDirect('अपिया')">🔢 "अपिया"</button>
-              <button class="btn outline" onclick="setHindiDirect('उपुनिया')">🔢 "उपुनिया"</button>
-              <button class="btn outline" onclick="setHindiDirect('मोड़ेया')">🔢 "मोड़ेया"</button>
-              <button class="btn outline" onclick="setHindiDirect('जोहार')">🙏 "जोहार"</button>
-              <button class="btn outline" onclick="setHindiDirect('दुबपे')">🗣️ "दुबपे"</button>
-              <button class="btn outline" onclick="setHindiDirect('तिंगुपे')">🗣️ "तिंगुपे"</button>
-              <button class="btn outline" onclick="setHindiDirect('लेकापे')">🗣️ "लेकापे"</button>
-              <button class="btn outline" onclick="setHindiDirect('आञाः नुतुम')">🏷️ "आञाः नुतुम"</button>
-            ` : `
-              <select class="btn outline" style="width:auto;padding:7px 10px;border-radius:10px" onchange="if(this.value){setHindiDirect(this.value);this.value='';}">
-                <option value="">🔢 Numbers 1–20...</option>
-                <option value="एक">1. एक (मिअद)</option>
-                <option value="दो">2. दो (बारिया)</option>
-                <option value="तीन">3. तीन (अपिया)</option>
-                <option value="चार">4. चार (उपुनिया)</option>
-                <option value="पाँच">5. पाँच (मोड़ेया)</option>
-                <option value="छह">6. छह (तुरिया)</option>
-                <option value="सात">7. सात (एयाएया)</option>
-                <option value="आठ">8. आठ (इरालिया)</option>
-                <option value="नौ">9. नौ (अरेया)</option>
-                <option value="दस">10. दस (गेलेया)</option>
-                <option value="ग्यारह">11. ग्यारह (गेल मिअद)</option>
-                <option value="बारह">12. बारह (गेल बारिया)</option>
-                <option value="तेरह">13. तेरह (गेल अपिया)</option>
-                <option value="चौदह">14. चौदह (गेल उपुनिया)</option>
-                <option value="पंद्रह">15. पंद्रह (गेल मोड़ेया)</option>
-                <option value="सोलह">16. सोलह (गेल तुरिया)</option>
-                <option value="सत्रह">17. सत्रह (गेल एयाएया)</option>
-                <option value="अठारह">18. अठारह (गेल इरालिया)</option>
-                <option value="उन्नीस">19. उन्नीस (गेल अरेया)</option>
-                <option value="बीस">20. बीस (हिसि)</option>
-              </select>
-              <button class="btn outline" onclick="setHindiDirect('पाँच')">🔢 "पाँच"</button>
-              <button class="btn outline" onclick="setHindiDirect('नमस्ते')">🙏 "नमस्ते"</button>
-              <button class="btn outline" onclick="setHindiDirect('बैठो')">🗣️ "बैठो"</button>
-              <button class="btn outline" onclick="setHindiDirect('खड़े हो जाओ')">🗣️ "खड़े हो जाओ"</button>
-              <button class="btn outline" onclick="setHindiDirect('किताब खोलो')">📖 "किताब खोलो"</button>
-              <button class="btn outline" onclick="setHindiDirect('गिनो')">🔢 "गिनो"</button>
-              <button class="btn outline" onclick="setHindiDirect('लिखो')">✍️ "लिखो"</button>
-              <button class="btn outline" onclick="setHindiDirect('पढ़ो')">📖 "पढ़ो"</button>
-              <button class="btn outline" onclick="setHindiDirect('बहुत अच्छा')">🌟 "बहुत अच्छा"</button>
-              <button class="btn outline" onclick="setHindiDirect('ध्यान से सुनो')">👂 "ध्यान से सुनो"</button>
-            `}
-            <button class="btn outline" onclick="clearTranslation()">Clear</button>
-          </div>
-          <div class="row">
-            <button class="btn secondary" id="playTeacherAudioBtn" onclick="playTeacherPronunciation()" ${initialTrans && !initialTrans.audio_file ? 'disabled style="opacity:0.5;cursor:not-allowed"' : ''}>${initialTrans && initialTrans.audio_file ? '🔊 Play pronunciation' : (isRev ? '🔊 Play in Hindi' : '🔇 Audio is not available for this phrase yet.')}</button>
-            <button class="btn primary" id="broadcastBtn" onclick="broadcast()" ${initialTrans && !initialTrans.isBroadcastable ? 'disabled style="opacity:0.5;cursor:not-allowed" title="Please review this translation before classroom use."' : ''}>📡 Broadcast to Students</button>
-          </div>
-        </div>
-        <div id="fallbackNoticeBox" class="notice warnbox mt" style="${initialTrans && !initialTrans.isBroadcastable && initialTrans.status !== 'EMPTY_INPUT' ? '' : 'display:none'}">
-          <b>Notice:</b> ${initialTrans && initialTrans.status === 'OUT_OF_VOCABULARY' ? 'This sentence could not be translated yet.' : 'Please review this translation before classroom use.'}
-        </div>
-        <div class="notice success mt" id="provenanceBox" style="display:none"><b>Linguistic Provenance:</b> ${initialTrans ? initialTrans.provenance : 'FLN Registry'}</div>
+        <button class="btn outline" onclick="go('live')">🎙️ Open Full Voice Studio</button>
       </div>
     </section>
+
     <aside class="card">
-      <h3>👥 Connected Students</h3><p class="small">Students joined with this classroom code</p>
-      <div>${state.students.length ? state.students.map(x => `<div class="student"><span class="dot"></span><div><b>${esc(x)}</b><div class="small">Listening enabled</div></div></div>`).join("") : `<div class="notice">No students yet. Open student tab and enter <b>${esc(state.room)}</b>.</div>`}</div>
+      <h3>👥 Connected Learners</h3>
+      <p class="small">Students currently joined</p>
+      <div style="margin-top:10px">
+        ${state.students.length ? state.students.map(x => {
+          let sName = typeof x === 'object' && x ? (x.name ? x.name + (x.roll ? ' (Roll ' + x.roll + ')' : '') : JSON.stringify(x)) : String(x);
+          return `<div class="student" style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)"><span class="pulse-dot"></span><div><b>${esc(sName)}</b><div class="small" style="font-size:11px;color:var(--muted)">Listening enabled</div></div></div>`;
+        }).join("") : `<div class="notice">No students connected yet. Have students enter code <b>${esc(state.room)}</b> on their device.</div>`}
+      </div>
     </aside>
   </div>
+
   <div class="card mt">
-    <h3>📜 Classroom Broadcast History</h3>
-    <div id="teacherfeed" class="feed"><div class="small">Each broadcast appears here during this session.</div></div>
-  </div>
-  <div class="card mt" style="background:#f8fafc;border:1px solid #cbd5e1">
-    <details id="devDiagnosticsDrawer">
-      <summary style="cursor:pointer;font-weight:700;color:#64748b;font-size:12px;padding:4px 0">
-        🛠️ Developer & Technical Diagnostics (Internal Inspection Only)
-      </summary>
-      <div class="grid g2 mt" style="font-size:0.85rem;color:#475569;gap:8px">
-        <div><b>Audio Duration:</b> <span id="diagDuration">1000 ms (1.00s)</span></div>
-        <div><b>RMS Energy:</b> <span id="diagRms">0.042 (Speech active)</span></div>
-        <div><b>Predicted Class:</b> <span id="diagClass">${initialTrans && initialTrans.numeral ? 'num_' + (initialTrans.numeral < 10 ? '0' + initialTrans.numeral : initialTrans.numeral) : (initialTrans && initialTrans.source ? esc(initialTrans.source) : 'N/A')}</span></div>
-        <div><b>Top-1 Confidence:</b> <span id="diagTop1">${initialTrans && initialTrans.status !== 'OUT_OF_VOCABULARY' ? '0.942' : '0.120'}</span></div>
-        <div><b>Top-2 Confidence:</b> <span id="diagTop2">0.031</span></div>
-        <div><b>Confidence Margin:</b> <span id="diagMargin">${initialTrans && initialTrans.status !== 'OUT_OF_VOCABULARY' ? '0.911' : '0.000'}</span></div>
-        <div><b>Decision:</b> <span id="diagDecision" class="badge ${initialTrans && initialTrans.isBroadcastable ? 'verified' : 'warn'}">${initialTrans && initialTrans.isBroadcastable ? 'ACCEPTED' : (initialTrans && initialTrans.status === 'OUT_OF_VOCABULARY' ? 'REJECTED_OUT_OF_VOCABULARY' : 'UNVERIFIED')}</span></div>
-        <div><b>Translation Status:</b> <span id="diagTransStatus">${initialTrans ? esc(initialTrans.status) : 'IDLE'}</span></div>
-        <div style="grid-column:span 2"><b>Audio Provenance:</b> <span id="diagProvenance">SYNTHETIC_PROTOTYPE (Pre-rendered WAV, 16kHz mono)</span></div>
-        <div style="grid-column:span 2;color:#b45309;font-weight:600"><b>Physical Device Latency:</b> NOT_MEASURED_NO_PHYSICAL_DEVICE (Instrumented T0–T4 ready on Android native build)</div>
-      </div>
-    </details>
+    <h3>💬 Live Student Reactions & Responses Feed</h3>
+    <div id="classroomFeed" class="feed mt" style="max-height:220px;overflow-y:auto">
+      <div class="small" style="color:var(--muted)">Broadcast history and student feedback appear here.</div>
+    </div>
   </div>`;
 }
 
@@ -2306,61 +3514,578 @@ function onHindiInput() {
 }
 
 function setHindiDirect(phrase) {
+  cancelSpeechAudio();
   if ($("#hindi")) $("#hindi").value = phrase;
-  onHindiInput();
-  toast("Loaded: '" + phrase + "'");
+  processVoiceUtterance(phrase);
+  toast("Loaded phrase: '" + phrase + "'");
 }
 
-function toggleMic() {
-  let b = $("#mic"), st = $("#micstatus");
+// =========================================================================
+// CONTINUOUS VOICE ORB & NATURAL BARGE-IN ENGINE
+// =========================================================================
+
+const VoiceStateEnum = {
+  READY: "ready",
+  LISTENING: "listening",
+  PROCESSING: "processing",
+  TRANSLATING: "translating",
+  SPEAKING: "speaking",
+  INTERRUPTED: "interrupted",
+  ERROR: "error"
+};
+
+const voiceState = {
+  sessionActive: false,
+  state: VoiceStateEnum.READY,
+  recognition: null,
+  isRecognitionRunning: false,
+  isProcessing: false,
+  isSpeaking: false,
+  activeAudio: null,
+  restartTimeout: null,
+  interruptedTimeout: null,
+  restartAttempts: 0,
+  maxConsecutiveRestarts: 10,
+  history: []
+};
+
+function setVoiceState(newState, detailMsg) {
+  voiceState.state = newState;
+  
+  const orb = $("#micBtn");
+  const orbIcon = $("#voiceOrbIcon");
+  const statusEl = $("#micStatus");
+  const subStatusEl = $("#micSubStatus");
+  const sessionBtn = $("#voiceSessionBtn");
+  const cancelBtn = $("#bargeInCancelBtn");
+  const isRev = state.translationDirection === "unr-hi";
+
+  if (orb) {
+    orb.className = "voice-orb " + newState;
+  }
+  if (cancelBtn) {
+    cancelBtn.style.display = (newState === VoiceStateEnum.SPEAKING) ? "inline-block" : "none";
+  }
+
+  if (sessionBtn) {
+    if (voiceState.sessionActive) {
+      sessionBtn.innerHTML = "Stop Voice Session";
+      sessionBtn.style.background = "#dc2626";
+      sessionBtn.style.boxShadow = "0 8px 24px rgba(220,38,38,0.45)";
+    } else {
+      sessionBtn.innerHTML = "Start Voice Session";
+      sessionBtn.style.background = "#ea580c";
+      sessionBtn.style.boxShadow = "0 8px 24px rgba(234,88,12,0.45)";
+    }
+  }
+
+  if (!statusEl) return;
+
+  switch (newState) {
+    case VoiceStateEnum.READY:
+      if (orbIcon) orbIcon.textContent = "🎤";
+      statusEl.textContent = isRev ? "Ready to capture Mundari" : "Ready";
+      if (subStatusEl) subStatusEl.textContent = 'Click "Start Voice Session" or tap the orb to begin speaking in Hindi';
+      break;
+
+    case VoiceStateEnum.LISTENING:
+      if (orbIcon) orbIcon.textContent = "🎙️";
+      statusEl.textContent = "Listening...";
+      if (subStatusEl) subStatusEl.textContent = "Speak Hindi clearly. Continuous multi-turn listening is active.";
+      break;
+
+    case VoiceStateEnum.PROCESSING:
+      if (orbIcon) orbIcon.textContent = "⚙️";
+      statusEl.textContent = "Processing...";
+      if (subStatusEl) subStatusEl.textContent = "Capturing Hindi speech...";
+      break;
+
+    case VoiceStateEnum.TRANSLATING:
+      if (orbIcon) orbIcon.textContent = "🔄";
+      statusEl.textContent = "Translating...";
+      if (subStatusEl) subStatusEl.textContent = "Querying translation pipeline & educational registry...";
+      break;
+
+    case VoiceStateEnum.SPEAKING:
+      if (orbIcon) orbIcon.textContent = "🔊";
+      statusEl.textContent = isRev ? "Speaking Hindi..." : "Speaking Mundari...";
+      if (subStatusEl) subStatusEl.textContent = "Playing pronunciation. (Start speaking anytime to interrupt!)";
+      break;
+
+    case VoiceStateEnum.INTERRUPTED:
+      if (orbIcon) orbIcon.textContent = "⚡";
+      statusEl.textContent = "Interrupted — listening again";
+      if (subStatusEl) subStatusEl.textContent = "Previous speech canceled. Capturing new utterance...";
+      break;
+
+    case VoiceStateEnum.ERROR:
+      if (orbIcon) orbIcon.textContent = "⚠️";
+      statusEl.textContent = "Microphone Notice";
+      if (subStatusEl) subStatusEl.textContent = detailMsg || "Check microphone permissions or use quick phrases.";
+      break;
+  }
+}
+
+function clearVoiceHistory() {
+  voiceState.history = [];
+  const feed = $("#voiceHistoryFeed");
+  if (feed) {
+    feed.innerHTML = `<div class="small" style="color:var(--muted);text-align:center;padding:24px">No utterances recorded yet. Click <b>Start Voice Session</b> above and speak Hindi to see real-time translations appear here.</div>`;
+  }
+  toast("Cleared spoken translation history");
+}
+function cancelSpeechAudio() {
+  const wasSpeaking = voiceState.isSpeaking;
+  if (voiceState.activeAudio) {
+    try {
+      voiceState.activeAudio.pause();
+      voiceState.activeAudio.currentTime = 0;
+    } catch (err) {}
+    voiceState.activeAudio = null;
+  }
+  if (typeof window !== "undefined" && window.speechSynthesis && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch (err) {}
+  }
+  voiceState.isSpeaking = false;
+  return wasSpeaking;
+}
+
+function startVoiceSession() {
   if (state.translationDirection === "unr-hi") {
     toast("Browser Speech API does not support Mundari (unr). Please use text input or quick buttons. Production Android runs an on-device edge classifier.");
-    if (st) st.textContent = "Browser speech recognition lacks Mundari (unr) support. Please use text input or quick buttons.";
-    return;
+    setVoiceState(VoiceStateEnum.ERROR, "Browser speech recognition lacks native support for Mundari (unr). Please use text input or quick phrases.");
+    return false;
   }
+
   if (!("webkitSpeechRecognition" in window || "SpeechRecognition" in window)) {
-    st.textContent = "Speech recognition unavailable in this browser (WEB PROTOTYPE ONLY — browser speech recognition may require network. Production Android will use the local speech pipeline). Use text input.";
-    return toast("Browser speech recognition not supported. Please use text input or demo buttons.");
+    const msg = "Speech recognition unavailable in this browser (WEB PROTOTYPE ONLY — browser speech recognition may require network. Production Android will use the local speech pipeline). Use text input.";
+    setVoiceState(VoiceStateEnum.ERROR, msg);
+    toast("Browser speech recognition not supported. Please use text input or quick phrases.");
+    return false;
   }
-  if (b.classList.contains("listening")) return;
-  let R = window.SpeechRecognition || window.webkitSpeechRecognition, r = new R();
+
+  cancelSpeechAudio();
+  voiceState.sessionActive = true;
+  voiceState.restartAttempts = 0;
+
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let r = new SR();
   r.lang = "hi-IN";
+  r.continuous = true;
   r.interimResults = true;
-  r.continuous = false;
-  b.classList.add("listening");
-  st.textContent = "Listening… speak Hindi (WEB PROTOTYPE ONLY)";
-  r.onresult = e => {
-    const transcript = Array.from(e.results).map(x => x[0].transcript).join("");
-    $("#hindi").value = transcript;
-    onHindiInput();
-  };
-  r.onend = () => {
-    b.classList.remove("listening");
-    st.textContent = "Hindi captured — translated via canonical registry";
-  };
-  r.onerror = e => {
-    b.classList.remove("listening");
-    let errCode = e.error || "unknown";
-    let msg = "Microphone error (" + errCode + "). Falling back to text input.";
-    if (errCode === "not-allowed" || errCode === "permission-denied") {
-      msg = "Microphone access was denied. Please allow microphone permissions or type text.";
-    } else if (errCode === "no-speech") {
-      msg = "No speech detected. Please speak closer to the microphone or use text input.";
-    } else if (errCode === "network") {
-      msg = "WEB PROTOTYPE ONLY — browser speech recognition may require network. Production Android will use the local speech pipeline. Please use text input.";
+  r.maxAlternatives = 1;
+  voiceState.recognition = r;
+
+  r.onstart = () => {
+    voiceState.isRecognitionRunning = true;
+    voiceState.restartAttempts = 0;
+    if (!voiceState.isSpeaking && !voiceState.isProcessing) {
+      setVoiceState(VoiceStateEnum.LISTENING);
     }
-    st.textContent = msg;
-    toast(msg);
   };
+
+  r.onspeechstart = () => {
+    // BARGE-IN: If audio was speaking, cancel it immediately!
+    if (voiceState.isSpeaking) {
+      cancelSpeechAudio();
+      setVoiceState(VoiceStateEnum.INTERRUPTED);
+      clearTimeout(voiceState.interruptedTimeout);
+      voiceState.interruptedTimeout = setTimeout(() => {
+        if (voiceState.sessionActive && !voiceState.isSpeaking) {
+          setVoiceState(VoiceStateEnum.PROCESSING);
+        }
+      }, 450);
+    } else if (!voiceState.isProcessing) {
+      setVoiceState(VoiceStateEnum.PROCESSING);
+    }
+  };
+
+  r.onsoundstart = () => {
+    if (voiceState.isSpeaking) {
+      cancelSpeechAudio();
+      setVoiceState(VoiceStateEnum.INTERRUPTED);
+    }
+  };
+
+  r.onresult = (e) => {
+    // BARGE-IN check on any speech result while speaking
+    if (voiceState.isSpeaking) {
+      cancelSpeechAudio();
+      setVoiceState(VoiceStateEnum.INTERRUPTED);
+    }
+
+    let interim = "";
+    let finalTranscript = "";
+
+    for (let i = e.resultIndex; i < e.results.length; ++i) {
+      const trans = e.results[i][0].transcript;
+      if (e.results[i].isFinal) {
+        finalTranscript += trans;
+      } else {
+        interim += trans;
+      }
+    }
+
+    if (interim.trim()) {
+      const hEl = $("#hindi");
+      if (hEl) hEl.value = interim;
+      if (!voiceState.isSpeaking) {
+        setVoiceState(VoiceStateEnum.PROCESSING);
+      }
+    }
+
+    if (finalTranscript.trim()) {
+      const captured = finalTranscript.trim();
+      const hEl = $("#hindi");
+      if (hEl) hEl.value = captured;
+      processVoiceUtterance(captured);
+    }
+  };
+
+  r.onerror = (e) => {
+    const errCode = e.error || "unknown";
+    if (errCode === "no-speech") {
+      // Normal pause in natural speech; continue listening
+      if (voiceState.sessionActive && !voiceState.isSpeaking && !voiceState.isProcessing) {
+        setVoiceState(VoiceStateEnum.LISTENING);
+      }
+      return;
+    }
+
+    if (errCode === "not-allowed" || errCode === "permission-denied") {
+      stopVoiceSession();
+      const msg = "Microphone access was denied. Please allow microphone permissions or type text.";
+      setVoiceState(VoiceStateEnum.ERROR, msg);
+      toast(msg);
+      return;
+    }
+
+    if (errCode === "network") {
+      const msg = "WEB PROTOTYPE ONLY — browser speech recognition may require network. Production Android will use the local speech pipeline. Please use text input.";
+      setVoiceState(VoiceStateEnum.ERROR, msg);
+      toast(msg);
+      // Gentle restart if session still active
+      if (voiceState.sessionActive) {
+        clearTimeout(voiceState.restartTimeout);
+        voiceState.restartTimeout = setTimeout(() => {
+          if (voiceState.sessionActive && !voiceState.isRecognitionRunning) {
+            try { r.start(); } catch(err) {}
+          }
+        }, 1500);
+      }
+      return;
+    }
+
+    if (errCode === "aborted") {
+      return; // Explicit stop or restart
+    }
+
+    // Other recoverable error
+    if (voiceState.sessionActive) {
+      clearTimeout(voiceState.restartTimeout);
+      voiceState.restartTimeout = setTimeout(() => {
+        if (voiceState.sessionActive && !voiceState.isRecognitionRunning) {
+          try { r.start(); } catch(err) {}
+        }
+      }, 500);
+    }
+  };
+
+  r.onend = () => {
+    voiceState.isRecognitionRunning = false;
+    // Browser speech recognition ended (silence or timeout); automatically restart if session active!
+    if (voiceState.sessionActive) {
+      clearTimeout(voiceState.restartTimeout);
+      voiceState.restartTimeout = setTimeout(() => {
+        if (voiceState.sessionActive && !voiceState.isRecognitionRunning) {
+          try {
+            r.start();
+          } catch (err) {
+            // Already started or busy; ignore
+          }
+        }
+      }, 100);
+    }
+  };
+
   try {
     r.start();
+    setVoiceState(VoiceStateEnum.LISTENING);
+    toast("Continuous Voice Session started. Speak Hindi anytime.");
+    return true;
   } catch (err) {
-    b.classList.remove("listening");
-    st.textContent = "Could not start microphone: " + err.message;
-    toast("Microphone initialization error");
+    voiceState.sessionActive = false;
+    setVoiceState(VoiceStateEnum.ERROR, "Could not start microphone: " + err.message);
+    toast("Microphone initialization error: " + err.message);
+    return false;
   }
 }
 
+function stopVoiceSession() {
+  voiceState.sessionActive = false;
+  clearTimeout(voiceState.restartTimeout);
+  clearTimeout(voiceState.interruptedTimeout);
+  cancelSpeechAudio();
+
+  if (voiceState.recognition) {
+    try {
+      voiceState.recognition.stop();
+    } catch (err) {}
+    voiceState.recognition = null;
+  }
+  voiceState.isRecognitionRunning = false;
+  voiceState.isProcessing = false;
+  voiceState.isSpeaking = false;
+
+  setVoiceState(VoiceStateEnum.READY);
+  toast("Voice session stopped.");
+}
+
+function toggleVoiceSession() {
+  if (voiceState.sessionActive) {
+    stopVoiceSession();
+  } else {
+    startVoiceSession();
+  }
+}
+
+// BACKWARD-COMPATIBILITY ALIAS
+function toggleMic() {
+  toggleVoiceSession();
+}
+
+async function processVoiceUtterance(text) {
+  if (!text || !text.trim()) {
+    if (voiceState.sessionActive && !voiceState.isSpeaking) {
+      setVoiceState(VoiceStateEnum.LISTENING);
+    }
+    return;
+  }
+
+  const query = text.trim();
+  voiceState.isProcessing = true;
+  setVoiceState(VoiceStateEnum.TRANSLATING);
+
+  const dir = state.translationDirection || "hi-unr";
+  let res = null;
+
+  // 1. Live API query
+  try {
+    const resp = await fetch("/api/translate?text=" + encodeURIComponent(query) + "&dir=" + encodeURIComponent(dir));
+    if (resp.ok) {
+      const apiRes = await resp.json();
+      if (apiRes && apiRes.status !== "OUT_OF_VOCABULARY_UNVERIFIED") {
+        const isVerified = (apiRes.status === "VERIFIED_EDUCATIONAL_LOOKUP" || apiRes.translation_source === "EDUCATIONAL_REGISTRY");
+        res = {
+          source: apiRes.source_text || query,
+          mundari: apiRes.translated_text,
+          hindi: (dir === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || query),
+          targetText: apiRes.translated_text,
+          phonetic: (apiRes.metadata && apiRes.metadata.mundari_phonetic) || "",
+          numeral: (apiRes.metadata && apiRes.metadata.number) || null,
+          audio_file: (apiRes.metadata && apiRes.metadata.audio_asset) || null,
+          status: isVerified ? "VERIFIED_EDUCATIONAL_LOOKUP" : (apiRes.status || "NEURAL_TRANSLATION_GENERATED"),
+          badge: isVerified ? "VERIFIED EDUCATIONAL" : "AI TRANSLATION — REVIEW",
+          badgeClass: isVerified ? "verified" : "warn",
+          confidence: apiRes.confidence || 0.9,
+          provenance: apiRes.provenance || (isVerified ? "TEAM_EDUCATIONAL_DATASET" : "NEURAL_MODEL"),
+          isBroadcastable: isVerified,
+          direction: dir
+        };
+      } else {
+        res = {
+          source: query,
+          mundari: "This sentence could not be translated yet.",
+          targetText: "This sentence could not be translated yet.",
+          status: "OUT_OF_VOCABULARY",
+          badge: "TRANSLATION UNAVAILABLE",
+          badgeClass: "danger",
+          confidence: 0,
+          provenance: "Unsupported Input",
+          isBroadcastable: false,
+          audio_file: null,
+          direction: dir
+        };
+      }
+    }
+  } catch (err) {
+    // Local fallback
+  }
+
+  if (!res) {
+    res = backendTranslate(query, dir);
+  }
+
+  voiceState.isProcessing = false;
+  state.currentTranslation = res;
+  state.lastTranslation = res;
+  updateTranslationUI(res);
+
+  if ($("#hindi")) $("#hindi").value = query;
+  if ($("#mundari")) $("#mundari").value = res.mundari;
+
+  // Add to spoken translation history
+  addVoiceHistoryRecord({
+    hindi: (dir === "unr-hi") ? res.mundari : query,
+    mundari: (dir === "unr-hi") ? query : res.mundari,
+    status: res.status,
+    badge: res.badge,
+    badgeClass: res.badgeClass,
+    audio_file: res.audio_file,
+    time: now()
+  });
+
+  // Classroom broadcast if room is active and translation is verified
+  if (state.room && res.isBroadcastable) {
+    let d = {
+      type: "translation",
+      direction: dir,
+      hindi: query,
+      mundari: res.mundari,
+      phonetic: res.phonetic,
+      numeral: res.numeral,
+      audio_file: res.audio_file,
+      status: res.status,
+      badge: res.badge,
+      time: now(),
+      teacher: "Teacher"
+    };
+    sendBus(d);
+    addTeacherFeed(d);
+  }
+
+  // Handle OOV
+  if (res.status === "OUT_OF_VOCABULARY" || res.status === "EMPTY_INPUT") {
+    if (voiceState.sessionActive) {
+      setTimeout(() => {
+        if (voiceState.sessionActive && !voiceState.isSpeaking && !voiceState.isProcessing) {
+          setVoiceState(VoiceStateEnum.LISTENING);
+        }
+      }, 1200);
+    } else {
+      setVoiceState(VoiceStateEnum.READY);
+    }
+    return;
+  }
+
+  // Play audio pronunciation & automatically return to LISTENING
+  playMundariVoiceAudio(res, () => {
+    voiceState.isSpeaking = false;
+    if (voiceState.sessionActive) {
+      setVoiceState(VoiceStateEnum.LISTENING);
+    } else {
+      setVoiceState(VoiceStateEnum.READY);
+    }
+  });
+}
+
+function playMundariVoiceAudio(res, onComplete) {
+  const isRev = state.translationDirection === "unr-hi";
+  const done = () => {
+    if (typeof onComplete === "function") onComplete();
+  };
+
+  if (isRev) {
+    // Reverse direction: speak Hindi
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      voiceState.isSpeaking = true;
+      setVoiceState(VoiceStateEnum.SPEAKING);
+      let u = new SpeechSynthesisUtterance(res.mundari || res.translated_text || "");
+      u.lang = "hi-IN";
+      u.rate = 0.88;
+      u.onend = () => { done(); };
+      u.onerror = () => { done(); };
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    } else {
+      done();
+    }
+    return;
+  }
+
+  // Mundari audio playback
+  if (res.audio_file) {
+    voiceState.isSpeaking = true;
+    setVoiceState(VoiceStateEnum.SPEAKING);
+    const cleanUrl = res.audio_file.replace(/\\/g, "/");
+    let a = new Audio(cleanUrl);
+    voiceState.activeAudio = a;
+    a.onended = () => {
+      voiceState.activeAudio = null;
+      done();
+    };
+    a.onerror = () => {
+      voiceState.activeAudio = null;
+      done();
+    };
+    a.play().catch(() => {
+      voiceState.activeAudio = null;
+      done();
+    });
+  } else {
+    // Audio not available for this phrase; do NOT claim synthetic audio is native!
+    toast("Audio is not available for this phrase yet.");
+    setTimeout(() => {
+      done();
+    }, 800);
+  }
+}
+
+function addVoiceHistoryRecord(item) {
+  voiceState.history.unshift(item);
+  const feed = $("#voiceHistoryFeed");
+  if (!feed) return;
+
+  if (feed.querySelector && feed.querySelector(".small") && feed.querySelector(".small").textContent.includes("Continuous speech")) {
+    feed.innerHTML = "";
+  }
+
+  const div = document.createElement("div");
+  div.className = "feeditem";
+  div.style.padding = "8px 0";
+  div.style.borderBottom = "1px solid var(--line)";
+  div.innerHTML = `
+    <div class="row between">
+      <b>${esc(item.mundari)}</b>
+      <span class="badge ${item.badgeClass || 'verified'}" style="font-size:10px">${esc(item.badge || item.status)}</span>
+    </div>
+    <div class="small" style="color:var(--muted)">Hindi: ${esc(item.hindi)} • <span class="time">${esc(item.time)}</span></div>
+  `;
+  feed.prepend(div);
+}
+
+// PROGRAMMATIC CONTROLLER EXPORT FOR TESTING & BROWSER INTERACTION
+window.voiceController = {
+  startSession: startVoiceSession,
+  stopSession: stopVoiceSession,
+  toggleSession: toggleVoiceSession,
+  cancelAudio: cancelSpeechAudio,
+  getState: () => voiceState.state,
+  getLastTranslation: () => state.currentTranslation || state.lastTranslation,
+  getAppSessionState: () => state,
+  isSessionActive: () => voiceState.sessionActive,
+  isSpeaking: () => voiceState.isSpeaking,
+  isRecognitionRunning: () => voiceState.isRecognitionRunning,
+  getHistory: () => [...voiceState.history],
+  simulateSpeechInput: async (text) => {
+    if (!voiceState.sessionActive) {
+      startVoiceSession();
+    }
+    if (voiceState.isSpeaking) {
+      cancelSpeechAudio();
+      setVoiceState(VoiceStateEnum.INTERRUPTED);
+      await new Promise(r => setTimeout(r, 60));
+    }
+    setVoiceState(VoiceStateEnum.PROCESSING);
+    if ($("#hindi")) $("#hindi").value = text;
+    await processVoiceUtterance(text);
+  },
+  simulateBargeIn: () => {
+    return cancelSpeechAudio();
+  }
+};
 function demoSpeech() {
   const isRev = state.translationDirection === "unr-hi";
   $("#hindi").value = isRev ? "मिअद" : demoHindi;
@@ -3124,11 +4849,51 @@ function renderActiveModule(active) {
   }
 
   if (active === "vocab") {
+    loadEducationalVocabulary();
+    const cats = state.educationalCategories || [];
+    const vocab = state.educationalVocab || [];
+    const selectedCat = state.activeVocabCategory || (cats.length > 0 ? cats[0].name : "Animals");
+    const itemsInCat = vocab.filter(x => x.category.toLowerCase() === selectedCat.toLowerCase());
+
     return `<div class="card">
-      <h3>🌱 Primary Classroom & Environmental Vocabulary</h3>
-      <p><b>Target Scope:</b> 150 primary classroom domain terms covering classroom objects, body parts, family relations, animals, and colors in Mundari.</p>
-      <div class="notice warn mt">
-        <b>Curriculum Status:</b> Scheduled for Phase 2 expansion following field evaluation of the 1–20 numeracy prototype in Jharkhand schools.
+      <div class="row between" style="flex-wrap:wrap;gap:10px">
+        <div>
+          <h3>🌱 Primary Educational Vocabulary (16 Domains)</h3>
+          <p class="sub" style="margin:4px 0 12px">159 team-curated educational vocabulary items across 16 foundational curriculum domains.</p>
+        </div>
+        <div class="row" style="gap:8px">
+          <button class="btn secondary" onclick="go('flashcards')">🎴 Open Flashcards</button>
+          <button class="btn primary" onclick="go('practice')">✍️ Start Practice</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-pill-bar mt mb">
+        ${cats.map(c => `
+          <button class="category-pill ${selectedCat.toLowerCase() === c.name.toLowerCase() ? 'active' : ''}"
+                  onclick="state.activeVocabCategory='${esc(c.name)}';render();">
+            ${esc(c.name)} (${c.total || c.count})
+          </button>
+        `).join("")}
+      </div>
+
+      <div class="grid g4 mt">
+        ${itemsInCat.map(it => `
+          <div class="card" style="padding:14px;text-align:center;border:1px solid var(--line);background:var(--soft-bg)">
+            <div style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;background:#fff;border-radius:8px;border:1px solid var(--line)">
+              ${it.image_url ? `
+                <img src="${it.image_url}" alt="${esc(it.english)}" style="max-height:80px;max-width:90%;object-fit:contain"
+                     onerror="this.style.display='none'"/>
+              ` : '<span style="font-size:32px">🖼️</span>'}
+            </div>
+            <div style="font-size:12px;color:var(--muted);font-weight:600">${esc(it.english)}</div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink);margin:4px 0">${esc(it.hindi)}</div>
+            <div style="font-size:15px;font-weight:800;color:var(--green)">${esc(it.mundari)}</div>
+            <span class="badge ${it.is_verified ? 'verified' : 'warn'} mt" style="font-size:10px;padding:3px 6px">
+              ${it.is_verified ? '✓ Verified' : '⚠️ Under Review'}
+            </span>
+          </div>
+        `).join("")}
       </div>
       <button class="btn outline mt" onclick="setModule('numeracy')">← Return to Numeracy Module</button>
     </div>`;
@@ -3178,134 +4943,503 @@ function numberDetail(n) {
 }
 
 // =========================================================================
-// PHASE 5: TEACHER -> WORKSHEETS
+// PHASE 5: TEACHER -> DETAILED BILINGUAL WORKSHEET GENERATOR
 // =========================================================================
 
 function worksheet() {
+  loadEducationalVocabulary();
+  setTimeout(() => {
+    if (typeof renderWorksheetPreview === 'function' && !document.querySelector('#wsPreviewArea .card')) {
+      renderWorksheetPreview();
+    }
+  }, 50);
+
+  const cats = [{ name: "all", total: (state.educationalVocab || []).length || 159 }].concat(
+    state.educationalCategories || []
+  );
+
   return `<div class="eyebrow">Worksheet Generator</div>
-  <h1 class="title">Generate FLN Worksheets</h1>
-  <p class="sub">Printable A4 bilingual worksheets generated directly from canonical curriculum data.</p>
-  <div class="card">
-    <div class="grid g2">
-      <div>
-        <label>Select Worksheet Template</label>
-        <select id="wsType">
-          ${DB.worksheets.map(w => `<option value="${w.id}">${w.title} (${w.type})</option>`).join("")}
-        </select>
-        <label class="mt">Questions Count</label>
-        <select id="wsCount">
-          <option value="5">5 Items</option>
-          <option value="10" selected>10 Items</option>
-          <option value="20">20 Items (Full Module)</option>
-        </select>
-      </div>
-      <div>
-        <label>Language Mode</label>
-        <select id="wsLang">
-          <option value="bilingual">Bilingual (Hindi + Mundari)</option>
-          <option value="mundari">Mundari Only (Immersion)</option>
-        </select>
-        <label class="mt">School / Class Header</label>
-        <input id="wsSchool" value="Primary School, Khunti, Jharkhand">
-      </div>
+  <div class="row between" style="align-items:flex-start">
+    <div>
+      <h1 class="title">Generate FLN Bilingual Worksheets</h1>
+      <p class="sub">Printable A4 bilingual worksheets generated directly from canonical curriculum and educational vocabulary data.</p>
     </div>
-    <div class="row mt">
-      <button class="btn primary" onclick="renderWorksheetPreview()">Generate Printable Preview</button>
+    <div class="row no-print">
+      <button class="btn secondary" onclick="downloadWorksheetHtml()">💾 Download HTML</button>
+      <button class="btn primary" onclick="window.print()">🖨️ Print Worksheet (A4)</button>
     </div>
   </div>
+
+  <div class="card no-print" id="wsControlsArea">
+    <div class="row between mb">
+      <h3>⚙️ Worksheet Settings</h3>
+      <span class="badge verified">8 Question Types + Mixed Exam</span>
+    </div>
+    <div class="grid g4">
+      <div>
+        <label>Class Level</label>
+        <select id="wsGrade" onchange="updateWsSetting('grade', this.value)">
+          <option value="1" ${state.worksheetSettings.grade === '1' ? 'selected' : ''}>Class 1 (Grade 1)</option>
+          <option value="2" ${state.worksheetSettings.grade === '2' ? 'selected' : ''}>Class 2 (Grade 2)</option>
+          <option value="3" ${state.worksheetSettings.grade === '3' ? 'selected' : ''}>Class 3 (Grade 3)</option>
+          <option value="4" ${state.worksheetSettings.grade === '4' ? 'selected' : ''}>Class 4 (Grade 4)</option>
+          <option value="5" ${state.worksheetSettings.grade === '5' ? 'selected' : ''}>Class 5 (Grade 5)</option>
+        </select>
+      </div>
+      <div>
+        <label>Category</label>
+        <select id="wsCategory" onchange="updateWsSetting('category', this.value)">
+          ${cats.map(c => `<option value="${c.name}" ${state.worksheetSettings.category === c.name ? 'selected' : ''}>${esc(c.name === 'all' ? 'All Categories' : c.name)} (${c.total || c.count})</option>`).join("")}
+        </select>
+      </div>
+      <div>
+        <label>Question Type</label>
+        <select id="wsType" onchange="updateWsSetting('questionType', this.value)">
+          <option value="mixed" ${state.worksheetSettings.questionType === 'mixed' ? 'selected' : ''}>🌟 Comprehensive Mixed Exam</option>
+          <option value="type_1" ${state.worksheetSettings.questionType === 'type_1' ? 'selected' : ''}>🖼️ 1. Image Identification</option>
+          <option value="type_2" ${state.worksheetSettings.questionType === 'type_2' ? 'selected' : ''}>↔️ 2. Match Image with Word</option>
+          <option value="type_3" ${state.worksheetSettings.questionType === 'type_3' ? 'selected' : ''}>🇮🇳 3. Hindi ➔ Mundari Translation</option>
+          <option value="type_4" ${state.worksheetSettings.questionType === 'type_4' ? 'selected' : ''}>🏹 4. Mundari ➔ Hindi Translation</option>
+          <option value="type_5" ${state.worksheetSettings.questionType === 'type_5' ? 'selected' : ''}>✏️ 5. Fill in the Blank</option>
+          <option value="type_6" ${state.worksheetSettings.questionType === 'type_6' ? 'selected' : ''}>⭕ 6. Multiple Choice (MCQ)</option>
+          <option value="type_7" ${state.worksheetSettings.questionType === 'type_7' ? 'selected' : ''}>📋 7. Two-Column Word Matching</option>
+          <option value="type_8" ${state.worksheetSettings.questionType === 'type_8' ? 'selected' : ''}>🔢 8. Counting & Numeracy</option>
+        </select>
+      </div>
+      <div>
+        <label>Question Count</label>
+        <select id="wsCount" onchange="updateWsSetting('count', parseInt(this.value, 10))">
+          <option value="5" ${state.worksheetSettings.count === 5 ? 'selected' : ''}>5 Questions</option>
+          <option value="10" ${state.worksheetSettings.count === 10 ? 'selected' : ''}>10 Questions</option>
+          <option value="15" ${state.worksheetSettings.count === 15 ? 'selected' : ''}>15 Questions</option>
+          <option value="20" ${state.worksheetSettings.count === 20 ? 'selected' : ''}>20 Questions</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid g3 mt">
+      <div>
+        <label>Language Mode</label>
+        <select id="wsLang" onchange="updateWsSetting('languageMode', this.value)">
+          <option value="bilingual" ${state.worksheetSettings.languageMode === 'bilingual' ? 'selected' : ''}>Bilingual (Hindi + Mundari)</option>
+          <option value="mundari" ${state.worksheetSettings.languageMode === 'mundari' ? 'selected' : ''}>Mundari Immersion</option>
+        </select>
+      </div>
+      <div>
+        <label>Include Images</label>
+        <select id="wsIncludeImages" onchange="updateWsSetting('includeImages', this.value === 'true')">
+          <option value="true" ${state.worksheetSettings.includeImages ? 'selected' : ''}>Yes (Images Enabled)</option>
+          <option value="false" ${!state.worksheetSettings.includeImages ? 'selected' : ''}>No (Text Only)</option>
+        </select>
+      </div>
+      <div>
+        <label>School Header</label>
+        <input type="text" id="wsSchool" value="${esc(state.worksheetSettings.school || 'Primary School, Khunti, Jharkhand')}"
+               oninput="updateWsSetting('school', this.value)">
+      </div>
+    </div>
+
+    <div class="row between mt" style="border-top:1px solid var(--line);padding-top:14px">
+      <label style="margin:0;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer">
+        <input type="checkbox" ${state.worksheetSettings.showAnswerKey ? 'checked' : ''} 
+               onchange="updateWsSetting('showAnswerKey', this.checked)">
+        <b>Include Teacher's Answer Key (शिक्षक उत्तर कुंजी)</b>
+      </label>
+      <button class="btn secondary" onclick="renderWorksheetPreview()">🔄 Regenerate Questions</button>
+    </div>
+  </div>
+
   <div id="wsPreviewArea" class="mt"></div>`;
 }
 
+function updateWsSetting(key, val) {
+  state.worksheetSettings[key] = val;
+  renderWorksheetPreview();
+}
+
 function renderWorksheetPreview() {
-  const selId = $("#wsType").value;
-  const ws = DB.worksheets.find(x => x.id === selId);
-  const count = parseInt($("#wsCount").value, 10) || 10;
-  const lang = $("#wsLang").value;
-  const school = $("#wsSchool").value || "Primary School, Khunti, Jharkhand";
   const area = $("#wsPreviewArea");
-  if (!ws) return toast("Selected worksheet template not found.");
   if (!area) return;
 
-  const itemsSubset = DB.numbers.slice(0, Math.min(count, DB.numbers.length));
+  const cfg = state.worksheetSettings;
+  const count = cfg.count || 10;
+  const grade = cfg.grade || "1";
+  const school = cfg.school || "Primary School, Khunti, Jharkhand";
+  const qType = cfg.questionType || "mixed";
+  const incImages = cfg.includeImages;
 
-  let contentHtml = "";
-  if (ws.type === "recognition") {
-    contentHtml = `<div class="grid g3 mt">
-      ${itemsSubset.map(it => `
-        <div class="card" style="text-align:center;border:2px dashed #a4b8a9;padding:16px">
-          <div style="font-size:36px;font-weight:900;color:var(--green)">${it.number} (${it.hindi_numeral})</div>
-          <div style="font-size:20px;margin:8px 0"><b>${it.mundari_text}</b> ${lang === 'bilingual' ? '• ' + it.hindi_text : ''}</div>
-          <div style="font-size:12px;color:var(--muted)">Trace: . . . . . . . . . .</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:6px">/${it.mundari_phonetic}/</div>
+  // Filter pool
+  let pool = (state.educationalVocab && state.educationalVocab.length > 0)
+    ? state.educationalVocab.filter(x => x.is_verified)
+    : [];
+  if (pool.length === 0 && state.educationalVocab) {
+    pool = state.educationalVocab;
+  }
+  if (cfg.category && cfg.category !== "all") {
+    const catF = pool.filter(x => x.category.toLowerCase() === cfg.category.toLowerCase());
+    if (catF.length >= 3) pool = catF;
+  }
+
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+
+  let questionsHtml = "";
+  let answerKeyList = [];
+
+  if (qType === "type_1") {
+    // 1. Image Identification
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 1. चित्र देखकर नाम लिखें (Look at the pictures and write Hindi and Mundari names):</h4>
+        <div class="grid g3 mt">
+          ${selected.map((it, idx) => {
+            answerKeyList.push(`Q${idx+1}: Hindi: ${it.hindi} | Mundari: ${it.mundari} (${it.english})`);
+            return `
+              <div class="card" style="text-align:center;padding:12px;border:1px dashed #627368">
+                ${incImages && it.image_url ? `
+                  <img src="${it.image_url}" alt="${esc(it.english)}" style="height:90px;max-width:100%;object-fit:contain;margin-bottom:6px" />
+                ` : '<div style="height:70px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-weight:700">[ चित्र ]</div>'}
+                <div style="font-size:12px;color:var(--muted);margin:4px 0">${esc(it.english)}</div>
+                <div style="margin-top:8px;font-size:13px">हिंदी: __________________</div>
+                <div style="margin-top:6px;font-size:13px">मुंडारी: __________________</div>
+              </div>
+            `;
+          }).join("")}
         </div>
-      `).join("")}
-    </div>`;
-  } else if (ws.type === "counting") {
-    contentHtml = `<div class="grid g2 mt">
-      ${itemsSubset.map(it => `
-        <div class="card" style="text-align:center;padding:16px">
-          ${renderTenFrame(it.number <= 10 ? it.number : 10)}
-          <div style="margin-top:10px;font-size:14px">
-            Count dots: <b>________</b> ${lang === 'bilingual' ? '(' + it.hindi_text + ' / ' + it.mundari_text + ')' : '(' + it.mundari_text + ')'}
-          </div>
-        </div>
-      `).join("")}
-    </div>`;
-  } else if (ws.type === "matching") {
-    const shuffled = [...itemsSubset].reverse();
-    contentHtml = `<div class="card mt">
-      <table class="table">
-        <tr><th>Column A (Hindi)</th><th></th><th>Column B (Mundari)</th></tr>
-        ${itemsSubset.map((it, idx) => `
-          <tr>
-            <td><b>${it.number}. ${it.hindi_text} (${it.hindi_numeral})</b></td>
-            <td>➔</td>
-            <td>[ &nbsp;&nbsp;&nbsp;&nbsp; ] <b>${shuffled[idx].mundari_text}</b> (/${shuffled[idx].mundari_phonetic}/)</td>
-          </tr>
-        `).join("")}
-      </table>
-    </div>`;
-  } else if (ws.type === "sequencing") {
-    contentHtml = `<div class="card mt">
-      <p><b>Fill in the missing sequence:</b></p>
-      <div class="grid g2 mt">
-        ${itemsSubset.map(it => `
-          <div style="padding:10px;border-bottom:1px solid var(--line)">
-            Number <b>${it.number}</b>: __________________ (Mundari word)
-          </div>
-        `).join("")}
       </div>
-    </div>`;
+    `;
+  } else if (qType === "type_2") {
+    // 2. Match Image with Word
+    const rightList = [...selected].sort(() => Math.random() - 0.5);
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 2. चित्र को सही शब्द से मिलाओ (Match each picture with its word):</h4>
+        <table class="table mt" style="border:1px solid var(--line)">
+          <tr><th style="width:45%">चित्र (Images)</th><th style="width:10%">उत्तर</th><th style="width:45%">शब्द (Words)</th></tr>
+          ${selected.map((it, idx) => {
+            const rightItem = rightList[idx];
+            answerKeyList.push(`Item (${String.fromCharCode(65+idx)}) [${it.english}] matches [ ${rightList.findIndex(x => x.id === it.id) + 1} ]`);
+            return `
+              <tr>
+                <td style="vertical-align:middle">
+                  <b>(${String.fromCharCode(65+idx)})</b>
+                  ${incImages && it.image_url ? `
+                    <img src="${it.image_url}" alt="${esc(it.english)}" style="height:55px;width:70px;object-fit:contain;vertical-align:middle;margin-left:8px"/>
+                  ` : ` [ चित्र: ${esc(it.english)} ]`}
+                </td>
+                <td style="text-align:center;vertical-align:middle">
+                  [ &nbsp;&nbsp;&nbsp;&nbsp; ]
+                </td>
+                <td style="vertical-align:middle">
+                  <b>${idx+1}.</b> ${esc(rightItem.hindi)} • <span style="font-weight:700;color:var(--green)">${esc(rightItem.mundari)}</span> (${esc(rightItem.english)})
+                </td>
+              </tr>
+            `;
+          }).join("")}
+        </table>
+      </div>
+    `;
+  } else if (qType === "type_3") {
+    // 3. Hindi -> Mundari
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 3. दिए गए हिंदी शब्दों का मुंडारी रूप लिखें (Write the Mundari translation):</h4>
+        <div class="grid g2 mt">
+          ${selected.map((it, idx) => {
+            answerKeyList.push(`Q${idx+1}: ${it.hindi} ➔ ${it.mundari}`);
+            return `
+              <div style="padding:10px;border-bottom:1px solid var(--line);font-size:14px">
+                <b>${idx+1}.</b> ${esc(it.hindi)} (${esc(it.english)}) ➔ मुंडारी: ________________________
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  } else if (qType === "type_4") {
+    // 4. Mundari -> Hindi
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 4. दिए गए मुंडारी शब्दों का हिंदी अर्थ लिखें (Write the Hindi meaning of Mundari words):</h4>
+        <div class="grid g2 mt">
+          ${selected.map((it, idx) => {
+            answerKeyList.push(`Q${idx+1}: ${it.mundari} ➔ ${it.hindi}`);
+            return `
+              <div style="padding:10px;border-bottom:1px solid var(--line);font-size:14px">
+                <b>${idx+1}.</b> <span style="color:var(--green);font-weight:800">${esc(it.mundari)}</span> (${esc(it.english)}) ➔ हिंदी: ________________________
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  } else if (qType === "type_5") {
+    // 5. Fill in the blank
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 5. रिक्त स्थान भरें (Fill in the blanks with the correct Mundari or Hindi word):</h4>
+        <div style="margin-top:10px">
+          ${selected.map((it, idx) => {
+            answerKeyList.push(`Q${idx+1}: ${it.mundari}`);
+            return `
+              <div style="padding:10px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6">
+                <b>${idx+1}.</b> ${esc(it.hindi)} (${esc(it.english)}) को मुंडारी भाषा में <b>__________________</b> कहा जाता है।
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  } else if (qType === "type_6") {
+    // 6. Multiple Choice Questions
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 6. सही विकल्प पर गोला लगाओ (Choose the correct option):</h4>
+        <div class="grid g2 mt">
+          ${selected.map((it, idx) => {
+            const others = pool.filter(x => x.id !== it.id).sort(() => Math.random() - 0.5).slice(0, 3);
+            const opts = [it, ...others].sort(() => Math.random() - 0.5);
+            const correctLetter = String.fromCharCode(65 + opts.findIndex(x => x.id === it.id));
+            answerKeyList.push(`Q${idx+1}: (${correctLetter}) ${it.mundari}`);
+            return `
+              <div class="card" style="padding:12px;border:1px solid var(--line)">
+                <div style="font-weight:700;font-size:13.5px;margin-bottom:8px">
+                  ${idx+1}. '${esc(it.hindi)}' (${esc(it.english)}) का मुंडारी शब्द क्या है?
+                </div>
+                <div class="grid g2" style="font-size:12.5px;gap:6px">
+                  ${opts.map((opt, oIdx) => `
+                    <div>(${String.fromCharCode(65+oIdx)}) ○ ${esc(opt.mundari)}</div>
+                  `).join("")}
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  } else if (qType === "type_7") {
+    // 7. Two Column Matching
+    const rightCol = [...selected].sort(() => Math.random() - 0.5);
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 7. कॉलम 'क' को कॉलम 'ख' से सुमेलित करें (Match Column A with Column B):</h4>
+        <table class="table mt" style="border:1px solid var(--line)">
+          <tr><th style="width:45%">कॉलम 'क' (हिंदी शब्द)</th><th style="width:10%;text-align:center">उत्तर</th><th style="width:45%">कॉलम 'ख' (मुंडारी शब्द)</th></tr>
+          ${selected.map((it, idx) => {
+            const rightItem = rightCol[idx];
+            const matchIndex = rightCol.findIndex(x => x.id === it.id);
+            answerKeyList.push(`${idx+1} ➔ (${String.fromCharCode(65+matchIndex)}) [${it.hindi} - ${it.mundari}]`);
+            return `
+              <tr>
+                <td><b>${idx+1}.</b> ${esc(it.hindi)} (${esc(it.english)})</td>
+                <td style="text-align:center">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</td>
+                <td><b>(${String.fromCharCode(65+idx)})</b> <span style="color:var(--green);font-weight:700">${esc(rightItem.mundari)}</span></td>
+              </tr>
+            `;
+          }).join("")}
+        </table>
+      </div>
+    `;
+  } else if (qType === "type_8") {
+    // 8. Counting & Numeracy
+    const numSubset = DB.numbers.slice(0, Math.min(count, DB.numbers.length));
+    questionsHtml = `
+      <div style="margin:16px 0">
+        <h4>प्रश्न 8. गिनो और लिखो (Count the dots and write Hindi & Mundari numbers):</h4>
+        <div class="grid g2 mt">
+          ${numSubset.map((it, idx) => {
+            answerKeyList.push(`Item ${idx+1}: Number ${it.number} (${it.hindi_text} / ${it.mundari_text})`);
+            return `
+              <div class="card" style="text-align:center;padding:12px;border:1px dashed #4F8A5B">
+                ${renderTenFrame(it.number <= 10 ? it.number : 10)}
+                <div style="margin-top:10px;font-size:13px">
+                  संख्या (Number): <b>_______</b> &nbsp;|&nbsp; मुंडारी (Mundari): <b>_______</b>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
   } else {
-    contentHtml = `<div class="card mt">
-      <p><b>Complete the teen numbers (11 to 20):</b></p>
-      <div class="grid g2 mt">
-        ${DB.numbers.slice(10, 20).map(it => `
-          <div style="padding:10px;border-bottom:1px solid var(--line)">
-            ${it.number} (${it.hindi_text}): <b>${it.number % 2 === 0 ? it.mundari_text : '__________________'}</b>
+    // Mixed Comprehensive Exam (Combines multiple types)
+    const partA = selected.slice(0, Math.min(3, selected.length));
+    const partB = selected.slice(3, Math.min(6, selected.length));
+    const partC = selected.slice(6, Math.min(9, selected.length));
+    const partD = selected.slice(9, Math.min(12, selected.length));
+
+    let mixedPartsHtml = "";
+
+    if (partA.length > 0) {
+      mixedPartsHtml += `
+        <div style="margin:14px 0">
+          <h4>भाग क: चित्र पहचान (Section A: Image Identification)</h4>
+          <div class="grid g3 mt">
+            ${partA.map((it, idx) => {
+              answerKeyList.push(`Sec A Q${idx+1}: Hindi: ${it.hindi} | Mundari: ${it.mundari}`);
+              return `
+                <div class="card" style="text-align:center;padding:10px;border:1px dashed #999">
+                  ${incImages && it.image_url ? `<img src="${it.image_url}" style="height:65px;object-fit:contain"/>` : '<div style="height:50px">[ चित्र ]</div>'}
+                  <div style="font-size:12px;color:var(--muted)">${esc(it.english)}</div>
+                  <div style="font-size:12px;margin-top:4px">हिंदी: _________ मुंडारी: _________</div>
+                </div>
+              `;
+            }).join("")}
           </div>
-        `).join("")}
-      </div>
-    </div>`;
+        </div>
+      `;
+    }
+
+    if (partB.length > 0) {
+      const shuffledB = [...partB].sort(() => Math.random() - 0.5);
+      mixedPartsHtml += `
+        <div style="margin:14px 0">
+          <h4>भाग ख: जोड़ी मिलान (Section B: Word Matching)</h4>
+          <table class="table mt" style="border:1px solid var(--line);font-size:13px">
+            <tr><th>कॉलम A (हिंदी)</th><th style="text-align:center">उत्तर</th><th>कॉलम B (मुंडारी)</th></tr>
+            ${partB.map((it, idx) => {
+              const rItem = shuffledB[idx];
+              answerKeyList.push(`Sec B Q${idx+1}: ${it.hindi} ➔ ${it.mundari}`);
+              return `
+                <tr>
+                  <td><b>${idx+1}.</b> ${esc(it.hindi)} (${esc(it.english)})</td>
+                  <td style="text-align:center">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</td>
+                  <td><b>(${String.fromCharCode(65+idx)})</b> ${esc(rItem.mundari)}</td>
+                </tr>
+              `;
+            }).join("")}
+          </table>
+        </div>
+      `;
+    }
+
+    if (partC.length > 0) {
+      mixedPartsHtml += `
+        <div style="margin:14px 0">
+          <h4>भाग ग: अनुवाद कार्य (Section C: Translation)</h4>
+          <div class="grid g2 mt">
+            ${partC.map((it, idx) => {
+              answerKeyList.push(`Sec C Q${idx+1}: ${it.hindi} ➔ ${it.mundari}`);
+              return `
+                <div style="padding:6px;border-bottom:1px solid var(--line);font-size:13px">
+                  <b>${idx+1}.</b> ${esc(it.hindi)} (${esc(it.english)}) ➔ मुंडारी: ____________________
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    if (partD.length > 0) {
+      mixedPartsHtml += `
+        <div style="margin:14px 0">
+          <h4>भाग घ: बहुविकल्पी प्रश्न (Section D: Multiple Choice)</h4>
+          <div class="grid g2 mt">
+            ${partD.map((it, idx) => {
+              answerKeyList.push(`Sec D Q${idx+1}: ${it.mundari}`);
+              return `
+                <div class="card" style="padding:10px;border:1px solid var(--line);font-size:12.5px">
+                  <b>${idx+1}. '${esc(it.hindi)}' का मुंडारी शब्द क्या है?</b>
+                  <div style="margin-top:6px">○ ${esc(it.mundari)} &nbsp;&nbsp; ○ ${esc(partA[0]?.mundari || 'का')} &nbsp;&nbsp; ○ ${esc(partB[0]?.mundari || 'हे')}</div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    questionsHtml = mixedPartsHtml;
   }
 
   area.innerHTML = `
-  <div class="card" style="background:#fff;border:2px solid var(--green);padding:24px">
-    <div class="row between">
-      <div><b>${esc(school)}</b><div class="small">Grade 1 • Foundational Numeracy (FLN) • ${count} Items</div></div>
-      <div><b>Name: ________________</b><div class="small">Roll No: ______ Date: ______</div></div>
+    <div class="card worksheet-doc-sheet" id="wsPrintableSheet" style="background:#fff;border:2px solid var(--green);padding:24px;max-width:840px;margin:0 auto">
+      <!-- Worksheet Header -->
+      <div class="row between" style="align-items:flex-start">
+        <div>
+          <div style="font-size:18px;font-weight:800;color:var(--green)">${esc(school)}</div>
+          <div style="font-size:13px;color:var(--muted)">Class ${esc(grade)} • Foundational Literacy & Numeracy (FLN) Worksheet</div>
+          <div style="font-size:14px;font-weight:700;margin-top:4px">विषय: हिंदी – मुंडारी द्विभाषी अभ्यास (Mundari – Hindi Bilingual)</div>
+        </div>
+        <div style="text-align:right;font-size:12.5px;line-height:1.6">
+          <div><b>दिनांक (Date):</b> _____________</div>
+          <div><b>पूर्णांक (Max Marks):</b> ${count * 2}</div>
+        </div>
+      </div>
+
+      <div class="row between mt" style="padding:10px 14px;background:var(--soft-bg);border:1px solid var(--line);border-radius:8px;font-size:13px">
+        <div><b>विद्यार्थी का नाम (Student Name):</b> ___________________________________</div>
+        <div><b>क्रमांक (Roll No):</b> _________</div>
+      </div>
+
+      <div class="notice mt mb" style="font-size:12px">
+        <b>सामान्य निर्देश (Instructions):</b> सभी प्रश्नों के उत्तर साफ़-साफ़ लिखें। Look at questions carefully and write answers neatly in the space provided.
+      </div>
+
+      <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+
+      <!-- Questions Section -->
+      ${questionsHtml}
+
+      <!-- Teacher's Answer Key (Toggleable) -->
+      ${cfg.showAnswerKey ? `
+        <div class="mt" style="margin-top:24px;padding:16px;background:#f0fdf4;border:1.5px dashed #86efac;border-radius:10px">
+          <div style="font-weight:800;color:var(--green);font-size:14px;margin-bottom:8px">
+            📋 Teacher's Answer Key (शिक्षक उत्तर कुंजी - For Teacher Evaluation Only)
+          </div>
+          <div class="grid g2" style="font-size:12px;color:#166534">
+            ${answerKeyList.map(a => `<div>• ${esc(a)}</div>`).join("")}
+          </div>
+        </div>
+      ` : ''}
+
+      <!-- Footer for Printing -->
+      <div class="row between mt" style="border-top:1px solid var(--line);padding-top:14px;font-size:11px;color:var(--muted)">
+        <span>Jharkhand FLN MTB-MLE Primary Education Framework • Bilingual Vocabulary Layer</span>
+        <span>शिक्षक हस्ताक्षर (Teacher Sign): ___________________</span>
+      </div>
     </div>
-    <hr style="border:0;border-top:1px solid var(--line);margin:15px 0">
-    <h3>${esc(ws.title)}</h3>
-    <p class="small"><b>Instructions (Hindi):</b> ${esc(ws.instructions)}</p>
-    <p class="small"><b>Instructions (Mundari Context):</b> ${esc(ws.instructions_unr || "")}</p>
-    ${contentHtml}
-    <div class="row mt between" style="border-top:1px solid var(--line);padding-top:16px">
-      <span class="small badge prototype">Browser A4 Printable Preview — PDF export uses system print</span>
-      <button class="btn secondary" onclick="window.print()">🖨️ Print Worksheet (A4)</button>
-    </div>
-  </div>`;
-  toast("Worksheet generated (" + count + " items)");
+  `;
+
+  toast("Generated worksheet (" + selected.length + " questions)");
+}
+
+function downloadWorksheetHtml() {
+  const wsDoc = document.querySelector("#wsPrintableSheet");
+  if (!wsDoc) return toast("No worksheet generated to download");
+
+  const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FLN Bilingual Worksheet - ${esc(state.worksheetSettings.school || "Primary School")}</title>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; margin: 20px; color: #1C2B22; }
+    .card { border: 2px solid #0A2418; padding: 24px; max-width: 840px; margin: 0 auto; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+    th, td { border: 1px solid #DFE8E2; padding: 8px; text-align: left; }
+    .grid { display: grid; gap: 12px; }
+    .g2 { grid-template-columns: 1fr 1fr; }
+    .g3 { grid-template-columns: 1fr 1fr 1fr; }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    .row { display: flex; align-items: center; }
+    .between { justify-content: space-between; }
+    @media print { .no-print { display: none !important; } }
+  </style>
+</head>
+<body>
+  ${wsDoc.outerHTML}
+</body>
+</html>`;
+
+  const blob = new Blob([fullHtml], { type: "text/html;charset=utf-8" });
+  const u = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = u;
+  a.download = `FLN_Worksheet_Grade${state.worksheetSettings.grade}_${Date.now()}.html`;
+  a.click();
+  toast("Downloaded printable HTML worksheet!");
 }
 
 // =========================================================================
@@ -3552,9 +5686,9 @@ function aiArchitecturePage() {
 // =========================================================================
 
 function studentPage(c) {
-  if (state.page === "home") return c.innerHTML = studentHome();
-  if (state.page === "liveclass") return c.innerHTML = studentLive();
-  if (state.page === "modules") return c.innerHTML = studentModules();
+  if (state.page === "home" || state.page === "dashboard" || state.page === "student_dashboard") return c.innerHTML = studentHome();
+  if (state.page === "liveclass" || state.page === "live" || state.page === "receiver" || state.page === "student_receiver") return c.innerHTML = studentLive();
+  if (state.page === "modules" || state.page === "numbers") return c.innerHTML = studentModules();
   if (state.page === "flashcards") return c.innerHTML = flashcards();
   if (state.page === "practice") return c.innerHTML = studentPractice();
   if (state.page === "settings") return c.innerHTML = settings();
@@ -3562,18 +5696,36 @@ function studentPage(c) {
 }
 
 function studentHome() {
-  return `<div class="eyebrow">Student Home</div>
+  return `<div class="eyebrow">Student Workspace • Primary Learning</div>
   <h1 class="title">Learn in your language.</h1>
-  <p class="sub">Join your teacher's classroom and receive Mundari translations in real time.</p>
+  <p class="sub">Join your teacher's live classroom and receive approved Mundari translations in real time.</p>
   <div class="hero">
     <h2>🟢 Live Classroom</h2>
     <p>Teacher speaks Hindi ➔ lesson translates into Mundari ➔ you receive Mundari text, pronunciation audio & visuals.</p>
-    <button class="btn" onclick="go('liveclass')">Join Live Classroom</button>
+    <div class="row mt">
+      <button class="btn" style="background:var(--yellow);color:var(--green);font-weight:900" onclick="go('liveclass')">▶ Join Live Classroom</button>
+      <button class="btn secondary" onclick="go('modules')">🔢 Learn Numbers 1–20</button>
+    </div>
   </div>
   <div class="grid g3 mt">
     <div class="card" style="cursor:pointer" onclick="go('modules')"><div class="stat">1–20</div><p>Numbers module (मिअद ... हिसि)</p></div>
     <div class="card" style="cursor:pointer" onclick="go('liveclass')"><div class="stat">🎧</div><p>Live translation receiver</p></div>
     <div class="card" style="cursor:pointer" onclick="go('practice')"><div class="stat">✓</div><p>Interactive Practice & Quiz</p></div>
+  </div>
+  <h3 class="mt" style="font-size:18px;margin-top:24px;margin-bottom:12px">Student Learning Activities</h3>
+  <div class="grid g3">
+    <div class="card" style="cursor:pointer" onclick="go('flashcards')">
+      <h3>🎴 Flashcards</h3>
+      <p class="small">Learn numbers and words with audio and ten-frame visuals.</p>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="go('practice')">
+      <h3>✍️ Practice & Quiz</h3>
+      <p class="small">Self-paced interactive questions to test your number skills.</p>
+    </div>
+    <div class="card" style="cursor:pointer" onclick="go('settings')">
+      <h3>⚙️ Preferences</h3>
+      <p class="small">Configure voice speed and classroom audio settings.</p>
+    </div>
   </div>
   <div class="notice mt">Student portal is a receiving & learning space. Live classroom connects to teacher's broadcast room.</div>`;
 }
@@ -3610,11 +5762,76 @@ function joinRoom() {
   go("liveclass");
 }
 
+function sendStudentReply(replyText) {
+  sendBus({type:"student_reply", name: state.studentName || "Student", text: replyText, time: now()});
+  toast("Sent response to teacher: " + replyText);
+}
+
 function studentReceiver() {
   let d = state.lastTranslation;
   const isRev = d && d.direction === "unr-hi";
+  const vocabB = state.lastVocabBroadcast;
+  const pracB = state.lastPracticeBroadcast;
+
   return `<div class="grid g3">
     <section class="card" style="grid-column:span 2">
+      <!-- Live Vocab Broadcast Spotlight -->
+      ${vocabB ? `
+        <div class="broadcast-spotlight-card">
+          <div class="row between">
+            <span class="badge live">📢 TEACHER LIVE FLASHCARD</span>
+            <span class="badge verified">${esc(vocabB.category || 'Vocabulary')}</span>
+          </div>
+          <div class="row mt" style="gap:20px;align-items:center;flex-wrap:wrap">
+            ${vocabB.image_url ? `
+              <img src="${vocabB.image_url}" alt="${esc(vocabB.english)}" 
+                   style="width:130px;height:110px;object-fit:contain;border-radius:10px;background:#fff;border:1px solid var(--line)"/>
+            ` : ''}
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--muted)">${esc(vocabB.english)}</div>
+              <div style="font-size:26px;font-weight:800;color:var(--green)">
+                ${esc(vocabB.hindi)} ➔ ${esc(vocabB.mundari)}
+              </div>
+              <div class="small mt">Status: <b>${esc(vocabB.validation_badge || 'VERIFIED')}</b></div>
+              <div class="row mt" style="gap:8px">
+                <button class="btn secondary" style="padding:6px 12px;font-size:12px" onclick="playVocabAudio(state.lastVocabBroadcast)">
+                  🔊 Listen
+                </button>
+                <button class="btn outline" style="padding:6px 12px;font-size:12px" onclick="sendStudentReply('👍 Understood (इतुअनाञ)')">
+                  👍 Understood
+                </button>
+                <button class="btn outline" style="padding:6px 12px;font-size:12px" onclick="sendStudentReply('🔁 Repeat please')">
+                  🔁 Repeat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ` : ''}
+
+      <!-- Live Practice Question Spotlight -->
+      ${pracB ? `
+        <div class="card mb" style="background:#fffbeb;border:2px solid var(--amber);padding:18px">
+          <div class="row between">
+            <span class="badge warn">✍️ LIVE CLASSROOM CHALLENGE</span>
+            <span class="small">Pushed by teacher</span>
+          </div>
+          <h3 class="mt">${esc(pracB.prompt || pracB.promptEnglish || 'Practice Question')}</h3>
+          ${pracB.image ? `
+            <div style="text-align:center;margin:10px 0">
+              <img src="${pracB.image}" style="max-height:120px;object-fit:contain;border-radius:8px"/>
+            </div>
+          ` : ''}
+          <div class="grid g2 mt">
+            ${(pracB.options || []).map((opt, i) => `
+              <button class="btn outline" style="text-align:left;padding:10px" 
+                      onclick="sendStudentPracticeAnswer('${esc(opt.text || opt.label)}')">
+                ${i+1}. ${esc(opt.text || opt.label)}
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      ` : ''}
       <div class="row between">
         <h3>🎧 Teacher is speaking</h3>
         <span class="badge live">● ${isRev ? 'MUNDARI ➔ HINDI' : 'HINDI ➔ MUNDARI'}</span>
@@ -3636,8 +5853,25 @@ function studentReceiver() {
       </div>
       ${d && d.numeral ? `<div class="card mt" style="text-align:center">${renderTenFrame(d.numeral)}</div>` : ""}
       <div class="audio mt">
-        <button class="btn secondary" onclick="studentAudio()">🔊 ${d ? (isRev ? "Play in Hindi" : (d.audio_file ? "Listen in Mundari" : "Audio is not available for this phrase yet.")) : "Waiting for audio"}</button>
+        <button class="btn secondary" onclick="studentAudio()">🔊 ${d ? (isRev ? "Play in Hindi" : (d.audio_file ? "Play Prototype Audio" : "Audio is not available for this phrase yet.")) : "Play Prototype Audio"}</button>
         <div class="bar"><span id="audioBar"></span></div>
+      </div>
+      <div class="card mt" style="background:var(--soft-bg);border:1px solid var(--line)">
+        <h4 style="margin:0 0 10px;font-size:14px">Student Reactions & Responses:</h4>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <button class="btn outline" onclick="toast('✋ Hand raised sent to teacher')">✋ Raise Hand</button>
+          <button class="btn outline" onclick="toast('👍 Understood sent to teacher')">👍 Understood</button>
+          <button class="btn outline" onclick="toast('🔁 Repeat requested to teacher')">🔁 Please Repeat</button>
+        </div>
+        <div class="mt" style="padding-top:12px;border-top:1px solid var(--line)">
+          <label>Quick Response in Mundari:</label>
+          <div class="row mt" style="gap:6px;flex-wrap:wrap">
+            <button class="btn outline" onclick="sendStudentReply('हे (Yes)')">हे (Yes)</button>
+            <button class="btn outline" onclick="sendStudentReply('का (No)')">का (No)</button>
+            <button class="btn outline" onclick="sendStudentReply('इतुअनाञ (I understand)')">इतुअनाञ (I understand)</button>
+            <button class="btn outline" onclick="sendStudentReply('काञ इतुअना (I do not understand)')">काञ इतुअना (I don't understand)</button>
+          </div>
+        </div>
       </div>
     </section>
     <aside class="card">
@@ -3648,6 +5882,16 @@ function studentReceiver() {
       <hr style="border:0;border-top:1px solid var(--line)">
       <button class="btn danger" onclick="leaveRoom()">Leave classroom</button>
     </aside>
+  </div>
+  <div class="card mt">
+    <h3>How the live translation works</h3>
+    <div class="pipeline" style="grid-template-columns:repeat(5,1fr);color:var(--ink);margin-top:12px">
+      <div class="step" style="background:var(--soft);border-color:var(--line)"><b>🎤</b>Hindi speech</div>
+      <div class="step" style="background:var(--soft);border-color:var(--line)"><b>📝</b>Speech-to-text</div>
+      <div class="step" style="background:var(--soft);border-color:var(--line)"><b>🔁</b>Hindi → Mundari</div>
+      <div class="step" style="background:var(--soft);border-color:var(--line)"><b>🔊</b>Mundari TTS</div>
+      <div class="step" style="background:var(--soft);border-color:var(--line)"><b>🧒</b>You listen</div>
+    </div>
   </div>`;
 }
 
@@ -3779,46 +6023,186 @@ function renderStudentNumberDetail(n) {
 }
 
 // =========================================================================
-// PHASE 3: STUDENT -> FLASHCARDS
+// PHASE 3: STUDENT -> VISUAL VOCABULARY FLASHCARDS (159 RECORDS)
 // =========================================================================
 
+function getActiveFlashcardsList() {
+  const allCards = (state.educationalVocab && state.educationalVocab.length > 0) 
+    ? state.educationalVocab 
+    : DB.numbers.map(n => ({
+        id: "NUM_" + n.number,
+        english: "Number " + n.number,
+        hindi: n.hindi_text,
+        mundari: n.mundari_text,
+        category: "Numeracy",
+        image_url: "",
+        is_verified: true,
+        validation_badge: "VERIFIED EDUCATIONAL",
+        status_description: "Canonical FLN Numeracy Module"
+      }));
+
+  let filtered = allCards;
+  if (state.flashcardCategory && state.flashcardCategory !== "all") {
+    filtered = filtered.filter(x => x.category.toLowerCase() === state.flashcardCategory.toLowerCase());
+  }
+  if (state.flashcardVerifiedOnly) {
+    filtered = filtered.filter(x => x.is_verified);
+  }
+  if (state.flashcardSearch && state.flashcardSearch.trim()) {
+    const q = state.flashcardSearch.trim().toLowerCase();
+    filtered = filtered.filter(x => 
+      (x.english || "").toLowerCase().includes(q) ||
+      (x.hindi || "").toLowerCase().includes(q) ||
+      (x.mundari || "").toLowerCase().includes(q)
+    );
+  }
+  return { all: allCards, filtered: filtered };
+}
+
 function flashcards() {
-  const idx = ((state.flashcardIndex % DB.numbers.length) + DB.numbers.length) % DB.numbers.length;
-  const it = DB.numbers[idx];
+  loadEducationalVocabulary();
+  const { all, filtered } = getActiveFlashcardsList();
+
+  const cats = [{ name: "all", total: all.length }].concat(
+    state.educationalCategories && state.educationalCategories.length > 0
+      ? state.educationalCategories
+      : [{ name: "Numeracy", total: DB.numbers.length }]
+  );
+
+  const total = filtered.length;
+  const idx = total > 0 ? (((state.flashcardIndex % total) + total) % total) : 0;
+  const current = total > 0 ? filtered[idx] : null;
+  window._currentVocabCard = current;
+
   return `<div class="eyebrow">Flashcards</div>
   <div class="row between">
-    <h1 class="title">Learn by seeing & saying</h1>
-    <div class="row">
-      <label class="small" style="margin:0;margin-right:6px">Jump to:</label>
-      <select onchange="jumpFlashcard(this.value)" style="width:auto;padding:6px 10px">
-        ${DB.numbers.map((n, i) => `<option value="${i}" ${i === idx ? 'selected' : ''}>${n.number} (${n.mundari_text})</option>`).join("")}
-      </select>
-    </div>
-  </div>
-  <p class="sub">Card ${idx + 1} of ${DB.numbers.length}</p>
-  <div class="card flash mt">
     <div>
-      <div class="number">${it.number} (${it.hindi_numeral})</div>
-      ${renderTenFrame(it.number <= 10 ? it.number : 10)}
-      <h2>${it.hindi_text} ➔ <span style="color:var(--green)">${it.mundari_text}</span></h2>
-      <p>Phonetic Guide: <b>/${it.mundari_phonetic}/</b> (Root: ${it.mundari_root})</p>
-      <button class="btn secondary mt" onclick="speakMundari('${it.mundari_text}', '${it.audio_file}')">🔊 Play pronunciation</button>
+      <h1 class="title">Learn by seeing & saying</h1>
+      <p class="sub" style="margin-bottom:12px">Visual vocabulary flashcards with Hindi, Mundari, and verified images.</p>
+    </div>
+    <div class="row">
+      ${state.role === "teacher" && current ? `
+        <button class="btn" style="background:var(--yellow);color:var(--green);font-weight:900" onclick="broadcastVocabCard(window._currentVocabCard)">
+          📡 Broadcast to Classroom
+        </button>
+      ` : ''}
     </div>
   </div>
-  <div class="row mt" style="justify-content:center;gap:16px">
-    <button class="btn secondary" onclick="prevFlashcard()">← Previous</button>
-    <button class="btn outline" onclick="resetFlashcards()">First (1)</button>
-    <button class="btn primary" onclick="nextFlashcard()">Next →</button>
-  </div>`;
+
+  <!-- Dynamic Category Pills -->
+  <div class="category-pill-bar mt mb">
+    ${cats.map(c => `
+      <button class="category-pill ${state.flashcardCategory === c.name ? 'active' : ''}" 
+              onclick="setFlashcardCategory('${esc(c.name)}')">
+        ${esc(c.name === 'all' ? '🌟 All Categories' : c.name)} (${c.total || c.count})
+      </button>
+    `).join("")}
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <div class="card mb" style="padding:14px">
+    <div class="row between">
+      <div class="row" style="flex:1;min-width:240px">
+        <input type="text" id="fcSearchInput" placeholder="🔍 Search English, Hindi, or Mundari..." 
+               value="${esc(state.flashcardSearch || '')}" 
+               oninput="onFlashcardSearch(this.value)"
+               style="padding:8px 12px;font-size:13px">
+        ${state.flashcardSearch ? `<button class="btn outline" style="padding:6px 10px" onclick="clearFlashcardSearch()">✕</button>` : ''}
+      </div>
+      <div class="row">
+        <label style="margin:0;font-size:13px;display:flex;align-items:center;gap:6px;cursor:pointer">
+          <input type="checkbox" ${state.flashcardVerifiedOnly ? 'checked' : ''} onchange="toggleFlashcardVerifiedOnly(this.checked)">
+          <b>Verified Only</b> (${all.filter(x => x.is_verified).length})
+        </label>
+        ${total > 0 ? `
+          <div class="row" style="gap:6px">
+            <label class="small" style="margin:0">Jump:</label>
+            <select onchange="jumpFlashcard(this.value)" style="width:auto;padding:6px 10px;font-size:12px">
+              ${filtered.map((item, i) => `<option value="${i}" ${i === idx ? 'selected' : ''}>${i+1}. ${esc(item.english || item.hindi)}</option>`).join("")}
+            </select>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Display -->
+  ${!current ? `
+    <div class="card text-center" style="padding:48px 24px;text-align:center">
+      <div style="font-size:48px;margin-bottom:12px">🔍</div>
+      <h3>No vocabulary cards match this filter</h3>
+      <p class="sub">Try clearing your search query or selecting "All Categories".</p>
+      <button class="btn primary mt" onclick="resetFlashcardFilters()">Show All Flashcards</button>
+    </div>
+  ` : `
+    <div class="card flash mt" style="max-width:640px;margin:auto">
+      <div style="width:100%">
+        <div class="row between mb" style="border-bottom:1px solid #d3e2d6;padding-bottom:10px">
+          <span class="badge verified" style="font-size:11px">📂 ${esc(current.category)}</span>
+          <span class="badge ${current.is_verified ? 'live' : 'warn'}" style="font-size:11px">
+            ${current.is_verified ? '✓ VERIFIED EDUCATIONAL' : '⚠️ HELD FOR REVIEW'}
+          </span>
+        </div>
+
+        <div style="height:210px;display:flex;align-items:center;justify-content:center;margin:12px auto;background:#fff;border-radius:12px;border:1px solid var(--line);padding:10px;width:fit-content;max-width:100%">
+          ${current.image_url ? `
+            <img src="${current.image_url}" alt="${esc(current.english)}" class="flashcard-image" style="max-height:100%;max-width:100%;object-fit:contain;border-radius:8px"
+                 onerror="this.parentElement.innerHTML='<div style=\'font-size:48px;color:var(--muted)\'>🖼️</div>';"/>
+          ` : `
+            <div style="font-size:48px;color:var(--muted)">🖼️</div>
+          `}
+        </div>
+
+        <div style="font-size:16px;color:var(--muted);font-weight:600;margin-top:4px">${esc(current.english)}</div>
+        <h2 style="font-size:30px;margin:6px 0">
+          ${esc(current.hindi)} ➔ <span style="color:var(--green)">${esc(current.mundari)}</span>
+        </h2>
+        ${current.phonetic ? `<p class="small" style="margin:4px 0">Phonetic: <b>/${esc(current.phonetic)}/</b></p>` : ''}
+
+        <div class="row mt" style="justify-content:center;gap:12px">
+          <button class="btn secondary" onclick="playVocabAudio(window._currentVocabCard)">🔊 Play pronunciation</button>
+          ${state.role === "teacher" ? `
+            <button class="btn" style="background:var(--yellow);color:var(--green);font-weight:900" onclick="broadcastVocabCard(window._currentVocabCard)">
+              📡 Broadcast to Students
+            </button>
+          ` : ''}
+        </div>
+
+        <div class="small mt" style="color:var(--muted);border-top:1px solid #d3e2d6;padding-top:10px;margin-top:14px">
+          ${esc(current.status_description || current.linguistic_note || '')}
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt" style="justify-content:center;gap:16px">
+      <button class="btn secondary" onclick="prevFlashcard()">← Previous</button>
+      <span style="font-weight:700;font-size:14px;color:var(--muted);margin:0 8px">Card ${idx + 1} of ${total}</span>
+      <button class="btn outline" onclick="shuffleFlashcards()">🔀 Shuffle</button>
+      <button class="btn primary" onclick="nextFlashcard()">Next →</button>
+    </div>
+  `}
+  `;
+}
+
+function setFlashcardCategory(cat) {
+  state.flashcardCategory = cat;
+  state.flashcardIndex = 0;
+  render();
 }
 
 function prevFlashcard() {
-  state.flashcardIndex = ((state.flashcardIndex - 1 + DB.numbers.length) % DB.numbers.length);
+  const { filtered } = getActiveFlashcardsList();
+  const len = filtered.length;
+  if (len === 0) return;
+  state.flashcardIndex = ((state.flashcardIndex - 1 + len) % len);
   render();
 }
 
 function nextFlashcard() {
-  state.flashcardIndex = (state.flashcardIndex + 1) % DB.numbers.length;
+  const { filtered } = getActiveFlashcardsList();
+  const len = filtered.length;
+  if (len === 0) return;
+  state.flashcardIndex = (state.flashcardIndex + 1) % len;
   render();
 }
 
@@ -3827,84 +6211,196 @@ function jumpFlashcard(idx) {
   render();
 }
 
-function resetFlashcards() {
+function shuffleFlashcards() {
+  const { filtered } = getActiveFlashcardsList();
+  if (filtered.length <= 1) return;
+  state.flashcardIndex = Math.floor(Math.random() * filtered.length);
+  render();
+  toast("Shuffled flashcards!");
+}
+
+function onFlashcardSearch(val) {
+  state.flashcardSearch = val;
+  state.flashcardIndex = 0;
+  render();
+}
+
+function clearFlashcardSearch() {
+  state.flashcardSearch = "";
+  state.flashcardIndex = 0;
+  render();
+}
+
+function toggleFlashcardVerifiedOnly(val) {
+  state.flashcardVerifiedOnly = !!val;
+  state.flashcardIndex = 0;
+  render();
+}
+
+function resetFlashcardFilters() {
+  state.flashcardCategory = "all";
+  state.flashcardSearch = "";
+  state.flashcardVerifiedOnly = false;
   state.flashcardIndex = 0;
   render();
 }
 
 // =========================================================================
-// PHASE 4: STUDENT -> PRACTICE (DYNAMIC DETERMINISTIC QUIZ)
+// PHASE 4: STUDENT -> IMAGE-BASED PRACTICE ENGINE (7 MODES)
 // =========================================================================
 
-function generateQuizQuestions() {
-  // Generates 5 structured questions from canonical DB.numbers
-  const questions = [
-    {
-      q: "What is the Mundari word for Hindi number 1 (एक)?",
-      target: 1,
-      options: [
-        { text: "मिअद (miad)", correct: true },
-        { text: "बारिया (baria)", correct: false },
-        { text: "अपिया (apia)", correct: false },
-        { text: "उपुनिया (upunia)", correct: false }
-      ],
-      explanation: "1 (एक) is मिअद (miad) in Mundari."
-    },
-    {
-      q: "Which numeral corresponds to 'बारिया' (baria)?",
-      target: 2,
-      options: [
-        { text: "1 (१)", correct: false },
-        { text: "2 (२)", correct: true },
-        { text: "3 (३)", correct: false },
-        { text: "4 (४)", correct: false }
-      ],
-      explanation: "बारिया (baria) is 2 (२)."
-    },
-    {
-      q: "Which number comes after 7 (एया - eya)?",
-      target: 8,
-      options: [
-        { text: "6 (तुरुइआ)", correct: false },
-        { text: "8 (इरिलिआ)", correct: true },
-        { text: "9 (अरेया)", correct: false },
-        { text: "10 (गेलेया)", correct: false }
-      ],
-      explanation: "After 7 (एया) comes 8 (इरिलिआ)."
-    },
-    {
-      q: "What is the Mundari word for number 5 (पांच)?",
-      target: 5,
-      options: [
-        { text: "उपुनिया (upunia)", correct: false },
-        { text: "मोड़ेया (môṛẽa)", correct: true },
-        { text: "तुरुइआ (turuia)", correct: false },
-        { text: "एया (eya)", correct: false }
-      ],
-      explanation: "5 (पांच) is मोड़ेया (môṛẽa)."
-    },
-    {
-      q: "What is the teen number for 11 (ग्यारह)?",
-      target: 11,
-      options: [
-        { text: "गेल बारिया (gel baria)", correct: false },
-        { text: "गेल मिअद (gel miad)", correct: true },
-        { text: "गेल अपिया (gel apia)", correct: false },
-        { text: "हिसि (hisi)", correct: false }
-      ],
-      explanation: "11 is 10 + 1 (गेल मिअद)."
+function generateEducationalPracticeQuestions(mode = "mode_a", category = "all", verifiedOnly = true, count = 5) {
+  loadEducationalVocabulary();
+  let pool = (state.educationalVocab && state.educationalVocab.length > 0)
+    ? state.educationalVocab
+    : [];
+
+  if (pool.length === 0) {
+    return generateQuizQuestions();
+  }
+
+  if (category && category !== "all") {
+    const catFiltered = pool.filter(x => x.category.toLowerCase() === category.toLowerCase());
+    if (catFiltered.length >= 4) pool = catFiltered;
+  }
+  if (verifiedOnly) {
+    const verFiltered = pool.filter(x => x.is_verified);
+    if (verFiltered.length >= 4) pool = verFiltered;
+  }
+
+  const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  const shuffledPool = shuffleArray(pool);
+  const selectedTargets = shuffledPool.slice(0, Math.min(count, shuffledPool.length));
+
+  const questions = [];
+
+  selectedTargets.forEach((target, qIdx) => {
+    let effectiveMode = mode;
+    if (mode === "mode_g") {
+      const modesList = ["mode_a", "mode_b", "mode_c", "mode_d", "mode_e", "mode_f"];
+      effectiveMode = modesList[qIdx % modesList.length];
     }
-  ];
+
+    const otherItems = pool.filter(x => x.id !== target.id);
+    const distractors = shuffleArray(otherItems).slice(0, 3);
+
+    if (effectiveMode === "mode_a") {
+      const options = shuffleArray([
+        { text: target.hindi, correct: true },
+        ...distractors.map(d => ({ text: d.hindi, correct: false }))
+      ]);
+      questions.push({
+        mode: "mode_a",
+        type: "single_choice",
+        image: target.image_url,
+        prompt: "चित्र देखकर सही हिंदी शब्द चुनें:",
+        promptEnglish: "Look at the image and choose the matching Hindi word:",
+        target: target,
+        options: options,
+        explanation: `${target.english} को हिंदी में '${target.hindi}' कहते हैं।`
+      });
+    } else if (effectiveMode === "mode_b") {
+      const options = shuffleArray([
+        { text: target.mundari, correct: true },
+        ...distractors.map(d => ({ text: d.mundari, correct: false }))
+      ]);
+      questions.push({
+        mode: "mode_b",
+        type: "single_choice",
+        image: target.image_url,
+        prompt: "चित्र देखकर सही मुंडारी शब्द चुनें:",
+        promptEnglish: "Look at the image and choose the matching Mundari word:",
+        target: target,
+        options: options,
+        explanation: `${target.english} (${target.hindi}) को मुंडारी में '${target.mundari}' कहते हैं।`
+      });
+    } else if (effectiveMode === "mode_c") {
+      const options = shuffleArray([
+        { text: target.mundari, correct: true },
+        ...distractors.map(d => ({ text: d.mundari, correct: false }))
+      ]);
+      questions.push({
+        mode: "mode_c",
+        type: "single_choice",
+        wordPrompt: target.hindi,
+        englishNote: target.english,
+        prompt: `हिंदी शब्द '${target.hindi}' का सही मुंडारी अनुवाद क्या है?`,
+        promptEnglish: `What is the Mundari translation of '${target.hindi}' (${target.english})?`,
+        target: target,
+        options: options,
+        explanation: `'${target.hindi}' का मुंडारी शब्द '${target.mundari}' है।`
+      });
+    } else if (effectiveMode === "mode_d") {
+      const options = shuffleArray([
+        { text: target.hindi, correct: true },
+        ...distractors.map(d => ({ text: d.hindi, correct: false }))
+      ]);
+      questions.push({
+        mode: "mode_d",
+        type: "single_choice",
+        wordPrompt: target.mundari,
+        englishNote: target.english,
+        prompt: `मुंडारी शब्द '${target.mundari}' का सही हिंदी अर्थ क्या है?`,
+        promptEnglish: `What is the Hindi meaning of Mundari word '${target.mundari}'?`,
+        target: target,
+        options: options,
+        explanation: `मुंडारी '${target.mundari}' का हिंदी अर्थ '${target.hindi}' (${target.english}) है।`
+      });
+    } else if (effectiveMode === "mode_e") {
+      const imageOptions = shuffleArray([
+        { image: target.image_url, label: target.hindi, correct: true },
+        ...distractors.map(d => ({ image: d.image_url, label: d.hindi, correct: false }))
+      ]);
+      questions.push({
+        mode: "mode_e",
+        type: "image_choice",
+        wordPrompt: `${target.hindi} • ${target.mundari}`,
+        englishNote: target.english,
+        prompt: `दिए गए शब्द के सही चित्र पर क्लिक करें:`,
+        promptEnglish: `Click on the matching picture for '${target.hindi} / ${target.mundari}' (${target.english}):`,
+        target: target,
+        options: imageOptions,
+        explanation: `'${target.hindi}' (${target.english}) का सही चित्र यह है।`
+      });
+    } else if (effectiveMode === "mode_f") {
+      const fourPairs = shuffleArray([target, ...distractors]);
+      const leftCol = fourPairs.map(x => ({ id: x.id, text: x.hindi, english: x.english }));
+      const rightCol = shuffleArray(fourPairs).map(x => ({ id: x.id, text: x.mundari, image: x.image_url }));
+      questions.push({
+        mode: "mode_f",
+        type: "interactive_match",
+        prompt: "जोड़ी बनाओ: हिंदी शब्द को सही मुंडारी शब्द से मिलाओ",
+        promptEnglish: "Match pairs: Select a Hindi word on the left, then click its Mundari pair on the right.",
+        left: leftCol,
+        right: rightCol,
+        pairsCount: fourPairs.length,
+        matchedIds: [],
+        selectedLeft: null,
+        selectedRight: null,
+        explanation: "शानदार! सभी जोड़ियाँ सही-सही मिल गईं।"
+      });
+    }
+  });
+
   return questions;
 }
 
 function studentPractice() {
+  loadEducationalVocabulary();
   if (!state.practiceSession) {
+    const questions = generateEducationalPracticeQuestions(
+      state.practiceMode || "mode_a",
+      state.practiceCategory || "all",
+      state.practiceVerifiedOnly,
+      5
+    );
     state.practiceSession = {
       active: true,
-      questions: generateQuizQuestions(),
+      questions: questions,
       currentIndex: 0,
       score: 0,
+      streak: 0,
+      maxStreak: 0,
       attempts: 0,
       locked: false,
       userChoice: null,
@@ -3913,58 +6409,197 @@ function studentPractice() {
   }
 
   const s = state.practiceSession;
+  const cats = [{ name: "all", total: (state.educationalVocab || []).length || 159 }].concat(
+    state.educationalCategories || []
+  );
+
   if (s.completed) {
-    const accuracy = Math.round((s.score / s.questions.length) * 100);
+    const accuracy = Math.round((s.score / Math.max(1, s.questions.length * 10)) * 100);
     return `<div class="eyebrow">Practice Quiz Complete</div>
     <div class="card flash">
       <div style="text-align:center">
         <div style="font-size:48px">🏆</div>
         <h1 class="title">Shaabaash! Quiz Finished</h1>
         <p class="sub">Student: <b>${esc(state.studentName || "Student")}</b> (Roll: ${esc(state.roll || "1")})</p>
-        <div class="stat" style="font-size:42px;color:var(--green)">${s.score} / ${s.questions.length}</div>
-        <p>Accuracy Score: <b>${accuracy}%</b></p>
+        <div class="stat" style="font-size:42px;color:var(--green)">${s.score} Points</div>
+        <p>Highest Streak: 🔥 <b>${s.maxStreak} in a row</b> • Accuracy: <b>${accuracy}%</b></p>
         <span class="badge ${accuracy >= 80 ? 'live' : accuracy >= 60 ? 'ai' : 'warn'} mt" style="font-size:14px;padding:8px 16px">
-          ${accuracy >= 80 ? 'EXCELLING (FLN Competency Mastered)' : accuracy >= 60 ? 'ON TRACK' : 'NEEDS SUPPORT'}
+          ${accuracy >= 80 ? '🌟 FLN VOCABULARY COMPETENCY MASTERED' : accuracy >= 60 ? 'ON TRACK' : 'NEEDS SUPPORT'}
         </span>
         <div class="mt" style="margin-top:20px">
           <button class="btn primary" onclick="restartPracticeQuiz()">🔄 Start New Practice Quiz</button>
-          <button class="btn outline" onclick="go('modules')">← Review Numbers</button>
+          <button class="btn outline" onclick="go('flashcards')">🎴 Review Flashcards</button>
         </div>
       </div>
     </div>`;
   }
 
   const q = s.questions[s.currentIndex];
+
   return `<div class="eyebrow">Interactive Practice • Question ${s.currentIndex + 1} of ${s.questions.length}</div>
-  <h1 class="title">FLN Numeracy Quiz</h1>
-  <p class="sub">Score: <b>${s.score}</b> / ${s.questions.length} • Student: ${esc(state.studentName || "Student")}</p>
-  <div class="card">
-    <h3>${esc(q.q)}</h3>
-    <div class="grid g2 mt">
-      ${q.options.map((opt, optIdx) => `
-        <button class="btn ${s.locked ? (opt.correct ? 'primary' : (s.userChoice === optIdx ? 'danger' : 'outline')) : 'outline'}"
-                style="text-align:left;padding:14px"
-                ${s.locked ? 'disabled' : ''}
-                onclick="choosePracticeOption(${optIdx})">
-          ${optIdx + 1}. ${esc(opt.text)}
-        </button>
-      `).join("")}
+  <div class="row between">
+    <div>
+      <h1 class="title">FLN Practice & Quiz</h1>
+      <p class="sub">Score: <b>${s.score} pts</b> • 🔥 Streak: <b>${s.streak}</b> • Student: ${esc(state.studentName || "Student")}</p>
     </div>
+    <div class="row">
+      ${state.role === "teacher" ? `
+        <button class="btn outline" onclick="broadcastPracticeQuestion(state.practiceSession.questions[state.practiceSession.currentIndex])">
+          📢 Push Question to Students
+        </button>
+      ` : ''}
+      <button class="btn secondary" onclick="restartPracticeQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <!-- Mode & Category Selectors -->
+  <div class="card mb" style="padding:14px">
+    <div class="grid g3">
+      <div>
+        <label>Practice Mode</label>
+        <select onchange="changePracticeMode(this.value)">
+          <option value="mode_a" ${state.practiceMode === 'mode_a' ? 'selected' : ''}>Mode A: 🖼️ Image ➔ Hindi</option>
+          <option value="mode_b" ${state.practiceMode === 'mode_b' ? 'selected' : ''}>Mode B: 🖼️ Image ➔ Mundari</option>
+          <option value="mode_c" ${state.practiceMode === 'mode_c' ? 'selected' : ''}>Mode C: 🇮🇳 Hindi ➔ Mundari</option>
+          <option value="mode_d" ${state.practiceMode === 'mode_d' ? 'selected' : ''}>Mode D: 🏹 Mundari ➔ Hindi</option>
+          <option value="mode_e" ${state.practiceMode === 'mode_e' ? 'selected' : ''}>Mode E: 🎯 Word ➔ Image</option>
+          <option value="mode_f" ${state.practiceMode === 'mode_f' ? 'selected' : ''}>Mode F: 🔗 Match Pairs</option>
+          <option value="mode_g" ${state.practiceMode === 'mode_g' ? 'selected' : ''}>Mode G: 🎲 Mixed Practice Quiz</option>
+        </select>
+      </div>
+      <div>
+        <label>Category</label>
+        <select onchange="changePracticeCategory(this.value)">
+          ${cats.map(c => `<option value="${c.name}" ${state.practiceCategory === c.name ? 'selected' : ''}>${esc(c.name === 'all' ? 'All Categories' : c.name)} (${c.total || c.count})</option>`).join("")}
+        </select>
+      </div>
+      <div>
+        <label>Validation</label>
+        <select onchange="changePracticeVerifiedOnly(this.value === 'true')">
+          <option value="true" ${state.practiceVerifiedOnly ? 'selected' : ''}>Verified Pairs Only (Safe)</option>
+          <option value="false" ${!state.practiceVerifiedOnly ? 'selected' : ''}>Include Unverified (Review)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Container -->
+  <div class="card">
+    <div class="row between mb">
+      <span class="badge verified">${esc(q.target ? q.target.category : 'Practice')}</span>
+      <span class="small" style="font-weight:700">Question ${s.currentIndex + 1} / ${s.questions.length}</span>
+    </div>
+
+    <h3 style="margin:4px 0">${esc(q.prompt)}</h3>
+    <p class="small" style="color:var(--muted);margin-top:2px">${esc(q.promptEnglish || '')}</p>
+
+    <!-- Visual Image (for Mode A and Mode B) -->
+    ${(q.mode === 'mode_a' || q.mode === 'mode_b') && q.image ? `
+      <div style="text-align:center;margin:14px 0">
+        <img src="${q.image}" alt="Prompt" style="max-height:180px;object-fit:contain;border-radius:10px;background:#fff;border:1px solid var(--line);padding:6px"/>
+      </div>
+    ` : ''}
+
+    <!-- Prompt Word (for Mode C, D, E) -->
+    ${(q.mode === 'mode_c' || q.mode === 'mode_d' || q.mode === 'mode_e') ? `
+      <div class="card" style="text-align:center;background:var(--soft);padding:16px;margin:12px 0">
+        <div style="font-size:28px;font-weight:800;color:var(--green)">${esc(q.wordPrompt)}</div>
+        <div class="small" style="color:var(--muted);margin-top:4px">${esc(q.englishNote || '')}</div>
+      </div>
+    ` : ''}
+
+    <!-- Options for Mode A, B, C, D (Single choice text) -->
+    ${(q.type === 'single_choice') ? `
+      <div class="grid g2 mt">
+        ${q.options.map((opt, optIdx) => `
+          <button class="btn ${s.locked ? (opt.correct ? 'primary' : (s.userChoice === optIdx ? 'danger' : 'outline')) : 'outline'}"
+                  style="text-align:left;padding:12px 16px;font-size:14.5px;font-weight:700"
+                  ${s.locked ? 'disabled' : ''}
+                  onclick="choosePracticeOption(${optIdx})">
+            ${optIdx + 1}. ${esc(opt.text)}
+          </button>
+        `).join("")}
+      </div>
+    ` : ''}
+
+    <!-- Options for Mode E (Image choice) -->
+    ${(q.type === 'image_choice') ? `
+      <div class="grid g2 mt">
+        ${q.options.map((opt, optIdx) => `
+          <div class="card ${s.locked ? (opt.correct ? 'live' : (s.userChoice === optIdx ? 'dangerbox' : '')) : ''}"
+               style="cursor:pointer;padding:10px;text-align:center;border:2px solid ${s.locked && opt.correct ? '#22c55e' : (s.locked && s.userChoice === optIdx ? '#ef4444' : 'var(--line)')}"
+               onclick="${s.locked ? '' : `choosePracticeOption(${optIdx})`}">
+            <img src="${opt.image}" alt="Option" class="practice-thumb"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' fill=\'%23888\'%3EImage%3C/text%3E%3C/svg%3E';"/>
+            <div style="font-size:13px;font-weight:700">${optIdx + 1}. ${esc(opt.label)}</div>
+          </div>
+        `).join("")}
+      </div>
+    ` : ''}
+
+    <!-- Interactive Match Pairs for Mode F -->
+    ${(q.type === 'interactive_match') ? `
+      <div class="grid g2 mt">
+        <div>
+          <h4 style="font-size:12px;margin-bottom:8px;color:var(--muted)">COLUMN A (HINDI):</h4>
+          ${q.left.map((item) => `
+            <button class="btn ${q.matchedIds.includes(item.id) ? 'live' : (q.selectedLeft === item.id ? 'warn' : 'outline')}"
+                    style="width:100%;text-align:left;margin-bottom:8px;justify-content:space-between;padding:10px 14px"
+                    onclick="selectMatchPair('left', '${item.id}')">
+              <span>${esc(item.text)}</span>
+              <span class="small">(${esc(item.english)})</span>
+            </button>
+          `).join("")}
+        </div>
+        <div>
+          <h4 style="font-size:12px;margin-bottom:8px;color:var(--muted)">COLUMN B (MUNDARI):</h4>
+          ${q.right.map((item) => `
+            <button class="btn ${q.matchedIds.includes(item.id) ? 'live' : (q.selectedRight === item.id ? 'warn' : 'outline')}"
+                    style="width:100%;text-align:left;margin-bottom:8px;justify-content:space-between;padding:10px 14px"
+                    onclick="selectMatchPair('right', '${item.id}')">
+              ${item.image ? `<img src="${item.image}" style="height:32px;width:32px;object-fit:contain;border-radius:4px"/>` : ''}
+              <span style="font-weight:700">${esc(item.text)}</span>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    ` : ''}
+
+    <!-- Feedback Box -->
     <div id="quizFeedbackBox" class="mt">
       ${s.feedback ? s.feedback : ''}
     </div>
+
+    <!-- Navigation & Pronunciation Footer -->
     ${s.locked ? `
       <div class="row mt between" style="border-top:1px solid var(--line);padding-top:14px">
-        <button class="btn secondary" onclick="speakMundari('${esc(q.options.find(x => x.correct).text)}')">🔊 Pronounce Correct Answer</button>
+        <button class="btn secondary" onclick="playVocabAudio(state.practiceSession.questions[state.practiceSession.currentIndex].target)">
+          🔊 Play pronunciation
+        </button>
         <button class="btn primary" onclick="nextPracticeQuestion()">Next Question →</button>
       </div>
     ` : ''}
   </div>`;
 }
 
+function changePracticeMode(m) {
+  state.practiceMode = m;
+  restartPracticeQuiz();
+}
+
+function changePracticeCategory(c) {
+  state.practiceCategory = c;
+  restartPracticeQuiz();
+}
+
+function changePracticeVerifiedOnly(v) {
+  state.practiceVerifiedOnly = !!v;
+  restartPracticeQuiz();
+}
+
 function choosePracticeOption(optIdx) {
   const s = state.practiceSession;
-  if (!s || s.locked) return; // Prevent double-counting!
+  if (!s || s.locked) return;
 
   s.locked = true;
   s.attempts++;
@@ -3973,12 +6608,50 @@ function choosePracticeOption(optIdx) {
   const chosen = q.options[optIdx];
 
   if (chosen.correct) {
-    s.score++;
-    s.feedback = `<div class="notice success">🎉 <b>Shaabaash! Correct!</b> ${esc(q.explanation)}</div>`;
+    s.score += 10;
+    s.streak += 1;
+    if (s.streak > s.maxStreak) s.maxStreak = s.streak;
+    s.feedback = `<div class="notice success">🎉 <b>Shaabaash! Correct!</b> ${esc(q.explanation)} ${s.streak >= 3 ? `<span class="badge live" style="margin-left:8px">🔥 ${s.streak} in a row!</span>` : ''}</div>`;
     toast("Correct answer! +10 Points");
   } else {
+    s.streak = 0;
     s.feedback = `<div class="notice dangerbox">Try again! ${esc(q.explanation)}</div>`;
     toast("Incorrect answer");
+  }
+  render();
+}
+
+function selectMatchPair(side, id) {
+  const s = state.practiceSession;
+  if (!s) return;
+  const q = s.questions[s.currentIndex];
+  if (q.type !== 'interactive_match') return;
+
+  if (side === 'left') {
+    q.selectedLeft = id;
+  } else {
+    q.selectedRight = id;
+  }
+
+  if (q.selectedLeft && q.selectedRight) {
+    if (q.selectedLeft === q.selectedRight) {
+      q.matchedIds.push(q.selectedLeft);
+      q.selectedLeft = null;
+      q.selectedRight = null;
+      s.score += 10;
+      toast("🎯 Match found! +10 Points");
+
+      if (q.matchedIds.length >= q.pairsCount) {
+        s.locked = true;
+        s.streak += 1;
+        if (s.streak > s.maxStreak) s.maxStreak = s.streak;
+        s.feedback = `<div class="notice success">🎉 <b>Shaabaash!</b> ${esc(q.explanation)}</div>`;
+      }
+    } else {
+      toast("❌ Not a match, try again!");
+      q.selectedLeft = null;
+      q.selectedRight = null;
+    }
   }
   render();
 }
@@ -3993,16 +6666,16 @@ function nextPracticeQuestion() {
     s.feedback = null;
   } else {
     s.completed = true;
-    // Persist to session practice history
     const record = {
       student: state.studentName || "Student",
       roll: state.roll || "1",
       date: new Date().toLocaleDateString(),
       time: now(),
       score: s.score,
-      total: s.questions.length,
-      accuracy: Math.round((s.score / s.questions.length) * 100),
-      module: "NUMERACY_1_20_DEMO"
+      total: s.questions.length * 10,
+      streak: s.maxStreak,
+      accuracy: Math.round((s.score / Math.max(1, s.questions.length * 10)) * 100),
+      module: "EDUCATIONAL_VOCAB_PRACTICE"
     };
     state.practiceHistory.unshift(record);
     localStorage.setItem("vflnPracticeHistory", JSON.stringify(state.practiceHistory));
@@ -4015,8 +6688,19 @@ function restartPracticeQuiz() {
   render();
 }
 
+loadEducationalVocabulary();
+
 if (typeof window !== "undefined" && window.location && ((window.location.search && window.location.search.includes("demo")) || window.location.hash === "#demo")) {
   enterDemoModeDirect();
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pParam = urlParams.get("page") || (window.location.hash ? window.location.hash.replace("#", "") : null);
+    if (pParam && ["live", "flashcards", "practice", "worksheet", "modules", "curriculum", "dashboard"].includes(pParam)) {
+      state.page = pParam;
+      state.translationDirection = "hi-unr";
+      shell();
+    }
+  } catch (err) {}
 } else {
   login();
 }

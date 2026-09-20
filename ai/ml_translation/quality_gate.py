@@ -29,6 +29,7 @@ class QualityGateResult:
     is_valid: bool
     rejection_reasons: List[str] = field(default_factory=list)
     metrics: Dict[str, Any] = field(default_factory=dict)
+    ui_status: str = "AI TRANSLATION — REVIEW"
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -41,7 +42,7 @@ class TranslationQualityGate:
 
     def __init__(
         self,
-        min_score: float = 0.16,
+        min_score: float = 0.12,
         max_source_copy_ratio: float = 0.70,
         min_unique_word_ratio: float = 0.60,
         max_punctuation_ratio: float = 0.35,
@@ -123,7 +124,10 @@ class TranslationQualityGate:
         # 5. Excessive source copying (model failing to translate and merely echoing Hindi)
         src_clean = self.clean_text_for_analysis(source_text)
         src_words = set(src_clean.split())
-        if len(src_words) >= 3 and len(words) >= 3:
+        if stripped == source_text.strip() and len(words) >= 1:
+            reasons.append("EXCESSIVE_SOURCE_COPYING")
+            metrics["source_overlap_ratio"] = 1.0
+        elif len(src_words) >= 2 and len(words) >= 2:
             overlap = set(words).intersection(src_words)
             overlap_ratio = len(overlap) / max(1, min(len(words), len(src_words)))
             metrics["source_overlap_ratio"] = round(overlap_ratio, 3)
@@ -137,8 +141,26 @@ class TranslationQualityGate:
                 reasons.append("DEGENERATE_MODEL_SCORE")
 
         is_valid = (len(reasons) == 0)
+        ui_status = self.classify_ui_status(is_tier1_verified=False, quality_gate_passed=is_valid, has_text=(char_count >= 2))
+
         return QualityGateResult(
             is_valid=is_valid,
             rejection_reasons=reasons,
-            metrics=metrics
+            metrics=metrics,
+            ui_status=ui_status
         )
+
+    @staticmethod
+    def classify_ui_status(is_tier1_verified: bool = False, quality_gate_passed: bool = True, has_text: bool = True) -> str:
+        """
+        Classifies UI translation status per educational safety requirements:
+        - VERIFIED EDUCATIONAL: deterministic verified registry
+        - AI TRANSLATION — REVIEW: neural model output that passed safety gate
+        - TRANSLATION UNAVAILABLE: low confidence or failed safety checks
+        """
+        if is_tier1_verified:
+            return "VERIFIED EDUCATIONAL"
+        elif quality_gate_passed and has_text:
+            return "AI TRANSLATION — REVIEW"
+        else:
+            return "TRANSLATION UNAVAILABLE"

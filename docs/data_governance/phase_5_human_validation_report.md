@@ -14,9 +14,9 @@ Phase 5 transitions the project from open-license data acquisition (Phase 4) int
 
 During this phase:
 1. All **27 candidate records** in `data/incoming/pratham_0240.json` were audited by automated gatekeepers across linguistic, orthographic, and educational dimensions.
-2. A structured machine-readable review template was created: [pratham_0240_human_review_template.json](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/data/incoming/pratham_0240_human_review_template.json), containing dedicated empty review fields for independent native-speaker linguists and primary educators.
-3. A formal 13-section academic review packet was authored: [phase_5_human_validation_packet.md](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/docs/data_governance/phase_5_human_validation_packet.md), detailing dual-track review rubrics (Linguistic & Educational) and flagging suspected orthographic issues for expert determination.
-4. An objective institutional directory of potential academic reviewers was cataloged: [potential_mundari_reviewers.md](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/docs/data_governance/potential_mundari_reviewers.md), with all participation statuses marked **`NOT_CONFIRMED`**.
+2. A structured machine-readable review template was created: [pratham_0240_human_review_template.json](file:///./data/incoming/pratham_0240_human_review_template.json), containing dedicated empty review fields for independent native-speaker linguists and primary educators.
+3. A formal 13-section academic review packet was authored: [phase_5_human_validation_packet.md](file:///./docs/data_governance/phase_5_human_validation_packet.md), detailing dual-track review rubrics (Linguistic & Educational) and flagging suspected orthographic issues for expert determination.
+4. An objective institutional directory of potential academic reviewers was cataloged: [potential_mundari_reviewers.md](file:///./docs/data_governance/potential_mundari_reviewers.md), with all participation statuses marked **`NOT_CONFIRMED`**.
 5. Automated validation safeguards in `tools/data_intake/validator.py` and `tests/test_data_intake_contract.py` were reinforced with 4 new governance tests, ensuring that records awaiting review, records with fake reviewer IDs (e.g. `AUTO`, `AI`), or records with rejected dispositions can never bypass quarantine into production.
 
 ---

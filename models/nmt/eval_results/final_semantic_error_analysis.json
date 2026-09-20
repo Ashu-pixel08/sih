@@ -1,0 +1,1596 @@
+{
+  "model_audited": "Candidate A (Refined BPE Transformer, 9.59M params)",
+  "audit_sample_size": 100,
+  "exact_matches": 0,
+  "exact_match_pct": 0.0,
+  "quality_gate_pass_pct": 54.0,
+  "error_category_frequencies": {
+    "WRONG_SUBJECT_AGENT": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "WRONG_TENSE_ASPECT": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "WRONG_NUMBER_DUAL_PLURAL": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "WRONG_PRONOUN_PERSON": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "NEGATION_ERROR": {
+      "count": 24,
+      "frequency_pct": 24.0
+    },
+    "UNRELATED_NOUN_INSERTION": {
+      "count": 31,
+      "frequency_pct": 31.0
+    },
+    "HALLUCINATED_ENTITY": {
+      "count": 2,
+      "frequency_pct": 2.0
+    },
+    "REPETITION_LOOP": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "COPIED_HINDI": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "MALFORMED_MUNDARI": {
+      "count": 0,
+      "frequency_pct": 0.0
+    },
+    "ACCEPTABLE_SEMANTIC_SUBSTITUTION": {
+      "count": 13,
+      "frequency_pct": 13.0
+    }
+  },
+  "sample_records": [
+    {
+      "id": 1,
+      "hindi_source": "सभी बच्चे अपनी कॉपी और पेंसिल निकालो।",
+      "reference": "",
+      "candidate_a_translation": "सोबेन होनको आपान फो पी ओड़ोः होरा ते जोआर लो मे।",
+      "domain": "educational_challenge_classroom_commands",
+      "model_score": 0.162,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 2,
+      "hindi_source": "श्यामपट्ट पर लिखे शब्द को जोर से पढ़ो।",
+      "reference": "",
+      "candidate_a_translation": "श्याम प ड़ी रे ओल केआते टुङ आउ केआते रासिका जाना।",
+      "domain": "educational_challenge_classroom_commands",
+      "model_score": 0.081,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 3,
+      "hindi_source": "कक्षा में शांति बनाकर अपना पाठ याद करो।",
+      "reference": "",
+      "candidate_a_translation": "स क रे बल अ लेल केआते आपान सेंड़ा मे म नाम पे।",
+      "domain": "educational_challenge_classroom_commands",
+      "model_score": 0.087,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 4,
+      "hindi_source": "दरवाजा बंद करो और खिड़की खोल दो।",
+      "reference": "",
+      "candidate_a_translation": "मार्ं ल नाम केदा ओड़ोः चो ड़ा कान बारिआ लाइन तानिः।",
+      "domain": "educational_challenge_classroom_commands",
+      "model_score": 0.053,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 5,
+      "hindi_source": "पेड़ पर सात लाल पक्षी बैठे हैं।",
+      "reference": "",
+      "candidate_a_translation": "काजिकामि रे सात लाल साः ते दुब जना।",
+      "domain": "educational_challenge_numbers_and_counting",
+      "model_score": 0.125,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 6,
+      "hindi_source": "मेरे पास बारह रंगीन पेंसिलें हैं।",
+      "reference": "",
+      "candidate_a_translation": "आञाः जापाः रे गेल हागा को आउ ताना।",
+      "domain": "educational_challenge_numbers_and_counting",
+      "model_score": 0.146,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 7,
+      "hindi_source": "टोकरी में पंद्रह पके हुए आम रखे हैं।",
+      "reference": "",
+      "candidate_a_translation": "टोंंग रे प ड़ी को साः ते ह ड़ तन होड़ो को कजि तना।",
+      "domain": "educational_challenge_numbers_and_counting",
+      "model_score": 0.096,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 8,
+      "hindi_source": "कक्षा में बीस बच्चे उपस्थित हैं।",
+      "reference": "",
+      "candidate_a_translation": "स रे हिसि सिरमा मेनाः।",
+      "domain": "educational_challenge_numbers_and_counting",
+      "model_score": 0.159,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 9,
+      "hindi_source": "शिक्षक ने मेज पर नई किताब रखी।",
+      "reference": "",
+      "candidate_a_translation": "मास्टर को डे क रे नावा पुथि बाइ तान ताइकेना।",
+      "domain": "educational_challenge_school_vocabulary",
+      "model_score": 0.146,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 10,
+      "hindi_source": "हम रोज स्कूल में गणित और भाषा सीखते हैं।",
+      "reference": "",
+      "candidate_a_translation": "आले गोटा स्कूल रे माजा आर जागार आउ लागातिङा।",
+      "domain": "educational_challenge_school_vocabulary",
+      "model_score": 0.17,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 11,
+      "hindi_source": "घंटी बजने पर सभी मैदान में खेलने गए।",
+      "reference": "",
+      "candidate_a_translation": "बेसे काटा ब रे सोबेनको ताः इनुङ रे जोआर जाना।",
+      "domain": "educational_challenge_school_vocabulary",
+      "model_score": 0.135,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 12,
+      "hindi_source": "दीवार पर भारत का बड़ा नक्शा लगा है।",
+      "reference": "",
+      "candidate_a_translation": "रेलवे रे भारत राः माराङ बालाए तानाएः।",
+      "domain": "educational_challenge_school_vocabulary",
+      "model_score": 0.222,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 13,
+      "hindi_source": "छोटा बंदर पेड़ की डाल पर कूद रहा है।",
+      "reference": "",
+      "candidate_a_translation": "हुड़िंग लेका ब ड़ी थाना रेआः ओड़ाः रे हिजुः तना।",
+      "domain": "educational_challenge_animals",
+      "model_score": 0.164,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 14,
+      "hindi_source": "सफेद गाय हरी घास खुशी से खाती है।",
+      "reference": "",
+      "candidate_a_translation": "जग रोः ख श स इसु पुराः गे लेलोः ताना।",
+      "domain": "educational_challenge_animals",
+      "model_score": 0.122,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 15,
+      "hindi_source": "जंगल में हाथी और भालू साथ रहते हैं।",
+      "reference": "",
+      "candidate_a_translation": "बिर रे कुड़ि ओड़ोः भा लू लोः ताइकेना।",
+      "domain": "educational_challenge_animals",
+      "model_score": 0.21,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 16,
+      "hindi_source": "काली बिल्ली चूहे के पीछे तेजी से दौड़ी।",
+      "reference": "",
+      "candidate_a_translation": "ओनोल को नेल केआते तयोम ते हिजुः लेना तायोम ते निर जानाए।",
+      "domain": "educational_challenge_animals",
+      "model_score": 0.104,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 17,
+      "hindi_source": "दोपहर में बच्चों को गरम दाल भात मिला।",
+      "reference": "",
+      "candidate_a_translation": "तिकिन रे होनको के दु ड़ बा ड़ा व तन होन को नम जना।",
+      "domain": "educational_challenge_food",
+      "model_score": 0.162,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 18,
+      "hindi_source": "माँ ने खेत से ताजी पालक और आलू तोड़े।",
+      "reference": "",
+      "candidate_a_translation": "एंगा लोः ते कोड़ा होन जी ओड़ोः इनिः उड़ुः केदा।",
+      "domain": "educational_challenge_food",
+      "model_score": 0.207,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 19,
+      "hindi_source": "मीठा दूध और फल स्वास्थ्य के लिए अच्छे हैं।",
+      "reference": "",
+      "candidate_a_translation": "मी ब ली ओड़ोः मजा लेका माजा नातिन माजा मेनाः।",
+      "domain": "educational_challenge_food",
+      "model_score": 0.179,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 20,
+      "hindi_source": "खाने से पहले साबुन से दोनों हाथ धोना चाहिए।",
+      "reference": "",
+      "candidate_a_translation": "जोम ते सिदा साः ते बरन तीः या",
+      "domain": "educational_challenge_food",
+      "model_score": 0.2,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 21,
+      "hindi_source": "नीले आकाश में पीला सूरज चमक रहा है।",
+      "reference": "",
+      "candidate_a_translation": "नी दर साल रे पी ड़ साः रे लांग ड़ा कना।",
+      "domain": "educational_challenge_colors_and_shapes",
+      "model_score": 0.155,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 22,
+      "hindi_source": "इस गोल गेंद से हम सब खेलेंगे।",
+      "reference": "",
+      "candidate_a_translation": "ने ओनोल को रे आले सोबेन इनुङ को मेनाः।",
+      "domain": "educational_challenge_colors_and_shapes",
+      "model_score": 0.165,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 23,
+      "hindi_source": "काले बादल देखकर मोर नाचने लगा।",
+      "reference": "",
+      "candidate_a_translation": "हेंदे टाका लेल केदा।",
+      "domain": "educational_challenge_colors_and_shapes",
+      "model_score": 0.072,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 24,
+      "hindi_source": "त्रिकोण में तीन कोने और तीन भुजाएं होती हैं।",
+      "reference": "",
+      "candidate_a_translation": "सिरमा रे आपि होड़ो को ओड़ोः आपि सा नाम लागातिङा।",
+      "domain": "educational_challenge_colors_and_shapes",
+      "model_score": 0.169,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 25,
+      "hindi_source": "मेरे दादाजी शाम को हमें सुंदर कहानी सुनाते हैं।",
+      "reference": "",
+      "candidate_a_translation": "आञाः ता जी आयुब जाकेद आले काआनि आयुम जादा।",
+      "domain": "educational_challenge_family",
+      "model_score": 0.205,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 26,
+      "hindi_source": "मेरी बड़ी बहन नदी किनारे पानी भरने गई।",
+      "reference": "",
+      "candidate_a_translation": "आञाः माराङ सेंड़ा स रे दाः काना।",
+      "domain": "educational_challenge_family",
+      "model_score": 0.125,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 27,
+      "hindi_source": "गाँव के मुखिया ने सभी लोगों को बैठक में बुलाया।",
+      "reference": "",
+      "candidate_a_translation": "हातु रेन जाति को सोबेन होड़ो को के दुनुब रे।",
+      "domain": "educational_challenge_family",
+      "model_score": 0.256,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 28,
+      "hindi_source": "पिताजी और चाचाजी खेत में हल चला रहे हैं।",
+      "reference": "",
+      "candidate_a_translation": "जी ओड़ोः हुड़िङ लेका ते पारोम तान ताइकेना।",
+      "domain": "educational_challenge_family",
+      "model_score": 0.144,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 29,
+      "hindi_source": "रविवार को स्कूल की छुट्टी होती है।",
+      "reference": "",
+      "candidate_a_translation": "बजे के स्कूल राः छुट्टी होबाओ तना।",
+      "domain": "educational_challenge_calendar_and_time",
+      "model_score": 0.2,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 30,
+      "hindi_source": "सावन के महीने में बहुत तेज बारिश होती है।",
+      "reference": "",
+      "candidate_a_translation": "सा ड़ राः चांडुः रे इसु पुराः दा कना।",
+      "domain": "educational_challenge_calendar_and_time",
+      "model_score": 0.175,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 31,
+      "hindi_source": "कल सुबह सात बजे हम सब मेला देखने चलेंगे।",
+      "reference": "",
+      "candidate_a_translation": "होला सेताः आयुम केआते आले दुनुब रे लेल तन ताइकेना।",
+      "domain": "educational_challenge_calendar_and_time",
+      "model_score": 0.165,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 32,
+      "hindi_source": "सर्दियों में रातें लंबी और ठंडी होती हैं।",
+      "reference": "",
+      "candidate_a_translation": "ओते एंगा को रे निदा कुड़ि होड़ो ओड़ोः ख ड़ ड़ा ताइना।",
+      "domain": "educational_challenge_calendar_and_time",
+      "model_score": 0.167,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 33,
+      "hindi_source": "नदी के किनारे तीन भूरे कुत्ते सो रहे हैं।",
+      "reference": "",
+      "candidate_a_translation": "गाड़ा रे आपि चांडुः जाकेद सेता ताना।",
+      "domain": "educational_challenge_unseen_combinations",
+      "model_score": 0.147,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 34,
+      "hindi_source": "लाल टोपी वाला लड़का तेजी से साइकिल चलाता है।",
+      "reference": "",
+      "candidate_a_translation": "लाल सा पी रेन कुड़ि होन को लोः ते स्कूल च ड़ा काना।",
+      "domain": "educational_challenge_unseen_combinations",
+      "model_score": 0.147,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 35,
+      "hindi_source": "बड़ी मछली गहरे पानी में तैरती है।",
+      "reference": "",
+      "candidate_a_translation": "इसु पुराः गे दाः रे एटेः ताना।",
+      "domain": "educational_challenge_unseen_combinations",
+      "model_score": 0.258,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 36,
+      "hindi_source": "छोटे बच्चे अपने कानों से ध्यानपूर्वक सुनते हैं।",
+      "reference": "",
+      "candidate_a_translation": "हुड़िङ होन कोआः ओड़ाः रे उड़ुः केआते ध्यान आयुम जादा।",
+      "domain": "educational_challenge_unseen_combinations",
+      "model_score": 0.246,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 37,
+      "hindi_source": "कंप्यूटर और इंटरनेट से दुनिया की जानकारी मिलती है।",
+      "reference": "",
+      "candidate_a_translation": "कंप्यूटर ओड़ोः इंटरनेट ते दुनिया रेआः जानकारी जोगाव तनाः।",
+      "domain": "educational_challenge_loanwords_and_technology",
+      "model_score": 0.273,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 38,
+      "hindi_source": "डॉक्टर ने मरीज को अस्पताल में दवाई दी।",
+      "reference": "",
+      "candidate_a_translation": "डाक्टर सायोब को के अस्पताल रे द रिका केदा।",
+      "domain": "educational_challenge_loanwords_and_technology",
+      "model_score": 0.166,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 39,
+      "hindi_source": "मोबाइल फोन पर मास्टरजी ने ऑनलाइन क्लास ली।",
+      "reference": "",
+      "candidate_a_translation": "मोबाइल फोन रे मास्टर जी दो सर क् शा सी लर",
+      "domain": "educational_challenge_loanwords_and_technology",
+      "model_score": 0.098,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 40,
+      "hindi_source": "ट्रेन स्टेशन पर बहुत भीड़ थी।",
+      "reference": "",
+      "candidate_a_translation": "ट्रेन स्टेशन रे बेसे होड़ोको ताइकेना।",
+      "domain": "educational_challenge_loanwords_and_technology",
+      "model_score": 0.303,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 41,
+      "hindi_source": "कलम",
+      "reference": "कलम",
+      "candidate_a_translation": "जर प",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.017,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 42,
+      "hindi_source": "गुलाब",
+      "reference": "गुलाब",
+      "candidate_a_translation": "गु ग्",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.039,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 43,
+      "hindi_source": "जुलाई",
+      "reference": "आषाढ़",
+      "candidate_a_translation": "जुलाई।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.03,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 44,
+      "hindi_source": "किताब",
+      "reference": "किताब",
+      "candidate_a_translation": "किताब को",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.062,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 45,
+      "hindi_source": "सोमवार",
+      "reference": "सोमबार",
+      "candidate_a_translation": "सोमवार हुलाङ",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.029,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 46,
+      "hindi_source": "बस",
+      "reference": "बस",
+      "candidate_a_translation": "बस।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.285,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 47,
+      "hindi_source": "नीला",
+      "reference": "नीला",
+      "candidate_a_translation": "बोंगा।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.125,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 48,
+      "hindi_source": "बहन",
+      "reference": "मिसी",
+      "candidate_a_translation": "ग् मे",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.027,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 49,
+      "hindi_source": "जौ",
+      "reference": "जौ",
+      "candidate_a_translation": "ज रेन होड़ो।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.115,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 50,
+      "hindi_source": "जूस",
+      "reference": "जूस",
+      "candidate_a_translation": "जू स",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.052,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 51,
+      "hindi_source": "मंगलवार",
+      "reference": "मंगलबार",
+      "candidate_a_translation": "हुलाङ लाल मा सा बार साः वार हुलाङ डे टा।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.042,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "HALLUCINATED_ENTITY"
+      ],
+      "linguistic_notes": "Translation length disproportionately exceeds source sentence."
+    },
+    {
+      "id": 52,
+      "hindi_source": "कुर्सी",
+      "reference": "कुर्सी",
+      "candidate_a_translation": "सीबीआई।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.019,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 53,
+      "hindi_source": "शनिवार",
+      "reference": "सनिबार",
+      "candidate_a_translation": "शनिवार हुलाङ गुजरात रेन शा बी लाइन किन।",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.044,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "HALLUCINATED_ENTITY"
+      ],
+      "linguistic_notes": "Translation length disproportionately exceeds source sentence."
+    },
+    {
+      "id": 54,
+      "hindi_source": "चाय",
+      "reference": "चाय",
+      "candidate_a_translation": "चाय चा",
+      "domain": "held_out_educational_vocab",
+      "model_score": 0.077,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 55,
+      "hindi_source": "अपनी किताब खोलो।",
+      "reference": null,
+      "candidate_a_translation": "आपान पुथि",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.019,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE",
+        "DEGENERATE_MODEL_SCORE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 56,
+      "hindi_source": "ब्लैकबोर्ड पर देखो।",
+      "reference": null,
+      "candidate_a_translation": "गो क बोर्ड रे लेल लेम।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.179,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 57,
+      "hindi_source": "सब बच्चे शांत रहो।",
+      "reference": null,
+      "candidate_a_translation": "सोबेन होन को लेल लेम।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.225,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 58,
+      "hindi_source": "अपना हाथ ऊपर उठाओ।",
+      "reference": null,
+      "candidate_a_translation": "आपान ती चेतान राकाब ताना।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.252,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 59,
+      "hindi_source": "यहाँ आकर बैठो।",
+      "reference": null,
+      "candidate_a_translation": "नेताः हिजुः केआते दुब मे",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.189,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 60,
+      "hindi_source": "तुम्हारा नाम क्या है?",
+      "reference": null,
+      "candidate_a_translation": "आमाः नुतुम चानाः मेनाः चि?",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.423,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 61,
+      "hindi_source": "तुम कहाँ जा रहे हो?",
+      "reference": null,
+      "candidate_a_translation": "अम कोताः ते होबा तना।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.286,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 62,
+      "hindi_source": "आज कौन सा दिन है?",
+      "reference": null,
+      "candidate_a_translation": "तिसिङ ओकोए दिन मेनाः।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.392,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 63,
+      "hindi_source": "इस सवाल का उत्तर कौन देगा?",
+      "reference": null,
+      "candidate_a_translation": "नेआ कुनुलि रेआः विरोध ओकोए उदुब किः आ।",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.268,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 64,
+      "hindi_source": "तुमने कल क्या खाया था?",
+      "reference": null,
+      "candidate_a_translation": "आम चानाः उड़ुः तान ताइकेना?",
+      "domain": "challenge_50_grammar",
+      "model_score": 0.184,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 65,
+      "hindi_source": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+      "reference": null,
+      "candidate_a_translation": "साइ बर रेअः बोरो मियद् कमि तनअः।",
+      "domain": "challenge_52_external",
+      "model_score": 0.122,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 66,
+      "hindi_source": "आज हम सब गाना गाएंगे।",
+      "reference": null,
+      "candidate_a_translation": "तिसिङ आले सोबेन कोआः सोंगे किन।",
+      "domain": "challenge_52_external",
+      "model_score": 0.178,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 67,
+      "hindi_source": "नमस्ते, आप सभी का हमारे गाँव में स्वागत है।",
+      "reference": null,
+      "candidate_a_translation": "नम नगेन अम सोबेन कोआः हातु रे गोएः कना।",
+      "domain": "challenge_52_external",
+      "model_score": 0.26,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 68,
+      "hindi_source": "शुभ प्रभात, आज का दिन बहुत सुंदर है।",
+      "reference": null,
+      "candidate_a_translation": "रसिका दो पुराः गे तिसिङ दिन इसु सुगाड़ा मेनाः।",
+      "domain": "challenge_52_external",
+      "model_score": 0.298,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 69,
+      "hindi_source": "तुम आज सुबह से क्या कर रहे हो?",
+      "reference": null,
+      "candidate_a_translation": "आम तिसिङ सेताः ते चानाः रिका तानाएः।",
+      "domain": "challenge_52_external",
+      "model_score": 0.507,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 70,
+      "hindi_source": "मैं अभी बाजार जा रहा हूँ, थोड़ी देर में लौटूँगा।",
+      "reference": null,
+      "candidate_a_translation": "आञ नाः दो पीटि लोः हुड़िङ सोमाए रे हिजुगा।",
+      "domain": "challenge_52_external",
+      "model_score": 0.261,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 71,
+      "hindi_source": "कृपया सभी बच्चे अपनी किताबें खोलें।",
+      "reference": null,
+      "candidate_a_translation": "ओनोल को सोबेन कोआते आपान सेंड़ां ल नाम केदाएः।",
+      "domain": "challenge_52_external",
+      "model_score": 0.096,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 72,
+      "hindi_source": "अध्यापक ने श्यामपट्ट पर एक नया पाठ लिखा।",
+      "reference": null,
+      "candidate_a_translation": "डाक्टर कोआः पीटि रे मिआद होड़ो को मिआद होरा गे ओल निः ताइकेना।",
+      "domain": "challenge_52_external",
+      "model_score": 0.09,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 73,
+      "hindi_source": "यह रास्ता किस गाँव की ओर जाता है?",
+      "reference": null,
+      "candidate_a_translation": "नेआ होरा ओकोए हातु रेआः साः ते होबा तना।",
+      "domain": "challenge_52_external",
+      "model_score": 0.349,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 74,
+      "hindi_source": "कल रात नदी के पास कौन आया था?",
+      "reference": null,
+      "candidate_a_translation": "होला निदा गाड़ा ताः ओकोए हिजुः लेना।",
+      "domain": "challenge_52_external",
+      "model_score": 0.285,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [],
+      "linguistic_notes": ""
+    },
+    {
+      "id": 75,
+      "hindi_source": "ऐसे दुर्योधनों की कमी नहीं है समाज में।",
+      "reference": "नेकान दुर्योधन कोआ घाटि बानोः समाज रे।",
+      "candidate_a_translation": "नेकान रोकोम को राः कामि का होबाओआ समाज रे।",
+      "domain": "held_out_test_split",
+      "model_score": 0.204,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 76,
+      "hindi_source": "उनका जन्म आंध्र प्रदेश में हुआ था।",
+      "reference": "इनिआः आंध्र प्रदेश रे जोनोम लेनाएः।",
+      "candidate_a_translation": "इनिआः जोनोम राम प्रदेश रे होबाजाना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.378,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 77,
+      "hindi_source": "बाहर पर और अधिक जानकारी प्राप्त करें",
+      "reference": "बाहिर रे ओड़ोः गे अदिका ते सरि इदिकेम।",
+      "candidate_a_translation": "बाहर रे अदिका ते अदिका जानकारी ओमे पे।",
+      "domain": "held_out_test_split",
+      "model_score": 0.254,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 78,
+      "hindi_source": "मेरा भी नाम कुँवर आदित्य सिंह है।",
+      "reference": "आइंआ नुतूम कुंवर आदित्य सिंह तना:",
+      "candidate_a_translation": "आञाः नुतुम वर ओड़ोः वर् सिंह मेनाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.151,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 79,
+      "hindi_source": "बच्चों को मकर संक्रांति के महत्व से करवाया अवगत",
+      "reference": "होनको मकरसंक्रांति रेआ: माइन उदुब केदाको।",
+      "candidate_a_translation": "होन को बोंगा बुरू कोअः माइन ते उदुब केदा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.132,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 80,
+      "hindi_source": "देखते हैं कि कब तक अच्छे रहते हैं।",
+      "reference": "लेलेआबु चि चिमताङ जाकेद माजाए ताइना",
+      "candidate_a_translation": "लेल जादा चि चिमताङ जाकेद माजा ताइना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.515,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 81,
+      "hindi_source": "इसके बाद महिला सहायता समूहों को भुगतान हो जाएगा।",
+      "reference": "एनतयोम ते एरा-देंगा गुसिया कोअः कमिगोनोङ एमोःआ।",
+      "candidate_a_translation": "नेआ तायोम ते कुड़ि कोआः देंगा ओम रे ताइना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.207,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 82,
+      "hindi_source": "डॉक्टर ने यह उल्टी बात बोली",
+      "reference": "डाॅक्टर नेआ उल्टा जागारे: जागारकेदा।",
+      "candidate_a_translation": "डाक्टर दो नेआ टोओर केदा चि जागार काजि केदाएः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.146,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 83,
+      "hindi_source": "गांव का पंचायती आंगन भी आपदा की भेंट चढ़ा था।",
+      "reference": "हातु राः पन्चायत दुबोः टाआंओः रोमबोदजाना।",
+      "candidate_a_translation": "हातु रेआः दाः ओ आ स मा ड़ा जाः इ जना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.091,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 84,
+      "hindi_source": "लेकिन ये बात कुछ यात्रियों को नागवार गुजरी।",
+      "reference": "मेनदो नेआ जागार तारालेका होनोरतानको रे बेस का सेनोःजाना।",
+      "candidate_a_translation": "मेनदो नेआ जागार हुड़िङ होड़ोको कको ओम लाः कोआ।",
+      "domain": "held_out_test_split",
+      "model_score": 0.207,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 85,
+      "hindi_source": "भीड़ जोश में आ गई है।",
+      "reference": "भीड़ जोश रे हिजु जना",
+      "candidate_a_translation": "होड़ोको जे श रे हिजु जाना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.377,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 86,
+      "hindi_source": "यह है इंडिया मेरी जान <?",
+      "reference": "नेआ इंडिया मेनाः गातिञ।",
+      "candidate_a_translation": "नेआ मेनाः इंडिया आञाः जी",
+      "domain": "held_out_test_split",
+      "model_score": 0.224,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 87,
+      "hindi_source": "उन दिनों पटना में नभाटा के संपादक दीनानाथ मिश्र थे।",
+      "reference": "एन सोमोय रे पटना रे नभाटा रेन संपादक दीनानाथ मिश्र ताइकेना।",
+      "candidate_a_translation": "एन समय रे पटना रे न भा टा रेन ओल लाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.169,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 88,
+      "hindi_source": "तब तक पायल भी खाना खाकर आ गई।",
+      "reference": "एन लोः पायलो मानडि जोमकेआते हिजुःजानाएः।",
+      "candidate_a_translation": "इमताङ जाकेद कंप्यूटर बाइ केआते आउ केदाएः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.104,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 89,
+      "hindi_source": "और अगर लेन देन जरा ही गलत हो जाए।",
+      "reference": "ओड़ो: असि ओमको हुड़िलेका गलति जनारे",
+      "candidate_a_translation": "ओड़ोः जुदि हिजु तान लेका गे का ताइन लागातिङा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.143,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 90,
+      "hindi_source": "द्वारा वित्त पोषित इंटरनेशनल इंस्टीटयूट ऑफ़ ट्रोपिकल एग्रीकल्चर और",
+      "reference": "द्वारा वित्त पोषित इंटरनेशनल इंस्टीटयूट ऑफ़ ट्रोपिकल एग्रीकल्चर ओड़ो:।",
+      "candidate_a_translation": "पा ड़ि क् शा सी श्री जय प्रो इं ट क्स यू टर ओड़ोः ए स्ट डि ग् तनाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.056,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 91,
+      "hindi_source": "इस तरह पोलार्ड ने हैट्रिक छक्का लगाया।",
+      "reference": "नेकाते पोलार्ड दो खोब्दलकेद् तुरिसा ठोकाव गिड़ितद्।",
+      "candidate_a_translation": "ने लेका ते पो ड दी मेनाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.093,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 92,
+      "hindi_source": "साक़ी हम यह क्या सुनते हैं",
+      "reference": "साकी अबु नेया चिनअ: बु अयुम तना",
+      "candidate_a_translation": "सा राः आले चानाः आयुम जादा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.26,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 93,
+      "hindi_source": "ने नन्ही गुडिया को अपने हाथों में लिया था।",
+      "reference": "इनिः लिंडुङ गुड़िया आपान ती रे आउकिआ।",
+      "candidate_a_translation": "इनिः किः ए डी साः ते आपान ती रे जोगाव केदा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.138,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "UNRELATED_NOUN_INSERTION"
+      ],
+      "linguistic_notes": "Low confidence generation with plausible noun drift."
+    },
+    {
+      "id": 94,
+      "hindi_source": "वे पूरे मामले की गंभीरता से जांच कर रहे हैं।",
+      "reference": "इनकु ने सोबेन मामला कोआ: जांच ताना को।",
+      "candidate_a_translation": "इनिः गोटा मामला राः कामि रे जांच तानाएः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.296,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 95,
+      "hindi_source": "कालेज सूत्रों के मुताबिक उनकी पत् नी फिलहाल नेगेटिव हैं।",
+      "reference": "कालेज सा:ते नामाकम जगर हिसब ते इनिगा कोनया नाआ नेगेटिभ मेनाइ।",
+      "candidate_a_translation": "भ्रष्टाचार ते एटाः लेका ते इनिः अ जगर दो एन सोमोय गे मेनाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.11,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 96,
+      "hindi_source": "मधुमेह से पीड़ित व्यक्तियों को इन दो स्थितियों से संबंधित",
+      "reference": "हेड़ेमदुकु ते रोगअकन होड़ो को के ने बर होनोबा रेअः बाबत रे।",
+      "candidate_a_translation": "मधु र ते होडोको होन कोआः होड़ो को ने लेका ते बरिया जगर तन तइकेना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.126,
+      "quality_gate_passed": false,
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    },
+    {
+      "id": 97,
+      "hindi_source": "सोना एक धातु एवं तत्व है।",
+      "reference": "सोना मोयोद धातु अर तत्व मेना।",
+      "candidate_a_translation": "सोना मोयोद सुरक्षा ओड़ोः मीडिया मेनाः।",
+      "domain": "held_out_test_split",
+      "model_score": 0.2,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 98,
+      "hindi_source": "उनकी आंखें भी पर्दों में रहनी चाहिए।",
+      "reference": "इनिःअः मेद्ओः परदा रेगी तइनोः चाही।",
+      "candidate_a_translation": "इनिआः मेद मोचा रे चापा लागातिङा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.189,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 99,
+      "hindi_source": "सर्वप्रथम उन्हें शक और ब्रह्मा ने अपने हाथों में लिया।",
+      "reference": "सिदा इनकु शाका ओड़ो: तायोमते ब्रह्मा आएआ ती रे आउकेदाए।",
+      "candidate_a_translation": "सोबेन सिदा रेआः कजि कमि ओड़ोः इसु पुराः गे जोगाव केदा।",
+      "domain": "held_out_test_split",
+      "model_score": 0.201,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "ACCEPTABLE_SEMANTIC_SUBSTITUTION"
+      ],
+      "linguistic_notes": "Valid dialectal or lexical synonym variation."
+    },
+    {
+      "id": 100,
+      "hindi_source": "मंजिल पर आकर खुशी मिली है।",
+      "reference": "मंजिल रे हिजु: केते सुकु नमो:वा",
+      "candidate_a_translation": "भै ल रे हिजुः केआते रसिका नम जना।",
+      "domain": "held_out_test_split",
+      "model_score": 0.236,
+      "quality_gate_passed": true,
+      "quality_gate_reasons": [],
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "detected_errors": [
+        "NEGATION_ERROR"
+      ],
+      "linguistic_notes": "Negative particle hallucinated in Mundari translation."
+    }
+  ]
+}

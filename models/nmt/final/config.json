@@ -1,0 +1,16 @@
+{
+  "model_architecture": "Seq2SeqTransformer",
+  "d_model": 256,
+  "nhead": 4,
+  "num_encoder_layers": 3,
+  "num_decoder_layers": 3,
+  "dim_feedforward": 512,
+  "dropout": 0.1,
+  "src_vocab_size": 6000,
+  "tgt_vocab_size": 8000,
+  "tie_weights": false,
+  "pad_idx": 0,
+  "bos_idx": 1,
+  "eos_idx": 2,
+  "unk_idx": 3
+}

@@ -172,7 +172,7 @@ graph TD
 
 ## 3. Translation Engine Benchmarking & Capabilities
 
-Our cleaned translation corpus ([`data/processed/translation/clean_bilingual_corpus.tsv`](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/data/processed/translation/clean_bilingual_corpus.tsv)) consists of **17,804 unique sentence pairs**.
+Our cleaned translation corpus ([`data/processed/translation/clean_bilingual_corpus.tsv`](file:///./data/processed/translation/clean_bilingual_corpus.tsv)) consists of **17,804 unique sentence pairs**.
 
 ### Benchmarking Translation Strategy
 

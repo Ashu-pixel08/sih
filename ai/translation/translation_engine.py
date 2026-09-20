@@ -72,6 +72,21 @@ class TranslationResult:
     translation_source: str = "CORPUS_RETRIEVAL"
     requires_validation: bool = False
     provenance_label: str = ""
+    ui_status: str = "AI TRANSLATION — REVIEW"
+
+    def __post_init__(self):
+        if not hasattr(self, "ui_status") or self.ui_status == "AI TRANSLATION — REVIEW":
+            if self.translation_source in ("EDUCATIONAL_REGISTRY", "VERIFIED_LOOKUP") or self.status in ("VERIFIED_EDUCATIONAL_LOOKUP", "COMPOSED_FROM_ATTESTED_FRAGMENTS", "CANONICAL_NUMERAL"):
+                self.ui_status = "VERIFIED EDUCATIONAL"
+            elif self.status in ("OUT_OF_VOCABULARY_UNVERIFIED", "UNATTESTED_INPUT") or self.translated_text is None:
+                self.ui_status = "TRANSLATION UNAVAILABLE"
+            elif self.translation_source == "NEURAL_MODEL":
+                if self.metadata and self.metadata.get("ui_status"):
+                    self.ui_status = self.metadata["ui_status"]
+                else:
+                    self.ui_status = "AI TRANSLATION — REVIEW"
+            else:
+                self.ui_status = "AI TRANSLATION — REVIEW"
 
 
 
@@ -197,7 +212,9 @@ class TranslationEngine:
         else:
             self.phrasebook_path = default_pb
 
-        self.corpus_tsv_path = corpus_tsv_path or os.path.join(base_dir, "data", "raw", "translation", "translation-hi-unr.tsv")
+        merged_corpus = os.path.join(base_dir, "data", "processed", "nmt_merged", "all_pairs.tsv")
+        default_corpus = merged_corpus if os.path.exists(merged_corpus) else os.path.join(base_dir, "data", "raw", "translation", "translation-hi-unr.tsv")
+        self.corpus_tsv_path = corpus_tsv_path or default_corpus
         self.similarity_threshold = similarity_threshold
 
         # 1. Load Tier 1 Educational Registry (Bidirectional)
@@ -218,8 +235,10 @@ class TranslationEngine:
 
         # 3. Load Tier 2 Neural Machine Translation Model
         self.enable_neural = enable_neural
+        final_ckpt = os.path.join(base_dir, "models", "nmt", "final", "best_transformer.pt")
         full_corpus_ckpt = os.path.join(base_dir, "models", "nmt", "checkpoints_full_corpus", "best_transformer.pt")
-        default_ckpt = full_corpus_ckpt if os.path.exists(full_corpus_ckpt) else os.path.join(base_dir, "models", "nmt", "checkpoints", "best_transformer.pt")
+        standard_ckpt = os.path.join(base_dir, "models", "nmt", "checkpoints", "best_transformer.pt")
+        default_ckpt = final_ckpt if os.path.exists(final_ckpt) else (full_corpus_ckpt if os.path.exists(full_corpus_ckpt) else standard_ckpt)
         self.neural_checkpoint_path = neural_checkpoint_path or default_ckpt
         self.neural_tokenizer_dir = neural_tokenizer_dir or os.path.join(base_dir, "models", "nmt", "tokenizer")
         self.neural_engine = None
@@ -236,7 +255,7 @@ class TranslationEngine:
                     tokenizer_dir=self.neural_tokenizer_dir,
                     device="cpu"
                 )
-                print("[TranslationEngine] NeuralTranslationEngine (Tier 2) initialized successfully.")
+                print(f"[TranslationEngine] NeuralTranslationEngine (Tier 2) initialized successfully from: {self.neural_checkpoint_path}")
             except Exception as e:
                 print(f"[TranslationEngine] Notice: NeuralTranslationEngine not initialized: {e}")
 
@@ -415,6 +434,46 @@ class TranslationEngine:
             self.reverse_educational_lookup.setdefault(norm_mun, entry)
             self.reverse_educational_lookup.setdefault(lookup_mun, entry)
 
+        # D. Verified Educational Vocabulary from Team Dataset (Cleaned & Validated)
+        team_pairs_path = os.path.join(self.base_dir, "data", "custom", "cleaned_team_pairs.jsonl")
+        if os.path.exists(team_pairs_path):
+            try:
+                with open(team_pairs_path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        if not line.strip():
+                            continue
+                        item = json.loads(line)
+                        status = item.get("promotion_status") or item.get("validation_status")
+                        if item.get("training_eligible") and status in ("APPROVED_TRAINING_PAIR", "LOANWORD_CORROBORATED"):
+                            hi_text = item.get("hindi", "").strip()
+                            mun_text = item.get("mundari", "").strip()
+                            img_path = item.get("image_path") or (item.get("image_metadata") or {}).get("resolved_disk_path")
+                            if hi_text and mun_text:
+                                entry = {
+                                    "hindi_text": hi_text,
+                                    "mundari_text": mun_text,
+                                    "mundari_phonetic": item.get("phonetic", ""),
+                                    "mundari_root": item.get("root", mun_text),
+                                    "category": item.get("category", "FLN_VOCABULARY"),
+                                    "verification_level": status,
+                                    "provenance": "TEAM_EDUCATIONAL_DATASET",
+                                    "source": item.get("provenance", "SIH_CUSTOM_DATASET"),
+                                    "image_path": img_path,
+                                    "audio_asset": None,
+                                    "audio_status": "NOT_PRE_RECORDED"
+                                }
+                                norm_hi = self._normalize_text(hi_text)
+                                lookup_hi = self._normalize_for_lookup(hi_text)
+                                self.educational_lookup.setdefault(norm_hi, entry)
+                                self.educational_lookup.setdefault(lookup_hi, entry)
+
+                                norm_mun = self._normalize_text(mun_text)
+                                lookup_mun = self._normalize_for_lookup(mun_text)
+                                self.reverse_educational_lookup.setdefault(norm_mun, entry)
+                                self.reverse_educational_lookup.setdefault(lookup_mun, entry)
+            except Exception as e:
+                print(f"Notice: Failed to load team pairs from {team_pairs_path}: {e}")
+
     def _load_tier2_corpus(self) -> None:
         """Loads parallel corpus and fits bidirectional char-wb TF-IDF vectorizers."""
         if not os.path.exists(self.corpus_tsv_path):
@@ -566,6 +625,7 @@ class TranslationEngine:
                         translation_source="NEURAL_MODEL",
                         requires_validation=True,
                         provenance_label="AI-GENERATED — REQUIRES LINGUISTIC VALIDATION",
+                        ui_status=getattr(n_res, "ui_status", "AI TRANSLATION — REVIEW"),
                         metadata={
                             "model_score": n_res.model_score,
                             "score_type": "TOKEN_LIKELIHOOD (geometric mean token probability; NOT translation accuracy)",

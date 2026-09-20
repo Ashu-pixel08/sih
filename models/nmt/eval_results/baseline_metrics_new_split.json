@@ -1,0 +1,100 @@
+{
+  "model_name": "Baseline Model B (checkpoints/best_transformer.pt)",
+  "architecture": "Transformer Encoder-Decoder (d_model=256, nhead=4, enc=3, dec=3, d_ff=512, ~9.6M params)",
+  "checkpoint_path": "models/nmt/checkpoints/best_transformer.pt",
+  "evaluation_date": "2026-09-17",
+  "benchmarks": {
+    "held_out_test_split": {
+      "dataset": "Held-out Test Split (902 pairs)",
+      "count": 902,
+      "bleu": 2.86,
+      "chrf": 21.04,
+      "exact_match_pct": 0.11,
+      "quality_gate_pass_pct": 51.44,
+      "hindi_copy_rate_pct": 0.11,
+      "repetition_rate_pct": 0.0,
+      "latency_mean_ms": 486.2,
+      "latency_p50_ms": 524.72,
+      "latency_p95_ms": 768.76,
+      "total_time_seconds": 438.56
+    },
+    "held_out_educational_vocab": {
+      "dataset": "Held-out Educational Vocab (14 items)",
+      "count": 14,
+      "bleu": 0.59,
+      "chrf": 8.72,
+      "exact_match_pct": 7.14,
+      "quality_gate_pass_pct": 0.0,
+      "hindi_copy_rate_pct": 0.0,
+      "repetition_rate_pct": 0.0,
+      "latency_mean_ms": 495.27,
+      "latency_p50_ms": 544.08,
+      "latency_p95_ms": 622.26,
+      "total_time_seconds": 6.93
+    },
+    "all_approved_educational_vocab": {
+      "dataset": "All Approved Educational Vocab (44 items)",
+      "count": 44,
+      "bleu": 0.17,
+      "chrf": 5.89,
+      "exact_match_pct": 0.0,
+      "quality_gate_pass_pct": 0.0,
+      "hindi_copy_rate_pct": 0.0,
+      "repetition_rate_pct": 0.0,
+      "latency_mean_ms": 462.46,
+      "latency_p50_ms": 463.32,
+      "latency_p95_ms": 702.19,
+      "total_time_seconds": 20.35
+    },
+    "challenge_50": {
+      "dataset": "Challenge Benchmark 50",
+      "count": 50,
+      "bleu": null,
+      "chrf": null,
+      "exact_match_pct": 0.0,
+      "quality_gate_pass_pct": 56.0,
+      "hindi_copy_rate_pct": 0.0,
+      "repetition_rate_pct": 0.0,
+      "latency_mean_ms": 273.13,
+      "latency_p50_ms": 304.18,
+      "latency_p95_ms": 479.74,
+      "total_time_seconds": 13.66
+    },
+    "external_challenge_52": {
+      "dataset": "External Challenge Benchmark 52",
+      "count": 52,
+      "bleu": null,
+      "chrf": null,
+      "exact_match_pct": 0.0,
+      "quality_gate_pass_pct": 61.54,
+      "hindi_copy_rate_pct": 0.0,
+      "repetition_rate_pct": 0.0,
+      "latency_mean_ms": 222.97,
+      "latency_p50_ms": 281.72,
+      "latency_p95_ms": 336.88,
+      "total_time_seconds": 11.6
+    }
+  },
+  "failure_case_evaluations": [
+    {
+      "input": "साइबर सिक्योरिटी एक खतरनाक सब्जेक्ट है।",
+      "description": "Failure A: Out-of-domain loanwords & abstract concept",
+      "translation": "साइ बर रेअः जरूड़ी मियद् बोरो तइना।",
+      "quality_gate_passed": false,
+      "rejection_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "model_score": 0.093
+    },
+    {
+      "input": "आज हम सब गाना गाएंगे।",
+      "description": "Failure B: Future tense inclusive collective action",
+      "translation": "तिसिङ आले सोबेन कोआः सोंगे किन।",
+      "quality_gate_passed": false,
+      "rejection_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "model_score": 0.149
+    }
+  ]
+}

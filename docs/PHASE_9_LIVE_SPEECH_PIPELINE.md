@@ -233,7 +233,7 @@ data class PipelineTimestamps(
 
 Execution of `adb devices`:
 ```powershell
-& "C:\Users\chatu\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
+& "<user-home>\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
 ```
 Output:
 ```

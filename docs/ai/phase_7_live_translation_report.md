@@ -249,7 +249,7 @@ The complete regression test suite was executed in the project virtual environme
 ```
 ============================= test session starts =============================
 platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0
-rootdir: C:\Users\chatu\.gemini\antigravity\scratch\vernacular_fln_assistant
+rootdir: ./
 collected 167 items
 
 tests\test_android_contract_parity.py .......                            [  4%]

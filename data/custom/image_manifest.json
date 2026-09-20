@@ -1,0 +1,2551 @@
+{
+  "total_items": 159,
+  "valid_images": 130,
+  "abstract_without_image": 29,
+  "items": {
+    "VOCAB_001": {
+      "hindi": "चींटी",
+      "mundari": "चींटी",
+      "english": "Ant",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Ant.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Ant.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3070,
+        "height": 4096,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_002": {
+      "hindi": "मधुमक्खी",
+      "mundari": "मधुमक्खी",
+      "english": "Bee",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Bee.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Bee.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_003": {
+      "hindi": "भृंग",
+      "mundari": "भृंग",
+      "english": "Beetle",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Beetle.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Beetle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4727,
+        "height": 2831,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_004": {
+      "hindi": "तितली",
+      "mundari": "तितली",
+      "english": "Butterfly",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Butterfly.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Butterfly.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2560,
+        "height": 4096,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_005": {
+      "hindi": "तिलचट्टा",
+      "mundari": "तिलचट्टा",
+      "english": "Cockroach",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Cockroach.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Cockroach.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5183,
+        "height": 2721,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_006": {
+      "hindi": "व्याध पतंग",
+      "mundari": "पतंग",
+      "english": "Dragonfly",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Dragonfly.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Dragonfly.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 7008,
+        "height": 4672,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_007": {
+      "hindi": "मक्खी",
+      "mundari": "मक्खी",
+      "english": "Fly",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Fly.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Fly.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2611,
+        "height": 1932,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_008": {
+      "hindi": "टिड्डा",
+      "mundari": "टिड्डा",
+      "english": "Grasshopper",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Grasshopper.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Grasshoper.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6240,
+        "height": 4160,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_009": {
+      "hindi": "मच्छर",
+      "mundari": "मच्छर",
+      "english": "Mosquito",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Mosquito.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Mosquito.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2168,
+        "height": 1675,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_010": {
+      "hindi": "मकड़ी",
+      "mundari": "मकड़ी",
+      "english": "Spider",
+      "category": "insects",
+      "image": {
+        "workbook_path": "images/insects/Spider.jpg",
+        "resolved_disk_path": "data/custom/images/Insects/Spider.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2887,
+        "height": 3858,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_011": {
+      "hindi": "भैंस",
+      "mundari": "बोंगा",
+      "english": "Buffalo",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Buffalo.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Buffalo.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5472,
+        "height": 3648,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_012": {
+      "hindi": "बिल्ली",
+      "mundari": "पूसी",
+      "english": "Cat",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Cat.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Cat.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4480,
+        "height": 6720,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_013": {
+      "hindi": "गाय",
+      "mundari": "गाए",
+      "english": "Cow",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Cow.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Cow.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2891,
+        "height": 2891,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_014": {
+      "hindi": "कुत्ता",
+      "mundari": "सेता",
+      "english": "Dog",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Dog.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Dog.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5184,
+        "height": 3456,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_015": {
+      "hindi": "हाथी",
+      "mundari": "हाथी",
+      "english": "Elephant",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Elephant.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Elephant.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2592,
+        "height": 3888,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_016": {
+      "hindi": "बकरी",
+      "mundari": "मराम",
+      "english": "Goat",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Goat.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Goat.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3126,
+        "height": 4376,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_017": {
+      "hindi": "घोड़ा",
+      "mundari": "घोड़ा",
+      "english": "Horse",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Horse.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Horse.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6240,
+        "height": 4160,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_018": {
+      "hindi": "शेर",
+      "mundari": "शेर",
+      "english": "Lion",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Lion.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Lion.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3712,
+        "height": 5568,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_019": {
+      "hindi": "बंदर",
+      "mundari": "हुरु",
+      "english": "Monkey",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Monkey.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Monkey.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 8264,
+        "height": 5509,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_020": {
+      "hindi": "बाघ",
+      "mundari": "बाघ",
+      "english": "Tiger",
+      "category": "animals",
+      "image": {
+        "workbook_path": "images/animals/Tiger.jpg",
+        "resolved_disk_path": "data/custom/images/Animals/Tiger.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 12424,
+        "height": 8995,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_021": {
+      "hindi": "केकड़ा",
+      "mundari": "केकड़ा",
+      "english": "Crab",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Crab.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Crab.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2291,
+        "height": 4072,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_022": {
+      "hindi": "डॉल्फिन",
+      "mundari": "डॉल्फिन",
+      "english": "Dolphin",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Dolphin.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Dolphin.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4276,
+        "height": 2472,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_023": {
+      "hindi": "मछली",
+      "mundari": "माछ",
+      "english": "Fish",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Fish.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Fish.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4016,
+        "height": 6016,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_024": {
+      "hindi": "मेंढक",
+      "mundari": "मेंढक",
+      "english": "Frog",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Frog.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Frog.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4923,
+        "height": 3282,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_025": {
+      "hindi": "ऑक्टोपस",
+      "mundari": "ऑक्टोपस",
+      "english": "Octopus",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Octopus.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Octopus.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 8000,
+        "height": 5223,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_026": {
+      "hindi": "सीहॉर्स",
+      "mundari": "सीहॉर्स",
+      "english": "Seahorse",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Seahorse.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Seahorse.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4608,
+        "height": 3072,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_027": {
+      "hindi": "सील",
+      "mundari": "सील",
+      "english": "Seal",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Seal.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Seal.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_028": {
+      "hindi": "शार्क",
+      "mundari": "शार्क",
+      "english": "Shark",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Shark.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Shark.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4159,
+        "height": 2773,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_029": {
+      "hindi": "कछुआ",
+      "mundari": "कछुआ",
+      "english": "Turtle",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Turtle.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Turtle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6270,
+        "height": 4180,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_030": {
+      "hindi": "व्हेल",
+      "mundari": "व्हेल",
+      "english": "Whale",
+      "category": "aquatic_animals",
+      "image": {
+        "workbook_path": "images/aquatic_animals/Whale.jpg",
+        "resolved_disk_path": "data/custom/images/aquatic animals/Whale.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5479,
+        "height": 3650,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_031": {
+      "hindi": "कौआ",
+      "mundari": "कोंगा",
+      "english": "Crow",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Crow.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Crow.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3277,
+        "height": 2185,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_032": {
+      "hindi": "बत्तख",
+      "mundari": "बत्तख",
+      "english": "Duck",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Duck.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Duck.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5184,
+        "height": 3456,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_033": {
+      "hindi": "गरुड़",
+      "mundari": "गरुड़",
+      "english": "Eagle",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Eagle.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Eagle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 7702,
+        "height": 4333,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_034": {
+      "hindi": "उल्लू",
+      "mundari": "उल्लू",
+      "english": "Owl",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Owl.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Owl.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3171,
+        "height": 4229,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_035": {
+      "hindi": "तोता",
+      "mundari": "तोता",
+      "english": "Parrot",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Parrot.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Parrot.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2504,
+        "height": 3760,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_036": {
+      "hindi": "मोर",
+      "mundari": "मोर",
+      "english": "Peacock",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Peacock.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Peacock.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_037": {
+      "hindi": "कबूतर",
+      "mundari": "कबूतर",
+      "english": "Pigeon",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Pigeon.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Pigeon.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5568,
+        "height": 3712,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_038": {
+      "hindi": "गौरैया",
+      "mundari": "गौरैया",
+      "english": "Sparrow",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Sparrow.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Sparrow.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6270,
+        "height": 4180,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_039": {
+      "hindi": "हंस",
+      "mundari": "हंस",
+      "english": "Swan",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Swan.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Swan.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2252,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_040": {
+      "hindi": "गिद्ध",
+      "mundari": "गिद्ध",
+      "english": "Vulture",
+      "category": "birds",
+      "image": {
+        "workbook_path": "images/birds/Vulture.jpg",
+        "resolved_disk_path": "data/custom/images/Birds/Vulture.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4608,
+        "height": 3072,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_041": {
+      "hindi": "बांह",
+      "mundari": "बांह",
+      "english": "Arm",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Arm.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Arm.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3333,
+        "height": 5000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_042": {
+      "hindi": "कान",
+      "mundari": "लुतुर",
+      "english": "Ear",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Ear.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Ear.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3589,
+        "height": 3299,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_043": {
+      "hindi": "आंख",
+      "mundari": "मॅंत",
+      "english": "Eye",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Eye.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Eye.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4928,
+        "height": 3264,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_044": {
+      "hindi": "चेहरा",
+      "mundari": "मुख",
+      "english": "Face",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Face.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Face.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_045": {
+      "hindi": "उंगली",
+      "mundari": "उंगली",
+      "english": "Finger",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Finger.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Finger.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_046": {
+      "hindi": "पैर",
+      "mundari": "पाँव",
+      "english": "Foot",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Foot.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Foot.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2234,
+        "height": 3683,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_047": {
+      "hindi": "हाथ",
+      "mundari": "हात",
+      "english": "Hands",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Hands.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Hands.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3766,
+        "height": 5649,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_048": {
+      "hindi": "सिर",
+      "mundari": "सिर",
+      "english": "Head",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Head.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Head.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_049": {
+      "hindi": "टांग",
+      "mundari": "टांग",
+      "english": "Leg",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Leg.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Leg.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2496,
+        "height": 3744,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_050": {
+      "hindi": "नाक",
+      "mundari": "नाक",
+      "english": "Nose",
+      "category": "body_parts",
+      "image": {
+        "workbook_path": "images/body_parts/Nose.jpg",
+        "resolved_disk_path": "data/custom/images/Body Parts/Nose.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5472,
+        "height": 3648,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_051": {
+      "hindi": "काला",
+      "mundari": "काला",
+      "english": "Black",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Black.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Black.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 7200,
+        "height": 5400,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_052": {
+      "hindi": "नीला",
+      "mundari": "नीला",
+      "english": "Blue",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Blue.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Blue.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6336,
+        "height": 9520,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_053": {
+      "hindi": "भूरा",
+      "mundari": "भूरा",
+      "english": "Brown",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Brown.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Brown.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_054": {
+      "hindi": "हरा",
+      "mundari": "हरा",
+      "english": "Green",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Green.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Green.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3456,
+        "height": 6144,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_055": {
+      "hindi": "नारंगी",
+      "mundari": "नारंगी",
+      "english": "Orange",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Orange.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Orange.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6989,
+        "height": 5387,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_056": {
+      "hindi": "गुलाबी",
+      "mundari": "गुलाबी",
+      "english": "Pink",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Pink.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Pink.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6016,
+        "height": 8000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_057": {
+      "hindi": "बैंगनी",
+      "mundari": "बैंगनी",
+      "english": "Purple",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Purple.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Purple.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3648,
+        "height": 5472,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_058": {
+      "hindi": "लाल",
+      "mundari": "लाल",
+      "english": "Red",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Red.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Red.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_059": {
+      "hindi": "सफेद",
+      "mundari": "सफेद",
+      "english": "White",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/White.jpg",
+        "resolved_disk_path": "data/custom/images/colors/White.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2577,
+        "height": 2062,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_060": {
+      "hindi": "पीला",
+      "mundari": "पीला",
+      "english": "Yellow",
+      "category": "colors",
+      "image": {
+        "workbook_path": "images/colors/Yellow.jpg",
+        "resolved_disk_path": "data/custom/images/colors/Yellow.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_061": {
+      "hindi": "ब्रेड",
+      "mundari": "ब्रेड",
+      "english": "Bread",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Bread.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Bread.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4592,
+        "height": 3064,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_062": {
+      "hindi": "केक",
+      "mundari": "केक",
+      "english": "Cake",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Cake.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Cake.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2592,
+        "height": 3888,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_063": {
+      "hindi": "कॉफी",
+      "mundari": "कॉफी",
+      "english": "Coffee",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Coffee.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Coffee.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2763,
+        "height": 3683,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_064": {
+      "hindi": "दही",
+      "mundari": "दही",
+      "english": "Curd",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Curd.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Curd.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4016,
+        "height": 6016,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_065": {
+      "hindi": "जूस",
+      "mundari": "जूस",
+      "english": "Juice",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Juice.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Juice.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3909,
+        "height": 5864,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_066": {
+      "hindi": "दूध",
+      "mundari": "दूध",
+      "english": "Milk",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Milk.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Milk.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3157,
+        "height": 2232,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_067": {
+      "hindi": "नूडल्स",
+      "mundari": "नूडल्स",
+      "english": "Noodles",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Noodles.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Noodles.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3510,
+        "height": 6239,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_068": {
+      "hindi": "चावल",
+      "mundari": "चावल",
+      "english": "Rice",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Rice.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Rice.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5520,
+        "height": 3680,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_069": {
+      "hindi": "चाय",
+      "mundari": "चाय",
+      "english": "Tea",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Tea.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Tea.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2252,
+        "height": 4000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_070": {
+      "hindi": "पानी",
+      "mundari": "पानी",
+      "english": "Water",
+      "category": "food",
+      "image": {
+        "workbook_path": "images/food/Water.jpg",
+        "resolved_disk_path": "data/custom/images/Food/Water.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3640,
+        "height": 5929,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_071": {
+      "hindi": "वृत्त",
+      "mundari": "गोल",
+      "english": "Circle",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Circle.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Circle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3456,
+        "height": 5184,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_072": {
+      "hindi": "शंकु",
+      "mundari": "शंकु",
+      "english": "Cone",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Cone.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Cone.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_073": {
+      "hindi": "घन",
+      "mundari": "घन",
+      "english": "Cube",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Cube.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Cube.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4912,
+        "height": 3564,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_074": {
+      "hindi": "बेलन",
+      "mundari": "बेलन",
+      "english": "Cylinder",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Cylinder.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Cylinder.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3072,
+        "height": 4608,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_075": {
+      "hindi": "हृदय",
+      "mundari": "हृदय",
+      "english": "Heart",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Heart.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Heart.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4480,
+        "height": 6720,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_076": {
+      "hindi": "अंडाकार",
+      "mundari": "अंडाकार",
+      "english": "Oval",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Oval.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Oval.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_077": {
+      "hindi": "आयत",
+      "mundari": "आयत",
+      "english": "Rectangle",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Rectangle.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Rectangle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3018,
+        "height": 4527,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_078": {
+      "hindi": "वर्ग",
+      "mundari": "वर्ग",
+      "english": "Square",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Square.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Square.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3637,
+        "height": 5456,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_079": {
+      "hindi": "तारा",
+      "mundari": "तारा",
+      "english": "Star",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Star.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Star.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4592,
+        "height": 3064,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_080": {
+      "hindi": "त्रिभुज",
+      "mundari": "त्रिभुज",
+      "english": "Triangle",
+      "category": "shapes",
+      "image": {
+        "workbook_path": "images/shapes/Triangle.jpg",
+        "resolved_disk_path": "data/custom/images/Shapes/Triangle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_081": {
+      "hindi": "बैग",
+      "mundari": "बैग",
+      "english": "Bag",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Bag.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Bag.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3512,
+        "height": 6240,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_082": {
+      "hindi": "ब्लैक बोर्ड",
+      "mundari": "ब्लैक बोर्ड",
+      "english": "Black Board",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Black_Board.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Black Board.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6555,
+        "height": 4370,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_083": {
+      "hindi": "किताब",
+      "mundari": "किताब",
+      "english": "Book",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Book.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Book.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4640,
+        "height": 6960,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_084": {
+      "hindi": "कुर्सी",
+      "mundari": "कुर्सी",
+      "english": "Chair",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Chair.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Chair.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6720,
+        "height": 4480,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_085": {
+      "hindi": "चॉक",
+      "mundari": "चॉक",
+      "english": "Chalk",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Chalk.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Chalk.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_086": {
+      "hindi": "डेस्क",
+      "mundari": "डेस्क",
+      "english": "Desk",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Desk.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Desk.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4928,
+        "height": 3264,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_087": {
+      "hindi": "रबड़",
+      "mundari": "रबड़",
+      "english": "Eraser",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Eraser.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Eraser.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4480,
+        "height": 6720,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_088": {
+      "hindi": "कलम",
+      "mundari": "कलम",
+      "english": "Pen",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Pen.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Pen.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3648,
+        "height": 5472,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_089": {
+      "hindi": "पेंसिल",
+      "mundari": "पेंसिल",
+      "english": "Pencil",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Pencil.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Pencil.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3030,
+        "height": 4544,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_090": {
+      "hindi": "स्केल",
+      "mundari": "स्केल",
+      "english": "Ruler",
+      "category": "things",
+      "image": {
+        "workbook_path": "images/things/Ruler.jpg",
+        "resolved_disk_path": "data/custom/images/Things/Ruler.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4177,
+        "height": 6266,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_091": {
+      "hindi": "बैंगन",
+      "mundari": "बैंगन",
+      "english": "Brinjal",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Brinjal.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Brinjal.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_092": {
+      "hindi": "पत्तागोभी",
+      "mundari": "पत्तागोभी",
+      "english": "Cabbage",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Cabbage.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Cabbage.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 3000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_093": {
+      "hindi": "गाजर",
+      "mundari": "गाजर",
+      "english": "Carrot",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Carrot.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Carrot.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5870,
+        "height": 3376,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_094": {
+      "hindi": "फूलगोभी",
+      "mundari": "फूलगोभी",
+      "english": "Cauliflower",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Cauliflower.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Cauliflower.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6048,
+        "height": 8064,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_095": {
+      "hindi": "प्याज",
+      "mundari": "प्याज",
+      "english": "Onion",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Onion.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Onion.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3072,
+        "height": 4096,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_096": {
+      "hindi": "मटर",
+      "mundari": "मटर",
+      "english": "Peas",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Peas.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Peas.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6336,
+        "height": 4968,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_097": {
+      "hindi": "आलू",
+      "mundari": "आलू",
+      "english": "Potato",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Potato.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Potato.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2909,
+        "height": 3644,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_098": {
+      "hindi": "कद्दू",
+      "mundari": "कद्दू",
+      "english": "Pumpkin",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Pumpkin.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Pumpkin.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6240,
+        "height": 4160,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_099": {
+      "hindi": "पालक",
+      "mundari": "पालक",
+      "english": "Spinach",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Spinach.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Spinach.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3866,
+        "height": 5799,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_100": {
+      "hindi": "टमाटर",
+      "mundari": "टमाटर",
+      "english": "Tomato",
+      "category": "vegetables",
+      "image": {
+        "workbook_path": "images/vegetables/Tomato.jpg",
+        "resolved_disk_path": "data/custom/images/vegetables/Tomato.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3396,
+        "height": 2624,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_101": {
+      "hindi": "हवाई जहाज",
+      "mundari": "हवाई जहाज",
+      "english": "Aeroplane",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Aeroplane.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Aeroplane.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 3376,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_102": {
+      "hindi": "साइकिल",
+      "mundari": "साइकिल",
+      "english": "Bicycle",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Bicycle.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Bicycle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 7008,
+        "height": 4672,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_103": {
+      "hindi": "नाव",
+      "mundari": "नाव",
+      "english": "Boat",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Boat.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Boat.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3456,
+        "height": 5184,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_104": {
+      "hindi": "बस",
+      "mundari": "बस",
+      "english": "Bus",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Bus.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Bus.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2740,
+        "height": 4881,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_105": {
+      "hindi": "कार",
+      "mundari": "कार",
+      "english": "Car",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Car.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Car.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 2961,
+        "height": 3948,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_106": {
+      "hindi": "हेलीकॉप्टर",
+      "mundari": "हेलीकॉप्टर",
+      "english": "Helicopter",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Helicopter.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Helicopter.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4441,
+        "height": 2961,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_107": {
+      "hindi": "मोटरसाइकिल",
+      "mundari": "मोटरसाइकिल",
+      "english": "Motorcycle",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Motorcycle.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Motorcycle.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_108": {
+      "hindi": "रिक्शा",
+      "mundari": "रिक्शा",
+      "english": "Rickshaw",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Rickshaw.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Rickshaw.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6000,
+        "height": 3999,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_109": {
+      "hindi": "ट्रेन",
+      "mundari": "ट्रेन",
+      "english": "Train",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Train.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Train.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3340,
+        "height": 5011,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_110": {
+      "hindi": "ट्रक",
+      "mundari": "ट्रक",
+      "english": "Truck",
+      "category": "vehicles",
+      "image": {
+        "workbook_path": "images/vehicles/Truck.jpg",
+        "resolved_disk_path": "data/custom/images/Vehicles/Truck.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3648,
+        "height": 5472,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_111": {
+      "hindi": "गुलबहार",
+      "mundari": "गुलबहार",
+      "english": "Aster",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Aster.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Aster.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4352,
+        "height": 3264,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_112": {
+      "hindi": "कार्नेशन",
+      "mundari": "कार्नेशन",
+      "english": "Carnation",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Carnation.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Carnation.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_113": {
+      "hindi": "डहलिया",
+      "mundari": "डहलिया",
+      "english": "Dahlia",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Dahlia.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Dahlia.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_114": {
+      "hindi": "गुलबहार",
+      "mundari": "गुलबहार",
+      "english": "Daisy",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Daisy.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Daisy.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4234,
+        "height": 6351,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_115": {
+      "hindi": "चमेली",
+      "mundari": "चमेली",
+      "english": "Jasmine",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Jasmine.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Jasmine.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3060,
+        "height": 4080,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_116": {
+      "hindi": "कमल",
+      "mundari": "कमल",
+      "english": "Lotus",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Lotus.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Lotus.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5184,
+        "height": 3456,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_117": {
+      "hindi": "गेंदा",
+      "mundari": "गेंदा",
+      "english": "Marigold",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Marigold.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Marigold.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 6240,
+        "height": 4160,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_118": {
+      "hindi": "गुलाब",
+      "mundari": "गुलाब",
+      "english": "Rose",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Rose.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Rose.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4898,
+        "height": 3265,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_119": {
+      "hindi": "सूरजमुखी",
+      "mundari": "सूरजमुखी",
+      "english": "Sunflower",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Sunflower.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Sunflower.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3255,
+        "height": 1840,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_120": {
+      "hindi": "ट्यूलिप",
+      "mundari": "ट्यूलिप",
+      "english": "Tulip",
+      "category": "flowers",
+      "image": {
+        "workbook_path": "images/flowers/Tulip.jpg",
+        "resolved_disk_path": "data/custom/images/Flower/Tulip.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5568,
+        "height": 3712,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_121": {
+      "hindi": "जौ",
+      "mundari": "जौ",
+      "english": "Barley",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Barley.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Barley.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3927,
+        "height": 4909,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_122": {
+      "hindi": "चना",
+      "mundari": "चना",
+      "english": "Chickpea",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Chickpea.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Chickpea.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 1836,
+        "height": 2765,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_123": {
+      "hindi": "मक्का",
+      "mundari": "मक्का",
+      "english": "Corn",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Corn.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Corn.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 8944,
+        "height": 6708,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_124": {
+      "hindi": "बाजरा",
+      "mundari": "बाजरा",
+      "english": "Millet",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Millet.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Millet.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3024,
+        "height": 4032,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_125": {
+      "hindi": "जई",
+      "mundari": "जई",
+      "english": "Oats",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Oats.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Oats.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3264,
+        "height": 2448,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_126": {
+      "hindi": "मटर",
+      "mundari": "मटर",
+      "english": "Peas",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Peas.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Peas.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6016,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_127": {
+      "hindi": "चावल",
+      "mundari": "चावल",
+      "english": "Rice",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Rice.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Rice.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 5725,
+        "height": 3817,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_128": {
+      "hindi": "ज्वार",
+      "mundari": "ज्वार",
+      "english": "Sorghum",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Sorghum.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Sorghum.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3072,
+        "height": 4071,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_129": {
+      "hindi": "सोयाबीन",
+      "mundari": "सोयाबीन",
+      "english": "Soybean",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Soybean.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Soybean.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 3000,
+        "height": 3847,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_130": {
+      "hindi": "गेहूं",
+      "mundari": "गेहूं",
+      "english": "Wheat",
+      "category": "grains",
+      "image": {
+        "workbook_path": "images/grains/Wheat.jpg",
+        "resolved_disk_path": "data/custom/images/Grains/Wheat.jpg",
+        "exists_on_disk": true,
+        "is_readable": true,
+        "width": 4000,
+        "height": 6000,
+        "format": "JPEG",
+        "status": "VALID_READABLE_IMAGE"
+      }
+    },
+    "VOCAB_131": {
+      "hindi": "पिता",
+      "mundari": "अपु",
+      "english": "Father",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_132": {
+      "hindi": "माता",
+      "mundari": "एंगा",
+      "english": "Mother",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_133": {
+      "hindi": "भाई",
+      "mundari": "बोको",
+      "english": "Brother",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_134": {
+      "hindi": "बहन",
+      "mundari": "मिसी",
+      "english": "Sister",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_135": {
+      "hindi": "दादा",
+      "mundari": "आबा",
+      "english": "Grandfather",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_136": {
+      "hindi": "दादी",
+      "mundari": "आयो",
+      "english": "Grandmother",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_137": {
+      "hindi": "चाचा",
+      "mundari": "काका",
+      "english": "Uncle",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_138": {
+      "hindi": "चाची",
+      "mundari": "काकी",
+      "english": "Aunt",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_139": {
+      "hindi": "बेटा",
+      "mundari": "होन",
+      "english": "Son",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_140": {
+      "hindi": "बेटी",
+      "mundari": "होन को",
+      "english": "Daughter",
+      "category": "Family",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_141": {
+      "hindi": "जनवरी",
+      "mundari": "पुस",
+      "english": "January",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_142": {
+      "hindi": "फरवरी",
+      "mundari": "माघ",
+      "english": "February",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_143": {
+      "hindi": "मार्च",
+      "mundari": "फागुन",
+      "english": "March",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_144": {
+      "hindi": "अप्रैल",
+      "mundari": "चैत",
+      "english": "April",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_145": {
+      "hindi": "मई",
+      "mundari": "बैशाख",
+      "english": "May",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_146": {
+      "hindi": "जून",
+      "mundari": "जेठ",
+      "english": "June",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_147": {
+      "hindi": "जुलाई",
+      "mundari": "आषाढ़",
+      "english": "July",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_148": {
+      "hindi": "अगस्त",
+      "mundari": "सावन",
+      "english": "August",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_149": {
+      "hindi": "सितंबर",
+      "mundari": "भादो",
+      "english": "September",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_150": {
+      "hindi": "अक्टूबर",
+      "mundari": "कातिक",
+      "english": "October",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_151": {
+      "hindi": "नवंबर",
+      "mundari": "अगहन",
+      "english": "November",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_152": {
+      "hindi": "दिसंबर",
+      "mundari": "पूस",
+      "english": "December",
+      "category": "Months",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_153": {
+      "hindi": "सोमवार",
+      "mundari": "सोमबार",
+      "english": "Monday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_154": {
+      "hindi": "मंगलवार",
+      "mundari": "मंगलबार",
+      "english": "Tuesday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_155": {
+      "hindi": "बुधवार",
+      "mundari": "बुधबार",
+      "english": "Wednesday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_156": {
+      "hindi": "गुरुवार",
+      "mundari": "बृहस्पतिबार",
+      "english": "Thursday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_157": {
+      "hindi": "शुक्रवार",
+      "mundari": "सुकुरबार",
+      "english": "Friday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_158": {
+      "hindi": "शनिवार",
+      "mundari": "सनिबार",
+      "english": "Saturday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    },
+    "VOCAB_159": {
+      "hindi": "रविवार",
+      "mundari": "इतबार",
+      "english": "Sunday",
+      "category": "Weeks",
+      "image": {
+        "workbook_path": "",
+        "resolved_disk_path": null,
+        "exists_on_disk": false,
+        "is_readable": false,
+        "width": null,
+        "height": null,
+        "format": null,
+        "status": "IMAGE_NOT_APPLICABLE_ABSTRACT"
+      }
+    }
+  }
+}

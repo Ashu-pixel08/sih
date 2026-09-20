@@ -20,6 +20,7 @@ import time
 import math
 import re
 import unicodedata
+import json
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional, Tuple, Dict, Any
 
@@ -91,6 +92,7 @@ class NeuralTranslationResult:
     quality_gate_passed: bool = True
     quality_gate_reasons: List[str] = field(default_factory=list)
     score_type: str = "TOKEN_LIKELIHOOD (geometric mean token probability; NOT translation accuracy)"
+    ui_status: str = "AI TRANSLATION — REVIEW"
 
     def __post_init__(self):
         if self.confidence == 0.0 and self.model_score != 0.0:
@@ -160,6 +162,40 @@ class NeuralTranslationEngine:
 
         # Initialize Linguistic Quality Gate
         self.quality_gate = TranslationQualityGate()
+
+        # Load verified educational vocabulary lexicon for constrained hypothesis reranking
+        self.educational_lexicon: Dict[str, Tuple[str, List[int]]] = {}
+        _base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        _lex_paths = [
+            os.path.join(_base_dir, "data", "custom", "cleaned_team_pairs.jsonl"),
+            os.path.join(_base_dir, "content", "content_registry.json")
+        ]
+        for lp in _lex_paths:
+            if os.path.exists(lp):
+                try:
+                    if lp.endswith(".jsonl"):
+                        with open(lp, "r", encoding="utf-8") as f:
+                            for line in f:
+                                it = json.loads(line)
+                                if it.get("training_eligible"):
+                                    h_norm = normalize_hindi(it["hindi"]).strip()
+                                    u_norm = unicodedata.normalize("NFC", it["mundari"]).strip()
+                                    if h_norm and u_norm:
+                                        toks = self.unr_tokenizer.encode(u_norm, add_special_tokens=False)
+                                        if toks:
+                                            self.educational_lexicon[h_norm] = (u_norm, toks)
+                    elif lp.endswith(".json"):
+                        with open(lp, "r", encoding="utf-8") as f:
+                            reg = json.load(f)
+                            for it in reg.get("items", []):
+                                h_norm = normalize_hindi(it.get("hindi_text", "")).strip()
+                                u_norm = unicodedata.normalize("NFC", it.get("mundari_text", "")).strip()
+                                if h_norm and u_norm:
+                                    toks = self.unr_tokenizer.encode(u_norm, add_special_tokens=False)
+                                    if toks:
+                                        self.educational_lexicon[h_norm] = (u_norm, toks)
+                except Exception:
+                    pass
 
     @torch.no_grad()
     def generate_greedy(
@@ -232,11 +268,12 @@ class NeuralTranslationEngine:
         beam_size: int = 3,
         max_len: int = 50,
         repetition_penalty: float = 1.25,
-        no_repeat_ngram_size: int = 2
+        no_repeat_ngram_size: int = 2,
+        boost_token_subseqs: Optional[List[List[int]]] = None
     ) -> Tuple[List[int], float]:
         """
         Beam search autoregressive decoding with sign-aware penalty, n-gram blocking,
-        and length normalization.
+        length normalization, and optional educational lexicon hypothesis reranking.
         """
         src = torch.tensor([src_tokens], dtype=torch.long, device=self.device)
         memory = self.model.encode(src)
@@ -244,6 +281,17 @@ class NeuralTranslationEngine:
         beams: List[Tuple[List[int], float]] = [([BOS_ID], 0.0)]
         completed_beams: List[Tuple[List[int], float]] = []
         min_len = max(2, min(8, int(len(src_tokens) * 0.35)))
+
+        def compute_candidate_score(seq: List[int], raw_score: float) -> float:
+            norm_score = raw_score / (len(seq) ** 0.7)
+            if boost_token_subseqs:
+                for b_subseq in boost_token_subseqs:
+                    b_len = len(b_subseq)
+                    for i in range(len(seq) - b_len + 1):
+                        if seq[i:i + b_len] == b_subseq:
+                            norm_score += 0.35 * b_len
+                            break
+            return norm_score
 
         for step in range(max_len):
             new_candidates: List[Tuple[List[int], float]] = []
@@ -278,6 +326,19 @@ class NeuralTranslationEngine:
                 if step < min_len:
                     logits[0, EOS_ID] = -float('inf')
 
+                # Educational vocabulary subword logit boost (allows attested domain vocabulary
+                # tokens to enter top-k exploration candidates during beam search)
+                if boost_token_subseqs:
+                    for b_subseq in boost_token_subseqs:
+                        subseq_present = any(
+                            seq[i:i + len(b_subseq)] == b_subseq
+                            for i in range(len(seq) - len(b_subseq) + 1)
+                        )
+                        if not subseq_present:
+                            for tok_id in b_subseq:
+                                if tok_id < logits.size(-1):
+                                    logits[0, tok_id] += 2.8
+
                 log_probs = F.log_softmax(logits, dim=-1)
                 topk_log_probs, topk_indices = torch.topk(log_probs, beam_size, dim=-1)
 
@@ -289,8 +350,8 @@ class NeuralTranslationEngine:
             if not new_candidates:
                 break
 
-            # Rank candidates by length-normalized score
-            ranked = sorted(new_candidates, key=lambda x: x[1] / (len(x[0]) ** 0.7), reverse=True)
+            # Rank candidates by length-normalized score with optional lexicon boost
+            ranked = sorted(new_candidates, key=lambda x: compute_candidate_score(x[0], x[1]), reverse=True)
             beams = ranked[:beam_size]
 
             if all(b[0][-1] == EOS_ID for b in beams):
@@ -300,7 +361,7 @@ class NeuralTranslationEngine:
         if not completed_beams:
             completed_beams = beams
 
-        best_seq, best_score = max(completed_beams, key=lambda x: x[1] / (len(x[0]) ** 0.7))
+        best_seq, best_score = max(completed_beams, key=lambda x: compute_candidate_score(x[0], x[1]))
 
         cleaned_ids = [t for t in best_seq if t not in (BOS_ID, EOS_ID, PAD_ID)]
         avg_log_prob = best_score / max(1, len(cleaned_ids))
@@ -318,19 +379,30 @@ class NeuralTranslationEngine:
     ) -> NeuralTranslationResult:
         """
         Translates a Hindi sentence into Mundari using the neural Seq2Seq model.
-        Applies orthographic cleaning and runs the linguistic quality gate.
+        Applies educational lexicon reranking, orthographic cleaning, and linguistic safety gates.
         """
         start_time = time.perf_counter()
 
         norm_hindi = normalize_hindi(hindi_text)
         src_tokens = self.hi_tokenizer.encode(norm_hindi, add_special_tokens=True)
 
+        # Extract educational vocabulary subword targets present in source query
+        boost_token_subseqs: List[List[int]] = []
+        words = norm_hindi.split()
+        for w in words:
+            if w in self.educational_lexicon:
+                boost_token_subseqs.append(self.educational_lexicon[w][1])
+        for term, (unr_term, unr_toks) in self.educational_lexicon.items():
+            if " " in term and term in norm_hindi:
+                boost_token_subseqs.append(unr_toks)
+
         if beam_size > 1:
             generated_ids, model_score = self.generate_beam(
                 src_tokens,
                 beam_size=beam_size,
                 max_len=max_len,
-                no_repeat_ngram_size=no_repeat_ngram_size
+                no_repeat_ngram_size=no_repeat_ngram_size,
+                boost_token_subseqs=boost_token_subseqs
             )
         else:
             generated_ids, model_score = self.generate_greedy(
@@ -365,5 +437,6 @@ class NeuralTranslationEngine:
             tokens_generated=len(generated_ids),
             beam_size=beam_size,
             quality_gate_passed=qg_result.is_valid,
-            quality_gate_reasons=qg_result.rejection_reasons
+            quality_gate_reasons=qg_result.rejection_reasons,
+            ui_status=qg_result.ui_status
         )

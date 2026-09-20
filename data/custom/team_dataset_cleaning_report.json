@@ -1,0 +1,1305 @@
+{
+  "statistics": {
+    "total_records": 159,
+    "distinct_pairs_approved": 44,
+    "identical_pairs_total": 115,
+    "identical_pairs_corroborated": 51,
+    "identical_pairs_unverified_hold": 64,
+    "images_mapped": 130,
+    "images_missing_abstract": 29,
+    "images_unreadable": 0,
+    "categories": {
+      "insects": 10,
+      "animals": 10,
+      "aquatic_animals": 10,
+      "birds": 10,
+      "body_parts": 10,
+      "colors": 10,
+      "food": 10,
+      "shapes": 10,
+      "things": 10,
+      "vegetables": 10,
+      "vehicles": 10,
+      "flowers": 10,
+      "grains": 10,
+      "Family": 10,
+      "Months": 12,
+      "Weeks": 7
+    }
+  },
+  "summary": "Processed team workbook. Exactly 44 distinct indigenous pairs approved for training. 112 identical pairs audited (loanwords corroborated vs held for review). Exactly 130/130 images on disk mapped and verified readable.",
+  "records_summary": [
+    {
+      "id": "VOCAB_001",
+      "category": "insects",
+      "hindi": "चींटी",
+      "mundari": "चींटी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_002",
+      "category": "insects",
+      "hindi": "मधुमक्खी",
+      "mundari": "मधुमक्खी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_003",
+      "category": "insects",
+      "hindi": "भृंग",
+      "mundari": "भृंग",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_004",
+      "category": "insects",
+      "hindi": "तितली",
+      "mundari": "तितली",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_005",
+      "category": "insects",
+      "hindi": "तिलचट्टा",
+      "mundari": "तिलचट्टा",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_006",
+      "category": "insects",
+      "hindi": "व्याध पतंग",
+      "mundari": "पतंग",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_007",
+      "category": "insects",
+      "hindi": "मक्खी",
+      "mundari": "मक्खी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_008",
+      "category": "insects",
+      "hindi": "टिड्डा",
+      "mundari": "टिड्डा",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_009",
+      "category": "insects",
+      "hindi": "मच्छर",
+      "mundari": "मच्छर",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_010",
+      "category": "insects",
+      "hindi": "मकड़ी",
+      "mundari": "मकड़ी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_011",
+      "category": "animals",
+      "hindi": "भैंस",
+      "mundari": "बोंगा",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_012",
+      "category": "animals",
+      "hindi": "बिल्ली",
+      "mundari": "पूसी",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_013",
+      "category": "animals",
+      "hindi": "गाय",
+      "mundari": "गाए",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_014",
+      "category": "animals",
+      "hindi": "कुत्ता",
+      "mundari": "सेता",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_015",
+      "category": "animals",
+      "hindi": "हाथी",
+      "mundari": "हाथी",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_016",
+      "category": "animals",
+      "hindi": "बकरी",
+      "mundari": "मराम",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_017",
+      "category": "animals",
+      "hindi": "घोड़ा",
+      "mundari": "घोड़ा",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_018",
+      "category": "animals",
+      "hindi": "शेर",
+      "mundari": "शेर",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_019",
+      "category": "animals",
+      "hindi": "बंदर",
+      "mundari": "हुरु",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_020",
+      "category": "animals",
+      "hindi": "बाघ",
+      "mundari": "बाघ",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_021",
+      "category": "aquatic_animals",
+      "hindi": "केकड़ा",
+      "mundari": "केकड़ा",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_022",
+      "category": "aquatic_animals",
+      "hindi": "डॉल्फिन",
+      "mundari": "डॉल्फिन",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_023",
+      "category": "aquatic_animals",
+      "hindi": "मछली",
+      "mundari": "माछ",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_024",
+      "category": "aquatic_animals",
+      "hindi": "मेंढक",
+      "mundari": "मेंढक",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_025",
+      "category": "aquatic_animals",
+      "hindi": "ऑक्टोपस",
+      "mundari": "ऑक्टोपस",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_026",
+      "category": "aquatic_animals",
+      "hindi": "सीहॉर्स",
+      "mundari": "सीहॉर्स",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_027",
+      "category": "aquatic_animals",
+      "hindi": "सील",
+      "mundari": "सील",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_028",
+      "category": "aquatic_animals",
+      "hindi": "शार्क",
+      "mundari": "शार्क",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_029",
+      "category": "aquatic_animals",
+      "hindi": "कछुआ",
+      "mundari": "कछुआ",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_030",
+      "category": "aquatic_animals",
+      "hindi": "व्हेल",
+      "mundari": "व्हेल",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_031",
+      "category": "birds",
+      "hindi": "कौआ",
+      "mundari": "कोंगा",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_032",
+      "category": "birds",
+      "hindi": "बत्तख",
+      "mundari": "बत्तख",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_033",
+      "category": "birds",
+      "hindi": "गरुड़",
+      "mundari": "गरुड़",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_034",
+      "category": "birds",
+      "hindi": "उल्लू",
+      "mundari": "उल्लू",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_035",
+      "category": "birds",
+      "hindi": "तोता",
+      "mundari": "तोता",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_036",
+      "category": "birds",
+      "hindi": "मोर",
+      "mundari": "मोर",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_037",
+      "category": "birds",
+      "hindi": "कबूतर",
+      "mundari": "कबूतर",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_038",
+      "category": "birds",
+      "hindi": "गौरैया",
+      "mundari": "गौरैया",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_039",
+      "category": "birds",
+      "hindi": "हंस",
+      "mundari": "हंस",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_040",
+      "category": "birds",
+      "hindi": "गिद्ध",
+      "mundari": "गिद्ध",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_041",
+      "category": "body_parts",
+      "hindi": "बांह",
+      "mundari": "बांह",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_042",
+      "category": "body_parts",
+      "hindi": "कान",
+      "mundari": "लुतुर",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_043",
+      "category": "body_parts",
+      "hindi": "आंख",
+      "mundari": "मॅंत",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_044",
+      "category": "body_parts",
+      "hindi": "चेहरा",
+      "mundari": "मुख",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_045",
+      "category": "body_parts",
+      "hindi": "उंगली",
+      "mundari": "उंगली",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_046",
+      "category": "body_parts",
+      "hindi": "पैर",
+      "mundari": "पाँव",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_047",
+      "category": "body_parts",
+      "hindi": "हाथ",
+      "mundari": "हात",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_048",
+      "category": "body_parts",
+      "hindi": "सिर",
+      "mundari": "सिर",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_049",
+      "category": "body_parts",
+      "hindi": "टांग",
+      "mundari": "टांग",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_050",
+      "category": "body_parts",
+      "hindi": "नाक",
+      "mundari": "नाक",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_051",
+      "category": "colors",
+      "hindi": "काला",
+      "mundari": "काला",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_052",
+      "category": "colors",
+      "hindi": "नीला",
+      "mundari": "नीला",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_053",
+      "category": "colors",
+      "hindi": "भूरा",
+      "mundari": "भूरा",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_054",
+      "category": "colors",
+      "hindi": "हरा",
+      "mundari": "हरा",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_055",
+      "category": "colors",
+      "hindi": "नारंगी",
+      "mundari": "नारंगी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_056",
+      "category": "colors",
+      "hindi": "गुलाबी",
+      "mundari": "गुलाबी",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_057",
+      "category": "colors",
+      "hindi": "बैंगनी",
+      "mundari": "बैंगनी",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_058",
+      "category": "colors",
+      "hindi": "लाल",
+      "mundari": "लाल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_059",
+      "category": "colors",
+      "hindi": "सफेद",
+      "mundari": "सफेद",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_060",
+      "category": "colors",
+      "hindi": "पीला",
+      "mundari": "पीला",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_061",
+      "category": "food",
+      "hindi": "ब्रेड",
+      "mundari": "ब्रेड",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_062",
+      "category": "food",
+      "hindi": "केक",
+      "mundari": "केक",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_063",
+      "category": "food",
+      "hindi": "कॉफी",
+      "mundari": "कॉफी",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_064",
+      "category": "food",
+      "hindi": "दही",
+      "mundari": "दही",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_065",
+      "category": "food",
+      "hindi": "जूस",
+      "mundari": "जूस",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_066",
+      "category": "food",
+      "hindi": "दूध",
+      "mundari": "दूध",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_067",
+      "category": "food",
+      "hindi": "नूडल्स",
+      "mundari": "नूडल्स",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_068",
+      "category": "food",
+      "hindi": "चावल",
+      "mundari": "चावल",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_069",
+      "category": "food",
+      "hindi": "चाय",
+      "mundari": "चाय",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_070",
+      "category": "food",
+      "hindi": "पानी",
+      "mundari": "पानी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_071",
+      "category": "shapes",
+      "hindi": "वृत्त",
+      "mundari": "गोल",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_072",
+      "category": "shapes",
+      "hindi": "शंकु",
+      "mundari": "शंकु",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_073",
+      "category": "shapes",
+      "hindi": "घन",
+      "mundari": "घन",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_074",
+      "category": "shapes",
+      "hindi": "बेलन",
+      "mundari": "बेलन",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_075",
+      "category": "shapes",
+      "hindi": "हृदय",
+      "mundari": "हृदय",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_076",
+      "category": "shapes",
+      "hindi": "अंडाकार",
+      "mundari": "अंडाकार",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_077",
+      "category": "shapes",
+      "hindi": "आयत",
+      "mundari": "आयत",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_078",
+      "category": "shapes",
+      "hindi": "वर्ग",
+      "mundari": "वर्ग",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_079",
+      "category": "shapes",
+      "hindi": "तारा",
+      "mundari": "तारा",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_080",
+      "category": "shapes",
+      "hindi": "त्रिभुज",
+      "mundari": "त्रिभुज",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_081",
+      "category": "things",
+      "hindi": "बैग",
+      "mundari": "बैग",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_082",
+      "category": "things",
+      "hindi": "ब्लैक बोर्ड",
+      "mundari": "ब्लैक बोर्ड",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_083",
+      "category": "things",
+      "hindi": "किताब",
+      "mundari": "किताब",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_084",
+      "category": "things",
+      "hindi": "कुर्सी",
+      "mundari": "कुर्सी",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_085",
+      "category": "things",
+      "hindi": "चॉक",
+      "mundari": "चॉक",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_086",
+      "category": "things",
+      "hindi": "डेस्क",
+      "mundari": "डेस्क",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_087",
+      "category": "things",
+      "hindi": "रबड़",
+      "mundari": "रबड़",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_088",
+      "category": "things",
+      "hindi": "कलम",
+      "mundari": "कलम",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_089",
+      "category": "things",
+      "hindi": "पेंसिल",
+      "mundari": "पेंसिल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_090",
+      "category": "things",
+      "hindi": "स्केल",
+      "mundari": "स्केल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_091",
+      "category": "vegetables",
+      "hindi": "बैंगन",
+      "mundari": "बैंगन",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_092",
+      "category": "vegetables",
+      "hindi": "पत्तागोभी",
+      "mundari": "पत्तागोभी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_093",
+      "category": "vegetables",
+      "hindi": "गाजर",
+      "mundari": "गाजर",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_094",
+      "category": "vegetables",
+      "hindi": "फूलगोभी",
+      "mundari": "फूलगोभी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_095",
+      "category": "vegetables",
+      "hindi": "प्याज",
+      "mundari": "प्याज",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_096",
+      "category": "vegetables",
+      "hindi": "मटर",
+      "mundari": "मटर",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_097",
+      "category": "vegetables",
+      "hindi": "आलू",
+      "mundari": "आलू",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_098",
+      "category": "vegetables",
+      "hindi": "कद्दू",
+      "mundari": "कद्दू",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_099",
+      "category": "vegetables",
+      "hindi": "पालक",
+      "mundari": "पालक",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_100",
+      "category": "vegetables",
+      "hindi": "टमाटर",
+      "mundari": "टमाटर",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_101",
+      "category": "vehicles",
+      "hindi": "हवाई जहाज",
+      "mundari": "हवाई जहाज",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_102",
+      "category": "vehicles",
+      "hindi": "साइकिल",
+      "mundari": "साइकिल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_103",
+      "category": "vehicles",
+      "hindi": "नाव",
+      "mundari": "नाव",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_104",
+      "category": "vehicles",
+      "hindi": "बस",
+      "mundari": "बस",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_105",
+      "category": "vehicles",
+      "hindi": "कार",
+      "mundari": "कार",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_106",
+      "category": "vehicles",
+      "hindi": "हेलीकॉप्टर",
+      "mundari": "हेलीकॉप्टर",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_107",
+      "category": "vehicles",
+      "hindi": "मोटरसाइकिल",
+      "mundari": "मोटरसाइकिल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_108",
+      "category": "vehicles",
+      "hindi": "रिक्शा",
+      "mundari": "रिक्शा",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_109",
+      "category": "vehicles",
+      "hindi": "ट्रेन",
+      "mundari": "ट्रेन",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_110",
+      "category": "vehicles",
+      "hindi": "ट्रक",
+      "mundari": "ट्रक",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_111",
+      "category": "flowers",
+      "hindi": "गुलबहार",
+      "mundari": "गुलबहार",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_112",
+      "category": "flowers",
+      "hindi": "कार्नेशन",
+      "mundari": "कार्नेशन",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_113",
+      "category": "flowers",
+      "hindi": "डहलिया",
+      "mundari": "डहलिया",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_114",
+      "category": "flowers",
+      "hindi": "गुलबहार",
+      "mundari": "गुलबहार",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_115",
+      "category": "flowers",
+      "hindi": "चमेली",
+      "mundari": "चमेली",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_116",
+      "category": "flowers",
+      "hindi": "कमल",
+      "mundari": "कमल",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_117",
+      "category": "flowers",
+      "hindi": "गेंदा",
+      "mundari": "गेंदा",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_118",
+      "category": "flowers",
+      "hindi": "गुलाब",
+      "mundari": "गुलाब",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_119",
+      "category": "flowers",
+      "hindi": "सूरजमुखी",
+      "mundari": "सूरजमुखी",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_120",
+      "category": "flowers",
+      "hindi": "ट्यूलिप",
+      "mundari": "ट्यूलिप",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_121",
+      "category": "grains",
+      "hindi": "जौ",
+      "mundari": "जौ",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_122",
+      "category": "grains",
+      "hindi": "चना",
+      "mundari": "चना",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_123",
+      "category": "grains",
+      "hindi": "मक्का",
+      "mundari": "मक्का",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_124",
+      "category": "grains",
+      "hindi": "बाजरा",
+      "mundari": "बाजरा",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_125",
+      "category": "grains",
+      "hindi": "जई",
+      "mundari": "जई",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_126",
+      "category": "grains",
+      "hindi": "मटर",
+      "mundari": "मटर",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_127",
+      "category": "grains",
+      "hindi": "चावल",
+      "mundari": "चावल",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_128",
+      "category": "grains",
+      "hindi": "ज्वार",
+      "mundari": "ज्वार",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_129",
+      "category": "grains",
+      "hindi": "सोयाबीन",
+      "mundari": "सोयाबीन",
+      "promotion_status": "LOANWORD_CORROBORATED",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_130",
+      "category": "grains",
+      "hindi": "गेहूं",
+      "mundari": "गेहूं",
+      "promotion_status": "UNVERIFIED_HELD_FOR_REVIEW",
+      "training_eligible": false
+    },
+    {
+      "id": "VOCAB_131",
+      "category": "Family",
+      "hindi": "पिता",
+      "mundari": "अपु",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_132",
+      "category": "Family",
+      "hindi": "माता",
+      "mundari": "एंगा",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_133",
+      "category": "Family",
+      "hindi": "भाई",
+      "mundari": "बोको",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_134",
+      "category": "Family",
+      "hindi": "बहन",
+      "mundari": "मिसी",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_135",
+      "category": "Family",
+      "hindi": "दादा",
+      "mundari": "आबा",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_136",
+      "category": "Family",
+      "hindi": "दादी",
+      "mundari": "आयो",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_137",
+      "category": "Family",
+      "hindi": "चाचा",
+      "mundari": "काका",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_138",
+      "category": "Family",
+      "hindi": "चाची",
+      "mundari": "काकी",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_139",
+      "category": "Family",
+      "hindi": "बेटा",
+      "mundari": "होन",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_140",
+      "category": "Family",
+      "hindi": "बेटी",
+      "mundari": "होन को",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_141",
+      "category": "Months",
+      "hindi": "जनवरी",
+      "mundari": "पुस",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_142",
+      "category": "Months",
+      "hindi": "फरवरी",
+      "mundari": "माघ",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_143",
+      "category": "Months",
+      "hindi": "मार्च",
+      "mundari": "फागुन",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_144",
+      "category": "Months",
+      "hindi": "अप्रैल",
+      "mundari": "चैत",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_145",
+      "category": "Months",
+      "hindi": "मई",
+      "mundari": "बैशाख",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_146",
+      "category": "Months",
+      "hindi": "जून",
+      "mundari": "जेठ",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_147",
+      "category": "Months",
+      "hindi": "जुलाई",
+      "mundari": "आषाढ़",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_148",
+      "category": "Months",
+      "hindi": "अगस्त",
+      "mundari": "सावन",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_149",
+      "category": "Months",
+      "hindi": "सितंबर",
+      "mundari": "भादो",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_150",
+      "category": "Months",
+      "hindi": "अक्टूबर",
+      "mundari": "कातिक",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_151",
+      "category": "Months",
+      "hindi": "नवंबर",
+      "mundari": "अगहन",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_152",
+      "category": "Months",
+      "hindi": "दिसंबर",
+      "mundari": "पूस",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_153",
+      "category": "Weeks",
+      "hindi": "सोमवार",
+      "mundari": "सोमबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_154",
+      "category": "Weeks",
+      "hindi": "मंगलवार",
+      "mundari": "मंगलबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_155",
+      "category": "Weeks",
+      "hindi": "बुधवार",
+      "mundari": "बुधबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_156",
+      "category": "Weeks",
+      "hindi": "गुरुवार",
+      "mundari": "बृहस्पतिबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_157",
+      "category": "Weeks",
+      "hindi": "शुक्रवार",
+      "mundari": "सुकुरबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_158",
+      "category": "Weeks",
+      "hindi": "शनिवार",
+      "mundari": "सनिबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    },
+    {
+      "id": "VOCAB_159",
+      "category": "Weeks",
+      "hindi": "रविवार",
+      "mundari": "इतबार",
+      "promotion_status": "APPROVED_TRAINING_PAIR",
+      "training_eligible": true
+    }
+  ]
+}

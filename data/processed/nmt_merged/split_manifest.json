@@ -1,0 +1,19 @@
+{
+  "random_seed": 42,
+  "split_ratios": "90% train, 5% val, 5% test",
+  "total_unified_pairs": 17863,
+  "train_pairs": 16059,
+  "val_pairs": 902,
+  "test_pairs": 902,
+  "held_out_educational_vocab_pairs": 14,
+  "leakage_verification": {
+    "train_val_disjoint": true,
+    "train_test_disjoint": true,
+    "val_test_disjoint": true,
+    "challenge_set_disjoint": true
+  },
+  "provenance_breakdown": {
+    "karya_canonical_parallel": 17769,
+    "sih_team_educational": 94
+  }
+}

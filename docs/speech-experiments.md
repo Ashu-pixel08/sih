@@ -16,7 +16,7 @@ This document presents the empirical findings from **Phase 6 (Speech Recognition
 
 ## 2. Mundari Speech Corpus Audit & Acoustic Analysis
 
-We conducted an exhaustive automated audit on all available speech recordings in `data/raw/speech/data-sample/` using [`ai/speech/analyze_speech_corpus.py`](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/ai/speech/analyze_speech_corpus.py).
+We conducted an exhaustive automated audit on all available speech recordings in `data/raw/speech/data-sample/` using [`ai/speech/analyze_speech_corpus.py`](file:///./ai/speech/analyze_speech_corpus.py).
 
 ### 2.1 Acoustic & Speaker Statistics
 
@@ -69,7 +69,7 @@ We systematically scanned all 182 valid transcripts for canonical Mundari number
 
 We benchmarked candidate speech architectures against the real hardware constraints of a **low-cost Android tablet (~2 GB RAM, Quad-Core ARM CPU, completely offline)**.
 
-Measured results from [`ai/speech/benchmark_architectures.py`](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/ai/speech/benchmark_architectures.py):
+Measured results from [`ai/speech/benchmark_architectures.py`](file:///./ai/speech/benchmark_architectures.py):
 
 | Metric | Architecture A: Whisper Tiny Reference | Architecture B: Lightweight 2D-CNN (MobileNetV3) | Architecture C: Micro 1D-CNN (Keyword Spotting) |
 | :--- | :---: | :---: | :---: |

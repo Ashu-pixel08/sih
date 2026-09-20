@@ -1,0 +1,129 @@
+{
+  "verified_at": "2026-09-18T00:52:00+05:30",
+  "server_url": "http://localhost:8080",
+  "exact_model_artifact_loaded": "C:\\Users\\chatu\\.gemini\\antigravity\\scratch\\vernacular_fln_assistant\\models\\nmt\\final\\best_transformer.pt",
+  "test_results": [
+    {
+      "category": "1. Verified Educational Vocabulary Example",
+      "input": "नमस्ते",
+      "description": "FLN classroom greeting present in Tier 1 Educational Registry",
+      "translated_text": "जोहार",
+      "status": "VERIFIED_EDUCATIONAL_LOOKUP",
+      "ui_status": "VERIFIED EDUCATIONAL",
+      "match_type": "TIER_1_EXACT_EDUCATIONAL",
+      "confidence": 1.0,
+      "translation_source": "EDUCATIONAL_REGISTRY",
+      "quality_gate_result": "PASSED",
+      "quality_gate_reasons": [],
+      "metadata": {
+        "phrase_id": "PHR_GREET_01",
+        "hindi_text": "नमस्ते",
+        "mundari_text": "जोहार",
+        "mundari_phonetic": "johar",
+        "mundari_root": "जोहार",
+        "category": "GREETING_ROUTINE",
+        "verification_level": "CORPUS_ATTESTED",
+        "context": "Universal respectful greeting in tribal communities",
+        "provenance": "OFFLINE_PHRASEBOOK",
+        "audio_asset": null,
+        "audio_status": "NOT_PRE_RECORDED"
+      }
+    },
+    {
+      "category": "2. Normal Unseen Hindi Sentence",
+      "input": "आज हम सब मिलकर बहुत सुंदर चित्र बनाएंगे।",
+      "description": "Unseen natural Hindi conversational sentence (not in corpus/lookup)",
+      "translated_text": "तिसिङ आले सोबेन साः बेसे सुगाड़ा बाइ राः पेड़ेः मेनाः।",
+      "status": "NEURAL_TRANSLATION_GENERATED",
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "match_type": "TIER_2_NEURAL_GENERATED",
+      "confidence": 0.219,
+      "translation_source": "NEURAL_MODEL",
+      "quality_gate_result": "PASSED",
+      "quality_gate_reasons": [],
+      "metadata": {
+        "model_score": 0.219,
+        "score_type": "TOKEN_LIKELIHOOD (geometric mean token probability; NOT translation accuracy)",
+        "quality_gate_passed": true,
+        "latency_ms": 108.94,
+        "tokens_generated": 11,
+        "beam_size": 3,
+        "audio_status": "NOT_PRE_RECORDED (Text translation only; no synthetic audio)",
+        "notice": "AI-ESTIMATED (UNVERIFIED) — Requires human native linguistic validation before classroom broadcast"
+      }
+    },
+    {
+      "category": "3. Classroom Sentence",
+      "input": "सभी बच्चे अपनी कॉपी और पेंसिल निकालो।",
+      "description": "FLN pedagogical imperative command for classroom instruction",
+      "translated_text": "सोबेन होनको आपान फो पी ओड़ोः होरा ते जोआर लो मे।",
+      "status": "NEURAL_TRANSLATION_GENERATED",
+      "ui_status": "AI TRANSLATION — REVIEW",
+      "match_type": "TIER_2_NEURAL_GENERATED",
+      "confidence": 0.162,
+      "translation_source": "NEURAL_MODEL",
+      "quality_gate_result": "PASSED",
+      "quality_gate_reasons": [],
+      "metadata": {
+        "model_score": 0.162,
+        "score_type": "TOKEN_LIKELIHOOD (geometric mean token probability; NOT translation accuracy)",
+        "quality_gate_passed": true,
+        "latency_ms": 215.78,
+        "tokens_generated": 12,
+        "beam_size": 3,
+        "audio_status": "NOT_PRE_RECORDED (Text translation only; no synthetic audio)",
+        "notice": "AI-ESTIMATED (UNVERIFIED) — Requires human native linguistic validation before classroom broadcast"
+      }
+    },
+    {
+      "category": "4. Out-of-Vocabulary (OOV) Sentence",
+      "input": "साइबर सिक्योरिटी एक अत्यंत जटिल तकनीकी विषय है।",
+      "description": "Abstract technical domain sentence designed to trigger safe quality gate rejection",
+      "translated_text": null,
+      "status": "OUT_OF_VOCABULARY_UNVERIFIED",
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "match_type": "BELOW_CONFIDENCE_THRESHOLD",
+      "confidence": 0.3459,
+      "translation_source": "SAFE_FALLBACK",
+      "quality_gate_result": "REJECTED (SAFE FALLBACK)",
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "metadata": {
+        "best_similarity": 0.3459,
+        "threshold": 0.55,
+        "top_unverified_candidate": "तकनीकी बोल रहा है यह एक",
+        "message": "Neural model rejected low-confidence or ungrounded generation (LOW_GENERATION_CONFIDENCE). Parallel corpus similarity (0.346) is below threshold (0.55). Refusing to hallucinate unverified translation.",
+        "fallback_from_neural": true,
+        "neural_rejection_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    },
+    {
+      "category": "5. Sentence from 159-Row Team Dataset",
+      "input": "हाथी बहुत बड़ा जानवर है।",
+      "description": "FLN animal vocabulary (हाथी / Wild Animals category in custom dataset)",
+      "translated_text": null,
+      "status": "OUT_OF_VOCABULARY_UNVERIFIED",
+      "ui_status": "TRANSLATION UNAVAILABLE",
+      "match_type": "BELOW_CONFIDENCE_THRESHOLD",
+      "confidence": 0.4541,
+      "translation_source": "SAFE_FALLBACK",
+      "quality_gate_result": "REJECTED (SAFE FALLBACK)",
+      "quality_gate_reasons": [
+        "LOW_GENERATION_CONFIDENCE"
+      ],
+      "metadata": {
+        "best_similarity": 0.4541,
+        "threshold": 0.55,
+        "top_unverified_candidate": "कुछ ही देर में बहुत से जानवर जमा हो गए।",
+        "message": "Neural model rejected low-confidence or ungrounded generation (LOW_GENERATION_CONFIDENCE). Parallel corpus similarity (0.454) is below threshold (0.55). Refusing to hallucinate unverified translation.",
+        "fallback_from_neural": true,
+        "neural_rejection_reasons": [
+          "LOW_GENERATION_CONFIDENCE"
+        ]
+      }
+    }
+  ]
+}

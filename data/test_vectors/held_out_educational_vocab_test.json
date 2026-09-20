@@ -1,0 +1,118 @@
+{
+  "count": 14,
+  "description": "Held-out approved educational vocabulary items strictly excluded from training for vocabulary accuracy benchmarking",
+  "items": [
+    {
+      "hindi": "कलम",
+      "mundari": "कलम",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (things)"
+    },
+    {
+      "hindi": "गुलाब",
+      "mundari": "गुलाब",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (flowers)"
+    },
+    {
+      "hindi": "जुलाई",
+      "mundari": "आषाढ़",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (Months)"
+    },
+    {
+      "hindi": "किताब",
+      "mundari": "किताब",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (things)"
+    },
+    {
+      "hindi": "सोमवार",
+      "mundari": "सोमबार",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (Weeks)"
+    },
+    {
+      "hindi": "बस",
+      "mundari": "बस",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (vehicles)"
+    },
+    {
+      "hindi": "नीला",
+      "mundari": "नीला",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (colors)"
+    },
+    {
+      "hindi": "बहन",
+      "mundari": "मिसी",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (Family)"
+    },
+    {
+      "hindi": "जौ",
+      "mundari": "जौ",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (grains)"
+    },
+    {
+      "hindi": "जूस",
+      "mundari": "जूस",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (food)"
+    },
+    {
+      "hindi": "मंगलवार",
+      "mundari": "मंगलबार",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (Weeks)"
+    },
+    {
+      "hindi": "कुर्सी",
+      "mundari": "कुर्सी",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (things)"
+    },
+    {
+      "hindi": "शनिवार",
+      "mundari": "सनिबार",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (Weeks)"
+    },
+    {
+      "hindi": "चाय",
+      "mundari": "चाय",
+      "source_id": "SIH_TEAM_VOCAB_2026",
+      "source_name": "SIH Custom Cleaned Educational Dataset",
+      "license": "CC-BY-NC 4.0 Compatible (Educational Team)",
+      "data_origin": "Team Educational Vocabulary (food)"
+    }
+  ]
+}

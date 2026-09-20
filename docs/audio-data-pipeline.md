@@ -30,7 +30,7 @@ content/audio/
   - Valid files: 182 files
   - Silent/low-energy files: 18 files (recordings with low speech volume or extended pauses)
   - Digital clipping: **0 files** (clean studio dynamics)
-  - Complete manifest: [`content/audio/manifests/raw_speech_manifest.json`](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/content/audio/manifests/raw_speech_manifest.json)
+  - Complete manifest: [`content/audio/manifests/raw_speech_manifest.json`](file:///./content/audio/manifests/raw_speech_manifest.json)
 
 ---
 

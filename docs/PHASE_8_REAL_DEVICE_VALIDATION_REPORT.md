@@ -44,7 +44,7 @@ Phase 8 executes rigorous real-device and end-to-end validation for SIH260042 (`
 ```
 ============================= test session starts =============================
 platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0
-rootdir: C:\Users\chatu\.gemini\antigravity\scratch\vernacular_fln_assistant
+rootdir: ./
 collected 176 items
 
 tests\test_android_contract_parity.py .......                            [  3%]
@@ -77,7 +77,7 @@ tests\test_vad_and_streaming.py ........                                 [100%]
 ### 3.2 Android Native Unit Test Suite
 **Command:**
 ```powershell
-$env:JAVA_HOME="C:\Users\chatu\.jdks\temurin-17"; .\gradlew.bat testDebugUnitTest
+$env:JAVA_HOME="<user-home>\.jdks\temurin-17"; .\gradlew.bat testDebugUnitTest
 ```
 **Result:**
 ```
@@ -92,7 +92,7 @@ BUILD SUCCESSFUL in 8s
 ### 4.1 APK Build Verification
 **Command:**
 ```powershell
-$env:JAVA_HOME="C:\Users\chatu\.jdks\temurin-17"; .\gradlew.bat assembleDebug
+$env:JAVA_HOME="<user-home>\.jdks\temurin-17"; .\gradlew.bat assembleDebug
 ```
 **Result:**
 ```
@@ -108,7 +108,7 @@ BUILD SUCCESSFUL in 58s
 ### 4.2 ADB Device Connection Audit
 **Command:**
 ```powershell
-& "C:\Users\chatu\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
+& "<user-home>\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
 ```
 **Result:**
 ```

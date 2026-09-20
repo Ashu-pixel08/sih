@@ -1,0 +1,40 @@
+{
+  "model_id": "cand_a_transformer_bpe_fln_v1",
+  "model_name": "Candidate A (Refined BPE Transformer)",
+  "promotion_status": "PROMOTED_PRODUCTION_MODEL",
+  "promotion_date": "2026-09-17",
+  "architecture": "Transformer Encoder-Decoder (d_model=256, nhead=4, enc=3, dec=3, d_ff=512)",
+  "parameters": 9725760,
+  "file_size_bytes": 115781300,
+  "file_size_mb": 110.42,
+  "sha256": "40ed8c77dfa7c4664644a94d375ebd276886249f996d6006475cfd1f2e17a54a",
+  "training_summary": {
+    "dataset": "Merged NMT Corpus (17,863 pairs: 17,783 canonical + 95 approved team pairs)",
+    "train_pairs": 16059,
+    "val_pairs": 902,
+    "test_pairs": 902,
+    "best_epoch": 3,
+    "best_val_loss": 4.350750712953242,
+    "best_val_ppl": 77.53664884870669,
+    "optimizer": "AdamW (lr=2e-4, weight_decay=1e-4)",
+    "scheduler": "CosineAnnealingLR",
+    "loss_function": "LabelSmoothingCrossEntropy (smoothing=0.1)",
+    "hardware_used": "CPU with batch_size=64 and gradient clipping (CUDA unavailable)"
+  },
+  "tokenizer": {
+    "source": "Hindi Byte-Pair Encoding (6,000 subwords)",
+    "target": "Mundari Byte-Pair Encoding (8,000 subwords)",
+    "test_unk_rate_pct": 0.0
+  },
+  "inference_spec": {
+    "decoding_method": "Constrained Beam Search (beam_size=3)",
+    "repetition_penalty": 1.25,
+    "no_repeat_ngram_size": 2,
+    "quality_gate": "TranslationQualityGate (strict copy, repetition, confidence, and orthography checks)",
+    "ui_status_support": [
+      "VERIFIED EDUCATIONAL",
+      "AI TRANSLATION \u2014 REVIEW",
+      "TRANSLATION UNAVAILABLE"
+    ]
+  }
+}

@@ -167,7 +167,7 @@ In accordance with the Data Intake Contract:
 
 ## 14. Recommended Next Dataset
 
-**Immediate Action**: Complete linguistic validation of **`pratham_0240_haikoah_gama.json`** using [`data/templates/human_validation_form.md`](file:///C:/Users/chatu/.gemini/antigravity/scratch/vernacular_fln_assistant/data/templates/human_validation_form.md).  
+**Immediate Action**: Complete linguistic validation of **`pratham_0240_haikoah_gama.json`** using [`data/templates/human_validation_form.md`](file:///./data/templates/human_validation_form.md).  
 Because it is fully aligned with Hindi, released under `CC-BY 4.0`, translated by Jodheswar Barla, and child-appropriate, it is the safest and most valuable candidate to advance from `data/incoming/` to `data/validated/`.
 
 ---

@@ -1,0 +1,258 @@
+{
+  "count": 40,
+  "description": "Expanded educational challenge benchmark covering 10 educational categories with guaranteed zero training leakage",
+  "categories": [
+    "loanwords_and_technology",
+    "numbers_and_counting",
+    "animals",
+    "classroom_commands",
+    "food",
+    "colors_and_shapes",
+    "unseen_combinations",
+    "family",
+    "school_vocabulary",
+    "calendar_and_time"
+  ],
+  "items": [
+    {
+      "id": "EDU_CHAL_01",
+      "category": "classroom_commands",
+      "hindi": "सभी बच्चे अपनी कॉपी और पेंसिल निकालो।",
+      "notes": "Classroom instruction: take out notebook and pencil"
+    },
+    {
+      "id": "EDU_CHAL_02",
+      "category": "classroom_commands",
+      "hindi": "श्यामपट्ट पर लिखे शब्द को जोर से पढ़ो।",
+      "notes": "Instruction: read aloud the word on blackboard"
+    },
+    {
+      "id": "EDU_CHAL_03",
+      "category": "classroom_commands",
+      "hindi": "कक्षा में शांति बनाकर अपना पाठ याद करो।",
+      "notes": "Instruction: maintain silence and memorize lesson"
+    },
+    {
+      "id": "EDU_CHAL_04",
+      "category": "classroom_commands",
+      "hindi": "दरवाजा बंद करो और खिड़की खोल दो।",
+      "notes": "Instruction: close door and open window"
+    },
+    {
+      "id": "EDU_CHAL_05",
+      "category": "numbers_and_counting",
+      "hindi": "पेड़ पर सात लाल पक्षी बैठे हैं।",
+      "notes": "Numerals + adjective + noun: seven red birds on tree"
+    },
+    {
+      "id": "EDU_CHAL_06",
+      "category": "numbers_and_counting",
+      "hindi": "मेरे पास बारह रंगीन पेंसिलें हैं।",
+      "notes": "Numerals + possession: twelve colored pencils"
+    },
+    {
+      "id": "EDU_CHAL_07",
+      "category": "numbers_and_counting",
+      "hindi": "टोकरी में पंद्रह पके हुए आम रखे हैं।",
+      "notes": "Numerals + food: fifteen ripe mangoes"
+    },
+    {
+      "id": "EDU_CHAL_08",
+      "category": "numbers_and_counting",
+      "hindi": "कक्षा में बीस बच्चे उपस्थित हैं।",
+      "notes": "Numerals: twenty children present in class"
+    },
+    {
+      "id": "EDU_CHAL_09",
+      "category": "school_vocabulary",
+      "hindi": "शिक्षक ने मेज पर नई किताब रखी।",
+      "notes": "School vocab: teacher placed new book on table"
+    },
+    {
+      "id": "EDU_CHAL_10",
+      "category": "school_vocabulary",
+      "hindi": "हम रोज स्कूल में गणित और भाषा सीखते हैं।",
+      "notes": "School subjects: math and language learning"
+    },
+    {
+      "id": "EDU_CHAL_11",
+      "category": "school_vocabulary",
+      "hindi": "घंटी बजने पर सभी मैदान में खेलने गए।",
+      "notes": "School environment: bell ringing and playground"
+    },
+    {
+      "id": "EDU_CHAL_12",
+      "category": "school_vocabulary",
+      "hindi": "दीवार पर भारत का बड़ा नक्शा लगा है।",
+      "notes": "Classroom object: map on the wall"
+    },
+    {
+      "id": "EDU_CHAL_13",
+      "category": "animals",
+      "hindi": "छोटा बंदर पेड़ की डाल पर कूद रहा है।",
+      "notes": "Animal: small monkey jumping on branch"
+    },
+    {
+      "id": "EDU_CHAL_14",
+      "category": "animals",
+      "hindi": "सफेद गाय हरी घास खुशी से खाती है।",
+      "notes": "Animal: white cow eating green grass"
+    },
+    {
+      "id": "EDU_CHAL_15",
+      "category": "animals",
+      "hindi": "जंगल में हाथी और भालू साथ रहते हैं।",
+      "notes": "Animal combinations: elephant and bear"
+    },
+    {
+      "id": "EDU_CHAL_16",
+      "category": "animals",
+      "hindi": "काली बिल्ली चूहे के पीछे तेजी से दौड़ी।",
+      "notes": "Animal behavior: black cat chasing mouse"
+    },
+    {
+      "id": "EDU_CHAL_17",
+      "category": "food",
+      "hindi": "दोपहर में बच्चों को गरम दाल भात मिला।",
+      "notes": "Mid-day meal: hot dal bhat for children"
+    },
+    {
+      "id": "EDU_CHAL_18",
+      "category": "food",
+      "hindi": "माँ ने खेत से ताजी पालक और आलू तोड़े।",
+      "notes": "Vegetables: fresh spinach and potatoes from farm"
+    },
+    {
+      "id": "EDU_CHAL_19",
+      "category": "food",
+      "hindi": "मीठा दूध और फल स्वास्थ्य के लिए अच्छे हैं।",
+      "notes": "Nutrition: sweet milk and fruits"
+    },
+    {
+      "id": "EDU_CHAL_20",
+      "category": "food",
+      "hindi": "खाने से पहले साबुन से दोनों हाथ धोना चाहिए।",
+      "notes": "Hygiene instruction: wash hands with soap before eating"
+    },
+    {
+      "id": "EDU_CHAL_21",
+      "category": "colors_and_shapes",
+      "hindi": "नीले आकाश में पीला सूरज चमक रहा है।",
+      "notes": "Colors: blue sky and yellow sun"
+    },
+    {
+      "id": "EDU_CHAL_22",
+      "category": "colors_and_shapes",
+      "hindi": "इस गोल गेंद से हम सब खेलेंगे।",
+      "notes": "Shapes: round ball play"
+    },
+    {
+      "id": "EDU_CHAL_23",
+      "category": "colors_and_shapes",
+      "hindi": "काले बादल देखकर मोर नाचने लगा।",
+      "notes": "Colors + animal: peacock dancing for black clouds"
+    },
+    {
+      "id": "EDU_CHAL_24",
+      "category": "colors_and_shapes",
+      "hindi": "त्रिकोण में तीन कोने और तीन भुजाएं होती हैं।",
+      "notes": "Geometry in primary school: triangle properties"
+    },
+    {
+      "id": "EDU_CHAL_25",
+      "category": "family",
+      "hindi": "मेरे दादाजी शाम को हमें सुंदर कहानी सुनाते हैं।",
+      "notes": "Family: grandfather telling stories in evening"
+    },
+    {
+      "id": "EDU_CHAL_26",
+      "category": "family",
+      "hindi": "मेरी बड़ी बहन नदी किनारे पानी भरने गई।",
+      "notes": "Family + rural context: elder sister fetching water"
+    },
+    {
+      "id": "EDU_CHAL_27",
+      "category": "family",
+      "hindi": "गाँव के मुखिया ने सभी लोगों को बैठक में बुलाया।",
+      "notes": "Community: village head calling a meeting"
+    },
+    {
+      "id": "EDU_CHAL_28",
+      "category": "family",
+      "hindi": "पिताजी और चाचाजी खेत में हल चला रहे हैं।",
+      "notes": "Family: father and uncle ploughing the field"
+    },
+    {
+      "id": "EDU_CHAL_29",
+      "category": "calendar_and_time",
+      "hindi": "रविवार को स्कूल की छुट्टी होती है।",
+      "notes": "Calendar: Sunday school holiday"
+    },
+    {
+      "id": "EDU_CHAL_30",
+      "category": "calendar_and_time",
+      "hindi": "सावन के महीने में बहुत तेज बारिश होती है।",
+      "notes": "Seasons: heavy rain in Sawan month"
+    },
+    {
+      "id": "EDU_CHAL_31",
+      "category": "calendar_and_time",
+      "hindi": "कल सुबह सात बजे हम सब मेला देखने चलेंगे।",
+      "notes": "Time + activity: tomorrow morning 7am fair visit"
+    },
+    {
+      "id": "EDU_CHAL_32",
+      "category": "calendar_and_time",
+      "hindi": "सर्दियों में रातें लंबी और ठंडी होती हैं।",
+      "notes": "Seasons: winter nights long and cold"
+    },
+    {
+      "id": "EDU_CHAL_33",
+      "category": "unseen_combinations",
+      "hindi": "नदी के किनारे तीन भूरे कुत्ते सो रहे हैं।",
+      "notes": "Compositional: river bank + 3 brown dogs sleeping"
+    },
+    {
+      "id": "EDU_CHAL_34",
+      "category": "unseen_combinations",
+      "hindi": "लाल टोपी वाला लड़का तेजी से साइकिल चलाता है।",
+      "notes": "Compositional: boy with red cap riding bicycle"
+    },
+    {
+      "id": "EDU_CHAL_35",
+      "category": "unseen_combinations",
+      "hindi": "बड़ी मछली गहरे पानी में तैरती है।",
+      "notes": "Compositional: big fish swimming in deep water"
+    },
+    {
+      "id": "EDU_CHAL_36",
+      "category": "unseen_combinations",
+      "hindi": "छोटे बच्चे अपने कानों से ध्यानपूर्वक सुनते हैं।",
+      "notes": "Compositional: small children listening with their ears"
+    },
+    {
+      "id": "EDU_CHAL_37",
+      "category": "loanwords_and_technology",
+      "hindi": "कंप्यूटर और इंटरनेट से दुनिया की जानकारी मिलती है।",
+      "notes": "Technology loanwords: computer and internet"
+    },
+    {
+      "id": "EDU_CHAL_38",
+      "category": "loanwords_and_technology",
+      "hindi": "डॉक्टर ने मरीज को अस्पताल में दवाई दी।",
+      "notes": "Medical loanwords: doctor, hospital, patient"
+    },
+    {
+      "id": "EDU_CHAL_39",
+      "category": "loanwords_and_technology",
+      "hindi": "मोबाइल फोन पर मास्टरजी ने ऑनलाइन क्लास ली।",
+      "notes": "Modern school loanwords: mobile phone, online class"
+    },
+    {
+      "id": "EDU_CHAL_40",
+      "category": "loanwords_and_technology",
+      "hindi": "ट्रेन स्टेशन पर बहुत भीड़ थी।",
+      "notes": "Transport loanwords: train station crowd"
+    }
+  ]
+}
