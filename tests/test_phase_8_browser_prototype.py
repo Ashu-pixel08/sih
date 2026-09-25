@@ -85,6 +85,15 @@ const report = {
   req4_composed_prompt: backendTranslate(demoHindi, 'hi-unr')
 };
 
+// Teacher Login Regression Test
+mockEl.value = '1234';
+teacherLogin();
+report.teacher_login_test = {
+  fnDefined: typeof teacherLogin === 'function',
+  role: state.role,
+  page: state.page
+};
+
 console.log(JSON.stringify(report));
 """
         proc = subprocess.run(
@@ -209,6 +218,18 @@ console.log(JSON.stringify(report));
         self.assertIn("WEB PROTOTYPE ONLY — browser speech recognition may require network", self.html)
         self.assertIn("Production Android will use the local speech pipeline", self.html)
         self.assertIn("lacks native support for Mundari", self.html)
+
+    def test_teacher_and_student_login_contracts(self):
+        """Regression test for Teacher login failure: verifies teacherLogin and studentLogin are defined, validate input, and transition state."""
+        self.assertIn("function teacherLogin()", self.html)
+        self.assertIn("function studentLogin()", self.html)
+        self.assertIn("onclick=\"teacherLogin()\"", self.html)
+        self.assertIn("onclick=\"studentLogin()\"", self.html)
+
+        res = self.js_results.get("teacher_login_test", {})
+        self.assertTrue(res.get("fnDefined"), "teacherLogin must be a defined function")
+        self.assertEqual(res.get("role"), "teacher", "teacherLogin must set state.role to teacher")
+        self.assertEqual(res.get("page"), "dashboard", "teacherLogin must transition page to dashboard")
 
 
 if __name__ == "__main__":

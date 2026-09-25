@@ -81,6 +81,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 scratch/
+scratch/voice_conversion_test/
+*.m4a
+cache/
+models/tts/
 12.4
 *.bak
 scratch_dom.html

@@ -58,6 +58,22 @@ except ImportError:
             ASCII_DIGITS_TO_WORDS
         )
 
+try:
+    from .hinglish_normalizer import HinglishNormalizer, HinglishNormalizationResult
+except ImportError:
+    try:
+        from ai.translation.hinglish_normalizer import HinglishNormalizer, HinglishNormalizationResult
+    except ImportError:
+        from hinglish_normalizer import HinglishNormalizer, HinglishNormalizationResult
+
+try:
+    from .proper_name_protector import ProperNameProtector
+except ImportError:
+    try:
+        from ai.translation.proper_name_protector import ProperNameProtector
+    except ImportError:
+        from proper_name_protector import ProperNameProtector
+
 
 @dataclass
 class TranslationResult:
@@ -244,6 +260,18 @@ class TranslationEngine:
         self.neural_engine = None
         if self.enable_neural:
             self._load_neural_engine()
+
+        # 4. Load Governed Hinglish Normalizer
+        try:
+            self.hinglish_normalizer = HinglishNormalizer()
+        except Exception:
+            self.hinglish_normalizer = None
+
+        # 5. Load Conservative Proper Name Protector
+        try:
+            self.name_protector = ProperNameProtector()
+        except Exception:
+            self.name_protector = None
 
     def _load_neural_engine(self) -> None:
         """Loads neural Seq2Seq Transformer model for generative Hindi -> Mundari translation."""
@@ -512,25 +540,147 @@ class TranslationEngine:
             self.reverse_vectorizer = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4), min_df=2)
             self.reverse_corpus_matrix = self.reverse_vectorizer.fit_transform(self.mundari_corpus)
 
-    def translate(self, text: str, direction: str = "hi-unr", use_neural: Optional[bool] = None) -> TranslationResult:
+    def translate(self, text: str, direction: str = "hi-unr", use_neural: Optional[bool] = None, src_lang: Optional[str] = None) -> TranslationResult:
         """
-        Translates input text between Hindi and Mundari.
+        Translates input text between Hindi/Hinglish and Mundari.
         direction: 'hi-unr' (Hindi -> Mundari, default) or 'unr-hi' (Mundari -> Hindi).
         use_neural: Override flag for Tier 2 Neural Translation Engine (defaults to self.enable_neural).
+        src_lang: Optional source language ('hindi', 'hinglish').
         """
         norm_dir = (direction or "hi-unr").strip().lower()
-        if norm_dir in ("unr-hi", "mundari-hindi", "mun-hi", "unr_to_hi", "reverse"):
-            return self.translate_mundari_to_hindi(text)
-        return self.translate_hindi_to_mundari(text, use_neural=use_neural)
+        is_rev = norm_dir in ("unr-hi", "mundari-hindi", "mun-hi", "unr_to_hi", "reverse")
 
-    def translate_hindi_to_mundari(self, text: str, use_neural: Optional[bool] = None) -> TranslationResult:
+        # Step 1: Detect and shield candidate proper names
+        name_map: Dict[str, str] = {}
+        target_text = text or ""
+        if hasattr(self, "name_protector") and self.name_protector is not None:
+            target_text, name_map = self.name_protector.protect(target_text, direction=norm_dir)
+
+        # Step 2: Route through translation pipeline
+        if is_rev:
+            result = self.translate_mundari_to_hindi(target_text, name_map=name_map)
+        else:
+            is_explicit_hinglish = (src_lang or "").strip().lower() in ("hinglish", "en-hi", "hi-latn")
+            is_dir_hinglish = norm_dir in ("hinglish-unr", "hinglish-to-mundari", "hinglish_to_unr")
+            has_latin = bool(re.search(r"[a-zA-Z]", target_text or ""))
+            has_devanagari = bool(re.search(r"[\u0900-\u097F]", target_text or ""))
+            is_implicit_hinglish = (has_latin and not has_devanagari and not name_map) or (
+                has_latin and not has_devanagari and bool(re.search(r"[a-zA-Z]", re.sub(r'__NAME_\d+__', '', target_text, flags=re.IGNORECASE)))
+            )
+
+            if is_explicit_hinglish or is_dir_hinglish or is_implicit_hinglish:
+                result = self.translate_hinglish_to_mundari(target_text, use_neural=use_neural, name_map=name_map)
+            else:
+                result = self.translate_hindi_to_mundari(target_text, use_neural=use_neural, name_map=name_map)
+
+        # Step 3: Restore exact names in final result
+        if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+            result.source_text = text
+            result.translated_text = self.name_protector.restore(result.translated_text, name_map)
+            result.normalized_source = self.name_protector.restore(result.normalized_source, name_map)
+            if result.metadata:
+                if result.metadata.get("normalized_hindi"):
+                    result.metadata["normalized_hindi"] = self.name_protector.restore(result.metadata["normalized_hindi"], name_map)
+                result.metadata["protected_names"] = name_map
+
+        return result
+
+    def translate_hinglish_to_mundari(self, text: str, use_neural: Optional[bool] = None, name_map: Optional[Dict[str, str]] = None) -> TranslationResult:
+        """
+        Translates Hinglish (Romanized Hindi) to Mundari via governed normalization:
+        Hinglish -> HinglishNormalizer -> Devanagari Hindi -> Existing Hindi-to-Mundari Pipeline.
+        """
+        if name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
+            text, name_map = self.name_protector.protect(text, direction="hi-unr")
+
+        if not hasattr(self, "hinglish_normalizer") or self.hinglish_normalizer is None:
+            self.hinglish_normalizer = HinglishNormalizer()
+
+        norm_res = self.hinglish_normalizer.normalize(text)
+
+        if norm_res.status == "EMPTY_INPUT":
+            return TranslationResult(
+                status="EMPTY_INPUT",
+                confidence=0.0,
+                source_text=text or "",
+                normalized_source="",
+                translated_text=None,
+                match_type="NONE",
+                provenance="Empty Hinglish query string",
+                translation_source="SAFE_FALLBACK",
+                provenance_label="EMPTY_INPUT",
+                metadata={"hinglish_status": "EMPTY_INPUT"},
+                ui_status="TRANSLATION UNAVAILABLE"
+            )
+
+        if norm_res.status == "UNRESOLVED":
+            return TranslationResult(
+                status="OUT_OF_VOCABULARY_UNVERIFIED",
+                confidence=0.0,
+                source_text=text or "",
+                normalized_source=norm_res.normalized_hindi,
+                translated_text=None,
+                match_type="OOV_REFUSAL",
+                provenance="Unresolved Hinglish vocabulary — not attested in educational registry",
+                translation_source="SAFE_FALLBACK",
+                provenance_label="UNATTESTED_INPUT_SAFE_FALLBACK",
+                metadata={
+                    "hinglish_input": text,
+                    "normalized_hindi": norm_res.normalized_hindi,
+                    "hinglish_status": norm_res.status,
+                    "unmapped_tokens": norm_res.unmapped_tokens,
+                },
+                requires_validation=False,
+                ui_status="TRANSLATION UNAVAILABLE"
+            )
+
+        # Route normalized Hindi into existing Hindi -> Mundari translation pipeline
+        hindi_result = self.translate_hindi_to_mundari(norm_res.normalized_hindi, use_neural=use_neural, name_map=name_map)
+
+        metadata = dict(hindi_result.metadata or {})
+        metadata.update({
+            "hinglish_input": text,
+            "normalized_hindi": norm_res.normalized_hindi,
+            "hinglish_status": norm_res.status,
+            "hinglish_confidence": norm_res.confidence,
+            "tokens_mapped": norm_res.tokens_mapped,
+            "unmapped_tokens": norm_res.unmapped_tokens,
+            "hinglish_notes": norm_res.notes
+        })
+
+        if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+            metadata["normalized_hindi"] = self.name_protector.restore(norm_res.normalized_hindi, name_map)
+            metadata["protected_names"] = name_map
+
+        conf = round(hindi_result.confidence * (norm_res.confidence if norm_res.status == "AMBIGUOUS" else 1.0), 3)
+
+        return TranslationResult(
+            status=hindi_result.status,
+            confidence=conf,
+            source_text=text,
+            normalized_source=metadata.get("normalized_hindi", norm_res.normalized_hindi),
+            translated_text=hindi_result.translated_text,
+            match_type=hindi_result.match_type,
+            provenance=hindi_result.provenance,
+            metadata=metadata,
+            translation_source=hindi_result.translation_source,
+            requires_validation=hindi_result.requires_validation,
+            provenance_label=hindi_result.provenance_label,
+            ui_status=hindi_result.ui_status
+        )
+
+    def translate_hindi_to_mundari(self, text: str, use_neural: Optional[bool] = None, name_map: Optional[Dict[str, str]] = None) -> TranslationResult:
         """
         Translates Hindi input text to Mundari through the 4-Tier Architecture:
+          - Tier 0: Composed Educational Phrase Templates with Proper Name Protection
           - Tier 1: Exact Verified Educational Retrieval (100% precision, zero hallucination)
           - Tier 2: Neural Translation Model (generative Seq2Seq Transformer for unseen sentences)
           - Tier 3: Parallel Corpus Sentence Retrieval (TF-IDF similarity fallback)
           - Tier 4: Safe Out-of-Vocabulary Fallback (refusal to hallucinate on unintelligible input)
         """
+        if name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
+            text, name_map = self.name_protector.protect(text, direction="hi-unr")
+
         raw_input = text or ""
         norm_input = self._normalize_text(raw_input)
         lookup_key = self._normalize_for_lookup(raw_input)
@@ -550,6 +700,31 @@ class TranslationEngine:
                 provenance_label="EMPTY_INPUT",
                 metadata={"message": "Input is empty or whitespace"}
             )
+
+        # -------------------------------------------------------------
+        # TIER 0: Proper Name Classroom Template Composition
+        # -------------------------------------------------------------
+        if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+            tmpl_match = (
+                self.name_protector.try_template_translation(lookup_key, name_map, direction="hi-unr")
+                or self.name_protector.try_template_translation(norm_input, name_map, direction="hi-unr")
+                or self.name_protector.try_template_translation(raw_input, name_map, direction="hi-unr")
+            )
+            if tmpl_match:
+                return TranslationResult(
+                    status="COMPOSED_FROM_ATTESTED_FRAGMENTS",
+                    confidence=1.0,
+                    source_text=raw_input,
+                    normalized_source=self.name_protector.restore(norm_input, name_map),
+                    translated_text=tmpl_match,
+                    match_type="TIER_1_EXACT_EDUCATIONAL",
+                    provenance="OFFLINE_EDUCATIONAL_TEMPLATE_WITH_PROTECTED_NAME",
+                    translation_source="EDUCATIONAL_REGISTRY",
+                    requires_validation=False,
+                    provenance_label="VERIFIED_CLASSROOM_PHRASE",
+                    ui_status="VERIFIED EDUCATIONAL",
+                    metadata={"protected_names": name_map, "template_match": True}
+                )
 
         # -------------------------------------------------------------
         # TIER 1: Exact Verified Educational Retrieval (Zero Hallucination)
@@ -612,14 +787,25 @@ class TranslationEngine:
         neural_rejection_reasons: List[str] = []
         if should_use_neural and self.neural_engine is not None and has_devanagari:
             try:
-                n_res = self.neural_engine.translate(raw_input, beam_size=3)
+                query_for_neural = raw_input
+                anchor_map = {}
+                if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+                    query_for_neural, anchor_map = self.name_protector.prepare_for_neural(raw_input, name_map)
+
+                n_res = self.neural_engine.translate(query_for_neural, beam_size=3)
                 if n_res.quality_gate_passed and n_res.translated_text and len(n_res.translated_text.strip()) > 0:
+                    neural_out = n_res.translated_text
+                    if anchor_map and hasattr(self, "name_protector") and self.name_protector is not None:
+                        neural_out = self.name_protector.restore_from_neural(neural_out, anchor_map)
+                    if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+                        neural_out = self.name_protector.restore(neural_out, name_map)
+
                     return TranslationResult(
                         status="NEURAL_TRANSLATION_GENERATED",
                         confidence=round(n_res.model_score, 4),
                         source_text=raw_input,
-                        normalized_source=norm_input,
-                        translated_text=n_res.translated_text,
+                        normalized_source=self.name_protector.restore(norm_input, name_map) if name_map else norm_input,
+                        translated_text=neural_out,
                         match_type="TIER_2_NEURAL_GENERATED",
                         provenance="NEURAL_MODEL_ESTIMATED",
                         translation_source="NEURAL_MODEL",
@@ -634,7 +820,8 @@ class TranslationEngine:
                             "tokens_generated": n_res.tokens_generated,
                             "beam_size": n_res.beam_size,
                             "audio_status": "NOT_PRE_RECORDED (Text translation only; no synthetic audio)",
-                            "notice": "AI-ESTIMATED (UNVERIFIED) — Requires human native linguistic validation before classroom broadcast"
+                            "notice": "AI-ESTIMATED (UNVERIFIED) — Requires human native linguistic validation before classroom broadcast",
+                            "protected_names": name_map if name_map else None
                         }
                     )
                 else:
@@ -724,19 +911,31 @@ class TranslationEngine:
         )
 
 
-    def translate_mundari_to_hindi(self, text: str) -> TranslationResult:
+    def translate_mundari_to_hindi(self, text: str, name_map: Optional[Dict[str, str]] = None) -> TranslationResult:
         """
         Translates Mundari input text to Hindi (Reverse Pipeline).
-        Executes Tier 1 exact reverse educational lookup first.
+        Executes Tier 0 template matching, Tier 1 exact reverse educational lookup first.
         Falls back to Tier 2 TF-IDF reverse corpus similarity search if unmapped.
         Rejects low-confidence matches as OUT_OF_VOCABULARY_UNVERIFIED.
+        Preserves personal proper names without cross-script corruption.
         """
+        if name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
+            text, name_map = self.name_protector.protect(text, direction="unr-hi")
+
         raw_input = text or ""
         norm_input = self._normalize_text(raw_input)
         lookup_key = self._normalize_for_lookup(raw_input)
 
+        def _finalize_result(res: TranslationResult) -> TranslationResult:
+            if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+                res.translated_text = self.name_protector.restore(res.translated_text, name_map)
+                res.normalized_source = self.name_protector.restore(res.normalized_source, name_map)
+                if res.metadata:
+                    res.metadata["protected_names"] = name_map
+            return res
+
         if not norm_input and not lookup_key:
-            return TranslationResult(
+            return _finalize_result(TranslationResult(
                 status="OUT_OF_VOCABULARY_UNVERIFIED",
                 confidence=0.0,
                 source_text=raw_input,
@@ -744,8 +943,36 @@ class TranslationEngine:
                 translated_text=None,
                 match_type="EMPTY_INPUT",
                 provenance="NONE",
+                translation_source="SAFE_FALLBACK",
+                requires_validation=False,
+                provenance_label="EMPTY_INPUT",
                 metadata={"message": "Input is empty or whitespace"}
+            ))
+
+        # -------------------------------------------------------------
+        # TIER 0: Proper Name Classroom Template Composition (Reverse)
+        # -------------------------------------------------------------
+        if name_map and hasattr(self, "name_protector") and self.name_protector is not None:
+            tmpl_match = (
+                self.name_protector.try_template_translation(lookup_key, name_map, direction="unr-hi")
+                or self.name_protector.try_template_translation(norm_input, name_map, direction="unr-hi")
+                or self.name_protector.try_template_translation(raw_input, name_map, direction="unr-hi")
             )
+            if tmpl_match:
+                return _finalize_result(TranslationResult(
+                    status="COMPOSED_FROM_ATTESTED_FRAGMENTS",
+                    confidence=1.0,
+                    source_text=raw_input,
+                    normalized_source=self.name_protector.restore(norm_input, name_map),
+                    translated_text=tmpl_match,
+                    match_type="TIER_1_EXACT_EDUCATIONAL",
+                    provenance="OFFLINE_EDUCATIONAL_TEMPLATE_WITH_PROTECTED_NAME",
+                    translation_source="EDUCATIONAL_REGISTRY",
+                    requires_validation=False,
+                    provenance_label="VERIFIED_CLASSROOM_PHRASE",
+                    ui_status="VERIFIED EDUCATIONAL",
+                    metadata={"protected_names": name_map, "template_match": True}
+                ))
 
         # -------------------------------------------------------------
         # TIER 1: Exact Verified Educational Retrieval (Reverse Direction)
@@ -765,7 +992,7 @@ class TranslationEngine:
 
             match_type = "TIER_1_EXACT_EDUCATIONAL"
             provenance = match_data.get("provenance") or "OFFLINE_CONTENT_REGISTRY"
-            return TranslationResult(
+            return _finalize_result(TranslationResult(
                 status=status,
                 confidence=1.0,
                 source_text=raw_input,
@@ -777,7 +1004,7 @@ class TranslationEngine:
                 requires_validation=False,
                 provenance_label=provenance,
                 metadata=match_data
-            )
+            ))
 
         # -------------------------------------------------------------
         # TIER 2: Reverse Corpus Sentence Retrieval (TF-IDF Similarity)
@@ -785,7 +1012,7 @@ class TranslationEngine:
         # A. Check fast exact corpus match
         if lookup_key in self._corpus_exact_map_unr or norm_input in self._corpus_exact_map_unr:
             best_idx = self._corpus_exact_map_unr.get(lookup_key, self._corpus_exact_map_unr.get(norm_input))
-            return TranslationResult(
+            return _finalize_result(TranslationResult(
                 status="CORPUS_RETRIEVAL_MATCH",
                 confidence=1.0,
                 source_text=raw_input,
@@ -802,7 +1029,7 @@ class TranslationEngine:
                     "similarity_score": 1.0,
                     "notice": "Exact parallel corpus sentence match."
                 }
-            )
+            ))
 
         # B. TF-IDF character n-gram similarity search
         if self.reverse_vectorizer is not None and self.reverse_corpus_matrix is not None:
@@ -818,7 +1045,7 @@ class TranslationEngine:
 
             if best_sim >= self.similarity_threshold:
                 match_type = "TIER_2_EXACT_CORPUS" if best_sim >= self.EXACT_SIMILARITY_THRESHOLD else "TIER_2_SIMILARITY_CORPUS"
-                return TranslationResult(
+                return _finalize_result(TranslationResult(
                     status="CORPUS_RETRIEVAL_MATCH",
                     confidence=round(best_sim, 4),
                     source_text=raw_input,
@@ -835,9 +1062,9 @@ class TranslationEngine:
                         "similarity_score": round(best_sim, 4),
                         "notice": "Corpus sentence retrieval match; not a trained translation model."
                     }
-                )
+                ))
             else:
-                return TranslationResult(
+                return _finalize_result(TranslationResult(
                     status="OUT_OF_VOCABULARY_UNVERIFIED",
                     confidence=round(best_sim, 4),
                     source_text=raw_input,
@@ -854,10 +1081,10 @@ class TranslationEngine:
                         "top_unverified_candidate": self.mundari_corpus[best_idx] if best_sim > 0 else None,
                         "message": "Similarity below confidence threshold. Refusing to hallucinate."
                     }
-                )
+                ))
 
         # Fallback if corpus not available
-        return TranslationResult(
+        return _finalize_result(TranslationResult(
             status="OUT_OF_VOCABULARY_UNVERIFIED",
             confidence=0.0,
             source_text=raw_input,
@@ -869,7 +1096,7 @@ class TranslationEngine:
             requires_validation=False,
             provenance_label="UNATTESTED_INPUT_SAFE_FALLBACK",
             metadata={"message": "Corpus data not available"}
-        )
+        ))
 
 
 

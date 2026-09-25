@@ -1,0 +1,1130 @@
+[
+  {
+    "hinglish": "ek",
+    "hindi": "एक",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_01",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 1"
+  },
+  {
+    "hinglish": "do",
+    "hindi": "दो",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_02",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 2"
+  },
+  {
+    "hinglish": "teen",
+    "hindi": "तीन",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_03",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 3"
+  },
+  {
+    "hinglish": "tin",
+    "hindi": "तीन",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_03",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 3"
+  },
+  {
+    "hinglish": "chaar",
+    "hindi": "चार",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_04",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 4"
+  },
+  {
+    "hinglish": "char",
+    "hindi": "चार",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_04",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 4"
+  },
+  {
+    "hinglish": "paanch",
+    "hindi": "पाँच",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_05",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 5"
+  },
+  {
+    "hinglish": "panch",
+    "hindi": "पाँच",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_05",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 5"
+  },
+  {
+    "hinglish": "chhah",
+    "hindi": "छह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_06",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 6"
+  },
+  {
+    "hinglish": "chhe",
+    "hindi": "छह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_06",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 6"
+  },
+  {
+    "hinglish": "chheh",
+    "hindi": "छह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_06",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 6"
+  },
+  {
+    "hinglish": "saat",
+    "hindi": "सात",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_07",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 7"
+  },
+  {
+    "hinglish": "sat",
+    "hindi": "सात",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_07",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 7"
+  },
+  {
+    "hinglish": "aath",
+    "hindi": "आठ",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_08",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 8"
+  },
+  {
+    "hinglish": "ath",
+    "hindi": "आठ",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_08",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 8"
+  },
+  {
+    "hinglish": "nau",
+    "hindi": "नौ",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_09",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 9"
+  },
+  {
+    "hinglish": "now",
+    "hindi": "नौ",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_09",
+    "category": "NUMERAL",
+    "notes": "Phonetic variant for numeral 9"
+  },
+  {
+    "hinglish": "das",
+    "hindi": "दस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_10",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 10"
+  },
+  {
+    "hinglish": "dus",
+    "hindi": "दस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_10",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 10"
+  },
+  {
+    "hinglish": "gyarah",
+    "hindi": "ग्यारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_11",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 11"
+  },
+  {
+    "hinglish": "gyara",
+    "hindi": "ग्यारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_11",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 11"
+  },
+  {
+    "hinglish": "barah",
+    "hindi": "बारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_12",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 12"
+  },
+  {
+    "hinglish": "bara",
+    "hindi": "बारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_12",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 12"
+  },
+  {
+    "hinglish": "terah",
+    "hindi": "तेरह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_13",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 13"
+  },
+  {
+    "hinglish": "tera",
+    "hindi": "तेरह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_13",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 13"
+  },
+  {
+    "hinglish": "chaudah",
+    "hindi": "चौदह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_14",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 14"
+  },
+  {
+    "hinglish": "chauda",
+    "hindi": "चौदह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_14",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 14"
+  },
+  {
+    "hinglish": "pandrah",
+    "hindi": "पंद्रह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_15",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 15"
+  },
+  {
+    "hinglish": "pandra",
+    "hindi": "पंद्रह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_15",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 15"
+  },
+  {
+    "hinglish": "solah",
+    "hindi": "सोलह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_16",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 16"
+  },
+  {
+    "hinglish": "sola",
+    "hindi": "सोलह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_16",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 16"
+  },
+  {
+    "hinglish": "satrah",
+    "hindi": "सत्रह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_17",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 17"
+  },
+  {
+    "hinglish": "satra",
+    "hindi": "सत्रह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_17",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 17"
+  },
+  {
+    "hinglish": "atharah",
+    "hindi": "अठारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_18",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 18"
+  },
+  {
+    "hinglish": "athara",
+    "hindi": "अठारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_18",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 18"
+  },
+  {
+    "hinglish": "attharah",
+    "hindi": "अठारह",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_18",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 18"
+  },
+  {
+    "hinglish": "unnis",
+    "hindi": "उन्नीस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_19",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 19"
+  },
+  {
+    "hinglish": "unnees",
+    "hindi": "उन्नीस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_19",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 19"
+  },
+  {
+    "hinglish": "bees",
+    "hindi": "बीस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_20",
+    "category": "NUMERAL",
+    "notes": "Canonical numeral 20"
+  },
+  {
+    "hinglish": "bis",
+    "hindi": "बीस",
+    "status": "APPROVED",
+    "source": "content/content_registry.json:num_20",
+    "category": "NUMERAL",
+    "notes": "Spelling variant for numeral 20"
+  },
+  {
+    "hinglish": "namaste",
+    "hindi": "नमस्ते",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_01",
+    "category": "GREETING",
+    "notes": "Standard classroom greeting"
+  },
+  {
+    "hinglish": "namaskar",
+    "hindi": "नमस्ते",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_01",
+    "category": "GREETING",
+    "notes": "Variant of greeting mapped to attested Hindi phrase"
+  },
+  {
+    "hinglish": "namasthe",
+    "hindi": "नमस्ते",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_01",
+    "category": "GREETING",
+    "notes": "Phonetic spelling variant of greeting"
+  },
+  {
+    "hinglish": "johar",
+    "hindi": "नमस्ते",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_01",
+    "category": "GREETING",
+    "notes": "Traditional regional greeting mapped to classroom greeting"
+  },
+  {
+    "hinglish": "suprabhat",
+    "hindi": "सुप्रभात",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_02",
+    "category": "GREETING",
+    "notes": "Morning classroom greeting"
+  },
+  {
+    "hinglish": "shubh prabhat",
+    "hindi": "सुप्रभात",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_GREET_02",
+    "category": "GREETING",
+    "notes": "Variant of morning greeting"
+  },
+  {
+    "hinglish": "baitho",
+    "hindi": "बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_01",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Classroom instruction to sit"
+  },
+  {
+    "hinglish": "betho",
+    "hindi": "बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_01",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Spelling variant of sit instruction"
+  },
+  {
+    "hinglish": "baithiye",
+    "hindi": "बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_01",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite variant of sit instruction"
+  },
+  {
+    "hinglish": "bethiye",
+    "hindi": "बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_01",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Phonetic polite variant of sit instruction"
+  },
+  {
+    "hinglish": "baith jao",
+    "hindi": "बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_01",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Phrasal variant of sit instruction"
+  },
+  {
+    "hinglish": "khade ho jao",
+    "hindi": "खड़े हो जाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_02",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Classroom instruction to stand up"
+  },
+  {
+    "hinglish": "khade hojao",
+    "hindi": "खड़े हो जाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_02",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Compound spelling variant of stand instruction"
+  },
+  {
+    "hinglish": "khade ho",
+    "hindi": "खड़े हो जाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_02",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Short variant of stand instruction"
+  },
+  {
+    "hinglish": "idhar dekho",
+    "hindi": "इधर देखो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_03",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction directing visual attention"
+  },
+  {
+    "hinglish": "idhar dekhiye",
+    "hindi": "इधर देखो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_03",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite variant of look here"
+  },
+  {
+    "hinglish": "chup raho",
+    "hindi": "चुप रहो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_04",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction for silence"
+  },
+  {
+    "hinglish": "shaant raho",
+    "hindi": "शांत रहो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Keep calm instruction"
+  },
+  {
+    "hinglish": "shant raho",
+    "hindi": "शांत रहो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Spelling variant of keep calm"
+  },
+  {
+    "hinglish": "haath uthao",
+    "hindi": "हाथ उठाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_05",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to raise hand"
+  },
+  {
+    "hinglish": "hath uthao",
+    "hindi": "हाथ उठाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_05",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Spelling variant of raise hand"
+  },
+  {
+    "hinglish": "kitab kholo",
+    "hindi": "किताब खोलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_06",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to open textbook/notebook"
+  },
+  {
+    "hinglish": "kitaab kholo",
+    "hindi": "किताब खोलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_06",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Spelling variant with double a"
+  },
+  {
+    "hinglish": "kitab kholiye",
+    "hindi": "किताब खोलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_06",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite variant of open book"
+  },
+  {
+    "hinglish": "bahut achha",
+    "hindi": "बहुत अच्छा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_01",
+    "category": "ENCOURAGEMENT",
+    "notes": "Praise for correct answer"
+  },
+  {
+    "hinglish": "bahut accha",
+    "hindi": "बहुत अच्छा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_01",
+    "category": "ENCOURAGEMENT",
+    "notes": "Spelling variant with cc"
+  },
+  {
+    "hinglish": "bohot accha",
+    "hindi": "बहुत अच्छा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_01",
+    "category": "ENCOURAGEMENT",
+    "notes": "Colloquial variant of very good"
+  },
+  {
+    "hinglish": "bohot achha",
+    "hindi": "बहुत अच्छा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_01",
+    "category": "ENCOURAGEMENT",
+    "notes": "Colloquial variant of very good"
+  },
+  {
+    "hinglish": "bahut badhiya",
+    "hindi": "बहुत अच्छा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_01",
+    "category": "ENCOURAGEMENT",
+    "notes": "Variant of very good"
+  },
+  {
+    "hinglish": "shabash",
+    "hindi": "शाबाश",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_02",
+    "category": "ENCOURAGEMENT",
+    "notes": "Well done praise"
+  },
+  {
+    "hinglish": "shaabash",
+    "hindi": "शाबाश",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_02",
+    "category": "ENCOURAGEMENT",
+    "notes": "Spelling variant of well done"
+  },
+  {
+    "hinglish": "phir se prayas karo",
+    "hindi": "फिर से प्रयास करो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_03",
+    "category": "ENCOURAGEMENT",
+    "notes": "Encouragement to try again"
+  },
+  {
+    "hinglish": "phir se koshish karo",
+    "hindi": "फिर से प्रयास करो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_03",
+    "category": "ENCOURAGEMENT",
+    "notes": "Colloquial variant to try again"
+  },
+  {
+    "hinglish": "sahi uttar",
+    "hindi": "सही उत्तर",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_ENCR_04",
+    "category": "ENCOURAGEMENT",
+    "notes": "Affirmation of right answer"
+  },
+  {
+    "hinglish": "gino",
+    "hindi": "गिनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_01",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Direct instruction to count"
+  },
+  {
+    "hinglish": "giniye",
+    "hindi": "गिनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_01",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Polite instruction to count"
+  },
+  {
+    "hinglish": "kitne hain",
+    "hindi": "कितने हैं",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_02",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Prompt asking how many"
+  },
+  {
+    "hinglish": "kitne hai",
+    "hindi": "कितने हैं",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_02",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Spelling variant of how many"
+  },
+  {
+    "hinglish": "ek saath bolo",
+    "hindi": "एक साथ बोलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_03",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Choral instruction to speak together"
+  },
+  {
+    "hinglish": "ek sath bolo",
+    "hindi": "एक साथ बोलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_03",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Spelling variant of speak together"
+  },
+  {
+    "hinglish": "yeh kaun si sankhya hai",
+    "hindi": "यह कौन सी संख्या है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_04",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Prompt asking which number this is"
+  },
+  {
+    "hinglish": "ye kaun si sankhya hai",
+    "hindi": "यह कौन सी संख्या है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_NUM_04",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Colloquial variant of number prompt"
+  },
+  {
+    "hinglish": "hello",
+    "hindi": "हेलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_01",
+    "category": "GREETING",
+    "notes": "Classroom greeting corresponding to Hello"
+  },
+  {
+    "hinglish": "helo",
+    "hindi": "हेलो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_01",
+    "category": "GREETING",
+    "notes": "Spelling variant of hello"
+  },
+  {
+    "hinglish": "namaste bachcho",
+    "hindi": "नमस्ते बच्चों",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_02",
+    "category": "GREETING",
+    "notes": "Greeting to children at start of class"
+  },
+  {
+    "hinglish": "namaste bacho",
+    "hindi": "नमस्ते बच्चों",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_02",
+    "category": "GREETING",
+    "notes": "Spelling variant of greeting children"
+  },
+  {
+    "hinglish": "namaste bachho",
+    "hindi": "नमस्ते बच्चों",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_02",
+    "category": "GREETING",
+    "notes": "Phonetic variant of greeting children"
+  },
+  {
+    "hinglish": "bachcho baitho",
+    "hindi": "बच्चों बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_03",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to children to sit"
+  },
+  {
+    "hinglish": "bacho baitho",
+    "hindi": "बच्चों बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_03",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Spelling variant of children sit"
+  },
+  {
+    "hinglish": "sab bachche baitho",
+    "hindi": "बच्चों बैठो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_03",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Variant of all children sit"
+  },
+  {
+    "hinglish": "line banao",
+    "hindi": "लाइन बनाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_04",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to form a line"
+  },
+  {
+    "hinglish": "katar banao",
+    "hindi": "लाइन बनाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_04",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Formal Hindi variant of form a line"
+  },
+  {
+    "hinglish": "dhyan se suno",
+    "hindi": "ध्यान से सुनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_LISTEN",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to listen attentively"
+  },
+  {
+    "hinglish": "dhyan se suniye",
+    "hindi": "ध्यान से सुनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_MGMT_LISTEN",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite variant of listen attentively"
+  },
+  {
+    "hinglish": "suno",
+    "hindi": "सुनो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Classroom instruction to listen"
+  },
+  {
+    "hinglish": "suniye",
+    "hindi": "सुनो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite instruction to listen"
+  },
+  {
+    "hinglish": "likho",
+    "hindi": "लिखो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Classroom instruction to write"
+  },
+  {
+    "hinglish": "likhiye",
+    "hindi": "लिखो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite instruction to write"
+  },
+  {
+    "hinglish": "padho",
+    "hindi": "पढ़ो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Classroom instruction to read"
+  },
+  {
+    "hinglish": "padhiye",
+    "hindi": "पढ़ो",
+    "status": "APPROVED",
+    "source": "ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite instruction to read"
+  },
+  {
+    "hinglish": "kaise ho",
+    "hindi": "कैसे हो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrasebook.json",
+    "category": "CONVERSATION",
+    "notes": "Classroom conversational prompt 'how are you'"
+  },
+  {
+    "hinglish": "kese ho",
+    "hindi": "कैसे हो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrasebook.json",
+    "category": "CONVERSATION",
+    "notes": "Phonetic spelling variant of how are you"
+  },
+  {
+    "hinglish": "aap kaise ho",
+    "hindi": "कैसे हो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrasebook.json",
+    "category": "CONVERSATION",
+    "notes": "Polite variant of how are you"
+  },
+  {
+    "hinglish": "kaise hain",
+    "hindi": "कैसे हो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrasebook.json",
+    "category": "CONVERSATION",
+    "notes": "Plural/respectful variant of how are you"
+  },
+  {
+    "hinglish": "billi",
+    "hindi": "बिल्ली",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_012",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Cat / पूसी)"
+  },
+  {
+    "hinglish": "kutta",
+    "hindi": "कुत्ता",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_014",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Dog / सेता)"
+  },
+  {
+    "hinglish": "machhli",
+    "hindi": "मछली",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_023",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated aquatic term (Fish / माछ)"
+  },
+  {
+    "hinglish": "machli",
+    "hindi": "मछली",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_023",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Spelling variant of fish"
+  },
+  {
+    "hinglish": "gaay",
+    "hindi": "गाय",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_013",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Cow / गाए)"
+  },
+  {
+    "hinglish": "gai",
+    "hindi": "गाय",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_013",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Spelling variant of cow"
+  },
+  {
+    "hinglish": "bakri",
+    "hindi": "बकरी",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_016",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Goat / मराम)"
+  },
+  {
+    "hinglish": "bandar",
+    "hindi": "बंदर",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_019",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Monkey / हुरु)"
+  },
+  {
+    "hinglish": "bhains",
+    "hindi": "भैंस",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_011",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Team validated animal term (Buffalo / बोंगा)"
+  },
+  {
+    "hinglish": "haathi",
+    "hindi": "हाथी",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_015",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Attested loanword animal term (Elephant / हाथी)"
+  },
+  {
+    "hinglish": "hathi",
+    "hindi": "हाथी",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_015",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Spelling variant of elephant"
+  },
+  {
+    "hinglish": "sher",
+    "hindi": "शेर",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_018",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Attested loanword animal term (Lion / शेर)"
+  },
+  {
+    "hinglish": "bagh",
+    "hindi": "बाघ",
+    "status": "APPROVED",
+    "source": "data/custom/cleaned_team_pairs.jsonl:VOCAB_020",
+    "category": "VOCABULARY_ANIMALS",
+    "notes": "Animal term (Tiger / बाघ)"
+  },
+  {
+    "hinglish": "kal",
+    "hindi": "कल",
+    "status": "HELD_FOR_REVIEW",
+    "source": "lexicon_audit",
+    "category": "AMBIGUOUS",
+    "notes": "Homophone: represents both yesterday (बीता हुआ कल) and tomorrow (आने वाला कल) — requires context"
+  },
+  {
+    "hinglish": "ek se das tak gino",
+    "hindi": "एक से दस तक गिनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_17",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Counting drill from 1 to 10"
+  },
+  {
+    "hinglish": "ek se das gino",
+    "hindi": "एक से दस गिनो",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_17",
+    "category": "NUMERACY_INSTRUCTION",
+    "notes": "Counting drill from 1 to 10 variant"
+  },
+  {
+    "hinglish": "se",
+    "hindi": "से",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "GRAMMAR_PARTICLE",
+    "notes": "Postposition (from)"
+  },
+  {
+    "hinglish": "tak",
+    "hindi": "तक",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "GRAMMAR_PARTICLE",
+    "notes": "Postposition (until/up to)"
+  },
+  {
+    "hinglish": "mera",
+    "hindi": "मेरा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "PRONOUN",
+    "notes": "Possessive first person pronoun (my)"
+  },
+  {
+    "hinglish": "naam",
+    "hindi": "नाम",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "NOUN",
+    "notes": "Identity noun (name)"
+  },
+  {
+    "hinglish": "hai",
+    "hindi": "है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "COPULA",
+    "notes": "Present tense copula (is)"
+  },
+  {
+    "hinglish": "h",
+    "hindi": "है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "COPULA",
+    "notes": "Informal Hinglish copula shorthand (is)"
+  },
+  {
+    "hinglish": "mera naam",
+    "hindi": "मेरा नाम",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "IDENTITY_EXPRESSION",
+    "notes": "Foundational self-introduction prefix"
+  },
+  {
+    "hinglish": "mera naam hai",
+    "hindi": "मेरा नाम है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "IDENTITY_EXPRESSION",
+    "notes": "Self-introduction phrase frame"
+  },
+  {
+    "hinglish": "naam hai",
+    "hindi": "नाम है",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_05",
+    "category": "IDENTITY_EXPRESSION",
+    "notes": "Identity assertion frame"
+  },
+  {
+    "hinglish": "ko",
+    "hindi": "को",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "GRAMMAR_PARTICLE",
+    "notes": "Accusative/dative postposition"
+  },
+  {
+    "hinglish": "bulao",
+    "hindi": "बुलाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to call someone"
+  },
+  {
+    "hinglish": "bulaiye",
+    "hindi": "बुलाइए",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite instruction to call someone"
+  },
+  {
+    "hinglish": "ko bulao",
+    "hindi": "को बुलाओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Calling command frame"
+  },
+  {
+    "hinglish": "ko bulaiye",
+    "hindi": "को बुलाइए",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Polite calling command frame"
+  },
+  {
+    "hinglish": "yahan",
+    "hindi": "यहाँ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_15",
+    "category": "ADVERB",
+    "notes": "Locative adverb (here)"
+  },
+  {
+    "hinglish": "aao",
+    "hindi": "आओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_15",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to come"
+  },
+  {
+    "hinglish": "yahan aao",
+    "hindi": "यहाँ आओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_15",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Instruction to come here"
+  },
+  {
+    "hinglish": "idhar aao",
+    "hindi": "यहाँ आओ",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_15",
+    "category": "CLASSROOM_MANAGEMENT",
+    "notes": "Colloquial variant of come here"
+  },
+  {
+    "hinglish": "aur",
+    "hindi": "और",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json",
+    "category": "CONJUNCTION",
+    "notes": "Conjunction (and)"
+  },
+  {
+    "hinglish": "apna",
+    "hindi": "अपना",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:phr_prompt_02",
+    "category": "PRONOUN",
+    "notes": "Reflexive possessive pronoun (one own)"
+  },
+  {
+    "hinglish": "tumhara",
+    "hindi": "तुम्हारा",
+    "status": "APPROVED",
+    "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_06",
+    "category": "PRONOUN",
+    "notes": "Second person possessive pronoun (your)"
+  }
+]

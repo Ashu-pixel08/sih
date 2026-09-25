@@ -1,0 +1,123 @@
+hinglish	hindi	status	source	category	notes
+ek	एक	APPROVED	content/content_registry.json:num_01	NUMERAL	Canonical numeral 1
+do	दो	APPROVED	content/content_registry.json:num_02	NUMERAL	Canonical numeral 2
+teen	तीन	APPROVED	content/content_registry.json:num_03	NUMERAL	Canonical numeral 3
+tin	तीन	APPROVED	content/content_registry.json:num_03	NUMERAL	Spelling variant for numeral 3
+chaar	चार	APPROVED	content/content_registry.json:num_04	NUMERAL	Canonical numeral 4
+char	चार	APPROVED	content/content_registry.json:num_04	NUMERAL	Spelling variant for numeral 4
+paanch	पाँच	APPROVED	content/content_registry.json:num_05	NUMERAL	Canonical numeral 5
+panch	पाँच	APPROVED	content/content_registry.json:num_05	NUMERAL	Spelling variant for numeral 5
+chhah	छह	APPROVED	content/content_registry.json:num_06	NUMERAL	Canonical numeral 6
+chhe	छह	APPROVED	content/content_registry.json:num_06	NUMERAL	Spelling variant for numeral 6
+chheh	छह	APPROVED	content/content_registry.json:num_06	NUMERAL	Spelling variant for numeral 6
+saat	सात	APPROVED	content/content_registry.json:num_07	NUMERAL	Canonical numeral 7
+sat	सात	APPROVED	content/content_registry.json:num_07	NUMERAL	Spelling variant for numeral 7
+aath	आठ	APPROVED	content/content_registry.json:num_08	NUMERAL	Canonical numeral 8
+ath	आठ	APPROVED	content/content_registry.json:num_08	NUMERAL	Spelling variant for numeral 8
+nau	नौ	APPROVED	content/content_registry.json:num_09	NUMERAL	Canonical numeral 9
+now	नौ	APPROVED	content/content_registry.json:num_09	NUMERAL	Phonetic variant for numeral 9
+das	दस	APPROVED	content/content_registry.json:num_10	NUMERAL	Canonical numeral 10
+dus	दस	APPROVED	content/content_registry.json:num_10	NUMERAL	Spelling variant for numeral 10
+gyarah	ग्यारह	APPROVED	content/content_registry.json:num_11	NUMERAL	Canonical numeral 11
+gyara	ग्यारह	APPROVED	content/content_registry.json:num_11	NUMERAL	Spelling variant for numeral 11
+barah	बारह	APPROVED	content/content_registry.json:num_12	NUMERAL	Canonical numeral 12
+bara	बारह	APPROVED	content/content_registry.json:num_12	NUMERAL	Spelling variant for numeral 12
+terah	तेरह	APPROVED	content/content_registry.json:num_13	NUMERAL	Canonical numeral 13
+tera	तेरह	APPROVED	content/content_registry.json:num_13	NUMERAL	Spelling variant for numeral 13
+chaudah	चौदह	APPROVED	content/content_registry.json:num_14	NUMERAL	Canonical numeral 14
+chauda	चौदह	APPROVED	content/content_registry.json:num_14	NUMERAL	Spelling variant for numeral 14
+pandrah	पंद्रह	APPROVED	content/content_registry.json:num_15	NUMERAL	Canonical numeral 15
+pandra	पंद्रह	APPROVED	content/content_registry.json:num_15	NUMERAL	Spelling variant for numeral 15
+solah	सोलह	APPROVED	content/content_registry.json:num_16	NUMERAL	Canonical numeral 16
+sola	सोलह	APPROVED	content/content_registry.json:num_16	NUMERAL	Spelling variant for numeral 16
+satrah	सत्रह	APPROVED	content/content_registry.json:num_17	NUMERAL	Canonical numeral 17
+satra	सत्रह	APPROVED	content/content_registry.json:num_17	NUMERAL	Spelling variant for numeral 17
+atharah	अठारह	APPROVED	content/content_registry.json:num_18	NUMERAL	Canonical numeral 18
+athara	अठारह	APPROVED	content/content_registry.json:num_18	NUMERAL	Spelling variant for numeral 18
+attharah	अठारह	APPROVED	content/content_registry.json:num_18	NUMERAL	Spelling variant for numeral 18
+unnis	उन्नीस	APPROVED	content/content_registry.json:num_19	NUMERAL	Canonical numeral 19
+unnees	उन्नीस	APPROVED	content/content_registry.json:num_19	NUMERAL	Spelling variant for numeral 19
+bees	बीस	APPROVED	content/content_registry.json:num_20	NUMERAL	Canonical numeral 20
+bis	बीस	APPROVED	content/content_registry.json:num_20	NUMERAL	Spelling variant for numeral 20
+namaste	नमस्ते	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_01	GREETING	Standard classroom greeting
+namaskar	नमस्ते	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_01	GREETING	Variant of greeting mapped to attested Hindi phrase
+namasthe	नमस्ते	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_01	GREETING	Phonetic spelling variant of greeting
+johar	नमस्ते	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_01	GREETING	Traditional regional greeting mapped to classroom greeting
+suprabhat	सुप्रभात	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_02	GREETING	Morning classroom greeting
+shubh prabhat	सुप्रभात	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_GREET_02	GREETING	Variant of morning greeting
+baitho	बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_01	CLASSROOM_MANAGEMENT	Classroom instruction to sit
+betho	बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_01	CLASSROOM_MANAGEMENT	Spelling variant of sit instruction
+baithiye	बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_01	CLASSROOM_MANAGEMENT	Polite variant of sit instruction
+bethiye	बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_01	CLASSROOM_MANAGEMENT	Phonetic polite variant of sit instruction
+baith jao	बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_01	CLASSROOM_MANAGEMENT	Phrasal variant of sit instruction
+khade ho jao	खड़े हो जाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_02	CLASSROOM_MANAGEMENT	Classroom instruction to stand up
+khade hojao	खड़े हो जाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_02	CLASSROOM_MANAGEMENT	Compound spelling variant of stand instruction
+khade ho	खड़े हो जाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_02	CLASSROOM_MANAGEMENT	Short variant of stand instruction
+idhar dekho	इधर देखो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_03	CLASSROOM_MANAGEMENT	Instruction directing visual attention
+idhar dekhiye	इधर देखो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_03	CLASSROOM_MANAGEMENT	Polite variant of look here
+chup raho	चुप रहो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_04	CLASSROOM_MANAGEMENT	Instruction for silence
+shaant raho	शांत रहो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_05	CLASSROOM_MANAGEMENT	Keep calm instruction
+shant raho	शांत रहो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_05	CLASSROOM_MANAGEMENT	Spelling variant of keep calm
+haath uthao	हाथ उठाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_05	CLASSROOM_MANAGEMENT	Instruction to raise hand
+hath uthao	हाथ उठाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_05	CLASSROOM_MANAGEMENT	Spelling variant of raise hand
+kitab kholo	किताब खोलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_06	CLASSROOM_MANAGEMENT	Instruction to open textbook/notebook
+kitaab kholo	किताब खोलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_06	CLASSROOM_MANAGEMENT	Spelling variant with double a
+kitab kholiye	किताब खोलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_06	CLASSROOM_MANAGEMENT	Polite variant of open book
+bahut achha	बहुत अच्छा	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_01	ENCOURAGEMENT	Praise for correct answer
+bahut accha	बहुत अच्छा	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_01	ENCOURAGEMENT	Spelling variant with cc
+bohot accha	बहुत अच्छा	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_01	ENCOURAGEMENT	Colloquial variant of very good
+bohot achha	बहुत अच्छा	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_01	ENCOURAGEMENT	Colloquial variant of very good
+bahut badhiya	बहुत अच्छा	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_01	ENCOURAGEMENT	Variant of very good
+shabash	शाबाश	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_02	ENCOURAGEMENT	Well done praise
+shaabash	शाबाश	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_02	ENCOURAGEMENT	Spelling variant of well done
+phir se prayas karo	फिर से प्रयास करो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_03	ENCOURAGEMENT	Encouragement to try again
+phir se koshish karo	फिर से प्रयास करो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_03	ENCOURAGEMENT	Colloquial variant to try again
+sahi uttar	सही उत्तर	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_ENCR_04	ENCOURAGEMENT	Affirmation of right answer
+gino	गिनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_01	NUMERACY_INSTRUCTION	Direct instruction to count
+giniye	गिनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_01	NUMERACY_INSTRUCTION	Polite instruction to count
+kitne hain	कितने हैं	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_02	NUMERACY_INSTRUCTION	Prompt asking how many
+kitne hai	कितने हैं	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_02	NUMERACY_INSTRUCTION	Spelling variant of how many
+ek saath bolo	एक साथ बोलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_03	NUMERACY_INSTRUCTION	Choral instruction to speak together
+ek sath bolo	एक साथ बोलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_03	NUMERACY_INSTRUCTION	Spelling variant of speak together
+yeh kaun si sankhya hai	यह कौन सी संख्या है	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_04	NUMERACY_INSTRUCTION	Prompt asking which number this is
+ye kaun si sankhya hai	यह कौन सी संख्या है	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_NUM_04	NUMERACY_INSTRUCTION	Colloquial variant of number prompt
+hello	हेलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_01	GREETING	Classroom greeting corresponding to Hello
+helo	हेलो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_01	GREETING	Spelling variant of hello
+namaste bachcho	नमस्ते बच्चों	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_02	GREETING	Greeting to children at start of class
+namaste bacho	नमस्ते बच्चों	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_02	GREETING	Spelling variant of greeting children
+namaste bachho	नमस्ते बच्चों	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_02	GREETING	Phonetic variant of greeting children
+bachcho baitho	बच्चों बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_03	CLASSROOM_MANAGEMENT	Instruction to children to sit
+bacho baitho	बच्चों बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_03	CLASSROOM_MANAGEMENT	Spelling variant of children sit
+sab bachche baitho	बच्चों बैठो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_03	CLASSROOM_MANAGEMENT	Variant of all children sit
+line banao	लाइन बनाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_04	CLASSROOM_MANAGEMENT	Instruction to form a line
+katar banao	लाइन बनाओ	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_04	CLASSROOM_MANAGEMENT	Formal Hindi variant of form a line
+dhyan se suno	ध्यान से सुनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_LISTEN	CLASSROOM_MANAGEMENT	Instruction to listen attentively
+dhyan se suniye	ध्यान से सुनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_MGMT_LISTEN	CLASSROOM_MANAGEMENT	Polite variant of listen attentively
+suno	सुनो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Classroom instruction to listen
+suniye	सुनो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Polite instruction to listen
+likho	लिखो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Classroom instruction to write
+likhiye	लिखो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Polite instruction to write
+padho	पढ़ो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Classroom instruction to read
+padhiye	पढ़ो	APPROVED	ai/translation/translation_engine.py:EDUCATIONAL_PHRASEBOOK	CLASSROOM_MANAGEMENT	Polite instruction to read
+kaise ho	कैसे हो	APPROVED	content/translations/classroom_phrasebook.json	CONVERSATION	Classroom conversational prompt 'how are you'
+kese ho	कैसे हो	APPROVED	content/translations/classroom_phrasebook.json	CONVERSATION	Phonetic spelling variant of how are you
+aap kaise ho	कैसे हो	APPROVED	content/translations/classroom_phrasebook.json	CONVERSATION	Polite variant of how are you
+kaise hain	कैसे हो	APPROVED	content/translations/classroom_phrasebook.json	CONVERSATION	Plural/respectful variant of how are you
+billi	बिल्ली	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_012	VOCABULARY_ANIMALS	Team validated animal term (Cat / पूसी)
+kutta	कुत्ता	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_014	VOCABULARY_ANIMALS	Team validated animal term (Dog / सेता)
+machhli	मछली	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_023	VOCABULARY_ANIMALS	Team validated aquatic term (Fish / माछ)
+machli	मछली	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_023	VOCABULARY_ANIMALS	Spelling variant of fish
+gaay	गाय	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_013	VOCABULARY_ANIMALS	Team validated animal term (Cow / गाए)
+gai	गाय	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_013	VOCABULARY_ANIMALS	Spelling variant of cow
+bakri	बकरी	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_016	VOCABULARY_ANIMALS	Team validated animal term (Goat / मराम)
+bandar	बंदर	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_019	VOCABULARY_ANIMALS	Team validated animal term (Monkey / हुरु)
+bhains	भैंस	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_011	VOCABULARY_ANIMALS	Team validated animal term (Buffalo / बोंगा)
+haathi	हाथी	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_015	VOCABULARY_ANIMALS	Attested loanword animal term (Elephant / हाथी)
+hathi	हाथी	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_015	VOCABULARY_ANIMALS	Spelling variant of elephant
+sher	शेर	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_018	VOCABULARY_ANIMALS	Attested loanword animal term (Lion / शेर)
+bagh	बाघ	APPROVED	data/custom/cleaned_team_pairs.jsonl:VOCAB_020	VOCABULARY_ANIMALS	Animal term (Tiger / बाघ)
+kal	कल	HELD_FOR_REVIEW	lexicon_audit	AMBIGUOUS	Homophone: represents both yesterday (बीता हुआ कल) and tomorrow (आने वाला कल) — requires context
+ek se das tak gino	एक से दस तक गिनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_17	NUMERACY_INSTRUCTION	Counting drill from 1 to 10
+ek se das gino	एक से दस गिनो	APPROVED	content/translations/classroom_phrases_expanded.json:PHR_EXP_17	NUMERACY_INSTRUCTION	Counting drill from 1 to 10 variant
+se	से	APPROVED	content/translations/classroom_phrases_expanded.json	GRAMMAR_PARTICLE	Postposition (from)
+tak	तक	APPROVED	content/translations/classroom_phrases_expanded.json	GRAMMAR_PARTICLE	Postposition (until/up to)
