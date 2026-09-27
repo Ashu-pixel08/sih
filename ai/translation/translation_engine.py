@@ -502,6 +502,42 @@ class TranslationEngine:
             except Exception as e:
                 print(f"Notice: Failed to load team pairs from {team_pairs_path}: {e}")
 
+        # E. Verified Fruits Vocabulary from MundariDataset Excel
+        desktop_xlsx = os.path.join(os.path.expanduser("~"), "Desktop", "MundariDataset", "mundari_VocabularyData.xlsx")
+        alt_xlsx = os.path.join(os.path.expanduser("~"), "Desktop", "mundari_dataset", "mundari_VocabularyData.xlsx")
+        vocab_xlsx = desktop_xlsx if os.path.exists(desktop_xlsx) else (alt_xlsx if os.path.exists(alt_xlsx) else None)
+        if vocab_xlsx:
+            try:
+                import pandas as pd
+                df_vocab = pd.read_excel(vocab_xlsx)
+                for _, row in df_vocab.iterrows():
+                    hi_text = str(row.get("hindi", "")).strip()
+                    mun_text = str(row.get("mundari", "")).strip()
+                    cat = str(row.get("categary", "fruits")).strip()
+                    if hi_text and mun_text and hi_text != "nan" and mun_text != "nan":
+                        entry = {
+                            "hindi_text": hi_text,
+                            "mundari_text": mun_text,
+                            "mundari_phonetic": "",
+                            "mundari_root": mun_text,
+                            "category": cat,
+                            "verification_level": "VERIFIED_LEXICOGRAPHY",
+                            "provenance": "MUNDARI_VOCABULARY_DATASET",
+                            "source": "MUNDARI_DATASET_EXCEL",
+                            "audio_asset": None,
+                            "audio_status": "NOT_PRE_RECORDED"
+                        }
+                        norm_hi = self._normalize_text(hi_text)
+                        lookup_hi = self._normalize_for_lookup(hi_text)
+                        self.educational_lookup.setdefault(norm_hi, entry)
+                        self.educational_lookup.setdefault(lookup_hi, entry)
+                        norm_mun = self._normalize_text(mun_text)
+                        lookup_mun = self._normalize_for_lookup(mun_text)
+                        self.reverse_educational_lookup.setdefault(norm_mun, entry)
+                        self.reverse_educational_lookup.setdefault(lookup_mun, entry)
+            except Exception as e:
+                print(f"Notice: Failed to load vocabulary excel from {vocab_xlsx}: {e}")
+
     def _load_tier2_corpus(self) -> None:
         """Loads parallel corpus and fits bidirectional char-wb TF-IDF vectorizers."""
         if not os.path.exists(self.corpus_tsv_path):
@@ -549,6 +585,19 @@ class TranslationEngine:
         """
         norm_dir = (direction or "hi-unr").strip().lower()
         is_rev = norm_dir in ("unr-hi", "mundari-hindi", "mun-hi", "unr_to_hi", "reverse")
+
+        # Step 0: Direct Tier 1 Priority for Exact Educational & Phrasebook Lookup
+        # If the input directly matches a known canonical numeral or classroom phrase,
+        # resolve immediately without name protection to avoid any false positives.
+        raw_text = (text or "").strip()
+        norm_text = self._normalize_text(raw_text)
+        lookup_text = self._normalize_for_lookup(raw_text)
+        if is_rev:
+            if lookup_text in self.reverse_educational_lookup or norm_text in self.reverse_educational_lookup:
+                return self.translate_mundari_to_hindi(text, name_map=None)
+        else:
+            if lookup_text in self.educational_lookup or norm_text in self.educational_lookup:
+                return self.translate_hindi_to_mundari(text, use_neural=use_neural, name_map=None)
 
         # Step 1: Detect and shield candidate proper names
         name_map: Dict[str, str] = {}

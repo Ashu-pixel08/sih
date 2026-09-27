@@ -4945,6 +4945,41 @@ function backendTranslate(text, dir) {
   // REVERSE TRANSLATION: MUNDARI ➔ HINDI
   // -------------------------------------------------------------
   if (direction === "unr-hi") {
+    // 0. Student Interaction Phrases (Student Voice Mode & Live Classroom Replies)
+    const studentPhrases = [
+      { mundari: "ऐंग काजी बुझाओ केदा", hindi: "मुझे समझ में आ गया।" },
+      { mundari: "गुरु गोमके नेना काजी आर एमेप", hindi: "गुरु जी, फिर से बताइए" },
+      { mundari: "ऐंगा नाद कुड़ी मेनाअ", hindi: "मेरी एक बहन है" },
+      { mundari: "सेब चिकिता दान रे जोवा", hindi: "सेब को क्या कहते हैं?" },
+      { mundari: "ऐंग माद इहोन गेलिया धाब लेखा केदा", hindi: "मुझे गिनती आती है" },
+      { mundari: "हे", hindi: "हाँ" },
+      { mundari: "का", hindi: "नहीं" },
+      { mundari: "इतुअनाञ", hindi: "मुझे समझ आ गया" },
+      { mundari: "काञ इतुअना", hindi: "मुझे समझ नहीं आया" },
+      { mundari: "जोहार", hindi: "नमस्ते" }
+    ];
+
+    for (let sp of studentPhrases) {
+      if (clean === sp.mundari || normalized === normalizeHindi(sp.mundari) || lookupClean === normalizeForLookup(sp.mundari)) {
+        return {
+          source: clean,
+          mundari: clean,
+          hindi: sp.hindi,
+          targetText: sp.hindi,
+          phonetic: "",
+          root: "",
+          numeral: null,
+          audio_file: null,
+          status: "VERIFIED_EDUCATIONAL_LOOKUP",
+          badge: "● VERIFIED (STUDENT VOICE)",
+          badgeClass: "verified",
+          provenance: "Classroom Student Interaction Registry (" + sp.mundari + " ➔ " + sp.hindi + ")",
+          isBroadcastable: true,
+          direction: direction
+        };
+      }
+    }
+
     // 1. Exact lookup in canonical numbers 1-20
     for (let item of DB.numbers) {
       const normMun = normalizeHindi(item.mundari_text);
@@ -4960,13 +4995,13 @@ function backendTranslate(text, dir) {
       if (isMunExact || isRootExact || isNumExact || isVariant || isOrthVar) {
         return {
           source: clean,
-          mundari: item.hindi_text,
+          mundari: clean,
           hindi: item.hindi_text,
           targetText: item.hindi_text,
           phonetic: item.mundari_phonetic,
           root: item.mundari_root,
           numeral: item.number,
-          audio_file: item.audio_file || null,
+          audio_file: null,
           status: "VERIFIED_EDUCATIONAL_LOOKUP",
           badge: "● VERIFIED_EDUCATIONAL_LOOKUP (MUNDARI ➔ HINDI)",
           badgeClass: "verified",
@@ -4989,13 +5024,13 @@ function backendTranslate(text, dir) {
       if (isMunExact || isRootExact) {
         return {
           source: clean,
-          mundari: p.hindi_text,
+          mundari: clean,
           hindi: p.hindi_text,
           targetText: p.hindi_text,
           phonetic: p.mundari_phonetic,
           root: p.mundari_root || "",
           numeral: null,
-          audio_file: p.audio_file || null,
+          audio_file: null,
           status: "VERIFIED_EDUCATIONAL_LOOKUP",
           badge: "● VERIFIED_EDUCATIONAL_LOOKUP (MUNDARI ➔ HINDI)",
           badgeClass: "verified",
@@ -6547,30 +6582,40 @@ function setVoiceState(newState, detailMsg) {
     orbIcon.setAttribute("data-state", newState);
   }
 
+  const isRevDir = state.translationDirection === "unr-hi" || state.inputMode === "mundari";
+
   switch (newState) {
     case VoiceStateEnum.READY:
       statusEl.textContent = "Ready";
-      if (subStatusEl) subStatusEl.textContent = (state.inputMode === 'hinglish') ? 'Click "Start Voice Session" or tap the orb to begin speaking' : 'Click "Start Voice Session" or tap the orb to begin speaking in Hindi';
+      if (subStatusEl) {
+        subStatusEl.textContent = isRevDir
+          ? 'Click "Start Voice Session" or tap the orb to begin speaking in Mundari'
+          : ((state.inputMode === 'hinglish') ? 'Click "Start Voice Session" or tap the orb to begin speaking' : 'Click "Start Voice Session" or tap the orb to begin speaking in Hindi');
+      }
       break;
 
     case VoiceStateEnum.LISTENING:
       statusEl.textContent = "Listening";
-      if (subStatusEl) subStatusEl.textContent = (state.inputMode === 'hinglish') ? "Listening... Speak naturally in Hinglish or Hindi." : "Listening... Speak your sentence naturally in Hindi.";
+      if (subStatusEl) {
+        subStatusEl.textContent = isRevDir
+          ? "Listening... Speak your sentence or number naturally in Mundari."
+          : ((state.inputMode === 'hinglish') ? "Listening... Speak naturally in Hinglish or Hindi." : "Listening... Speak your sentence naturally in Hindi.");
+      }
       break;
 
     case VoiceStateEnum.PROCESSING:
       statusEl.textContent = "Processing";
-      if (subStatusEl) subStatusEl.textContent = "Processing speech input...";
+      if (subStatusEl) subStatusEl.textContent = isRevDir ? "Recognizing Mundari speech..." : "Processing speech input...";
       break;
 
     case VoiceStateEnum.TRANSLATING:
       statusEl.textContent = "Translating";
-      if (subStatusEl) subStatusEl.textContent = "Translating into Mundari...";
+      if (subStatusEl) subStatusEl.textContent = isRevDir ? "Translating into Hindi..." : "Translating into Mundari...";
       break;
 
     case VoiceStateEnum.SPEAKING:
       statusEl.textContent = "Speaking";
-      if (subStatusEl) subStatusEl.textContent = "Playing pronunciation. Tap orb or speak to interrupt.";
+      if (subStatusEl) subStatusEl.textContent = isRevDir ? "Playing Hindi response pronunciation. Tap orb to interrupt." : "Playing pronunciation. Tap orb or speak to interrupt.";
       break;
 
     case VoiceStateEnum.INTERRUPTED:
@@ -6583,6 +6628,21 @@ function setVoiceState(newState, detailMsg) {
       if (subStatusEl) subStatusEl.textContent = detailMsg || "Check microphone permissions or use quick classroom phrases.";
       break;
   }
+
+  // Update 5-stage speech flow pipeline in Student Voice Mode
+  try {
+    const flowSteps = document.querySelectorAll(".voice-flow-step");
+    if (flowSteps && flowSteps.length === 5) {
+      flowSteps.forEach((s, idx) => {
+        s.classList.remove("active");
+        if (newState === VoiceStateEnum.LISTENING && idx === 0) s.classList.add("active");
+        else if (newState === VoiceStateEnum.PROCESSING && idx === 1) s.classList.add("active");
+        else if (newState === VoiceStateEnum.TRANSLATING && idx === 2) s.classList.add("active");
+        else if (newState === VoiceStateEnum.SPEAKING && idx === 3) s.classList.add("active");
+        else if (newState === VoiceStateEnum.READY && idx === 4) s.classList.add("active");
+      });
+    }
+  } catch (e) {}
 }
 
 function toggleMorePhrases() {
@@ -6814,6 +6874,159 @@ async function playBackendPronunciation(options) {
 }
 window.playBackendPronunciation = playBackendPronunciation;
 
+/**
+ * Canonical Translated Speech Playback Client
+ * Ensures target language exclusively determines pronunciation:
+ * targetLang === 'hi' | 'hindi' => synthesizes Hindi via Hindi TTS Engine
+ * targetLang === 'mundari' | 'unr' => synthesizes Mundari TTS
+ * Manages playback mutex, stops microphone feedback during playback,
+ * updates audio state machine (TRANSLATING -> SPEAKING -> LISTENING/READY),
+ * and emits required debug telemetry.
+ */
+async function playTranslatedSpeech(options) {
+  const text = (options && options.text) ? String(options.text).trim() : "";
+  const sourceLang = (options && options.sourceLang) ? String(options.sourceLang).toLowerCase().trim() : "";
+  let targetLang = (options && options.targetLang) ? String(options.targetLang).toLowerCase().trim() : "";
+  const onStart = options && typeof options.onStart === "function" ? options.onStart : null;
+  const onEnd = options && typeof options.onEnd === "function" ? options.onEnd : null;
+  const onError = options && typeof options.onError === "function" ? options.onError : null;
+
+  if (!targetLang) {
+    targetLang = (state.translationDirection === "unr-hi") ? "hi" : "mundari";
+  }
+
+  const isTargetHindi = (targetLang === "hi" || targetLang === "hindi" || targetLang.includes("hin"));
+  const langCode = isTargetHindi ? "hi" : "mundari";
+
+  console.log("[PRONUNCIATION] Target language: " + langCode);
+  console.log("[PRONUNCIATION] Request started");
+
+  if (!text || text.startsWith("[")) {
+    console.warn("[PRONUNCIATION] Skipped: empty or placeholder text");
+    if (typeof onEnd === "function") onEnd();
+    return false;
+  }
+
+  // Prevent overlapping playback & microphone feedback
+  cancelSpeechAudio();
+
+  // If local recorder is active, pause it so it does NOT record speaker output
+  if (voiceState.mundariRecorder && voiceState.mundariRecorder.stream) {
+    try {
+      voiceState.mundariRecorder.stream.getTracks().forEach(t => t.stop());
+    } catch (e) {}
+    voiceState.mundariRecorder = null;
+    voiceState.isMundariLocalRecording = false;
+  }
+
+  // Visual pulse indicator if present in current view
+  if (typeof playDemoPulse === "function") {
+    try { playDemoPulse(); } catch (e) {}
+  }
+
+  try {
+    const payload = JSON.stringify({
+      text: text,
+      language: isTargetHindi ? "hindi" : "mundari",
+      teacher_voice: (state.teacherVoiceEnabled === true)
+    });
+
+    const response = await fetch("/api/pronunciation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload
+    });
+
+    if (!response.ok) {
+      const errStatus = response.status;
+      console.error("[PRONUNCIATION] HTTP error: " + errStatus);
+      const errMsg = isTargetHindi
+        ? "Translation available, but Hindi audio could not be played."
+        : "Translation available, but Mundari audio could not be played.";
+      toast(errMsg);
+      setVoiceState(VoiceStateEnum.ERROR, errMsg);
+      if (typeof onError === "function") onError(new Error("API returned status " + errStatus));
+      return false;
+    }
+
+    const blob = await response.blob();
+    console.log("[PRONUNCIATION] WAV received: " + blob.size + " bytes");
+
+    let objectUrl = "";
+    if (typeof URL !== "undefined" && typeof URL.createObjectURL === "function") {
+      objectUrl = URL.createObjectURL(blob);
+    } else {
+      objectUrl = "/api/pronunciation?text=" + encodeURIComponent(text) + "&language=" + encodeURIComponent(langCode);
+    }
+
+    const audio = new Audio(objectUrl);
+    console.log("[PRONUNCIATION] Audio object created");
+
+    voiceState.activeAudio = audio;
+    voiceState.activeAudioUrl = objectUrl;
+    voiceState.isSpeaking = true;
+    setVoiceState(VoiceStateEnum.SPEAKING);
+
+    const micStatus = document.getElementById("micStatus");
+    if (micStatus) {
+      micStatus.textContent = isTargetHindi ? "🔊 Speaking Hindi response: \"" + text + "\"" : "🔊 Speaking Mundari: \"" + text + "\"";
+    }
+
+    const cleanup = () => {
+      if (voiceState.activeAudio === audio) {
+        voiceState.activeAudio = null;
+        voiceState.isSpeaking = false;
+      }
+      if (voiceState.activeAudioUrl === objectUrl) {
+        voiceState.activeAudioUrl = null;
+      }
+      if (objectUrl && typeof URL !== "undefined" && typeof URL.revokeObjectURL === "function") {
+        try { URL.revokeObjectURL(objectUrl); } catch (e) {}
+      }
+      if (typeof updateTeacherVoiceUI === "function") {
+        try { updateTeacherVoiceUI(); } catch (e) {}
+      }
+    };
+
+    audio.onended = () => {
+      console.log("[PRONUNCIATION] Playback ended");
+      cleanup();
+      if (micStatus) {
+        micStatus.textContent = isTargetHindi ? "Response spoken. Listening in Mundari..." : "Pronunciation complete. Listening...";
+      }
+      if (typeof onEnd === "function") onEnd();
+    };
+
+    audio.onerror = (err) => {
+      console.error("[PRONUNCIATION] Audio playback error:", err);
+      cleanup();
+      const errMsg = isTargetHindi
+        ? "Translation available, but Hindi audio could not be played."
+        : "Translation available, but Mundari audio could not be played.";
+      toast(errMsg);
+      setVoiceState(VoiceStateEnum.ERROR, errMsg);
+      if (typeof onError === "function") onError(err);
+    };
+
+    if (typeof onStart === "function") onStart();
+    console.log("[PRONUNCIATION] Playback started");
+    await audio.play();
+    return true;
+
+  } catch (err) {
+    console.error("[PRONUNCIATION] Network/Audio failure:", err);
+    cancelSpeechAudio();
+    const errMsg = isTargetHindi
+      ? "Translation available, but Hindi audio could not be played."
+      : "Translation available, but Mundari audio could not be played.";
+    toast(errMsg);
+    setVoiceState(VoiceStateEnum.ERROR, errMsg);
+    if (typeof onError === "function") onError(err);
+    return false;
+  }
+}
+window.playTranslatedSpeech = playTranslatedSpeech;
+
 function encodeWAV(samples, sampleRate) {
   const buffer = new ArrayBuffer(44 + samples.length * 2);
   const view = new DataView(buffer);
@@ -6922,6 +7135,8 @@ async function finishMundariRecordingUtterance(explicitAudioBlob) {
       const data = await resp.json();
       if (data.status === "RECOGNIZED" && data.recognized_text) {
         const recognized = data.recognized_text;
+        console.log("[STUDENT VOICE] Mundari recognition complete");
+        console.log("[STUDENT VOICE] Recognized: " + recognized);
         const mEl = $("#mundari");
         if (mEl) mEl.value = recognized;
         toast("Recognized Mundari: " + recognized + (data.hindi_equivalent ? " (" + data.hindi_equivalent + ")" : ""));
@@ -6961,6 +7176,9 @@ async function finishMundariRecordingUtterance(explicitAudioBlob) {
 }
 
 async function startMundariLocalVoiceSession() {
+  if (voiceState.isSpeaking) {
+    return false;
+  }
   cancelSpeechAudio();
   voiceState.sessionActive = true;
   voiceState.restartAttempts = 0;
@@ -6997,7 +7215,7 @@ async function startMundariLocalVoiceSession() {
     let silenceFrames = 0;
 
     processor.onaudioprocess = (e) => {
-      if (!voiceState.sessionActive || !voiceState.isMundariLocalRecording) return;
+      if (!voiceState.sessionActive || !voiceState.isMundariLocalRecording || voiceState.isSpeaking) return;
       const chData = e.inputBuffer.getChannelData(0);
       const copy = new Float32Array(chData.length);
       copy.set(chData);
@@ -7010,10 +7228,6 @@ async function startMundariLocalVoiceSession() {
       if (rms > 0.02) {
         hasSpeech = true;
         silenceFrames = 0;
-        if (voiceState.isSpeaking) {
-          cancelSpeechAudio();
-          setVoiceState(VoiceStateEnum.INTERRUPTED);
-        }
       } else if (hasSpeech) {
         silenceFrames++;
         if (silenceFrames > 12) {
@@ -7291,6 +7505,13 @@ async function processVoiceUtterance(text) {
   setVoiceState(VoiceStateEnum.TRANSLATING);
 
   const dir = state.translationDirection || "hi-unr";
+  if (dir === "unr-hi") {
+    console.log("[TRANSLATION] Mundari → Hindi");
+    console.log("[TRANSLATION] Recognized input:", query);
+  } else {
+    console.log("[TRANSLATION] Hindi → Mundari");
+    console.log("[TRANSLATION] Input:", query);
+  }
   let res = null;
 
   // 1. Live API query
@@ -7299,16 +7520,16 @@ async function processVoiceUtterance(text) {
     const resp = await fetch("/api/translate?text=" + encodeURIComponent(query) + "&dir=" + encodeURIComponent(dir) + "&src_lang=" + encodeURIComponent(srcLang));
     if (resp.ok) {
       const apiRes = await resp.json();
-      if (apiRes && apiRes.status !== "OUT_OF_VOCABULARY_UNVERIFIED") {
+      if (apiRes && apiRes.status !== "OUT_OF_VOCABULARY_UNVERIFIED" && apiRes.translated_text) {
         const isVerified = (apiRes.status === "VERIFIED_EDUCATIONAL_LOOKUP" || apiRes.translation_source === "EDUCATIONAL_REGISTRY");
         res = {
           source: apiRes.source_text || query,
-          mundari: apiRes.translated_text,
+          mundari: (dir === "unr-hi") ? query : apiRes.translated_text,
           hindi: (dir === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || query),
           targetText: apiRes.translated_text,
           phonetic: (apiRes.metadata && apiRes.metadata.mundari_phonetic) || "",
           numeral: (apiRes.metadata && apiRes.metadata.number) || null,
-          audio_file: (apiRes.metadata && apiRes.metadata.audio_asset) || null,
+          audio_file: (dir === "unr-hi") ? null : ((apiRes.metadata && apiRes.metadata.audio_asset) || null),
           status: isVerified ? "VERIFIED_EDUCATIONAL_LOOKUP" : (apiRes.status || "NEURAL_TRANSLATION_GENERATED"),
           badge: isVerified ? "VERIFIED EDUCATIONAL" : "AI TRANSLATION — REVIEW",
           badgeClass: isVerified ? "verified" : "warn",
@@ -7317,28 +7538,20 @@ async function processVoiceUtterance(text) {
           isBroadcastable: isVerified,
           direction: dir
         };
-      } else {
-        res = {
-          source: query,
-          mundari: "This sentence could not be translated yet.",
-          targetText: "This sentence could not be translated yet.",
-          status: "OUT_OF_VOCABULARY",
-          badge: "TRANSLATION UNAVAILABLE",
-          badgeClass: "danger",
-          confidence: 0,
-          provenance: "Unsupported Input",
-          isBroadcastable: false,
-          audio_file: null,
-          direction: dir
-        };
       }
     }
   } catch (err) {
     // Local fallback
   }
 
-  if (!res) {
+  if (!res || res.status === "OUT_OF_VOCABULARY") {
     res = backendTranslate(query, dir);
+  }
+
+  if (dir === "unr-hi") {
+    console.log("[TRANSLATION] Hindi result:", (res && (res.hindi || res.translated_text || res.targetText)) || "N/A");
+  } else {
+    console.log("[TRANSLATION] Mundari result:", (res && (res.mundari || res.translated_text || res.targetText)) || "N/A");
   }
 
   voiceState.isProcessing = false;
@@ -7346,17 +7559,22 @@ async function processVoiceUtterance(text) {
   state.lastTranslation = res;
   updateTranslationUI(res);
 
-  if ($("#hindi")) $("#hindi").value = query;
-  if ($("#mundari")) $("#mundari").value = res.mundari;
+  if (dir === "unr-hi") {
+    if ($("#hindi")) $("#hindi").value = res.hindi || res.targetText || "";
+    if ($("#mundari")) $("#mundari").value = query;
+  } else {
+    if ($("#hindi")) $("#hindi").value = query;
+    if ($("#mundari")) $("#mundari").value = res.mundari || res.targetText || "";
+  }
 
   // Add to spoken translation history
   addVoiceHistoryRecord({
-    hindi: (dir === "unr-hi") ? res.mundari : query,
-    mundari: (dir === "unr-hi") ? query : res.mundari,
+    hindi: (dir === "unr-hi") ? (res.hindi || res.targetText) : query,
+    mundari: (dir === "unr-hi") ? query : (res.mundari || res.targetText),
     status: res.status,
     badge: res.badge,
     badgeClass: res.badgeClass,
-    audio_file: res.audio_file,
+    audio_file: (dir === "unr-hi") ? null : res.audio_file,
     time: now()
   });
 
@@ -7365,15 +7583,15 @@ async function processVoiceUtterance(text) {
     let d = {
       type: "translation",
       direction: dir,
-      hindi: query,
-      mundari: res.mundari,
+      hindi: (dir === "unr-hi") ? (res.hindi || res.targetText) : query,
+      mundari: (dir === "unr-hi") ? query : res.mundari,
       phonetic: res.phonetic,
       numeral: res.numeral,
-      audio_file: res.audio_file,
+      audio_file: (dir === "unr-hi") ? null : res.audio_file,
       status: res.status,
       badge: res.badge,
       time: now(),
-      teacher: "Teacher"
+      teacher: state.studentName || "Student"
     };
     sendBus(d);
     addTeacherFeed(d);
@@ -7415,21 +7633,20 @@ async function processVoiceUtterance(text) {
 }
 
 function playMundariVoiceAudio(res, onComplete) {
-  const isRev = state.translationDirection === "unr-hi";
-  const done = () => {
-    if (typeof onComplete === "function") onComplete();
-  };
-
-  const textToPronounce = (res && (res.mundari || res.translated_text || res.targetText)) || "";
-  const lang = isRev ? "hindi" : "mundari";
+  const isRev = (res && res.direction === "unr-hi") || (state.translationDirection === "unr-hi");
+  const targetLang = isRev ? "hi" : "mundari";
+  const sourceLang = isRev ? "mundari" : "hindi";
+  const textToPronounce = isRev
+    ? (res && (res.hindi || res.translated_text || res.targetText || (res.source !== res.mundari ? res.mundari : "")))
+    : (res && (res.mundari || res.translated_text || res.targetText));
 
   if (!textToPronounce || textToPronounce.startsWith("[")) {
-    done();
+    if (typeof onComplete === "function") onComplete();
     return;
   }
 
-  // Preserve test fixture compatibility in Node test environments
-  if (res.audio_file && typeof process !== "undefined") {
+  // Preserve test fixture compatibility in Node test environments ONLY for forward Mundari with local wav asset
+  if (!isRev && res.audio_file && typeof process !== "undefined") {
     voiceState.isSpeaking = true;
     setVoiceState(VoiceStateEnum.SPEAKING);
     const cleanUrl = res.audio_file.replace(/\\/g, "/");
@@ -7437,34 +7654,28 @@ function playMundariVoiceAudio(res, onComplete) {
     voiceState.activeAudio = a;
     a.onended = () => {
       voiceState.activeAudio = null;
-      done();
+      voiceState.isSpeaking = false;
+      if (typeof onComplete === "function") onComplete();
     };
     a.onerror = () => {
       voiceState.activeAudio = null;
-      done();
+      voiceState.isSpeaking = false;
+      if (typeof onComplete === "function") onComplete();
     };
     a.play().catch(() => {
       voiceState.activeAudio = null;
-      done();
+      voiceState.isSpeaking = false;
+      if (typeof onComplete === "function") onComplete();
     });
     return;
   }
 
-  voiceState.isSpeaking = true;
-  setVoiceState(VoiceStateEnum.SPEAKING);
-  playBackendPronunciation({
+  playTranslatedSpeech({
     text: textToPronounce,
-    language: lang,
-    onStart: () => {
-      voiceState.isSpeaking = true;
-      setVoiceState(VoiceStateEnum.SPEAKING);
-    },
-    onEnd: () => {
-      done();
-    },
-    onError: () => {
-      done();
-    }
+    sourceLang: sourceLang,
+    targetLang: targetLang,
+    onEnd: onComplete,
+    onError: onComplete
   });
 }
 
@@ -7524,13 +7735,18 @@ window.voiceController = {
       await new Promise(r => setTimeout(r, 60));
     }
     setVoiceState(VoiceStateEnum.PROCESSING);
-    if ($("#hindi")) $("#hindi").value = text;
+    if (state.translationDirection === "unr-hi" || state.inputMode === "mundari") {
+      if ($("#mundari")) $("#mundari").value = text;
+    } else {
+      if ($("#hindi")) $("#hindi").value = text;
+    }
     await processVoiceUtterance(text);
   },
   simulateBargeIn: () => {
     return cancelSpeechAudio();
   },
-  playPronunciation: playBackendPronunciation
+  playPronunciation: playBackendPronunciation,
+  playTranslatedSpeech: playTranslatedSpeech
 };
 window.playBackendPronunciation = playBackendPronunciation;
 const demoHinglishList = ["namaste", "baitho", "kitab kholo", "paanch", "ek se das tak gino"];
@@ -9589,13 +9805,123 @@ function studentAudio() {
   const d = state.lastTranslation;
   const isRev = (d.direction === "unr-hi");
   const targetText = isRev ? (d.hindi || d.translated_text || d.mundari) : d.mundari;
-  const lang = isRev ? "hindi" : "mundari";
+  const lang = isRev ? "hi" : "mundari";
 
-  playBackendPronunciation({
+  playTranslatedSpeech({
     text: targetText,
-    language: lang
+    sourceLang: isRev ? "mundari" : "hindi",
+    targetLang: lang
   });
 }
+
+/**
+ * Student Live Classroom Reaction & Reply Handler
+ * Extracts clean Mundari text, queries /api/translate (or fallback),
+ * updates student receiver view, emits debug logs,
+ * speaks the Hindi translated response via playTranslatedSpeech,
+ * and broadcasts the reply to teacher console.
+ */
+async function sendStudentReply(rawText) {
+  if (!rawText || !rawText.trim()) return;
+  const raw = rawText.trim();
+
+  // Extract clean Mundari phrase:
+  // e.g. "हे (Yes)" -> "हे"
+  // e.g. "इतुअनाञ (I understand)" -> "इतुअनाञ"
+  // e.g. "👍 Understood (इतुअनाञ)" -> "इतुअनाञ"
+  let cleanMundari = raw;
+  const devMatch = raw.match(/[\u0900-\u097F\s]+/);
+  if (devMatch && devMatch[0].trim()) {
+    cleanMundari = devMatch[0].trim();
+  } else if (raw.toLowerCase().includes("repeat")) {
+    cleanMundari = "गुरु गोमके नेना काजी आर एमेप";
+  }
+
+  // Canonical reply dictionary for quick classroom affirmations
+  const replyMap = {
+    "हे": "हाँ",
+    "का": "नहीं",
+    "इतुअनाञ": "मुझे समझ आ गया",
+    "काञ इतुअना": "मुझे समझ नहीं आया",
+    "गुरु गोमके नेना काजी आर एमेप": "गुरु जी, फिर से बताइए",
+    "ऐंग काजी बुझाओ केदा": "मुझे समझ में आ गया।"
+  };
+
+  console.log("[STUDENT VOICE] Student reply initiated: " + cleanMundari);
+  toast("Replying: " + cleanMundari + "...");
+
+  let hindiResult = replyMap[cleanMundari] || null;
+
+  try {
+    const resp = await fetch("/api/translate?text=" + encodeURIComponent(cleanMundari) + "&dir=unr-hi&src_lang=mundari");
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data && data.status !== "OUT_OF_VOCABULARY_UNVERIFIED" && data.translated_text) {
+        hindiResult = data.translated_text;
+      }
+    }
+  } catch (e) {
+    console.warn("Translation API fetch error:", e);
+  }
+
+  if (!hindiResult) {
+    const local = backendTranslate(cleanMundari, "unr-hi");
+    if (local && local.status !== "OUT_OF_VOCABULARY" && local.hindi) {
+      hindiResult = local.hindi;
+    } else {
+      hindiResult = replyMap[cleanMundari] || cleanMundari;
+    }
+  }
+
+  console.log("[TRANSLATION] Mundari → Hindi");
+  console.log("[TRANSLATION] Mundari input: " + cleanMundari);
+  console.log("[TRANSLATION] Hindi result: " + hindiResult);
+
+  // Update student view translation display
+  state.lastTranslation = {
+    direction: "unr-hi",
+    hindi: cleanMundari,
+    mundari: hindiResult,
+    targetText: hindiResult,
+    phonetic: "",
+    status: "VERIFIED_EDUCATIONAL_LOOKUP",
+    badge: "STUDENT REPLY",
+    badgeClass: "verified",
+    time: now(),
+    teacher: state.studentName || "Student"
+  };
+
+  render();
+
+  // Send reply over classroom bus to teacher console
+  sendBus({
+    type: "student_reply",
+    name: state.studentName || "Student",
+    text: cleanMundari + " (" + hindiResult + ")",
+    hindi: hindiResult,
+    mundari: cleanMundari,
+    time: now()
+  });
+
+  toast("Speaking Hindi response: \"" + hindiResult + "\"");
+
+  // Play Hindi pronunciation
+  playTranslatedSpeech({
+    text: hindiResult,
+    sourceLang: "mundari",
+    targetLang: "hindi",
+    onStart: () => {
+      toast("Speaking Hindi: \"" + hindiResult + "\"");
+    },
+    onEnd: () => {
+      toast("Response spoken.");
+    },
+    onError: (err) => {
+      toast("Translation available, but Hindi audio could not be played.");
+    }
+  });
+}
+window.sendStudentReply = sendStudentReply;
 
 function speakMundari(text, audioUrl) {
   if (typeof process !== "undefined" && audioUrl) {
@@ -10243,6 +10569,9 @@ function restartPracticeQuiz() {
 // STUDENT VOICE MODE (CONNECTED 3-NODE PIPELINE WITH 3D ORB)
 // ---------------------------------------------------------------------------
 function studentVoiceMode() {
+  state.translationDirection = "unr-hi";
+  state.inputMode = "mundari";
+
   const isListening = (typeof voiceState !== 'undefined') ? !!voiceState.sessionActive : false;
   const currentVoiceState = (typeof voiceState !== 'undefined' && voiceState.state) ? voiceState.state : 'ready';
   const recentHistory = (state.feed || []).slice(0, 5);
@@ -10273,7 +10602,7 @@ function studentVoiceMode() {
         <span style="background:rgba(14,165,233,0.2);color:#7dd3fc;border:1px solid rgba(14,165,233,0.4);border-radius:999px;padding:4px 12px;font-size:11.5px;font-weight:800">
           Continuous Mode
         </span>
-        <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border-radius:50%;width:32px;height:32px;border:none;display:grid;place-items:center;cursor:pointer" onclick="speakMundari('जोहार')">🔊</button>
+        <button class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border-radius:50%;width:32px;height:32px;border:none;display:grid;place-items:center;cursor:pointer" onclick="submitStudentMundariPhrase('जोहार')">🔊</button>
       </div>
     </div>
 
@@ -10363,6 +10692,17 @@ function studentVoiceMode() {
           ⚡ Interrupt Audio
         </button>
       </div>
+
+      <!-- Typed Mundari Input Option -->
+      <div class="student-typed-input-bar" style="margin:18px auto 0;max-width:540px;display:flex;gap:8px">
+        <input id="studentMundariInput" type="text" placeholder="Or type Mundari here (e.g. ऐंग काजी बुझाओ केदा, मिअद)..."
+               style="flex:1;padding:12px 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.25);background:rgba(0,0,0,0.3);color:#fff;font-size:14px;outline:none"
+               onkeydown="if(event.key==='Enter') submitStudentTypedMundari()">
+        <button class="btn" onclick="submitStudentTypedMundari()"
+                style="padding:12px 22px;border-radius:999px;background:#22c55e;color:#fff;font-weight:800;border:none;cursor:pointer">
+          Send ➔
+        </button>
+      </div>
     </div>
 
     <!-- Quick Phrases Row (5 Verified Phrases) -->
@@ -10372,23 +10712,23 @@ function studentVoiceMode() {
       </div>
       <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
         <button class="voice-phrase-chip" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:6px 14px;color:#fff;font-size:12px;font-weight:700;cursor:pointer"
-                onclick="speakMundari('ऐंग काजी बुझाओ केदा')">
+                onclick="submitStudentMundariPhrase('ऐंग काजी बुझाओ केदा')">
           ✔ Aing kaji bujhao keda. (मुझे समझ में आ गया।)
         </button>
         <button class="voice-phrase-chip" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:6px 14px;color:#fff;font-size:12px;font-weight:700;cursor:pointer"
-                onclick="speakMundari('गुरु गोमके नेना काजी आर एमेप')">
+                onclick="submitStudentMundariPhrase('गुरु गोमके नेना काजी आर एमेप')">
           ✔ Guru gomke, nena kaji aar emep. (गुरु जी, फिर से बताइए)
         </button>
         <button class="voice-phrase-chip" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:6px 14px;color:#fff;font-size:12px;font-weight:700;cursor:pointer"
-                onclick="speakMundari('ऐंगा नाद कुड़ी मेनाअ')">
+                onclick="submitStudentMundariPhrase('ऐंगा नाद कुड़ी मेनाअ')">
           ✔ Ainga naad kudi menaa. (मेरी एक बहन है)
         </button>
         <button class="voice-phrase-chip" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:6px 14px;color:#fff;font-size:12px;font-weight:700;cursor:pointer"
-                onclick="speakMundari('सेब चिकिता दान रे जोवा')">
+                onclick="submitStudentMundariPhrase('सेब चिकिता दान रे जोवा')">
           ✔ Seb chikita dan re jowā? (सेब को क्या कहते हैं?)
         </button>
         <button class="voice-phrase-chip" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:6px 14px;color:#fff;font-size:12px;font-weight:700;cursor:pointer"
-                onclick="speakMundari('ऐंग माद इहोन गेलिया धाब लेखा केदा')">
+                onclick="submitStudentMundariPhrase('ऐंग माद इहोन गेलिया धाब लेखा केदा')">
           ✔ Aing mad ihon gelea dhab lekha keda. (मुझे गिनती आती है)
         </button>
       </div>
@@ -10422,7 +10762,7 @@ function studentVoiceMode() {
             <span style="font-size:14px;font-weight:800;color:#ea580c">${esc(h.translatedText)}</span>
           </div>
           <button class="btn" style="background:#dcfce7;color:#16a34a;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;border:none;cursor:pointer"
-                  onclick="speakMundari('${esc(h.translatedText)}')">🔊</button>
+                  onclick="playTranslatedSpeech({text: '${esc(h.translatedText)}', targetLang: 'hi', sourceLang: 'mundari'})">🔊</button>
         </div>
       `).join('') : `
         <div style="font-size:13px;color:var(--muted);text-align:center;padding:20px 0">
@@ -10436,6 +10776,29 @@ function studentVoiceMode() {
     💡 <b>Browser Speech Recognition Disclosure:</b> WEB PROTOTYPE ONLY — browser speech recognition may require network connectivity depending on browser engine. Production Android will use the local speech pipeline.
   </div>`;
 }
+
+function submitStudentMundariPhrase(phrase) {
+  state.translationDirection = "unr-hi";
+  state.inputMode = "mundari";
+  console.log("[STUDENT VOICE] Selected Mundari phrase: " + phrase);
+  toast("Selected: " + phrase);
+  processVoiceUtterance(phrase);
+}
+window.submitStudentMundariPhrase = submitStudentMundariPhrase;
+
+async function submitStudentTypedMundari() {
+  const inp = document.getElementById("studentMundariInput");
+  if (!inp) return;
+  const val = inp.value.trim();
+  if (!val) return;
+  inp.value = "";
+  state.translationDirection = "unr-hi";
+  state.inputMode = "mundari";
+  console.log("[STUDENT VOICE] Typed Mundari input: " + val);
+  toast("Sent: " + val);
+  await processVoiceUtterance(val);
+}
+window.submitStudentTypedMundari = submitStudentTypedMundari;
 
 // ---------------------------------------------------------------------------
 // STUDENT PREFERENCES / SETTINGS (Speed, Script, Barge-in, Offline Cache)

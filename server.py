@@ -219,6 +219,15 @@ class PrototypeBridgeHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(status, ensure_ascii=False).encode("utf-8"))
             return
 
+        # Pronunciation GET endpoint
+        if path == "/api/pronunciation":
+            params = urllib.parse.parse_qs(parsed.query)
+            text = params.get("text", [""])[0]
+            language = params.get("language", [None])[0] or params.get("lang", ["hi"])[0]
+            teacher_voice_req = params.get("teacher_voice", ["false"])[0].lower() in ("true", "1", "yes")
+            self._handle_pronunciation(text, language, teacher_voice_req)
+            return
+
         # Serve static content from content/ or data/ directory if requested
         if path.startswith("/content/") or path.startswith("/data/"):
             rel_path = path.lstrip("/")
@@ -331,6 +340,66 @@ class PrototypeBridgeHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(resp, ensure_ascii=False).encode("utf-8"))
             return
 
+    def _handle_pronunciation(self, text, language, teacher_voice_req=False):
+        result, error = pronunciation_service.synthesize(text, language, use_teacher_voice=teacher_voice_req)
+
+        if error:
+            code = error.get("http_code", 400)
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.end_headers()
+            resp_payload = {
+                "status": error.get("status", "ERROR"),
+                "message": error.get("message", "Pronunciation generation failed."),
+                "language": error.get("language"),
+                "details": error.get("details")
+            }
+            self.wfile.write(json.dumps(resp_payload, ensure_ascii=False).encode("utf-8"))
+            return
+
+        # Determine teacher voice response header
+        if result.teacher_voice_applied:
+            tv_header = "ACTIVE"
+        elif teacher_voice_req:
+            if result.language == "mundari" and not (
+                pronunciation_service.registry_provider and pronunciation_service.registry_provider.has_entry(text, "mundari")
+            ):
+                tv_header = "BLOCKED_UNCONTROLLED_MUNDARI"
+            else:
+                tv_header = "INACTIVE"
+        else:
+            tv_header = "INACTIVE"
+
+        # Success: Return binary WAV audio with proper headers
+        qg_passed = result.quality_gate_status != "AUDIO_FAILED"
+        self.send_response(200)
+        self.send_header("Content-Type", "audio/wav")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header(
+            "Access-Control-Expose-Headers",
+            "X-Pronunciation-Status, X-Pronunciation-Quality-Gate, X-Pronunciation-Language, "
+            "X-Pronunciation-Engine, X-Pronunciation-Source, X-Pronunciation-Cache, "
+            "X-Pronunciation-Validation-Status, X-Pronunciation-Teacher-Voice"
+        )
+        self.send_header("Content-Length", str(len(result.audio_bytes)))
+        self.send_header("X-Pronunciation-Status", result.quality_gate_status)
+        self.send_header("X-Pronunciation-Quality-Gate", "PASSED" if qg_passed else "FAILED")
+        self.send_header("X-Pronunciation-Language", result.language)
+        self.send_header("X-Pronunciation-Engine", result.engine_name)
+        self.send_header("X-Pronunciation-Source", result.source_type)
+        self.send_header("X-Pronunciation-Cache", "HIT" if result.is_cached else "MISS")
+        self.send_header("X-Pronunciation-Validation-Status", result.verification_status)
+        self.send_header("X-Pronunciation-Teacher-Voice", tv_header)
+        self.end_headers()
+        self.wfile.write(result.audio_bytes)
+
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        path = parsed.path
+
         if path == "/api/pronunciation":
             content_len = int(self.headers.get("Content-Length", 0))
             post_body = self.rfile.read(content_len).decode("utf-8") if content_len > 0 else ""
@@ -341,55 +410,9 @@ class PrototypeBridgeHandler(SimpleHTTPRequestHandler):
                 data = {k: v[0] for k, v in data.items()}
 
             text = data.get("text")
-            language = data.get("language")
+            language = data.get("language") or data.get("lang")
             teacher_voice_req = bool(data.get("teacher_voice", False))
-
-            result, error = pronunciation_service.synthesize(text, language, use_teacher_voice=teacher_voice_req)
-
-            if error:
-                code = error.get("http_code", 400)
-                self.send_response(code)
-                self.send_header("Content-Type", "application/json; charset=utf-8")
-                self.send_header("Access-Control-Allow-Origin", "*")
-                self.send_header("Access-Control-Allow-Headers", "Content-Type")
-                self.end_headers()
-                resp_payload = {
-                    "status": error.get("status", "ERROR"),
-                    "message": error.get("message", "Pronunciation generation failed."),
-                    "language": error.get("language"),
-                    "details": error.get("details")
-                }
-                self.wfile.write(json.dumps(resp_payload, ensure_ascii=False).encode("utf-8"))
-                return
-
-            # Determine teacher voice response header
-            if result.teacher_voice_applied:
-                tv_header = "ACTIVE"
-            elif teacher_voice_req:
-                if result.language == "mundari" and not (
-                    pronunciation_service.registry_provider and pronunciation_service.registry_provider.has_entry(text, "mundari")
-                ):
-                    tv_header = "BLOCKED_UNCONTROLLED_MUNDARI"
-                else:
-                    tv_header = "INACTIVE"
-            else:
-                tv_header = "INACTIVE"
-
-            # Success: Return binary WAV audio with proper headers
-            self.send_response(200)
-            self.send_header("Content-Type", "audio/wav")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            self.send_header("Access-Control-Allow-Headers", "Content-Type")
-            self.send_header("Access-Control-Expose-Headers", "X-Pronunciation-Language, X-Pronunciation-Engine, X-Pronunciation-Source, X-Pronunciation-Cache, X-Pronunciation-Validation-Status, X-Pronunciation-Teacher-Voice")
-            self.send_header("Content-Length", str(len(result.audio_bytes)))
-            self.send_header("X-Pronunciation-Language", result.language)
-            self.send_header("X-Pronunciation-Engine", result.engine_name)
-            self.send_header("X-Pronunciation-Source", result.source_type)
-            self.send_header("X-Pronunciation-Cache", "HIT" if result.is_cached else "MISS")
-            self.send_header("X-Pronunciation-Validation-Status", result.verification_status)
-            self.send_header("X-Pronunciation-Teacher-Voice", tv_header)
-            self.end_headers()
-            self.wfile.write(result.audio_bytes)
+            self._handle_pronunciation(text, language, teacher_voice_req)
             return
 
         if path in ("/api/asr", "/api/speech-recognize"):

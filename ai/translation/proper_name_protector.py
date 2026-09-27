@@ -61,7 +61,7 @@ class ProperNameProtector:
     NEGATIVE_VOCABULARY: Set[str] = {
         # --- Numbers 1-20 (Hindi, Hinglish, Mundari) ---
         "एक", "दो", "तीन", "चार", "पाँच", "पांच", "छह", "छः", "सात", "आठ", "नौ", "दस",
-        "ग्यारह", "बारह", "तेरह", "चौदह", "पंद्रह", "सोलह", "सत्रह", "अठारह", "उन्नीस", "बीस",
+        "ग्यारह", "बारह", "तेरह", "चौदह", "पंद्रह", "पन्द्रह", "सोलह", "सत्रह", "अठारह", "अट्ठारह", "उन्नीस", "उन्इस", "उनिस", "बीस",
         "ek", "do", "teen", "char", "chaar", "paanch", "panch", "chheh", "chhe", "chhah",
         "saat", "aath", "nau", "das", "gyarah", "barah", "terah", "chaudah", "pandrah",
         "solah", "satrah", "atharah", "unnees", "unnis", "bees", "bis",
@@ -98,8 +98,8 @@ class ProperNameProtector:
         "hindi", "mundari", "english", "sanskrit", "urdu",
 
         # --- Greetings, Particles & Discourse ---
-        "नमस्ते", "प्रणाम", "जोहार", "धन्यवाद", "अलविदा", "हाँ", "नहीं", "मत", "कृपया",
-        "namaste", "pranam", "johar", "dhanyawad", "alvida", "haan", "nahi", "nahin", "mat", "kripya",
+        "नमस्ते", "प्रणाम", "जोहार", "सुप्रभात", "हेलो", "धन्यवाद", "अलविदा", "हाँ", "नहीं", "मत", "कृपया",
+        "namaste", "pranam", "johar", "suprabhat", "hello", "dhanyawad", "alvida", "haan", "nahi", "nahin", "mat", "kripya",
 
         # --- Pronouns, Prepositions, Auxiliaries ---
         "मेरा", "मेरी", "मेरे", "तुम्हारा", "तुम्हारी", "तुम्हारे", "आपका", "आपकी", "आपके",
@@ -215,6 +215,11 @@ class ProperNameProtector:
     def __init__(self):
         pass
 
+    KNOWN_DEVANAGARI_PROPER_NAMES: Set[str] = {
+        "राहुल", "प्रिया", "अमित", "बिरसा", "सोमरा", "सुनीता", "रोहन", "अंजलि",
+        "मोहन", "सोहन", "रीता", "नीता", "संजय", "विकास", "दीपक", "पूजा"
+    }
+
     def is_negative_word(self, token: str) -> bool:
         """Checks if a token is an ordinary vocabulary word that must NEVER be shielded as a name."""
         if not token:
@@ -223,6 +228,10 @@ class ProperNameProtector:
         if re.match(r"^__name_\d+__$", norm, re.IGNORECASE):
             return True
         if norm in self.NEGATIVE_VOCABULARY:
+            return True
+        # Check normalized anusvara variant
+        norm_anusvara = norm.replace("\u0901", "\u0902")
+        if norm_anusvara in self.NEGATIVE_VOCABULARY:
             return True
         # Check pure digits
         if norm.isdigit():
@@ -261,6 +270,7 @@ class ProperNameProtector:
         """
         Detects candidate personal proper name spans within the input text.
         Returns a list of (start_idx, end_idx, name_str) sorted by start index.
+        Uses Unicode lookarounds to avoid truncating Devanagari combining marks.
         """
         if not text or not text.strip():
             return []
@@ -272,7 +282,7 @@ class ProperNameProtector:
         # PATTERN 1: Two Names with Conjunction (Rahul और Priya बैठो)
         # -------------------------------------------------------------
         p_two_names = re.finditer(
-            r'\b([A-Za-z\u0900-\u097F]+)\s+(?:और|तथा|एवं|aur|odo|ओड़ोः)\s+([A-Za-z\u0900-\u097F]+)\b',
+            r'(?<![A-Za-z\u0900-\u097F])([A-Za-z\u0900-\u097F]+)\s+(?:और|तथा|एवं|aur|odo|ओड़ोः)\s+([A-Za-z\u0900-\u097F]+)(?![A-Za-z\u0900-\u097F])',
             raw,
             re.IGNORECASE
         )
@@ -300,7 +310,7 @@ class ProperNameProtector:
         # PATTERN 3: Calling Commands ("X को बुलाओ", "X ko bulao", "X के राःएमे")
         # -------------------------------------------------------------
         p_call = re.finditer(
-            r'\b([A-Za-z\u0900-\u097F]+)\s+(?:को\s+(?:बुलाओ|बुलाइए|बुला)|ko\s+(?:bulao|bulaiye|bula)|के\s+(?:राःएमे|केड़ाएमे|राःपे|केड़ापे))\b',
+            r'(?<![A-Za-z\u0900-\u097F])([A-Za-z\u0900-\u097F]+)\s+(?:को\s+(?:बुलाओ|बुलाइए|बुला)|ko\s+(?:bulao|bulaiye|bula)|के\s+(?:राःएमे|केड़ाएमे|राःपे|केड़ापे))(?![A-Za-z\u0900-\u097F])',
             raw,
             re.IGNORECASE
         )
@@ -313,9 +323,9 @@ class ProperNameProtector:
         # PATTERN 4: Direct Person Commands ("X बैठो", "X यहाँ आओ", "X पढ़ो", "X likho")
         # -------------------------------------------------------------
         p_cmd = re.finditer(
-            r'\b([A-Za-z\u0900-\u097F]+)\s+(?:बैठो|बैठिए|यहाँ\s+आओ|यहां\s+आओ|इधर\s+आओ|पढ़ो|पढ़िए|लिखो|लिखिए|गिनो|गिनिए|सुनो|सुनिए|'
+            r'(?<![A-Za-z\u0900-\u097F])([A-Za-z\u0900-\u097F]+)\s+(?:बैठो|बैठिए|यहाँ\s+आओ|यहां\s+आओ|इधर\s+आओ|पढ़ो|पढ़िए|लिखो|लिखिए|गिनो|गिनिए|सुनो|सुनिए|'
             r'baitho|baithiye|yahan\s+aao|idhar\s+aao|padho|padhiye|likho|likhiye|suno|gino|'
-            r'दुबपे|दुबमे|नेताः\s+हिजुमे|हिजुमे|हिजुपे|पाड़ावपे|पाड़ावमे|ओलपे|ओलमे|लेकापे|आयूमपे)\b',
+            r'दुबपे|दुबमे|नेताः\s+हिजुमे|हिजुमे|हिजुपे|पाड़ावपे|पाड़ावमे|ओलपे|ओलमे|लेकापे|आयूमपे)(?![A-Za-z\u0900-\u097F])',
             raw,
             re.IGNORECASE
         )
@@ -328,7 +338,7 @@ class ProperNameProtector:
         # PATTERN 5: Greetings ("नमस्ते X", "जोहार X", "namaste X", "X नमस्ते")
         # -------------------------------------------------------------
         p_greet = re.finditer(
-            r'(?:नमस्ते|प्रणाम|जोहार|namaste|johar)\s+([A-Za-z\u0900-\u097F]+)\b|\b([A-Za-z\u0900-\u097F]+)\s+(?:नमस्ते|प्रणाम|जोहार|namaste|johar)',
+            r'(?:नमस्ते|प्रणाम|जोहार|सुप्रभात|namaste|johar|suprabhat)\s+([A-Za-z\u0900-\u097F]+)(?![A-Za-z\u0900-\u097F])|(?<![A-Za-z\u0900-\u097F])([A-Za-z\u0900-\u097F]+)\s+(?:नमस्ते|प्रणाम|जोहार|सुप्रभात|namaste|johar|suprabhat)',
             raw,
             re.IGNORECASE
         )
@@ -358,35 +368,42 @@ class ProperNameProtector:
         # -------------------------------------------------------------
         has_devanagari = bool(re.search(r'[\u0900-\u097F]', raw))
         if has_devanagari:
-            p_latin_in_deva = re.finditer(r'\b([A-Za-z]{2,})\b', raw)
+            p_latin_in_deva = re.finditer(r'(?<![A-Za-z])([A-Za-z]{2,})(?![A-Za-z])', raw)
             for m in p_latin_in_deva:
                 cand = m.group(1).strip()
                 if not self.is_negative_word(cand):
                     spans.append((m.start(1), m.end(1), cand))
 
         # -------------------------------------------------------------
+        # Token extraction using Unicode lookarounds (preserves all matras)
+        # -------------------------------------------------------------
+        token_iter = re.finditer(r'(?<![A-Za-z\u0900-\u097F])([A-Za-z\u0900-\u097F]+)(?![A-Za-z\u0900-\u097F])', raw)
+        tokens_with_indices = [
+            (m.start(1), m.end(1), m.group(1))
+            for m in token_iter
+        ]
+
+        # -------------------------------------------------------------
         # PATTERN 8: Capitalized Latin Word in Hinglish (Titlecase personal name)
         # e.g., "kal Rahul school gaya tha" -> "Rahul" is capitalized non-first token
         # -------------------------------------------------------------
-        tokens_with_indices = [
-            (m.start(1), m.end(1), m.group(1))
-            for m in re.finditer(r'\b([A-Za-z\u0900-\u097F]+)\b', raw)
-        ]
         for idx, (s_idx, e_idx, token) in enumerate(tokens_with_indices):
-            # If capitalized Latin token
             if re.match(r'^[A-Z][a-z]+$', token) and not self.is_negative_word(token):
-                # If it's not the first word, or if it's the only word in input
                 if idx > 0 or len(tokens_with_indices) == 1:
                     spans.append((s_idx, e_idx, token))
 
         # -------------------------------------------------------------
         # PATTERN 9: Standalone Single Token Name
-        # e.g., "Rahul" or "राहुल"
+        # e.g., "Rahul" (Latin Titlecase) or explicit known Devanagari student name
+        # NEVER match arbitrary standalone Devanagari vocabulary (नमस्ते, केला, etc.)
         # -------------------------------------------------------------
         if len(tokens_with_indices) == 1:
             s_idx, e_idx, token = tokens_with_indices[0]
-            if not self.is_negative_word(token) and len(token) >= 2:
-                spans.append((s_idx, e_idx, token))
+            if not self.is_negative_word(token):
+                if re.match(r'^[A-Z][a-z]+$', token) and len(token) >= 2:
+                    spans.append((s_idx, e_idx, token))
+                elif token in self.KNOWN_DEVANAGARI_PROPER_NAMES:
+                    spans.append((s_idx, e_idx, token))
 
         # Deduplicate and sort spans
         unique_spans: List[Tuple[int, int, str]] = []
@@ -396,7 +413,6 @@ class ProperNameProtector:
         spans.sort(key=lambda x: (x[0], -(x[1] - x[0])))
 
         for s_idx, e_idx, val in spans:
-            # Overlap check
             overlap = False
             for prev_s, prev_e in seen_ranges:
                 if not (e_idx <= prev_s or s_idx >= prev_e):

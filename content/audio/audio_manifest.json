@@ -14,13 +14,13 @@
       "hindi_text": "एक",
       "mundari_text": "मिअद",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_01.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.42,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "9cea592b9fe8ba4e71ea57ec5a5b8c6a39d1a23ba313be138116b9928de8fe6e",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.901221+00:00"
+      "checksum_sha256": "1ee5552d086017b69dfec11c39295f795976a0c29de2517568d2e655cf35013c",
+      "generated_timestamp_iso": "2026-09-27T17:21:40.687704+00:00"
     },
     {
       "content_id": "num_02",
@@ -29,13 +29,13 @@
       "hindi_text": "दो",
       "mundari_text": "बारिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_02.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.68,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "43f92258793a876494fdabd87823ac0332c427d8b0e80a8800a7387d4cd6fec1",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.927972+00:00"
+      "checksum_sha256": "3da8d36a24a77fff18ca86b0113d64e82d8056c5b0baea18d448992afc061347",
+      "generated_timestamp_iso": "2026-09-27T17:21:41.008911+00:00"
     },
     {
       "content_id": "num_03",
@@ -44,13 +44,13 @@
       "hindi_text": "तीन",
       "mundari_text": "अपिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_03.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.44,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "1daaab0ba84feb573a438b687c8517c0a22c5f2244651fc128a44c3b1f140199",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.942036+00:00"
+      "checksum_sha256": "e301c6baa8a7803e254f62bcb0d0c664240c71aa20e9fc981b72242a6d0b2a23",
+      "generated_timestamp_iso": "2026-09-27T17:21:41.186049+00:00"
     },
     {
       "content_id": "num_04",
@@ -59,13 +59,13 @@
       "hindi_text": "चार",
       "mundari_text": "उपुनिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_04.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.54,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "836eac0bc1b35573cbca3e2456b2b02df04d77be2af39cb1da68d6bbe06f7495",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.955579+00:00"
+      "checksum_sha256": "2c0b3caacb64285d1ca570b50750b8ac66af192aba8e9fe49234063ff9529380",
+      "generated_timestamp_iso": "2026-09-27T17:21:41.423676+00:00"
     },
     {
       "content_id": "num_05",
@@ -74,13 +74,13 @@
       "hindi_text": "पाँच",
       "mundari_text": "मोड़ेया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_05.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.59,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "f1db02fe0bd69c2b2ddb09932b5d585221581667658563c4e30efc3a7870a1c6",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.969105+00:00"
+      "checksum_sha256": "eeb736236cf5a852fc172d2b1098ca8d3833e1e95ca2f96dc905d4e13260b4af",
+      "generated_timestamp_iso": "2026-09-27T17:21:41.719644+00:00"
     },
     {
       "content_id": "num_06",
@@ -89,13 +89,13 @@
       "hindi_text": "छह",
       "mundari_text": "तुरिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_06.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.63,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "c399b828b39f6a53ef3c263c6e0011efe6de5b642cc943f9f01778da809f4c46",
-      "generated_timestamp_iso": "2026-09-24T17:05:40.987394+00:00"
+      "checksum_sha256": "b6f4b4b75ed97ed6bf987a76bb16909a2c77cc6c92cec52a0be573fdec16ee02",
+      "generated_timestamp_iso": "2026-09-27T17:21:41.995771+00:00"
     },
     {
       "content_id": "num_07",
@@ -104,13 +104,13 @@
       "hindi_text": "सात",
       "mundari_text": "एयाएया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_07.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.43,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "920dc1bdb1d4fec32e837c18e56d5029846d02675f8db6a78bb85732cf59f524",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.003548+00:00"
+      "checksum_sha256": "276394c49dfb65b3a3924b98892bb229d783071118c22a6572da4c5479cf51af",
+      "generated_timestamp_iso": "2026-09-27T17:21:42.233500+00:00"
     },
     {
       "content_id": "num_08",
@@ -119,13 +119,13 @@
       "hindi_text": "आठ",
       "mundari_text": "इरालिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_08.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.55,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "97f582c6b6abfddab0f36c6d8d9b1d8c65cde09987e19c9dc8ebf92cdcd0e0f1",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.022245+00:00"
+      "checksum_sha256": "4947a5e0afdbe0ef6d13a6092cf4ff4416dc2ec605858c990ed95affbc493fa2",
+      "generated_timestamp_iso": "2026-09-27T17:21:42.466794+00:00"
     },
     {
       "content_id": "num_09",
@@ -134,13 +134,13 @@
       "hindi_text": "नौ",
       "mundari_text": "अरेया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_09.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.5,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "803720b6ecc686bbee63900a2e0db840387aca4e6c1279e41676759ed0556eae",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.039721+00:00"
+      "checksum_sha256": "7e89a82eb161b6f56f008277afeb8ed72bc324449833e085c27c7dbe1e046590",
+      "generated_timestamp_iso": "2026-09-27T17:21:42.677247+00:00"
     },
     {
       "content_id": "num_10",
@@ -149,13 +149,13 @@
       "hindi_text": "दस",
       "mundari_text": "गेलेया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_10.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.61,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "5624837d9b3a8a98ae76eace2fca5a8131b61fdf83c1ca6d41bdaf3258b9c85f",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.058931+00:00"
+      "checksum_sha256": "91968a20e634a15f07d65c073ff15314fbbf70ab8e2069b278de4c56ce6a9fb6",
+      "generated_timestamp_iso": "2026-09-27T17:21:42.980509+00:00"
     },
     {
       "content_id": "num_11",
@@ -164,13 +164,13 @@
       "hindi_text": "ग्यारह",
       "mundari_text": "गेल मिअद",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_11.wav",
-      "duration_sec": 1.41,
+      "duration_sec": 0.55,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "fa2427b887df8bdb838c878d8f0adb4feec5642ab5374f2351b7735303ad6485",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.077190+00:00"
+      "checksum_sha256": "6695cfa6c9a32b7aa4c08c8e918a34e660efdc7d073a63aa5871447bf35b4e88",
+      "generated_timestamp_iso": "2026-09-27T17:21:43.285827+00:00"
     },
     {
       "content_id": "num_12",
@@ -179,13 +179,13 @@
       "hindi_text": "बारह",
       "mundari_text": "गेल बारिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_12.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.87,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "1f6f881404c23b5fc3b2b07791b51bbc39bcfbd2c25e69dfddf292962a6687c0",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.095104+00:00"
+      "checksum_sha256": "c2f02c39a64c7e2c4497e1dfb5b4c0ce004147263a755f6604f071bc2127e73b",
+      "generated_timestamp_iso": "2026-09-27T17:21:43.683412+00:00"
     },
     {
       "content_id": "num_13",
@@ -194,13 +194,13 @@
       "hindi_text": "तेरह",
       "mundari_text": "गेल अपिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_13.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.76,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "39950cdaff6cd4a15c5cf75a9fbf736fc6275e596650b4874def867e013b68e3",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.114050+00:00"
+      "checksum_sha256": "88c1ef7fb72e7b60023ba09ba997972c93cd1dd5af66a8d5fc680c197108d859",
+      "generated_timestamp_iso": "2026-09-27T17:21:44.018238+00:00"
     },
     {
       "content_id": "num_14",
@@ -209,13 +209,13 @@
       "hindi_text": "चौदह",
       "mundari_text": "गेल उपुनिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_14.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.84,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "1495fe1635a9813032135f07748a4fb9883fd7fd12694e09d82e710aa4a8c0fb",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.129525+00:00"
+      "checksum_sha256": "b104993fef8bfac594a88cbdfc72dec7fb0fce752487f3f87bf07510d32b755f",
+      "generated_timestamp_iso": "2026-09-27T17:21:44.363113+00:00"
     },
     {
       "content_id": "num_15",
@@ -224,13 +224,13 @@
       "hindi_text": "पंद्रह",
       "mundari_text": "गेल मोड़ेया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_15.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.87,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "16ed2b39fff16fba93b526ed7d6fd18c7502f5c7f92e472a350ecc038928869f",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.152172+00:00"
+      "checksum_sha256": "1f49a3c7fbd915202f271911fa4eacf5a1734164533c8a78d7fe27214585302a",
+      "generated_timestamp_iso": "2026-09-27T17:21:44.750914+00:00"
     },
     {
       "content_id": "num_16",
@@ -239,13 +239,13 @@
       "hindi_text": "सोलह",
       "mundari_text": "गेल तुरिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_16.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.87,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "a5f8aeaba85a1bf72780d512a404bb22709a9f87821740c837e456020cec6dae",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.170949+00:00"
+      "checksum_sha256": "bb05fc1e3131f6d224ae23c8e068fc40a78cd18d2f864918e8220d85b6777b51",
+      "generated_timestamp_iso": "2026-09-27T17:21:45.112715+00:00"
     },
     {
       "content_id": "num_17",
@@ -254,13 +254,13 @@
       "hindi_text": "सत्रह",
       "mundari_text": "गेल एयाएया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_17.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.67,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "f083882535ccf4cf8976f193c7461b8ec4128e16bfab7bd837417fb2e2354e7a",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.181964+00:00"
+      "checksum_sha256": "9779c208464a71d44707b40fd125891b93e8874bf7eb6f54f5667720ad21cbf4",
+      "generated_timestamp_iso": "2026-09-27T17:21:45.451697+00:00"
     },
     {
       "content_id": "num_18",
@@ -269,13 +269,13 @@
       "hindi_text": "अठारह",
       "mundari_text": "गेल इरालिया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_18.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.86,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "27f3cb95372cfd85dcc900a4804aaa135df2667a50aebfa9f0ea2e7606adb9ac",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.197774+00:00"
+      "checksum_sha256": "b5fdd6900d4d82adb9b0dd44eff5ec0a7ea41ae9ab2a2d10716826464065f7db",
+      "generated_timestamp_iso": "2026-09-27T17:21:45.784899+00:00"
     },
     {
       "content_id": "num_19",
@@ -284,13 +284,13 @@
       "hindi_text": "उन्नीस",
       "mundari_text": "गेल अरेया",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_19.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.78,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "9fc2cb5b384e053a69a53d8985f59c67e92205a6216303a56a3783d55b12bb61",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.209552+00:00"
+      "checksum_sha256": "374e04ae9ff5c43d0b0f2105aaeb29fa93f1691016a4b27f8f94b903b72d33df",
+      "generated_timestamp_iso": "2026-09-27T17:21:46.127704+00:00"
     },
     {
       "content_id": "num_20",
@@ -299,13 +299,13 @@
       "hindi_text": "बीस",
       "mundari_text": "हिसि",
       "audio_file": "content\\audio\\prototype_tts\\numbers\\num_20.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.356,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "0d0c29507202d574063ea34b98a029ee00cceea1826f3563e05871e1c5fbaba4",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.220611+00:00"
+      "checksum_sha256": "03ff9ea022dea890413f25776a915f1eec8979d86890ea839fe1654d78056ff7",
+      "generated_timestamp_iso": "2026-09-27T17:21:46.316732+00:00"
     },
     {
       "content_id": "PHR_GREET_01",
@@ -313,13 +313,13 @@
       "hindi_text": "नमस्ते",
       "mundari_text": "जोहार",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_GREET_01.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.55,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "95ce4e217abcf86eb98904c932818a1b594f1091f5b7fb1658baf2c9fc8779da",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.231577+00:00"
+      "checksum_sha256": "31ae0a401d2268faf5fbfbfcd21bf9503b1d31e3b612b40b57d29362c1e4625c",
+      "generated_timestamp_iso": "2026-09-27T17:21:46.529266+00:00"
     },
     {
       "content_id": "PHR_GREET_02",
@@ -327,13 +327,13 @@
       "hindi_text": "सुप्रभात",
       "mundari_text": "सुप्रभात जोहार",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_GREET_02.wav",
-      "duration_sec": 1.73,
+      "duration_sec": 1.03,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "5924b78669e2a3ffbedea0d9f342ff7526a144859d25b9a5f83bfffa56320e87",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.249677+00:00"
+      "checksum_sha256": "f4ab40e71ab8bc7c85dc2088a1a3b33ef589dea25c1f23b93c8e732efd73a2e0",
+      "generated_timestamp_iso": "2026-09-27T17:21:46.958651+00:00"
     },
     {
       "content_id": "PHR_MGMT_01",
@@ -341,13 +341,13 @@
       "hindi_text": "बैठो",
       "mundari_text": "दुबपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_01.wav",
-      "duration_sec": 0.93,
+      "duration_sec": 0.668,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "9bb74adfff32ab55a43ae5595cca2203dc239c10fdccbf9d58307f3280ece9ce",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.264022+00:00"
+      "checksum_sha256": "567b9ece7d6f46a80b55216ed30cd10906de5892a45d19f73408e02ba08d43c4",
+      "generated_timestamp_iso": "2026-09-27T17:21:47.208675+00:00"
     },
     {
       "content_id": "PHR_MGMT_02",
@@ -355,13 +355,13 @@
       "hindi_text": "खड़े हो जाओ",
       "mundari_text": "तिंगुपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_02.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.74,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "f5d2da3aab632426561dee8d173685558cbfe925fc2b8f02196321ad56c852d5",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.276305+00:00"
+      "checksum_sha256": "093b2f6bfd50000f566bd119b21421e9b767cf3136cba2465189d8af1cc06b6f",
+      "generated_timestamp_iso": "2026-09-27T17:21:47.534324+00:00"
     },
     {
       "content_id": "PHR_MGMT_03",
@@ -369,13 +369,13 @@
       "hindi_text": "इधर देखो",
       "mundari_text": "नेते नेलपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_03.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 1.01,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "5481ea6a4e021101c3e490023e5fae7e6f3f3882079d5525a3815f77cbcd60e4",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.289972+00:00"
+      "checksum_sha256": "63caa58a9412a505ba99b0fa005aeebc84a298f3413498bc618e56f15b4120ed",
+      "generated_timestamp_iso": "2026-09-27T17:21:47.883520+00:00"
     },
     {
       "content_id": "PHR_MGMT_04",
@@ -383,13 +383,13 @@
       "hindi_text": "चुप रहो",
       "mundari_text": "काजी आलोपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_04.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.69,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "03a5cf4eb21230a50a86eafbbdd32d4b1925ecc2ace874bc27a032d027c70a06",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.300840+00:00"
+      "checksum_sha256": "bf24852149731c3c19eceabe93a78595ee6a001f709c8ae204f64eea0732c170",
+      "generated_timestamp_iso": "2026-09-27T17:21:48.207248+00:00"
     },
     {
       "content_id": "PHR_MGMT_05",
@@ -397,13 +397,13 @@
       "hindi_text": "हाथ उठाओ",
       "mundari_text": "ती ओड़ाःपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_05.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.836,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "bcb979dd1a64c387d872c64ff114659ef287397ad5365ffe62fdf23788d6edff",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.312692+00:00"
+      "checksum_sha256": "1e1fc89a722ff759fca8a163ae0e497ee4f80e1cfc4bace36ee9f70c4b572682",
+      "generated_timestamp_iso": "2026-09-27T17:21:48.502854+00:00"
     },
     {
       "content_id": "PHR_MGMT_06",
@@ -411,13 +411,13 @@
       "hindi_text": "किताब खोलो",
       "mundari_text": "पुथी ओड़ाःपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_MGMT_06.wav",
-      "duration_sec": 1.73,
+      "duration_sec": 0.77,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "0aa20105abb18e9b124aa1bc4e7c33f91cdb4feea9e1486f7baf737814a3f4b6",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.322931+00:00"
+      "checksum_sha256": "6cfc17202a2fe81c506ed0f794f00899eb2a57000bee73515ec6891fa1eef41b",
+      "generated_timestamp_iso": "2026-09-27T17:21:48.897719+00:00"
     },
     {
       "content_id": "PHR_ENCR_01",
@@ -425,13 +425,13 @@
       "hindi_text": "बहुत अच्छा",
       "mundari_text": "खूब बुगी",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_ENCR_01.wav",
-      "duration_sec": 1.41,
+      "duration_sec": 0.67,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "85a6eeba73690b9d18c43edda0f7fc75b30992ae5ab144406dc60905b951bb45",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.335033+00:00"
+      "checksum_sha256": "d1c8b915ef3a98af9831606270c9a054bdc2f53a74dcd6a7f24baaeb11956ade",
+      "generated_timestamp_iso": "2026-09-27T17:21:49.175994+00:00"
     },
     {
       "content_id": "PHR_ENCR_02",
@@ -439,13 +439,13 @@
       "hindi_text": "शाबाश",
       "mundari_text": "बुगी कामी",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_ENCR_02.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.68,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "9e02635db9217b4637c7519c9e77b3c15ed6bbd31f8b4bb72a21f09df2dd8568",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.347786+00:00"
+      "checksum_sha256": "574490a1d5f825014a60bc239220eb57afa58421e528d87bca1f8313262a92d2",
+      "generated_timestamp_iso": "2026-09-27T17:21:49.468670+00:00"
     },
     {
       "content_id": "PHR_ENCR_03",
@@ -453,13 +453,13 @@
       "hindi_text": "फिर से प्रयास करो",
       "mundari_text": "ओड़ोः मिसा चेष्टापे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_ENCR_03.wav",
-      "duration_sec": 2.37,
+      "duration_sec": 1.32,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "bf14f9963be2bb4471201c483f309a4377a07f259c9b9314907461c9eb0f90ee",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.366983+00:00"
+      "checksum_sha256": "a98c05816e5b950e9b39aa2aaa3644c57f15707686ef791832f177424eafbec6",
+      "generated_timestamp_iso": "2026-09-27T17:21:50.022853+00:00"
     },
     {
       "content_id": "PHR_ENCR_04",
@@ -467,13 +467,13 @@
       "hindi_text": "सही उत्तर",
       "mundari_text": "सौरी उत्तर",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_ENCR_04.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.51,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "83bedbabee0686da04fb32108528339676c1dbbb99961ddee6844f1d60776dcd",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.380965+00:00"
+      "checksum_sha256": "7792d06e9d2070652e7d7301fd4bef837c74e25715c07cc8431cea80f7a987df",
+      "generated_timestamp_iso": "2026-09-27T17:21:50.252761+00:00"
     },
     {
       "content_id": "PHR_NUM_01",
@@ -481,13 +481,13 @@
       "hindi_text": "गिनो",
       "mundari_text": "लेकापे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_NUM_01.wav",
-      "duration_sec": 1.09,
+      "duration_sec": 0.66,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "ccfb810be006ae1577991dca20672f6a28b491efb9c33bb4530e18928a3cd7df",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.392271+00:00"
+      "checksum_sha256": "10d486e0575e7d395177dff81a39b0a73da404c94552220eb2a1b32d21b4bab7",
+      "generated_timestamp_iso": "2026-09-27T17:21:50.541175+00:00"
     },
     {
       "content_id": "PHR_NUM_02",
@@ -495,13 +495,13 @@
       "hindi_text": "कितने हैं",
       "mundari_text": "चिनाः मेनाः",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_NUM_02.wav",
-      "duration_sec": 1.57,
+      "duration_sec": 0.8,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "c3c0f4b1299a6d9bdc4b167f1d496a102ba85f06707c677ff7bbf9fd13fd42d4",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.404579+00:00"
+      "checksum_sha256": "de82a94856ae7a4c0d084dabe68ff186b2e541e1a680b73bbb1919edb3231827",
+      "generated_timestamp_iso": "2026-09-27T17:21:50.899087+00:00"
     },
     {
       "content_id": "PHR_NUM_03",
@@ -509,13 +509,13 @@
       "hindi_text": "एक साथ बोलो",
       "mundari_text": "मिदते काजीपे",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_NUM_03.wav",
-      "duration_sec": 1.73,
+      "duration_sec": 1.17,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "0f137b7241d1552e8c8f81c6bc278176eb1815cf9786b0921e2575edbeca5578",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.414920+00:00"
+      "checksum_sha256": "873f65feecf786208d0ebb0b02dd55bb74b0a8e769a4858a4121153ab12fb353",
+      "generated_timestamp_iso": "2026-09-27T17:21:51.315556+00:00"
     },
     {
       "content_id": "PHR_NUM_04",
@@ -523,13 +523,13 @@
       "hindi_text": "यह कौन सी संख्या है",
       "mundari_text": "नेआ चिनाः संख्या तना",
       "audio_file": "content\\audio\\prototype_tts\\phrases\\PHR_NUM_04.wav",
-      "duration_sec": 2.69,
+      "duration_sec": 1.61,
       "synthesis_model": "facebook/mms-tts-unr",
       "model_version": "1.0.0 (VITS-36.3M)",
       "verification_status": "SYNTHETIC_PROTOTYPE (PENDING HUMAN VALIDATION)",
       "is_synthetic": true,
-      "checksum_sha256": "870d1e08dd3bf633bc4e5d7ef49458628b9515a1935477003fbf8dce83ebca8c",
-      "generated_timestamp_iso": "2026-09-24T17:05:41.434828+00:00"
+      "checksum_sha256": "a1ae5e45a667d5813d35021d69e1682aa5852a1d7128eaf9841ef64870272c76",
+      "generated_timestamp_iso": "2026-09-27T17:21:51.858841+00:00"
     }
   ]
 }

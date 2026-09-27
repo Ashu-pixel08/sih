@@ -1,0 +1,116 @@
+{
+  "manifest_version": "1.0.0",
+  "description": "Pre-rendered, deterministic offline audio assets for Bhasha Setu Golden Demo Set",
+  "policy": {
+    "anti_hallucination_mandate": "Zero synthetic speech is labeled as human verified.",
+    "deterministic_synthesis": "Seeded torch generators guarantee byte-level reproducible waveforms.",
+    "acoustic_quality_gate": "All assets verified for RMS, clipping, silence duration, and valid WAV headers."
+  },
+  "created_at": "2026-09-27T16:37:58.788435+00:00",
+  "total_items": 3,
+  "items": [
+    {
+      "id": "hi_to_mundari_001",
+      "demo_id": "SEL_HI_05",
+      "flow": "Flow A: Hindi -> Mundari",
+      "source_text": "यह कौन सी संख्या है",
+      "normalized_text": "यह कौन सी संख्या है",
+      "target_text": "नेआ चिनाः संख्या तना",
+      "language": "mundari",
+      "provider": "vits_tts_provider",
+      "model": "facebook/mms-tts-unr",
+      "version": "1.0.0",
+      "phonological_layer": "devanagari_to_odia_canonical_v2",
+      "audio_file": "hi_to_mundari_001.wav",
+      "alias_files": [
+        "SEL_HI_05.wav"
+      ],
+      "sample_rate": 16000,
+      "channels": 1,
+      "bit_depth": 16,
+      "duration_sec": 1.61,
+      "file_size_bytes": 51564,
+      "sha256": "a1ae5e45a667d5813d35021d69e1682aa5852a1d7128eaf9841ef64870272c76",
+      "quality_gate": {
+        "passed": true,
+        "status": "AUDIO_PROTOTYPE_PENDING_VALIDATION",
+        "rms_dbfs": -13.29,
+        "peak_dbfs": -0.92,
+        "clipping_samples": 0,
+        "silence_ratio": 0.333,
+        "max_silence_run_ms": 270.0
+      },
+      "validation_status": "AUDIO_PROTOTYPE_PENDING_VALIDATION",
+      "provenance": "MMS-TTS-UNR (VITS NEURAL ACOUSTIC SYNTHESIS; STRICTLY PROTOTYPE PENDING NATIVE SPEAKER VALIDATION)",
+      "generated_timestamp": "2026-09-27T16:37:57.153140+00:00"
+    },
+    {
+      "id": "mundari_to_hi_001",
+      "demo_id": "SEL_UNR_02",
+      "flow": "Flow B: Mundari -> Hindi",
+      "source_text": "नअःदो अइंग लेकायाइंग गेलबर जकेद्।",
+      "normalized_text": null,
+      "target_text": "अब मैं गिनती करूँगा बारह तक",
+      "language": "hindi",
+      "provider": "vits_tts_provider",
+      "model": "facebook/mms-tts-hin",
+      "version": "1.0.0",
+      "phonological_layer": "devanagari_vits_canonical",
+      "audio_file": "mundari_to_hi_001.wav",
+      "alias_files": [],
+      "sample_rate": 16000,
+      "channels": 1,
+      "bit_depth": 16,
+      "duration_sec": 1.85,
+      "file_size_bytes": 59244,
+      "sha256": "e8a47723c874e4678b2e8543869975e6e9bb6f052c9cb44ec9e7222e1eaced21",
+      "quality_gate": {
+        "passed": true,
+        "status": "AUDIO_SYNTHETIC_UNVERIFIED",
+        "rms_dbfs": -16.03,
+        "peak_dbfs": -0.92,
+        "clipping_samples": 0,
+        "silence_ratio": 0.137,
+        "max_silence_run_ms": 70.0
+      },
+      "validation_status": "AUDIO_SYNTHETIC_UNVERIFIED",
+      "provenance": "MMS-TTS-HIN (VITS NEURAL ACOUSTIC SYNTHESIS; SYNTHETIC SPEECH PENDING FORMAL HUMAN AUDIT)",
+      "generated_timestamp": "2026-09-27T16:37:58.267295+00:00"
+    },
+    {
+      "id": "hinglish_to_mundari_001",
+      "demo_id": "SEL_HING_01",
+      "flow": "Flow C: Hinglish -> Mundari",
+      "source_text": "yeh kaun si sankhya hai",
+      "normalized_text": "यह कौन सी संख्या है",
+      "target_text": "नेआ चिनाः संख्या तना",
+      "language": "mundari",
+      "provider": "vits_tts_provider",
+      "model": "facebook/mms-tts-unr",
+      "version": "1.0.0",
+      "phonological_layer": "devanagari_to_odia_canonical_v2",
+      "audio_file": "hinglish_to_mundari_001.wav",
+      "alias_files": [
+        "SEL_HING_01.wav"
+      ],
+      "sample_rate": 16000,
+      "channels": 1,
+      "bit_depth": 16,
+      "duration_sec": 1.61,
+      "file_size_bytes": 51564,
+      "sha256": "a1ae5e45a667d5813d35021d69e1682aa5852a1d7128eaf9841ef64870272c76",
+      "quality_gate": {
+        "passed": true,
+        "status": "AUDIO_PROTOTYPE_PENDING_VALIDATION",
+        "rms_dbfs": -13.29,
+        "peak_dbfs": -0.92,
+        "clipping_samples": 0,
+        "silence_ratio": 0.333,
+        "max_silence_run_ms": 270.0
+      },
+      "validation_status": "AUDIO_PROTOTYPE_PENDING_VALIDATION",
+      "provenance": "MMS-TTS-UNR (VITS NEURAL ACOUSTIC SYNTHESIS; STRICTLY PROTOTYPE PENDING NATIVE SPEAKER VALIDATION)",
+      "generated_timestamp": "2026-09-27T16:37:58.788435+00:00"
+    }
+  ]
+}

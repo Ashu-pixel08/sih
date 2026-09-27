@@ -44,6 +44,8 @@ class PronunciationResult:
     is_cached: bool = False
     duration_sec: float = 0.0
     teacher_voice_applied: bool = False
+    quality_gate_status: str = "AUDIO_READY"
+    quality_gate_reasons: List[str] = field(default_factory=list)
 
 
 class BasePronunciationProvider(ABC):
@@ -318,22 +320,56 @@ class VitsTTSProvider(BasePronunciationProvider):
     @staticmethod
     def _devanagari_to_odia(text: str) -> str:
         """
-        Transliterates Devanagari Mundari into Odia script.
-        Meta MMS-TTS for Mundari ('facebook/mms-tts-unr') was trained on the
-        Mundari corpus in Odia script. Its vocabulary (vocab.json) exclusively
-        contains Odia Unicode codepoints (U+0B00–U+0B7F).
+        Transliterates Devanagari Mundari into Odia script aligned with the 55-token
+        vocabulary of Meta MMS-TTS ('facebook/mms-tts-unr').
+
+        CRITICAL PHONOLOGICAL & VOCABULARY MAPPINGS:
+        1. Devanagari YA (य U+092F) -> Odia YA (ୟ U+0B5F, token 11).
+           A naive +0x0200 shift maps य to Odia JA (ଯ U+0B2F), causing severe consonant
+           substitution where every 'ya' is pronounced as 'ja' (e.g. geleya -> geleja).
+        2. Devanagari Badi UU (ू U+0942) -> Odia U matra (ୁ U+0B41, token 18).
+           The MMS-TTS vocabulary lacks Odia UU (U+0B42); mapping to U preserves the vowel
+           without generating <unk>.
+        3. Devanagari VA (व U+0935) -> Odia WA (ୱ U+0B71, token 35).
+           Odia VA (U+0B35) is absent from the MMS vocabulary.
+        4. Devanagari initial O (ओ U+0913) -> Odia A + O matra (ଅୋ U+0B05 U+0B4B).
+           Odia independent O (U+0B13) is absent from the MMS vocabulary.
+        5. Devanagari initial AU (औ U+0914) -> Odia A + U matra (ଅୁ U+0B05 U+0B41).
+        6. Devanagari initial AI (ऐ U+0910) -> Odia E (ଏ U+0B0F, token 7).
+        7. Precomposed Nukta consonants (ड़ U+095C, ढ़ U+095D) are decomposed to base + nukta
+           (ଡ଼ U+0B21 U+0B3C and ଢ଼ U+0B22 U+0B3C) which exist in the model vocabulary.
+        8. Visarga (ः U+0903) -> Odia Visarga (ଃ U+0B03, token 53), representing the Mundari
+           checked vowel / glottal stop [ʔ].
+        9. Punctuation (। ? ! ; , . -) is converted to spaces to avoid <unk> tokens.
         """
-        clean = text.replace("।", " ").replace("?", " ").replace("!", " ")
-        clean = clean.replace(":", "ः").replace(";", " ")
-        clean = clean.replace("\u095c", "\u0921\u093c").replace("\u095d", "\u0922\u093c")
+        t = (text or "").strip()
+        t = re.sub(r"[।?!;,.\-_—]+", " ", t)
+        t = t.replace(":", "ः")
+        t = t.replace("\u095c", "\u0921\u093c").replace("\u095d", "\u0922\u093c")
+
         out = []
-        for ch in clean:
+        for ch in t:
             code = ord(ch)
-            if 0x0900 <= code <= 0x097F:
+            if ch == "य":
+                out.append("\u0b5f")  # Odia letter YA (token 11)
+            elif ch == "ू":
+                out.append("\u0b41")  # Odia vowel sign U (token 18)
+            elif ch == "व":
+                out.append("\u0b71")  # Odia letter WA (token 35)
+            elif ch == "ओ":
+                out.append("\u0b05\u0b4b")  # Odia A + O matra (tokens 45, 34)
+            elif ch == "औ":
+                out.append("\u0b05\u0b41")  # Odia A + U matra
+            elif ch == "ऐ":
+                out.append("\u0b0f")        # Odia letter E (token 7)
+            elif 0x0900 <= code <= 0x097F:
                 out.append(chr(code + 0x0200))
             else:
                 out.append(ch)
-        return "".join(out)
+
+        res = "".join(out)
+        # Collapse multiple spaces
+        return re.sub(r"\s+", " ", res).strip()
 
     def generate(self, text: str, language: str) -> Optional[PronunciationResult]:
         norm_lang = "hindi" if language.lower() in ("hi", "hindi") else ("mundari" if language.lower() in ("unr", "mundari") else "")
@@ -343,12 +379,17 @@ class VitsTTSProvider(BasePronunciationProvider):
         try:
             import numpy as np
             import torch
+            from ai.speech.audio_quality_gate import AudioQualityGate
 
             model, tokenizer = self._ensure_loaded(norm_lang)
 
             model_input_text = text
             if norm_lang == "mundari":
                 model_input_text = self._devanagari_to_odia(text)
+
+            # Deterministic seed for reproducible inference
+            seed = sum(ord(c) for c in text) % (2**31 - 1)
+            torch.manual_seed(seed)
 
             inputs = tokenizer(model_input_text, return_tensors="pt")
 
@@ -357,6 +398,9 @@ class VitsTTSProvider(BasePronunciationProvider):
 
             waveform = output.squeeze().cpu().numpy()
             sample_rate = getattr(model.config, "sampling_rate", 16000)
+
+            # Trim dead air with acoustic padding
+            waveform = AudioQualityGate.trim_silence(waveform, sample_rate=sample_rate)
 
             # Convert to 16-bit PCM WAV in memory
             # Normalize volume
@@ -462,6 +506,14 @@ class PronunciationService:
             except Exception as e:
                 print(f"[PronunciationService] Warning initializing TeacherVoiceProfileManager: {e}", file=sys.stderr)
                 self.teacher_voice_manager = None
+
+        # Audio Quality Gate
+        try:
+            from ai.speech.audio_quality_gate import AudioQualityGate
+            self.quality_gate = AudioQualityGate(expected_sample_rate=16000)
+        except Exception as e:
+            print(f"[PronunciationService] Warning initializing AudioQualityGate: {e}", file=sys.stderr)
+            self.quality_gate = None
 
     def normalize_language(self, language: Optional[str]) -> Optional[str]:
         if not language or not isinstance(language, str):
@@ -620,6 +672,15 @@ class PronunciationService:
                         except Exception:
                             pass
 
+                    qg_status = "AUDIO_READY"
+                    qg_reasons = []
+                    if self.quality_gate:
+                        eval_cg = self.quality_gate.validate_audio(
+                            cached_bytes, clean_text, norm_lang, provenance=verification_status
+                        )
+                        qg_status = eval_cg.status
+                        qg_reasons = eval_cg.rejection_reasons
+
                     return PronunciationResult(
                         audio_bytes=cached_bytes,
                         language=norm_lang,
@@ -629,7 +690,9 @@ class PronunciationService:
                         sample_rate=sample_rate,
                         is_cached=True,
                         duration_sec=duration_sec,
-                        teacher_voice_applied=True
+                        teacher_voice_applied=True,
+                        quality_gate_status=qg_status,
+                        quality_gate_reasons=qg_reasons
                     ), None
                 except Exception as e:
                     print(f"[PronunciationService] Error reading teacher cache: {e}", file=sys.stderr)
@@ -647,6 +710,21 @@ class PronunciationService:
                             break
 
             if base_result and base_result.audio_bytes:
+                # Pre-conversion AudioQualityGate check on base audio
+                if self.quality_gate:
+                    base_eval = self.quality_gate.validate_audio(
+                        base_result.audio_bytes,
+                        clean_text,
+                        norm_lang,
+                        provenance=base_result.verification_status
+                    )
+                    base_result.quality_gate_status = base_eval.status
+                    base_result.quality_gate_reasons = base_eval.rejection_reasons
+                    if not base_eval.is_valid:
+                        print(f"[PronunciationService] Teacher voice conversion BLOCKED: base audio failed quality gate ({base_eval.rejection_reasons})", file=sys.stderr)
+                        # Return base audio directly without voice conversion
+                        return base_result, None
+
                 try:
                     target_se = self.teacher_voice_manager.get_embedding()
                     conv_res = self.teacher_voice_manager.converter.convert_audio(
@@ -679,6 +757,15 @@ class PronunciationService:
                         src_type = "teacher_voice_synthetic"
                         eng_name = f"{base_result.engine_name}+openvoice_v2"
 
+                    conv_status = "AUDIO_READY"
+                    conv_reasons = []
+                    if self.quality_gate:
+                        conv_eval = self.quality_gate.validate_audio(
+                            converted_wav, clean_text, norm_lang, provenance=val_status
+                        )
+                        conv_status = conv_eval.status
+                        conv_reasons = conv_eval.rejection_reasons
+
                     result = PronunciationResult(
                         audio_bytes=converted_wav,
                         language=norm_lang,
@@ -688,7 +775,9 @@ class PronunciationService:
                         sample_rate=sr,
                         is_cached=False,
                         duration_sec=dur,
-                        teacher_voice_applied=True
+                        teacher_voice_applied=True,
+                        quality_gate_status=conv_status,
+                        quality_gate_reasons=conv_reasons
                     )
 
                     # Write to teacher cache
@@ -702,6 +791,7 @@ class PronunciationService:
                                 "verification_status": result.verification_status,
                                 "sample_rate": result.sample_rate,
                                 "duration_sec": result.duration_sec,
+                                "quality_gate_status": result.quality_gate_status,
                                 "teacher_voice_applied": True
                             }
                             with open(teacher_meta_path, "w", encoding="utf-8") as mf:
@@ -741,6 +831,15 @@ class PronunciationService:
                     except Exception:
                         pass
 
+                qg_status = "AUDIO_READY"
+                qg_reasons = []
+                if self.quality_gate:
+                    eval_cg = self.quality_gate.validate_audio(
+                        cached_bytes, clean_text, norm_lang, provenance=verification_status
+                    )
+                    qg_status = eval_cg.status
+                    qg_reasons = eval_cg.rejection_reasons
+
                 return PronunciationResult(
                     audio_bytes=cached_bytes,
                     language=norm_lang,
@@ -749,8 +848,10 @@ class PronunciationService:
                     verification_status=verification_status,
                     sample_rate=16000,
                     is_cached=True,
-                    duration_sec=duration_sec,
-                    teacher_voice_applied=False
+                    duration_sec=duration_sec or (eval_cg.duration_sec if self.quality_gate else 0.0),
+                    teacher_voice_applied=False,
+                    quality_gate_status=qg_status,
+                    quality_gate_reasons=qg_reasons
                 ), None
             except Exception as e:
                 print(f"[PronunciationService] Error reading cache file {cache_path}: {e}", file=sys.stderr)
@@ -767,6 +868,20 @@ class PronunciationService:
                 result.audio_bytes = normalized_wav
                 result.teacher_voice_applied = False
 
+                # Evaluate with AudioQualityGate
+                if self.quality_gate:
+                    gate_eval = self.quality_gate.validate_audio(
+                        normalized_wav,
+                        clean_text,
+                        norm_lang,
+                        provenance=result.verification_status
+                    )
+                    result.quality_gate_status = gate_eval.status
+                    result.quality_gate_reasons = gate_eval.rejection_reasons
+                    if gate_eval.duration_sec > 0:
+                        result.duration_sec = gate_eval.duration_sec
+                    result.sample_rate = gate_eval.sample_rate
+
                 # Write to disk cache
                 if self.enable_cache:
                     try:
@@ -778,6 +893,7 @@ class PronunciationService:
                             "verification_status": result.verification_status,
                             "sample_rate": result.sample_rate,
                             "duration_sec": result.duration_sec,
+                            "quality_gate_status": result.quality_gate_status,
                             "teacher_voice_applied": False
                         }
                         with open(meta_path, "w", encoding="utf-8") as mf:

@@ -1,0 +1,159 @@
+{
+  "project": "Bhasha Setu (भाषा सेतु)",
+  "title": "Class 1 Bilingual Numeracy Golden Demo Video Script",
+  "target_duration_seconds": 105,
+  "theme": "Class 1 Counting (1 to 10) in a Hindi–Mundari Classroom",
+  "compliance_and_governance": {
+    "audio_disclaimer": "Audio playback demonstrated in Scene 4 uses prototype acoustic MMS-TTS synthesis registered in the governed cache. It is designated PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION and is NOT native human speaker verified.",
+    "translation_provenance": "All demonstrations strictly distinguish between exact parallel corpus records, composed linguistic registry phrases, and neural model inferences."
+  },
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_name": "Teacher Greeting & Counting Drill Prompt",
+      "duration_sec": 25,
+      "pedagogical_objective": "Teacher introduces the daily counting drill using colloquial classroom Hinglish / Hindi to engage Grade 1 tribal learners.",
+      "visual_setup": "Split view: Teacher at chalkboard in front of students on left; Bhasha Setu Web UI on teacher tablet/laptop on right.",
+      "actor_action": {
+        "speaker": "Teacher",
+        "action": "Speaks to the class, encouraging them to count from 1 to 10 together, then types the Hinglish instruction into Bhasha Setu.",
+        "spoken_dialogue": "बच्चों, आज हम गिनती करेंगे। ध्यान से सुनो और एक से दस तक गिनो!"
+      },
+      "ui_interaction": {
+        "panel": "Teacher Translation & Normalization Studio",
+        "input_mode": "Hinglish Text / Voice Input",
+        "typed_input": "ek se das tak gino",
+        "button_action": "Click 'Translate to Mundari'",
+        "live_normalization": {
+          "raw_input": "ek se das tak gino",
+          "normalized_hindi": "एक से दस तक गिनो",
+          "normalizer_rule": "LEXICON_NUMERIC_DRILL_MATCH",
+          "status": "APPROVED_LEXICON"
+        },
+        "displayed_output": {
+          "target_language": "Mundari (mund1320 / unr)",
+          "script": "Devanagari (Mundari)",
+          "mundari_translation": "मिअद आते गेलेया जाकेद लेकापे",
+          "transliteration": "Miad ate geleya jaked lekape",
+          "confidence_score": 1.0,
+          "provenance": "COMPOSED_REGISTRY_PHRASE (PHR_EXP_17)",
+          "quality_gate": "PASSED (Quality Gate score: 1.0, zero unverified tokens)",
+          "audio_status_badge": "AUDIO_PENDING_FIELD_RECORDING (Text verified; acoustic model rendering reserved)"
+        }
+      },
+      "caption_callout": "Hinglish input 'ek se das tak gino' automatically normalized to Devanagari Hindi and translated to composed Mundari classroom instruction."
+    },
+    {
+      "scene_number": 2,
+      "scene_name": "Dual-Script Classroom Board & Ten-Frame Numeracy Visualizer",
+      "duration_sec": 25,
+      "pedagogical_objective": "Reinforce mathematical quantity association by linking Hindi numerals, Mundari number words, and visual counter beads (Ten-Frame).",
+      "visual_setup": "Screen recording of Bhasha Setu 'Numeracy Bridge' module alongside physical bead-frame on teacher's desk.",
+      "actor_action": {
+        "speaker": "Teacher",
+        "action": "Points to numbers 1 through 10 on the screen as students choral chant the Mundari numbers: 'मिअद (1), बारिया (2), आपिया (3)... गेलेया (10)'.",
+        "spoken_dialogue": "देखिये, स्क्रीन पर भी आ गया: मिअद (1) से गेलेया (10) तक।"
+      },
+      "ui_interaction": {
+        "panel": "Interactive Early Numeracy Board",
+        "features_displayed": [
+          {
+            "numeral": 1,
+            "hindi_word": "एक",
+            "mundari_word": "मिअद",
+            "dots": "●"
+          },
+          {
+            "numeral": 2,
+            "hindi_word": "दो",
+            "mundari_word": "बारिया",
+            "dots": "●●"
+          },
+          {
+            "numeral": 5,
+            "hindi_word": "पाँच",
+            "mundari_word": "मोनेया",
+            "dots": "●●●●●"
+          },
+          {
+            "numeral": 10,
+            "hindi_word": "दस",
+            "mundari_word": "गेलेया",
+            "dots": "●●●●●●●●●●"
+          }
+        ],
+        "screen_action": "Teacher taps number beads 1 to 10; UI highlights the synchronized Devanagari Mundari numerals and counters."
+      },
+      "caption_callout": "Culturally responsive numeracy: bridging regional numeral cognition with native counting lexicon (मिअद to गेलेया)."
+    },
+    {
+      "scene_number": 3,
+      "scene_name": "Student Mother-Tongue Response (Mundari → Hindi)",
+      "duration_sec": 25,
+      "pedagogical_objective": "Demonstrate two-way communication where tribal students express their recitation in Mundari and the system verifies comprehension in Hindi.",
+      "visual_setup": "Close-up of student speaking into tablet microphone, followed by instantaneous reverse translation on the teacher's monitor.",
+      "actor_action": {
+        "speaker": "Student (Raj Kumar)",
+        "action": "Student answers in Mundari that he will count: 'नअःदो अइंग लेकायाइंग गेलबर जकेद्।' (Now I will count up to twelve.)",
+        "spoken_dialogue": "नअःदो अइंग लेकायाइंग गेलबर जकेद्।"
+      },
+      "ui_interaction": {
+        "panel": "Reverse Student Comprehension Portal (unr -> hi)",
+        "input_mode": "Mundari Text / Speech-to-Text Input",
+        "typed_input": "नअःदो अइंग लेकायाइंग गेलबर जकेद्।",
+        "button_action": "Click 'Verify Student Comprehension'",
+        "displayed_output": {
+          "source_language": "Mundari (unr)",
+          "target_language": "Hindi (hi)",
+          "hindi_translation": "अब मैं गिनती करूँगा बारह तक",
+          "confidence_score": 1.0,
+          "provenance": "EXACT_PARALLEL_CORPUS_RECORD (Row 16907, Corpus Verified)",
+          "quality_gate": "PASSED (Exact match with attested parallel corpus, 100% token grounding)",
+          "pedagogical_assessment": "Correct counting commitment recognized by AI bridge."
+        }
+      },
+      "caption_callout": "Mundari to Hindi reverse translation: validated against attested bilingual corpus pair (Row 16907)."
+    },
+    {
+      "scene_number": 4,
+      "scene_name": "Formative Assessment & Prototype Pronunciation Audio",
+      "duration_sec": 30,
+      "pedagogical_objective": "Teacher asks a single targeted question to verify recognition of a displayed number card, using live audio pronunciation.",
+      "visual_setup": "Teacher holds up card with number '5'. Teacher types Hinglish question 'yeh kaun si sankhya hai' and presses Audio Pronunciation.",
+      "actor_action": {
+        "speaker": "Teacher",
+        "action": "Plays the pronunciation audio to reinforce classroom inquiry in the students' home language.",
+        "spoken_dialogue": "Let's ask the question in their language:",
+        "audio_playback_event": "Clicks 'Play Pronunciation' icon on Bhasha Setu UI."
+      },
+      "ui_interaction": {
+        "panel": "Teacher Query & Audio Assistant",
+        "input_mode": "Hinglish / Hindi Text Input",
+        "typed_input": "yeh kaun si sankhya hai",
+        "live_normalization": {
+          "raw_input": "yeh kaun si sankhya hai",
+          "normalized_hindi": "यह कौन सी संख्या है",
+          "normalizer_rule": "GOVERNED_LEXICON_PHRASE",
+          "status": "APPROVED_LEXICON"
+        },
+        "displayed_output": {
+          "mundari_translation": "नेआ चिनाः संख्या तना",
+          "transliteration": "Nea chinah sankhya tana",
+          "confidence_score": 1.0,
+          "provenance": "GOVERNED_PHRASE_REGISTRY (PHR_NUM_04, LINGUISTICALLY_REVIEWED)",
+          "quality_gate": "PASSED"
+        },
+        "audio_playback": {
+          "audio_file": "demo/golden_set/audio/SEL_HING_01.wav",
+          "sample_rate": 16000,
+          "channels": 1,
+          "duration_sec": 2.68,
+          "engine_name": "PROTOTYPE_TTS_CACHE",
+          "status_badge": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+          "provenance_disclosure": "Playable MMS-TTS prototype audio. Strictly synthetic demonstration; pending human-native recording."
+        }
+      },
+      "caption_callout": "Audio Output: Prototype synthesis (MMS-TTS). Transparency note: Acoustic prototype; native field recording scheduled for deployment."
+    }
+  ]
+}

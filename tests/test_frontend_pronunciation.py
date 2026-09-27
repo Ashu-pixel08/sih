@@ -17,6 +17,7 @@ Tests frontend/index.html runtime logic for:
 
 import json
 import os
+import shutil
 import subprocess
 import pytest
 
@@ -47,6 +48,7 @@ class TestFrontendPronunciationContracts:
         assert "facebook/mms-tts-unr" not in html_content
 
 
+@pytest.mark.skipif(not shutil.which("node"), reason="Node.js is not installed on this host")
 class TestFrontendPronunciationRuntime:
     """Node.js runtime execution tests on the extracted script."""
 
