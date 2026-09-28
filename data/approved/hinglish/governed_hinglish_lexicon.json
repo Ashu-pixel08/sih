@@ -1126,5 +1126,13 @@
     "source": "content/translations/classroom_phrases_expanded.json:PHR_EXP_06",
     "category": "PRONOUN",
     "notes": "Second person possessive pronoun (your)"
+  },
+  {
+    "hinglish": "ab main ginti karunga barah tak",
+    "hindi": "अब मैं गिनती करूँगा बारह तक",
+    "status": "APPROVED",
+    "source": "demo/golden_set/golden_demo_set.json:GOLDEN_DEMO_05",
+    "category": "COUNTING_RECITATION",
+    "notes": "Student counting recitation phrase"
   }
 ]

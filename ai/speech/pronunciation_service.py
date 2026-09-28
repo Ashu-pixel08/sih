@@ -110,50 +110,90 @@ class PrototypeAudioRegistryProvider(BasePronunciationProvider):
         return t
 
     def _load_manifest(self) -> None:
-        if not os.path.exists(self.manifest_path):
-            return
+        manifest_files = [self.manifest_path]
+        golden_manifest = os.path.join(self.project_root, "demo", "golden_set", "audio", "golden_audio_manifest.json")
+        if os.path.exists(golden_manifest) and golden_manifest not in manifest_files:
+            manifest_files.append(golden_manifest)
 
-        try:
-            with open(self.manifest_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
+        total_loaded = 0
+        for m_path in manifest_files:
+            if not os.path.exists(m_path):
+                continue
+            try:
+                with open(m_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-            assets = data.get("assets", [])
-            for item in assets:
-                file_rel = item.get("audio_file", "")
-                # Normalize Windows vs POSIX path separators
-                file_path = os.path.join(self.project_root, file_rel.replace("\\", os.sep).replace("/", os.sep))
-                if not os.path.exists(file_path):
-                    continue
+                # Format 1: content/audio/audio_manifest.json {"assets": [...]}
+                if "assets" in data and isinstance(data["assets"], list):
+                    assets = data["assets"]
+                    for item in assets:
+                        file_rel = item.get("audio_file", "")
+                        file_path = os.path.join(self.project_root, file_rel.replace("\\", os.sep).replace("/", os.sep))
+                        if not os.path.exists(file_path):
+                            continue
 
-                m_text = item.get("mundari_text", "")
-                h_text = item.get("hindi_text", "")
+                        m_text = item.get("mundari_text", "")
+                        h_text = item.get("hindi_text", "")
+                        entry = {
+                            "content_id": item.get("content_id", ""),
+                            "category": item.get("category", ""),
+                            "mundari_text": m_text,
+                            "hindi_text": h_text,
+                            "file_path": file_path,
+                            "duration_sec": item.get("duration_sec", 0.0),
+                            "verification_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION"
+                        }
+                        if m_text:
+                            self._lookup[("mundari", m_text)] = entry
+                            self._lookup[("mundari", self._normalize_key(m_text))] = entry
+                            self._lookup[("mundari", m_text.replace("मोड़ेया", "मोड़ेया"))] = entry
+                            self._lookup[("mundari", m_text.replace("मोड़ेया", "मोड़ेया"))] = entry
+                        if h_text:
+                            self._lookup[("hindi", h_text)] = entry
+                            self._lookup[("hindi", self._normalize_key(h_text))] = entry
+                    total_loaded += len(assets)
 
-                entry = {
-                    "content_id": item.get("content_id", ""),
-                    "category": item.get("category", ""),
-                    "mundari_text": m_text,
-                    "hindi_text": h_text,
-                    "file_path": file_path,
-                    "duration_sec": item.get("duration_sec", 0.0),
-                    "verification_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION"
-                }
+                # Format 2: demo/golden_set/audio/golden_audio_manifest.json {"items": [...]}
+                if "items" in data and isinstance(data["items"], list):
+                    items = data["items"]
+                    m_dir = os.path.dirname(m_path)
+                    for item in items:
+                        file_name = item.get("audio_file", "")
+                        file_path = os.path.join(m_dir, file_name)
+                        if not os.path.exists(file_path):
+                            continue
 
-                if m_text:
-                    # Index by Mundari text (both direct and normalized nukhta)
-                    self._lookup[("mundari", m_text)] = entry
-                    self._lookup[("mundari", self._normalize_key(m_text))] = entry
-                    # Also index variants with/without nukhta
-                    self._lookup[("mundari", m_text.replace("मोड़ेया", "मोड़ेया"))] = entry
-                    self._lookup[("mundari", m_text.replace("मोड़ेया", "मोड़ेया"))] = entry
+                        item_lang = "hindi" if item.get("language") in ("hi", "hindi") else "mundari"
+                        tgt_text = item.get("target_text", "")
+                        val_stat = item.get("validation_status", "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION")
+                        entry = {
+                            "content_id": item.get("id", ""),
+                            "category": "golden_demo",
+                            "mundari_text": tgt_text if item_lang == "mundari" else item.get("source_text", ""),
+                            "hindi_text": tgt_text if item_lang == "hindi" else item.get("source_text", ""),
+                            "file_path": file_path,
+                            "duration_sec": item.get("duration_sec", 0.0),
+                            "verification_status": val_stat
+                        }
+                        if tgt_text:
+                            self._lookup[(item_lang, tgt_text)] = entry
+                            self._lookup[(item_lang, self._normalize_key(tgt_text))] = entry
+                        # Also index alias filenames or source if applicable
+                        src_text = item.get("source_text", "")
+                        if src_text and item_lang == "mundari":
+                            self._lookup[(item_lang, src_text)] = entry
+                            self._lookup[(item_lang, self._normalize_key(src_text))] = entry
+                    total_loaded += len(items)
 
-            self.asset_count = len(assets)
-        except Exception as e:
-            print(f"[PrototypeAudioRegistryProvider] Warning loading manifest: {e}", file=sys.stderr)
+            except Exception as e:
+                print(f"[PrototypeAudioRegistryProvider] Warning loading manifest {m_path}: {e}", file=sys.stderr)
+
+        self.asset_count = total_loaded
 
     def is_available(self, language: str) -> bool:
-        norm_lang = language.lower().strip()
-        if norm_lang in ("mundari", "unr"):
-            return len(self._lookup) > 0
+        norm_lang = "hindi" if language.lower().strip() in ("hi", "hindi") else ("mundari" if language.lower().strip() in ("mundari", "unr") else "")
+        if norm_lang in ("mundari", "hindi"):
+            return any(k[0] == norm_lang for k in self._lookup.keys())
         return False
 
     def has_entry(self, text: str, language: str) -> bool:
@@ -196,12 +236,13 @@ class PrototypeAudioRegistryProvider(BasePronunciationProvider):
             with open(file_path, "rb") as f:
                 wav_bytes = f.read()
 
+            val_status = entry.get("verification_status", "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION")
             return PronunciationResult(
                 audio_bytes=wav_bytes,
                 language=norm_lang,
                 source_type="prototype_asset",
                 engine_name=self.provider_id,
-                verification_status="PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+                verification_status=val_status,
                 sample_rate=16000,
                 is_cached=False,
                 duration_sec=entry.get("duration_sec", 0.0)

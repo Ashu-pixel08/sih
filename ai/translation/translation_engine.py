@@ -538,6 +538,53 @@ class TranslationEngine:
             except Exception as e:
                 print(f"Notice: Failed to load vocabulary excel from {vocab_xlsx}: {e}")
 
+        # F. Canonical Bidirectional Golden Pairs Registry (Priority Tier 1 Deterministic Pairs)
+        golden_pairs_path = os.path.join(self.base_dir, "demo", "golden_set", "canonical_bidirectional_pairs.json")
+        if os.path.exists(golden_pairs_path):
+            try:
+                with open(golden_pairs_path, "r", encoding="utf-8") as f:
+                    gp_data = json.load(f)
+                for pair in gp_data.get("pairs", []):
+                    hi = pair["hi"]
+                    unr = pair["unr"]
+                    entry = {
+                        "pair_id": pair.get("id"),
+                        "hindi_text": hi,
+                        "mundari_text": unr,
+                        "category": pair.get("category", "GOLDEN_DEMO_PAIR"),
+                        "verification_level": "CANONICAL_BIDIRECTIONAL_DEMO_PAIR",
+                        "provenance": pair.get("provenance", "GOLDEN_BIDIRECTIONAL_REGISTRY"),
+                        "audio_asset": pair.get("audio_unr"),
+                        "audio_hi": pair.get("audio_hi"),
+                        "audio_status": pair.get("audio_status_unr", "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION")
+                    }
+                    norm_hi = self._normalize_text(hi)
+                    lookup_hi = self._normalize_for_lookup(hi)
+                    if norm_hi in self.educational_lookup:
+                        self.educational_lookup[norm_hi].update(entry)
+                    else:
+                        self.educational_lookup[norm_hi] = entry
+
+                    if lookup_hi in self.educational_lookup:
+                        self.educational_lookup[lookup_hi].update(entry)
+                    else:
+                        self.educational_lookup[lookup_hi] = entry
+
+                    norm_unr = self._normalize_text(unr)
+                    lookup_unr = self._normalize_for_lookup(unr)
+                    if norm_unr in self.reverse_educational_lookup:
+                        self.reverse_educational_lookup[norm_unr].update(entry)
+                    else:
+                        self.reverse_educational_lookup[norm_unr] = entry
+
+                    if lookup_unr in self.reverse_educational_lookup:
+                        self.reverse_educational_lookup[lookup_unr].update(entry)
+                    else:
+                        self.reverse_educational_lookup[lookup_unr] = entry
+            except Exception as e:
+                print(f"Notice: Failed to load golden bidirectional pairs: {e}")
+
+
     def _load_tier2_corpus(self) -> None:
         """Loads parallel corpus and fits bidirectional char-wb TF-IDF vectorizers."""
         if not os.path.exists(self.corpus_tsv_path):
@@ -594,10 +641,10 @@ class TranslationEngine:
         lookup_text = self._normalize_for_lookup(raw_text)
         if is_rev:
             if lookup_text in self.reverse_educational_lookup or norm_text in self.reverse_educational_lookup:
-                return self.translate_mundari_to_hindi(text, name_map=None)
+                return self.translate_mundari_to_hindi(text, name_map={})
         else:
             if lookup_text in self.educational_lookup or norm_text in self.educational_lookup:
-                return self.translate_hindi_to_mundari(text, use_neural=use_neural, name_map=None)
+                return self.translate_hindi_to_mundari(text, use_neural=use_neural, name_map={})
 
         # Step 1: Detect and shield candidate proper names
         name_map: Dict[str, str] = {}
@@ -727,7 +774,12 @@ class TranslationEngine:
           - Tier 3: Parallel Corpus Sentence Retrieval (TF-IDF similarity fallback)
           - Tier 4: Safe Out-of-Vocabulary Fallback (refusal to hallucinate on unintelligible input)
         """
-        if name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
+        raw_check = (text or "").strip()
+        norm_check = self._normalize_text(raw_check)
+        lookup_check = self._normalize_for_lookup(raw_check)
+        if norm_check in self.educational_lookup or lookup_check in self.educational_lookup:
+            name_map = {}
+        elif name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
             text, name_map = self.name_protector.protect(text, direction="hi-unr")
 
         raw_input = text or ""
@@ -968,7 +1020,12 @@ class TranslationEngine:
         Rejects low-confidence matches as OUT_OF_VOCABULARY_UNVERIFIED.
         Preserves personal proper names without cross-script corruption.
         """
-        if name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
+        raw_check = (text or "").strip()
+        norm_check = self._normalize_text(raw_check)
+        lookup_check = self._normalize_for_lookup(raw_check)
+        if norm_check in self.reverse_educational_lookup or lookup_check in self.reverse_educational_lookup:
+            name_map = {}
+        elif name_map is None and hasattr(self, "name_protector") and self.name_protector is not None:
             text, name_map = self.name_protector.protect(text, direction="unr-hi")
 
         raw_input = text or ""

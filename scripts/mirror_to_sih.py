@@ -17,12 +17,14 @@ FILES_TO_COPY = [
     os.path.join("frontend", "index.html"),
     os.path.join("docs", "tts-architecture.md"),
     os.path.join("demo", "golden_set", "golden_demo_set.json"),
+    os.path.join("demo", "golden_set", "golden_voice_demo.json"),
     os.path.join("content", "audio", "audio_manifest.json")
 ]
 
 DIRS_TO_COPY = [
     os.path.join("ai", "speech"),
-    os.path.join("demo", "golden_set", "audio"),
+    os.path.join("ai", "translation"),
+    os.path.join("demo", "golden_set"),
     os.path.join("content", "audio", "prototype_tts"),
     os.path.join("models", "tts"),
     os.path.join("scratch", "tts_benchmark"),

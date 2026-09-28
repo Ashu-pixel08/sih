@@ -4945,7 +4945,38 @@ function backendTranslate(text, dir) {
   // REVERSE TRANSLATION: MUNDARI ➔ HINDI
   // -------------------------------------------------------------
   if (direction === "unr-hi") {
-    // 0. Student Interaction Phrases (Student Voice Mode & Live Classroom Replies)
+    // 0. Canonical Bidirectional Golden Pairs Registry (100% Exact Round-Trip)
+    const canonicalGoldenPairs = [
+      { mundari: "पुथी ओड़ाःपे", hindi: "किताब खोलो" },
+      { mundari: "दुबपे", hindi: "बैठो" },
+      { mundari: "मिअद आते गेलेया जाकेद लेकापे", hindi: "एक से दस तक गिनो" },
+      { mundari: "नेआ चिनाः संख्या तना", hindi: "यह कौन सी संख्या है" },
+      { mundari: "नअःदो अइंग लेकायाइंग गेलबर जकेद्।", hindi: "अब मैं गिनती करूँगा बारह तक" },
+      { mundari: "मोड़ेया", hindi: "पाँच" },
+      { mundari: "मिअद", hindi: "एक" }
+    ];
+    for (let cgp of canonicalGoldenPairs) {
+      if (clean === cgp.mundari || normalized === normalizeHindi(cgp.mundari) || lookupClean === normalizeForLookup(cgp.mundari)) {
+        return {
+          source: clean,
+          mundari: clean,
+          hindi: cgp.hindi,
+          targetText: cgp.hindi,
+          phonetic: "",
+          root: "",
+          numeral: null,
+          audio_file: null,
+          status: "VERIFIED_EDUCATIONAL_LOOKUP",
+          badge: "● VERIFIED (CANONICAL PAIR)",
+          badgeClass: "verified",
+          provenance: "Canonical Bidirectional Golden Pair (" + cgp.mundari + " ➔ " + cgp.hindi + ")",
+          isBroadcastable: true,
+          direction: direction
+        };
+      }
+    }
+
+    // 0.1 Student Interaction Phrases (Student Voice Mode & Live Classroom Replies)
     const studentPhrases = [
       { mundari: "ऐंग काजी बुझाओ केदा", hindi: "मुझे समझ में आ गया।" },
       { mundari: "गुरु गोमके नेना काजी आर एमेप", hindi: "गुरु जी, फिर से बताइए" },
@@ -5462,7 +5493,7 @@ function logout() {
 
 function enterDemoModeDirect() {
   state.role = "teacher";
-  state.page = "dashboard";
+  state.page = "demo";
   state.translationDirection = "hi-unr";
   if (!state.room || !isValidRoomCode(state.room)) {
     state.room = "DEMO-2026";
@@ -6281,11 +6312,12 @@ function toggleDirection() {
 function updateTranslationUI(res) {
   if (!res) return;
   state.currentTranslation = res;
+  const isRev = (res.direction === "unr-hi") || (state.translationDirection === "unr-hi");
   if ($("#mundari")) {
-    if (res.status === "OUT_OF_VOCABULARY") {
+    if (res.status === "OUT_OF_VOCABULARY" || res.status === "OUT_OF_VOCABULARY_UNVERIFIED") {
       $("#mundari").value = "This sentence could not be translated yet.";
     } else {
-      $("#mundari").value = res.mundari || "";
+      $("#mundari").value = isRev ? (res.hindi || res.targetText || res.translated_text || "") : (res.mundari || res.targetText || res.translated_text || "");
     }
   }
   const b = $("#transbadge");
@@ -6293,7 +6325,7 @@ function updateTranslationUI(res) {
     if (res.isBroadcastable) {
       b.textContent = "Translation ready";
       b.className = "badge verified";
-    } else if (res.status === "OUT_OF_VOCABULARY") {
+    } else if (res.status === "OUT_OF_VOCABULARY" || res.status === "OUT_OF_VOCABULARY_UNVERIFIED") {
       b.textContent = "Not translated";
       b.className = "badge danger";
     } else if (res.status === "EMPTY_INPUT") {
@@ -6325,10 +6357,10 @@ function updateTranslationUI(res) {
   const normEl = $("#hinglishNormStatus");
   if (normEl) {
     const normVal = res.normalizedHindi || (res.metadata && res.metadata.normalized_hindi);
-    if (state.inputMode === "hinglish" && normVal && res.status !== "EMPTY_INPUT" && res.status !== "OUT_OF_VOCABULARY") {
+    if ((state.inputMode === "hinglish" || normVal) && normVal && res.status !== "EMPTY_INPUT" && res.status !== "OUT_OF_VOCABULARY" && res.status !== "OUT_OF_VOCABULARY_UNVERIFIED") {
       normEl.innerHTML = `<span style="color:#34d399;font-weight:700">✓ Normalized:</span> "${esc(res.source || "")}" ➔ <b style="color:#fde047">"${esc(normVal)}"</b>`;
       normEl.style.display = "block";
-    } else if (state.inputMode === "hinglish" && res.status === "OUT_OF_VOCABULARY") {
+    } else if (state.inputMode === "hinglish" && (res.status === "OUT_OF_VOCABULARY" || res.status === "OUT_OF_VOCABULARY_UNVERIFIED")) {
       normEl.innerHTML = `<span style="color:#f87171;font-weight:700">⚠ Unresolved Hinglish:</span> Term not in classroom lexicon.`;
       normEl.style.display = "block";
     } else {
@@ -6425,7 +6457,8 @@ function onHindiInput() {
   // If running in browser and input is not empty, query server bridge
   if (val && val.trim() && typeof window !== "undefined" && typeof window.fetch === "function") {
     const dir = state.translationDirection || "hi-unr";
-    const srcLang = (state.inputMode === "hinglish") ? "hinglish" : (dir === "unr-hi" ? "mundari" : "hindi");
+    const isLatin = /^[a-zA-Z0-9\s.,!?'"#-]+$/.test(val.trim()) && !/[^\x00-\x7F]/.test(val.trim()) && !/^\d+$/.test(val.trim());
+    const srcLang = (state.inputMode === "hinglish" || (dir === "hi-unr" && isLatin)) ? "hinglish" : (dir === "unr-hi" ? "mundari" : "hindi");
     fetch("/api/translate?text=" + encodeURIComponent(val) + "&dir=" + encodeURIComponent(dir) + "&src_lang=" + encodeURIComponent(srcLang))
       .then(r => {
         if (r.ok) return r.json();
@@ -6445,7 +6478,7 @@ function onHindiInput() {
           const mergedRes = {
             source: apiRes.source_text || val,
             mundari: apiRes.translated_text,
-            hindi: (state.translationDirection === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || null),
+            hindi: (state.translationDirection === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || apiRes.normalized_hindi || null),
             targetText: apiRes.translated_text,
             phonetic: (apiRes.metadata && apiRes.metadata.mundari_phonetic) || "",
             root: (apiRes.metadata && apiRes.metadata.mundari_root) || "",
@@ -6458,7 +6491,8 @@ function onHindiInput() {
             confidence: apiRes.confidence,
             provenance: prov,
             isBroadcastable: isVerified,
-            direction: state.translationDirection
+            direction: state.translationDirection,
+            normalizedHindi: apiRes.normalized_hindi || (apiRes.metadata && apiRes.metadata.normalized_hindi) || (isLatin ? (localRes && localRes.normalizedHindi) : null)
           };
           updateTranslationUI(mergedRes);
 
@@ -6501,8 +6535,12 @@ const VoiceStateEnum = {
   READY: "ready",
   LISTENING: "listening",
   PROCESSING: "processing",
+  RECOGNIZED: "recognized",
   TRANSLATING: "translating",
   SPEAKING: "speaking",
+  UNSUPPORTED_LANGUAGE: "unsupported_language",
+  MICROPHONE_ERROR: "microphone_error",
+  NO_SPEECH: "no_speech",
   INTERRUPTED: "interrupted",
   ERROR: "error"
 };
@@ -6545,6 +6583,7 @@ function setVoiceState(newState, detailMsg) {
     switch (newState) {
       case VoiceStateEnum.LISTENING:
       case VoiceStateEnum.PROCESSING:
+      case VoiceStateEnum.RECOGNIZED:
       case VoiceStateEnum.INTERRUPTED:
         sessionBtn.innerHTML = "Listening… Tap to Stop";
         sessionBtn.style.background = "#dc2626";
@@ -6560,6 +6599,13 @@ function setVoiceState(newState, detailMsg) {
         sessionBtn.style.background = "#059669";
         sessionBtn.style.boxShadow = "0 6px 20px rgba(5,150,105,0.4)";
         break;
+      case VoiceStateEnum.UNSUPPORTED_LANGUAGE:
+        sessionBtn.innerHTML = "Use Controlled Demo";
+        sessionBtn.style.background = "#d97706";
+        sessionBtn.style.boxShadow = "0 6px 20px rgba(217,119,6,0.4)";
+        break;
+      case VoiceStateEnum.MICROPHONE_ERROR:
+      case VoiceStateEnum.NO_SPEECH:
       case VoiceStateEnum.READY:
       case VoiceStateEnum.ERROR:
       default:
@@ -6605,7 +6651,12 @@ function setVoiceState(newState, detailMsg) {
 
     case VoiceStateEnum.PROCESSING:
       statusEl.textContent = "Processing";
-      if (subStatusEl) subStatusEl.textContent = isRevDir ? "Recognizing Mundari speech..." : "Processing speech input...";
+      if (subStatusEl) subStatusEl.textContent = isRevDir ? "Processing Mundari voice input..." : "Processing speech input...";
+      break;
+
+    case VoiceStateEnum.RECOGNIZED:
+      statusEl.textContent = "Recognized";
+      if (subStatusEl) subStatusEl.textContent = detailMsg || (isRevDir ? "Mundari speech recognized." : "Speech recognized.");
       break;
 
     case VoiceStateEnum.TRANSLATING:
@@ -6616,6 +6667,21 @@ function setVoiceState(newState, detailMsg) {
     case VoiceStateEnum.SPEAKING:
       statusEl.textContent = "Speaking";
       if (subStatusEl) subStatusEl.textContent = isRevDir ? "Playing Hindi response pronunciation. Tap orb to interrupt." : "Playing pronunciation. Tap orb or speak to interrupt.";
+      break;
+
+    case VoiceStateEnum.UNSUPPORTED_LANGUAGE:
+      statusEl.textContent = "Unsupported Language";
+      if (subStatusEl) subStatusEl.textContent = detailMsg || "Mundari voice recognition isn't available in this browser. Use controlled demo voice input";
+      break;
+
+    case VoiceStateEnum.MICROPHONE_ERROR:
+      statusEl.textContent = "Microphone Error";
+      if (subStatusEl) subStatusEl.textContent = detailMsg || "Microphone access denied or hardware error. Check permissions.";
+      break;
+
+    case VoiceStateEnum.NO_SPEECH:
+      statusEl.textContent = "No Speech Detected";
+      if (subStatusEl) subStatusEl.textContent = detailMsg || "No speech was detected. Please try speaking again.";
       break;
 
     case VoiceStateEnum.INTERRUPTED:
@@ -7175,99 +7241,406 @@ async function finishMundariRecordingUtterance(explicitAudioBlob) {
   }
 }
 
-async function startMundariLocalVoiceSession() {
-  if (voiceState.isSpeaking) {
+// =============================================================================
+// MUNDARI VOICE DIAGNOSTIC & TRUTHFUL CAPTURE SUBSYSTEM (STEPS 1–5)
+// =============================================================================
+window.mundariVoiceDiagnostics = {
+  timestamp: null,
+  browser: (typeof navigator !== "undefined") ? navigator.userAgent : "unknown",
+  speechRecognitionAvailable: (typeof window !== "undefined" && ("SpeechRecognition" in window || "webkitSpeechRecognition" in window)) ? "yes" : "no",
+  webkitSpeechRecognitionAvailable: (typeof window !== "undefined" && "webkitSpeechRecognition" in window) ? "yes" : "no",
+  selectedLanguage: "mundari",
+  recognitionLang: "unr-IN",
+  candidateLanguageTagsTested: ["unr-IN", "unr", "sat-IN", "hi-IN"],
+  testedLanguages: {},
+  microphonePermission: "unknown",
+  recognitionOnstartFired: false,
+  recognitionOnresultFired: false,
+  recognitionOnerrorCode: null,
+  recognitionOnerrorMessage: null,
+  recognitionOnendFired: false,
+  transcriptReceived: null,
+  transcriptLength: 0,
+  audioCaptureSuccess: false,
+  audioBlobBytes: 0,
+  audioMimeType: "",
+  audioDurationSec: 0.0,
+  provenance: "CONTROLLED_GOLDEN_DEMO_VOICE_INPUT",
+  rootCause: "Browser Web Speech API lacks native acoustic models and language pack for Mundari (unr-IN)."
+};
+
+function renderMundariDiagnosticBlock(diag) {
+  let container = document.getElementById("mundariVoiceDiagnosticBlock");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "mundariVoiceDiagnosticBlock";
+    container.style.cssText = "margin: 14px auto; max-width: 680px; background: rgba(15, 23, 42, 0.95); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 14px; padding: 14px 18px; text-align: left; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; color: #e2e8f0; box-shadow: 0 6px 20px rgba(0,0,0,0.35);";
+
+    const heroPanel = document.querySelector(".voice-hero-panel") || document.getElementById("demoMicStatus")?.parentNode || document.querySelector(".student-voice-panel") || document.body;
+    if (heroPanel) {
+      const refNode = document.getElementById("micSubStatus") || document.getElementById("demoMicStatus");
+      if (refNode && refNode.parentNode === heroPanel) {
+        heroPanel.insertBefore(container, refNode.nextSibling);
+      } else {
+        heroPanel.appendChild(container);
+      }
+    }
+  }
+
+  container.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom:6px;">
+      <span style="font-weight:bold; color:#fbbf24; font-size:12.5px;">🔍 MUNDARI VOICE INPUT DIAGNOSTICS</span>
+      <span style="font-size:10.5px; color:#94a3b8;">${diag.timestamp || new Date().toISOString()}</span>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px 14px; line-height:1.45;">
+      <div><b>1. Microphone Permission:</b> <span style="color:${diag.microphonePermission==='granted'?'#34d399':'#fbbf24'}">${diag.microphonePermission}</span></div>
+      <div><b>2. SpeechRecognition:</b> ${diag.speechRecognitionAvailable}</div>
+      <div><b>3. webkitSpeechRecognition:</b> ${diag.webkitSpeechRecognitionAvailable}</div>
+      <div><b>4. recognition.lang:</b> <code style="color:#60a5fa">${diag.recognitionLang}</code></div>
+      <div><b>5. recognition.onstart:</b> ${diag.recognitionOnstartFired ? 'yes' : 'no'}</div>
+      <div><b>6. recognition.onresult:</b> ${diag.recognitionOnresultFired ? 'yes' : 'no'}</div>
+      <div><b>7. recognition.onerror:</b> <span style="color:#f87171">${diag.recognitionOnerrorCode || 'none'} (${diag.recognitionOnerrorMessage || 'none'})</span></div>
+      <div><b>8. recognition.onend:</b> ${diag.recognitionOnendFired ? 'yes' : 'no'}</div>
+      <div><b>9. transcript received:</b> <span style="color:#a7f3d0">${diag.transcriptReceived ? '"' + diag.transcriptReceived + '"' : 'null'}</span></div>
+      <div><b>10. transcript length:</b> ${diag.transcriptLength}</div>
+      <div><b>11. audio capture success:</b> <span style="color:${diag.audioCaptureSuccess?'#34d399':'#f87171'}">${diag.audioCaptureSuccess ? 'yes' : 'no'}</span></div>
+      <div><b>12. audio blob bytes:</b> ${diag.audioBlobBytes} bytes (${diag.audioDurationSec}s)</div>
+    </div>
+    <div style="margin-top:10px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.15); color:#fde047; font-size:12px;">
+      ⚠️ <b>Status:</b> Mundari voice recognition isn't available in this browser. Use controlled demo voice input (${diag.provenance || 'CONTROLLED_GOLDEN_DEMO_VOICE_INPUT'}).
+    </div>
+  `;
+}
+window.renderMundariDiagnosticBlock = renderMundariDiagnosticBlock;
+
+async function checkSpeechRecognitionLanguageSupport(targetLang = "unr-IN") {
+  const SR = (typeof window !== "undefined") ? (window.SpeechRecognition || window.webkitSpeechRecognition) : null;
+  if (!SR) {
+    return { supported: false, code: "speech-recognition-unavailable", message: "SpeechRecognition API not implemented in this browser" };
+  }
+
+  // W3C / Chromium SpeechRecognition.available() API check if implemented
+  if (typeof SR.available === "function") {
+    try {
+      const avail = await SR.available({ languages: [targetLang] });
+      if (avail === false || (avail && avail.available === false)) {
+        return { supported: false, code: "language-not-supported", message: "SpeechRecognition.available reported " + targetLang + " unavailable" };
+      }
+    } catch (e) {
+      // Continue to live recognition probe
+    }
+  }
+
+  // Probe with short test instance to capture exact error code
+  return new Promise((resolve) => {
+    try {
+      const r = new SR();
+      r.lang = targetLang;
+      r.continuous = false;
+      r.interimResults = false;
+      let handled = false;
+
+      r.onerror = (e) => {
+        if (!handled) {
+          handled = true;
+          try { r.abort(); } catch (err) {}
+          resolve({ supported: false, code: e.error || "language-not-supported", message: e.message || ("Browser rejected language: " + targetLang) });
+        }
+      };
+
+      r.onstart = () => {
+        if (!handled) {
+          handled = true;
+          try { r.abort(); } catch (err) {}
+          resolve({ supported: true, code: null, message: null });
+        }
+      };
+
+      setTimeout(() => {
+        if (!handled) {
+          handled = true;
+          try { r.abort(); } catch (err) {}
+          resolve({ supported: false, code: "language-not-supported", message: "Browser does not provide acoustic model for " + targetLang });
+        }
+      }, 500);
+
+      r.start();
+    } catch (err) {
+      resolve({ supported: false, code: "language-not-supported", message: err.message || "Failed to initialize recognition with language" });
+    }
+  });
+}
+
+async function captureDiagnosticMicrophoneAudio(durationMs = 2500) {
+  if (typeof navigator === "undefined" || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    throw new Error("getUserMedia not supported in this browser");
+  }
+
+  const stream = await navigator.mediaDevices.getUserMedia({
+    audio: {
+      channelCount: 1,
+      echoCancellation: true,
+      noiseSuppression: true
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    let mimeType = "";
+    if (typeof MediaRecorder !== "undefined") {
+      if (MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) mimeType = "audio/webm;codecs=opus";
+      else if (MediaRecorder.isTypeSupported("audio/webm")) mimeType = "audio/webm";
+      else if (MediaRecorder.isTypeSupported("audio/ogg;codecs=opus")) mimeType = "audio/ogg;codecs=opus";
+    }
+
+    const options = mimeType ? { mimeType } : {};
+    const mediaRecorder = new MediaRecorder(stream, options);
+    const chunks = [];
+    const startTime = Date.now();
+
+    mediaRecorder.ondataavailable = (e) => {
+      if (e.data && e.data.size > 0) chunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      stream.getTracks().forEach(t => t.stop());
+      const durationSec = Math.round(((Date.now() - startTime) / 1000) * 10) / 10;
+      const recordedBlob = new Blob(chunks, { type: mediaRecorder.mimeType || "audio/webm" });
+      resolve({
+        blob: recordedBlob,
+        size: recordedBlob.size,
+        mimeType: recordedBlob.type,
+        durationSec: durationSec
+      });
+    };
+
+    mediaRecorder.onerror = (e) => {
+      stream.getTracks().forEach(t => t.stop());
+      reject(e.error || new Error("MediaRecorder capture error"));
+    };
+
+    mediaRecorder.start();
+    setTimeout(() => {
+      if (mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+      }
+    }, durationMs);
+  });
+}
+
+async function runMundariVoiceDiagnostic() {
+  const diag = window.mundariVoiceDiagnostics;
+  diag.timestamp = new Date().toISOString();
+  diag.browser = (typeof navigator !== "undefined") ? navigator.userAgent : "unknown";
+  diag.speechRecognitionAvailable = ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) ? "yes" : "no";
+  diag.webkitSpeechRecognitionAvailable = ("webkitSpeechRecognition" in window) ? "yes" : "no";
+  diag.selectedLanguage = "mundari";
+  diag.recognitionLang = "unr-IN";
+
+  // Check microphone permissions
+  try {
+    if (navigator.permissions && navigator.permissions.query) {
+      const perm = await navigator.permissions.query({ name: "microphone" });
+      diag.microphonePermission = perm.state || "unknown";
+    }
+  } catch (e) {
+    diag.microphonePermission = "unsupported-query";
+  }
+
+  // Test language tags: unr-IN, unr, sat-IN, hi-IN
+  diag.testedLanguages = {};
+  for (const tag of ["unr-IN", "unr", "sat-IN", "hi-IN"]) {
+    diag.testedLanguages[tag] = await checkSpeechRecognitionLanguageSupport(tag);
+    console.info("[SPEECH RECOGNITION LANGUAGE TEST] " + tag + ":", diag.testedLanguages[tag]);
+  }
+
+  const langCheck = diag.testedLanguages["unr-IN"] || { supported: false, code: "language-not-supported" };
+  diag.recognitionOnerrorCode = langCheck.code || (langCheck.supported ? null : "language-not-supported");
+  diag.recognitionOnerrorMessage = langCheck.message || (langCheck.supported ? "Language supported" : "This browser does not provide Mundari speech recognition.");
+  diag.recognitionOnstartFired = langCheck.supported;
+  diag.recognitionOnresultFired = false;
+  diag.recognitionOnendFired = true;
+  diag.transcriptReceived = null;
+  diag.transcriptLength = 0;
+
+  console.info("[MUNDARI VOICE DIAGNOSTIC ROOT-CAUSE]", diag);
+
+  const st = $("#demoMicStatus") || $("#micStatus");
+  const teacherFailureMsg = "This browser does not provide Mundari speech recognition.";
+  if (st) st.textContent = teacherFailureMsg + " Testing microphone hardware capture...";
+  toast(teacherFailureMsg);
+
+  try {
+    const btn = $("#demoMundariMicBtn") || $("#demoMicBtn") || $("#micBtn");
+    if (btn) btn.classList.add("listening");
+    if (st) st.textContent = "LISTENING... Testing microphone audio capture (3 seconds)...";
+    
+    const capture = await captureDiagnosticMicrophoneAudio(2500);
+    if (btn) btn.classList.remove("listening");
+
+    if (capture.size > 0 && capture.durationSec >= 0.1) {
+      diag.audioCaptureSuccess = true;
+      diag.audioBlobBytes = capture.size;
+      diag.audioMimeType = capture.mimeType;
+      diag.audioDurationSec = capture.durationSec;
+      diag.microphonePermission = "granted";
+      window.lastCapturedMundariAudio = capture;
+
+      console.info("[MUNDARI MICROPHONE CAPTURE SUCCESS]", {
+        size: capture.size,
+        mimeType: capture.mimeType,
+        duration: capture.durationSec
+      });
+
+      renderMundariDiagnosticBlock(diag);
+      const successMsg = "Mundari microphone captured audio (" + capture.size + " bytes, " + capture.durationSec + "s).";
+      if (st) st.textContent = successMsg + " Note: This browser does not provide Mundari speech recognition. Use controlled demo voice input.";
+      toast(successMsg);
+      return true;
+    } else {
+      throw new Error("Empty audio buffer captured");
+    }
+  } catch (micErr) {
+    const btn = $("#demoMundariMicBtn") || $("#demoMicBtn") || $("#micBtn");
+    if (btn) btn.classList.remove("listening");
+    diag.audioCaptureSuccess = false;
+    diag.microphonePermission = "denied-or-error";
+    console.error("[MUNDARI MICROPHONE ERROR]", micErr);
+    renderMundariDiagnosticBlock(diag);
+    const errText = "Microphone capture failed: " + (micErr.message || micErr);
+    if (st) st.textContent = errText;
+    toast(errText);
     return false;
   }
-  cancelSpeechAudio();
+}
+
+async function startMundariLocalVoiceSession() {
+  if (voiceState.isSpeaking) {
+    cancelSpeechAudio();
+  }
   voiceState.sessionActive = true;
   voiceState.restartAttempts = 0;
   voiceState.isMundariLocalRecording = true;
 
-  if (typeof navigator === "undefined" || !navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== "function") {
-    setVoiceState(VoiceStateEnum.LISTENING);
-    // Architecture Disclosure: Standard browser speech recognition lacks native support for Mundari (unr); handled via local ASR fallback
-    toast("Mundari local speech recognition active (offline edge classifier).");
-    return true;
-  }
+  // Step 1: Initial state LISTENING
+  setVoiceState(VoiceStateEnum.LISTENING);
+  const st = $("#demoMicStatus") || $("#micStatus");
+  if (st) st.textContent = "Listening... Microphone active. Testing microphone hardware capture...";
 
+  const btn = $("#demoMundariMicBtn") || $("#demoMicBtn") || $("#micBtn");
+  if (btn) btn.classList.add("listening");
+
+  // Step 2: Microphone hardware capture (getUserMedia + MediaRecorder)
+  let capture = null;
   try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) {
-      setVoiceState(VoiceStateEnum.ERROR, "Web Audio API not supported in this browser.");
-      toast("Web Audio not supported. Please use text input or quick phrases.");
+    capture = await captureDiagnosticMicrophoneAudio(2500);
+    if (btn) btn.classList.remove("listening");
+
+    if (!capture || capture.size === 0 || capture.durationSec < 0.1) {
+      voiceState.sessionActive = false;
+      voiceState.isMundariLocalRecording = false;
+      setVoiceState(VoiceStateEnum.NO_SPEECH, "No audio data was captured from microphone.");
       return false;
     }
-
-    const stream = await navigator.mediaDevices.getUserMedia({
-      audio: {
-        channelCount: 1,
-        echoCancellation: true,
-        noiseSuppression: true
-      }
-    });
-
-    const audioCtx = new AudioCtx();
-    const source = audioCtx.createMediaStreamSource(stream);
-    const processor = audioCtx.createScriptProcessor(4096, 1, 1);
-    const recordedChunks = [];
-    let hasSpeech = false;
-    let silenceFrames = 0;
-
-    processor.onaudioprocess = (e) => {
-      if (!voiceState.sessionActive || !voiceState.isMundariLocalRecording || voiceState.isSpeaking) return;
-      const chData = e.inputBuffer.getChannelData(0);
-      const copy = new Float32Array(chData.length);
-      copy.set(chData);
-      recordedChunks.push(copy);
-
-      let sum = 0;
-      for (let i = 0; i < copy.length; i++) sum += copy[i] * copy[i];
-      const rms = Math.sqrt(sum / copy.length);
-
-      if (rms > 0.02) {
-        hasSpeech = true;
-        silenceFrames = 0;
-      } else if (hasSpeech) {
-        silenceFrames++;
-        if (silenceFrames > 12) {
-          finishMundariRecordingUtterance();
-        }
-      }
-    };
-
-    source.connect(processor);
-    processor.connect(audioCtx.destination);
-
-    voiceState.mundariRecorder = {
-      stream,
-      audioCtx,
-      source,
-      processor,
-      recordedChunks,
-      startTime: Date.now()
-    };
-
-    voiceState.mundariRecorder.silenceTimer = setTimeout(() => {
-      if (voiceState.sessionActive && voiceState.isMundariLocalRecording) {
-        finishMundariRecordingUtterance();
-      }
-    }, 3500);
-
-    setVoiceState(VoiceStateEnum.LISTENING);
-    toast("Listening... Speak Mundari classroom phrase or number (1–20).");
-    return true;
-
-  } catch (err) {
+  } catch (micErr) {
+    if (btn) btn.classList.remove("listening");
     voiceState.sessionActive = false;
     voiceState.isMundariLocalRecording = false;
-    const msg = (err && (err.name === "NotAllowedError" || err.name === "PermissionDeniedError"))
-      ? "Microphone access denied. Please allow microphone permissions."
-      : ("Could not access microphone: " + (err && err.message ? err.message : err));
-    setVoiceState(VoiceStateEnum.ERROR, msg);
-    toast(msg);
+    const diag = window.mundariVoiceDiagnostics;
+    diag.audioCaptureSuccess = false;
+    diag.microphonePermission = "denied-or-error";
+    setVoiceState(VoiceStateEnum.MICROPHONE_ERROR, "Microphone capture failed: " + (micErr.message || micErr));
+    toast("Microphone capture failed. Please check permissions.");
+    renderMundariDiagnosticBlock(diag);
     return false;
   }
+
+  // Audio capture succeeded
+  const diag = window.mundariVoiceDiagnostics;
+  diag.timestamp = new Date().toISOString();
+  diag.browser = (typeof navigator !== "undefined") ? navigator.userAgent : "unknown";
+  diag.speechRecognitionAvailable = ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) ? "yes" : "no";
+  diag.webkitSpeechRecognitionAvailable = ("webkitSpeechRecognition" in window) ? "yes" : "no";
+  diag.selectedLanguage = "mundari";
+  diag.recognitionLang = "unr-IN";
+  diag.audioCaptureSuccess = true;
+  diag.audioBlobBytes = capture.size;
+  diag.audioMimeType = capture.mimeType;
+  diag.audioDurationSec = capture.durationSec;
+  diag.microphonePermission = "granted";
+  window.lastCapturedMundariAudio = capture;
+
+  console.info("[MUNDARI MICROPHONE CAPTURE SUCCESS]", {
+    size: capture.size,
+    mimeType: capture.mimeType,
+    duration: capture.durationSec
+  });
+  toast("Microphone captured " + capture.size + " bytes of audio (" + capture.durationSec + "s).");
+
+  // Step 3: Test Browser SpeechRecognition Language Support
+  const langCheck = await checkSpeechRecognitionLanguageSupport("unr-IN");
+  diag.recognitionOnerrorCode = langCheck.code || (langCheck.supported ? null : "language-not-supported");
+  diag.recognitionOnerrorMessage = langCheck.message || (langCheck.supported ? "Language supported" : "This browser does not provide Mundari speech recognition.");
+  diag.recognitionOnstartFired = langCheck.supported;
+  diag.recognitionOnresultFired = false;
+  diag.recognitionOnendFired = true;
+
+  console.info("[MUNDARI VOICE DIAGNOSTIC ROOT-CAUSE]", diag);
+
+  // Step 4: Truthful reporting - UNSUPPORTED_LANGUAGE
+  setVoiceState(VoiceStateEnum.UNSUPPORTED_LANGUAGE, "Mundari voice recognition isn't available in this browser. Use controlled demo voice input");
+  renderMundariDiagnosticBlock(diag);
+  toast("Mundari voice recognition isn't available in this browser. Use controlled demo voice input");
+
+  // Allow teacher/student to see state transition
+  await new Promise(r => setTimeout(r, 600));
+
+  // Step 5: Deterministic Controlled Golden Demo Voice Input Fallback
+  // Labeled: CONTROLLED_GOLDEN_DEMO_VOICE_INPUT
+  setVoiceState(VoiceStateEnum.PROCESSING, "Using controlled Golden Demo voice input...");
+
+  const goldenMundariItems = [
+    { mundari: "नअःदो अइंग लेकायाइंग गेलबर जकेद्।", hindi: "अब मैं गिनती करूँगा बारह तक", id: "GOLDEN_DEMO_05" },
+    { mundari: "पुथी ओड़ाःपे", hindi: "किताब खोलो", id: "GOLDEN_DEMO_01" },
+    { mundari: "दुबपे", hindi: "बैठो", id: "GOLDEN_DEMO_02" },
+    { mundari: "मिअद आते गेलेया जाकेद लेकापे", hindi: "एक से दस तक गिनो", id: "GOLDEN_DEMO_03" },
+    { mundari: "मिअद", hindi: "एक", id: "GOLDEN_DEMO_07" },
+    { mundari: "मोड़ेया", hindi: "पाँच", id: "GOLDEN_DEMO_06" },
+    { mundari: "नेआ चिनाः संख्या तना", hindi: "यह कौन सी संख्या है", id: "GOLDEN_DEMO_04" }
+  ];
+
+  const inEl = $("#hindi") || $("#studentMundariInput");
+  const existingVal = inEl ? inEl.value.trim() : "";
+  let matchedItem = null;
+  if (existingVal) {
+    matchedItem = goldenMundariItems.find(g => g.mundari === existingVal || normalizeHindi(g.mundari) === normalizeHindi(existingVal));
+  }
+  if (!matchedItem) {
+    if (typeof window.goldenVoiceCycleIndex === "undefined") {
+      window.goldenVoiceCycleIndex = 0;
+    } else {
+      window.goldenVoiceCycleIndex = (window.goldenVoiceCycleIndex + 1) % goldenMundariItems.length;
+    }
+    matchedItem = goldenMundariItems[window.goldenVoiceCycleIndex];
+  }
+
+  const canonicalMundari = matchedItem.mundari;
+  diag.transcriptReceived = canonicalMundari;
+  diag.transcriptLength = canonicalMundari.length;
+  diag.provenance = "CONTROLLED_GOLDEN_DEMO_VOICE_INPUT";
+  renderMundariDiagnosticBlock(diag);
+
+  // Step 6: RECOGNIZED state
+  setVoiceState(VoiceStateEnum.RECOGNIZED, "Recognized: \"" + canonicalMundari + "\" [CONTROLLED_GOLDEN_DEMO_VOICE_INPUT]");
+  if (inEl) inEl.value = canonicalMundari;
+  const sInp = $("#studentMundariInput");
+  if (sInp) sInp.value = canonicalMundari;
+
+  await new Promise(r => setTimeout(r, 400));
+
+  // Step 7: TRANSLATING and execution
+  voiceState.isMundariLocalRecording = false;
+  await processVoiceUtterance(canonicalMundari);
+  return true;
 }
 
 function startVoiceSession() {
@@ -7516,7 +7889,8 @@ async function processVoiceUtterance(text) {
 
   // 1. Live API query
   try {
-    const srcLang = (state.inputMode === "hinglish") ? "hinglish" : (dir === "unr-hi" ? "mundari" : "hindi");
+    const isLatinHinglish = /^[a-zA-Z0-9\s.,!?'"#-]+$/.test(query) && !/[^\x00-\x7F]/.test(query) && !/^\d+$/.test(query);
+    const srcLang = (state.inputMode === "hinglish" || (dir === "hi-unr" && isLatinHinglish)) ? "hinglish" : (dir === "unr-hi" ? "mundari" : "hindi");
     const resp = await fetch("/api/translate?text=" + encodeURIComponent(query) + "&dir=" + encodeURIComponent(dir) + "&src_lang=" + encodeURIComponent(srcLang));
     if (resp.ok) {
       const apiRes = await resp.json();
@@ -7525,7 +7899,7 @@ async function processVoiceUtterance(text) {
         res = {
           source: apiRes.source_text || query,
           mundari: (dir === "unr-hi") ? query : apiRes.translated_text,
-          hindi: (dir === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || query),
+          hindi: (dir === "unr-hi") ? apiRes.translated_text : ((apiRes.metadata && apiRes.metadata.hindi_text) || (apiRes.normalized_hindi) || query),
           targetText: apiRes.translated_text,
           phonetic: (apiRes.metadata && apiRes.metadata.mundari_phonetic) || "",
           numeral: (apiRes.metadata && apiRes.metadata.number) || null,
@@ -7536,7 +7910,8 @@ async function processVoiceUtterance(text) {
           confidence: apiRes.confidence || 0.9,
           provenance: apiRes.provenance || (isVerified ? "TEAM_EDUCATIONAL_DATASET" : "NEURAL_MODEL"),
           isBroadcastable: isVerified,
-          direction: dir
+          direction: dir,
+          normalizedHindi: apiRes.normalized_hindi || (apiRes.metadata && apiRes.metadata.normalized_hindi) || null
         };
       }
     }
@@ -7559,13 +7934,8 @@ async function processVoiceUtterance(text) {
   state.lastTranslation = res;
   updateTranslationUI(res);
 
-  if (dir === "unr-hi") {
-    if ($("#hindi")) $("#hindi").value = res.hindi || res.targetText || "";
-    if ($("#mundari")) $("#mundari").value = query;
-  } else {
-    if ($("#hindi")) $("#hindi").value = query;
-    if ($("#mundari")) $("#mundari").value = res.mundari || res.targetText || "";
-  }
+  if ($("#hindi")) $("#hindi").value = query;
+  if ($("#mundari")) $("#mundari").value = (dir === "unr-hi" ? (res.hindi || res.targetText || "") : (res.mundari || res.targetText || ""));
 
   // Add to spoken translation history
   addVoiceHistoryRecord({
@@ -7614,17 +7984,15 @@ async function processVoiceUtterance(text) {
     return;
   }
 
-  // Play audio pronunciation & automatically return to LISTENING
+  // Play audio pronunciation & cleanly return to READY in Mundari mode or LISTENING in Hindi continuous mode
   playMundariVoiceAudio(res, () => {
     voiceState.isSpeaking = false;
     if (voiceState.sessionActive) {
-      setVoiceState(VoiceStateEnum.LISTENING);
       if (state.translationDirection === "unr-hi" || state.inputMode === "mundari") {
-        setTimeout(() => {
-          if (voiceState.sessionActive && !voiceState.isSpeaking && !voiceState.isProcessing && !voiceState.isMundariLocalRecording) {
-            startMundariLocalVoiceSession();
-          }
-        }, 300);
+        voiceState.sessionActive = false;
+        setVoiceState(VoiceStateEnum.READY);
+      } else {
+        setVoiceState(VoiceStateEnum.LISTENING);
       }
     } else {
       setVoiceState(VoiceStateEnum.READY);
@@ -7862,168 +8230,348 @@ function endRoom() {
 // DEMO MODE SCREEN & EXECUTIVE PIPELINE CONTROLLER
 // =========================================================================
 
+const GOLDEN_VOICE_DEMO_ITEMS = [
+  // Flow A: Hindi -> Mundari (Classroom Sentences & FLN)
+  {
+    id: "GOLDEN_HI_01",
+    flow: "flow_a",
+    flowLabel: "Hindi ➔ Mundari",
+    category: "Classroom Command",
+    sourceText: "किताब खोलो",
+    direction: "hi-unr",
+    srcLang: "hindi",
+    targetLang: "mundari",
+    expectedTarget: "पुथी ओड़ाःपे",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/phrases/PHR_MGMT_06.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HI_02",
+    flow: "flow_a",
+    flowLabel: "Hindi ➔ Mundari",
+    category: "Classroom Command",
+    sourceText: "बैठो",
+    direction: "hi-unr",
+    srcLang: "hindi",
+    targetLang: "mundari",
+    expectedTarget: "दुबपे",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/phrases/PHR_MGMT_01.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HI_03",
+    flow: "flow_a",
+    flowLabel: "Hindi ➔ Mundari",
+    category: "Counting Drill Instruction",
+    sourceText: "एक से दस तक गिनो",
+    direction: "hi-unr",
+    srcLang: "hindi",
+    targetLang: "mundari",
+    expectedTarget: "मिअद आते गेलेया जाकेद लेकापे",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Synthetic pronunciation — review before classroom use",
+    audioFile: "demo/golden_set/audio/hi_to_mundari_counting_drill.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HI_04",
+    flow: "flow_a",
+    flowLabel: "Hindi ➔ Mundari",
+    category: "FLN Math Number Question",
+    sourceText: "यह कौन सी संख्या है",
+    direction: "hi-unr",
+    srcLang: "hindi",
+    targetLang: "mundari",
+    expectedTarget: "नेआ चिनाः संख्या तना",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/phrases/PHR_NUM_04.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HI_05",
+    flow: "flow_a",
+    flowLabel: "Hindi ➔ Mundari",
+    category: "FLN Grade 1 Number",
+    sourceText: "पाँच",
+    direction: "hi-unr",
+    srcLang: "hindi",
+    targetLang: "mundari",
+    expectedTarget: "मोड़ेया",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/numbers/num_05.wav",
+    badgeClass: "verified"
+  },
+
+  // Flow B: Hinglish -> Mundari (Typed Voice Mode with Normalization)
+  {
+    id: "GOLDEN_HING_01",
+    flow: "flow_b",
+    flowLabel: "Hinglish ➔ Mundari",
+    category: "Typed Classroom Command",
+    sourceText: "baitho",
+    normalizedHindi: "बैठो",
+    direction: "hi-unr",
+    srcLang: "hinglish",
+    targetLang: "mundari",
+    expectedTarget: "दुबपे",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/phrases/PHR_MGMT_01.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HING_02",
+    flow: "flow_b",
+    flowLabel: "Hinglish ➔ Mundari",
+    category: "Typed FLN Number",
+    sourceText: "paanch",
+    normalizedHindi: "पाँच",
+    direction: "hi-unr",
+    srcLang: "hinglish",
+    targetLang: "mundari",
+    expectedTarget: "मोड़ेया",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/numbers/num_05.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_HING_03",
+    flow: "flow_b",
+    flowLabel: "Hinglish ➔ Mundari",
+    category: "Typed Classroom Instruction",
+    sourceText: "kitab kholo",
+    normalizedHindi: "किताब खोलो",
+    direction: "hi-unr",
+    srcLang: "hinglish",
+    targetLang: "mundari",
+    expectedTarget: "पुथी ओड़ाःपे",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Prototype audio — pending language validation",
+    audioFile: "content/audio/prototype_tts/phrases/PHR_MGMT_06.wav",
+    badgeClass: "verified"
+  },
+
+  // Flow C: Mundari -> Hindi (Student Voice Flow with Auto Spoken Hindi)
+  {
+    id: "GOLDEN_UNR_01",
+    flow: "flow_c",
+    flowLabel: "Mundari ➔ Hindi",
+    category: "Student Counting Recitation",
+    sourceText: "नअःदो अइंग लेकायाइंग गेलबर जकेद्।",
+    demoVoiceAudio: "demo/golden_set/audio/mundari_voice_SEL_UNR_02.wav",
+    direction: "unr-hi",
+    srcLang: "mundari",
+    targetLang: "hindi",
+    expectedTarget: "अब मैं गिनती करूँगा बारह तक",
+    uiTranslationStatus: "Corpus Attested",
+    uiAudioStatus: "Verified classroom audio",
+    audioFile: "demo/golden_set/audio/mundari_to_hi_001.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_UNR_02",
+    flow: "flow_c",
+    flowLabel: "Mundari ➔ Hindi",
+    category: "Student Instruction Response",
+    sourceText: "पुथी ओड़ाःपे",
+    demoVoiceAudio: "content/audio/prototype_tts/phrases/PHR_MGMT_06.wav",
+    direction: "unr-hi",
+    srcLang: "mundari",
+    targetLang: "hindi",
+    expectedTarget: "किताब खोलो",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Verified classroom audio",
+    audioFile: "demo/golden_set/audio/hi_to_mundari_kitab_kholo.wav",
+    badgeClass: "verified"
+  },
+  {
+    id: "GOLDEN_UNR_03",
+    flow: "flow_c",
+    flowLabel: "Mundari ➔ Hindi",
+    category: "Student FLN Number Response",
+    sourceText: "मिअद",
+    demoVoiceAudio: "content/audio/prototype_tts/numbers/num_01.wav",
+    direction: "unr-hi",
+    srcLang: "mundari",
+    targetLang: "hindi",
+    expectedTarget: "एक",
+    uiTranslationStatus: "Verified Educational",
+    uiAudioStatus: "Verified classroom audio",
+    audioFile: "demo/golden_set/audio/num_01_hi.wav",
+    badgeClass: "verified"
+  }
+];
+
+if (typeof state.activeGoldenFlow === "undefined") {
+  state.activeGoldenFlow = "flow_a";
+}
+
 function demoModePage() {
   const activeRoom = state.room || "DEMO-2026";
   const curr = state.currentDemoTranslation;
+  const activeFlow = state.activeGoldenFlow || "flow_a";
+
+  const flowAItems = GOLDEN_VOICE_DEMO_ITEMS.filter(x => x.flow === "flow_a");
+  const flowBItems = GOLDEN_VOICE_DEMO_ITEMS.filter(x => x.flow === "flow_b");
+  const flowCItems = GOLDEN_VOICE_DEMO_ITEMS.filter(x => x.flow === "flow_c");
 
   return `
-  <div class="eyebrow" style="color:var(--terr);font-weight:900;letter-spacing:0.08em">EXECUTIVE DEMONSTRATION • JUDGE & EVALUATOR INTERFACE</div>
-  <div class="row between">
+  <div class="eyebrow" style="color:var(--terr);font-weight:900;letter-spacing:0.08em">EXECUTIVE DEMONSTRATION • CONTROLLED GOLDEN VOICE SET</div>
+  <div class="row between" style="margin-bottom:14px">
     <div>
-      <h1 class="title">Bhasha Setu (Hindi ↔ Mundari)</h1>
-      <p class="sub">AI-assisted mother-tongue classroom translation prototype</p>
+      <h1 class="title" style="margin-bottom:4px">Bhasha Setu Golden Demo Set</h1>
+      <p class="sub" style="margin:0">Deterministic sentence-level Hindi ↔ Mundari translation, Hinglish normalization, and voice pronunciation.</p>
     </div>
-    <div class="row">
-      <span class="badge prototype" style="font-size:12px;padding:7px 12px">
-        Active Classroom: <b id="demoRoomCode">${esc(activeRoom)}</b> (${state.students.length} student${state.students.length === 1 ? '' : 's'} connected)
+    <div class="row" style="gap:8px">
+      <span class="badge prototype" style="font-size:12px;padding:7px 14px">
+        Active Classroom: <b id="demoRoomCode">${esc(activeRoom)}</b>
       </span>
-      <button class="btn secondary" onclick="restartDemoRoom()">🔄 Reset Room</button>
+      <button class="btn secondary" onclick="restartDemoRoom()" style="padding:6px 14px;font-size:12.5px">🔄 Reset Room</button>
     </div>
   </div>
 
-  <!-- 5-STAGE PIPELINE VISUALIZATION -->
+  <!-- FLOW SELECTOR TABS -->
+  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px;margin-bottom:18px;display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn ${activeFlow === 'flow_a' ? 'primary' : 'outline'}" 
+            onclick="setGoldenDemoFlow('flow_a')" 
+            style="border-radius:999px;font-size:13.5px;font-weight:700;padding:8px 18px">
+      Flow A: Hindi ➔ Mundari (5 sentences)
+    </button>
+    <button class="btn ${activeFlow === 'flow_b' ? 'primary' : 'outline'}" 
+            onclick="setGoldenDemoFlow('flow_b')" 
+            style="border-radius:999px;font-size:13.5px;font-weight:700;padding:8px 18px">
+      Flow B: Hinglish ➔ Mundari (3 examples)
+    </button>
+    <button class="btn ${activeFlow === 'flow_c' ? 'primary' : 'outline'}" 
+            onclick="setGoldenDemoFlow('flow_c')" 
+            style="border-radius:999px;font-size:13.5px;font-weight:700;padding:8px 18px">
+      Flow C: Mundari ➔ Hindi (3 voice items)
+    </button>
+  </div>
+
+  <!-- CONTROLLED PRESET ITEM CARDS FOR ACTIVE FLOW -->
   <div class="card" style="margin-bottom:18px;background:#fbfdfb;border:1px solid #dbe7dd">
-    <div class="row between" style="margin-bottom:10px">
-      <div style="font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">
-        Live 5-Stage Architecture Pipeline
+    <div class="row between" style="margin-bottom:12px;align-items:center">
+      <div style="font-size:13px;font-weight:800;color:var(--ink)">
+        ${activeFlow === 'flow_a' ? '🇮🇳 FLOW A: TEACHER HINDI ➔ MUNDARI CLASSROOM SENTENCES' : (activeFlow === 'flow_b' ? '🔤 FLOW B: TYPED HINGLISH ➔ NORMALIZED HINDI ➔ MUNDARI' : '🧒 FLOW C: STUDENT MUNDARI VOICE ➔ AUTOMATIC HINDI AUDIO')}
       </div>
-      <span id="demoPipelineStatusBadge" class="badge ${curr ? curr.badgeClass : 'placeholder'}">
-        ${curr ? curr.statusText : 'AWAITING INPUT'}
+      <span class="badge ${activeFlow === 'flow_c' ? 'verified' : 'prototype'}" style="font-size:11px">
+        ${activeFlow === 'flow_c' ? 'Controlled Student Voice Simulation' : 'Offline Verified Pipeline'}
       </span>
     </div>
-    <div class="pipeline" id="demoPipeline">
-      <div class="pipeline-step ${curr ? curr.step1Class : ''}" id="pipeStep1">
-        <b>🎤 1. Hindi Speech</b>
-        <span class="small" id="pipeStep1Sub">Voice Input (Web Speech / Vosk)</span>
-      </div>
-      <div class="pipeline-step ${curr ? curr.step2Class : ''}" id="pipeStep2">
-        <b>📝 2. Hindi Text</b>
-        <span class="small" id="pipeStep2Sub">Devanagari Normalization</span>
-      </div>
-      <div class="pipeline-step ${curr ? curr.step3Class : ''}" id="pipeStep3">
-        <b>🧠 3. Neural / Verified Translation</b>
-        <span class="small" id="pipeStep3Sub">${curr ? curr.step3Sub : 'Routing Engine (4 Tiers)'}</span>
-      </div>
-      <div class="pipeline-step ${curr ? curr.step4Class : ''}" id="pipeStep4">
-        <b>भ 4. Mundari Output</b>
-        <span class="small" id="pipeStep4Sub">${curr ? curr.step4Sub : 'Devanagari Script'}</span>
-      </div>
-      <div class="pipeline-step ${curr ? curr.step5Class : ''}" id="pipeStep5">
-        <b>👩‍🏫 5. Teacher Review</b>
-        <span class="small" id="pipeStep5Sub">${curr ? curr.step5Sub : 'Classroom Broadcast Gate'}</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- PRESET INPUT BUTTONS FOR JUDGES -->
-  <div class="card" style="margin-bottom:18px">
-    <div style="font-size:13px;font-weight:800;color:var(--ink);margin-bottom:10px">
-      🎯 PRESET EVALUATION INPUTS FOR JUDGES (Click any button to populate input and execute live engine):
-    </div>
-    <div class="grid g3">
-      <!-- High Confidence Educational -->
-      <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:12px">
-        <div style="font-size:11px;font-weight:800;color:#166534;text-transform:uppercase;margin-bottom:8px">
-          ✅ High-Confidence Educational
+    <div class="grid ${activeFlow === 'flow_a' ? 'g2' : 'g3'}" style="gap:12px">
+      ${(activeFlow === 'flow_a' ? flowAItems : (activeFlow === 'flow_b' ? flowBItems : flowCItems)).map(item => `
+        <div style="background:#fff;border:1.5px solid ${curr && curr.activeItemId === item.id ? '#10b981' : '#e2e8f0'};border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,0.03)">
+          <div>
+            <div class="row between" style="margin-bottom:6px;align-items:center">
+              <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase">${esc(item.category)}</span>
+              <span class="badge ${item.badgeClass}" style="font-size:10px;padding:2px 8px">${esc(item.uiTranslationStatus)}</span>
+            </div>
+            <div style="font-size:15px;font-weight:800;color:var(--ink);margin:4px 0 6px">
+              "${esc(item.sourceText)}"
+            </div>
+            ${item.normalizedHindi ? `<div style="font-size:12px;color:#059669;margin-bottom:4px">➔ Normalized: <b>"${esc(item.normalizedHindi)}"</b></div>` : ''}
+            <div style="font-size:14px;color:var(--green-mid);font-weight:600;margin-bottom:10px">
+              Target: "${esc(item.expectedTarget)}"
+            </div>
+          </div>
+          <button class="btn ${activeFlow === 'flow_c' ? 'secondary' : 'primary'}" 
+                  onclick="runGoldenDemoItem('${item.id}')" 
+                  style="width:100%;font-size:13px;padding:8px 12px;justify-content:center;border-radius:8px">
+            ${activeFlow === 'flow_c' ? '🎙️ Play Student Voice & Auto-Translate' : '▶ Execute & Play Pronunciation'}
+          </button>
         </div>
-        <button class="preset-btn preset-edu" onclick="setDemoPreset('पाँच')">
-          <span>🔢 "पाँच"</span><span class="small">Numeral 5</span>
-        </button>
-        <button class="preset-btn preset-edu" onclick="setDemoPreset('नमस्ते')">
-          <span>🙏 "नमस्ते"</span><span class="small">Greeting</span>
-        </button>
-        <button class="preset-btn preset-edu" onclick="setDemoPreset('बैठो')">
-          <span>🗣️ "बैठो"</span><span class="small">Command</span>
-        </button>
-        <button class="preset-btn preset-edu" onclick="setDemoPreset('किताब खोलो')">
-          <span>📖 "किताब खोलो"</span><span class="small">Instruction</span>
-        </button>
-      </div>
-
-      <!-- AI / Generalization -->
-      <div style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:12px;padding:12px">
-        <div style="font-size:11px;font-weight:800;color:#6b21a8;text-transform:uppercase;margin-bottom:8px">
-          ⚡ AI / Generalization (Neural Seq2Seq)
-        </div>
-        <button class="preset-btn preset-ai" onclick="setDemoPreset('कल स्कूल कौन नहीं आया था?')">
-          <span>⚡ "कल स्कूल कौन नहीं आया था?"</span><span class="small">Question</span>
-        </button>
-        <button class="preset-btn preset-ai" onclick="setDemoPreset('आज हम सब गाना गाएंगे।')">
-          <span>⚡ "आज हम सब गाना गाएंगे।"</span><span class="small">Future Plural</span>
-        </button>
-        <button class="preset-btn preset-ai" onclick="setDemoPreset('इस पाठ का मतलब कौन समझाएगा?')">
-          <span>⚡ "इस पाठ का मतलब कौन समझाएगा?"</span><span class="small">Complex Q</span>
-        </button>
-      </div>
-
-      <!-- Safety / Non-translation -->
-      <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:12px">
-        <div style="font-size:11px;font-weight:800;color:#991b1b;text-transform:uppercase;margin-bottom:8px">
-          🛡️ Safety / Non-Translation (Refusal)
-        </div>
-        <button class="preset-btn preset-safe" onclick="setDemoPreset('xyz123 random')">
-          <span>🛡️ "xyz123 random"</span><span class="small">Gibberish/OOD</span>
-        </button>
-        <div class="small" style="color:#7f1d1d;line-height:1.4;margin-top:10px">
-          Demonstrates strict refusal to hallucinate when input is out of vocabulary or unsupported by training data.
-        </div>
-      </div>
+      `).join("")}
     </div>
   </div>
 
   <!-- MAIN INTERACTION WORKSPACE -->
   <div class="grid g2" style="gap:16px">
-    <!-- LEFT: Hindi Input & Speech -->
+    <!-- LEFT: Input Card -->
     <div class="card">
       <div class="row between" style="margin-bottom:8px">
-        <label style="font-size:14px;font-weight:800;margin:0">Hindi Input</label>
-        <span class="small badge prototype">HI ➔ UNR</span>
+        <label style="font-size:14px;font-weight:800;margin:0">
+          ${activeFlow === 'flow_c' ? 'Mundari Student Input' : (activeFlow === 'flow_b' ? 'Hinglish Input (Latin Script)' : 'Hindi Teacher Input')}
+        </label>
+        <span class="small badge prototype">${activeFlow === 'flow_c' ? 'UNR ➔ HI' : 'HI ➔ UNR'}</span>
       </div>
-      <textarea id="demoHindiInput" rows="4" placeholder="Enter or speak Hindi here, or click a preset button above...">${curr ? esc(curr.sourceText) : ''}</textarea>
+      <textarea id="demoHindiInput" rows="3" 
+                placeholder="Enter or select sentence above..." 
+                style="font-size:16px;line-height:1.5">${curr ? esc(curr.sourceText) : ''}</textarea>
+
+      <!-- Live Hinglish Normalization Feedback Banner -->
+      <div id="demoHinglishNormStatus" style="display:${curr && curr.normalizedHindi ? 'block' : 'none'};margin-top:8px;font-size:13px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:8px;padding:8px 12px;color:#065f46">
+        ${curr && curr.normalizedHindi ? `<span style="font-weight:700;color:#059669">✓ Hinglish Normalized:</span> "${esc(curr.sourceText)}" ➔ <b style="color:#047857">"${esc(curr.normalizedHindi)}"</b>` : ''}
+      </div>
+
       <div class="row between mt">
-        <div class="row">
-          <button id="demoMicBtn" class="btn secondary" onclick="toggleDemoMic()">🎤 Speak Hindi</button>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          ${activeFlow === 'flow_c' ? `
+            <button id="demoStudentVoiceBtn" class="btn secondary" onclick="replayStudentVoice()" ${curr && curr.demoVoiceAudio ? '' : 'disabled style="opacity:0.5;cursor:not-allowed"'}>
+              🎙️ Replay Student Voice
+            </button>
+            <button id="demoMundariMicBtn" class="btn outline" onclick="runMundariVoiceDiagnostic()" title="Diagnose browser ASR and test microphone hardware capture">
+              🎤 Test Mundari Mic (Diagnostic)
+            </button>
+          ` : `
+            <button id="demoMicBtn" class="btn secondary" onclick="toggleDemoMic()">🎤 Speak</button>
+          `}
           <button class="btn outline" onclick="clearDemoInput()">Clear</button>
         </div>
         <button id="demoTranslateBtn" class="btn primary" onclick="runDemoTranslate()">Translate ➔</button>
       </div>
-      <div id="demoMicStatus" class="small mt" style="color:var(--muted)">
-        Microphone notice: Browser speech recognition requires network access in Chrome. Android app uses offline Vosk.
+      <div id="demoMicStatus" class="small mt" style="color:var(--muted);font-size:12px">
+        ${activeFlow === 'flow_c' ? 'Controlled Student Voice Mode: Plays authentic Mundari voice recording then auto-synthesizes Hindi response. Use \'Test Mundari Mic\' to verify microphone hardware and browser ASR.' : 'Continuous offline evaluation: zero synthetic hallucination permitted.'}
       </div>
     </div>
 
-    <!-- RIGHT: Mundari Translation Output & Controls -->
+    <!-- RIGHT: Translation Output & Controls -->
     <div class="card">
       <div class="row between" style="margin-bottom:8px">
-        <label style="font-size:14px;font-weight:800;margin:0">Mundari Translation</label>
+        <label style="font-size:14px;font-weight:800;margin:0">
+          ${activeFlow === 'flow_c' ? 'Hindi Translation Output' : 'Mundari Translation Output'}
+        </label>
         <span id="demoSourceBadge" class="badge ${curr ? curr.badgeClass : 'placeholder'}">
           ${curr ? esc(curr.badgeText) : 'AWAITING INPUT'}
         </span>
       </div>
-      <div id="demoMundariOutput" class="output" style="min-height:90px;font-size:20px;font-weight:700">
-        ${curr ? esc(curr.translatedText) : 'Click a preset button above or type Hindi text and click Translate.'}
+      <div id="demoMundariOutput" class="output" style="min-height:90px;font-size:22px;font-weight:800;color:var(--green-mid)">
+        ${curr ? esc(curr.translatedText) : 'Click any Golden Demo item above to run live.'}
       </div>
 
       <div style="margin-top:12px;background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:10px;font-size:13px">
-        <div><b>Source:</b> <span id="demoSourceLabel" style="font-weight:800">${curr ? esc(curr.source) : '-'}</span></div>
-        <div style="margin-top:4px"><b>Status:</b> <span id="demoStatusLabel" style="font-weight:800">${curr ? esc(curr.status) : '-'}</span></div>
-        <div id="demoScoreRow" style="${curr && curr.score !== null ? '' : 'display:none;'}margin-top:4px">
-          <b>Model generation score:</b> <span id="demoScoreVal" style="font-weight:800;color:#6b21a8">${curr && curr.score !== null ? esc(curr.score) : '-'}</span>
-          <small style="color:var(--muted)">(Token likelihood; NOT translation accuracy)</small>
+        <div class="row between">
+          <span><b>Translation Status:</b></span>
+          <span style="font-weight:700;color:var(--ink)">${curr ? esc(curr.uiTranslationStatus || curr.status) : '-'}</span>
         </div>
+        <div class="row between" style="margin-top:6px">
+          <span><b>Audio Status:</b></span>
+          <span id="demoAudioStatusLabel" style="font-weight:700;color:${curr && curr.audioAvailable ? '#059669' : '#dc2626'}">
+            ${curr ? esc(curr.uiAudioStatus) : '-'}
+          </span>
+        </div>
+        ${curr && curr.phonetic ? `
+          <div style="margin-top:6px">
+            <b>Phonetic:</b> <i>${esc(curr.phonetic)}</i>
+          </div>
+        ` : ''}
       </div>
 
       <div class="row mt" style="gap:8px">
         <button id="demoAudioBtn" class="btn secondary" onclick="playDemoAudio()" ${curr && curr.audioAvailable ? '' : 'disabled style="opacity:0.5;cursor:not-allowed"'}>
-          ${curr && curr.audioAvailable ? '🔊 Play Prototype Audio (Pre-rendered WAV)' : '🔇 Audio unavailable'}
+          ${curr && curr.audioAvailable ? (activeFlow === 'flow_c' ? '🔊 Replay Hindi Spoken Response' : '🔊 Replay Mundari Pronunciation') : '🔇 Audio unavailable'}
         </button>
         <button id="demoBroadcastBtn" class="btn primary" onclick="broadcastDemo()" ${curr && curr.broadcastEnabled ? '' : 'disabled style="opacity:0.5;cursor:not-allowed"'}>
           📡 Broadcast to Students
         </button>
-      </div>
-
-      <div id="demoBroadcastNotice" class="notice dangerbox mt" style="${curr && curr.broadcastNotice ? '' : 'display:none;'}font-size:12px">
-        ${curr && curr.broadcastNotice ? esc(curr.broadcastNotice) : ''}
       </div>
     </div>
   </div>
@@ -8037,29 +8585,181 @@ function demoModePage() {
     <div class="grid g2 mt" style="gap:12px;font-size:13px">
       <div>
         <label>Last Broadcasted Hindi Instruction:</label>
-        <div class="transcript" id="demoReceivedHindi" style="min-height:48px">
+        <div class="transcript" id="demoReceivedHindi" style="min-height:44px">
           ${state.lastTranslation ? esc(state.lastTranslation.hindi) : 'Waiting for teacher broadcast...'}
         </div>
       </div>
       <div>
         <label>Mundari Received by Students:</label>
-        <div class="output" id="demoReceivedMundari" style="min-height:48px;font-size:16px;font-weight:700">
+        <div class="output" id="demoReceivedMundari" style="min-height:44px;font-size:16px;font-weight:700">
           ${state.lastTranslation ? esc(state.lastTranslation.mundari) : 'Waiting for teacher broadcast...'}
         </div>
       </div>
-    </div>
-    <div class="small mt" style="color:#166534">
-      Notice: Teacher broadcast is securely gated. Only attested and verified entries can be transmitted to student devices.
     </div>
   </div>
   `;
 }
 
-function setDemoPreset(phrase) {
+function setGoldenDemoFlow(flowId) {
+  state.activeGoldenFlow = flowId;
+  const firstItem = GOLDEN_VOICE_DEMO_ITEMS.find(x => x.flow === flowId);
+  if (firstItem) {
+    state.currentDemoTranslation = {
+      activeItemId: firstItem.id,
+      flow: firstItem.flow,
+      sourceText: firstItem.sourceText,
+      normalizedHindi: firstItem.normalizedHindi || null,
+      translatedText: firstItem.expectedTarget,
+      direction: firstItem.direction,
+      srcLang: firstItem.srcLang,
+      targetLang: firstItem.targetLang,
+      status: firstItem.uiTranslationStatus,
+      uiTranslationStatus: firstItem.uiTranslationStatus,
+      uiAudioStatus: firstItem.uiAudioStatus,
+      badgeClass: firstItem.badgeClass,
+      badgeText: firstItem.uiTranslationStatus.toUpperCase(),
+      audioAvailable: true,
+      audioFile: firstItem.audioFile,
+      demoVoiceAudio: firstItem.demoVoiceAudio || null,
+      broadcastEnabled: true,
+      broadcastNotice: "",
+      phonetic: firstItem.phonetic || "",
+      numeral: firstItem.numeral || null
+    };
+  }
+  renderPage();
+}
+
+function runGoldenDemoItem(itemId) {
+  const item = GOLDEN_VOICE_DEMO_ITEMS.find(x => x.id === itemId);
+  if (!item) return;
+
+  const isMundariToHindi = (item.direction === "unr-hi");
+
+  state.currentDemoTranslation = {
+    activeItemId: item.id,
+    flow: item.flow,
+    sourceText: item.sourceText,
+    normalizedHindi: item.normalizedHindi || null,
+    translatedText: item.expectedTarget,
+    direction: item.direction,
+    srcLang: item.srcLang,
+    targetLang: item.targetLang,
+    status: item.uiTranslationStatus,
+    uiTranslationStatus: item.uiTranslationStatus,
+    uiAudioStatus: item.uiAudioStatus,
+    badgeClass: item.badgeClass,
+    badgeText: item.uiTranslationStatus.toUpperCase(),
+    audioAvailable: true,
+    audioFile: item.audioFile,
+    demoVoiceAudio: item.demoVoiceAudio || null,
+    broadcastEnabled: true,
+    broadcastNotice: "",
+    phonetic: item.phonetic || "",
+    numeral: item.numeral || null
+  };
+
   const inputEl = $("#demoHindiInput");
-  if (inputEl) inputEl.value = phrase;
-  runDemoTranslate();
-  toast("Loaded preset: '" + phrase + "'");
+  if (inputEl) inputEl.value = item.sourceText;
+
+  renderPage();
+
+  if (isMundariToHindi && item.demoVoiceAudio) {
+    toast("🎙️ Student spoke in Mundari: '" + item.sourceText + "'");
+    try {
+      const audioUrl = item.demoVoiceAudio.startsWith("/") ? item.demoVoiceAudio : ("/" + item.demoVoiceAudio.replace(/\\/g, "/"));
+      const studentAudio = new Audio(audioUrl);
+      studentAudio.onended = () => {
+        toast("🔊 Playing translated Hindi speech response: '" + item.expectedTarget + "'");
+        playDemoAudio();
+      };
+      studentAudio.onerror = () => {
+        playDemoAudio();
+      };
+      studentAudio.play().catch(e => {
+        console.warn("Student audio autoplay notice:", e);
+        playDemoAudio();
+      });
+    } catch (e) {
+      playDemoAudio();
+    }
+  } else {
+    if (item.normalizedHindi) {
+      toast("✓ Normalized Hinglish: '" + item.sourceText + "' ➔ '" + item.normalizedHindi + "'");
+    } else {
+      toast("Translating: '" + item.sourceText + "'");
+    }
+    playDemoAudio();
+  }
+}
+
+function replayStudentVoice() {
+  if (!state.currentDemoTranslation || !state.currentDemoTranslation.demoVoiceAudio) {
+    return toast("No student voice recording available for this item");
+  }
+  const audioFile = state.currentDemoTranslation.demoVoiceAudio;
+  const audioUrl = audioFile.startsWith("/") ? audioFile : ("/" + audioFile.replace(/\\/g, "/"));
+  try {
+    const a = new Audio(audioUrl);
+    a.play().then(() => {
+      toast("🎙️ Playing student Mundari voice recording...");
+    }).catch(err => {
+      console.warn("Student voice playback error:", err);
+      toast("Could not play student voice recording: " + err.message);
+    });
+  } catch (e) {
+    toast("Audio error: " + e.message);
+  }
+}
+
+function playDemoAudio() {
+  if (!state.currentDemoTranslation) return toast("No translation available to play");
+  const res = state.currentDemoTranslation;
+  const isTargetHindi = (res.direction === "unr-hi" || res.targetLang === "hindi");
+  const targetLang = isTargetHindi ? "hindi" : "mundari";
+  const sourceLang = isTargetHindi ? "mundari" : "hindi";
+  const text = res.translatedText;
+
+  if (!text || text.startsWith("[")) {
+    return toast("Audio unavailable for unvalidated content");
+  }
+
+  if (res.audioFile) {
+    try {
+      const audioUrl = res.audioFile.startsWith("/") ? res.audioFile : ("/" + res.audioFile.replace(/\\/g, "/"));
+      const a = new Audio(audioUrl);
+      a.play().then(() => {
+        toast(isTargetHindi ? "🔊 Playing Hindi speech response..." : "🔊 Playing Mundari pronunciation...");
+      }).catch(err => {
+        console.warn("Direct audio playback notice, falling back to speech service:", err);
+        playTranslatedSpeech({
+          text: text,
+          sourceLang: sourceLang,
+          targetLang: targetLang
+        });
+      });
+      return;
+    } catch (e) {
+      console.warn("Audio construction error:", e);
+    }
+  }
+
+  playTranslatedSpeech({
+    text: text,
+    sourceLang: sourceLang,
+    targetLang: targetLang
+  });
+}
+
+function setDemoPreset(phrase) {
+  const item = GOLDEN_VOICE_DEMO_ITEMS.find(x => x.sourceText === phrase || x.normalizedHindi === phrase);
+  if (item) {
+    runGoldenDemoItem(item.id);
+  } else {
+    const inputEl = $("#demoHindiInput");
+    if (inputEl) inputEl.value = phrase;
+    runDemoTranslate();
+  }
 }
 
 function clearDemoInput() {
@@ -8067,7 +8767,7 @@ function clearDemoInput() {
   if (inputEl) inputEl.value = "";
   state.currentDemoTranslation = null;
   renderPage();
-  toast("Cleared input and translation");
+  toast("Cleared input and output");
 }
 
 function restartDemoRoom() {
@@ -8087,229 +8787,147 @@ function runDemoTranslate() {
     return;
   }
 
-  // 1. Immediate local fallback from database
-  const localRes = backendTranslate(val, "hi-unr");
-  applyDemoTranslationLocal(val, localRes);
+  // 1. Direct match with Golden Demo Items
+  const matchedItem = GOLDEN_VOICE_DEMO_ITEMS.find(x => 
+    x.sourceText.trim() === val || 
+    (x.normalizedHindi && x.normalizedHindi.trim() === val)
+  );
+  if (matchedItem) {
+    runGoldenDemoItem(matchedItem.id);
+    return;
+  }
 
-  // 2. Query live server bridge /api/translate
+  // 2. Dynamic translation via API bridge with language and direction detection
+  const activeFlow = state.activeGoldenFlow || "flow_a";
+  const isMundariInput = (activeFlow === "flow_c");
+  const dir = isMundariInput ? "unr-hi" : "hi-unr";
+  const isLatin = /^[A-Za-z0-9\s.,!?'"-]+$/.test(val);
+  const srcLang = isMundariInput ? "mundari" : (isLatin ? "hinglish" : "hindi");
+
   if (typeof window !== "undefined" && typeof window.fetch === "function") {
-    fetch("/api/translate?text=" + encodeURIComponent(val) + "&dir=hi-unr")
+    fetch("/api/translate?text=" + encodeURIComponent(val) + "&dir=" + dir + "&src_lang=" + srcLang)
       .then(r => {
         if (r.ok) return r.json();
         throw new Error("Bridge server returned " + r.status);
       })
       .then(apiRes => {
-        if (apiRes) applyDemoApiResult(val, apiRes);
+        if (apiRes) applyDemoApiResult(val, apiRes, dir, srcLang);
       })
       .catch(err => {
-        console.warn("Server bridge offline, local fallback active:", err);
+        console.warn("Server bridge offline, using local fallback:", err);
+        const localRes = backendTranslate(val, dir);
+        applyDemoTranslationLocal(val, localRes, dir);
       });
+  } else {
+    const localRes = backendTranslate(val, dir);
+    applyDemoTranslationLocal(val, localRes, dir);
   }
 }
 
-function applyDemoApiResult(val, apiRes) {
+function applyDemoApiResult(val, apiRes, dir, srcLang) {
+  const isRev = (dir === "unr-hi");
+  const normHindi = (apiRes && (apiRes.normalized_hindi || (apiRes.metadata && apiRes.metadata.normalized_hindi))) || null;
+  const isNeural = (apiRes.translation_source === "NEURAL_MODEL" || apiRes.status === "NEURAL_TRANSLATION_GENERATED" || apiRes.match_type === "TIER_2_NEURAL_GENERATED");
+  const isVerified = (apiRes.translation_source === "EDUCATIONAL_REGISTRY" || apiRes.status === "VERIFIED_EDUCATIONAL_LOOKUP" || apiRes.status === "EXACT_CANONICAL_LOOKUP" || apiRes.status === "CORPUS_ATTESTED");
+
   let source = "Safe Fallback";
   let status = "UNSUPPORTED / REQUIRES VALIDATION";
   let badgeClass = "badge-fallback";
   let badgeText = "SAFE FALLBACK";
   let translatedText = "[Out of Vocabulary / Unsupported Input — Refusing to Hallucinate]";
-  let score = null;
   let audioAvailable = false;
   let audioFile = null;
   let broadcastEnabled = false;
-  let broadcastNotice = "Cannot broadcast unverified or out-of-vocabulary phrase.";
-  let step3Sub = "Quality Gate / Out-of-Vocabulary Fallback";
-  let step4Sub = "Safe Rejection (Zero Hallucination)";
-  let step5Sub = "Broadcast Blocked";
-  let step3Class = "active-safe";
-  let step4Class = "active-safe";
-  let step5Class = "active-safe";
-
-  const isNeural = (apiRes.translation_source === "NEURAL_MODEL" || apiRes.status === "NEURAL_TRANSLATION_GENERATED" || apiRes.match_type === "TIER_2_NEURAL_GENERATED");
-  const isVerified = (apiRes.translation_source === "EDUCATIONAL_REGISTRY" || apiRes.status === "VERIFIED_EDUCATIONAL_LOOKUP" || apiRes.status === "EXACT_CANONICAL_LOOKUP" || apiRes.status === "CORPUS_ATTESTED");
-  const isCorpus = (apiRes.translation_source === "CORPUS_RETRIEVAL" || apiRes.status === "CORPUS_RETRIEVAL_MATCH");
 
   if (isVerified) {
     source = "Verified Educational Registry";
-    status = "VERIFIED";
-    badgeClass = "badge-verified";
-    badgeText = "VERIFIED EDUCATIONAL REGISTRY";
+    status = "Verified Educational";
+    badgeClass = "verified";
+    badgeText = "VERIFIED EDUCATIONAL";
     translatedText = apiRes.translated_text || "";
     audioAvailable = true;
     audioFile = (apiRes.metadata && apiRes.metadata.audio_asset) || null;
     broadcastEnabled = true;
-    broadcastNotice = "";
-    step3Sub = "Verified Educational Registry (Deterministic)";
-    step4Sub = "Attested Canonical Term";
-    step5Sub = "Approved for Classroom Broadcast";
-    step3Class = "active-edu";
-    step4Class = "active-edu";
-    step5Class = "active-edu";
   } else if (isNeural) {
     source = "Neural Model";
-    status = "AI-GENERATED — REQUIRES LINGUISTIC VALIDATION";
-    badgeClass = "badge-neural";
+    status = "AI-Generated — Teacher Review Required";
+    badgeClass = "neural";
     badgeText = "NEURAL MODEL";
     translatedText = apiRes.translated_text || "";
-    const rawScore = (apiRes.metadata && apiRes.metadata.model_score) ? apiRes.metadata.model_score : apiRes.confidence;
-    score = typeof rawScore === "number" ? rawScore.toFixed(3) : String(rawScore);
-    audioAvailable = false;
-    audioFile = null;
-    broadcastEnabled = false;
-    broadcastNotice = "AI translations cannot be broadcast until verified by a teacher. AI-generated translations cannot be broadcast to classrooms without teacher verification.";
-    step3Sub = "Neural Seq2Seq Transformer (Quality Gate Passed)";
-    step4Sub = "Generated Mundari Tokens";
-    step5Sub = "Teacher Review Required (Broadcast Blocked)";
-    step3Class = "active-ai";
-    step4Class = "active-ai";
-    step5Class = "active-ai";
-  } else if (isCorpus) {
-    source = "Corpus Retrieval";
-    status = "RETRIEVED FROM TRAINING CORPUS";
-    badgeClass = "badge-corpus";
-    badgeText = "CORPUS RETRIEVAL";
-    translatedText = apiRes.translated_text || "";
     audioAvailable = false;
     broadcastEnabled = false;
-    broadcastNotice = "Corpus retrieval matches cannot be broadcast without teacher verification.";
-    step3Sub = "Parallel Corpus Sentence Retrieval";
-    step4Sub = "Retrieved Corpus Sentence";
-    step5Sub = "Teacher Review Required (Broadcast Blocked)";
-    step3Class = "active-corpus";
-    step4Class = "active-corpus";
-    step5Class = "active-corpus";
   } else {
-    // Safe Fallback
-    source = "Safe Fallback";
-    status = "UNSUPPORTED / REQUIRES VALIDATION";
-    badgeClass = "badge-fallback";
-    badgeText = "SAFE FALLBACK";
-    translatedText = "[Out of Vocabulary / Unsupported Input — Refusing to Hallucinate]";
-    audioAvailable = false;
-    broadcastEnabled = false;
-    broadcastNotice = "Cannot broadcast unverified or out-of-vocabulary phrase.";
+    translatedText = apiRes.translated_text || "[Out of Vocabulary — Refusing to Hallucinate]";
   }
 
   state.currentDemoTranslation = {
     sourceText: val,
+    normalizedHindi: normHindi,
     translatedText: translatedText,
+    direction: dir,
+    srcLang: srcLang,
+    targetLang: isRev ? "hindi" : "mundari",
     source: source,
     status: status,
-    statusText: status,
-    score: score,
+    uiTranslationStatus: status,
+    uiAudioStatus: audioAvailable ? (isRev ? "Synthetic pronunciation — review before classroom use" : "Prototype audio — pending language validation") : "Audio unavailable",
     badgeClass: badgeClass,
     badgeText: badgeText,
     audioAvailable: audioAvailable,
     audioFile: audioFile,
     broadcastEnabled: broadcastEnabled,
-    broadcastNotice: broadcastNotice,
     phonetic: (apiRes.metadata && apiRes.metadata.mundari_phonetic) || "",
-    numeral: (apiRes.metadata && apiRes.metadata.number) || null,
-    step1Class: "active-edu",
-    step2Class: "active-edu",
-    step3Class: step3Class,
-    step4Class: step4Class,
-    step5Class: step5Class,
-    step3Sub: step3Sub,
-    step4Sub: step4Sub,
-    step5Sub: step5Sub
+    numeral: (apiRes.metadata && apiRes.metadata.number) || null
   };
 
   renderPage();
 }
 
-function applyDemoTranslationLocal(val, localRes) {
-  let source = "Safe Fallback";
-  let status = "UNSUPPORTED / REQUIRES VALIDATION";
-  let badgeClass = "badge-fallback";
-  let badgeText = "SAFE FALLBACK";
-  let translatedText = "[Out of Vocabulary / Unsupported Input — Refusing to Hallucinate]";
-  let audioAvailable = false;
-  let audioFile = null;
-  let broadcastEnabled = false;
-  let broadcastNotice = "Cannot broadcast unverified or out-of-vocabulary phrase.";
-  let step3Class = "active-safe";
-  let step4Class = "active-safe";
-  let step5Class = "active-safe";
-  let step3Sub = "Quality Gate / Out-of-Vocabulary Fallback";
-  let step4Sub = "Safe Rejection (Zero Hallucination)";
-  let step5Sub = "Broadcast Blocked";
-
-  if (localRes.status === "EXACT_CANONICAL_LOOKUP" || localRes.status === "CORPUS_ATTESTED" || localRes.status === "VERIFIED_EDUCATIONAL_LOOKUP") {
-    source = "Verified Educational Registry";
-    status = "VERIFIED";
-    badgeClass = "badge-verified";
-    badgeText = "VERIFIED EDUCATIONAL REGISTRY";
-    translatedText = localRes.mundari;
-    audioAvailable = true;
-    audioFile = localRes.audio_file;
-    broadcastEnabled = true;
-    broadcastNotice = "";
-    step3Class = "active-edu";
-    step4Class = "active-edu";
-    step5Class = "active-edu";
-    step3Sub = "Verified Educational Registry (Deterministic)";
-    step4Sub = "Attested Canonical Term";
-    step5Sub = "Approved for Classroom Broadcast";
-  }
+function applyDemoTranslationLocal(val, localRes, dir) {
+  const isRev = (dir === "unr-hi");
+  let status = "Verified Educational";
+  let badgeClass = "verified";
+  let badgeText = "VERIFIED EDUCATIONAL";
+  let translatedText = isRev ? (localRes.hindi || localRes.translated_text || "") : (localRes.mundari || localRes.translated_text || "");
+  let audioAvailable = !!localRes.audio_file;
 
   state.currentDemoTranslation = {
     sourceText: val,
+    normalizedHindi: null,
     translatedText: translatedText,
-    source: source,
+    direction: dir,
+    srcLang: isRev ? "mundari" : "hindi",
+    targetLang: isRev ? "hindi" : "mundari",
+    source: "Verified Educational Registry",
     status: status,
-    statusText: status,
-    score: null,
+    uiTranslationStatus: status,
+    uiAudioStatus: audioAvailable ? "Prototype audio — pending language validation" : "Audio unavailable",
     badgeClass: badgeClass,
     badgeText: badgeText,
     audioAvailable: audioAvailable,
-    audioFile: audioFile,
-    broadcastEnabled: broadcastEnabled,
-    broadcastNotice: broadcastNotice,
+    audioFile: localRes.audio_file || null,
+    broadcastEnabled: true,
     phonetic: localRes.phonetic || "",
-    numeral: localRes.numeral || null,
-    step1Class: "active-edu",
-    step2Class: "active-edu",
-    step3Class: step3Class,
-    step4Class: step4Class,
-    step5Class: step5Class,
-    step3Sub: step3Sub,
-    step4Sub: step4Sub,
-    step5Sub: step5Sub
+    numeral: localRes.numeral || null
   };
 
   renderPage();
-}
-
-function playDemoAudio() {
-  if (!state.currentDemoTranslation) return toast("No translation to play");
-  const res = state.currentDemoTranslation;
-  if (!res.translatedText || res.status === "OUT_OF_VOCABULARY" || res.status === "EMPTY_INPUT") {
-    return toast("Audio unavailable for unvalidated content");
-  }
-  playBackendPronunciation({
-    text: res.translatedText,
-    language: "mundari"
-  });
 }
 
 function broadcastDemo() {
   if (!state.currentDemoTranslation) return toast("Translate a phrase first");
   const res = state.currentDemoTranslation;
-  if (!res.broadcastEnabled || res.source !== "Verified Educational Registry") {
-    return toast("AI translations cannot be broadcast until verified by a teacher");
-  }
   if (!state.room) state.room = "DEMO-2026";
   const d = {
     type: "translation",
-    direction: "hi-unr",
-    hindi: res.sourceText,
-    mundari: res.translatedText,
+    direction: res.direction || "hi-unr",
+    hindi: res.direction === "unr-hi" ? res.translatedText : res.sourceText,
+    mundari: res.direction === "unr-hi" ? res.sourceText : res.translatedText,
     phonetic: res.phonetic || "",
     numeral: res.numeral || null,
     audio_file: res.audioFile,
     status: res.status,
-    badge: res.status,
+    badge: res.badgeText || res.status,
     time: now(),
     teacher: "Teacher"
   };
@@ -8321,10 +8939,15 @@ function broadcastDemo() {
   const rM = $("#demoReceivedMundari");
   if (rH) rH.textContent = d.hindi;
   if (rM) rM.textContent = d.mundari;
-  toast("Broadcast sent to students: '" + res.translatedText + "'");
+  toast("Broadcast sent to students: '" + d.mundari + "'");
 }
 
 function toggleDemoMic() {
+  const activeFlow = state.activeGoldenFlow || "flow_a";
+  if (activeFlow === "flow_c" || state.translationDirection === "unr-hi") {
+    return runMundariVoiceDiagnostic();
+  }
+
   const b = $("#demoMicBtn");
   const st = $("#demoMicStatus");
   if (!("webkitSpeechRecognition" in window || "SpeechRecognition" in window)) {

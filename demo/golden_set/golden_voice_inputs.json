@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "description": "Bhasha Setu Controlled Golden Voice Inputs for Mundari Voice Demonstration",
+  "created_at": "2026-09-28",
+  "mandate": "Zero hallucination. Truthful provenance labeling. No synthetic speech claimed as native verified.",
+  "items": [
+    {
+      "id": "VOICE_UNR_01",
+      "canonical_mundari": "नअःदो अइंग लेकायाइंग गेलबर जकेद्।",
+      "expected_hindi": "अब मैं गिनती करूँगा बारह तक",
+      "audio_file": "demo/golden_set/audio/mundari_voice_SEL_UNR_02.wav",
+      "provenance": "AUTHENTIC_STUDENT_REFERENCE_RECORDING",
+      "validation_status": "AUTHENTIC_STUDENT_RECORDING",
+      "ui_audio_status": "Authentic student reference recording",
+      "expected_response_audio": "demo/golden_set/audio/mundari_to_hi_001.wav",
+      "response_language": "hi",
+      "category": "Student Counting Recitation"
+    },
+    {
+      "id": "VOICE_UNR_02",
+      "canonical_mundari": "मिअद",
+      "expected_hindi": "एक",
+      "audio_file": "content/audio/prototype_tts/numbers/num_01.wav",
+      "provenance": "PROTOTYPE_AUDIO_REGISTRY",
+      "validation_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+      "ui_audio_status": "Prototype audio — pending language validation",
+      "expected_response_audio": "demo/golden_set/audio/num_01_hi.wav",
+      "response_language": "hi",
+      "category": "FLN Number 1 Response"
+    },
+    {
+      "id": "VOICE_UNR_03",
+      "canonical_mundari": "मोड़ेया",
+      "expected_hindi": "पाँच",
+      "audio_file": "content/audio/prototype_tts/numbers/num_05.wav",
+      "provenance": "PROTOTYPE_AUDIO_REGISTRY",
+      "validation_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+      "ui_audio_status": "Prototype audio — pending language validation",
+      "expected_response_audio": "demo/golden_set/audio/num_05_hi.wav",
+      "response_language": "hi",
+      "category": "FLN Number 5 Response"
+    },
+    {
+      "id": "VOICE_UNR_04",
+      "canonical_mundari": "दुबपे",
+      "expected_hindi": "बैठो",
+      "audio_file": "content/audio/prototype_tts/phrases/PHR_MGMT_01.wav",
+      "provenance": "PROTOTYPE_AUDIO_REGISTRY",
+      "validation_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+      "ui_audio_status": "Prototype audio — pending language validation",
+      "expected_response_audio": "demo/golden_set/audio/hi_to_mundari_baitho.wav",
+      "response_language": "hi",
+      "category": "Classroom Command Response"
+    },
+    {
+      "id": "VOICE_UNR_05",
+      "canonical_mundari": "पुथी ओड़ाःपे",
+      "expected_hindi": "किताब खोलो",
+      "audio_file": "content/audio/prototype_tts/phrases/PHR_MGMT_06.wav",
+      "provenance": "PROTOTYPE_AUDIO_REGISTRY",
+      "validation_status": "PROTOTYPE_ONLY_PENDING_HUMAN_VALIDATION",
+      "ui_audio_status": "Prototype audio — pending language validation",
+      "expected_response_audio": "demo/golden_set/audio/hi_to_mundari_kitab_kholo.wav",
+      "response_language": "hi",
+      "category": "Classroom Command Response"
+    }
+  ]
+}
